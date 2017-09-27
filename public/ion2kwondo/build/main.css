@@ -30181,9 +30181,9 @@ page-atleta ion-fab[bottom] {
 .ionimg {
   contain: none;
   display: unset;
-  max-width: 200px;
-  max-height: 150px;
-  border: 1px solid black;
+  /*max-width: 200px;*/
+  /*max-height: 150px;*/
+  border: 0px solid black;
 }
 
 .divcont {
@@ -30204,7 +30204,7 @@ page-atleta ion-fab[bottom] {
 }
 
 .msgemail {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   padding: 8px;
 }
@@ -30281,22 +30281,25 @@ img.avatarbig {
 
 .chat .messages .message {
   font-size: 12px;
-  -webkit-box-shadow: 2px 1px 3px #444;
-  box-shadow: 2px 1px 3px #444;
-  max-width: 70%;
-  padding: 6px 6px;
+  -webkit-box-shadow: 1px 1px 1px silver;
+  box-shadow: 1px 1px 1px silver;
+  max-width: 75%;
+  /*padding: 6px 6px;*/
   /*background: #387ef5;*/
-  background: #007acc;
-  color: #fff;
-  border-radius: 5px;
+  /*background: #007acc;*/
+  background: white;
+  /*color: #fff;*/
+  color: #000;
+  border-radius: 9px;
   margin: 5px;
   float: left;
 }
 
 .chat .messages .message .date {
-  display: block;
-  font-size: 10px;
+  /*display: block;*/
+  font-size: 12px;
   padding: 5px;
+  font-weight: normal;
 }
 
 .chat .messages .message img.avatar {
@@ -30679,6 +30682,25 @@ page-gara .infobold {
 
 page-gara .filt {
   background: #222;
+  height: 20px;
+  background: #444;
+  margin: 6px;
+}
+
+page-gara .filtapplied {
+  border: 1px solid yellow;
+}
+
+page-gare .disputata {
+  color: #555;
+}
+
+page-gare ion-item.incorso {
+  background: #ddffcc;
+}
+
+page-gare .spanincorso {
+  color: darkgreen;
 }
 
 page-gare .gara {
@@ -30831,6 +30853,20 @@ page-matchesforatleta .silver {
 
 page-matchesforatleta .orange {
   color: brown;
+}
+
+page-medagliereglobale .mg {
+  font-size: 14px;
+}
+
+page-medagliereglobale .table-striped td {
+  font-size: 16px;
+  padding: 3px;
+}
+
+page-medagliereglobale .info {
+  padding: 10px;
+  text-align: center;
 }
 
 page-stats .subriga {
