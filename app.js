@@ -97,7 +97,7 @@ app.use(cookieParser());
 
 //app.use(app.router());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public 1.4.3')));
 //app.use(express.static(path.join(__dirname, 'www')));
 app.use(cors());
 
