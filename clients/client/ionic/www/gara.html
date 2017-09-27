@@ -1,0 +1,12 @@
+<ion-view title="Gare" ng-controller="GaraCtrl" ng-init="getGara()">
+<ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+        <ion-item nav-clear menu-close ng-repeat="doc in gara" >
+		<i class="icon ion-share"></i>&nbsp;{{doc.location}}<br>{{doc.title}}
+		</ion-item>
+	 </ion-list>	
+  </ion-content>
+</ion-view>

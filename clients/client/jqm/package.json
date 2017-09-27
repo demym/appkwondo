@@ -1,0 +1,70 @@
+{
+    "name": "ionic",
+    "version": "1.1.1",
+    "description": "ionic: An Ionic project",
+    "dependencies": {
+        "android-camera-permission": "^1.0.0",
+        "android.support.v4": "^21.0.1",
+        "com.napolitano.cordova.plugin.intent": "https://github.com/napolitano/cordova-plugin-intent",
+        "cordova-android": "^6.2.3",
+        "cordova-browser": "^4.1.0",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-android-permissions": "^0.11.0",
+        "cordova-plugin-app-event": "~1.2.0",
+        "cordova-plugin-background-mode": "^0.7.2",
+        "cordova-plugin-browsersync": "^0.1.6",
+        "cordova-plugin-camera": "^2.0.0",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-filepath": "^1.0.2",
+        "cordova-plugin-intent": "git+https://github.com/napolitano/cordova-plugin-intent.git",
+        "cordova-plugin-media-capture": "^1.4.3",
+        "cordova-plugin-whitelist": "1",
+        "de.appplant.cordova.plugin.local-notification": "^0.8.5",
+        "gulp": "^3.5.6",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.0.4"
+    },
+    "devDependencies": {
+        "@ionic/cli-plugin-ionic-angular": "1.3.1",
+        "bower": "^1.3.3",
+        "gulp-util": "^2.2.14",
+        "shelljs": "^0.3.0"
+    },
+    "cordovaPlugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-console",
+        "cordova-plugin-whitelist",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-statusbar",
+        "ionic-plugin-keyboard"
+    ],
+    "cordovaPlatforms": [
+        "android"
+    ],
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-camera": {},
+            "android.support.v4": {},
+            "android-camera-permission": {},
+            "cordova-plugin-android-permissions": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-media-capture": {},
+            "cordova-plugin-app-event": {},
+            "de.appplant.cordova.plugin.local-notification": {},
+            "cordova-plugin-background-mode": {},
+            "com.napolitano.cordova.plugin.intent": {},
+            "cordova-plugin-browsersync": {},
+            "cordova-plugin-filepath": {}
+        },
+        "platforms": [
+            "android",
+            "browser",
+            "ios"
+        ]
+    }
+}

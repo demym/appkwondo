@@ -1,0 +1,43 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+   <ActionBar title="AppKwonDo v2" cssClass="actionbar">
+    <ActionBar.actionItems>
+	    
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+        <ActionItem text="right" ios.position="right"/>-->
+		<android>
+        <ActionItem text="pop"   ios.position="right"  android.position="popup"/>
+		</android>
+		<ios>
+		 <ActionItem ios.position="right" tap="infoGara">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf05a;" class="font-awesome"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+		</ios>
+      </ActionBar.actionItems>
+	</ActionBar> 
+	<StackLayout cssClass="height100">
+	
+
+	<Label id="lb1" text="prova" cssClass="benvenuto toplabel" />
+	<Label id="lb2" text=" " cssClass="admin toplabel" />
+
+<!--<Label  col="2"  text="{{ unreadchat }}" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" cssClass="badge " />-->
+  
+  <ListView items="{{ items }}" id="lv1" cssClass="height100" itemTap="listViewItemTap">
+	 <ListView.itemTemplate>
+	  <GridLayout rows="*" columns="50,*,50">
+	  <!--<Image src="{{ img }}" col="0"  />-->
+	  <!--<Label col="0" text="&#xf114;"  class="font-awesome" style="margin: 15 5 5 5; font-size: 18; color: black"  />-->
+	  <Label id="lab" col="0" text="{{icon}}"  class="font-awesome" style="margin: 15 5 5 9; font-size: 24; color: black"  />
+	  <!--<Image col="0" src="{{imgicon}}" style="margin: 5 0 0 5; width: 32; height: 32" />-->
+       <Label col="1" text="{{ name }}" textWrap="true" cssClass="lvhomepage" />
+	   <Label  col="2"  style="height: 25; font-size: 14" text="{{ unreadchat }}" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" cssClass="badgemini" />
+	   </GridLayout>
+    </ListView.itemTemplate>
+	</ListView>
+	</StackLayout>
+ 
+</Page>

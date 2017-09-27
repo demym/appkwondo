@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Linkedin</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content spadding class="ion-content">
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+        </ion-refresher-content>
+  </ion-refresher>
+
+<ion-card *ngFor="let item of allnews" (tap)="openUrl(item.doc.link)">
+ 
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="{{item.doc.foto}}" />
+        </ion-avatar>
+        <h2 class="h2wrap">{{item.doc.title}}</h2>
+        <p class="autore">{{item.doc.autore}}</p>
+        <p>{{item.doc.data}}</p>
+      </ion-item>
+ 
+      <!--<img src="http://placehold.it/500x200" />-->
+ 
+      <ion-card-content>
+         <div [innerHTML] = "item.doc.description"></div>
+        
+      </ion-card-content>
+ 
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon class="bpgreen" name="thumbs-up"></ion-icon>
+            <div class="bpgreen">{{item.likes}} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon class="bpgreen" name="text"></ion-icon>
+            <div class="bpgreen">{{item.comments}} Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            
+          </ion-note>
+        </ion-col>
+      </ion-row>
+ 
+    </ion-card>
+
+
+    <ion-card *ngIf="allnews.length==0">
+      
+      <ion-card-content>No data was returned from the backend system</ion-card-content>
+
+      </ion-card>
+</ion-content>

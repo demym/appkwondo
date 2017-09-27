@@ -1,0 +1,86 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-appavailability": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-audio-recorder-api": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-media": {
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-media-capture": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-velda-devicefeedback": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "403763864066",
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+        }
+    }
+}

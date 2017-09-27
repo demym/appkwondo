@@ -1,0 +1,25 @@
+ <div data-role="popup" id="popGare" data-dismissible="false" data-theme="a" class="ui-corner-all">
+    <a href="#" onclick="popGareCloseRemove()" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+       <!-- <form >-->
+            <div sstyle="padding:10px 20px;" data-role="content">
+              <ul data-role="listview" id="ulpopgare" class="ui-listview">
+			  <li onclick="markGara('<%=data.id%>','disputata')">Segna come disputata</li>
+			  <li onclick="markGara('<%=data.id%>','nondisputata')">Segna come non disputata</li>
+			  <li onclick="markGara('<%=data.id%>','incorso')">Segna come in corso</li>
+			  <li onclick="editGara('<%=data.id%>')">Modifica gara</li>
+			  <% 
+				   colog(data.doc.stato);
+			  if (data.doc.stato.toLowerCase().trim()=='nondisputata'){
+			   colog("questa si può eliminare")
+			  %>
+			  
+			  <li onclick="deleteGara('<%=data.id%>')">Elimina gara</li>
+			  <% } %>
+			  </ul>
+              
+              
+              <!--<a id="popgareok" href="javascript:popGareOk()" data-role="button" class="ui-btn" sdata-theme="b" data-icon="check">Invia messaggio</a>
+			  <a id="popgarecancel" href="javascript:popGareCancel()" data-role="button" class="ui-btn" sdata-theme="b" data-icon="check">Annulla</a>-->
+            </div>
+        <!--</form>-->
+    </div>

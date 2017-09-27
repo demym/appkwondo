@@ -1,0 +1,31 @@
+<!--<li data-role="list-divider" data-position="fixed" role="heading" data-theme="b"><%= data.length%> schede</li>-->
+<p id="pconn" align='center'><%= data.length %> utenti connessi ad AppKwonDo</p>
+<br>
+<ul data-role="listview" id="ulsockets">
+<% 
+ var sid=getCookie("socketid");
+ var color="black";
+ 
+for(var i=0; i<data.length; i++) { 
+     color="black"; 
+     if (sid==data[i].id) color="green";
+	 var nick="";
+	 if (data[i].nickname){
+	   if (data[i].nickname.trim()!="") nick=data[i].nickname;
+	 }
+    
+%>
+        <li sdata-theme='c' class="gradient" >
+            <a class="gradient"  onclick="clickSocket('<%= data[i].id %>','<%=nick%>')" id='<%= data[i].id %>' href='#' data-transition='slide'>
+			    <div class="chatthumbdiv fill"><img src="images/person.png" class="chatthumb" />
+				</div>
+				<div>
+                <span class="medium" style="color: <%= color %>" ><%= data[i].id %></span> - <span class="medium" style="color: <%= color %>"><%= data[i].device %></span><br>
+				<span class="medium" style="color: <%= color %>"><%= data[i].nickname %></span><br>
+				<span class="medium" style="color: <%= color %>"><%= data[i].ipaddress %></span><br></div>
+
+				
+            </a>
+        </li>
+    <% } %>
+</ul>	

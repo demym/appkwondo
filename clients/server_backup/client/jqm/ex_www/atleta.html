@@ -1,0 +1,165 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.4.min.css" />
+    <script src="jqm/jquery-1.11.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.4.min.js"></script>
+	<script type="text/javascript">
+	 var $=jQuery;
+	 
+	 
+	 
+	 $(document).ready(function() {
+	 
+	
+	   	   $.mobile.ajaxLinksEnabled = false;
+	     $(".tb").remove();
+		 $("#av_toolbar_regdiv").remove();
+		 $("#av_toolbar_iframe").remove();
+       //alert("removed av toolbar
+	   	 if(navigator.userAgent.match(/Android/i)){
+    window.scrollTo(0,1);
+}
+	   
+	   var aid = getParameterByName('id');
+	   
+	   $.ajax({
+		type: "GET",
+		url: "atleti.xml",
+		dataType: "xml",
+		success: function(xml) {
+		   
+		    var htm="";
+		    //htm+="<ul id='lista' data-role='listview' data-theme='c' >";
+			$(xml).find('atleta').each(function(){
+				var id = $(this).find("id").text();
+				
+				if (id==aid)
+				{
+				 var cognome = $(this).find('cognome').text();
+				 var nome = $(this).find('nome').text();
+				 htm+="<li><a href='"+id+"'>"+cognome+" "+nome+"</a></li>";
+				  $("#id").text($(this).find('id').text());
+				 $("#datanascita").text($(this).find('datanascita').text());
+				 $("#cognomenome").text(cognome+" "+nome);
+				 $("#categoria").text($(this).find('categoria').text());
+				 $("#categoriapeso").text($(this).find('categoriapeso').text());
+				 $("#palestra").text($(this).find('palestra').text());
+				 $("#cintura").text($(this).find('cintura').text());
+				 $("#squadra").text($(this).find('squadra').text());
+				 $("#punticlass").text($(this).find('punticlass').text());
+				} 
+				
+			});
+		   //htm+="</ul>";
+		   
+		   $("#lista").append(htm);
+		   $("#lista").listview();
+		   $("#lista").listview("refresh");
+		  } 
+	    
+     });		
+	   
+	 
+	 
+	 
+	 });
+	 
+	 function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+	
+	
+	</script>
+    <style type="text/css">
+    html, body {
+    height : 100%;
+}
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+}
+
+#listax span {
+ font-weight: bold;
+ left: 200px;
+}
+
+</style>
+</head>
+<body>
+        <div data-role="page" data-them="c">
+            <!--<div class="ui-content" data-role="header" data-theme="b"><a class="ui-btn-text" data-role="button" href="atleti.html" data-ajax='false' >Back</a>
+                <h1>ATLETA           </h1>
+                <a class="ui-btn-text" data-role="button">Modifica</a>
+            </div>-->
+			<div data-role="header" data-theme="b" id="hdr" data-position="fixed">
+			<a class="ui-btn-left" href="atleti.html" data-role="button" data-ajax="false" data-icon="back">Atleti</a>
+                <h1>ATLETA</h1> <a class="ui-btn-right" href="#panel-02" data-role="button" data-icon="plus">Opzioni</a>
+            </div>
+                <div data-role="content">
+                    
+                            <!-- <input id="myFilter" data-type="search" />-->
+                            <!--<div data-role="tabs" id="tabs">
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li>
+                                            <a href="#one" data-ajax="false">Anagrafica</a>
+                                        </li>
+                                        <li>
+                                            <a href="#two" data-ajax="false">Classifica</a>
+                                        </li>
+                                        <li>
+                                            <a href="ajax-content-ignore.html" data-ajax="false">Gare in corso</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                        
+                            <ul data-role="listview" id="listax" data-theme="b">
+							<li>
+                                    <b><span id='cognomenome'></span></b>
+                                </li>
+								<li>
+                                    id: <span id='id'></span>
+                                </li>
+                                <li>
+                                    Data di nascita: <span id='datanascita'></span>
+                                </li>
+                                <li>
+                                    Squadra: <span id='squadra'></span>
+                                </li>
+                                <li>
+                                    Categoria: <span id='categoria'></span>
+                                </li>
+                                <li>
+                                    Categoria peso: <span id='peso'></span>
+                                </li>
+                                <li>
+                                    Palestra: <span id='palestra'></span>
+                                </li>
+                                <li>
+                                    Cintura: <span id='cintura'>blu</span>
+                                </li>
+                                <li>
+                                    Punti classifica: <span id='punticlass'></span>
+                                </li>
+                            </ul>
+                           
+                        
+                    <!--</form>-->
+                </div>
+
+            <!-- Insert content here -->
+          <!-- <div data-role="footer" data-position="fixed">
+                <h3>DemyKwonDo Software Group
+                </h3>
+            </div>-->
+        </div>
+</body>
+</html>

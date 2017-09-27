@@ -1,0 +1,48 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+   <ActionBar title="Classifica società" cssClass="actionbar">
+  
+	 <NavigationButton android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+    <ActionBar.actionItems>
+	    
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+        <ActionItem text="right" ios.position="right"/>-->
+        <ActionItem text="Refresh"   ios.position="right"  android.position="popup" tap="refresh"/>
+		<ActionItem text="Aggiungi iscritto"   ios.position="right"  android.position="popup"/>
+      </ActionBar.actionItems>
+	</ActionBar> 
+
+  <StackLayout>
+  <GridLayout columns="*,30" rows="50"> 
+  <StackLayout col="0" cssClass="titolobar" >
+   <!--<Label text="{{'Giornate di gara: ' + ngiorni}}" />-->
+   <Label cssClass="titolo" style="font-weight: bold;"  text="{{titologara}}" />
+   <Label cssClass="titolo" text="{{datagara+' '+locationgara}}" />
+   
+   
+  </StackLayout>
+  <StackLayout col="1" style="height: 100%; width: 100%; padding: 6;">
+  <ActivityIndicator width="30" height="30"  id="ai" visibility="{{busy ? 'visible' : 'collapsed'}}" busy="{{busy}}" />
+  </StackLayout>
+ </GridLayout>
+  <ListView  id="lv1" items="{{giorni}}" itemTap="getMedagliereGiorno" separatorColor="black"  >
+	 <ListView.itemTemplate>
+
+	 <StackLayout cssClass="{{enabled ? 'giornoenabled' : 'giornodisabled'}}" style="padding: 8px;">
+       <Label  text="{{ titolo }}" style="font-weight: bold; height: 20; width: 100%; color: black" />
+	   <Label  text="{{ enabled ? '' : 'Tabulati non disponibili' }}" style="height: 20; width: 100%; color: black" />
+	   </StackLayout>
+	   <!--<Repeater col="0"  row="1" items="{{tabulati.rows}}" >
+	   <Repeater.itemTemplate>
+	   <Label text="minchiacazzi"/>
+	   </Repeater.itemTemplate>
+	   </Repeater>	-->
+	
+	
+	   
+    </ListView.itemTemplate>
+	</ListView>
+	<StackLayout cssClass="nomatch">
+	<WebView id="wv1" src="{{html}}"/>
+	</StackLayout>
+ </StackLayout>
+</Page>

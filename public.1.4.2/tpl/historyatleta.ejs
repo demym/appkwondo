@@ -1,0 +1,31 @@
+<table border="1" id="rankingtable" align="center" width="98%">
+<tr><th colspan="6">Storico gare per <%=data.atletaname%></th></th>
+<tr><th>Gara</th><th>ORI</th><th>ARG</th><th>BRO</th><th>N. match</th><th>N. disputati</th></tr>
+<% for (var i=0; i<data.rows.length; i++) {
+
+   var row=data.rows[i];
+   var doc=row;
+   var location=doc.location;
+   var ddd=doc.data;
+   var atlname=data.atletaname;
+
+   
+   var ori=doc.ori;
+   var argenti=doc.arg;
+   var bronzi=doc.bro;
+   var nmatches=doc.matches;
+   var ndmatches=doc.matchesdisputati;
+   
+%>
+
+
+<tr><td><%=ddd%> - <%=location%></td><td align="center"><%=ori%></td><td align="center" ><%=argenti%></td><td align="center" ><%=bronzi%></td><td align="center"><%=nmatches%></td><td align="center" ><%=ndmatches%></td></tr>
+
+<%
+
+}
+
+
+%>
+
+</table>

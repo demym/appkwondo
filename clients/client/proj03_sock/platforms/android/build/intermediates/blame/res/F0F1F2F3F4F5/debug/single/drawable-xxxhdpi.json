@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-xxxhdpi/icon.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-xxxhdpi/icon.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-xxxhdpi/logo.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-xxxhdpi/logo.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-xxxhdpi/background.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-xxxhdpi/background.png"
+    }
+]

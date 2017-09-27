@@ -1,0 +1,17 @@
+ <% 
+ 
+ var isc=jcurrentgara.iscritti;
+ for(var i=0; i<data.length; i++) {
+
+
+
+ %>
+ <% 
+ var ck="";
+ if (isc.indexOf(data[i].doc.id)>-1) ck="checked" %>
+ <label for="cka_<%= data[i].doc.id %>"><%= data[i].doc.cognome + " "+ data[i].doc.nome %></label>
+ <input type="checkbox" name="atletiselected" id="cka_<%= data[i].doc.id %>" value="<%= data[i].doc.id %>" <%=ck%> >
+ 
+ <%
+  
+ } %>

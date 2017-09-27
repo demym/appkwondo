@@ -1,0 +1,27 @@
+
+<% 
+
+    
+    var row=data;
+	  
+	  var cl="bubble";
+	  if (row.nickname==chatuser.nickname) cl="bubble bubble--alt";
+	   var ora=row.time.substring(8,10)+":"+row.time.substring(10,12);
+	  
+	  var stile="";
+	  if (row.color) {
+	    
+		stile="style='background: "+row.color+";'";
+	  
+	  }
+	  
+%>
+
+	
+	<div class="<%=cl%>" <%=stile%>>
+	   <span class="nick"><%=row.nickname%></span> - <%=ora%><br>
+		<%=row.text%>
+	</div>
+	
+
+</div>

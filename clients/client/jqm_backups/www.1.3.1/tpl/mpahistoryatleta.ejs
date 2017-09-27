@@ -1,0 +1,73 @@
+	<!--<div data-role="collapsible" data-theme="b">
+   	<h3>Storico gare per <b><%=data.atletaname%></h3>
+       <div>-->
+  
+<div class="card">
+
+<div>
+	<p  style="cursor: pointer; background: lightblue" onclick="getMpaHistoryAtleta()">Storico gare per <b><%=data.atletaname%></p>
+ </div>
+ <div>
+
+
+<table border="1" id="rankingtable" align="center" width="98%">
+<!--<tr><th colspan="6" style="text-align: center">Storico gare per <b><%=data.atletaname%></b></th></th>-->
+<tr ><th style="text-align: center">Gara</th><th style="text-align: center">Med.</th><th style="text-align: center">Match</th><th style="text-align: center">Disp.</th></tr>
+<!--</table>-->
+
+<!--<ul data-role="listview">-->
+
+<% for (var i=0; i<data.rows.length; i++) {
+
+   var row=data.rows[i];
+   var doc=row;
+   var location=doc.location;
+   var ddd=doc.data;
+   var atlname=data.atletaname;
+
+   
+   var ori=doc.ori;
+   var argenti=doc.arg;
+   var bronzi=doc.bro;
+   var nmatches=doc.matches;
+   var ndmatches=doc.matchesdisputati;
+    
+   var medaglia="---";
+   color="gray";
+
+   if (argenti>0) {
+     medaglia="ARG";
+     color="silver";
+     }
+
+   if (ori>0) {
+   medaglia="ORO";
+   color="orange";
+   }
+   if (bronzi>0) {
+   medaglia="BRO";
+   color="brown";
+   }
+    
+   if (nmatches>0) {
+%>
+<!--<li>
+<table width="100%" border="0">-->
+<tr><td><%=ddd%> - <%=location%></td><td align="center" width="50"><span style='color: <%=color%>'><b><%=medaglia%></b></span></td><td align="center" width="40"><%=nmatches%></td><td align="center"width="40" ><%=ndmatches%></td></tr>
+<!--</table>
+</li>-->
+<%
+  }
+
+}
+
+
+%>
+<!--</ul>-->
+</table>
+<!--</div>
+</div>-->
+
+
+</div>
+</div> <!-- card -->

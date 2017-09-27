@@ -1,0 +1,14 @@
+<ion-view title="{{atleta.doc.cognome}}&nbsp;{{atleta.doc.nome}}" ng-controller="AtletaCtrl" ng-init="getAtleta()">
+<ion-nav-buttons side="left">
+ <a ng-href="#/app/atleti" class="button icon-left ion-chevron-left button-clear button-dark">Atleti</a>
+</ion-nav-buttons>
+  <ion-content class="has-header">
+     <ion-list>
+        <ion-item nav-clear menu-close ng-repeat="(key,value) in atleta.doc" >
+		<!--<i class="icon ion-person"></i>-->&nbsp;<span style="font-size: 12px; color: gray">{{key}}</span><br>&nbsp;{{value}}
+		</ion-item>
+	 </ion-list>	
+	
+	
+  </ion-content>
+</ion-view>

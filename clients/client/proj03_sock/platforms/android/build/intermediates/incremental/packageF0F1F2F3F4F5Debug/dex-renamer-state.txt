@@ -1,0 +1,4 @@
+#Wed May 31 22:44:50 CEST 2017
+base.0=/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/transforms/dex/F0F1F2F3F4F5/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/transforms/dex/F0F1F2F3F4F5/debug/folders/1000/1f/main/classes.dex

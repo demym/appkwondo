@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "android-camera-permission",
+        "scope": null,
+        "escapedName": "android-camera-permission",
+        "name": "android-camera-permission",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/jqm/node_modules"
+    ]
+  ],
+  "_from": "android-camera-permission@latest",
+  "_id": "android-camera-permission@1.0.0",
+  "_inCache": true,
+  "_location": "/android-camera-permission",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "campers",
+    "email": "campers@gmail.com"
+  },
+  "_npmVersion": "3.5.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "android-camera-permission",
+    "scope": null,
+    "escapedName": "android-camera-permission",
+    "name": "android-camera-permission",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/android-camera-permission/-/android-camera-permission-1.0.0.tgz",
+  "_shasum": "80ee9f5bbe447b4938fb60ca55542507ecfd9a64",
+  "_shrinkwrap": null,
+  "_spec": "android-camera-permission",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/jqm/node_modules",
+  "author": {
+    "name": "Daniel Campagnoli"
+  },
+  "bugs": {
+    "url": "https://github.com/campers/android-camera-permission/issues"
+  },
+  "cordova": {
+    "id": "android-camera-permission",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Android Camera Permission Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "80ee9f5bbe447b4938fb60ca55542507ecfd9a64",
+    "tarball": "https://registry.npmjs.org/android-camera-permission/-/android-camera-permission-1.0.0.tgz"
+  },
+  "homepage": "https://github.com/campers/android-camera-permission#readme",
+  "keywords": [
+    "cordova",
+    "media",
+    "android",
+    "camera",
+    "permission"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "campers",
+      "email": "campers@gmail.com"
+    }
+  ],
+  "name": "android-camera-permission",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campers/android-camera-permission.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}

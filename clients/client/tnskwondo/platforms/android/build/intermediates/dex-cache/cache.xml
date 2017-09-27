@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/internal_impl-24.2.0_48d8085205e922ae736fd85df260ea5e49579519.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/io.socket/socket.io-client/0.7.0/ce278c97bc9f74c7945d647f6d441d6013163362/socket.io-client-0.7.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="ce278c97bc9f74c7945d647f6d441d6013163362">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/socket.io-client-0.7.0_e0aa0bf1bfb66fac1a6e70950c959eb8f89a53f4.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/tnskwondo/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/binding-generator_0e8dda1989b1f6aaa5cbd8608c917637b57aca85.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="89f0a1f737477abeda61c0072529d5158b1ebe81">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/intermediates-exploded-aar-widgets-release_d888b953d5ac901349b5ea01f7c63b1a48a993f8.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-v4-24.2.0_17b4c5c7afdbc767be623529c2ae48a259fea81e.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-core-utils-24.2.0_fa59c2a1fe7da61ef1a359809a8e2f518dca5587.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/support-annotations-24.2.0_b4fd029b0a09e30df30154b78af66f190b78a4cd.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/tnskwondo/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/tnskwondo-runtime-unspecified_f8d121dcdbf7722b5e50340180841bc738f36248.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.0.1/bd9b51a0188fc8f14bf840a0d326755545206116/okhttp-ws-3.0.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="bd9b51a0188fc8f14bf840a0d326755545206116">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/okhttp-ws-3.0.1_2711355dc908469b9c01f782638ed20676a5b38c.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.7.0/c1b1d30e2d2231b2eae1438a44943a409b976dac/engine.io-client-0.7.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c1b1d30e2d2231b2eae1438a44943a409b976dac">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/engine.io-client-0.7.0_716ef5eb956bfb4afc605fbe56022365ac65f91e.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/internal_impl-24.2.0_dfbe572002f9da0a5cc3ab1342a3a90234633f2a.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-vector-drawable-24.2.0_ad5460ba989b87e8e3bc4be929f1810f515c0de7.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/internal_impl-24.2.0_2dbdfa7d0ce8b5c51369816f48600480aa4c219c.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/internal_impl-24.2.0_9e0164893eaa3e818f00ef35569d2dad1611d3db.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-core-ui-24.2.0_cfd1e5a225e39146ea8c011c60703e870990c094.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/internal_impl-24.2.0_4b8c50d13905dfafa926c0e5b993238e01c19e6d.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.0.1/b34c1f2d993044656e87f88970b6818e99e886ba/okhttp-3.0.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="b34c1f2d993044656e87f88970b6818e99e886ba">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/okhttp-3.0.1_54f4adb229e0889d5a8036f46d5db852fcdbee5e.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-media-compat-24.2.0_f29a7930c19e453e6820ae3c3e39e3ab52d14049.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-appcompat-v7-24.2.0_fdfc2f383cf2f78317ef5fa96184c7bcb12cf007.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-fragment-24.2.0_f8f64dc05a12fbcc34c1e773212b3fd417289ed5.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-support-compat-24.2.0_6e7e4b410b107daa55345698dccd06c731f31e18.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/com.android.support-animated-vector-drawable-24.2.0_8e6e66a62f1c63df8a2c722a135013fd7305b67c.jar" />
+    </item>
+    <item
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/tnskwondo/platforms/android/build/intermediates/pre-dexed/F0F1/debug/okio-1.6.0_343477a755b873479797f4c2d115cc63db83b121.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,11 @@
+.filterbut {
+    width: 300;
+    height: 50;
+    margin: 0 0 0 0;
+}
+
+.stack {
+    background-color: white;
+    padding: 5 5 5 5;
+    width: 90%;
+}

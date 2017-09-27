@@ -1,0 +1,645 @@
+.small {
+ font-size: 12px;
+}
+
+.medium {
+ font-size: 14px;
+}
+
+.dgradient, .dgradientbutton {
+background: #7d7e7d; /* Old browsers */
+background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 12%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(12%,#0e0e0e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 12%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 12%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 12%); /* IE10+ */
+background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 12%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sgradientactive {
+ background: lightblue;
+}
+
+.clicked {
+ background-color: lightblue !important;
+}
+
+.sgradient {
+
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sgradientbutton {
+
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+float: left;
+padding: 7px;
+border-radius: 10px;
+border: 1px solid silver;
+
+}
+
+.lista {
+   height:100%;
+}
+.lista a {
+    height: 40px;
+}
+.ui-input-listview {
+  margin-top: -1em !important;
+  margin-bottom: -1em !important;
+  margin-left: -0.5em !important; /* If you want to fix left as well */
+  margin-right: -0.5em !important; /* If you want to fix right as well */
+}
+
+.ui-panel-wrapper {
+ height: 40px;
+}
+
+
+
+/* inizio common.css */
+
+#ulgara, #ulinfogara a, #ulinfogara span, #ulinfogara h3 {
+ font-size: 12px;
+}
+
+.ultab1 span, .ultab2 span, .ultab3 span {
+ height: 20px;
+}
+
+.liprog, .liatleta,.linotify {
+ height: 20px;
+}
+
+#hgara a {
+ font-size: 11px;
+}
+
+#navbar a {
+ font-size:10px;
+}
+
+.font13 {
+ font-size: 14px;
+}
+
+.sriga1 {
+ color: #eeeeee;
+ font-weight: normal;
+}
+.sriga2 {
+ color: #dddddd;
+ font-weight: normal;
+}
+.sriga3 {
+ color: #eeffcc;
+ font-weight: normal;
+}
+.sriga4 {
+ color: #eeffaa;
+ font-weight: normal;
+}
+
+
+.riga1 {
+ color: #000000;
+ font-weight: bold;
+}
+.riga2 {
+ color: #111111;
+ font-weight: normal;
+}
+.riga3 {
+ color: #222222;
+ font-weight: normal;
+}
+.riga4 {
+ color: #333333;
+ font-weight: normal;
+}
+
+.recnum {
+ text-align: center;
+
+}
+
+#recnum span {
+ font-size: 11px;
+}
+
+
+	 
+	 .stabselected  {
+	   /*border-top: 1px solid silver;
+	   border-right: 1px solid silver;
+	   border-left: 1px solid silver;*/
+	   //text-align: left;
+	   /*border-bottom: 1px solid gray;*/
+	   background: blue;
+	   color: yellow;
+	 }
+	 
+	 #navbar li {
+	  //border-bottom: 1px solid silver;
+	 } 
+	 
+	 .ulupdate {
+	  display: none;
+	 }
+	 
+
+    html, body {
+    height : 100%;
+}
+
+span.categorie {
+ cursor: pointer;
+}
+
+span.categorie:hover {
+ background: #555555;
+}
+.vinto {
+ color: darkgreen;
+
+}
+.perso {
+ color: red;
+ }
+ 
+ .nondisputato {
+  color: gray;
+ }
+/*
+.ui-page {
+    min-height:100% !important;
+    height:auto !important;
+}
+
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%
+}
+
+.ui-content {
+    margin-bottom:42px; /* HEIGHT OF YOUR FOOTER */
+}
+*/
+
+
+
+.ui-listview .ui-li-icon {
+    max-height: 30px;
+    max-width: 30px;
+    top: 50%;
+    /*margin-top: -15px;*/
+}
+
+#lista img {
+position:absolute; 
+    top:0; 
+    bottom:0; 
+    left:0px; 
+    margin:auto; 
+    height:45px; 
+    width:45px;
+}
+
+.panel td {  
+    color: #FFF !important;  
+	font-weight: 200;
+    /*text-shadow: 0 0 0 rgba(0,0,0,0);  
+    font-size: 14px;  
+    padding: 15px 20px 15px 60px;  
+    display: block;  
+    text-decoration: none;  
+    border-bottom: 1px solid #475657;  
+    border-top: 1px solid #95A5A6;  
+    position: relative;  
+    font-weight: 400;  */
+}  
+
+#infogara {
+ text-align: center;
+}
+
+
+
+.data {
+ font-size: 11px;
+ /*color: #dddddd;*/
+ color: #111111;
+
+}
+
+.testo {
+ font-size: 13px;
+  white-space: normal !important;
+
+}
+
+.nonvisto {
+ /*color: yellow;*/
+ color: #55555;
+ font-weight: bold;
+}
+
+.small {
+ font-size: 10px;
+}
+
+.listbar li {
+  font-size: 12px;
+  
+}
+
+.center {
+ text-align: center; !important;
+
+}
+
+.panelicon {
+ width:20px;
+ height:20px;
+}
+
+#ulcategorie li {
+ font-size: 16px;
+ cursor: pointer;
+ min-width: 250px;
+}
+
+
+.categoria {
+ font-size: 10px;
+ color: gray;
+}
+
+#msgBar {
+ font-size: 10px;
+ color: yellow;
+ font-weight: normal;
+ padding: 2px;
+
+}
+
+.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+    margin: 0;
+}
+.ui-li-static.ui-collapsible {
+    padding: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+    border-top-width: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+.ui-li-static.ui-collapsible > .ui-collapsible-content {
+    border-bottom-width: 0;
+}
+.custom-count-pos{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    float: right;
+}
+
+#ulcategorie li {
+ font-weight: bold;
+}
+
+.ui-button .ui-button-text
+{
+ line-height: 1.0;
+}
+
+
+.spancat {
+ font-size: 10px;
+ padding: 6px;
+}
+
+#ulinfogara li {
+    font-size: 1px;
+
+}
+#ulinfogara {
+/* height: 30px;*/
+}
+.match {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.soft {
+  font-size: 14px;
+  font-weight: normal;
+  color: #333333; 
+}
+.result {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffeeff; 
+}
+.atleta {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.imgicon {
+    position:relative; 
+    top:0; 
+    bottom:0; 
+    left: 0px; 
+	padding: 5px;
+    margin:auto; 
+    height:45px; 
+    width:45px;
+	border: 1px solid silver;
+}
+
+
+
+
+.lgreen {
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+}
+.lred {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+.lgray {
+  color: gray;
+  font-size: 14px;
+  font-weight: normal;
+}
+.lblack {
+  color: black;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.loginspan,.serverspan,.societaspan {
+ font-size: 11px;
+}
+
+.medals {
+ font-size: 13px;
+ width: 150px;
+ /*padding: 4px;*/
+}
+
+.smalspin {
+position: relative;
+  top: 4px;
+}
+
+#mparecnum {
+ font-size: 12px;
+}
+
+#gara .ui-group-theme-b a {
+ font-weight: 200;
+}
+
+
+body, input, select, textarea, button, .ui-btn {
+font-family: sans-serif;
+font-size: 1em;
+line-height: 1.3;
+font-weight: 100;
+}
+
+.ui-li-has-thumb img {
+ top:40px;
+}
+
+.panel a {
+ font-weight: normal;
+}
+
+.ui-page-theme-b a, html .ui-bar-b a, html .ui-body-b a, html body .ui-group-theme-b a {
+ font-weight: 100;
+}
+
+
+#popResult-popup, #popResult  {
+    /*height: 98%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;*/
+}
+
+#gara #popResult {
+    height: 98%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
+.sidebyside {
+  float: left;
+  position: relative;
+  display: inline-block;
+  width: 50%;
+}
+
+
+.card {
+  background: #FFF;
+  border: 1px solid #AAA;
+  box-shadow: 0px 2px 3px 0px #AAA;
+  padding: 0px;
+  margin-top: 15px;
+  margin-right: 7.5px;
+  margin-bottom: 15px;
+  margin-left: 7.5px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.card h1 {
+  margin: 0px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.card p {
+  margin: 0px;
+  padding: 10px;
+}
+.card-image {
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.card-image .banner {
+  height: 50px;
+  width: 50px;
+  top: 0px;
+  right: 0px;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-image: url('../images/new.png');
+  position: absolute;
+}
+.card-image h1, 
+.card-image h2, 
+.card-image h3, 
+.card-image h4, 
+.card-image h5, 
+.card-image h6 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+  background: rgba(0,0,0,0.65);
+  margin: 0px;
+  padding: 6px;
+  border: none;
+}
+div.holoPressEffectDiv {
+	background-color: #CCCCCC;
+}
+
+
+.newsbubble {
+background: green none repeat scroll 0% 0%;
+}
+
+
+
+
+.green {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+.red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.gray {
+  color: gray;
+  font-size: 20px;
+  font-weight: normal;
+}
+.black {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+.blacknormal {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+ 
+}
+
+.transparentbutton {
+    background-color: transparent !important;
+    border: 0 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.transparentborderbutton {
+    background-color: transparent !important;
+	border: 0px solid #333 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	border-radius: 0px;
+	
+}
+
+#atleti_categorie {
+ z-index: 5000;
+}
+
+#menuPanel {
+ z-index: 5000;
+}
+
+#rankingtable td {
+ font-size: 12px;
+}
+
+.hide {
+ display:none;
+}
+
+
+
+/*
+* {
+    font: 12px Sans-Serif-light,Arial !important;
+}
+*/
+
+/*
+.task-bg-color {
+    background-color: yellow !important;   
+}
+
+li.ui-btn-active {
+    background-color:       #22aadd !important;
+    border-color:           #22aadd !important;
+    color:                  #fff !important;
+    text-shadow: 0 0 #0088bb !important;
+}
+
+*/
+
+
+.chatthumb {
+ width: 70px;
+  height: 70px;
+}
+
+.chatthumbdiv {
+float:left;
+/*width:70px;*/
+/*overflow:hidden;*/
+ /*width: 32px;*/
+ /* height: 70px;*/
+  padding: 4px;
+}
+
+.fill {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url("images/person.png)";
+}

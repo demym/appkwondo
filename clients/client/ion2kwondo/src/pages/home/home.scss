@@ -1,0 +1,44 @@
+page-home {
+
+    .server {
+        color: gray;
+    }
+
+    .admin {
+        color: blue;
+    }
+
+}
+
+
+a {
+    text-decoration: none;
+    
+}
+
+.unread {
+    position: absolute;
+    top: 60px;
+
+}
+
+.newpost {
+    background: yellow;
+}
+
+ion-segment {
+    justify-content: space-between;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+      display: inline-block!important;
+     /* min-width: 100px!important;*/
+      width: auto!important;
+    }
+}

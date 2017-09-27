@@ -1,0 +1,54 @@
+AAC
+
+added in API level 10
+int AAC
+AAC Low Complexity (AAC-LC) audio codec
+
+Constant Value: 3 (0x00000003)
+
+AAC_ELD
+
+added in API level 16
+int AAC_ELD
+Enhanced Low Delay AAC (AAC-ELD) audio codec
+
+Constant Value: 5 (0x00000005)
+
+AMR_NB
+
+added in API level 1
+int AMR_NB
+AMR (Narrowband) audio codec
+
+Constant Value: 1 (0x00000001)
+
+AMR_WB
+
+added in API level 10
+int AMR_WB
+AMR (Wideband) audio codec
+
+Constant Value: 2 (0x00000002)
+
+DEFAULT
+
+added in API level 1
+int DEFAULT
+Constant Value: 0 (0x00000000)
+
+HE_AAC
+
+added in API level 16
+int HE_AAC
+High Efficiency AAC (HE-AAC) audio codec
+
+Constant Value: 4 (0x00000004)
+
+VORBIS
+
+added in API level 21
+int VORBIS
+Ogg Vorbis audio codec
+
+Constant Value: 6 (0x00000006)
+

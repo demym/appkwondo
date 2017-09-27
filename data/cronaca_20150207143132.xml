@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<cronaca>
+  <garaid>20150207143132</garaid>
+  <cronacarow>
+    <id>20150210175453</id>
+    <data>20150210175453</data>
+    <testo>colgaz cronaca</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150210175505</id>
+    <data>20150210175505</data>
+    <testo>colgaz3 cronaca</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150210175729</id>
+    <data>20150210175729</data>
+    <testo>colgaz3 cronaca</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150210180017</id>
+    <data>20150210180017</data>
+    <testo>colgaz3 cronaca</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211112406</id>
+    <data>20150211112406</data>
+    <testo>Cacciero Lucia vince il suo secondo incontro n. 187 per 12-2.  E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211114123</id>
+    <data>20150211114123</data>
+    <testo>Cacciero Lucia perde il suo primo incontro (n.102) . E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211114804</id>
+    <data>20150211114804</data>
+    <testo>Cacciero Lucia vince il suo primo  e unico incontro (n.304)  per 12-1. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211114825</id>
+    <data>20150211114825</data>
+    <testo>Cacciero Lucia perde il suo primo  e unico incontro (n.304)  per 2-12. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211114845</id>
+    <data>20150211114845</data>
+    <testo>Binda Pienti Gabriele vince il suo secondo incontro (n.250)  per 3-1</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211115043</id>
+    <data>20150211115043</data>
+    <testo>Binda Pienti Gabriele vince il suo terzo incontro (n.258)  per 14-5. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211115115</id>
+    <data>20150211115115</data>
+    <testo>Binda Pienti Gabriele perde il suo secondo incontro (n.250)  per 14-5. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211115205</id>
+    <data>20150211115205</data>
+    <testo>Calvi Eric Douglas perde il suo primo  e unico incontro (n.852)  per 14-5. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211115421</id>
+    <data>20150211115421</data>
+    <testo>Cacciero Lucia vince il suo primo incontro n. 304 per 2-12.  E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211115736</id>
+    <data>20150211115736</data>
+    <testo>Cacciero Lucia perde il suo primo incontro n. 304 per 2-12.  E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211131255</id>
+    <data>20150211131255</data>
+    <testo>Binda Pienti Gabriele vince il suo terzo incontro (n.258) . E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211170934</id>
+    <data>20150211170934</data>
+    <testo>Cacciero Lucia vince il suo primo  e unico incontro (n.304) . E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211170959</id>
+    <data>20150211170959</data>
+    <testo>Cacciero Lucia perde il suo primo  e unico incontro (n.304) . E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150211201605</id>
+    <data>20150211201605</data>
+    <testo>Cacciero Lucia vince il suo primo  e unico incontro (n.304) . E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150212120229</id>
+    <data>20150212120229</data>
+    <testo>Belmajdoub Younes vince il suo secondo incontro (n.203) </testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150212120242</id>
+    <data>20150212120242</data>
+    <testo>Belmajdoub Younes vince il suo terzo incontro (n.305) . E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150212200935</id>
+    <data>20150212200935</data>
+    <testo>Binda Pienti Gabriele perde il suo secondo incontro (n.250) . E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150213095501</id>
+    <data>20150213095501</data>
+    <testo>Binda Pienti Gabriele vince il suo primo  e unico incontro (n.102) . E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215095733</id>
+    <data>20150215095733</data>
+    <testo>Borruto Daniele vince il suo primo incontro (n.401)  per 1-0</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215095846</id>
+    <data>20150215095846</data>
+    <testo>Stagnari Alessio vince il suo primo incontro (n.201)  per 10-3</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215101139</id>
+    <data>20150215101139</data>
+    <testo>Milani Jacopo vince il suo primo incontro (n.403)  per 12-3</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215101205</id>
+    <data>20150215101205</data>
+    <testo>Casale Lorenzo perde il suo primo incontro (n.103)  per 3-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215101248</id>
+    <data>20150215101248</data>
+    <testo>Panessa Emanuele vince il suo primo incontro (n.303)  per 9-8</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215101430</id>
+    <data>20150215101430</data>
+    <testo>Cacciero Lucia vince il suo primo incontro (n.205)  per 1-0</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215102837</id>
+    <data>20150215102837</data>
+    <testo>Ventura Elisa perde il suo primo incontro (n.305)  per 0-1. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215103459</id>
+    <data>20150215103459</data>
+    <testo>Curci Sara perde il suo primo  e unico incontro (n.207)  per 2-8. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215103526</id>
+    <data>20150215103526</data>
+    <testo>Gambi Vittoria vince il suo primo  e unico incontro (n.207)  per 8-2. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215104057</id>
+    <data>20150215104057</data>
+    <testo>Lazzara Sofia vince il suo primo incontro (n.108)  per 16-1</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215104200</id>
+    <data>20150215104200</data>
+    <testo>Stagnari Alessio vince il suo secondo incontro (n.208)  per 5-1</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215104321</id>
+    <data>20150215104321</data>
+    <testo>Radice Brando vince il suo primo incontro (n.407)  per 7-6</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215104359</id>
+    <data>20150215104359</data>
+    <testo>Sideris Tommaso vince il suo primo incontro (n.307)  per 1-0</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215105324</id>
+    <data>20150215105324</data>
+    <testo>Borruto Daniele vince il suo secondo incontro (n.409)  per 12-9</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215105401</id>
+    <data>20150215105401</data>
+    <testo>Lazzara Cristian perde il suo primo incontro (n.409)  per 6-12. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215110440</id>
+    <data>20150215110440</data>
+    <testo>Panessa Emanuele vince il suo secondo incontro (n.311)  per 13-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215110455</id>
+    <data>20150215110455</data>
+    <testo>Panessa Emanuele vince il suo secondo incontro (n.311)  per 13-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215110958</id>
+    <data>20150215110958</data>
+    <testo>Cacciero Lucia perde il suo secondo incontro (n.212)  per 2-13. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215111321</id>
+    <data>20150215111321</data>
+    <testo>Milani Jacopo vince il suo secondo incontro (n.411)  per 15-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215112054</id>
+    <data>20150215112054</data>
+    <testo>Lazzara Sofia vince il suo secondo incontro (n.114)  per 16-6. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215112438</id>
+    <data>20150215112438</data>
+    <testo>Miduri Riccardo vince il suo primo  e unico incontro (n.314)  per 1-0. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215112514</id>
+    <data>20150215112514</data>
+    <testo>Sideris Tommaso perde il suo secondo incontro (n.314)  per 0-1. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114026</id>
+    <data>20150215114026</data>
+    <testo>Lecce Christian vince il suo primo  e unico incontro (n.414)  per 3-2. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114050</id>
+    <data>20150215114050</data>
+    <testo>Radice Brando perde il suo secondo incontro (n.414)  per 2-3. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114112</id>
+    <data>20150215114112</data>
+    <testo>Panessa Emanuele perde il suo terzo incontro (n.316)  per 5-8. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114141</id>
+    <data>20150215114141</data>
+    <testo>Stagnari Alessio perde il suo terzo incontro (n.215)  per 4-6. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114235</id>
+    <data>20150215114235</data>
+    <testo>Borruto Daniele perde il suo terzo incontro (n.415)  per 0-15. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215114828</id>
+    <data>20150215114828</data>
+    <testo>Milani Jacopo vince il suo terzo incontro (n.416)  per 11-7. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215121732</id>
+    <data>20150215121732</data>
+    <testo>Belmajdoub Younes vince il suo primo incontro (n.417)  per 26-2</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215125936</id>
+    <data>20150215125936</data>
+    <testo>De Donato Mirco vince il suo primo incontro (n.420)  per 14-7</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215125939</id>
+    <data>20150215125939</data>
+    <testo>De Donato Mirco vince il suo primo incontro (n.420)  per 14-7</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215130741</id>
+    <data>20150215130741</data>
+    <testo>Caporaso Riccardo vince il suo primo incontro (n.222)  per 15-3</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215131632</id>
+    <data>20150215131632</data>
+    <testo>Spina Lidia vince il suo primo incontro (n.323)  per 30-7</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215131733</id>
+    <data>20150215131733</data>
+    <testo>Ferrario Elena vince il suo primo  e unico incontro (n.126)  per 43-9. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215132003</id>
+    <data>20150215132003</data>
+    <testo>Mortelliti Serena perde il suo primo  e unico incontro (n.224)  per 11-23. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215132239</id>
+    <data>20150215132239</data>
+    <testo>Di Tommaso Aurora vince il suo primo  e unico incontro (n.324)  per 16-6. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215132315</id>
+    <data>20150215132315</data>
+    <testo>Di Tommaso Aurora vince il suo primo  e unico incontro (n.324)  per 16-6. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215133010</id>
+    <data>20150215133010</data>
+    <testo>Sammarco Giulia vince il suo primo  e unico incontro (n.424)  per 15-1. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215133721</id>
+    <data>20150215133721</data>
+    <testo>Pogliani Giulia vince il suo primo  e unico incontro (n.226)  per 19-18. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215134307</id>
+    <data>20150215134307</data>
+    <testo>Spagnoletti Sophia vince il suo primo  e unico incontro (n.427)  per 38-1. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215135243</id>
+    <data>20150215135243</data>
+    <testo>Belmajdoub Younes vince il suo secondo incontro (n.428)  per 18-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215140848</id>
+    <data>20150215140848</data>
+    <testo>Agrillo Simone vince il suo primo incontro (n.230)  per 9-1</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215141814</id>
+    <data>20150215141814</data>
+    <testo>De Donato Mirco vince il suo secondo incontro (n.431)  per 24-11</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215141913</id>
+    <data>20150215141913</data>
+    <testo>Binda Pienti Gabriele perde il suo primo incontro (n.431)  per 11-24. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215143120</id>
+    <data>20150215143120</data>
+    <testo>Spina Lidia vince il suo secondo incontro (n.333)  per 28-2. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215145414</id>
+    <data>20150215145414</data>
+    <testo>Caporaso Riccardo vince il suo secondo incontro (n.233)  per 25-7. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215151116</id>
+    <data>20150215151116</data>
+    <testo>Agrillo Simone vince il suo secondo incontro (n.236)  per 22-7</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215151613</id>
+    <data>20150215151613</data>
+    <testo>Belmajdoub Younes vince il suo terzo incontro (n.434)  per 19-3. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215151625</id>
+    <data>20150215151625</data>
+    <testo>Belmajdoub Younes vince il suo terzo incontro (n.434)  per 19-3. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215152317</id>
+    <data>20150215152317</data>
+    <testo>De Donato Mirco vince il suo terzo incontro (n.435)  per 32-23. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215153021</id>
+    <data>20150215153021</data>
+    <testo>Agrillo Simone vince il suo terzo incontro (n.238)  per 20-18. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215155716</id>
+    <data>20150215155716</data>
+    <testo>De Donato Alice vince il suo primo incontro (n.339)  per 39-1</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215160544</id>
+    <data>20150215160544</data>
+    <testo>Perrone Andrea perde il suo primo incontro (n.438)  per 4-12. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215160556</id>
+    <data>20150215160556</data>
+    <testo>Perrone Andrea perde il suo primo incontro (n.438)  per 4-12. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215161516</id>
+    <data>20150215161516</data>
+    <testo>Sozzi Davide vince il suo primo incontro (n.242)  per 17-3</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215161806</id>
+    <data>20150215161806</data>
+    <testo>Spina Davide perde il suo primo incontro (n.439)  per 7-10. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215162637</id>
+    <data>20150215162637</data>
+    <testo>Catalano Aurora perde il suo primo incontro (n.341)  per 10-12. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215163842</id>
+    <data>20150215163842</data>
+    <testo>Curci Simone vince il suo primo incontro (n.342)  per 10-6</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215163921</id>
+    <data>20150215163921</data>
+    <testo>Di Bartolomeo Irene vince il suo primo incontro (n.441)  per 17-12</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215165432</id>
+    <data>20150215165432</data>
+    <testo>Mortelliti Gloria vince il suo primo  e unico incontro (n.344)  per 37-1. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215165556</id>
+    <data>20150215165556</data>
+    <testo>Pass&#xE8; Proietto Davide perde il suo primo incontro (n.343)  per 0-1. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215170504</id>
+    <data>20150215170504</data>
+    <testo>Bronconi Mattia perde il suo primo incontro (n.443)  per 20-32. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215172221</id>
+    <data>20150215172221</data>
+    <testo>Ranieri Nina perde il suo primo  e unico incontro (n.250)  per 0-3. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215172626</id>
+    <data>20150215172626</data>
+    <testo>Ferrario Paolo vince il suo primo  e unico incontro (n.150)  per 6-2. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215173121</id>
+    <data>20150215173121</data>
+    <testo>Nidasi Emma perde il suo primo  e unico incontro (n.251)  per 9-22. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215173459</id>
+    <data>20150215173459</data>
+    <testo>Di Bartolomeo Lara vince il suo primo  e unico incontro (n.447)  per 13-4. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215174355</id>
+    <data>20150215174355</data>
+    <testo>De Donato Alice vince il suo secondo incontro (n.351)  per 26-18. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215174933</id>
+    <data>20150215174933</data>
+    <testo>Brusa Roberto perde il suo primo incontro (n.449)  per 6-14. E' BRONZO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215175607</id>
+    <data>20150215175607</data>
+    <testo>Sozzi Davide vince il suo secondo incontro (n.253)  per 15-4</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215181236</id>
+    <data>20150215181236</data>
+    <testo>Curci Simone vince il suo secondo incontro (n.353)  per 13-10. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215181400</id>
+    <data>20150215181400</data>
+    <testo>Curci Diego vince il suo primo  e unico incontro (n.257)  per 9-5. E' ORO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215183359</id>
+    <data>20150215183359</data>
+    <testo>Sozzi Davide perde il suo terzo incontro (n.259)  per 4-13. E' ARGENTO !</testo>
+  </cronacarow>
+  <cronacarow>
+    <id>20150215183436</id>
+    <data>20150215183436</data>
+    <testo>Di Bartolomeo Irene perde il suo secondo incontro (n.452)  per 0-1. E' ARGENTO !</testo>
+  </cronacarow>
+</cronaca>

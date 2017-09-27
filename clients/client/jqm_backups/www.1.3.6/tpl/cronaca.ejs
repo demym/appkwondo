@@ -1,0 +1,60 @@
+<% 
+
+console.log(data)
+if (role=="tkdradmin") {
+
+%>
+<li class="ui-li-static ui-body-inherit ui-first-child">
+<a class="fastClick ui-link ui-btn ui-btn-a ui-shadow ui-corner-all" onclick="addCronaca()">Inserisci cronaca</a>
+</li>
+<%
+ }
+
+%>
+<% 
+var bubblecount=0;
+var notarr=[];
+for (var i=0; i<data.length; i++)  {
+  var cl="nonvisto";
+  var lastcronaca=getCookie("lastcronaca");
+  var cname="cronacaletti_"+jcurrentgara.id;
+  //console.log("cname: "+cname);
+  var letti=getCookie(cname);
+  colog("cookie letti: "+letti)
+  if (!letti) letti="";
+  if (!lastcronaca) lastcronaca="";
+	
+  if (letti.indexOf(data[i].time)>-1) {
+  //if (data[i].time>lastcronaca) {
+    cl="visto";
+	setCookie("lastcronaca",data[i].time)
+  } else {
+  bubblecount++;
+  //notarr.push(data[i].text);
+  }
+  
+%>
+<li class="ui-li-static ui-body-inherit ui-first-child">
+
+<span class="data"><%= data[i].time %></span><br>
+<span class="testo <%= cl %>"><%= data[i].text%></span>
+<% if (data[i].image) {
+ console.log("trovata immagine")
+ var imgurl=rooturl+"/"+data[i].image;
+ %>
+<br><img src='<%=imgurl%>' width="150" height="150" />
+<% } %>
+
+<% if (role=="tkdradmin") { %>
+<span style="cursor: pointer;" onclick="delCronaca('<%=data[i].time%>')" class="ui-li-count">CANC</span>
+<% } %>                              
+
+</li>
+<% } 
+colog("cronaca letta tutta dal tpl cronaca.ejs")
+if (bubblecount>0) {
+ $("#gara #bubble").html(bubblecount).show();
+
+ } else $("#gara #bubble").html("0").hide();
+
+%>

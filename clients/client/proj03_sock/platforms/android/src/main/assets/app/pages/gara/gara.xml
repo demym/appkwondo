@@ -1,0 +1,219 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+loaded="pageLoaded" 
+navigatedTo="navigatedTo"
+xmlns:Card="nativescript-cardview"  
+ xmlns:PullRefresh="nativescript-pulltorefresh"
+>
+ 
+   <Page.actionBar>
+      
+     <!--<ActionBar title="Title">
+      <NavigationButton text="Gare"/>
+    </ActionBar>-->
+    <ActionBar title="Gara" cssClass="actionbar">
+	 <NavigationButton text="" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+  
+           
+      <ActionBar.actionItems>
+
+      
+
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+		 <ActionItem text="Guru"  ios.position="left" android.position="left" />-->
+     <android>
+        <!--<ActionItem text="{{unreadchat}}" android.systemIcon="ic_menu_start_conversation" android.position="right" tap="gotoChat" ios.position="right"/>-->
+        <!--<ActionItem visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" text="{{unreadchat}}" tap="gotoChat" class="badge" />-->
+       <!--<ActionItem text="{{unreadchat}}" cssClass="badge"/>-->
+       <ActionItem>
+  <ActionItem.actionView android.position="right">
+                        <StackLayout style="height: 20; width: 30;" orientation="horizontal" style="text-align: right"> 
+                            
+                            <Label sstyle="height: 20; font-size: 12;" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" text="{{unreadchat}}" tap="gotoChat" class="badgemini"/>
+                            <Label text="&#xf086;" tap="gotoChat" class="font-awesome baricon "/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+            </ActionItem>
+         <ActionItem android.position="popup"  text="Refresh" tap="refreshGara" />
+         <ActionItem android.position="popup"  text="Iscritti" tap="showIscritti" />
+         <ActionItem android.position="popup" text="Classifica Società" tap="showTkdt" />
+          <ActionItem android.position="popup" text="RTConsole" tap="gotoRtConsole" />
+        <ActionItem android.position="popup" text="About" />
+        </android>
+        <ios>
+        <ActionItem ios.position="right" tap="gotoChat">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf086;" class="font-awesome baricon"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+                <ActionItem ios.position="right" tap="refreshGara">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf021;" class="font-awesome baricon"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+        
+        </ios>
+      </ActionBar.actionItems>
+
+        
+    </ActionBar>
+          
+  </Page.actionBar>
+
+
+<StackLayout  orientation="vertical">
+ <!--<AbsoluteLayout top="1" left="500"  >
+   <Label text="{{ unreadchat }}" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" cssClass="badge " />
+  </AbsoluteLayout>-->
+
+  
+
+   <GridLayout cssClass="garapanel" rows="30,35" columns="3*,1*">
+
+
+ <Label row="0" colSpan="2" id="garalocationdata"  style="color: white; font-size: 13; width: 100%; margin-left: 20; margin-top: 4;" text="{{garalocationdata}}" />
+
+ <StackLayout row="1" col="0" cssClass="medals" orientation="horizontal" tap="tapMedals" >
+
+<Label cssClass="medaglie" style="color: yellow; " text="{{'ORI: '+ori}}"/>
+<Label cssClass="medaglie" style="color: silver; " text="{{'  ARG: '+argenti}}"/>
+<Label cssClass="medaglie" style="color: orange; " text="{{'  BRO: '+bronzi}}"/>
+
+</StackLayout>
+
+ <StackLayout row="1" col="1" orientation="horizontal" >
+   <ActivityIndicator visibility="visible" width="20" height="20" color="lightblue" style="right: 10; color: lightblue;" id="ai" busy="{{busy}}" />  
+  <Button  tap="filterData" cssClass="{{filteredresults ? 'filterbtn-filtered' : 'filterbtn'}}" style="vertical-align: top; height: 70;" text="Filtri"/>
+
+  </StackLayout>
+
+</GridLayout>
+   
+ <TabView cssClass="garastack"> 
+
+   <TabView.items>
+     
+     <TabViewItem title="Per match">
+  
+       <TabViewItem.view>
+       <StackLayout >
+       
+   <ListView  id="lvprog" itemTap="matchTap" items="{{mbp}}" visibility="visible">
+	 <ListView.itemTemplate>
+	 <StackLayout orientation="horizontal">
+	   <StackLayout  cssClass="session-container" width="50">
+
+		 <Image id="imgmatch" visibility="{{doc.temporeale ? 'visible': 'visible'}}" width="36" height="36" src="{{ doc.imgurl }}" />
+    
+	   </StackLayout>
+	   <StackLayout cssClass="session-container" orientation="vertical">
+       <Label text="{{ doc.matchid}}" textWrap="true" cssClass="{{'match match'+doc.matchcolor}}" />
+       	   <Label text="{{ doc.atletaname }}" textWrap="true" cssClass="atleta" />
+       <Label text="{{ doc.categoria }}" textWrap="true" cssClass="categoria" />
+
+	   <Label text="{{ doc.risultext }}" textWrap="true" cssClass="risult" />
+	  </StackLayout>
+	 </StackLayout>
+    </ListView.itemTemplate>
+      
+	</ListView>
+   
+  <StackLayout cssClass="nomatch" visibility="collapsed" >
+ <!-- <CardView class="cardStyle" margin="10" elevation="40" radius="5">-->
+  <Image src="~/img/fight.png" style="width: 300; height: 150" />
+ <Label  text="Nessun incontro trovato per questa gara"/>
+ <!--</CardView>-->
+ </StackLayout>
+
+  </StackLayout>
+
+       </TabViewItem.view>
+        
+     </TabViewItem>
+	 <TabViewItem title="Per atleta">
+       <TabViewItem.view>
+       <!--<StackLayout >-->
+       <!--<PullRefresh:PullToRefresh refresh="refreshGara" refreshing="{{busy}}">-->
+        <ListView  id="lvatleta" items="{{mba}}" itemTap="matchAtletaTap" visibility="visible"  >
+	 <ListView.itemTemplate>
+	 <StackLayout orientation="horizontal">
+	   <StackLayout cssClass="session-container" width="50">
+
+		 <Image width="36" height="36" src="{{ imgurl }}" />
+	   </StackLayout>
+	   <StackLayout cssClass="session-container" orientation="vertical" id="sv2">
+
+
+	  <Label text="{{ nome}}" textWrap="true" cssClass="atleta" />
+     <Label text="{{ categoria }}" textWrap="true" cssClass="categoria" />
+
+	   <StackLayout orientation="horizontal" id="stack">
+
+	   </StackLayout>
+	    <Repeater items="{{ matchesarray }}">
+			<Repeater.itemsLayout>
+			   <WrapLayout />
+			</Repeater.itemsLayout>
+			<Repeater.itemTemplate>
+			   <Label text="{{ matchid }}" margin="3" cssClass="{{mclass}}"/>
+			</Repeater.itemTemplate>
+		</Repeater>
+
+	    </StackLayout>
+	</StackLayout>
+
+    </ListView.itemTemplate>
+	</ListView>
+  <!--</StackLayout>-->
+  <!--</PullRefresh:PullToRefresh>-->
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Cronaca">
+       <TabViewItem.view>
+       <!--<PullRefresh:PullToRefresh refresh="refreshGara" refreshing="{{busy}}">-->
+           <ListView   id="lvcronaca" items="{{cronaca}}" visibility="visible">
+	 <ListView.itemTemplate>
+	  <StackLayout cssClass="session-container">
+	   <Label text="{{ time }}" textWrap="true" cssClass="time" />
+	   <Label text="{{ text }}" textWrap="true" cssClass="cronaca" />
+	   </StackLayout>
+    </ListView.itemTemplate>
+	</ListView>
+  <!--</PullRefresh:PullToRefresh>-->
+       </TabViewItem.view>
+     </TabViewItem>
+
+     <TabViewItem title="Dettagli gara">
+       <TabViewItem.view>
+       
+         <StackLayout id="garainfo" style="padding: 11; color: black; font-size: 14; font-weight: normal; "> 
+         <!--<PullRefresh:PullToRefresh refresh="refreshGara" refreshing="{{busy}}">-->
+           <Label text="dettagli gara"></Label>
+      <!--</PullRefresh:PullToRefresh>-->
+         </StackLayout>  
+         
+       </TabViewItem.view>
+     </TabViewItem>
+
+    
+
+
+     
+   </TabView.items>
+
+ </TabView>
+
+  
+
+
+
+
+	</StackLayout>
+
+
+
+
+</Page>

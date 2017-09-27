@@ -1,0 +1,67 @@
+var express = require('express');
+var router = express.Router();
+var WXS = require('../services/wxs');
+
+// USE FOR CLOUDFOUNDRY DEPLOYMENT
+var env = null;
+try {
+	console.log("process.env.VCAP_SERVICES = " + process.env.VCAP_SERVICES);
+	env = JSON.parse(process.env.VCAP_SERVICES);
+} catch (e) {
+	console.log(e);
+}
+console.log("env = " + env);
+var wxsprops = getEnv(env);
+var wxsclient = new WXS(wxsprops);
+
+/* GET home page. */
+router.get('/', function(req, res) {
+	res.render('cache');
+});
+
+router.get("/getCache/:key", function(req, res) {
+	var key = req.params.key;
+	console.log("get key:" + key);
+	wxsclient.get(key, function(wxsres) {
+		res.json({
+			value : wxsres
+		});
+	});
+});
+router.put("/putCache", function(req, res) {
+	var key = req.query.key;
+	var value = req.query.value;
+	wxsclient.put(key, value, function() {
+		res.json({
+			value : "Put successfully."
+		});
+	});
+});
+router.delete("/removeCache/:key", function(req, res) {
+	var key = req.params.key;
+	wxsclient.remove(key, function() {
+		res.json({
+			value : "Remove successfully."
+		});
+		console.log('finished remove');
+	});
+});
+
+/*
+ * Cache related operation
+ */
+
+/**
+ * Need to ignore the version number of DataCache when getting the credentials.
+ */
+function getEnv(vcapEnv) {
+	for ( var serviceOfferingName in vcapEnv) {
+		if (vcapEnv.hasOwnProperty(serviceOfferingName)
+				&& serviceOfferingName.indexOf("DataCache-") === 0) {
+			var serviceBindingData = vcapEnv[serviceOfferingName][0];
+			return serviceBindingData.credentials;
+		};
+	};
+}
+
+module.exports = router;

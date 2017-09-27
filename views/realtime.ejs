@@ -1,0 +1,74 @@
+<style type="text/css">
+
+.fulldiv {
+    width: 98%;
+    height: 60px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 2;
+    border-radius: 10px;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="/js/socket.io.min.js"></script>
+<script>
+
+var $=jQuery;
+var socket;
+var rooturl="http://localhost:3000";
+socket = io.connect(rooturl);
+console.log("socket connected to socket server", socket);
+
+socket.on('realtime', function (data) {
+		console.log("realtime",data);
+        refresh();
+
+});
+
+
+
+socket.on("notification",function(data){
+
+    console.log("notification",data);
+    refresh();
+})
+
+
+
+
+
+function refresh(){
+ var url=rooturl+"/realtimex/html";
+        $.get(url,function(data){
+            //console.log("data",data);
+            $("#content").remove();
+            
+            $("body").html(data);
+        })
+}
+
+
+
+</script>
+
+
+<div id="content">
+<ul style="list-style-type: none;">
+<%
+ data.forEach(function(item,idx){
+%>
+<li>
+<div class="fulldiv">
+<div><%=item.match.matchid%> - <%=item.match.atletaname%></div><br>
+<div><%=item.text%></div>
+</div>
+</li>
+
+<%
+ })
+%> 
+</ul>
+</div>

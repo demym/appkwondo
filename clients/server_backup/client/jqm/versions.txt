@@ -1,0 +1,2 @@
+cordova		5.0.0
+android		3.6.4

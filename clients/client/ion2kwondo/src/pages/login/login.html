@@ -1,0 +1,38 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row" sstyle="height: 100px;">
+    <ion-col></ion-col>
+    <ion-col style="padding: 4px !important; justify-content: center;" >
+     <img  src="assets/img/logofita.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" icon-left style="height: 40px"><ion-icon name="md-key"></ion-icon>Login</button>
+          <br>
+          <!--<button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>-->
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+</ion-content>

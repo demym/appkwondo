@@ -1,0 +1,71 @@
+
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <title>TKDRWEB</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="common.css" />
+	<script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+        <div id="atleti" data-role="page" data-theme="b">
+		<div data-role="header" data-theme="b" id="hdr" data-position="fixed">
+		<a class="ui-btn-left" href="index_app.html" data-role="button" sdata-ajax="false" data-icon="back">Home</a>
+                <h1>ATLETI</h1> <a class="ui-btn-right" href="#panel-02" data-role="button" data-icon="plus">Opzioni</a>
+            </div>
+		
+		
+<div data-role="panel" id="categorie" data-position="right" data-display="push">
+     <ul data-role="listview" data-inset="false" data-theme="b" id="categorie_atleti">
+                                    <li>
+                                        <a href="atleti2.aspx" data-ajax="true" >Tutti</a>
+                                    </li>
+                                    <li>
+                                        <a href="atleti2.aspx?cat=esordienti" data-ajax="true">Esordienti</a>
+                                    </li>
+                                    <li>
+                                        <a href="atleti2.aspx?cat=cadettib" data-ajax="true">Cadetti B</a>
+                                    </li>
+                                    <li>
+                                        <a href="atleti2.aspx?cat=cadettia" data-ajax="true">Cadetti A</a>
+                                    </li>
+                                       <li>
+                                        <a href="atleti2.aspx?cat=juniores" data-ajax="true">Juniores</a>
+                                    </li>
+                                        <li>
+                                        <a href="atleti2.aspx?cat=seniores" data-ajax="true">Senior</a>
+                                    </li>
+                                    <li>
+                                        <a href="atleti2.aspx?cat=amatoriali" data-ajax="true">Amatoriali</a>
+                                    </li>
+
+                                </ul>
+
+</div>
+               <!-- <div data-role="header" class="ui-content" data-theme="b">
+                <a class="ui-btn-text" data-role="button" href="index.html">Back</a>
+                    <h1>ATLETI (<span id="count">4</span>)
+                    </h1>
+                    <a class="ui-btn-right" href="#categorie" data-role="button" data-icon="plus">Add</a>
+                </div>-->
+
+                     <div data-role="content">
+
+
+
+					<span id="recnum"></span>
+<input id="myFilter" data-type="search" /><br>
+<ul id='ul_atleti' data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" data-filter="true" data-input="#myFilter">
+             </ul>
+                <!--</form>-->
+             </div>
+          <!--include file="footer.html" -->
+        </div>
+   
+</body>
+</html>

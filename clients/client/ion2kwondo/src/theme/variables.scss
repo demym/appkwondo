@@ -1,0 +1,167 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #387ef5,
+  //primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  rtfab:      #555,
+  rtfabgreen: #325f00
+  
+);
+$toolbar-background: #222;
+$segment-button-md-text-color-activated: yellow;
+/*$toolbar-background:#4178be;
+$toolbar-background:                          #049a55 ;
+
+$tabs-md-tab-icon-color-active:                  #049a55 ;
+$tabs-md-tab-text-color-active:#049a55 ;*/
+$app-direction: ltr;
+
+
+ion-header {
+  background: #222;
+}
+
+.bpgreen {
+  color: #049a55;
+}
+
+ .h2wrap {
+   display:inline; 
+   white-space: normal;
+ }
+
+ .autore {
+   font-size: 11px;
+   color: gray;
+   font-style: italic;
+ }
+
+ .match {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.perso {
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+}
+.vinto {
+  font-size: 14px;
+  font-weight: bold;
+  color: green;
+}
+.danondisputare {
+  font-size: 14px;
+  font-weight: normal;
+  color: #222;
+   text-decoration: line-through;
+}
+.nondisputato {
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+
+}
+
+.soft {
+  font-size: 14px;
+  font-weight: normal;
+  color: #333333; 
+}
+.result {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffeeff; 
+}
+.atleta {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.categoria {
+    font-size: 12px;
+    color: black;
+
+}
+
+.benvenuto,.server,.admin {
+  font-style: italic;
+}
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+

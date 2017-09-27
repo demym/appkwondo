@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+ xmlns:PullRefresh="nativescript-pulltorefresh"
+loaded="pageLoaded">
+   <ActionBar title="Connessioni" cssClass="actionbar">
+   <NavigationButton android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+    <ActionBar.actionItems>
+	    
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+        <ActionItem text="right" ios.position="right"/>-->
+        <ActionItem text="Refresh"   ios.position="right"  android.position="popup" tap="fetchConnections"/>
+      </ActionBar.actionItems>
+	</ActionBar> 
+
+ <GridLayout rows="40,*,50">
+ <Label row="0"  text="{{ 'Utenti connessi: '+conncount }}" textWrap="true" class="lvitem" /> 
+ <PullRefresh:PullToRefresh row="1" refresh="refetch" refreshing="{{loading}}">
+  <ListView id="lv1" itemTap="listViewItemTap">
+	 <ListView.itemTemplate>
+   <GridLayout rows="40,35" columns="*,200" style="padding: 2; margin: 2 2 2 2;">
+       <Label row="0" col="0" text="{{ nickname }}" textWrap="true" class="lvitem" style="width: 100%;" />
+       <Label row="1" col="0" text="{{ device + ' ' +appversion + ' '+ipaddress }}" textWrap="true" class="lvitem" style="width: 100%; font-size: 12; color: gray;" />
+       
+    </GridLayout>     
+    </ListView.itemTemplate>
+	</ListView>
+    </PullRefresh:PullToRefresh>
+	<Button row="2" text="Applica" style="width: 100%"  />
+</GridLayout>
+
+</Page>

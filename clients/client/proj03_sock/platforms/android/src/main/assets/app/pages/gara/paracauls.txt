@@ -1,0 +1,61 @@
+refreshAll(function (data) {
+		console.log("refreshAll done");
+		var lb = page.getElementsByClassName('nomatch')[0];
+		//lb.android.setCardElevation(10);
+
+		if (gara.matchesbyprog.rows.length == 0) {
+			lb.visibility = "visible";
+			lvprog.visibility = "collapsed";
+			lvatleta.visibility = "collapsed";
+			lvcronaca.visibility = "collapsed";
+
+
+		} else {
+			lb.visibility = "collapsed";
+			lvprog.visibility = "visible";
+			lvatleta.visibility = "visible";
+			lvcronaca.visibility = "visible";
+		}
+		utils.conslog("lbvis", lb.visibility);
+		source.set("unreadchat", gs.unreadchat.length);
+
+		var width1 = platform.screen.mainScreen.widthDIPs;
+		var width2 = platform.screen.mainScreen.widthPixels;
+		console.log("width", width1, width2);
+
+		var pos = parseInt(width1, 10) - 30;
+
+		console.log("pos", pos);
+
+		source.set("chatbadge", String(pos));
+
+	})
+
+	return;
+
+	utils.conslog("refreshing gara");
+	refreshGara(function () {
+
+		console.log("refreshGara done", navigated);
+		//var lb=page.getViewById("nomatch");
+		var lb = page.getElementsByClassName('nomatch')[0];
+		//lb.android.setCardElevation(10);
+		if (gara.matchesbyprog.rows.length == 0) {
+			lb.visibility = "visible";
+
+
+		} else lb.visibility = "collapsed";
+		utils.conslog("lbvis", lb.visibility);
+
+		/*utils.conslog("trying to write current gara to file");
+		utils.conslog(JSON.stringify(gara));
+		file.writeJsonFile("currentgara.json",gara,function(d){
+			utils.conslog(JSON.stringify(d));
+			navigated=true;
+		})*/
+
+
+
+	});
+
+

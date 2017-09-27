@@ -1,0 +1,139 @@
+
+	<% 
+	console.log("matchesbyatleta4",data)
+	var dl=data.rows.length;
+	
+	//alert(dl)
+	//console.log("data: ",data)
+	if (dl>0) {
+	
+	for(var i=0; i<data.rows.length; i++) { 
+	    var doc=data.rows[i];
+		var st="";
+		//console.log("doc",doc)
+
+		var garaid=jGara.gara.rows[0].doc.id;
+		var atlid=doc.id;
+		var nkey=garaid+"_"+atlid;
+		
+		var notif_image="";
+
+		var notif_found=false;
+		for (var x=0; x<notifiche_temporeale.length; x++){
+			var ntr=notifiche_temporeale[x];
+			//console.log("ntr",ntr,"nkey",nkey);
+			if (ntr==nkey) notif_found=true;
+
+		}
+		if (notif_found) {
+			notif_image="<img src='img/notify2.png' width='25' height='25' />";
+			//console.log("trovata notifica");
+
+		} 
+
+		
+	
+	%>
+	
+	<li data-icon="false" class="ui-li-has-thumb ui-first-child">
+	<a id="atleta<%= doc.id %>" onclick="showMatchesForAtleta('<%= doc.id %>','<%= doc.nome %>','<%= doc.datanascita %>');  $.mobile.changePage('#matchesatleta');" href="#" data-rel="popup" shref="#matchesatleta" data-ajax="false" class="fastClick ui-btn" style="padding: 2px 2px 2px 2px;">
+	<% 
+	var med="matchtoplay";
+	
+
+	
+	for (var j=0; j<doc.matchesarray.length; j++)
+	{
+	 var match=doc.matchesarray[j];
+	 
+	 if (match.medagliamatch){
+	 if (match.medagliamatch!="none") med="medaglia_"+match.medagliamatch;
+	 }
+	 }
+	 
+	
+	 %>
+	  <table width="100%">
+<tr>
+<td width="60px" valign="top" style="padding: 5px">
+<div>
+	<img class="cardnomargin simgicon sui-li-icon sui-corner-none" src="images/<%= med %>.png" style="width: 45px; height: 45px">
+	</div>
+	</td>
+	<td>
+	<span class="categoria"><%= getCategoria(doc.datanascita).toUpperCase() %></span><br>
+	<span class="atleta"><%= doc.nome %></span><br>
+	<span class="match">
+	<% 
+	
+
+	
+	for (var j=0; j<doc.matchesarray.length; j++)
+	{
+	 var match=doc.matchesarray[j];
+	 var color="";
+	 if (match.dadisputare=="yes")
+	 {
+	  if (match.disputato=="yes") 
+	 {
+	  if (match.vinto=="yes") {
+	   color="green";
+	  }else color="red";
+	 } 
+	 } else
+	 {
+	  color="black";
+	 }
+	 
+	%>
+	 <span class="<%= color %>"><%= doc.matchesarray[j].matchid %></span>
+	<%
+	}
+	%>
+	</span>
+	</td>
+	<td width="23px" valign="top">
+<div class="corazza" style="sfloat: right; right: 12px; width: 20px; height: 20px; "><%=notif_image%></div>
+</td>
+	</tr>
+	</table>
+	</a>
+	</li>
+  
+   <% 
+    }
+ 
+  
+  
+   } else {    //else del dl=0
+   
+   var filttext="";
+   if (isFiltered) filttext=" (filtro applicato)"
+   %>
+  
+   <div class="card"  style="text-align: center">
+	<div class="card-image" style="text-align: center; stop: 15px; height: 105px; ">
+		<img alt="home" src="images/fight.png" style="width: 100px; height: 100px;"/>
+		<!--<h2>Card Title</h2>-->
+	</div>
+	<!--<h1>Pools non disponibili</h1>-->
+	<p style="background: lightblue">Nessun incontro trovato <%=filttext%></p>
+</div>
+
+<!--
+<div class="card">
+ <div>
+	<p style="background: lightblue" class="iscrittilength"></p>
+ </div>
+ <div>
+	<ul data-role="listview" class="ui-group-theme-a ui-listview iscritti_nomatches">
+	</ul>
+ <div>
+</div>
+-->
+   
+   <%
+   
+   }
+   
+   %>

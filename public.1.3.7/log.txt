@@ -1,0 +1,1709 @@
+20170128230748 - 
+20170128230748 - Listening on port 3000
+20170128230748 - -----------------------------------------------------------
+20170128230748 - -----------------------------------------------------------
+20170128230748 - AppKwonDo server started
+20170128231133 - 
+20170128231133 - -----------------------------------------------------------
+20170128231133 - AppKwonDo server started
+20170128231133 - Listening on port 3000
+20170128231133 - -----------------------------------------------------------
+20170128231222 - 
+20170128231222 - -----------------------------------------------------------
+20170128231222 - AppKwonDo server started
+20170128231222 - Listening on port 3000
+20170128231222 - -----------------------------------------------------------
+20170128231559 - 
+20170128231559 - -----------------------------------------------------------
+20170128231559 - AppKwonDo server started
+20170128231559 - Listening on port 3000
+20170128231559 - -----------------------------------------------------------
+20170129001442 - 
+20170129001442 - -----------------------------------------------------------
+20170129001442 - AppKwonDo server started
+20170129001442 - Listening on port 3000
+20170129001442 - -----------------------------------------------------------
+20170129001501 - 
+20170129001501 - -----------------------------------------------------------
+20170129001501 - AppKwonDo server started
+20170129001501 - Listening on port 3000
+20170129001501 - -----------------------------------------------------------
+20170130095823 - 
+20170130095823 - -----------------------------------------------------------
+20170130095823 - AppKwonDo server started
+20170130095823 - Listening on port 3000
+20170130095823 - -----------------------------------------------------------
+20170131102619 - 
+20170131102619 - -----------------------------------------------------------
+20170131102619 - AppKwonDo server started
+20170131102619 - Listening on port 3000
+20170131102619 - -----------------------------------------------------------
+20170131102619 - SYNC AV MEDIA FILES
+20170131102619 - downloading file thumb_20160404102538_20160413195555.png
+20170131102619 - downloading file 20160404102538_20160413195555.png
+20170131102619 - downloading file 20160404102538_20160415223511.jpg
+20170131102619 - downloading file 20160404102538_20160415230011.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415225158.jpg
+20170131102619 - downloading file 20160404102538_20160415223014.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415181238.jpg
+20170131102619 - downloading file 20160404102538_20160415123641.m4a
+20170131102619 - downloading file 20160404102538_20160415230550.jpg
+20170131102619 - downloading file 20160404102538_20160414225025.m4a
+20170131102619 - downloading file 20160404102538_20160415222306.jpg
+20170131102619 - downloading file 20160404102538_20160415153440.png
+20170131102619 - downloading file 20160404102538_20160415152841.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415222539.jpg
+20170131102619 - downloading file thumb_20160404102538_20160414073639.jpg
+20170131102619 - downloading file thumb_20160404102538_20160413201811.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415154854.jpg
+20170131102619 - downloading file 20160404102538_20160414224309.m4a
+20170131102619 - downloading file thumb_20160416230741_20160423074457.png
+20170131102619 - downloading file 20160404102538_20160414073639.jpg
+20170131102619 - downloading file thumb_20160404102538_20160414085939.png
+20170131102619 - downloading file thumb_20160404102538_20160415230607.jpg
+20170131102619 - downloading file 20160404102538_20160413195137.jpg
+20170131102619 - downloading file 20160404102538_20160415225628.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415222450.jpg
+20170131102619 - downloading file 20160404102538_20160415181238.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415222235.jpg
+20170131102619 - downloading file 20160404102538_20160416235244.jpg
+20170131102619 - downloading file 20160404102538_20160415230127.jpg
+20170131102619 - downloading file thumb_20160404102538_20160413201338.jpg
+20170131102619 - downloading file 20160404102538_20160413201338.jpg
+20170131102619 - downloading file 20160404102538_20160415230607.jpg
+20170131102619 - downloading file 20160404102538_20160415093802.m4a
+20170131102619 - downloading file 20160404102538_20160415225158.jpg
+20170131102619 - downloading file 20160404102538_20160415143813.png
+20170131102619 - downloading file listfiles.php
+20170131102619 - downloading file 20160404102538_20160415233701.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415154419.png
+20170131102619 - downloading file thumb_20160404102538_20160415233354.jpg
+20170131102619 - downloading file 20160404102538_20160415135954.m4a
+20170131102619 - downloading file 20160404102538_20160413195231.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415230945.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415230127.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415152841.jpg
+20170131102619 - downloading file thumb_20160404102538_20160414230208.jpg
+20170131102619 - downloading file 20160404102538_20160414085939.png
+20170131102619 - downloading file thumb_20160404102538_20160415223511.jpg
+20170131102619 - downloading file 20160404102538_20160414230208.jpg
+20170131102619 - downloading file thumb_20160404102538_20160416235244.jpg
+20170131102619 - downloading file 20160404102538_20160415181238.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415224343.jpg
+20170131102619 - downloading file 20160509080737.jpg.jpg
+20170131102619 - downloading file thumb_20160404102538_20160413195520.jpg
+20170131102619 - downloading file 20160404102538_20160415195118.m4a
+20170131102619 - downloading file thumb_20160416230741_20160423112609.png
+20170131102619 - downloading file 20160404102538_20160415222539.jpg
+20170131102619 - downloading file 20160404102538_20160415154624.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415233558.png
+20170131102619 - downloading file 20160404102538_20160414140328.png
+20170131102619 - downloading file thumb_20160404102538_20160415230011.jpg
+20170131102619 - downloading file 20160404102538_20160415154854.m4a
+20170131102619 - downloading file 20160404102538_20160415222202.jpg
+20170131102619 - downloading file 20160404102538_20160413195520.jpg
+20170131102619 - downloading file 20160404102538_20160415154854.jpg
+20170131102619 - downloading file 20160416230741_20160423074457.png
+20170131102619 - downloading file 20160404102538_20160415233558.png
+20170131102619 - downloading file 20160404102538_20160415152841.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415221634.jpg
+20170131102619 - downloading file 20160404102538_20160415222450.jpg
+20170131102619 - downloading file 20160404102538_20160414140328.m4a
+20170131102619 - downloading file 20160404102538_20160415231756.jpg
+20170131102619 - downloading file 20160404102538_20160413201811.jpg
+20170131102619 - downloading file 20160404102538_20160415222235.jpg
+20170131102619 - downloading file 20160416230741_20160423112609.png
+20170131102619 - downloading file 20160404102538_20160415072415.m4a
+20170131102619 - downloading file thumb_20160404102538_20160414140328.png
+20170131102619 - downloading file thumb_20160404102538_20160415222202.jpg
+20170131102619 - downloading file thumb_20160509080737.jpg.jpg
+20170131102619 - downloading file 20160404102538_20160413205359.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415143813.png
+20170131102619 - downloading file thumb_20160404102538_20160415225628.jpg
+20170131102619 - downloading file 20160404102538_20160415224343.jpg
+20170131102619 - downloading file chat_20160425122309.json
+20170131102619 - downloading file thumb_20160404102538_20160415223014.jpg
+20170131102619 - downloading file 20160404102538_20160415143813.m4a
+20170131102619 - downloading file 20160404102538_20160416235244.m4a
+20170131102619 - downloading file 20160404102538_20160415101318.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415154624.jpg
+20170131102619 - downloading file 20160404102538_20160415154419.png
+20170131102619 - downloading file 20160404102538_20160415231737.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415230550.jpg
+20170131102619 - downloading file 20160404102538_20160415221634.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415231737.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415233701.jpg
+20170131102619 - downloading file 20160404102538_20160414073639.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415222306.jpg
+20170131102619 - downloading file thumb_20160404102538_20160413195137.jpg
+20170131102619 - downloading file 20160404102538_20160415230945.jpg
+20170131102619 - downloading file thumb_20160404102538_20160415153440.png
+20170131102619 - downloading file 20160404102538_20160415153440.m4a
+20170131102619 - downloading file thumb_20160404102538_20160415231756.jpg
+20170131102619 - downloading file 20160404102538_20160415233354.jpg
+20170131102619 - downloading file thumb_20160404102538_20160413195231.jpg
+20170131102620 - SYNC AV CHAT MEDIA FILES
+20170131102620 - downloading file 20161001094646.jpg
+20170131102620 - downloading file 20160702170812.m4a
+20170131102620 - downloading file 20160510152039.m4a
+20170131102620 - downloading file 20160514154754.jpg
+20170131102620 - downloading file 20160509103253.jpg
+20170131102620 - downloading file 20160509195027.m4a
+20170131102620 - downloading file 20170128081618.m4a
+20170131102620 - downloading file 20160702092404.jpg
+20170131102620 - downloading file 20160514121937.m4a
+20170131102620 - downloading file 20161002141909.jpg
+20170131102620 - downloading file 20160510113321.m4a
+20170131102620 - downloading file 20160515164325.jpg
+20170131102620 - downloading file 20161002150259.jpg
+20170131102620 - downloading file 20161001104147.jpg
+20170131102620 - downloading file 20160509172902.jpg
+20170131102620 - downloading file 20160510112413.mp3
+20170131102620 - downloading file 20160514144002.jpg
+20170131102620 - downloading file 20160515125320.jpg
+20170131102620 - downloading file .htaccess
+20170131102620 - downloading file 20160702190902.jpg
+20170131102620 - downloading file 20160509140004.m4a
+20170131102620 - downloading file 20160515165018.jpg
+20170131102620 - downloading file 20161106100021.jpg
+20170131102620 - downloading file 20160510190105.m4a
+20170131102620 - downloading file 20160510182141.m4a
+20170131102620 - downloading file 20160702140742.jpg
+20170131102620 - downloading file 20160510135651.m4a
+20170131102620 - downloading file 20161105110933.jpg
+20170131102620 - downloading file 20160702174604.jpg
+20170131102620 - downloading file 20160702195750.jpg
+20170131102620 - downloading file 20161105150114.m4a
+20170131102620 - downloading file 20160702182040.jpg
+20170131102620 - downloading file 20160515095611.jpg
+20170131102620 - downloading file 20160515121633.m4a
+20170131102620 - downloading file 20161105135305.m4a
+20170131102620 - downloading file 20160514120507.jpg
+20170131102620 - downloading file 20160702105841.m4a
+20170131102620 - downloading file 20160514154406.m4a
+20170131102620 - downloading file 20160512095449.m4a
+20170131102620 - downloading file 20160514120504.jpg
+20170131102620 - downloading file 20161105085859.m4a
+20170131102620 - downloading file 20161105150441.m4a
+20170131102620 - downloading file 20160510223828.m4a
+20170131102620 - downloading file 20160514153140.m4a
+20170131102620 - downloading file 20161002160139.jpg
+20170131102620 - downloading file 20160514173659.m4a
+20170131102620 - downloading file 20160510134719.m4a
+20170131102620 - downloading file 20160515144638.jpg
+20170131102620 - downloading file 20160510133448.m4a
+20170131102620 - downloading file 20161002113405.jpg
+20170131102620 - downloading file 20161105140740.jpg
+20170131102620 - downloading file 20161105111345.jpg
+20170131102620 - downloading file 20160511210509.m4a
+20170131102620 - downloading file 20160702190920.jpg
+20170131102620 - downloading file 20160509191103.jpg
+20170131102620 - downloading file 20160514120418.jpg
+20170131102620 - downloading file 20160509135907.m4a
+20170131102620 - downloading file 20160514150001.jpg
+20170131102620 - downloading file 20161002093416.jpg
+20170131102620 - downloading file 20160514173305.m4a
+20170131102620 - downloading file 20161204093017.jpg
+20170131102620 - downloading file 20160514170234.jpg
+20170131102620 - downloading file 20160702093314.m4a
+20170131102620 - downloading file 20161001155535.jpg
+20170131102620 - downloading file 20160702091437.jpg
+20170131102620 - downloading file 20160515164911.jpg
+20170131102620 - downloading file 20161002113745.m4a
+20170131102620 - downloading file 20161002091426.m4a
+20170131102620 - downloading file listfiles.php
+20170131102620 - downloading file 20160509104348.jpg
+20170131102620 - downloading file 20161001163703.m4a
+20170131102620 - downloading file 20161002155138.m4a
+20170131102620 - downloading file 20160514095807.jpg
+20170131102620 - downloading file 20161105140508.m4a
+20170131102620 - downloading file 20160514141007.jpg
+20170131102620 - downloading file 20160702092540.jpg
+20170131102620 - downloading file 20160514180730.m4a
+20170131102620 - downloading file 20170129083211.m4a
+20170131102620 - downloading file 20160514144837.jpg
+20170131102620 - downloading file 20160512095052.m4a
+20170131102620 - downloading file 20160510223245.m4a
+20170131102620 - downloading file 20161204100401.jpg
+20170131102620 - downloading file 20160509190706.jpg
+20170131102620 - downloading file 20160515164858.jpg
+20170131102620 - downloading file 20160509140053.m4a
+20170131102620 - downloading file 20160514141132.jpg
+20170131102620 - downloading file 20160515165028.jpg
+20170131102620 - downloading file 20160515150522.jpg
+20170131102620 - downloading file 20161106085703.m4a
+20170131102620 - downloading file 20160702175535.m4a
+20170131102620 - downloading file 20160512095517.jpg
+20170131102620 - downloading file 20160512075628.jpg
+20170131102620 - downloading file 20161023082441.jpg
+20170131102620 - downloading file 20160702112936.jpg
+20170131102620 - downloading file 20160702170023.jpg
+20170131102620 - downloading file 20160514085902.m4a
+20170131102620 - downloading file 20160515144133.m4a
+20170131102620 - downloading file 20160702103737.m4a
+20170131102620 - downloading file 20161002104915.jpg
+20170131102620 - downloading file 20161105084241.m4a
+20170131102620 - downloading file 20160512075025.jpg
+20170131102620 - downloading file 20160515152855.m4a
+20170131102620 - downloading file 20161001160449.m4a
+20170131102620 - downloading file 20161105085243.jpg
+20170131102620 - downloading file 20161105090933.jpg
+20170131102620 - downloading file 20161002142549.jpg
+20170131102620 - downloading file 20160514155021.jpg
+20170131102620 - downloading file 20161105145236.m4a
+20170131102620 - downloading file 20160509104751.m4a
+20170131102620 - downloading file 20161001154812.m4a
+20170131102620 - downloading file 20160702170438.m4a
+20170131102620 - downloading file 20160514120406.m4a
+20170131102620 - downloading file 20160702115716.jpg
+20170131102620 - downloading file 20160702095844.jpg
+20170131102620 - downloading file 20160509095414.jpg.jpg
+20170131102620 - downloading file 20160509100049.jpg
+20170131102620 - downloading file 20161105102302.jpg
+20170131102620 - downloading file 20160510111507.mp3
+20170131102620 - downloading file 20160510215124.m4a
+20170131102620 - downloading file 20160512101004.m4a
+20170131102620 - downloading file 20161002111830.jpg
+20170131102620 - downloading file 20161001171703.jpg
+20170131102620 - downloading file 20161001155426.m4a
+20170131102620 - downloading file 20161001120804.jpg
+20170131102620 - downloading file 20160702092349.jpg
+20170131102620 - downloading file 20161105150210.m4a
+20170131102620 - downloading file 20160514173004.m4a
+20170131102620 - downloading file 20161001144728.m4a
+20170131102620 - downloading file 20160515103222.jpg
+20170131102620 - downloading file 20160702092124.jpg
+20170131102620 - downloading file 20160510220239.m4a
+20170131102620 - downloading file 20161105145154.jpg
+20170131102620 - downloading file 20160510185622.m4a
+20170131102620 - downloading file 20161105084312.jpg
+20170131102620 - downloading file 20160702092955.jpg
+20170131102620 - downloading file 20160515163008.m4a
+20170131102620 - downloading file 20160515120618.jpg
+20170131102620 - downloading file 20161001095554.jpg
+20170131102620 - downloading file 20160515163157.m4a
+20170131102620 - downloading file 20161105094457.jpg
+20170131102620 - downloading file 20161106122034.jpg
+20170131102620 - downloading file 20160702141109.m4a
+20170131102620 - downloading file 20161203092516.m4a
+20170131102620 - downloading file 20160514173624.m4a
+20170131102620 - downloading file 20160515163141.m4a
+20170131102620 - downloading file 20161204110701.jpg
+20170131102620 - downloading file 20160512095925.m4a
+20170131102620 - downloading file 20160509140217.m4a
+20170131102620 - downloading file 20160514155856.m4a
+20170131102620 - downloading file 20160509101455.jpg
+20170131102620 - downloading file 20160510111723.mp3
+20170131102620 - downloading file 20160515143215.jpg
+20170131102620 - downloading file 20160514100520.m4a
+20170131102620 - downloading file 20160702103800.m4a
+20170131102620 - downloading file 20160515160007.m4a
+20170131102620 - downloading file 20160514151257.jpg
+20170131102620 - downloading file 20160702121609.jpg
+20170131102620 - downloading file 20160514131639.m4a
+20170131102620 - downloading file 20160515160030.m4a
+20170131102620 - downloading file 20161204093902.jpg
+20170131102620 - downloading file 20160514120614.m4a
+20170131102620 - downloading file 20160514141311.m4a
+20170131102620 - downloading file 20160515162827.m4a
+20170131102620 - downloading file 20160514095305.jpg
+20170131102620 - downloading file 20160515085752.m4a
+20170131102620 - downloading file 20160512093442.m4a
+20170131102620 - downloading file 20160514142552.m4a
+20170131102620 - downloading file 20160515151454.jpg
+20170131102620 - downloading file 20160513130037.m4a
+20170131102620 - downloading file 20161001121934.m4a
+20170131102620 - downloading file 20160702105206.m4a
+20170131102620 - downloading file 20161106103858.jpg
+20170131102620 - downloading file 20161105145741.m4a
+20170131102620 - downloading file 20161105085640.jpg
+20170131102620 - downloading file 20160702105733.jpg
+20170131102620 - downloading file 20161023082506.m4a
+20170131102620 - downloading file 20161002102205.m4a
+20170131102620 - downloading file 20160702083523.m4a
+20170131102620 - downloading file 20160702111010.jpg
+20170131102620 - downloading file 20160515142515.jpg
+20170131102620 - downloading file 20161204100205.jpg
+20170131102620 - downloading file 20160515141716.jpg
+20170131102620 - downloading file 20160514093939.jpg
+20170131102620 - downloading file 20160512092342.jpg
+20170131102620 - downloading file 20161001142542.jpg
+20170131102620 - downloading file 20160702092453.jpg
+20170131102620 - downloading file 20160702092636.jpg
+20170131102620 - downloading file 20161001091430.m4a
+20170131102620 - downloading file 20160512074509.jpg
+20170131102620 - downloading file 20160510221027.m4a
+20170131102620 - downloading file 20161001120346.m4a
+20170131102620 - downloading file 20160509102252.jpg
+20170131102620 - downloading file 20160512094359.m4a
+20170131102620 - downloading file 20160510182453.m4a
+20170131102620 - downloading file 20161105142700.jpg
+20170131102620 - downloading file 20160510112953.mp3
+20170131102620 - downloading file 20160514150415.jpg
+20170131102620 - downloading file 20160514183955.m4a
+20170131102620 - downloading file 20160510184558.m4a
+20170131102620 - downloading file 20161106091052.jpg
+20170131102620 - downloading file 20161002143854.m4a
+20170131102620 - downloading file 20160702121337.jpg
+20170131102620 - downloading file 20160514142932.m4a
+20170131102620 - downloading file 20160514100028.jpg
+20170131102620 - downloading file 20160510185335.m4a
+20170131102620 - downloading file 20161204094425.jpg
+20170131102620 - downloading file 20161204131618.jpg
+20170131102620 - downloading file 20160702161723.m4a
+20170131102620 - downloading file 20160510181901.m4a
+20170131102620 - downloading file 20160513144220.m4a
+20170131102620 - downloading file 20160510221247.m4a
+20170131102620 - downloading file 20160514173630.m4a
+20170131102620 - downloading file 20160515094421.jpg
+20170131102620 - downloading file 20161106091144.jpg
+20170131102620 - downloading file 20160702165902.m4a
+20170131102620 - downloading file 20161105144401.jpg
+20170131102620 - downloading file 20160514141333.m4a
+20170131102620 - downloading file 20160510113159.mp3
+20170131102620 - downloading file 20160510135027.m4a
+20170131102620 - downloading file 20160515141504.jpg
+20170131102620 - downloading file 20160514101129.m4a
+20170131102620 - downloading file 20160514120923.m4a
+20170131102620 - downloading file 20161002091630.jpg
+20170131102620 - downloading file 20160514170007.jpg
+20170131102620 - downloading file 20161105135459.m4a
+20170131102620 - downloading file 20160512100938.jpg
+20170131102620 - downloading file 20160512093920.m4a
+20170131102620 - downloading file 20160514120450.m4a
+20170131102620 - downloading file 20160510184720.m4a
+20170131102620 - downloading file 20160510185944.m4a
+20170131102620 - downloading file 20161105135228.m4a
+20170131102620 - downloading file 20161002112627.m4a
+20170131102620 - downloading file 20160514173103.m4a
+20170131102620 - downloading file 20161105085715.jpg
+20170131102620 - downloading file 20160514094644.m4a
+20170131102620 - downloading file 20160702141013.m4a
+20170131102620 - downloading file 20160702091424.jpg
+20170131102620 - downloading file 20161002100918.jpg
+20170131102620 - downloading file 20160510182033.m4a
+20170131102620 - downloading file 20160512095906.jpg
+20170131102620 - downloading file 20161023090946.jpg
+20170131102620 - downloading file 20161001094432.jpg
+20170131102620 - downloading file 20161001162906.jpg
+20170131102620 - downloading file 20160509190620.m4a
+20170131102620 - downloading file 20161002115212.jpg
+20170131102620 - downloading file 20161001101317.jpg
+20170131102620 - downloading file 20161019172951.jpg
+20170131102620 - downloading file 20160510215947.m4a
+20170131102620 - downloading file 20160514121906.m4a
+20170131102620 - downloading file 20161105145859.m4a
+20170131102620 - downloading file 20160509172934.jpg
+20170131102620 - downloading file 20160509171412.jpg
+20170131102620 - downloading file 20160702111941.jpg
+20170131102620 - downloading file 20160514121822.m4a
+20170131102620 - downloading file 20160702115908.m4a
+20170131102620 - downloading file 20160515172102.m4a
+20170131102620 - downloading file 20160515164948.jpg
+20170131102748 - 
+20170131102748 - -----------------------------------------------------------
+20170131102748 - AppKwonDo server started
+20170131102748 - Listening on port 3000
+20170131102748 - -----------------------------------------------------------
+20170131102830 - 
+20170131102830 - -----------------------------------------------------------
+20170131102830 - AppKwonDo server started
+20170131102830 - Listening on port 3000
+20170131102830 - -----------------------------------------------------------
+20170131102916 - 
+20170131102916 - -----------------------------------------------------------
+20170131102916 - AppKwonDo server started
+20170131102916 - Listening on port 3000
+20170131102916 - -----------------------------------------------------------
+20170131102921 - 20161004132713 - 20151019175533
+20170131102921 - 20161004132713 - 20151002072527
+20170131102921 - 20161004132713 - 20150717133646
+20170131102921 - 20161004132713 - 20150702085226
+20170131102921 - 20161004132713 - 20150605173421
+20170131102921 - 20161004132713 - 20150519155450
+20170131102921 - 20161004132713 - 20150503185145
+20170131102921 - 20161004132713 - 20150407104204
+20170131102921 - 20161004132713 - 20150315142536
+20170131102921 - 20161004132713 - 20150301094216
+20170131102921 - 20161004132713 - 20150221061124
+20170131102921 - 20161004132713 - 20150207143132
+20170131102921 - 20161004132713 - 20141223154731
+20170131102921 - 20161004132713 - 20141113002018
+20170131102921 - 20161004132713 - 20141110152139
+20170131102921 - 20161004132713 - 001
+20170131102921 - 20161004132713 - 002
+20170131102921 - 20161004132713 - 20151113153332
+20170131102921 - 20161004132713 - 20151207165701
+20170131102921 - 20161004132713 - 20160210194354
+20170131102921 - 20161004132713 - 20160301215228
+20170131102921 - 20161004132713 - 20160302153036
+20170131102921 - 20161004132713 - 20160416230741
+20170131102921 - 20161004132713 - 20160426074440
+20170131102921 - 20161004132713 - 20160429125351
+20170131102921 - 20161004132713 - 20160520111916
+20170131102921 - 20161004132713 - 20160606094905
+20170131102921 - 20161004132713 - 20160610185130
+20170131102921 - 20161004132713 - 20160831090455
+20170131102921 - 20161004132713 - 20160919115847
+20170131102921 - 20161004132713 - 20160920224834
+20170131102921 - 20161004132713 - 20161004132713
+20170131102921 - 20161004132713 - 20161024192901
+20170131102921 - 20161004132713 - 20161118185059
+20170131102921 - 20161004132713 - 20170117092109
+20170131102921 - 20161004132713 - 20170117092433
+20170131102921 - 20161004132713 - 20170117092618
+20170131103249 - 
+20170131103249 - -----------------------------------------------------------
+20170131103249 - AppKwonDo server started
+20170131103249 - Listening on port 3000
+20170131103249 - -----------------------------------------------------------
+20170131103325 - 
+20170131103325 - -----------------------------------------------------------
+20170131103325 - AppKwonDo server started
+20170131103325 - Listening on port 3000
+20170131103325 - -----------------------------------------------------------
+20170131103444 - 
+20170131103444 - -----------------------------------------------------------
+20170131103444 - AppKwonDo server started
+20170131103444 - Listening on port 3000
+20170131103444 - -----------------------------------------------------------
+20170131104215 - 
+20170131104215 - -----------------------------------------------------------
+20170131104215 - AppKwonDo server started
+20170131104215 - Listening on port 3000
+20170131104215 - -----------------------------------------------------------
+20170131104350 - 
+20170131104350 - -----------------------------------------------------------
+20170131104350 - AppKwonDo server started
+20170131104350 - Listening on port 3000
+20170131104350 - -----------------------------------------------------------
+20170131104352 - get TKDT gara 46
+20170131104354 - gettkdtgiorno 
+71
+20170131104403 - gettkdtgiorno 
+72
+20170131105040 - 
+20170131105040 - -----------------------------------------------------------
+20170131105040 - AppKwonDo server started
+20170131105040 - Listening on port 3000
+20170131105040 - -----------------------------------------------------------
+20170131105050 - get TKDT gara 46
+20170131105052 - gettkdtgiorno 
+71
+20170131105102 - gettkdtgiorno 
+72
+20170131105158 - get TKDT gara 54
+20170131105159 - gettkdtgiorno 
+80
+20170131105203 - gettkdtgiorno 
+81
+20170131105309 - get TKDT gara 22
+20170131105310 - gettkdtgiorno 
+32
+20170131105620 - get TKDT gara 44
+20170131105621 - gettkdtgiorno 
+69
+20170131105712 - get TKDT gara 44
+20170131105713 - gettkdtgiorno 
+69
+20170131110657 - 
+20170131110657 - -----------------------------------------------------------
+20170131110657 - AppKwonDo server started
+20170131110657 - Listening on port 3000
+20170131110657 - -----------------------------------------------------------
+20170131110718 - get TKDT gara 31
+20170131110719 - gettkdtgiorno 
+42
+20170131110721 - gettkdtgiorno 
+43
+20170131120447 - 
+20170131120447 - -----------------------------------------------------------
+20170131120447 - AppKwonDo server started
+20170131120447 - Listening on port 3000
+20170131120447 - -----------------------------------------------------------
+20170131120555 - 
+20170131120555 - -----------------------------------------------------------
+20170131120555 - AppKwonDo server started
+20170131120555 - Listening on port 3000
+20170131120555 - -----------------------------------------------------------
+20170131120653 - 
+20170131120653 - -----------------------------------------------------------
+20170131120653 - AppKwonDo server started
+20170131120653 - Listening on port 3000
+20170131120653 - -----------------------------------------------------------
+20170131122107 - socket id eVwg8r8_gSqk_SoQAAAA connected from ip ::1
+20170131122107 - received clientspecs from eVwg8r8_gSqk_SoQAAAA:
+20170131122107 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131133009 - user demydebug trying to login
+20170131133009 - {"loggedin":"true","role":"tkdradmin"}
+20170131133009 - received clientspecs from eVwg8r8_gSqk_SoQAAAA:
+20170131133009 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131133903 - Socket eVwg8r8_gSqk_SoQAAAA disconnected
+20170131133910 - socket id WwYSCZtwr66O5GayAAAB connected from ip ::1
+20170131133910 - received clientspecs from WwYSCZtwr66O5GayAAAB:
+20170131133910 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131133912 - user demydebug trying to login
+20170131133912 - {"loggedin":"true","role":"tkdradmin"}
+20170131133912 - received clientspecs from WwYSCZtwr66O5GayAAAB:
+20170131133912 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131133921 - get TKDT gara 46
+20170131133923 - gettkdtgiorno 
+71
+20170131133933 - gettkdtgiorno 
+72
+20170131134002 - Socket WwYSCZtwr66O5GayAAAB disconnected
+20170131134008 - socket id SyWlTNF-xeA5m7ePAAAC connected from ip ::1
+20170131134008 - received clientspecs from SyWlTNF-xeA5m7ePAAAC:
+20170131134008 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131134009 - user demydebug trying to login
+20170131134009 - {"loggedin":"true","role":"tkdradmin"}
+20170131134010 - received clientspecs from SyWlTNF-xeA5m7ePAAAC:
+20170131134010 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131134018 - get TKDT gara 46
+20170131134020 - gettkdtgiorno 
+71
+20170131134031 - gettkdtgiorno 
+72
+20170131134614 - 
+20170131134614 - -----------------------------------------------------------
+20170131134614 - AppKwonDo server started
+20170131134614 - Listening on port 3000
+20170131134614 - -----------------------------------------------------------
+20170131134615 - socket id 6HuVIbDbCgHPQfEqAAAA connected from ip ::1
+20170131134615 - received clientspecs from 6HuVIbDbCgHPQfEqAAAA:
+20170131134615 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131134620 - Socket 6HuVIbDbCgHPQfEqAAAA disconnected
+20170131134625 - socket id oOwezTpagXrNsXsfAAAB connected from ip ::1
+20170131134626 - received clientspecs from oOwezTpagXrNsXsfAAAB:
+20170131134626 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131134628 - user demydebug trying to login
+20170131134628 - {"loggedin":"true","role":"tkdradmin"}
+20170131134628 - received clientspecs from oOwezTpagXrNsXsfAAAB:
+20170131134628 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131134717 - 
+20170131134717 - -----------------------------------------------------------
+20170131134717 - AppKwonDo server started
+20170131134717 - Listening on port 3000
+20170131134717 - -----------------------------------------------------------
+20170131134718 - socket id 7lom0F3-yWCdK0iwAAAA connected from ip ::1
+20170131134718 - received clientspecs from 7lom0F3-yWCdK0iwAAAA:
+20170131134718 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131134720 - Socket 7lom0F3-yWCdK0iwAAAA disconnected
+20170131134725 - socket id ikMb__b9hl-xEODzAAAB connected from ip ::1
+20170131134725 - received clientspecs from ikMb__b9hl-xEODzAAAB:
+20170131134725 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131134727 - user demydebug trying to login
+20170131134727 - {"loggedin":"true","role":"tkdradmin"}
+20170131134727 - received clientspecs from ikMb__b9hl-xEODzAAAB:
+20170131134727 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131135016 - 
+20170131135016 - -----------------------------------------------------------
+20170131135016 - AppKwonDo server started
+20170131135016 - Listening on port 3000
+20170131135016 - -----------------------------------------------------------
+20170131135021 - socket id ThrSAGgO-2EhA3r3AAAA connected from ip ::1
+20170131135021 - received clientspecs from ThrSAGgO-2EhA3r3AAAA:
+20170131135021 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131135027 - user demydebug trying to login
+20170131135027 - {"loggedin":"true","role":"tkdradmin"}
+20170131135027 - received clientspecs from ThrSAGgO-2EhA3r3AAAA:
+20170131135027 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131135302 - 
+20170131135302 - -----------------------------------------------------------
+20170131135302 - AppKwonDo server started
+20170131135302 - Listening on port 3000
+20170131135302 - -----------------------------------------------------------
+20170131135303 - socket id bh3w6M_8P_xA56wTAAAA connected from ip ::1
+20170131135303 - received clientspecs from bh3w6M_8P_xA56wTAAAA:
+20170131135303 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131135442 - 
+20170131135442 - -----------------------------------------------------------
+20170131135442 - AppKwonDo server started
+20170131135442 - Listening on port 3000
+20170131135442 - -----------------------------------------------------------
+20170131135446 - socket id Q75y099TPmu9fIS2AAAA connected from ip ::1
+20170131135446 - received clientspecs from Q75y099TPmu9fIS2AAAA:
+20170131135446 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131135526 - 
+20170131135526 - -----------------------------------------------------------
+20170131135526 - AppKwonDo server started
+20170131135526 - Listening on port 3000
+20170131135526 - -----------------------------------------------------------
+20170131135528 - socket id r3tzk6jWsrEuO8TnAAAA connected from ip ::1
+20170131135528 - received clientspecs from r3tzk6jWsrEuO8TnAAAA:
+20170131135528 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131140132 - 
+20170131140132 - -----------------------------------------------------------
+20170131140132 - AppKwonDo server started
+20170131140132 - Listening on port 3000
+20170131140132 - -----------------------------------------------------------
+20170131140134 - socket id CFeVwxlIaTDQrUp8AAAA connected from ip ::1
+20170131140134 - received clientspecs from CFeVwxlIaTDQrUp8AAAA:
+20170131140134 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131145022 - 
+20170131145022 - -----------------------------------------------------------
+20170131145022 - AppKwonDo server started
+20170131145022 - Listening on port 3000
+20170131145022 - -----------------------------------------------------------
+20170131145022 - socket id X6QfpAvFD4Y32lfaAAAA connected from ip ::1
+20170131145022 - received clientspecs from X6QfpAvFD4Y32lfaAAAA:
+20170131145022 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131153219 - Socket X6QfpAvFD4Y32lfaAAAA disconnected
+20170131153224 - socket id gUUmKEQ4-UTPrtC7AAAB connected from ip ::1
+20170131153224 - user demydebug trying to login
+20170131153224 - {"loggedin":"true","role":"tkdradmin"}
+20170131153224 - received clientspecs from gUUmKEQ4-UTPrtC7AAAB:
+20170131153224 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131153225 - received clientspecs from gUUmKEQ4-UTPrtC7AAAB:
+20170131153225 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131153443 - Socket gUUmKEQ4-UTPrtC7AAAB disconnected
+20170131153448 - socket id tszYcDBm5ehectsVAAAC connected from ip ::1
+20170131153448 - user demydebug trying to login
+20170131153448 - {"loggedin":"true","role":"tkdradmin"}
+20170131153448 - received clientspecs from tszYcDBm5ehectsVAAAC:
+20170131153448 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131153449 - received clientspecs from tszYcDBm5ehectsVAAAC:
+20170131153449 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131153513 - get TKDT gara 46
+20170131153515 - gettkdtgiorno 
+71
+20170131153524 - gettkdtgiorno 
+72
+20170131154026 - Socket tszYcDBm5ehectsVAAAC disconnected
+20170131154031 - socket id 0hIVYt94c4uULhqVAAAD connected from ip ::1
+20170131154031 - user demydebug trying to login
+20170131154031 - {"loggedin":"true","role":"tkdradmin"}
+20170131154032 - received clientspecs from 0hIVYt94c4uULhqVAAAD:
+20170131154032 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131154032 - received clientspecs from 0hIVYt94c4uULhqVAAAD:
+20170131154032 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131154056 - get TKDT gara 46
+20170131154058 - gettkdtgiorno 
+71
+20170131154107 - gettkdtgiorno 
+72
+20170131154656 - Socket 0hIVYt94c4uULhqVAAAD disconnected
+20170131154702 - socket id QWOtOPuGZ7CtwlijAAAE connected from ip ::1
+20170131154702 - user demydebug trying to login
+20170131154702 - {"loggedin":"true","role":"tkdradmin"}
+20170131154702 - received clientspecs from QWOtOPuGZ7CtwlijAAAE:
+20170131154702 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131154703 - received clientspecs from QWOtOPuGZ7CtwlijAAAE:
+20170131154703 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131154719 - get TKDT gara 46
+20170131154722 - gettkdtgiorno 
+71
+20170131154731 - gettkdtgiorno 
+72
+20170131154834 - Socket QWOtOPuGZ7CtwlijAAAE disconnected
+20170131154839 - socket id 8D7koBN90jhNm-VJAAAF connected from ip ::1
+20170131154839 - user demydebug trying to login
+20170131154839 - {"loggedin":"true","role":"tkdradmin"}
+20170131154840 - received clientspecs from 8D7koBN90jhNm-VJAAAF:
+20170131154840 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131154840 - received clientspecs from 8D7koBN90jhNm-VJAAAF:
+20170131154840 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131155203 - Socket 8D7koBN90jhNm-VJAAAF disconnected
+20170131155208 - socket id cI26hlxeu8vl5B3oAAAG connected from ip ::1
+20170131155209 - user demydebug trying to login
+20170131155209 - {"loggedin":"true","role":"tkdradmin"}
+20170131155209 - received clientspecs from cI26hlxeu8vl5B3oAAAG:
+20170131155209 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131155209 - received clientspecs from cI26hlxeu8vl5B3oAAAG:
+20170131155209 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131155223 - get TKDT gara 46
+20170131155225 - gettkdtgiorno 
+71
+20170131155234 - gettkdtgiorno 
+72
+20170131160204 - 
+20170131160204 - -----------------------------------------------------------
+20170131160204 - AppKwonDo server started
+20170131160204 - Listening on port 3000
+20170131160204 - -----------------------------------------------------------
+20170131160205 - socket id 9MnvyR1AY1Q-dbsTAAAA connected from ip ::1
+20170131160205 - received clientspecs from 9MnvyR1AY1Q-dbsTAAAA:
+20170131160205 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131160451 - Socket 9MnvyR1AY1Q-dbsTAAAA disconnected
+20170131160457 - socket id I0TQ7d50F-xtJr1tAAAB connected from ip ::1
+20170131160457 - user demydebug trying to login
+20170131160457 - {"loggedin":"true","role":"tkdradmin"}
+20170131160457 - received clientspecs from I0TQ7d50F-xtJr1tAAAB:
+20170131160457 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170131160457 - received clientspecs from I0TQ7d50F-xtJr1tAAAB:
+20170131160457 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131160749 - 
+20170131160749 - -----------------------------------------------------------
+20170131160749 - AppKwonDo server started
+20170131160749 - Listening on port 3000
+20170131160749 - -----------------------------------------------------------
+20170131160750 - socket id eLqbVmHV-YzXJx61AAAA connected from ip ::1
+20170131160750 - received clientspecs from eLqbVmHV-YzXJx61AAAA:
+20170131160750 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131160808 - get TKDT gara 46
+20170131160905 - 
+20170131160905 - -----------------------------------------------------------
+20170131160905 - AppKwonDo server started
+20170131160905 - Listening on port 3000
+20170131160905 - -----------------------------------------------------------
+20170131160907 - socket id FgT7dwxJFxJU6TAIAAAA connected from ip ::1
+20170131160907 - received clientspecs from FgT7dwxJFxJU6TAIAAAA:
+20170131160907 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131161840 - 
+20170131161840 - -----------------------------------------------------------
+20170131161840 - AppKwonDo server started
+20170131161840 - Listening on port 3000
+20170131161840 - -----------------------------------------------------------
+20170131161841 - socket id ZOqP1cXJ3MVNzuLLAAAA connected from ip ::1
+20170131161841 - received clientspecs from ZOqP1cXJ3MVNzuLLAAAA:
+20170131161841 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131161843 - get TKDT gara 46
+20170131161846 - gettkdtgiorno 
+71
+20170131161855 - gettkdtgiorno 
+72
+20170131161938 - 
+20170131161938 - -----------------------------------------------------------
+20170131161938 - AppKwonDo server started
+20170131161938 - Listening on port 3000
+20170131161938 - -----------------------------------------------------------
+20170131161938 - socket id 97QTCVSWUth2fq_XAAAA connected from ip ::1
+20170131161939 - received clientspecs from 97QTCVSWUth2fq_XAAAA:
+20170131161939 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131161943 - get TKDT gara 46
+20170131161945 - gettkdtgiorno 
+71
+20170131161954 - gettkdtgiorno 
+72
+20170131162154 - 
+20170131162154 - -----------------------------------------------------------
+20170131162154 - AppKwonDo server started
+20170131162154 - Listening on port 3000
+20170131162154 - -----------------------------------------------------------
+20170131162159 - socket id aJMuTcOicrrT9LICAAAA connected from ip ::1
+20170131162200 - received clientspecs from aJMuTcOicrrT9LICAAAA:
+20170131162200 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170131162205 - get TKDT gara 46
+20170131162207 - gettkdtgiorno 
+71
+20170131162216 - gettkdtgiorno 
+72
+20170131162338 - 
+20170131162338 - -----------------------------------------------------------
+20170131162338 - AppKwonDo server started
+20170131162338 - Listening on port 3000
+20170131162338 - -----------------------------------------------------------
+20170131162338 - socket id o9vCkOXTbYQ_HefOAAAA connected from ip ::1
+20170131162338 - received clientspecs from o9vCkOXTbYQ_HefOAAAA:
+20170131162338 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203140853 - 
+20170203140853 - -----------------------------------------------------------
+20170203140853 - AppKwonDo server started
+20170203140853 - Listening on port 3000
+20170203140853 - -----------------------------------------------------------
+20170203140854 - user demydebug trying to login
+20170203140854 - {"loggedin":"true","role":"tkdradmin"}
+20170203140854 - socket id vZ6yzpskm2qo9cMxAAAA connected from ip ::1
+20170203140854 - received clientspecs from vZ6yzpskm2qo9cMxAAAA:
+20170203140854 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203140856 - socket id CBlat25vWxLqrxHpAAAB connected from ip ::1
+20170203140856 - received clientspecs from CBlat25vWxLqrxHpAAAB:
+20170203140856 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203140856 - received clientspecs from CBlat25vWxLqrxHpAAAB:
+20170203140856 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203140915 - user demydebug trying to login
+20170203140915 - {"loggedin":"true","role":"tkdradmin"}
+20170203140916 - received clientspecs from vZ6yzpskm2qo9cMxAAAA:
+20170203140916 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203141025 - 
+20170203141025 - -----------------------------------------------------------
+20170203141025 - AppKwonDo server started
+20170203141025 - Listening on port 3000
+20170203141025 - -----------------------------------------------------------
+20170203141030 - socket id Ppm8OTwnX7prK8n2AAAA connected from ip ::1
+20170203141030 - socket id NlokSUJ1u8CBd9p1AAAB connected from ip ::1
+20170203141030 - received clientspecs from Ppm8OTwnX7prK8n2AAAA:
+20170203141030 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203141030 - received clientspecs from NlokSUJ1u8CBd9p1AAAB:
+20170203141030 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203141036 - user demydebug trying to login
+20170203141036 - {"loggedin":"true","role":"tkdradmin"}
+20170203141036 - received clientspecs from Ppm8OTwnX7prK8n2AAAA:
+20170203141036 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203141048 - get TKDT gara 61
+20170203141049 - gettkdtgiorno 
+undefined
+20170203141119 - Socket NlokSUJ1u8CBd9p1AAAB disconnected
+20170203141119 - get TKDT gara 61
+20170203141119 - gettkdtgiorno 
+undefined
+20170203141120 - socket id eaOEPhw7ZpXqM-Q4AAAC connected from ip ::1
+20170203141120 - received clientspecs from eaOEPhw7ZpXqM-Q4AAAC:
+20170203141120 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203141241 - get TKDT gara 61
+20170203141242 - gettkdtgiorno 
+undefined
+20170203141245 - Socket eaOEPhw7ZpXqM-Q4AAAC disconnected
+20170203141330 - 
+20170203141330 - -----------------------------------------------------------
+20170203141330 - AppKwonDo server started
+20170203141330 - Listening on port 3000
+20170203141330 - -----------------------------------------------------------
+20170203141331 - get TKDT gara 61
+20170203141331 - gettkdtgiorno 
+undefined
+20170203141332 - socket id RJdwVaM8vvOJcRpAAAAA connected from ip ::1
+20170203141332 - received clientspecs from RJdwVaM8vvOJcRpAAAAA:
+20170203141332 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203141450 - 
+20170203141450 - -----------------------------------------------------------
+20170203141450 - AppKwonDo server started
+20170203141450 - Listening on port 3000
+20170203141450 - -----------------------------------------------------------
+20170203141452 - get TKDT gara 61
+20170203141452 - gettkdtgiorno 
+undefined
+20170203141453 - socket id 0Mrl0cQlZuPu79DhAAAA connected from ip ::1
+20170203141453 - received clientspecs from 0Mrl0cQlZuPu79DhAAAA:
+20170203141453 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203142640 - 
+20170203142640 - -----------------------------------------------------------
+20170203142640 - AppKwonDo server started
+20170203142640 - Listening on port 3000
+20170203142640 - -----------------------------------------------------------
+20170203142640 - socket id SPpCon4et-qCPY69AAAA connected from ip ::1
+20170203142640 - received clientspecs from SPpCon4et-qCPY69AAAA:
+20170203142640 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203142640 - get TKDT gara 61
+20170203142642 - gettkdtgiorno 
+undefined
+20170203142849 - get TKDT gara 61
+20170203142849 - gettkdtgiorno 
+undefined
+20170203143339 - Socket SPpCon4et-qCPY69AAAA disconnected
+20170203143344 - socket id IFZWNFJ48DD4ZlY-AAAB connected from ip ::1
+20170203143344 - received clientspecs from IFZWNFJ48DD4ZlY-AAAB:
+20170203143344 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203143347 - user demydebug trying to login
+20170203143347 - {"loggedin":"true","role":"tkdradmin"}
+20170203143347 - received clientspecs from IFZWNFJ48DD4ZlY-AAAB:
+20170203143347 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203143619 - Socket IFZWNFJ48DD4ZlY-AAAB disconnected
+20170203143625 - socket id KcVzrACZBWxY9L46AAAC connected from ip ::1
+20170203143625 - received clientspecs from KcVzrACZBWxY9L46AAAC:
+20170203143625 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203143626 - user demydebug trying to login
+20170203143626 - {"loggedin":"true","role":"tkdradmin"}
+20170203143626 - received clientspecs from KcVzrACZBWxY9L46AAAC:
+20170203143626 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203144649 - 
+20170203144649 - -----------------------------------------------------------
+20170203144649 - AppKwonDo server started
+20170203144649 - Listening on port 3000
+20170203144649 - -----------------------------------------------------------
+20170203144651 - socket id RB8QMJIFUtX1TEKXAAAA connected from ip ::1
+20170203144651 - received clientspecs from RB8QMJIFUtX1TEKXAAAA:
+20170203144651 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203144655 - user demydebug trying to login
+20170203144655 - {"loggedin":"true","role":"tkdradmin"}
+20170203144656 - received clientspecs from RB8QMJIFUtX1TEKXAAAA:
+20170203144656 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203144741 - 
+20170203144741 - -----------------------------------------------------------
+20170203144741 - AppKwonDo server started
+20170203144741 - Listening on port 3000
+20170203144741 - -----------------------------------------------------------
+20170203144741 - socket id -YtX8GOZScHVawGWAAAA connected from ip ::1
+20170203144741 - received clientspecs from -YtX8GOZScHVawGWAAAA:
+20170203144741 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203144747 - user demydebug trying to login
+20170203144747 - {"loggedin":"true","role":"tkdradmin"}
+20170203144747 - received clientspecs from -YtX8GOZScHVawGWAAAA:
+20170203144747 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203144757 - get TKDT gara di forme 61
+20170203144758 - gettkdtgiorno 
+undefined
+20170203145137 - 
+20170203145137 - -----------------------------------------------------------
+20170203145137 - AppKwonDo server started
+20170203145137 - Listening on port 3000
+20170203145137 - -----------------------------------------------------------
+20170203145137 - socket id lX4DBhIMb9Z81qjpAAAA connected from ip ::1
+20170203145137 - get TKDT gara di forme 61
+20170203145137 - received clientspecs from lX4DBhIMb9Z81qjpAAAA:
+20170203145137 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203145841 - 
+20170203145841 - -----------------------------------------------------------
+20170203145841 - AppKwonDo server started
+20170203145841 - Listening on port 3000
+20170203145841 - -----------------------------------------------------------
+20170203145841 - socket id ge365djzd-AZmt6EAAAA connected from ip ::1
+20170203145841 - received clientspecs from ge365djzd-AZmt6EAAAA:
+20170203145841 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203145858 - get TKDT gara di forme 61
+20170203150210 - 
+20170203150210 - -----------------------------------------------------------
+20170203150210 - AppKwonDo server started
+20170203150210 - Listening on port 3000
+20170203150210 - -----------------------------------------------------------
+20170203150212 - socket id kn9tJGrx_59hKAWkAAAA connected from ip ::1
+20170203150212 - received clientspecs from kn9tJGrx_59hKAWkAAAA:
+20170203150212 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203150212 - get TKDT gara di forme 61
+20170203150536 - 
+20170203150536 - -----------------------------------------------------------
+20170203150536 - AppKwonDo server started
+20170203150536 - Listening on port 3000
+20170203150536 - -----------------------------------------------------------
+20170203150539 - get TKDT gara di forme 61
+20170203150540 - socket id zA5jgMHVJncXqdVdAAAA connected from ip ::1
+20170203150541 - received clientspecs from zA5jgMHVJncXqdVdAAAA:
+20170203150541 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203150555 - get TKDT gara di forme 61
+20170203150601 - get TKDT gara di forme 61
+20170203150637 - Socket zA5jgMHVJncXqdVdAAAA disconnected
+20170203150643 - socket id A07fzoqmKL0O20hiAAAB connected from ip ::1
+20170203150643 - received clientspecs from A07fzoqmKL0O20hiAAAB:
+20170203150643 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203150649 - user demydebug trying to login
+20170203150649 - {"loggedin":"true","role":"tkdradmin"}
+20170203150649 - received clientspecs from A07fzoqmKL0O20hiAAAB:
+20170203150649 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203150709 - get TKDT gara di forme 61
+20170203150823 - Socket A07fzoqmKL0O20hiAAAB disconnected
+20170203150829 - socket id 0m_RlN7_ZL1wrl0mAAAC connected from ip ::1
+20170203150829 - received clientspecs from 0m_RlN7_ZL1wrl0mAAAC:
+20170203150829 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203150831 - user demydebug trying to login
+20170203150831 - {"loggedin":"true","role":"tkdradmin"}
+20170203150832 - received clientspecs from 0m_RlN7_ZL1wrl0mAAAC:
+20170203150832 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203150840 - get TKDT gara di forme 61
+20170203150959 - get TKDT gara 54
+20170203151000 - gettkdtgiorno 
+80
+20170203151004 - gettkdtgiorno 
+81
+20170203151601 - Socket 0m_RlN7_ZL1wrl0mAAAC disconnected
+20170203151607 - socket id V7DlkQYXq2vPAuH4AAAD connected from ip ::1
+20170203151607 - received clientspecs from V7DlkQYXq2vPAuH4AAAD:
+20170203151607 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203151609 - user demydebug trying to login
+20170203151609 - {"loggedin":"true","role":"tkdradmin"}
+20170203151609 - received clientspecs from V7DlkQYXq2vPAuH4AAAD:
+20170203151609 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203151656 - Socket V7DlkQYXq2vPAuH4AAAD disconnected
+20170203151701 - socket id LFeodkPs8v29QkX9AAAE connected from ip ::1
+20170203151702 - received clientspecs from LFeodkPs8v29QkX9AAAE:
+20170203151702 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203151704 - user demydebug trying to login
+20170203151704 - {"loggedin":"true","role":"tkdradmin"}
+20170203151704 - received clientspecs from LFeodkPs8v29QkX9AAAE:
+20170203151704 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203151820 - Socket LFeodkPs8v29QkX9AAAE disconnected
+20170203151826 - socket id a1_tiC1FpGA2Vd4cAAAF connected from ip ::1
+20170203151826 - received clientspecs from a1_tiC1FpGA2Vd4cAAAF:
+20170203151826 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203151834 - user demydebug trying to login
+20170203151834 - {"loggedin":"true","role":"tkdradmin"}
+20170203151834 - received clientspecs from a1_tiC1FpGA2Vd4cAAAF:
+20170203151834 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203151917 - Socket a1_tiC1FpGA2Vd4cAAAF disconnected
+20170203151922 - socket id 24P4D2kJI2hvXNx0AAAG connected from ip ::1
+20170203151922 - received clientspecs from 24P4D2kJI2hvXNx0AAAG:
+20170203151922 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203151924 - user demydebug trying to login
+20170203151924 - {"loggedin":"true","role":"tkdradmin"}
+20170203151924 - received clientspecs from 24P4D2kJI2hvXNx0AAAG:
+20170203151924 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152004 - Socket 24P4D2kJI2hvXNx0AAAG disconnected
+20170203152010 - socket id _NHMbkn1w2O5V4TKAAAH connected from ip ::1
+20170203152010 - received clientspecs from _NHMbkn1w2O5V4TKAAAH:
+20170203152010 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152012 - user demydebug trying to login
+20170203152012 - {"loggedin":"true","role":"tkdradmin"}
+20170203152012 - received clientspecs from _NHMbkn1w2O5V4TKAAAH:
+20170203152012 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152116 - Socket _NHMbkn1w2O5V4TKAAAH disconnected
+20170203152121 - socket id 7TxXEzXL_H0M0QSbAAAI connected from ip ::1
+20170203152121 - user demydebug trying to login
+20170203152121 - {"loggedin":"true","role":"tkdradmin"}
+20170203152121 - received clientspecs from 7TxXEzXL_H0M0QSbAAAI:
+20170203152121 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152122 - received clientspecs from 7TxXEzXL_H0M0QSbAAAI:
+20170203152122 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152212 - Socket 7TxXEzXL_H0M0QSbAAAI disconnected
+20170203152217 - socket id U3WiUOJ_AQOZ_wI6AAAJ connected from ip ::1
+20170203152217 - user demydebug trying to login
+20170203152217 - {"loggedin":"true","role":"tkdradmin"}
+20170203152217 - received clientspecs from U3WiUOJ_AQOZ_wI6AAAJ:
+20170203152217 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152218 - received clientspecs from U3WiUOJ_AQOZ_wI6AAAJ:
+20170203152218 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152429 - Socket U3WiUOJ_AQOZ_wI6AAAJ disconnected
+20170203152435 - socket id pGFLhU0Wxd_NLmYiAAAK connected from ip ::1
+20170203152435 - user demydebug trying to login
+20170203152435 - {"loggedin":"true","role":"tkdradmin"}
+20170203152435 - received clientspecs from pGFLhU0Wxd_NLmYiAAAK:
+20170203152435 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152435 - received clientspecs from pGFLhU0Wxd_NLmYiAAAK:
+20170203152435 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152532 - Socket pGFLhU0Wxd_NLmYiAAAK disconnected
+20170203152537 - socket id pmZGjG7kKS4K6x2KAAAL connected from ip ::1
+20170203152537 - user demydebug trying to login
+20170203152537 - {"loggedin":"true","role":"tkdradmin"}
+20170203152538 - received clientspecs from pmZGjG7kKS4K6x2KAAAL:
+20170203152538 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152538 - received clientspecs from pmZGjG7kKS4K6x2KAAAL:
+20170203152538 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152655 - Socket pmZGjG7kKS4K6x2KAAAL disconnected
+20170203152701 - socket id t0j8627VkF8wSvEdAAAM connected from ip ::1
+20170203152701 - user demydebug trying to login
+20170203152701 - {"loggedin":"true","role":"tkdradmin"}
+20170203152701 - received clientspecs from t0j8627VkF8wSvEdAAAM:
+20170203152701 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152701 - received clientspecs from t0j8627VkF8wSvEdAAAM:
+20170203152701 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203152737 - Socket t0j8627VkF8wSvEdAAAM disconnected
+20170203152743 - socket id LIyDBi1rx75Gp0rhAAAN connected from ip ::1
+20170203152743 - user demydebug trying to login
+20170203152743 - {"loggedin":"true","role":"tkdradmin"}
+20170203152743 - received clientspecs from LIyDBi1rx75Gp0rhAAAN:
+20170203152743 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203152743 - received clientspecs from LIyDBi1rx75Gp0rhAAAN:
+20170203152743 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203161111 - 
+20170203161111 - -----------------------------------------------------------
+20170203161111 - AppKwonDo server started
+20170203161111 - Listening on port 3000
+20170203161111 - -----------------------------------------------------------
+20170203161402 - 
+20170203161402 - -----------------------------------------------------------
+20170203161402 - AppKwonDo server started
+20170203161402 - Listening on port 3000
+20170203161402 - -----------------------------------------------------------
+20170203222544 - 
+20170203222544 - -----------------------------------------------------------
+20170203222544 - AppKwonDo server started
+20170203222544 - Listening on port 3000
+20170203222544 - -----------------------------------------------------------
+20170203222552 - socket id zexaAx4midqsiEMBAAAA connected from ip ::ffff:127.0.0.1
+20170203222552 - user demydebug trying to login
+20170203222552 - {"loggedin":"true","role":"tkdradmin"}
+20170203222552 - received clientspecs from zexaAx4midqsiEMBAAAA:
+20170203222552 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203222552 - received clientspecs from zexaAx4midqsiEMBAAAA:
+20170203222552 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203222647 - 
+20170203222647 - -----------------------------------------------------------
+20170203222647 - AppKwonDo server started
+20170203222647 - Listening on port 3000
+20170203222647 - -----------------------------------------------------------
+20170203222647 - socket id KC__9AZLor_aIeJTAAAA connected from ip ::ffff:127.0.0.1
+20170203222647 - received clientspecs from KC__9AZLor_aIeJTAAAA:
+20170203222647 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203222650 - Socket KC__9AZLor_aIeJTAAAA disconnected
+20170203222655 - socket id Fk8wLxiBDHbb3I6wAAAB connected from ip ::ffff:127.0.0.1
+20170203222655 - user demydebug trying to login
+20170203222655 - {"loggedin":"true","role":"tkdradmin"}
+20170203222655 - received clientspecs from Fk8wLxiBDHbb3I6wAAAB:
+20170203222655 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203222656 - received clientspecs from Fk8wLxiBDHbb3I6wAAAB:
+20170203222656 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223039 - Socket Fk8wLxiBDHbb3I6wAAAB disconnected
+20170203223043 - socket id RTpIyXgqP3HD2GEAAAAC connected from ip ::ffff:127.0.0.1
+20170203223043 - user demydebug trying to login
+20170203223043 - {"loggedin":"true","role":"tkdradmin"}
+20170203223044 - received clientspecs from RTpIyXgqP3HD2GEAAAAC:
+20170203223044 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223044 - received clientspecs from RTpIyXgqP3HD2GEAAAAC:
+20170203223044 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223122 - Socket RTpIyXgqP3HD2GEAAAAC disconnected
+20170203223126 - socket id coGTsdZNMgOg2lsFAAAD connected from ip ::ffff:127.0.0.1
+20170203223126 - user demydebug trying to login
+20170203223126 - {"loggedin":"true","role":"tkdradmin"}
+20170203223127 - received clientspecs from coGTsdZNMgOg2lsFAAAD:
+20170203223127 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223127 - received clientspecs from coGTsdZNMgOg2lsFAAAD:
+20170203223127 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223216 - Socket coGTsdZNMgOg2lsFAAAD disconnected
+20170203223221 - socket id NCXCvaMaTqokYU-6AAAE connected from ip ::ffff:127.0.0.1
+20170203223221 - user demydebug trying to login
+20170203223221 - {"loggedin":"true","role":"tkdradmin"}
+20170203223221 - received clientspecs from NCXCvaMaTqokYU-6AAAE:
+20170203223221 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223221 - received clientspecs from NCXCvaMaTqokYU-6AAAE:
+20170203223221 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223329 - Socket NCXCvaMaTqokYU-6AAAE disconnected
+20170203223334 - socket id zbQbhCGcfyKB3kJSAAAF connected from ip ::ffff:127.0.0.1
+20170203223334 - user demydebug trying to login
+20170203223334 - {"loggedin":"true","role":"tkdradmin"}
+20170203223334 - user demydebug trying to login
+20170203223334 - {"loggedin":"true","role":"tkdradmin"}
+20170203223334 - received clientspecs from zbQbhCGcfyKB3kJSAAAF:
+20170203223334 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223334 - received clientspecs from zbQbhCGcfyKB3kJSAAAF:
+20170203223334 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223335 - received clientspecs from zbQbhCGcfyKB3kJSAAAF:
+20170203223335 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223527 - Socket zbQbhCGcfyKB3kJSAAAF disconnected
+20170203223531 - socket id u76ZeRV0067jmbImAAAG connected from ip ::ffff:127.0.0.1
+20170203223531 - user demydebug trying to login
+20170203223531 - {"loggedin":"true","role":"tkdradmin"}
+20170203223532 - received clientspecs from u76ZeRV0067jmbImAAAG:
+20170203223532 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223532 - received clientspecs from u76ZeRV0067jmbImAAAG:
+20170203223532 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203223642 - Socket u76ZeRV0067jmbImAAAG disconnected
+20170203223646 - socket id 93K-83dNz93bqEr5AAAH connected from ip ::ffff:127.0.0.1
+20170203223646 - user demydebug trying to login
+20170203223646 - {"loggedin":"true","role":"tkdradmin"}
+20170203223646 - received clientspecs from 93K-83dNz93bqEr5AAAH:
+20170203223646 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203223646 - received clientspecs from 93K-83dNz93bqEr5AAAH:
+20170203223646 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203224315 - Socket 93K-83dNz93bqEr5AAAH disconnected
+20170203224320 - socket id gvusR7ocYWKxfpdEAAAI connected from ip ::ffff:127.0.0.1
+20170203224320 - user demydebug trying to login
+20170203224320 - {"loggedin":"true","role":"tkdradmin"}
+20170203224320 - received clientspecs from gvusR7ocYWKxfpdEAAAI:
+20170203224320 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203224320 - received clientspecs from gvusR7ocYWKxfpdEAAAI:
+20170203224320 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203224349 - Socket gvusR7ocYWKxfpdEAAAI disconnected
+20170203224354 - socket id W0_H9gy9g3hOpA69AAAJ connected from ip ::ffff:127.0.0.1
+20170203224354 - user demydebug trying to login
+20170203224354 - {"loggedin":"true","role":"tkdradmin"}
+20170203224354 - received clientspecs from W0_H9gy9g3hOpA69AAAJ:
+20170203224354 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203224354 - received clientspecs from W0_H9gy9g3hOpA69AAAJ:
+20170203224354 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203224433 - Socket W0_H9gy9g3hOpA69AAAJ disconnected
+20170203224438 - socket id bjTN_es368RwFBV5AAAK connected from ip ::ffff:127.0.0.1
+20170203224438 - user demydebug trying to login
+20170203224438 - {"loggedin":"true","role":"tkdradmin"}
+20170203224438 - received clientspecs from bjTN_es368RwFBV5AAAK:
+20170203224438 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203224438 - received clientspecs from bjTN_es368RwFBV5AAAK:
+20170203224438 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203224515 - Socket bjTN_es368RwFBV5AAAK disconnected
+20170203224519 - socket id Iz0J0n7Lrdw22b6CAAAL connected from ip ::ffff:127.0.0.1
+20170203224519 - user demydebug trying to login
+20170203224519 - {"loggedin":"true","role":"tkdradmin"}
+20170203224519 - received clientspecs from Iz0J0n7Lrdw22b6CAAAL:
+20170203224519 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203224519 - received clientspecs from Iz0J0n7Lrdw22b6CAAAL:
+20170203224519 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203224635 - Socket Iz0J0n7Lrdw22b6CAAAL disconnected
+20170203224640 - socket id ocJ-n4VZKiN59i4tAAAM connected from ip ::ffff:127.0.0.1
+20170203224640 - user demydebug trying to login
+20170203224640 - {"loggedin":"true","role":"tkdradmin"}
+20170203224640 - received clientspecs from ocJ-n4VZKiN59i4tAAAM:
+20170203224640 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203224640 - received clientspecs from ocJ-n4VZKiN59i4tAAAM:
+20170203224640 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203225124 - Socket ocJ-n4VZKiN59i4tAAAM disconnected
+20170203225128 - socket id 3HN7dfOCTm3RPvhGAAAN connected from ip ::ffff:127.0.0.1
+20170203225128 - user demydebug trying to login
+20170203225128 - {"loggedin":"true","role":"tkdradmin"}
+20170203225128 - received clientspecs from 3HN7dfOCTm3RPvhGAAAN:
+20170203225128 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203225129 - received clientspecs from 3HN7dfOCTm3RPvhGAAAN:
+20170203225129 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203225626 - Socket 3HN7dfOCTm3RPvhGAAAN disconnected
+20170203225631 - socket id 5OgeUFQPQiqPwP_5AAAO connected from ip ::ffff:127.0.0.1
+20170203225631 - user demydebug trying to login
+20170203225631 - {"loggedin":"true","role":"tkdradmin"}
+20170203225631 - received clientspecs from 5OgeUFQPQiqPwP_5AAAO:
+20170203225631 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203225632 - received clientspecs from 5OgeUFQPQiqPwP_5AAAO:
+20170203225632 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203225715 - Socket 5OgeUFQPQiqPwP_5AAAO disconnected
+20170203225720 - socket id 9kAbkNulkQQbn7ehAAAP connected from ip ::ffff:127.0.0.1
+20170203225720 - user demydebug trying to login
+20170203225720 - {"loggedin":"true","role":"tkdradmin"}
+20170203225720 - received clientspecs from 9kAbkNulkQQbn7ehAAAP:
+20170203225720 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203225720 - received clientspecs from 9kAbkNulkQQbn7ehAAAP:
+20170203225720 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203231951 - Socket 9kAbkNulkQQbn7ehAAAP disconnected
+20170203231956 - socket id asPau6DmFSqn6WjdAAAQ connected from ip ::ffff:127.0.0.1
+20170203231956 - user demydebug trying to login
+20170203231956 - {"loggedin":"true","role":"tkdradmin"}
+20170203231957 - received clientspecs from asPau6DmFSqn6WjdAAAQ:
+20170203231957 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203231957 - received clientspecs from asPau6DmFSqn6WjdAAAQ:
+20170203231957 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203232817 - Socket asPau6DmFSqn6WjdAAAQ disconnected
+20170203232821 - socket id OxhuWr_O7YdQcrL5AAAR connected from ip ::ffff:127.0.0.1
+20170203232821 - user demydebug trying to login
+20170203232821 - {"loggedin":"true","role":"tkdradmin"}
+20170203232822 - received clientspecs from OxhuWr_O7YdQcrL5AAAR:
+20170203232822 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203232822 - received clientspecs from OxhuWr_O7YdQcrL5AAAR:
+20170203232822 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203232918 - Socket OxhuWr_O7YdQcrL5AAAR disconnected
+20170203232922 - socket id VaUrQHB9JXB-6Z4SAAAS connected from ip ::ffff:127.0.0.1
+20170203232922 - user demydebug trying to login
+20170203232922 - {"loggedin":"true","role":"tkdradmin"}
+20170203232922 - received clientspecs from VaUrQHB9JXB-6Z4SAAAS:
+20170203232922 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203232923 - received clientspecs from VaUrQHB9JXB-6Z4SAAAS:
+20170203232923 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170203233115 - Socket VaUrQHB9JXB-6Z4SAAAS disconnected
+20170203233121 - socket id 5Rt23bbgVot2AcczAAAT connected from ip ::ffff:127.0.0.1
+20170203233121 - user demydebug trying to login
+20170203233121 - {"loggedin":"true","role":"tkdradmin"}
+20170203233121 - received clientspecs from 5Rt23bbgVot2AcczAAAT:
+20170203233121 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170203233121 - received clientspecs from 5Rt23bbgVot2AcczAAAT:
+20170203233121 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206110744 - 
+20170206110744 - -----------------------------------------------------------
+20170206110744 - AppKwonDo server started
+20170206110744 - Listening on port 3000
+20170206110744 - -----------------------------------------------------------
+20170206110745 - SYNC AV MEDIA FILES
+20170206110745 - downloading file thumb_20160404102538_20160413195555.png
+20170206110745 - downloading file 20160404102538_20160413195555.png
+20170206110745 - downloading file 20160404102538_20160415223511.jpg
+20170206110745 - downloading file 20160404102538_20160415230011.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415225158.jpg
+20170206110745 - downloading file 20160404102538_20160415223014.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415181238.jpg
+20170206110745 - downloading file 20160404102538_20160415123641.m4a
+20170206110745 - downloading file 20160404102538_20160415230550.jpg
+20170206110745 - downloading file 20160404102538_20160414225025.m4a
+20170206110745 - downloading file 20160404102538_20160415222306.jpg
+20170206110745 - downloading file 20160404102538_20160415153440.png
+20170206110745 - downloading file 20160404102538_20160415152841.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415222539.jpg
+20170206110745 - downloading file thumb_20160404102538_20160414073639.jpg
+20170206110745 - downloading file thumb_20160404102538_20160413201811.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415154854.jpg
+20170206110745 - downloading file 20160404102538_20160414224309.m4a
+20170206110745 - downloading file thumb_20160416230741_20160423074457.png
+20170206110745 - downloading file 20160404102538_20160414073639.jpg
+20170206110745 - downloading file thumb_20160404102538_20160414085939.png
+20170206110745 - downloading file thumb_20160404102538_20160415230607.jpg
+20170206110745 - downloading file 20160404102538_20160413195137.jpg
+20170206110745 - downloading file 20160404102538_20160415225628.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415222450.jpg
+20170206110745 - downloading file 20160404102538_20160415181238.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415222235.jpg
+20170206110745 - downloading file 20160404102538_20160416235244.jpg
+20170206110745 - downloading file 20160404102538_20160415230127.jpg
+20170206110745 - downloading file thumb_20160404102538_20160413201338.jpg
+20170206110745 - downloading file 20160404102538_20160413201338.jpg
+20170206110745 - downloading file 20160404102538_20160415230607.jpg
+20170206110745 - downloading file 20160404102538_20160415093802.m4a
+20170206110745 - downloading file 20160404102538_20160415225158.jpg
+20170206110745 - downloading file 20160404102538_20160415143813.png
+20170206110745 - downloading file listfiles.php
+20170206110745 - downloading file 20160404102538_20160415233701.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415154419.png
+20170206110745 - downloading file thumb_20160404102538_20160415233354.jpg
+20170206110745 - downloading file 20160404102538_20160415135954.m4a
+20170206110745 - downloading file 20160404102538_20160413195231.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415230945.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415230127.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415152841.jpg
+20170206110745 - downloading file thumb_20160404102538_20160414230208.jpg
+20170206110745 - downloading file 20160404102538_20160414085939.png
+20170206110745 - downloading file thumb_20160404102538_20160415223511.jpg
+20170206110745 - downloading file 20160404102538_20160414230208.jpg
+20170206110745 - downloading file thumb_20160404102538_20160416235244.jpg
+20170206110745 - downloading file 20160404102538_20160415181238.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415224343.jpg
+20170206110745 - downloading file 20160509080737.jpg.jpg
+20170206110745 - downloading file thumb_20160404102538_20160413195520.jpg
+20170206110745 - downloading file 20160404102538_20160415195118.m4a
+20170206110745 - downloading file thumb_20160416230741_20160423112609.png
+20170206110745 - downloading file 20160404102538_20160415222539.jpg
+20170206110745 - downloading file 20160404102538_20160415154624.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415233558.png
+20170206110745 - downloading file 20160404102538_20160414140328.png
+20170206110745 - downloading file thumb_20160404102538_20160415230011.jpg
+20170206110745 - downloading file 20160404102538_20160415154854.m4a
+20170206110745 - downloading file 20160404102538_20160415222202.jpg
+20170206110745 - downloading file 20160404102538_20160413195520.jpg
+20170206110745 - downloading file 20160404102538_20160415154854.jpg
+20170206110745 - downloading file 20160416230741_20160423074457.png
+20170206110745 - downloading file 20160404102538_20160415233558.png
+20170206110745 - downloading file 20160404102538_20160415152841.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415221634.jpg
+20170206110745 - downloading file 20160404102538_20160415222450.jpg
+20170206110745 - downloading file 20160404102538_20160414140328.m4a
+20170206110745 - downloading file 20160404102538_20160415231756.jpg
+20170206110745 - downloading file 20160404102538_20160413201811.jpg
+20170206110745 - downloading file 20160404102538_20160415222235.jpg
+20170206110745 - downloading file 20160416230741_20160423112609.png
+20170206110745 - downloading file 20160404102538_20160415072415.m4a
+20170206110745 - downloading file thumb_20160404102538_20160414140328.png
+20170206110745 - downloading file thumb_20160404102538_20160415222202.jpg
+20170206110745 - downloading file thumb_20160509080737.jpg.jpg
+20170206110745 - downloading file 20160404102538_20160413205359.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415143813.png
+20170206110745 - downloading file thumb_20160404102538_20160415225628.jpg
+20170206110745 - downloading file 20160404102538_20160415224343.jpg
+20170206110745 - downloading file chat_20160425122309.json
+20170206110745 - downloading file thumb_20160404102538_20160415223014.jpg
+20170206110745 - downloading file 20160404102538_20160415143813.m4a
+20170206110745 - downloading file 20160404102538_20160416235244.m4a
+20170206110745 - downloading file 20160404102538_20160415101318.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415154624.jpg
+20170206110745 - downloading file 20160404102538_20160415154419.png
+20170206110745 - downloading file 20160404102538_20160415231737.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415230550.jpg
+20170206110745 - downloading file 20160404102538_20160415221634.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415231737.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415233701.jpg
+20170206110745 - downloading file 20160404102538_20160414073639.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415222306.jpg
+20170206110745 - downloading file thumb_20160404102538_20160413195137.jpg
+20170206110745 - downloading file 20160404102538_20160415230945.jpg
+20170206110745 - downloading file thumb_20160404102538_20160415153440.png
+20170206110745 - downloading file 20160404102538_20160415153440.m4a
+20170206110745 - downloading file thumb_20160404102538_20160415231756.jpg
+20170206110745 - downloading file 20160404102538_20160415233354.jpg
+20170206110745 - downloading file thumb_20160404102538_20160413195231.jpg
+20170206110745 - SYNC AV CHAT MEDIA FILES
+20170206110745 - downloading file 20161001094646.jpg
+20170206110745 - downloading file 20160702170812.m4a
+20170206110745 - downloading file 20160510152039.m4a
+20170206110745 - downloading file 20160514154754.jpg
+20170206110745 - downloading file 20160509103253.jpg
+20170206110745 - downloading file 20160509195027.m4a
+20170206110745 - downloading file 20170128081618.m4a
+20170206110745 - downloading file 20160702092404.jpg
+20170206110745 - downloading file 20160514121937.m4a
+20170206110745 - downloading file 20161002141909.jpg
+20170206110745 - downloading file 20160510113321.m4a
+20170206110745 - downloading file 20160515164325.jpg
+20170206110745 - downloading file 20161002150259.jpg
+20170206110745 - downloading file 20161001104147.jpg
+20170206110745 - downloading file 20160509172902.jpg
+20170206110745 - downloading file 20160510112413.mp3
+20170206110745 - downloading file 20160514144002.jpg
+20170206110745 - downloading file 20160515125320.jpg
+20170206110745 - downloading file .htaccess
+20170206110745 - downloading file 20160702190902.jpg
+20170206110745 - downloading file 20160509140004.m4a
+20170206110745 - downloading file 20160515165018.jpg
+20170206110745 - downloading file 20161106100021.jpg
+20170206110745 - downloading file 20160510190105.m4a
+20170206110745 - downloading file 20160510182141.m4a
+20170206110745 - downloading file 20160702140742.jpg
+20170206110745 - downloading file 20160510135651.m4a
+20170206110745 - downloading file 20161105110933.jpg
+20170206110745 - downloading file 20160702174604.jpg
+20170206110745 - downloading file 20160702195750.jpg
+20170206110745 - downloading file 20161105150114.m4a
+20170206110745 - downloading file 20160702182040.jpg
+20170206110745 - downloading file 20160515095611.jpg
+20170206110745 - downloading file 20160515121633.m4a
+20170206110745 - downloading file 20161105135305.m4a
+20170206110745 - downloading file 20160514120507.jpg
+20170206110745 - downloading file 20160702105841.m4a
+20170206110745 - downloading file 20160514154406.m4a
+20170206110745 - downloading file 20160512095449.m4a
+20170206110745 - downloading file 20160514120504.jpg
+20170206110745 - downloading file 20161105085859.m4a
+20170206110745 - downloading file 20161105150441.m4a
+20170206110745 - downloading file 20160510223828.m4a
+20170206110745 - downloading file 20160514153140.m4a
+20170206110745 - downloading file 20161002160139.jpg
+20170206110745 - downloading file 20160514173659.m4a
+20170206110745 - downloading file 20160510134719.m4a
+20170206110745 - downloading file 20160515144638.jpg
+20170206110745 - downloading file 20160510133448.m4a
+20170206110745 - downloading file 20161002113405.jpg
+20170206110745 - downloading file 20161105140740.jpg
+20170206110745 - downloading file 20161105111345.jpg
+20170206110745 - downloading file 20160511210509.m4a
+20170206110745 - downloading file 20160702190920.jpg
+20170206110745 - downloading file 20160509191103.jpg
+20170206110745 - downloading file 20160514120418.jpg
+20170206110745 - downloading file 20160509135907.m4a
+20170206110745 - downloading file 20160514150001.jpg
+20170206110745 - downloading file 20161002093416.jpg
+20170206110745 - downloading file 20160514173305.m4a
+20170206110745 - downloading file 20161204093017.jpg
+20170206110745 - downloading file 20160514170234.jpg
+20170206110745 - downloading file 20160702093314.m4a
+20170206110745 - downloading file 20161001155535.jpg
+20170206110745 - downloading file 20160702091437.jpg
+20170206110745 - downloading file 20160515164911.jpg
+20170206110745 - downloading file 20161002113745.m4a
+20170206110745 - downloading file 20161002091426.m4a
+20170206110745 - downloading file listfiles.php
+20170206110745 - downloading file 20160509104348.jpg
+20170206110745 - downloading file 20161001163703.m4a
+20170206110745 - downloading file 20161002155138.m4a
+20170206110745 - downloading file 20160514095807.jpg
+20170206110745 - downloading file 20161105140508.m4a
+20170206110745 - downloading file 20160514141007.jpg
+20170206110745 - downloading file 20160702092540.jpg
+20170206110745 - downloading file 20160514180730.m4a
+20170206110745 - downloading file 20170129083211.m4a
+20170206110745 - downloading file 20160514144837.jpg
+20170206110745 - downloading file 20160512095052.m4a
+20170206110745 - downloading file 20160510223245.m4a
+20170206110805 - 
+20170206110805 - -----------------------------------------------------------
+20170206110805 - AppKwonDo server started
+20170206110805 - Listening on port 3000
+20170206110805 - -----------------------------------------------------------
+20170206110809 - socket id 8xcoamtt6vPfnSplAAAA connected from ip ::1
+20170206110809 - received clientspecs from 8xcoamtt6vPfnSplAAAA:
+20170206110809 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206110817 - Socket 8xcoamtt6vPfnSplAAAA disconnected
+20170206110817 - socket id BrIakpZ2hRc-8jjBAAAB connected from ip ::1
+20170206110817 - received clientspecs from BrIakpZ2hRc-8jjBAAAB:
+20170206110817 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206110818 - user demydebug trying to login
+20170206110818 - {"loggedin":"true","role":"tkdradmin"}
+20170206110818 - received clientspecs from BrIakpZ2hRc-8jjBAAAB:
+20170206110818 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206110832 - Socket BrIakpZ2hRc-8jjBAAAB disconnected
+20170206112033 - 
+20170206112033 - -----------------------------------------------------------
+20170206112033 - AppKwonDo server started
+20170206112033 - Listening on port 3000
+20170206112033 - -----------------------------------------------------------
+20170206112054 - socket id v4RLo4RhEckrWkS8AAAA connected from ip ::1
+20170206112054 - received clientspecs from v4RLo4RhEckrWkS8AAAA:
+20170206112054 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206112054 - user demydebug trying to login
+20170206112054 - {"loggedin":"true","role":"tkdradmin"}
+20170206112055 - received clientspecs from v4RLo4RhEckrWkS8AAAA:
+20170206112055 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206112133 - Socket v4RLo4RhEckrWkS8AAAA disconnected
+20170206112138 - socket id xgOE8m37N9jLuAo0AAAB connected from ip ::1
+20170206112138 - user demydebug trying to login
+20170206112138 - {"loggedin":"true","role":"tkdradmin"}
+20170206112139 - received clientspecs from xgOE8m37N9jLuAo0AAAB:
+20170206112139 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206112139 - received clientspecs from xgOE8m37N9jLuAo0AAAB:
+20170206112139 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206112219 - socket id EwchGhclMcLELBwmAAAC connected from ip ::1
+20170206112219 - received clientspecs from EwchGhclMcLELBwmAAAC:
+20170206112219 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206112221 - user demydebug trying to login
+20170206112221 - {"loggedin":"true","role":"tkdradmin"}
+20170206112221 - Socket xgOE8m37N9jLuAo0AAAB disconnected
+20170206112226 - socket id quB9D3cWAEDLeqAsAAAD connected from ip ::1
+20170206112226 - user demydebug trying to login
+20170206112226 - {"loggedin":"true","role":"tkdradmin"}
+20170206112226 - received clientspecs from quB9D3cWAEDLeqAsAAAD:
+20170206112226 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206112227 - received clientspecs from quB9D3cWAEDLeqAsAAAD:
+20170206112227 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206112940 - Socket EwchGhclMcLELBwmAAAC disconnected
+20170206112943 - Socket quB9D3cWAEDLeqAsAAAD disconnected
+20170206112948 - socket id hos6hSiI1eJ1WNnZAAAE connected from ip ::1
+20170206112948 - user demydebug trying to login
+20170206112948 - {"loggedin":"true","role":"tkdradmin"}
+20170206112948 - received clientspecs from hos6hSiI1eJ1WNnZAAAE:
+20170206112948 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206112949 - received clientspecs from hos6hSiI1eJ1WNnZAAAE:
+20170206112949 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113047 - Socket hos6hSiI1eJ1WNnZAAAE disconnected
+20170206113052 - socket id D-sik54u_XAcH46sAAAF connected from ip ::1
+20170206113052 - user demydebug trying to login
+20170206113052 - {"loggedin":"true","role":"tkdradmin"}
+20170206113052 - received clientspecs from D-sik54u_XAcH46sAAAF:
+20170206113052 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113052 - received clientspecs from D-sik54u_XAcH46sAAAF:
+20170206113052 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113229 - Socket D-sik54u_XAcH46sAAAF disconnected
+20170206113235 - user demydebug trying to login
+20170206113235 - {"loggedin":"true","role":"tkdradmin"}
+20170206113235 - socket id 9ZsnSiaSR0cbCa4uAAAG connected from ip ::1
+20170206113235 - user demydebug trying to login
+20170206113235 - {"loggedin":"true","role":"tkdradmin"}
+20170206113235 - received clientspecs from 9ZsnSiaSR0cbCa4uAAAG:
+20170206113235 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113236 - received clientspecs from 9ZsnSiaSR0cbCa4uAAAG:
+20170206113236 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113236 - received clientspecs from 9ZsnSiaSR0cbCa4uAAAG:
+20170206113236 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113349 - Socket 9ZsnSiaSR0cbCa4uAAAG disconnected
+20170206113354 - socket id os_NozC04JdVa3YpAAAH connected from ip ::1
+20170206113354 - user demydebug trying to login
+20170206113354 - {"loggedin":"true","role":"tkdradmin"}
+20170206113355 - received clientspecs from os_NozC04JdVa3YpAAAH:
+20170206113355 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113355 - received clientspecs from os_NozC04JdVa3YpAAAH:
+20170206113355 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113434 - Socket os_NozC04JdVa3YpAAAH disconnected
+20170206113438 - socket id FGe0v_bJKiKw3MEGAAAI connected from ip ::1
+20170206113439 - user demydebug trying to login
+20170206113439 - {"loggedin":"true","role":"tkdradmin"}
+20170206113439 - received clientspecs from FGe0v_bJKiKw3MEGAAAI:
+20170206113439 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113439 - received clientspecs from FGe0v_bJKiKw3MEGAAAI:
+20170206113439 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113636 - Socket FGe0v_bJKiKw3MEGAAAI disconnected
+20170206113641 - socket id J_UMZL9obk4xMLO2AAAJ connected from ip ::1
+20170206113641 - user demydebug trying to login
+20170206113641 - {"loggedin":"true","role":"tkdradmin"}
+20170206113642 - received clientspecs from J_UMZL9obk4xMLO2AAAJ:
+20170206113642 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113642 - received clientspecs from J_UMZL9obk4xMLO2AAAJ:
+20170206113642 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206113704 - Socket J_UMZL9obk4xMLO2AAAJ disconnected
+20170206113709 - socket id 3Vnc-u-GRHgtJA_gAAAK connected from ip ::1
+20170206113709 - user demydebug trying to login
+20170206113709 - {"loggedin":"true","role":"tkdradmin"}
+20170206113709 - received clientspecs from 3Vnc-u-GRHgtJA_gAAAK:
+20170206113709 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206113710 - received clientspecs from 3Vnc-u-GRHgtJA_gAAAK:
+20170206113710 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206114344 - Socket 3Vnc-u-GRHgtJA_gAAAK disconnected
+20170206114349 - socket id qeP0JATA4LoyiQQdAAAL connected from ip ::1
+20170206114349 - user demydebug trying to login
+20170206114349 - {"loggedin":"true","role":"tkdradmin"}
+20170206114350 - received clientspecs from qeP0JATA4LoyiQQdAAAL:
+20170206114350 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206114350 - received clientspecs from qeP0JATA4LoyiQQdAAAL:
+20170206114350 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206114458 - Socket qeP0JATA4LoyiQQdAAAL disconnected
+20170206114504 - socket id UWwdkf-HzsSziGDDAAAM connected from ip ::1
+20170206114504 - user demydebug trying to login
+20170206114504 - {"loggedin":"true","role":"tkdradmin"}
+20170206114504 - received clientspecs from UWwdkf-HzsSziGDDAAAM:
+20170206114504 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206114504 - received clientspecs from UWwdkf-HzsSziGDDAAAM:
+20170206114504 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206114518 - Socket UWwdkf-HzsSziGDDAAAM disconnected
+20170206114524 - socket id _Apv6bzExflzDdClAAAN connected from ip ::1
+20170206114524 - user demydebug trying to login
+20170206114524 - {"loggedin":"true","role":"tkdradmin"}
+20170206114524 - received clientspecs from _Apv6bzExflzDdClAAAN:
+20170206114524 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206114525 - received clientspecs from _Apv6bzExflzDdClAAAN:
+20170206114525 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131239 - 
+20170206131239 - -----------------------------------------------------------
+20170206131239 - AppKwonDo server started
+20170206131239 - Listening on port 3000
+20170206131239 - -----------------------------------------------------------
+20170206131239 - socket id nauIB-mmMHVW__WvAAAA connected from ip ::1
+20170206131239 - received clientspecs from nauIB-mmMHVW__WvAAAA:
+20170206131239 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131244 - Socket nauIB-mmMHVW__WvAAAA disconnected
+20170206131248 - socket id Y0wySRXMqHUhg15UAAAB connected from ip ::1
+20170206131248 - received clientspecs from Y0wySRXMqHUhg15UAAAB:
+20170206131248 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131249 - user demydebug trying to login
+20170206131249 - {"loggedin":"true","role":"tkdradmin"}
+20170206131250 - received clientspecs from Y0wySRXMqHUhg15UAAAB:
+20170206131250 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131424 - Socket Y0wySRXMqHUhg15UAAAB disconnected
+20170206131430 - socket id 4L_V7MR0Q9ms82MvAAAC connected from ip ::1
+20170206131430 - user demydebug trying to login
+20170206131430 - {"loggedin":"true","role":"tkdradmin"}
+20170206131430 - received clientspecs from 4L_V7MR0Q9ms82MvAAAC:
+20170206131430 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131431 - received clientspecs from 4L_V7MR0Q9ms82MvAAAC:
+20170206131431 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131606 - Socket 4L_V7MR0Q9ms82MvAAAC disconnected
+20170206131611 - socket id ZtJY95jKMnP3a5vAAAAD connected from ip ::1
+20170206131611 - user demydebug trying to login
+20170206131611 - {"loggedin":"true","role":"tkdradmin"}
+20170206131611 - user demydebug trying to login
+20170206131611 - {"loggedin":"true","role":"tkdradmin"}
+20170206131611 - received clientspecs from ZtJY95jKMnP3a5vAAAAD:
+20170206131611 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131611 - received clientspecs from ZtJY95jKMnP3a5vAAAAD:
+20170206131611 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131612 - received clientspecs from ZtJY95jKMnP3a5vAAAAD:
+20170206131612 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131720 - Socket ZtJY95jKMnP3a5vAAAAD disconnected
+20170206131725 - socket id K7Y5eh1UUuyLFbFuAAAE connected from ip ::1
+20170206131725 - user demydebug trying to login
+20170206131725 - {"loggedin":"true","role":"tkdradmin"}
+20170206131725 - received clientspecs from K7Y5eh1UUuyLFbFuAAAE:
+20170206131725 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131725 - received clientspecs from K7Y5eh1UUuyLFbFuAAAE:
+20170206131725 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131820 - Socket K7Y5eh1UUuyLFbFuAAAE disconnected
+20170206131825 - socket id FTMm2eaGJXZ4D9fKAAAF connected from ip ::1
+20170206131826 - user demydebug trying to login
+20170206131826 - {"loggedin":"true","role":"tkdradmin"}
+20170206131826 - received clientspecs from FTMm2eaGJXZ4D9fKAAAF:
+20170206131826 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131826 - received clientspecs from FTMm2eaGJXZ4D9fKAAAF:
+20170206131826 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206131930 - Socket FTMm2eaGJXZ4D9fKAAAF disconnected
+20170206131936 - socket id 8IJc7LhN8L7Z7MYKAAAG connected from ip ::1
+20170206131936 - user demydebug trying to login
+20170206131936 - {"loggedin":"true","role":"tkdradmin"}
+20170206131936 - received clientspecs from 8IJc7LhN8L7Z7MYKAAAG:
+20170206131936 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206131936 - received clientspecs from 8IJc7LhN8L7Z7MYKAAAG:
+20170206131936 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206132157 - Socket 8IJc7LhN8L7Z7MYKAAAG disconnected
+20170206132202 - socket id o8Kbvp3AWpLmXPGIAAAH connected from ip ::1
+20170206132202 - user demydebug trying to login
+20170206132202 - {"loggedin":"true","role":"tkdradmin"}
+20170206132202 - received clientspecs from o8Kbvp3AWpLmXPGIAAAH:
+20170206132202 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206132202 - received clientspecs from o8Kbvp3AWpLmXPGIAAAH:
+20170206132202 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206132604 - Socket o8Kbvp3AWpLmXPGIAAAH disconnected
+20170206132610 - socket id BBROWPrBAAE4QjxTAAAI connected from ip ::1
+20170206132610 - user demydebug trying to login
+20170206132610 - {"loggedin":"true","role":"tkdradmin"}
+20170206132610 - received clientspecs from BBROWPrBAAE4QjxTAAAI:
+20170206132610 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206132610 - received clientspecs from BBROWPrBAAE4QjxTAAAI:
+20170206132610 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206133022 - Socket BBROWPrBAAE4QjxTAAAI disconnected
+20170206133027 - socket id 8RnB9HKj-8H-uBnVAAAJ connected from ip ::1
+20170206133027 - user demydebug trying to login
+20170206133027 - {"loggedin":"true","role":"tkdradmin"}
+20170206133028 - received clientspecs from 8RnB9HKj-8H-uBnVAAAJ:
+20170206133028 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206133028 - received clientspecs from 8RnB9HKj-8H-uBnVAAAJ:
+20170206133028 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206133108 - Socket 8RnB9HKj-8H-uBnVAAAJ disconnected
+20170206133113 - socket id bG-TrphmET1eMiKpAAAK connected from ip ::1
+20170206133113 - user demydebug trying to login
+20170206133113 - {"loggedin":"true","role":"tkdradmin"}
+20170206133113 - received clientspecs from bG-TrphmET1eMiKpAAAK:
+20170206133113 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170206133114 - received clientspecs from bG-TrphmET1eMiKpAAAK:
+20170206133114 - {"device":"browser","type":"clientspecs","nickname":"demydebug","appversion":"1.3.8"}
+20170206133151 - Socket bG-TrphmET1eMiKpAAAK disconnected
+20170211191311 - 
+20170211191311 - -----------------------------------------------------------
+20170211191311 - AppKwonDo server started
+20170211191311 - Listening on port 3000
+20170211191311 - -----------------------------------------------------------
+20170211191733 - socket id 6luGTIKbC9nnNwCxAAAA connected from ip ::ffff:127.0.0.1
+20170211191734 - received clientspecs from 6luGTIKbC9nnNwCxAAAA:
+20170211191734 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170211191736 - user demy trying to login
+20170211191736 - {"loggedin":"true","role":"tkdradmin"}
+20170211191736 - received clientspecs from 6luGTIKbC9nnNwCxAAAA:
+20170211191736 - {"device":"browser","type":"clientspecs","nickname":"demy","appversion":"1.3.8"}
+20170211191755 - get TKDT gara di forme 61
+20170211192158 - 
+20170211192158 - -----------------------------------------------------------
+20170211192158 - AppKwonDo server started
+20170211192158 - Listening on port 3000
+20170211192158 - -----------------------------------------------------------
+20170211192200 - socket id NU8PFK-CGMC9W7RGAAAA connected from ip ::ffff:127.0.0.1
+20170211192200 - received clientspecs from NU8PFK-CGMC9W7RGAAAA:
+20170211192200 - {"device":"browser","type":"clientspecs","nickname":"demy","appversion":"1.3.8"}
+20170211192205 - Socket NU8PFK-CGMC9W7RGAAAA disconnected
+20170211192208 - socket id BBY2aVMBVjZXjaD8AAAB connected from ip ::ffff:127.0.0.1
+20170211192208 - received clientspecs from BBY2aVMBVjZXjaD8AAAB:
+20170211192208 - {"device":"browser","type":"clientspecs","nickname":"","appversion":"1.3.8"}
+20170211192213 - user demy trying to login
+20170211192213 - {"loggedin":"true","role":"tkdradmin"}
+20170211192213 - received clientspecs from BBY2aVMBVjZXjaD8AAAB:
+20170211192213 - {"device":"browser","type":"clientspecs","nickname":"demy","appversion":"1.3.8"}
+20170211192224 - get TKDT gara di forme 61

@@ -1,0 +1,117 @@
+
+	<% 
+	
+	
+	var dl=data.length;
+	
+	for(var i=0; i<data.length; i++) { 
+	    var doc=data[i].doc;
+		var st="";
+		if (doc.dadisputare=="yes") {
+	
+	%>
+  <li id="match_<%= doc.id %>" style="<%=st%>" data-icon="false" tkdr-matchid="<%= doc.matchid %>" class="ui-li-has-thumb ui-first-child">
+  <a onclick="showMatchesForAtleta('<%= doc.atletaid %>','<%= doc.atletaname %>','<%= doc.datanascita %>');  $.mobile.changePage('#matchesatleta');" href="#" data-ajax="false" id="prog20150509212901" shref="javascript:matchAtletaDetail('000000000000026')" class="ui-btn">
+  <%
+  
+	
+	var imgsrc="images/matchok.png";
+	if (doc.disputato=="no") imgsrc="images/matchtoplay.png";
+	if (doc.disputato=="yes"){
+	  if (doc.vinto=="yes") imgsrc="images/matchok.png";
+	  if (doc.vinto=="no") imgsrc="images/matchko.png";
+	  if (doc.medagliamatch=="bronzo") imgsrc="images/medaglia_bronzo.png";
+	  if (doc.medagliamatch=="argento") imgsrc="images/medaglia_argento.png";
+	  if (doc.medagliamatch=="oro") imgsrc="images/medaglia_oro.png";
+	}
+	
+	
+  
+  %>
+  <img class="imgicon sui-li-icon ui-corner-none" src="<%= imgsrc %>" sheight="50" swidth="50">
+    <div>
+	<span class="match lgreen"><%= data[i].doc.matchid %></span><br>
+	<span class="categoria"><%= getCategoria(data[i].doc.datanascita).toUpperCase() %></span><br>
+	<span class="atleta"><%= data[i].doc.atletaname %></span><br>
+	<%	
+	  var vclass="";
+	  var parola="Non disputato"
+	  if ($.trim(data[i].doc.disputato)=="yes")
+	  {
+	  if ($.trim(data[i].doc.vinto)!="yes") { 
+	  
+	  vclass="perso";
+	  parola="Perso";
+		} else {
+		vclass="vinto";
+		parola="Vinto";
+	} 
+	} else {
+	
+	}
+	
+	
+	%>
+	<span class="soft <%= vclass %>">
+	<%= parola %>, risultato: <%= data[i].doc.risultato %></span><br>
+	
+	<span class="avv"><br></span></div>
+	<%
+	 if (data[i].doc.derby)
+	 {
+	  //console.log("this is derby")
+	  var dm=filterRows(jmatchesbyprog,{id: data[i].doc.derby})
+	  colog("appena inmpostato dm per matchesbyprog.ejs")
+	  colog(dm)
+	  if (dm.rows.length>0)
+	  {
+	  var davv=dm.rows[0].doc.atletaname;
+	
+	
+	%>
+	  <span class=small><i>DERBY CON <%= davv.toUpperCase() %> !</i></span>
+	<%
+	  }
+	  }
+	%>
+	
+	
+	
+	</a>
+	
+	<input type="hidden" value="<%= doc.datanascita %>" class="datanascita">
+	<input type="hidden" value="<%= doc.atletaid %>" class="atletaid">
+	<input type="hidden" value="<%= doc.atletaname %>" class="atletaname"></li>
+   <% 
+    }
+   } 
+   
+   if (dl==0){
+   
+    var filttext="";
+   if (isFiltered) filttext=" (filtro applicato)"
+   
+   %>
+  
+   <div class="card"  style="text-align: center">
+	<div class="card-image" style="text-align: center; stop: 15px; height: 105px; ">
+		<img alt="home" src="images/fight.png" style="width: 100px; height: 100px;"/>
+		<!--<h2>Card Title</h2>-->
+	</div>
+	<div>
+	
+	
+	<!--<h1>Pools non disponibili</h1>-->
+	<p style="background: lightblue">Nessun incontro trovato <%=filttext%></p>
+	</div>
+	
+</div>
+
+
+
+   
+   <%
+   
+   }
+   
+   %>

@@ -1,0 +1,57 @@
+<!--<li data-role="list-divider" data-position="fixed" role="heading" data-theme="b"><%= data.length%> schede</li>-->
+<% for(var i=0; i<data.length; i++) { 
+
+var ori=0;
+var argenti=0;
+var bronzi=0;
+
+/*
+var url=rooturl+"/matches/getmedaglie/"+data[i].doc.id;
+$.ajax({
+        type: "GET",
+        url: url,
+        dataType: 'json',
+        cache: false,
+        async: false
+
+
+}).done(function(mdata) {
+  ori=mdata.ori;
+  argenti=mdata.argenti;
+  bronzi=mdata.bronzi
+});
+*/
+
+ori=data[i].doc.ori;
+argenti=data[i].doc.argenti;
+bronzi=data[i].doc.bronzi;
+
+
+var liscritti=0;
+if (data[i].doc.myiscritti) {
+if (data[i].doc.myiscritti.trim()!=""){
+  liscritti=data[i].doc.myiscritti.split(",").length
+}
+}
+ 
+%>
+<li class="ui-first-child">
+<a class="fastClick gradient" href="#" id='<%= data[i].doc.id %>_<%= data[i].doc._rev %>' data-ajax="false" style="background-color:  data-transition='slide' black; color: ;" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<div>
+<span class="riga1 font13"><%= data[i].doc.title %></span><br>
+<span class="riga2 font13"><%= data[i].doc.location.toUpperCase() %> - <%=data[i].doc.data%></span><br>
+<% 
+   var stato=data[i].doc.stato;
+   var st_testo=stato;
+   if (stato=="nondisputata") st_testo="non disputata";
+   if (stato=="incorso") st_testo="in corso";
+   st_testo=st_testo.toUpperCase();
+%>   
+<span class="riga3" style="font-size: 11px"><i><b><%=st_testo%></b></i></span><br>
+<span class="riga4 font13">Iscritti: <%=liscritti %> - ORI: <b><%=ori%></b>  ARG: <b><%=argenti%></b>  BRO: <b><%=bronzi%></b></span>
+</div>
+</a>
+</li>
+
+
+    <% } %>

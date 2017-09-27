@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-ZZ" xml:lang="en-ZZ" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<link href="http://1.w3.s81c.com/common/v17/css/w3.css" rel="stylesheet" title="w3" type="text/css"/>
+</head>
+
+
+<body id="ibm-com">
+
+<div id="ibm-top" class="ibm-landing-page">
+
+<!-- MASTHEAD_BEGIN -->
+<div id="ibm-masthead">
+	<div id="ibm-mast-options">
+		<ul>
+			<li id="ibm-home"><a href="http://w3.ibm.com/">w3</a></li>
+		</ul>
+	</div>
+	<div id="ibm-universal-nav">
+		<p id="ibm-site-title"><em>IBM CIO - Global Infrastructure - Network Security</em></p>
+	</div>
+</div>
+<!-- MASTHEAD_END -->
+
+<!-- LEADSPACE_BEGIN -->
+<div id="ibm-leadspace-head" style="background: url(http://w3.the.ibm.com/ecmweb/cybersecurity/980x300_a_image.png) no-repeat 100% 50%;">
+<div id="ibm-leadspace-body">
+	<h1></br></br>IBM Cybersecurity</h1>
+	<p class="ibm-item-note"><b>Internet Gateway - BlueICE Ehningen - DEIBP9EH1--P9IS-CEN6M</b></p>
+</div>
+</div>
+<!-- LEADSPACE_END -->
+
+<!-- PAGE_REAL_BODY_BEGIN -->
+<div id="ibm-pcon">
+<div id="ibm-content">
+<div id="ibm-content-body">
+<div id="ibm-content-main">
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+	<h1>We’re sorry. Access to this web site is blocked.</h1>
+	<br/>
+	<p>The site you’re trying to reach at <b>demym.altervista.org</b> is categorized as <b>Suspicious</b> and blocked by IBM implemented policy.</p>
+	<br/>
+	<p><b>Suspicious</b> web sites may expose IBM to security risks that could compromise IBM systems or result in data loss. Visiting sites like these may also violate the IBM Business Conduct Guidelines.</p>
+	<br/>
+	<p><b>Here are some suggestions:</b></p>
+	<br/>
+	<ol>
+		<li>Make sure the URL is correct. Many blocked requests are due to typos, misplaced hyphens, or incorrect domain names (i.e. .com, .net, .org).</li>
+		<br/>
+		<li>If you suspect your system has been compromised and infected with malware, contact your local help desk immediately.
+			<center>
+			<p class="ibm-button-link-alternate">
+				<a href="https://w3.ibm.com/help/">Contact<br />Help@IBM</a>
+			</p>
+			</center>
+		</li>
+		<br/>
+		<li>If you have a valid business need and think the site’s been blocked in error. Review these instructions on blocked web sites on Help@IBM.
+			<center>
+			<p class="ibm-button-link-alternate">
+				<a href="https://w3.ibm.com/help/#/article/39523">Blocked<br />web site<br />instructions</a>
+			</p>
+			</center>
+		</li>
+	</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PAGE_REAL_BODY_END -->
+
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer-module"></div>
+<div id="ibm-footer">
+	<h2 class="ibm-access">Footer links</h2>
+	<ul>
+		<li><a href="http://w3.ibm.com/w3/info_terms_of_use.html">Terms of use</a></li>
+	</ul>
+</div>
+<!-- FOOTER_END -->
+
+</div>
+
+</body>
+</html>
+ 

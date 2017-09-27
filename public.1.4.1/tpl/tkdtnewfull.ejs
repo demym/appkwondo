@@ -1,0 +1,213 @@
+<style>
+h3 .ui-btn{ white-space:normal; word-break:break-word; }
+</style>
+
+
+<ul data-role="listview" >
+
+
+<%
+
+var trooturl="https://www.tkdtechnology.it/index.php/welcome/";
+
+
+for (var i=0; i<data.giorni.length; i++) {
+   var giorno=data.giorni[i]; 
+   var urlgiorno=trooturl+"dettaglio_tabulati?id_giorno="+giorno.id_giornata;
+   var hasContent=giorno.hasContent;
+   colog(urlgiorno);
+   var titolo=giorno.titolo;
+   
+   if (!giorno.hasContent) urlgiorno="javascript:none()";
+   urlgiorno="javascript:none()";
+   var st="";
+   
+   colog("giorno.enabled",giorno.enabled);
+   var ena=false;
+   if (giorno.tabulati.rows){
+     colog("giorno.tabulati.rows.length",giorno.tabulati.rows.length);
+if (giorno.tabulati.rows.length>0) ena=true;
+
+   } 
+
+   var funz="getTkdTechnologyGiornata('"+giorno.id+"','"+escape(giorno.titolo)+"')";
+   
+   //if (giorno.tabulati.length==0){
+   if (!ena){
+    
+     st="background: silver";
+     titolo=titolo.replace("I tabulati per questa giornata non sono ancora stati pubblicati","");
+     titolo=titolo+"<br><span style='font-size: 11px'>Tabulati non disponibili</span>";
+     colog("giorno not enabled",titolo);
+     funz="none()";
+    
+   }
+
+%>
+
+
+
+<li data-iconpos="right" style="cursor: pointer; <%=st%>" data-icon="carat-r" data-inset="false" onclick="<%=funz%>" sonclick="getTkdTechnologyGiornata('<%=giorno.id%>','<%=escape(giorno.titolo)%>')">
+    <h2 ><%=titolo%></h2>
+    
+  </li>
+
+
+<%
+
+}
+
+
+//var tiscr=jQuery.extend(true, {}, tkdt_atleti_iscritti);
+
+//var tiscr=JSON.parse(JSON.stringify(tkdt_atleti_iscritti));
+var tiscr=tkdt_atleti_iscritti;
+
+tiscr.sort(function(a,b){
+  var a1=a.societa.replaceAll(".","");
+  var b1=b.societa.replaceAll(".","");
+
+  if (a1>b1) return 1;
+  if (a1<b1) return -1;
+  return 0;
+
+});
+%>
+</ul>
+<br><br>
+<div style="padding: 0">
+  <div data-role="collapsible" class="collaps" data-theme="a">
+   	<h2>Iscritti: <%=tiscr.length%></h2>
+     <div data-role="navbar">
+	  <ul>
+		  <li><a href="javascript:displayTkdtIscr('peratleta');" class="ui-btn-active ui-state-persist">Per societa</a></li>
+		  <li><a href="javascript:displayTkdtIscr('percategoria');">Per categoria</a></li>
+	  </ul>
+  </div><!-- /navbar -->
+
+  <div id="peratleta" style="margin: 8px; overflow: auto; height: 500px;">
+
+<%
+var soc="";
+ for (var i=0; i<tiscr.length; i++) {
+     var iscr=tiscr[i];
+     var cat=iscr.sesso+" "+iscr.cateta+" "+iscr.catcintura+" "+iscr.catpeso;
+     //console.log(iscr);
+     var style="color: black;";
+     if (iscr.societa=="A.S.D. TAEKWONDO ROZZANO") style="color: blue; font-weight: bold;";
+
+     if (iscr.societa!=soc){
+       
+       
+       soc=iscr.societa;
+        var iscrsoc=filterArray(tiscr,{ societa: soc });
+        var liscrsoc=iscrsoc.length;
+       %>
+       
+       <div data-role="collapsible" class="collaps" data-theme="a">
+   	   <h3 style="font-size: 14px; "><%=soc.replaceAll(".","")%> (<%=liscrsoc%>)</h3>
+     <div style="margin: 6px">
+      <table width="100%" border="1">
+  
+<%
+      
+       iscrsoc.sort(function(a,b){
+            var a1=a.nome;
+            var b1=b.nome;
+            if (a1>b1) return 1;
+            if (a1<b1) return -1;
+            return 0;
+
+         })
+       //console.log("iscrsoc",iscrsoc);
+       for (var j=0; j<iscrsoc.length; j++){
+
+         var siscr=iscrsoc[j];
+         
+         var scat=siscr.sesso+" "+siscr.cateta+" "+siscr.catcintura+" "+siscr.catpeso;
+
+       
+       %>
+<tr height="45"><td colspan="2"><span class="atleta"><%=siscr.nome%></span><br><span style="font-size: 12px;" class="squadra"><%=scat%></span></td></tr>
+<%
+ }
+
+
+%>
+     </table>
+     </div>
+
+</div>     
+
+<%
+     }
+ }
+%>
+
+</div>   
+
+<div id="percategoria" style="display: none; margin: 8px; overflow: auto; height: 500px;">
+
+<%
+
+tiscr.sort(function(a,b){
+            var a1=a.sesso+a.cateta+a.catcintura+a.catpeso;
+            var b1=b.sesso+b.cateta+b.catcintura+b.catpeso;;
+            if (a1>b1) return 1;
+            if (a1<b1) return -1;
+            return 0;
+
+         })
+
+         //console.log("tiscrrr",tiscr);
+         var curcat="";
+for (var c=0; c<tiscr.length; c++){
+  var a=tiscr[c];
+
+  var tcat=a.sesso+" -"+a.cateta+" - "+a.catcintura+"  "+a.catpeso+"kg";
+  var vcat=a.sesso+" - "+a.cateta+" "+a.catpeso+"kg<br>"+a.catcintura;
+  if (tcat!=curcat) {
+
+    //console.log(tcat);
+    curcat=tcat;
+
+    %>
+
+
+<div style="padding: 0">
+    <div data-role="collapsible" class="collaps" data-theme="a">
+   	<h3 style="font-size: 14px;"><%=vcat%></h3>
+    <div style="margin: 8px; overflow: auto;">
+    <table width="100%" border="1">
+    <%
+      var tatls=filterArray(tiscr,{sesso: a.sesso, cateta: a.cateta, catcintura: a.catcintura, catpeso: a.catpeso});
+      //console.log("tatls",tatls);
+      
+      for (var t=0; t<tatls.length; t++) {
+        var atl=tatls[t];
+         %>
+     <tr height="45"><td colspan="2"><span class="atleta"><%=atl.nome%></span><br><span style="font-size: 12px;" class="squadra"><%=atl.societa%></span></td></tr>
+      <%
+
+      }
+     
+
+
+    %>
+    </table>
+    </div>
+    </div>
+    <%
+  }
+
+
+}         
+
+         
+
+%>
+
+</div>
+
+
+</div>

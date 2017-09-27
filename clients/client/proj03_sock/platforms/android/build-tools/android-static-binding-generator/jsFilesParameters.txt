@@ -1,0 +1,9 @@
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/app.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/chat/chat.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/gara/gara.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/matchesatleta/matchesatleta.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/matchmanager/matchmanager.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/shared/backend.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/shared/realtimeservice.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/rtconsole/confr.js
+/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/assets/app/pages/rtconsole/rtconsole.js

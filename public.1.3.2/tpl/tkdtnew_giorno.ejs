@@ -1,0 +1,49 @@
+<input type="hidden" id="idgiornata" value="<%=data.id%>" />
+<input type="hidden" id="titolo" value="<%=unescape(data.titolo)%>" />
+<ul data-role="listview">
+  <li data-theme="b" style="font-weight: bold;">
+    <%=unescape(data.titolo)%>
+  </li>
+  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+    <h2>MEDAGLIERE</h2>
+    <div style="border: 1px solid silver; width: 100%; max-height: 400px; overflow: auto;" >
+    <%=data.medagliere.html%>
+    </div>
+  </li>
+  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+    <h2>TABULATI</h2>
+    
+   
+    <!-- <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
+      <% for (var i=0; i<data.tabulati.rows.length; i++) {
+       var tabrow=data.tabulati.rows[i];
+    %>
+      <li>
+      <table width="100%" border="1">
+      <tr>
+      <td><%=tabrow.sesso%></td>
+      <td><%=tabrow.categoria_eta%></td>
+      <td><%=tabrow.categoria_peso%></td>
+      </tr>
+      <tr>
+      <td><%=tabrow.cintura_da%></td>
+      <td><%=tabrow.cintura_a%></td>
+      <td><a data-role="button" href="<%=tabrow.href%>">VEDI</a></td>
+      </tr>
+      </table>
+      
+      
+      </li>
+    <% } %> 
+    </ul>-->
+ <div style="border: 1px solid silver; width: 100%; max-height: 400px; overflow: auto;" >
+    <%=data.tabulati.html%>
+    </div>
+  </li>
+  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+    <h2>ELENCO SOCIETA</h2>
+     <div style="border: 1px solid silver; width: 100%; max-height: 400px; overflow: auto;" >
+    <%=data.elenco_societa.html%>
+    </div>
+  </li>
+  </ul>

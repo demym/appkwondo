@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <title>TKDRWEB</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="common.css" />
+	<script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.mobile-1.4.4.min.js"></script>
+	<script src="phonegap-1.2.0.js"></script>
+	<script src="utils.js"></script>
+	<script src="common.js"></script>
+	<script type="text/javascript">
+	
+	 var $=jQuery;
+	 
+	 
+	 function init()
+	 {
+	  document.addEventListener("deviceready", showMessageBox, true);      
+	  
+	 
+	 }
+	 
+	  var showMessageBox = function() {
+ 
+                             navigator.notification.alert("Hello World of PhoneGap");
+ 
+                        }
+	 
+	 
+	 
+	 $(document).on("pageinit","#index",function() {	
+	   
+	   //$.mobile.ajaxLinksEnabled = false;
+	     $(".tb").remove();
+		 $("#av_toolbar_regdiv").remove();
+		 $("#av_toolbar_iframe").remove();
+       //alert("removed av toolbar
+	   	 if(navigator.userAgent.match(/Android/i)){
+    window.scrollTo(0,1);
+}
+	 
+	 
+	   
+	  $.ajax({
+		type: "GET",
+		url: "atleti.xml",
+		dataType: "xml",
+		success: function(xml) {
+		   
+		    var htm="";
+		    //htm+="<ul id='lista' data-role='listview' data-theme='c' >";
+			$(xml).find('atleta').each(function(){
+				var id = $(this).find("id").text();
+				var cognome = $(this).find('cognome').text();
+				var nome = $(this).find('nome').text();
+				htm+="<li><a href='atleta.html?id="+id+"'>"+cognome+" "+nome+"</a></li>";
+				
+			});
+		   //htm+="</ul>";
+		   
+		   $("#lista").append(htm);
+		   $("#lista").listview("refresh");
+		
+		  } 
+	    
+     });		
+
+	 
+	 });
+	 
+	 
+	 function login(obj)
+	 {
+	  var page=$(obj).closest("div[data-role=page]");
+	  var user=page.find("#username").val();
+	  var psw=page.find("#password").val();
+	  var msg=page.find("#msg");
+	  //alert(user+" "+psw);
+	  
+	  var url="login.php?user="+user+"&psw="+psw;
+	  
+	  $.ajax({
+	    type: "POST",
+		url: url,
+		dataType: "text",
+		success: function(t) {
+		  //alert(t);
+		  if (t=="notok")
+		  {
+		   msg.html("<font color=red>Utente non autorizzato</font>");
+		  }
+		  if (t=="ok")
+		  {
+		   $.mobile.changePage("#index");
+		  }
+		
+		}
+	  
+	  });
+	 
+	 
+	 }
+	
+	</script>
+<style type="text/css">
+    html, body {
+    height : 100%;
+}
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+}
+.lista {
+   height:100%;
+}
+.lista a {
+    height: 40px;
+}
+
+
+
+    </style>
+
+</head>
+<body onload="init()">
+        <div data-role="page" id="index" data-theme="b">
+            <!--<div data-role="header" class="ui-content" data-theme="b">
+                <h1>TkdRozzanoManagement
+                </h1>
+            </div>-->
+			<div data-role="header" class="ui-content" data-theme="b" data-position="fixed">
+			<table><tr><td>
+			  <img src="images/ic_launcher.png" width='30' height='30' /></td><td>AppKwonDo Rozzano</td></tr></table>
+			</div>
+            <div data-role="content">
+                <ul  data-role="listview" data-theme="b" data-inset="false" data-dividertheme="a" class="lista">
+                    <li >
+                        <a href="atleti.html" sdata-ajax="false" data-transition="slidedown">Atleti</a>
+                    </li>
+                   
+                    <li>
+                        <a href="gare.html" sdata-ajax="false" data-transition="slidedown">Gare</a>
+                    </li>
+					<li>
+                        <a href="temporeale.html" data-ajax="false" data-transition="slidedown">Tempo reale</a>
+                    </li>
+					<li style="display:none">
+                        <a href="news.html" data-ajax="false" data-transition="slidedown">Notizie</a>
+                    </li>
+                    <li>
+                        <a href="tkdtech.html" data-transition="pop">TKD Technology</a>
+                    </li>
+                </ul>
+                <br />
+                <br />
+            </div>
+              
+        </div>
+		
+    </body>
+</html>

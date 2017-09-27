@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-appcompat-v7-25.3.1_402965bf77e8ef42a92a3adc49cf2102a83f1715.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-core-ui-25.3.1_c56946a4b764a403e9c316160fac0644e1a12fb6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/design/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-design-25.3.1_5729904cf0434e8115d111eb78eef6aaeac1c9a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-media-compat-25.3.1_1ca00da455af067e762fec9188025d862a6ad5ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.facebook.fresco-imagepipeline-base-0.11.0_7120e4be383144b9f89d96af2b8d663d6a979a96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-recyclerview-v7-25.3.1_149e8f9a3a7c3be03d1d91f76a4e866b92eb55c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-fragment-25.3.1_b5795a8166a9f8111364b2a3d1738a025cb5fa9c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/library-2.4.0_68246fe17d5723216e940e4f743e2edc017b6718.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-core-utils-25.3.1_fda2f9bfc52188c6a4e91c42abb8815cdbc7243e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9eec987a0056adc79d607b32e7e1c41997a434a7">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/intermediates-exploded-aar-widgets-release_9ba1eb36f0fc1d244fa395351fcca6f0919704e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/node_modules/nativescript-local-notifications/platforms/android/libs/localnotlib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c4d132bb5ff6e3d3a4d8e708448649ff6e3e76fc">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/localnotlib_7debec8766795a103704480093bb70ebba974954.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-compat-25.3.1_3096c12222b38cc9ceeeb95a0291c4b618656457.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/support-annotations-25.3.1_4005937b4cb48ab5713a0c96cc399eb3966a0a28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/io.socket/socket.io-client/0.8.3/b30500232ff0668a47c9f91f02e6935457a52fb5/socket.io-client-0.8.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b30500232ff0668a47c9f91f02e6935457a52fb5">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/socket.io-client-0.8.3_d60fc2572b87b717fcba55243aacabba14957427.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.facebook.fresco-drawee-0.11.0_2524accbbbc272ad1a079360078829ee8d920abe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/okio-1.11.0_bf36badec567fb9169ff1c1a31a6edbc0b184816.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.facebook.fresco-fbcore-0.11.0_125b5f0b4f5b4cc40ab8ea55adaaefbadb432142.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-v4-25.3.1_ad434c3acb61f50f6ca35a1200615e2d002c6e7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.8.3/854b49396e1e9f9bb0ab025062ddb49c4ed65ca1/engine.io-client-0.8.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="854b49396e1e9f9bb0ab025062ddb49c4ed65ca1">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/engine.io-client-0.8.3_bf08fbee86e0c5da3dac8c37b52c99682c6ff73e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-support-vector-drawable-25.3.1_f1090e711888a38723eb7f4e1f793e03aa2f279f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/bolts-tasks-1.4.0_a85a5fcbfd222005945259d9cbfdd9485638896e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/transition/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-transition-25.3.1_dcd1071198ea699b2d19abf081b40ae8c1f32fcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.facebook.fresco-imagepipeline-0.11.0_276ff6694653ef090922d018af9b7a0cb2719db9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.facebook.fresco-fresco-0.11.0_ba1f158a1f1f134799fd052fecc14c84bfef22f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.5.0/4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83/okhttp-3.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/okhttp-3.5.0_17781709c1ce0b96300795b028655e45940489e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/proj03sock/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8e45d63bd91f9a51a9e6f9c96be7a01deb415690">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/proj03sock-runtime-unspecified_30136048eb6fa1c8b9b6749c26bb75cc1080a893.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/com.android.support-animated-vector-drawable-25.3.1_064aba081e0dea7deae01f5951fc9aa4b6241006.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/exploded-aar/proj03sock/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a3e74f5f1ebe12c7cfa6591158ef298c95a5275f">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4F5/debug/binding-generator_3a40988600706dd009ae92932e7ec10b53381a31.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,63 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+   <Page.actionBar>
+     <!--<ActionBar title="Title">
+      <NavigationButton text="Gare"/>
+    </ActionBar>-->
+    <ActionBar title="Realtime Console" cssClass="actionbar">
+	  <NavigationButton android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+      <ActionBar.actionItems>
+      <ActionItem>
+       <ActionItem.actionView android.position="right">
+                        <StackLayout style="height: 20; width: 30;" orientation="horizontal" style="text-align: right"> 
+                            
+                           
+                            <Label text="&#xf086;" tap="gotoChat" class="font-awesome baricon "/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+            </ActionItem>
+	    
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+        <ActionItem text="right" ios.position="right"/>-->
+        <ActionItem text="pop"   ios.position="right"  android.position="popup"/>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+ 	  <!--<ScrollView>-->
+    
+
+<StackLayout  orientation="vertical" >
+<TabView id="tabview"  selectedIndexChanged="onSelectedIndexChanged" style="height: 50"/>
+
+<GridLayout  columns="*,150" rows="45,45,20" id="console">
+  <Label id="matchlabel" style="margin: 5 5 5 5; font-weight: bold; font-size: 18" colSpan="2" row="0" text="{{rtconsole.match.matchid+' '+rtconsole.match.atletaname}}"/>
+  
+  <Label text="Tempo reale" col="0" row="1"/><Button id="butrealtime" text="TempoReale" tap="butConsoleTap" class="{{rtconsole.temporeale ? 'rtbuttonon' : 'rtbuttonoff'}}" row="1" col="1" style="width: 100%" /><!--<Switch row="1" col="1" id="rtswitch" checked="{{ rtconsole.active }}" propertyChange="rtChanged"/>-->
+  <StackLayout colSpan="2" row="2"/>
+  </GridLayout>
+  <GridLayout id="realtimegrid" visibility="{{rtconsole.temporeale ? 'visible' : 'collapsed'}}" columns="*,*,*,*,*" rows="60,60">
+  
+
+  <Button id="butpause" tap="butConsoleTap" text="{{ rtconsole.rtdata.paused ? 'In pausa' : 'IN CORSO'}}" row="0" class="{{ rtconsole.paused ? 'roundbutton' : 'roundbuttonrunning'}}" style="width: 100%" colSpan="5"/>
+  
+    <Button id="butround1" class="{{ rtconsole.round==='1' ? 'roundbuttonselected' : 'roundbutton'}}" text="R1" col="0" row="1" tap="butConsoleTap"/>
+  <Button id="butround2" class="{{ rtconsole.round==='2' ? 'roundbuttonselected' : 'roundbutton'}}" text="R2" col="1" row="1" tap="butConsoleTap"/>
+  <Button id="butround3" class="{{ rtconsole.round==='3' ? 'roundbuttonselected' : 'roundbutton'}}" text="R3" col="2" row="1" tap="butConsoleTap"/>
+  <Button id="butroundgp" class="{{ rtconsole.round==='gp' ? 'roundbuttonselected' : 'roundbutton'}}" text="GP" col="3" row="1" tap="butConsoleTap"/>
+  <Button id="butfineround" class="{{ rtconsole.fineround ? 'fineroundbuttonselected' : 'roundbutton'}}" text="FR" col="4" row="1" tap="butConsoleTap"/>
+  
+    </GridLayout>
+   
+   <GridLayout visibility="visible" columns="*,*,*,*,*" rows="60,60,60">
+  
+  <Button id="butplus1" class="plusbut" text="+" col="0" row="0" onTap="butConsoleTap"/>
+  <Button id="butminus1" class="plusbut" text="-" col="1" row="0" onTap="butConsoleTap"/>
+  <TextField id="risult1" text="{{rtconsole.result}}" col="2" row="0"/>
+  <Button id="butplus2" class="plusbut" text="+" col="3" row="0" onTap="butConsoleTap"/>
+  <Button id="butminus2" class="plusbut" text="-" col="4" row="0" onTap="butConsoleTap"/>
+  <StackLayout colSpan="5" row="1" style="height: 100"  />
+  <Button id="butsave" class="savebut" colSpan="5" row="2" text="SALVA"  tap="saveResult" />
+
+ </GridLayout>
+
+ </StackLayout>
+</Page>

@@ -1,0 +1,242 @@
+
+	 
+	 .tabselected  {
+	   /*border-top: 1px solid silver;
+	   border-right: 1px solid silver;
+	   border-left: 1px solid silver;*/
+	   //text-align: left;
+	   /*border-bottom: 1px solid gray;*/
+	   background: blue;
+	   color: yellow;
+	 }
+	 
+	 #navbar li {
+	  //border-bottom: 1px solid silver;
+	 } 
+	 
+	 .ulupdate {
+	  display: none;
+	 }
+	 
+
+    html, body {
+    height : 100%;
+}
+
+span.categorie {
+ cursor: pointer;
+}
+
+span.categorie:hover {
+ background: #555555;
+}
+.vinto {
+ color: lightgreen;
+
+}
+.perso {
+ color: orange;
+ }
+ 
+ .nondisputato {
+  color: gray;
+ }
+
+.ui-page {
+    min-height:100% !important;
+    height:auto !important;
+}
+
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%
+}
+
+.ui-content {
+    margin-bottom:42px; /* HEIGHT OF YOUR FOOTER */
+}
+
+.imgicon {
+    position:relative; 
+    top:0; 
+    bottom:0; 
+    left: 0px; 
+	padding: 5px;
+    margin:auto; 
+    height:45px; 
+    width:45px;
+	border: 1px solid black;
+}
+
+.ui-listview .ui-li-icon {
+    max-height: 30px;
+    max-width: 30px;
+    top: 50%;
+    /*margin-top: -15px;*/
+}
+
+#lista img {
+position:absolute; 
+    top:0; 
+    bottom:0; 
+    left:0px; 
+    margin:auto; 
+    height:45px; 
+    width:45px;
+}
+
+.panel td {  
+    color: #FFF !important;  
+    /*text-shadow: 0 0 0 rgba(0,0,0,0);  
+    font-size: 14px;  
+    padding: 15px 20px 15px 60px;  
+    display: block;  
+    text-decoration: none;  
+    border-bottom: 1px solid #475657;  
+    border-top: 1px solid #95A5A6;  
+    position: relative;  
+    font-weight: 400;  */
+}  
+
+#infogara {
+ text-align: center;
+}
+
+.green {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+.red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.gray {
+  color: gray;
+  font-size: 20px;
+  font-weight: normal;
+}
+.black {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.data {
+ font-size: 11px;
+ color: #dddddd;
+
+}
+
+.testo {
+ font-size: 13px;
+  white-space: normal !important;
+
+}
+
+.nonvisto {
+ color: yellow;
+}
+
+.small {
+ font-size: 10px;
+}
+
+.listbar li {
+  font-size: 12px;
+  
+}
+
+.center {
+ text-align: center; !important;
+
+}
+
+.panelicon {
+ width:20px;
+ height:20px;
+}
+
+#ulcategorie li {
+ font-size: 16px;
+ cursor: pointer;
+ min-width: 250px;
+}
+
+
+.categoria {
+ font-size: 10px;
+ color: gray;
+}
+
+#msgBar {
+ font-size: 10px;
+ color: yellow;
+ font-weight: normal;
+ padding: 2px;
+
+}
+
+.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+    margin: 0;
+}
+.ui-li-static.ui-collapsible {
+    padding: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+    border-top-width: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+.ui-li-static.ui-collapsible > .ui-collapsible-content {
+    border-bottom-width: 0;
+}
+.custom-count-pos{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    float: right;
+}
+
+#ulcategorie li {
+ font-weight: bold;
+}
+
+.ui-button .ui-button-text
+{
+ line-height: 1.0;
+}
+
+
+.spancat {
+ font-size: 8px;
+ padding: 6px;
+}
+
+#ulinfogara li {
+    font-size: 1px;
+
+}
+.match {
+  font-size: 14px;
+  font-weight: bold;
+  color: #dddddd;
+}
+
+.soft {
+  font-size: 14px;
+  font-weight: normal;
+  color: #dddddd; 
+}
+.result {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffeeff; 
+}
+.atleta {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+}

@@ -1,0 +1,81 @@
+<html>
+<head>
+<script src="js/jqm/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+
+function post() {
+
+
+$.ajax({
+    type: "POST",
+    url: "http:localhost:3000/api/putxml/new",
+    dataType: "xml",
+    contentType: "application/xml",
+    data: {
+	  xml:  JSON.stringify("<Category><categoryId>007</categoryId><categoryName>Ajax</categoryName></Category>")
+	},
+    success: function (res) {
+        alert("XML: it works!");
+    },
+    error: function (res) {
+        alert("XML: not working! " + res.statusText);
+    }
+});
+
+
+}
+
+function get() {
+
+var garaid=$("#garaid").val();
+
+$.ajax({
+    type: "GET",
+    url: "http://localhost:3000/tkdt/get/"+garaid,
+  
+   
+    success: function (res) {
+        console.log(res);
+    },
+    error: function (res) {
+        alert("XML: not working! " + res.statusText);
+    }
+});
+
+
+}
+
+
+function medals() {
+
+var garaid=$("#garaid").val();
+
+$.ajax({
+    type: "GET",
+    url: "http://localhost:3000/tkdt/medagliere/"+garaid,
+  
+   
+    success: function (res) {
+        console.log(res);
+        $("#result").html(res);
+    },
+    error: function (res) {
+        alert("XML: not working! " + res.statusText);
+    }
+});
+
+
+}
+
+
+</script>
+</head>
+<body>
+<input type="button" onclick="post()" value="POSTA" />
+<input type="button" onclick="get()" value="GETTA" />
+<input type="button" onclick="medals()" value="MEDALS" />
+<input type="text" id="garaid" value="31" />
+<div id="result"></div>
+</body>
+</html>

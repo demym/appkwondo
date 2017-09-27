@@ -1,0 +1,52 @@
+page-matchconsole {
+    .tab {
+        font-size: 10px;
+       // white-space: normal;
+    }
+    .segment-md .segment-button .secondary {
+        color: red;
+    }
+    .segment-md .segment-button .dark {
+        color: blue;
+    }
+
+    .realtimebut {
+        background: green;
+        color: white;
+    }
+     .norealtimebut {
+        background: #f4f4f4;
+        color: black;
+    }
+
+    .consoleinfo {
+        text-align: center;
+        font-size: 16px;
+        height: 40px;
+        width: 100%;
+    }
+
+    ion-input {
+        border: 1px solid gray;
+        text-align: center;
+    }
+
+    .roundactive {
+        background: blue;
+        color: white;
+    }
+
+    .incorso {
+        background: orange;
+        color: white;
+    }
+
+    .fineround {
+        background: cyan;
+        color: black;
+    }
+
+    .tabnorealtime {
+        color: gray;
+    }
+}

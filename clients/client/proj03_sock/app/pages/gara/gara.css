@@ -1,0 +1,10 @@
+.campo {
+    font-weight: bold;
+    color: black;
+}
+
+.campolabel {
+    font-weight: normal;
+    font-size: 10;
+    color: gray;
+}

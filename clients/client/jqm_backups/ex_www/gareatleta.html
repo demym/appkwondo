@@ -1,0 +1,727 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.4.min.css" />
+    <script src="jqm/jquery-1.11.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.4.min.js"></script>
+	<!--<script src="main.js"></script>-->
+	
+	 
+
+    <script type="text/javascript">
+	 var $=jQuery;
+	
+	 var $atleti=null;
+	 var $gare=null;
+	 var $matches=null;
+	 
+	 var garaid="";
+	 var atletaid="";
+	 var $atleta=null;
+	 var selectedid="";
+	 
+	 
+	/*
+$(document).on( 'taphold', 'ul#lista li', tapholdHandler );
+
+            function tapholdHandler( event ){
+			    $(this).addClass("tapped");
+			    $("#popDelMatch").popup('open');
+              //alert('Hello');
+            }      
+
+	*/
+$(document).on("pagebeforeshow","#matchperatleta",function(){
+    
+	//alert("pageload");
+  $.ajaxSetup({ cache: false });	
+  $.mobile.ajaxLinksEnabled = false;
+  
+  
+  $("#popAddMatch").popup();
+  $("#popDelMatch").popup();
+  $("#popResult").popup();
+  
+  
+       $(".tb").hide();
+		 $("#av_toolbar_regdiv").hide();
+		 $("#av_toolbar_iframe").hide();
+
+    garaid = getQueryString('garaid');
+	atletaid = getQueryString('atletaid');
+
+	 $("#backGara").attr("href","gara.html?id="+garaid);
+	
+  refreshMe();
+  
+  
+  $("#resultcancel").bind("click",function() {
+  $("ul#lista li").removeClass("liselected");
+    $("#popResult").popup('close');
+	selectedid="";
+ });  
+ 
+  $("#resultok").bind("click",function() {
+  
+     var result=$("#risult").val();
+	 //alert($("ul#lista li.liselected").length);
+	 
+	 var id=selectedid;
+	 //alert(id);
+	 
+	 var valore=$("input:radio[name=radio-choice-0]:checked").val();
+	 //alert(v);
+	 	  
+	  var url="updagent.php?action=edit&tag=match";
+	
+	  var v="";
+	  var d="";
+	  var dd="";
+	  var ris="";
+	   var med="none";
+	  
+	  if (valore=="nondisputato")
+	  {
+	   v="no";
+	   dd="yes";
+	   d="no";
+	   med="none";
+	 
+	   
+	  } else
+	  {
+	  if (valore=="vinto") v="yes";
+	  if (valore=="perso") v="no";
+	  d="yes";
+	  dd="yes";
+	  }
+	  
+	  
+	   
+	   url+="&id="+id;
+	   url+="&garaid="+garaid;
+	   url+="&vinto="+v;
+	   url+="&disputato="+d;
+	   url+="&dadisputare="+dd;
+	   url+="&risultato="+result;
+	   
+	   var ln=$("ul#lista li").length;
+	   var ord=$("ul#lista li#match_"+id).index();
+	   
+	   sdebug("ln: "+ln);
+	   sdebug("ord: "+ord);
+	  
+	   if (parseInt(ord,10)==(parseInt(ln,10)-1))
+	   {
+	    if (d=="yes")
+		{
+	     if (v=="no") med="argento";
+		 if (v=="yes") med="oro";
+	    } else med="none";
+	   }
+	   
+	   if (parseInt(ord,10)==(parseInt(ln,10)-2))
+	   {
+	    if (d=="yes")
+		{
+	     if (v=="no") med="bronzo";
+		} else med="none"; 
+		
+	   
+	   }
+	   
+	   url+="&medagliamatch="+med;
+	  
+	   //alert(ord);
+	   
+	   $("ul#lista li").each(function(i) {
+	      var id=$(this).attr("id").replace("match_","");
+	      var urlx="updagent.php?action=edit&tag=match&garaid="+garaid+"&id="+id;
+		  if (i<ord)
+		  {
+		   sdebug("gara precedente "+i);
+		   if (d=="yes")
+		   {
+		    urlx+="&disputato=yes&vinto=yes&dadisputare=yes&medagliamatch=none";
+		   
+		   }
+		   
+		    sdebug(urlx);
+		    $.post(urlx,{ a: '1'},function() {
+			});
+		  
+		  }
+		  
+		  if (i>ord)
+		  {
+		   sdebug("gara successiva "+i);
+		   if (d=="yes")
+		   {
+		    if (v=="yes")
+			{
+		     urlx+="&disputato=no&vinto=no&dadisputare=yes&medagliamatch=none";
+		    } 
+			if (v=="no")
+			{
+		     urlx+="&disputato=no&vinto=no&dadisputare=no&medagliamatch=none";
+		    } 
+		   }
+		   
+		   if (d=="no")
+		   {
+		     urlx+="&disputato=no&vinto=no&dadisputare=yes&medagliamatch=none";
+		   }
+		   
+		    sdebug(urlx);
+		    $.post(urlx,{ a: '1'},function() {
+			});
+		  
+		  }
+		  
+		 
+	   });
+	   
+	   
+	   $.post(url,{ a: '1'},function() {
+	  
+	  refreshMe(function() {
+	   $("#popResult").popup('close');  
+	    $("ul#lista li").removeClass("liselected");
+	  selectedid="";
+	  });
+	  
+	});
+	   
+	  
+  });
+
+  $("#cancelmatchbut").bind("click",function() {
+      $("#popDelMatch").popup('close');
+	  $("ul#lista li").removeClass("tapped");
+   });
+   
+     
+    $("#delmatchbut").bind("click",function() {
+	  var id=$("ul#lista li.tapped").attr("id").replace("match_","");
+	  
+	  var url="updagent.php?action=delete&tag=match";
+	
+	url+="&id="+id;
+	url+="&garaid="+garaid;
+	
+	$.post(url,{ a: '1'},function() {
+	  
+	  refreshMe(function() {
+	   $("#popDelMatch").popup('close');  
+	   $("ul#lista li").removeClass("tapped");
+	  });
+	  
+	});
+	  
+	  
+    
+	  
+   });
+  
+  $("#addmatchbut").bind("click",function() {
+    
+	var $mid=$("#matchid");
+	
+	var progid=$mid.val().substring(1);
+	var datanascita=$atleta.find("datanascita").text();
+	var atletaname=$atleta.find("cognome").text()+" "+$atleta.find("nome").text();
+	//alert(datanascita);
+	//return;
+	
+	var url="updagent.php?action=add&tag=match";
+	
+	url+="&progid="+progid;
+	url+="&garaid="+garaid;
+	url+="&atletaid="+atletaid;
+	url+="&atletaname="+atletaname;
+	url+="&risultato=nd";
+	url+="&ordine=1";
+	url+="&vinto=no";
+	url+="&disputato=no";
+	url+="&dadisputare=yes";
+	url+="&matchid="+$mid.val();
+	url+="&medagliamatch=none";
+	url+="&lastupdated=never";	
+	url+="&datanascita="+datanascita;
+	
+	$.post(url,{ a: '1'},function() {
+	  
+	  refreshMe(function() {
+	   $("#popAddMatch").popup('close');  
+	  });
+	  
+	});
+  
+  });
+  
+  $("ul#lista li a").bind("click",function() {
+     //alert("cc");
+     $("#popResult").popup("open");
+  });
+  
+ 
+	
+
+  
+  
+	
+		
+
+});
+
+   function getQueryString(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function refreshMe(callback)
+{
+ //alert("refreshme");
+debug("refreshme");
+/*
+   $.ajax({
+		type: "GET",
+		url: "atleti.xml",
+		dataType: "xml",
+		success: function(axml) {
+		     //$atleti = $( axml );
+			 
+			 alert("got atleti");
+			 $(axml).find("atleta").each(function() {
+			  var id=$(this).find("id").text();
+			  if (id==atletaid) {
+			   $atleta=$(this).clone(); 
+			   alert("trovato atleta");
+			   alert($atleta.find("cognome").text());
+			   }
+			  
+			  
+			 });
+			 //$atleta=$(axml).find("atleta").find("id:contains('"+atletaid+"')").parent();
+			 //alert($atleta.html());
+			 //alert($atleta.length);
+			 */
+		     $.ajax({
+				type: "GET",
+				url: "gare.xml",
+				dataType: "xml",
+				success: function(gxml) {
+						$gare = $( gxml );
+						$.ajax({
+							type: "GET",
+							url: "matches_"+garaid+".xml",
+							dataType: "xml",
+							success: function(mxml) {
+									 
+								//$matches = $.parseXML(mxml);
+								$matches=$(mxml);
+								//alert("got matches");
+								//refreshMe();
+								sdebug($matches.find("match").length);
+								$m=$("<matches></matches>");
+								$matches.find("match").each(function() {
+								  var aid=$(this).find("atletaid").text();
+								  if ($.trim(aid)==$.trim(atletaid))
+								  {
+								  $m.append($(this).clone());
+								  }
+								});
+								sdebug($m.find("match").length);
+								$matches=$m;
+								sdebug($matches.find("match").length);
+								//alert("launching refreshmebyprog");
+								refreshMeByProg();
+								//alert("refreshemebyprog finished");
+								//$.mobile.loading('hide');
+								if (callback!=null) callback();
+		
+						}});
+				} 
+	    
+			});	
+		 /*
+		} 
+	    
+     });		
+*/
+}
+
+
+function refreshMeByProg()
+	 {
+	  //var xml=matches_xml;
+	  //alert($(xml).find("match").length);
+	  refreshMode="byprog";
+		    var aid=garaid;
+		    var htm="";
+		    //htm+="<ul id='lista' data-role='listview' data-theme='c' >";
+			 
+			var $gare=$("<matches></matches>");
+			 
+			$matches.find('match').each(function(){
+			    var match=$(this);
+				var id = $(this).find("garaid").text();
+				//debug(id)
+				if (id==garaid)
+				{
+				 var cognome = $(this).find('progid').text();
+				 var nome = $(this).find('atletaid').text();
+				
+			     //debug(cognome+" - "+nome);
+				 $gare.append(match.clone());
+				 sdebug("appended, $gare:"+$gare.find("match").length);
+				
+				} 
+				
+			});
+			
+			$matches=$gare;
+			sdebug($matches.find("match").length);
+			
+			
+			var matches=$matches.find("match");
+
+		   matches.sort(function(a, b){
+		     	var progid_a = $(a).find('progid').text();
+				var progid_b = $(b).find('progid').text();
+				
+				if ( progid_a< progid_b )  return -1;
+                if ( progid_a> progid_b  ) return 1;
+               return 0;
+           }); 
+		   
+		   matches.each(function() {
+		     
+			var progid=$(this).find("progid").text(); 
+			var matchid=$(this).find("matchid").text(); 
+			var vinto=$(this).find("vinto").text(); 
+			var disputato=$(this).find("disputato").text(); 
+			var dadisputare=$(this).find("dadisputare").text(); 
+			var medaglia=$(this).find("medagliamatch").text(); 
+			var risultato=$(this).find("risultato").text(); 
+			var mid=$(this).find("id").text();
+			sdebug(mid);
+			sdebug("progid: "+progid);
+			var atid=$(this).find("atletaid").text();
+			//var anome=getAtletaNameById(atletaid);
+			var anome="";
+			var style="";
+			
+			var doIt=false;
+			var classe="gray";
+			
+			if ($.trim(dadisputare)=="yes") doIt=true;
+			if ($.trim(dadisputare)=="no") {
+			doIt=true;
+			classe="black";
+			}
+			
+			if ($.trim(disputato)=="yes")
+			{
+			 if ($.trim(vinto)=="yes")
+			 {
+			  classe="green";
+			  style=" style='background-color: green' ";
+			 }
+			 if ($.trim(vinto)=="no")
+			 {
+			  classe="red";
+			  style=" style='background-color: #C00000 ' ";
+			 }
+			} 
+			
+			
+			if (doIt)
+			{
+			var imgsrc="matchtoplay.png";
+			if (medaglia=="oro") imgsrc="medaglia_oro.png";
+			if (medaglia=="argento") imgsrc="medaglia_argento.png";
+			if (medaglia=="bronzo") imgsrc="medaglia_bronzo.png";
+			
+			if (($.trim(disputato)=="yes") && (medaglia=="none"))
+			{
+			 if ($.trim(vinto)=="yes") imgsrc="matchok.png";
+			 if ($.trim(vinto)!="yes") imgsrc="matchko.png";
+			
+			}
+			
+			var ris="";
+			if ($.trim(disputato)=="yes") ris="risultato: "+risultato;
+			htm+="<li id='match_"+mid+"' "+style+" ><a href='#' onclick='setResult(this)'><img swidth='50' sheight='50' src='images/"+imgsrc+"' class='sui-li-icon sui-corner-none'><div><span class='"+classe+"'><b>"+matchid+"</b></span>   "+anome+"<br>"+ris+"</div></a></li>";
+			} 
+		  });
+		   //htm+="</ul>";
+		   	   $("#lista").empty();
+		   $("#lista").append(htm);
+		   $("#lista").listview();
+		   $("#lista").listview("refresh");
+		   
+		   $("#recnum").html($matches.find("match").length+" incontri per <i><b>"+$atleta.find("cognome").text()+" "+$atleta.find("nome").text()+"</b></i>");
+		   
+		 
+	    
+	 }
+	 
+	 function sgetAtletaNameById(aaa)
+	 {
+	 
+	  return aaa;
+	 }
+	 
+	 
+	 function setResult(obj)
+	 {
+	  var li=$(obj).closest("li");
+	  li.addClass("liselected");
+	  var id=li.attr("id").replace("match_","");
+	  selectedid=id;
+	  //alert(li.attr("id"));
+	  $('#radio_vinto').attr('checked', true);
+	  $("#popResult").popup("open");
+	 }
+	 
+	 
+	  
+function debug(text,plugname) {
+ 
+	if (window.console && window.console.log)
+	{
+	  window.console.log(text);
+	 } 
+
+  }
+  
+
+function addMatch() {
+
+  $("#popAddMatch").popup('open');
+
+}
+
+function sdebug(txt)
+{
+//return;
+ debug(txt);
+}
+	
+	
+	</script>
+	
+	
+	<link rel="stylesheet" href="main.css" />
+	
+        <style type="text/css">
+    html, body {
+    height : 100%;
+}
+
+.lista {
+   height:100%;
+}
+.lista a {
+    height: 30px;
+}
+
+
+
+#lista font {
+ 
+ font-size: 14px;
+
+}
+
+
+.panel td {  
+    color: #FFF !important;  
+    /*text-shadow: 0 0 0 rgba(0,0,0,0);  
+    font-size: 14px;  
+    padding: 15px 20px 15px 60px;  
+    display: block;  
+    text-decoration: none;  
+    border-bottom: 1px solid #475657;  
+    border-top: 1px solid #95A5A6;  
+    position: relative;  
+    font-weight: 400;  */
+}  
+
+.riga1 {
+ color: #eeeeee;
+ font-weight: normal;
+}
+.riga2 {
+ color: #dddddd;
+ font-weight: normal;
+}
+.riga3 {
+ color: #eeffcc;
+ font-weight: normal;
+}
+.riga4 {
+ color: #eeffaa;
+ font-weight: normal;
+}
+.recnum, #recnum {
+ text-align: left;
+ font-size: 13px;
+}
+
+span.green {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+span.red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+span.gray {
+  color: gray;
+  font-size: 20px;
+  font-weight: normal;
+}
+span.black {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+</style>
+</head>
+<body>
+        <div id="matchperatleta" data-role="page" data-theme="b" >
+		<!--<div data-role="header" class="ui-content" data-theme="b">
+			 <table><tr><td>
+			  <img src="images/ic_launcher.png" /></td><td>Gare</td></tr></table>
+			</div>-->
+			<div data-role="header" data-position="fixed">
+			<a class="ui-btn" id="backGara" href="#"  data-ajax="false" data-icon="back" >Indietro</a>
+                <h1>GARE ATLETA</h1> <a class="ui-btn-right" href="#actionpanel" data-role="button" data-icon="grid">&nbsp;</a>
+				
+				
+							<ul id="navbar" data-role="listview" data-position="fixed">
+				<li id="recnum"></li>
+				</ul>
+            </div>
+		
+<div data-role="panel" id="categorie" class="panel" data-position="right" data-display="overlay">
+     <ul data-role="listview" data-inset="false" data-theme="b" id="ul_atleti">
+                                    <li>
+                                        <a href="#" onclick="refreshMe('')" data-ajax="false" >Tutte</a>
+                                    </li>
+									 <li>
+                                        <a href="#" onclick="refreshMe('incorso')" data-ajax="false" >In corso</a>
+                                    </li>
+									 <li>
+                                        <a href="#" onclick="refreshMe('disputata')" data-ajax="false" >Disputate</a>
+                                    </li>
+									 <li>
+                                        <a href="#" onclick="refreshMe('dadisputare')" data-ajax="false" >Non disputate</a>
+                                    </li>
+									
+                                    
+
+                                </ul>
+
+</div>
+
+
+<div data-role="panel" id="actionpanel" class="panel" data-position="right" data-display="overlay">
+     <ul data-role="listview" data-inset="false" data-theme="b" id="ul_atleti">
+                                    <li>
+                                        <a href="#" onclick="addMatch('')" data-ajax="false" >Aggiungi match</a>
+                                    </li>
+									
+
+                                </ul>
+
+</div>
+               <!-- <div data-role="header" class="ui-content" data-theme="b">
+                <a class="ui-btn-text" data-role="button" href="index.html">Back</a>
+                    <h1>ATLETI (<span id="count">4</span>)
+                    </h1>
+                    <a class="ui-btn-right" href="#categorie" data-role="button" data-icon="plus">Add</a>
+                </div>-->
+
+                     <div data-role="content">
+
+
+<span id="recnum" data-position="fixed"></span>
+<div>&nbsp;</div>
+<!--<input id="myFilter" data-type="search" data-position="fixed" /><br>-->
+<ul id='lista' data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" data-filter="false" data-input="#myFilter">
+             </ul>
+                <!--</form>-->
+             </div>
+           <!-- <div data-role="footer">
+                <h1>TaeKwonDo Rozzano</h1> <a class="ui-btn-right" href="#categorie" data-role="button" data-icon="plus">Filtri</a>
+            </div>-->
+			
+			
+			  <div data-role="popup" id="popAddMatch" data-theme="a" class="ui-corner-all">
+        <form id="1473363992">
+            <div style="padding:10px 20px;">
+              <h3>Aggiungi match</h3>
+              <label for="un" class="ui-hidden-accessible">Username:</label>
+              <input type="text" name="matchid" id="matchid" value="" placeholder="match" data-theme="a"><br>
+              
+              <a href="#" data-role="button" id="addmatchbut" sdata-theme="b" data-icon="check">Aggiungi</a>
+            </div>
+        </form>
+    </div>
+	
+	
+	
+			  <div data-role="popup" id="popDelMatch" data-theme="a" class="ui-corner-all">
+        <form >
+            <div style="padding:10px 20px;">
+              <h3>Cancella match</h3>
+              <label for="un" class="ui-hidden-accessible">Vuoi cancellare il match ?</label>
+              
+              
+              <a href="#" data-role="button" id="delmatchbut" sdata-theme="b" data-icon="check">Elimina</a>
+			  <a href="#" data-role="button" id="cancelmatchbut" sdata-theme="b" data-icon="check">Annulla</a>
+            </div>
+        </form>
+    </div>
+	
+			  <div data-role="popup" id="popResult" data-theme="a" class="ui-corner-all">
+        <form >
+            <div style="padding:10px 20px;">
+              <h3>Imposta risultato</h3>
+              <label for="radio_vinto">Vinto</label>
+             <input type="radio" name="radio-choice-0" selected id="radio_vinto" value="vinto">
+             <label for="radio_perso">Perso</label>
+             <input type="radio" name="radio-choice-0" id="radio_perso" class="custom" value="perso">
+             <label for="radio_nondisputato">Non disputato</label>
+             <input type="radio" name="radio-choice-0" id="radio_nondisputato" class="custom" value="nondisputato">
+			 
+			 <label for="risult" class="ui-hidden-accessible">Risultato:</label>
+              <input type="text" name="risult" id="risult" value="" placeholder="risultato" data-theme="a"><br>
+              
+              <a href="#" data-role="button" id="resultok" sdata-theme="b" data-icon="check">Ok</a>
+			  <a href="#" data-role="button" id="resultcancel" sdata-theme="b" data-icon="check">Annulla</a>
+            </div>
+        </form>
+    </div>
+	
+	
+        </div>
+		
+		
+		
+ 
+   
+</body>
+</html>

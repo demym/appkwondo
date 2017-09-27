@@ -1,0 +1,33 @@
+<!--
+  Generated template for the GarePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Eventi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content spadding style="background: #eee;">
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="ios">
+        </ion-refresher-content>
+  </ion-refresher>  
+
+  <ion-card *ngFor="let g of gare">
+
+    <ion-card-content>
+    
+    <b>{{g.doc.title}}</b><br>
+    {{g.doc.location}} - {{g.doc.data}}<br>
+    ORI: {{g.doc.ori}} - ARG: {{g.doc.argenti}} BRO: {{g.doc.bronzi}}
+    </ion-card-content>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contacts</ion-title>
+    <ion-buttons end>
+  <button ion-button icon-right (tap)="broadcast()"><!--*ngIf="isIbmAdmin" -->
+ 
+  <ion-icon name="ios-radio-outline"></ion-icon>
+</button>
+</ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+<ion-content spadding class="ion-content">
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+        </ion-refresher-content>
+  </ion-refresher>
+
+<ion-card>
+  <ion-item>
+    <p>Contacts for {{user.email}}</p>
+  </ion-item>
+  </ion-card>
+
+<ion-card (tap)="tapChatUser(item)" *ngFor="let item of allnews">
+ 
+      <ion-item  >
+        <ion-avatar item-left>
+          <img src="data:image/jpeg;base64,{{item.doc.userphoto}}" />
+          <span [ngClass]="item.connected  ? 'online' : 'offline'" >{{item.connected  ? 'ONLINE' : 'OFFLINE'}}</span>
+        </ion-avatar>
+        <h2>{{item.doc.firstname + ' ' +item.doc.lastname}}</h2>
+        <p>{{item.doc.email}}</p><ion-badge *ngIf="item.doc.unreadcount>0" color="danger" item-right>{{item.doc.unreadcount}}</ion-badge>
+        <p>{{item.doc.role}}</p>
+      </ion-item>
+ 
+
+ 
+    </ion-card>
+
+</ion-content>
+<ion-footer>
+ 
+
+</ion-footer>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="33" id="com.tkdr.appkwondocrosswalk" version="1.2.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AppKwonDoCross</name>
+    <description>
+       AppKwonDoRozzanoCordova
+    </description>
+    <author email="demy@taekwondorozzano.com" href="http://cordova.io">
+        DemyKwonDo
+    </author>
+    <preference name="android-targetSdkVersion" value="19" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="www/img/logotkdrozzano_icon.png" />
+        <icon density="ldpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+        <icon density="mdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+        <icon density="hdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+        <icon density="xhdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+        <splash density="land-ldpi" src="resources/android/splash/screen.png" />
+        <splash density="land-mdpi" src="resources/android/splash/screen.png" />
+        <splash density="land-hdpi" src="resources/android/splash/screen.png" />
+        <splash density="land-xhdpi" src="resources/android/splash/screen.png" />
+        <splash density="land-xxhdpi" src="resources/android/splash/screen.png" />
+        <splash density="land-xxxhdpi" src="resources/android/splash/screen.png" />
+        <splash density="port-ldpi" src="resources/android/splash/screen.png" />
+        <splash density="port-mdpi" src="resources/android/splash/screen.png" />
+        <splash density="port-hdpi" src="resources/android/splash/screen.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/screen.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/screen.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/screen.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <config-file parent="NSAppTransportSecurity" target="*-Info.plist">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true />
+            </dict>
+        </config-file>
+    </platform>
+    <preference name="xwalkVersion" value="20+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+</widget>

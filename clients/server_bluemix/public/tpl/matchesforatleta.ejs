@@ -1,0 +1,84 @@
+	<% for(var i=0; i<data.length; i++) { 
+	    var doc=data[i].doc;
+		var st="";
+		
+	
+	%>
+  <li id="match_<%= doc.id %>" style="<%=st%>" data-icon="false" tkdr-matchid="<%= doc.matchid %>" class="ui-li-has-thumb ui-first-child">
+  <a onclick="setResult(this)" href="#" data-ajax="false" id="prog<%= doc.id %>" class="ui-btn">
+  <%
+  
+	
+	var imgsrc="images/matchok.png";
+	if (doc.disputato=="no") imgsrc="images/matchtoplay.png";
+	if (doc.disputato=="yes"){
+	  if (doc.vinto=="yes") imgsrc="images/matchok.png";
+	  if (doc.vinto=="no") imgsrc="images/matchko.png";
+	  if (doc.medagliamatch=="bronzo") imgsrc="images/medaglia_bronzo.png";
+	  if (doc.medagliamatch=="argento") imgsrc="images/medaglia_argento.png";
+	  if (doc.medagliamatch=="oro") imgsrc="images/medaglia_oro.png";
+	}
+	
+	if (doc.realtime){
+	  if (String(doc.realtime)=="true") imgsrc="images/greenblink.gif"
+	}
+	
+	
+	
+  
+  %>
+  <img class="imgicon sui-li-icon ui-corner-none" src="<%= imgsrc %>" sheight="50" swidth="50">
+    <div>
+
+	<%	
+	  var vclass="";
+	  var parola="Non disputato"
+	  if ($.trim(data[i].doc.disputato)=="yes")
+	  {
+	  if ($.trim(data[i].doc.vinto)!="yes") { 
+	  
+	  vclass="red";
+	  parola="Perso";
+		} else {
+		vclass="green";
+		parola="Vinto";
+	} 
+	} else {
+	  vclass="black"
+	}
+	
+	
+	%>
+		<span class="match "><%= data[i].doc.matchid %></span><br>
+	<span class="categoria"><%= getCategoria(data[i].doc.datanascita).toUpperCase() %></span><br>
+	<span class="atleta"><%= data[i].doc.atletaname %></span><br>
+	<span class="soft">
+	<%= parola %>, risultato: <%= data[i].doc.risultato %></span><br>
+	<span class="avv"><br></span></div>
+	<%
+	 if (data[i].doc.derby)
+	 {
+	 
+	  var dm=filterRows(jmatchesbyprog,{id: data[i].doc.derby})
+	  colog("ho appena impostato dm in matchesforatleta.ejs")
+	  var davv="";
+	  if (dm.rows.length>0){
+	   davv=dm.rows[0].doc.atletaname;
+	  
+	
+	%>
+	  <span class=small><i>DERBY CON <%= davv.toUpperCase() %> !</i></span>
+	<%
+	  } }
+	%>
+	
+	
+	
+	
+	</a>
+	<input type="hidden" value="<%= doc.datanascita %>" class="datanascita">
+	<input type="hidden" value="<%= doc.atletaid %>" class="atletaid">
+	<input type="hidden" value="<%= doc.atletaname %>" class="atletaname"></li>
+   <% 
+   
+   } %>

@@ -1,0 +1,27 @@
+<div id="loginPage" data-role="page" data-theme="b">
+<div data-role="header">
+<h1>Autenticazione</h1>
+</div>
+
+<div data-role="content">   
+    <div id="landmark-1" data-landmark-id="1">
+	<div id="msg" style="text-align: center"></div>
+    <form id="loginForm">
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="username">User:</label>
+        <input type="text" name="username" id="username" value="" placeholder="User" />
+    </div>
+
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="" placeholder="Password" />
+    </div>
+
+    <a href="#" onclick="login(this)" data-role="button" id="submitButton">Login</a>
+    </form>
+</div>  
+</div>
+
+<div data-role="footer">
+    <h4>TaeKwonDo RozzanoSoft</h4>
+</div>

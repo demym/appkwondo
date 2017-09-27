@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C819A63A62CF3EDB9F06A1CB6E1FE8F4FEDDBAA1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C819A63A62CF3EDB9F06A1CB6E1FE8F4FEDDBAA1" : 9223372036854775807,
+    "5E160775CA70C83E1C1009E40F353EADAD724ABF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D619CAFA-AE9A-4056-A96E-CC2FC107D538",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C819A63A62CF3EDB9F06A1CB6E1FE8F4FEDDBAA1" : "ion2kwondo\/",
+    "5E160775CA70C83E1C1009E40F353EADAD724ABF" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Ion2KwonDo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "platforms\/ios\/Ion2KwonDo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/demym\/appkwondo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E160775CA70C83E1C1009E40F353EADAD724ABF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/seanmavley\/ionic2-sidemenu-tabs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C819A63A62CF3EDB9F06A1CB6E1FE8F4FEDDBAA1"
+    }
+  ]
+}

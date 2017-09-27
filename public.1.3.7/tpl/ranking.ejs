@@ -1,0 +1,29 @@
+<table class="sortable" border="1" id="rankingtable" align="center" width="98%">
+<thead>
+<tr><th width="20px" data-tsorter="numeric">N</th><th width="150px">Atleta</th><th data-tsorter="numeric">ORO</th><th data-tsorter="numeric">ARG</th><th data-tsorter="numeric">BRO</th><th data-tsorter="numeric">Pt</th><th data-tsorter="numeric">Media Gare</th><th data-tsorter="numeric">Media Match</th><th data-tsorter="numeric">% in medaglia</th><th data-tsorter="numeric">Gare</th><th data-tsorter="numeric">Match</th></tr>
+</thead>
+<tbody>
+<% for (var i=0; i<data.length; i++) {
+
+   var atl=data[i].doc;
+   var x=parseInt(i,10)+1;
+   
+   var ori=data[i].doc.ori;
+   var argenti=data[i].doc.argenti;
+   var bronzi=data[i].doc.bronzi;
+   var ngare=data[i].doc.garedisputate;
+   var nmatch=data[i].doc.matchdisputati;
+   
+%>
+
+
+<tr><td width="20px" align="center"><%=x%><td width="150px"><%= atl.cognome + "  " + atl.nome %></td><td width="20px" align="right"><%=ori%></td><td width="20px" align="right"><%=argenti%></td><td width="20px" align="right"><%=bronzi%></td><td align="right"><%= atl.ranking_tkdr %></td><td align="right"><%= atl.percentgare %></td><td align="right"><%= atl.percentmatch %></td><td align="right"><%= atl.percentmedaglie %></td><td width="2%" align="right"><%=ngare %></td><td width="2%" align="right"><%=nmatch %></td></tr>
+
+<%
+
+}
+
+
+%>
+</tbody>
+</table>

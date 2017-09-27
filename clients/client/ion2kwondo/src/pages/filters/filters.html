@@ -1,0 +1,75 @@
+<!--
+  Generated template for the FiltersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>filters</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button (tap)="resetFilters()">Reset filtri</button>
+    <ion-item>
+        <ion-label>Sesso</ion-label>
+        <ion-select [(ngModel)]="filters.sesso">
+            <ion-option value="">Qualsiasi</ion-option>
+          <ion-option value="f">Femmine</ion-option>
+          <ion-option value="m">Maschi</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Categoria</ion-label>
+          <ion-select [(ngModel)]="filters.categoria">
+            <ion-option value="">Qualsiasi</ion-option>
+            <ion-option value="esordienti">Esordienti</ion-option>
+            <ion-option value="cadetti b">Cadetti B</ion-option>
+            <ion-option value="cadetti a">Cadetti A</ion-option>
+            <ion-option value="junior">Junior</ion-option>
+            <ion-option value="senior">Senior</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Medaglie</ion-label>
+            <ion-select [(ngModel)]="filters.medaglie">
+              <ion-option value="">Qualsiasi</ion-option>
+              <ion-option value="oro">ORO</ion-option>
+              <ion-option value="argento">ARGENTO</ion-option>
+              <ion-option value="bronzo">BRONZO</ion-option>
+             
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>Quadrato</ion-label>
+              <ion-select [(ngModel)]="filters.quadrato">
+                <ion-option value="">Qualsiasi</ion-option>
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+                <ion-option value="6">6</ion-option>
+                <ion-option value="7">7</ion-option>
+                <ion-option value="8">8</ion-option>
+                <ion-option value="9">9</ion-option>
+                <ion-option value="10">10</ion-option>
+                <ion-option value="11">11</ion-option>
+                <ion-option value="12">12</ion-option>
+                <ion-option value="13">13</ion-option>
+                <ion-option value="14">14</ion-option>
+                <ion-option value="15">15</ion-option>
+               
+              </ion-select>
+            </ion-item>
+            <button ion-button (tap)="cancel()">Annulla</button>
+            <button ion-button (tap)="applyFilters()">Applica</button>
+
+</ion-content>

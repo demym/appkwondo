@@ -1,0 +1,548 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="main.css" />
+    <script src="jqm/jquery-1.11.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.4.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<!--<script type="text/javascript" src="temporeale.js"></script>-->
+	
+
+<script  type="text/javascript">
+
+var showMsg=true;
+
+function getNDT(e){var t=e.substring(6,8)+"/"+e.substring(4,6)+"/"+e.substring(0,4);var n=e.substring(8,10)+":"+e.substring(10,12);var r=t+" "+n;return r}function initTabs(){$("a[data-role=tab]").each(function(e){$(this).bind("click",function(){sdebug($(this).attr("id"));activeTab=e;setActiveTab(activeTab)})})}function setActiveTab(e){$("#navbar ul li:eq("+e+")").trigger("click");return;$("#tabs").tabs("option","active",e);$(".tab-content div:eq("+e+")").removeClass("ui-screen-hidden");$("#navbar ul li:eq("+e+") a").addClass("ui-btn-active");sdebug("setting activetab to "+e);var t="lista"+tabs[e];sdebug("showing list "+t);refreshMode=tabs[e]}function refreshMe(e){oldupdatetext=$("#ulinfogara li span.left").html();$("#ulinfogara li span.left").html("Aggiornamento...");var t=false;$.ajax({type:"GET",url:"gare.xml",dataType:"xml",success:function(n){gare_xml=n;$gare=$(n);if($.trim(searchgara)!=""){$gare.find("gara").each(function(){var e=$(this).find("location").text();var t=$(this).find("id").text();if(e.toLowerCase().indexOf(searchgara.toLowerCase())>-1){$gara=getGaraById(t);garaid=t}})}else{$gara=getGaraById(garaid)}sdebug("garaid "+garaid);sdebug("caricate "+$gare.find("gara").length+" gare");matchfile="matches_"+garaid+".xml";$("#hdr").find("#hgara a").html($gara.find("location").text()+" -     "+$gara.find("data").text());$("#hdriscritti").find("h1").html($gara.find("title").text()+" "+$gara.find("location").text()+" -     "+$gara.find("data").text());var r=$gara.find("iscritti").text().split(",");var i=r.length;$("#ligaratitle").html("Gara: <b>"+$gara.find("title").text()+"</b>");$("#ligaralocation").html("Location: "+$gara.find("location").text());$("#liiscritti").text(i+" atleti iscritti ");datagara=$gara.find("data").text();var s=datagara.split("/");annogara=s[2];xgare=$.parseXML(gares_xml);$.ajax({type:"GET",url:matchfile,dataType:"xml",success:function(n){matches_xml=n;var r=$(n);if(1==1){var i=r.find("matches").clone();if($matches!=null){var s=$matches.find("matches").clone();if(s.find("match").length!=i.find("match").length){sdebug("diverso numero di match");t=true}else{sdebug("ugual numero di match");var o=compareByDate(s,i,"match");if(o.find("match").length>0){sdebug(o.find("match").length+" differenze di lastupdate");t=true}else{sdebug("0 differenze di lastupdate");t=false}}}else t=true}if(1==0){sdebug("$(mxml):"+r.find("matches").html());var u=r.find("matches").html();var i=r.find("matches").clone();if($matches!=null){sdebug("$matches: "+$matches.find("match").length);sdebug($matches.find("matches").html());var s=$matches.find("matches").clone();compareXmlFile(s,i,"match")}}$matches=$(n);sdebug("caricati "+$matches.find("match").length+" match");setActiveTab(activeTab);if(e)t=true;if(t){sdebug("launching refresh");$("#ulinfogara li span.left").html("Scarico aggiornamenti");refreshMeByAtleta();refreshMeByProg()}else{sdebug("no refresh to perform");$("#ulinfogara li span.left").html(sgetMedaglieGara(garaid));$("#limatches").html($matches.find("match").length+" incontri");var a=new Date;var f=formatDateTime(a);sdebug("data "+f);$("li.liprog").find("span").html("Aggiornato: "+f);$("li.liatleta").find("span").html("Aggiornato: "+f);$("li.linotify").find("span").html("Aggiornato: "+f)}refreshCronaca();if(first){setInt();first=false}$("div.tb").remove();$.mobile.loading("hide")}})}})}function setInt(){setInterval(function(){refreshMe()},timerTime)}function setIntCronaca(){setInterval(function(){refreshCronaca()},timerCronaca)}function refreshMeByProg(e){var t=$matches;sdebug("$mm.lenght: "+t.find("match").length);var n={matches:t,showNullMatches:false,ulSelector:"listabyprog",showUpdated:true,datarel:"popup"};$.extend(n,e);var r=n.matches;sdebug("refreshMeByProg matches: "+r.find("match").length+" - shownullmatches: "+n.showNullMatches+" - ulSelector: "+n.ulSelector);refreshMode="byprog";var i=$.parseXML("<matches></matches>");var s=$(i);sdebug("matches: "+$matches.find("match").length);var o=garaid;var u="";r.find("match").each(function(){var e=$(this);var t=$(this).find("garaid").text();sdebug("match: "+t);if(t==o){var n=$(this).find("progid").text();var r=$(this).find("atletaid").text();var i=$.trim($(this).find("datanascita").text());sdebug(n+" - "+r+" datanasc: "+i);var u=e.clone();if($.trim(viewcat)!=""){var a=getCategoria(i);sdebug("categoria for "+r+": "+a);if($.trim(viewcat)==$.trim(a))s.find("matches").append(u)}else s.find("matches").append(u)}});matches=s.find("match");matches.sort(function(e,t){var n=$(e).find("progid").text();var r=$(t).find("progid").text();if(n<r)return-1;if(n>r)return 1;return 0});matches.each(function(){var e=$(this).clone();var t=$(this).find("id").text();var r=$(this).find("progid").text();var i=$(this).find("matchid").text();var s=$(this).find("vinto").text();var o=$(this).find("disputato").text();var a=$(this).find("dadisputare").text();var f=$(this).find("medagliamatch").text();var l=$(this).find("risultato").text();var c=$(this).find("datanascita").text();var h=getCategoria(c).toUpperCase();var p=$(this).find("atletaid").text();var d=$(this).find("atletaname").text();e.append("<atletaname></atletaname>");e.find("atletaname").text(d);$msav.find("matches").append(e);var v="";var m=false;var g="";if($.trim(a)=="yes")m=true;if($.trim(a)=="no"){m=false;g="black";if(n.showNullMatches)m=true}if($.trim(o)=="yes"){if($.trim(s)=="yes"){v=" style='background-color: green' ";g="green"}if($.trim(s)=="no"){v=" style='background-color: #C00000 ' ";g="red"}}if(m){var y="matchtoplay.png";if(f=="oro")y="medaglia_oro.png";if(f=="argento")y="medaglia_argento.png";if(f=="bronzo")y="medaglia_bronzo.png";if($.trim(o)=="yes"&&f=="none"){if($.trim(s)=="yes")y="matchok.png";if($.trim(s)!="yes")y="matchko.png"}var b="";var w="Non disputato";var E="nondisputato";if($.trim(o)=="yes"){E="vinto";w="Vinto, ";b="risultato: "+l;if($.trim(s)!="yes"){w="Perso, ";E="perso"}}b=w+b;v="";u+="<li "+v+" data-icon='false' ><a  href=javascript:matchAtletaDetail('"+p+"') id='prog"+t+"' data-ajax='false'  shref='gareatleta.html?atletaid="+p+"&garaid="+garaid+"'><img swidth='50' sheight='50' src='images/"+y+"' class='imgicon sui-li-icon ui-corner-none' ><div><span class='match "+g+"'>"+i+"</span><br><span class='categoria'>"+h+"</span><br><span class='atleta'>"+d+"</span><br><span class='soft "+E+"'>"+b+"</span></div></a></li>"}});var a=n.ulSelector;var f=$("ul#"+a);f.empty();f.append(u);f.listview();f.listview("refresh");if(n.showUpdated){$("#ulinfogara li span.left").html(sgetMedaglieGara(garaid));var l="";if($.trim(viewcat)!="")l=" in cat. "+viewcat.toUpperCase();$("#limatches").html(matches.length+" incontri"+l);var c=new Date;var h=formatDateTime(c);sdebug("data "+h);$("li.liprog").find("span").html("Aggiornato: "+h)}}function matchAtletaDetail(e){sdebug(e);var t=$("<matches></matches>");$matches.find("match").each(function(){var n=$(this);var r=$(this).find("atletaid").text();if($.trim(r)==$.trim(e)){t.append(n.clone())}});sdebug("matches for atleta "+e+": "+t.find("match").length);refreshMeByProg({matches:t,ulSelector:"ulForAtleta",showUpdated:false,showNullMatches:true});$("#dialogForAtleta").popup();$("#dialogForAtleta").popup("open")}function sgetAtletaNameById(e){var t="";$atleti.find("atleta").each(function(){var n=$(this).find("id").text();var r=$(this).find("cognome").text();var i=$(this).find("nome").text();if(n==e){t=r+" "+i;return t}});return t}function refreshMeByAtleta(){var e=$.parseXML("<matches></matches>");var t=$(e);sdebug("refreshMeByAtleta");$.mobile.loading("show",{text:"Caricamento...",textVisible:true,theme:"b",html:""});var n=matches_xml;refreshMode="byatleta";var r=garaid;var i="";var s=$matches.find("match");sdebug("Estrazione match per questa gara da "+s.length+" matches");var o=0;s.each(function(){o++;var e=$(this);var n=$(this).find("garaid").text();if(n==r){var i=$(this).find("progid").text();var s=$(this).find("atletaid").text();var u=$(this).find("datanascita").text();var a=e.clone();if($.trim(viewcat)!=""){sdebug("viewcat vale:"+viewcat);var f=getCategoria(u);sdebug("categoria for "+s+": "+f);if($.trim(viewcat)==$.trim(f))t.find("matches").append(a)}else t.find("matches").append(a)}});sdebug("ciclato su "+o+" matches");sdebug("popolati "+t.find("match").length+" per questa gara");matches=t.find("match");matches.sort(function(e,t){var n=$(e).find("atletaid").text();var r=$(t).find("atletaid").text();if(n<r)return-1;if(n>r)return 1;return 0});var u="";var a="";var f="";var l="";var c=0;var h=$("<lista></lista>");var p="";var d=0;matches.each(function(){var e=$(this).find("atletaid").text();if($.trim(e)!=p){d++;p=e}});sdebug(d+" unique atleti");var v="";if($.trim(viewcat)!="")v=" in cat. "+viewcat.toUpperCase();matches.each(function(){c++;var e=$(this).find("progid").text();var t=$(this).find("atletaid").text();var n=$(this).find("atletaname").text();var r=$(this).find("matchid").text();var i=$(this).find("vinto").text();var s=$(this).find("disputato").text();var o=$(this).find("dadisputare").text();var p=$(this).find("medagliamatch").text();var d=$(this).find("risultato").text();var v=$(this).find("datanascita").text();var m=getCategoria(v);sdebug("matchid: "+r+" - atleta: "+n);if(t!=u){if(c==1){u=t;f=r;a=n;l=m;sdebug("primo atleta")}else{var g=a;h.append("<atleta><nome>"+g+"</nome><id>"+u+"</id><categoria>"+l+"</categoria><matches>"+f+"</matches></atleta>");sdebug("depositato "+g+" - "+f);sdebug("cambiato atleta: "+u+" "+g+" "+f);u=t;a=n;l=m;f="";f+=r}}else{if($.trim(f)!="")f+=",";f+=r}if(c==matches.length){sdebug("count = matches.length ");var g=a;if(matches.length==1){g=n;f=r;u=t;a=n;l=m;sdebug("matches.length = 1 ")}h.append("<atleta><nome>"+g+"</nome><id>"+u+"</id><categoria>"+l+"</categoria><matches>"+f+"</matches></atleta>")}});var m=h.find("atleta");m.sort(function(e,t){var n=$(e).find("nome").text();var r=$(t).find("nome").text();if(n<r)return-1;if(n>r)return 1;return 0});m.each(function(){var e=$(this).find("nome").text();var t=$(this).find("categoria").text().toUpperCase();var n=$(this).find("matches").text();var r=$(this).find("id").text();var s=n.split(",");s.sort(function(e,t){var n=$(e).find("progid").text();var r=$(t).find("progid").text();var i=e.substring(1);var s=t.substring(1);if(i<s)return-1;if(i>s)return 1;return 0});var o="";$(s).each(function(e){o+=getMatchString(s[e],r)});var u=getMedaglieGaraAtleta(matches,garaid,r);var a=u.split(",");var f="images/matchtoplay.png";if(a[0]>0)f="images/medaglia_oro.png";if(a[1]>0)f="images/medaglia_argento.png";if(a[2]>0)f="images/medaglia_bronzo.png";i+="<li data-icon='false'><a data-ajax='false' data-rel='popup' href=javascript:matchAtletaDetail('"+r+"')  id='atleta"+r+"'><img src='"+f+"' class='imgicon sui-li-icon sui-corner-none' /><span class='categoria'>"+t+"</span><br><span class='atleta'>"+e+"</span><br><span class='match'>"+o+"</span></a></li>"});var g="listabyatleta";var y=$("ul#"+g);y.empty();y.append(i);y.listview();y.listview("refresh");$.mobile.loading("hide");$("#ulinfogara li span.left").html(sgetMedaglieGara(garaid));$("#limatches").html(matches.length+" incontri");var b=new Date;var w=formatDateTime(b);sdebug("data "+w);$("li.liatleta").find("span").html("Aggiornato: "+w);sdebug("quiliatleta")}function refreshCronaca(){sdebug("refreshCronaca");$.ajax({type:"GET",url:"cronaca_"+garaid+".txt",dataType:"text",success:function(e){var t=e.split("\n");sdebug("marr lenght: "+t.length);sdebug("arrCronaca lenght: "+arrCronaca.length);var n=0;if(t.length!=arrCronaca.length){n=t.length-arrCronaca.length;arrCronaca=t;var r="";var i=0;var s=0;$(arrCronaca).each(function(e){i++;if($.trim(arrCronaca[e])!=""){var t=arrCronaca[e].substring(0,14);var n=arrCronaca[e].substring(14);var o="";if(t>lastcronaca){s++;o="nonvisto";lastcronaca=t}t=getNDT(t);r+="<li><span class=data>"+t+"</span><br><span class='testo "+o+"'>"+n+"</span></li>"}});sdebug("bubblecount: "+s);document.cookie="lastcronaca="+lastcronaca+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";nonletti=nonletti+s;if(nonletti>0){$("#bubble").html(nonletti).show();$("#bubble").css("background","green")}else{$("#bubble").html("0").hide();$("#bubble").css("background","black")}var o="listacronaca";var u=$("ul#"+o);u.empty();u.append(r);u.listview();u.listview("refresh");u.find("li").each(function(e){if(e<nonletti){$(this).find("span.testo").addClass("nonvisto")}})}var a=new Date;var f=formatDateTime(a);sdebug("data "+f);$("li.linotify").find("span").html("Aggiornato: "+f);sdebug("diff "+n)}})}function getCookie(e){var t=e+"=";var n=document.cookie.split(";");for(var r=0;r<n.length;r++){var i=n[r];while(i.charAt(0)==" ")i=i.substring(1);if(i.indexOf(t)==0)return i.substring(t.length,i.length)}return""}function formatDate(e){var t=e.getDate();if(t<10)t="0"+t;var n=e.getMonth()+1;if(n<10)n="0"+n;var r=e.getFullYear()%100;if(r<10)r="0"+r;return t+"."+n+"."+r}function formatDateTime(e){var t=e.getDate();if(t<10)t="0"+t;var n=e.getMonth()+1;if(n<10)n="0"+n;var r=e.getFullYear();var i=e.getHours();var s=e.getMinutes();var o=e.getSeconds();if(i<10)i="0"+i;if(s<10)s="0"+s;if(o<10)o="0"+o;return t+"/"+n+"/"+r+" "+i+":"+s+":"+o}function getMatchString(e,t){var n="";matches.each(function(){var r=$(this).find("garaid").text();var i=$(this).find("matchid").text();var s=$(this).find("atletaid").text();var o=$(this).find("disputato").text();var u=$(this).find("vinto").text();var a=$(this).find("dadisputare").text();var f=$(this).find("medaglia").text();if($.trim(r)==$.trim(garaid)&&$.trim(i)==$.trim(e)&&$.trim(t)==$.trim(s)){if($.trim(a)=="yes"){if($.trim(o)=="yes"){if($.trim(u)=="yes")n="   <span class=green>"+i+"</span>";if($.trim(u)!="yes")n="   <span class=red>"+i+"</span>"}else n="   <span class=gray>"+i+"</span>"}else n="    <span class=black style='text-decoration: line-through;'>"+i+"</span>";return n}});return n}function getParameterByName(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var t=new RegExp("[\\?&]"+e+"=([^&#]*)"),n=t.exec(location.search);return n===null?"":decodeURIComponent(n[1].replace(/\+/g," "))}function showIscritti(){$("#iscritti").empty();$g=getGaraById(garaid);var e=$g.find("iscritti").text();var t=e.split(",");var n="";$(t).each(function(n){var r=sgetAtletaNameById(t[n]);e=e.replace(t[n],r+"|"+t[n])});t=e.split(",");t.sort();$(t).each(function(e){var r=t[e];var i=r.split("|");var s=i[0];var o=i[1];n+="<li><a data-ajax='false' href='gareatleta.html?garaid="+garaid+"&atletaid="+o+"'>"+s+"</a></li>"});$("#iscritti").empty();$("#iscritti").append(n);$("#iscritti").listview();$("#iscritti").listview("refresh");$("#infogaraiscritti").html(t.length+" iscritti a questa gara");$.mobile.changePage("#iscrittiPage")}function sdebug(e){return;debug(e)}function compare(){var e=$matches.find("match:first");compareXmlItem(e,e)}function compareByDate(e,t,n){var r="<matches></matches>";var i=$.parseXML(r);var s=$(i);debug("a: "+e.find("match").length);debug("b: "+t.find("match").length);e.find(n).each(function(){var e=$(this);var r=e.find("id").text();var i=e.find("matchid").text();var o=e.find("lastupdated").text();var u=t.find(n).find("id:contains("+r+")");var a=u.parent().find("id").text();var f=u.parent().find("lastupdated").text();if(o!=f){debug("trovata data diversa in id "+r+" - matchid = "+i);s.find("matches").append(u.parent().clone())}});return s}function getCategoria(e){var t="seniores a";var n=(new Date).getFullYear();n=annogara;sdebug("curyear: "+n);if($.trim(e)==""){return"seniores b"}var r=e.split(".");var i=r[2];var s=parseInt(n,10)-parseInt(i,10);sdebug("calcolo età: "+s);if(s>=18&&s<=35)t="seniores a";if(s>=15&&s<=17)t="juniores";if(s>=12&&s<=14)t="cadetti a";if(s>=10&&s<=11)t="cadetti b";if(s>35)t="seniores b";if(s<10)t="esordienti";return t}function sgetMedaglieGara(e){var t=0;var n=0;var r=0;$(matches_xml).find("match").each(function(){var i=$(this);var s=i.find("garaid").text();var o=i.find("datanascita").text();var u=$.trim(i.find("medagliamatch").text());var a=false;if($.trim(viewcat)!=""){var f=getCategoria(o);sdebug("categoria : "+f);if($.trim(viewcat)==$.trim(f))a=true}else a=true;if($.trim(s)==$.trim(e)&&a){if($.trim(u)=="oro")t++;if($.trim(u)=="argento")n++;if($.trim(u)=="bronzo")r++}});var i="<span style='color: yellow;'>ORI: "+t+"</span>&nbsp;&nbsp;&nbsp;<span style='color: silver;'>ARG: "+n+"</span>&nbsp;&nbsp;&nbsp;<span style='color: brown;'>BRO: "+r+"</span>";return i}var $=jQuery;var gares_xml="<matches></matches>";var xgare="";var garaid="";var refreshMode="byprog";var matches;var $gara;var timerTime=6e4;var timerCronaca=2e4;var arrCronaca=new Array;var first=true;var datagara="";var annogara="";var cattxt="Categoria: ";var msavona="<matches></matches>";var xmsav=$.parseXML(msavona);var $msav=$(xmsav);var matchfile="matches_savona.xml";var anninascita="";var viewcat="";var prevSelection="tab1";var tabs=new Array("byprog","byatleta","cronaca");var activeTab=1;var notifyseen=false;var notifycount=0;var nonletti=0;var lastcronaca="";var searchgara="";$(document).on("pageinit",function(){$.ajaxSetup({cache:false});$("#dialogCategorie").popup();$("#dialogForAtleta").popup();$("#refresh").bind("click",function(){debug("activetab: "+activeTab);refreshMe();refreshCronaca()});$(".tb").hide();$("#av_toolbar_regdiv").remove();$("#av_toolbar_iframe").remove();if(navigator.userAgent.match(/Android/i)){window.scrollTo(0,1)}$(".spancat").bind("click",function(){var e=$("ul#ulcategorie");e.listview();e.listview("refresh");$("#dialogCategorie").popup();$("#dialogCategorie").popup("open")});$("#ulcategorie li").bind("click",function(){var e=$(this).text();viewcat=e.toLowerCase();var t=e.toLowerCase();if(viewcat=="tutte")viewcat="";document.cookie="cookiecat="+viewcat+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";$("#dialogCategorie").popup("close");if(t.indexOf("esordienti")>-1)t=t.replace("esordienti","eso");if(t.indexOf("cadetti")>-1)t=t.replace("cadetti","cad");if(t.indexOf("juniores")>-1)t=t.replace("juniores","jun");if(t.indexOf("seniores")>-1)t=t.replace("seniores","sen");$(".spancat").text(cattxt+t.toUpperCase());refreshMe(true)});$("#listabyprog li").bind("click",function(){var e=$(this).attr("id");var e=e.replace("prog","")});$("#navbar ul li").bind("click",function(){sdebug("clicked tab");var e=$(this).index();sdebug("index: "+e);var t=$(this).children("a").attr("data-tab-class");$("."+prevSelection).addClass("ui-screen-hidden");$("."+t).removeClass("ui-screen-hidden");prevSelection=t;$("#navbar ul li").removeClass("tabselected");$("#navbar ul li a").removeClass("ui-btn-active");$(this).addClass("tabselected");$(this).find("a").addClass("tabselected").addClass("ui-btn-active").addClass("ui-state-persist");$(".ulupdate").hide();var n=$(this).find("a").attr("data-tab-class");$(".ul"+n).show();sdebug(n);activeTab=e});lastcronaca=getCookie("lastcronaca");sdebug("lastcronaca from cookie: "+lastcronaca);$("#bubble").bind("click",function(){$("#bubble").css("background","black");notifyseen=true;notifycount=0;nonletti=0;$(".nonvisto").removeClass("nonvisto");$("#bubble").html("0").hide();$("a#tab_cronaca").trigger("click");document.cookie="notifycount="+notifycount+"; expires=Thu, 18 Dec 2023 12:00:00 UTC"});document.title="Incontri gara";$("#panelright").click(function(){$(this).panel("close")});$.mobile.ajaxLinksEnabled=false;garaid=getParameterByName("id");anninascita=getParameterByName("anni");cat=getParameterByName("cat");searchgara=getParameterByName("gara");if($.trim(cat)!=""){sdebug("viewing category: "+cat);viewcat=cat}var e=getCookie("cookiecat");if($.trim(e)!="")viewcat=e;var t=viewcat;if($.trim(t)=="")t="tutte";if(t.indexOf("esordienti")>-1)t=t.replace("esordienti","eso");if(t.indexOf("cadetti")>-1)t=t.replace("cadetti","cad");if(t.indexOf("juniores")>-1)t=t.replace("juniores","jun");if(t.indexOf("seniores")>-1)t=t.replace("seniores","sen");t=t.toUpperCase();$(".spancat").text(cattxt+t);debug("cookiecat: "+e);if($.trim(garaid)==""&&$.trim(searchgara)=="")searchgara="genova";if(showMsg){$("#msgBar").show()}refreshMe()});var oldupdatetext=""
+
+
+</script>
+	
+<script type="text/javascript">
+function hideAddressBar()
+{
+ debug("hideaddressbar");
+  if(!window.location.hash)
+  {
+      if(document.height < window.outerHeight)
+      {
+          document.body.style.height = (window.outerHeight + 50) + 'px';
+      }
+ 
+      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+  }
+}
+ 
+$(document).on("pageinit",function() {
+ window.addEventListener("load", 
+ function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+window.addEventListener("orientationchange", hideAddressBar );
+});
+</script>
+
+	<style type="text/css">
+
+	 
+	 .tabselected  {
+	   /*border-top: 1px solid silver;
+	   border-right: 1px solid silver;
+	   border-left: 1px solid silver;*/
+	   //text-align: left;
+	   /*border-bottom: 1px solid gray;*/
+	   background: blue;
+	   color: yellow;
+	 }
+	 
+	 #navbar li {
+	  //border-bottom: 1px solid silver;
+	 } 
+	 
+	 .ulupdate {
+	  display: none;
+	 }
+	 
+
+    html, body {
+    height : 100%;
+}
+
+span.categorie {
+ cursor: pointer;
+}
+
+span.categorie:hover {
+ background: #555555;
+}
+.vinto {
+ color: lightgreen;
+
+}
+.perso {
+ color: orange;
+ }
+ 
+ .nondisputato {
+  color: gray;
+ }
+
+.ui-page {
+    min-height:100% !important;
+    height:auto !important;
+}
+
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%
+}
+
+.ui-content {
+    margin-bottom:42px; /* HEIGHT OF YOUR FOOTER */
+}
+
+
+.ui-listview .ui-li-icon {
+    max-height: 30px;
+    max-width: 30px;
+    top: 50%;
+    /*margin-top: -15px;*/
+}
+
+#lista img {
+position:absolute; 
+    top:0; 
+    bottom:0; 
+    left:0px; 
+    margin:auto; 
+    height:45px; 
+    width:45px;
+}
+
+.panel td {  
+    color: #FFF !important;  
+    /*text-shadow: 0 0 0 rgba(0,0,0,0);  
+    font-size: 14px;  
+    padding: 15px 20px 15px 60px;  
+    display: block;  
+    text-decoration: none;  
+    border-bottom: 1px solid #475657;  
+    border-top: 1px solid #95A5A6;  
+    position: relative;  
+    font-weight: 400;  */
+}  
+
+#infogara {
+ text-align: center;
+}
+
+span.green {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+span.red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+span.gray {
+  color: gray;
+  font-size: 20px;
+  font-weight: normal;
+}
+span.black {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.data {
+ font-size: 11px;
+ color: #dddddd;
+
+}
+
+.testo {
+ font-size: 13px;
+  white-space: normal !important;
+
+}
+
+.nonvisto {
+ color: yellow;
+}
+
+.small {
+ font-size: 10px;
+}
+
+.listbar li {
+  font-size: 12px;
+  
+}
+
+.center {
+ text-align: center; !important;
+
+}
+
+.panelicon {
+ width:20px;
+ height:20px;
+}
+
+#ulcategorie li {
+ font-size: 16px;
+ cursor: pointer;
+ min-width: 250px;
+}
+
+
+.categoria {
+ font-size: 10px;
+ color: gray;
+}
+
+#msgBar {
+ font-size: 10px;
+ color: yellow;
+ font-weight: normal;
+ padding: 2px;
+
+}
+
+.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+    margin: 0;
+}
+.ui-li-static.ui-collapsible {
+    padding: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+    border-top-width: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+.ui-li-static.ui-collapsible > .ui-collapsible-content {
+    border-bottom-width: 0;
+}
+.custom-count-pos{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    float: right;
+}
+
+#ulcategorie li {
+ font-weight: bold;
+}
+
+.ui-button .ui-button-text
+{
+ line-height: 1.0;
+}
+
+
+.spancat {
+ font-size: 8px;
+ padding: 6px;
+}
+
+#ulinfogara li {
+    font-size: 1px;
+
+}
+</style>
+</head>
+<body title="Incontri gara">
+	
+        <div data-role="page" id="page1" data-theme="b" data-content-theme="a" data-title="Incontri Gara">
+		
+		
+		
+		
+		
+                 <div class="panel right" data-role="panel"  data-theme="b" data-position="right" data-display="overlay" id="panelright">  
+            <ul data-role="listview"> 
+			   <li data-icon="false"><a onclick="refreshMe();" href="#" title="Refresh"><table><tr><td><img class="panelicon" src="images/ic_menu_refresh.png" ></td><td>Refresh</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li>  
+				<li data-role="list-divider"></li>
+			 <li data-icon="false"><a onclick="setActiveTab(0);" href="#" title="Per match"><table><tr><td><img  class="panelicon" src="images/ic_menu_friendslist.png"  ></td><td>Incontri per match</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li> 
+			
+                <li data-icon="false"><a href="#" onclick="setActiveTab(1);"><table><tr><td><img  class="panelicon" src="images/ic_menu_cc.png" ></td><td>Incontri per atleta</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li>  
+				
+				  <li data-icon="false"><a href="#" onclick="setActiveTab(2);"><table><tr><td><img  class="panelicon" src="images/ic_menu_moreoverflow.png" ></td><td>Cronaca</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li> 
+				<!--
+				<li data-role="list-divider">Categorie</li>
+				<li><a href="#" onclick="setActiveTab(1);"><table><tr><td><input type="radio" checked="checked" /></td><td>Incontri per atleta</td><td></td></tr></table></a>
+				</li>  
+
+				<li>Esordienti A</li>
+				<li>Esordienti B</li>
+				<li>Cadetti A</li>
+				<li>Cadetti B</li>
+				<li>Juniores</li>
+				<li>Seniores</li>-->
+				
+				 
+				
+				   
+				
+				  <!-- <li data-icon="false"><a onclick="showIscritti();" href="#" ><table><tr><td><img src="images/ic_menu_friendslist.png" width="40" height="40" ></td><td>Iscritti</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				<!--</li> --> 
+                 
+            </ul>  
+			
+			
+    </div>  
+	
+                 <div class="panel left" data-role="panel"  data-theme="b" data-position="left" data-display="push" id="panelleft">  
+            <ul data-role="listview"> 
+			   <li data-icon="false"><a onclick="refreshMe();" href="#" title="Refresh"><table><tr><td><img class="panelicon" src="images/ic_menu_refresh.png" ></td><td>Refresh</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li>  
+				<li data-role="list-divider"></li>
+			 <li data-icon="false"><a onclick="setActiveTab(0);" href="#" title="Per match"><table><tr><td><img  class="panelicon" src="images/ic_menu_friendslist.png"  ></td><td>Incontri per match</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li> 
+			
+                <li data-icon="false"><a href="#" onclick="setActiveTab(1);"><table><tr><td><img  class="panelicon" src="images/ic_menu_cc.png" ></td><td>Incontri per atleta</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li>  
+				
+				  <li data-icon="false"><a href="#" onclick="setActiveTab(2);"><table><tr><td><img  class="panelicon" src="images/ic_menu_moreoverflow.png" ></td><td>Cronaca</td><td><!--<input type="radio" name="radioleast" id="radio-l4" style="float:right;" />--></td></tr></table></a>
+				</li> 
+				</ul>
+				</div>
+		
+		
+		
+		
+		<div data-role="header" data-theme="b" id="hdr" data-position="fixed">
+		<!--<a class="ui-btn-left" href="gare.html" sdata-rel="back" data-role="button" data-ajax="false" data-icon="back">Gare</a>-->
+		<img border=0" src="images/logotkdrozzano.png" alt="Logo, Facebook" style="float:left;display:inline; width: 44px; height: 28px; margin: 3px;"/>
+                <h1>TEMPO REALE</h1> <a class="ui-btn-right" href="#" id="refresh" data-role="button" data-icon="refresh">&nbsp;</a>
+				<!--<a class="ui-btn-right" href="#panelright" data-role="button" data-icon="grid">&nbsp;</a>-->
+				
+					<div data-position="fixed" id="msgBar" align="center" style="display:none;">
+			I dati degli incontri saranno disponibili al piu' presto.</b>
+			
+			</div>	
+				
+					 <ul class="listbar" id="ulgara" data-role="listview" data-position="fixed">
+				
+				 
+				<li data-role="collapsible"  data-iconpos="left" data-inset="false" class="center" ><h3 id="hgara">Caricamento in corso...</h3><!--<div id="bubble" class="ui-li-count ui-left scenter" style="background: green;cursor: pointer;"></div>-->
+				   <ul data-role="listview" data-theme="a">
+				   <li id="ligaratitle"></li>
+				   <li id="ligaralocation"></li>
+				   <li id="liiscritti"></li>
+				   <li id="limatches"></li>
+				   </ul>
+				  </li> 
+				</ul>
+				
+					<ul class="listbar" id="ulinfogara" data-role="listview" data-position="fixed">
+					
+				<li><h1><!--Categorie: <span class="categorie " style="background: black;"><span class="spancat" style="padding: 8px;" >TUTTE</span><div  class="ui-field-contain" data-role="fieldcontain">
+	<label for="select-choice-1" class="select">Categoria:</label>
+	<select id="select-choice-1" data-native-menu="false" data-mini="true" >
+		<option  value="TUTTE">TUTTE</option>
+		<option value="Esordienti B">Esordienti B</option>
+		<option value="Esordienti A">Esordienti A</option>
+		<option value="Cadetti B">Cadetti B</option>
+		<option value="Cadetti A">Cadetti A</option>
+		<option value="Junior">Junior</option>
+		<option value="Senior">Senior</option>
+	</select>
+</div>--><a href="#" class="spancat" data-theme="b" data-role="button" data-ajax="false">TUTTE</a> <!--</span>--><span class="ui-li-count left">Caricamento in corso...</span></h1></li>
+				</ul>
+		
+			<div data-role="navbar" id="navbar" data-position="fixed">
+            <ul>
+                <li><a href="#" id="tab_byprog" data-role="tab" data-tab-class="tab1" sdata-icon="grid">Per match</a></li>
+                <li class="tabselected"><a href="#" id="tab_byatleta" data-role="tab" data-tab-class="tab2" sdata-icon="grid" class="tabselected">Per atleta</a></li>
+                <li><a href="#" id="tab_cronaca" data-role="tab" data-tab-class="tab3" sdata-icon="grid" >Cronaca&nbsp;<div id="bubble" class="ui-li-count" style="background: green;"></div></a></li>
+            </ul>
+         </div>
+		 
+	
+		
+	
+				  <ul class="ulupdate ultab1" data-role="listview" id="lastprogupdate" data-position="fixed" >
+		    <li class="liprog"><span style="font-size: 12px; text-align: center; width: 70%; color: gray;">Aggiornato: mai</span></li>
+			
+		 <!--<li><a href="javascript:compare();">Compare</a></li>-->
+       
+		 </ul>
+		   <ul data-role="listview" class="ulupdate ultab2" id="lastatletaupdate" data-position="fixed">
+		   <li class="liatleta"><span style="font-size: 12px; text-align: center; width: 70%; color: gray;">Aggiornato: mai</span></li>
+		  </ul> 
+		   <ul class="ulupdate ultab3" data-role="listview" id="notifycount" data-position="fixed" >
+
+        <li class="linotify"><span style="font-size: 12px; text-align: center; width: 70%; color: gray;">Aggiornato: mai</span></li>
+		 
+       
+		 </ul>
+		 
+		
+		<!-- <div id="infogara" style="width: 100%; height: 40px; " data-position="fixed">
+				
+					
+					</div>-->
+				
+					<div id="recnum" data-position="fixed"></div>
+	
+            </div>
+
+					<div class="tab-content">
+		 <div id="tab1" class="tab1 ui-screen-hidden"">
+		
+		 <ul id='listabyprog' class="cachedlistview" data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" data-filter="true" data-input="#myFilter"> </ul> 
+		 </div>
+		  <div id="tab2" class="tab2 ui-screen-hidden">
+		
+		  <ul id='listabyatleta' class="cachedlistview"  data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" data-filter="true" data-input="#myFilter"> </ul> 
+		 </div>
+		  <div id="tab3" class="tab3 ui-screen-hidden">
+		 
+	
+
+
+		 
+		  <ul id='listacronaca' class="cachedlistview"  data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" data-filter="true" data-input="#myFilter"> </ul> 
+		 </div>
+		
+		</div>
+		</div>
+            <!--<div class="ui-content" data-role="header" data-theme="b" >
+			 <!--<span class="open left"><a href="#panel-01">&#61641;</a></span>  -->
+			
+			<!--<a class="ui-btn-text" data-role="button" href="atleti.html" data-ajax='false' >Back</a>-->
+              <!--  <span>Incontri gara</span>
+				<span class="open right"><a data-mini="true" style="float: right;" data-iconpos="right" href="#panel-02" ><img src="images/ic_menu_moreoverflow_normal_holo_light.png" /></a></span>
+               <!--<a class="ui-btn-text" data-role="button">Modifica</a>-->
+          <!--  </div>-->
+			
+		<!--	<div class="panel left" data-role="panel" data-position="left" data-display="push" data-theme="b" id="panel-01">  
+        <ul>  
+            <li ><a href="#" title="Home">News Feed</a></li>  
+            <li ><a href="#" title="Profile">Profile</a></li>  
+            <li class="setting"><a href="#" title="Setting">Setting</a></li>  
+            <li class="logout"><a href="#" title="Logout">Logout</a></li>  
+            <li class="report"><a href="#" title="Report">Report Bug</a></li>  
+        </ul>  
+    </div>  -->
+  
+
+  
+
+                <div data-role="content">
+                    
+             
+					
+					
+					
+					
+					
+				
+					
+					
+					
+					
+				</div>
+
+				
+
+				
+				<div data-role="footer" data-position="fixed">
+        
+		</div>
+					
+					
+					
+            <!-- Insert content here -->
+			
+			
+           
+        </div>
+		
+		  <div data-role="page" id="iscrittiPage" data-theme="b" data-title="Incontri Gara">
+		  <div data-role="header" data-theme="b" id="hdriscritti" data-position="fixed">
+		<a class="ui-btn-left" href="#" data-rel="back" data-role="button" data-ajax="true" data-icon="back">Indietro</a>
+                <h1>GARA</h1> 
+            </div> 
+			
+			
+			 <div data-role="content">
+			    	<div id="infogaraiscritti" style="width: 100%; height: 40px; ">
+				
+					
+					</div>
+		    	<ul id='iscritti' data-role="listview" data-inset="false" data-theme="b" data-dividertheme="a" ></ul>
+			</div>	
+		  </div>
+		  
+		  
+		<div data-role="popup" data-theme="b" class="ui-content" data-overlay-theme="none" id="dialogForAtleta" style="border: 0px solid silver; ">
+		
+		
+		<div data-role="header" align=center> <a href="#" onclick='$("#dialogForAtleta").popup("close");'  data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left" >Close</a><h5>Incontri atleta</h5></div>
+
+		
+		
+		
+  
+  
+		<ul data-role="listview" id="ulForAtleta">
+		</ul>
+		
+		
+		</div>
+		
+		<div data-role="popup" data-theme="b" class="sui-popup  ui-overlay-shadow ui-corner-all" sdata-transition="slidedown" data-overlay-theme="none" id="dialogCategorie" style="border: 0px solid silver; ">
+		
+	
+		<div data-role="header" align="center" class="sui-content" data-theme="b">
+		
+		 <a href="#" onclick='$("#dialogCategorie").popup("close");'  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a><h5>Seleziona categoria</h5></div><ul data-role="listview" id="ulcategorie" data-theme="a" sstyle="display:none">
+			<li>TUTTE</li>
+			<li>Esordienti B</li>
+			<li>Esordienti A</li>
+			<li>Cadetti B</li>
+			<li>Cadetti A</li>
+			<li>Juniores</li>
+			<li>Seniores A</li>
+			<li>Seniores B</li>
+			<!--<li data-role="list-divider"></li>
+			<li>Annulla</li>-->
+            </ul>
+			
+			
+			
+			
+			
+		   
+		
+		
+		</div>
+		
+		
+		<div data-role="dialog" data-dismissable="false" data-close-btn="left" id="msgDialog" data-theme="b" data-overlay-theme="b" class="ui-content ui-overlay-shadow ui-corner-all">
+    <div data-role="header" ><a href="#" onclick='$("#msgDialog").dialog("close");'  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left">Chiudi</a><h4>    </h4></div>
+    <div data-role="content" align="center">
+	<p align="center"><b>ATTENZIONE</b></p>
+    <p>I dati degli incontri saranno disponibili al più presto.</p>
+    </div>
+	
+	
+    
+</div>
+		
+		
+
+</body>
+</html>

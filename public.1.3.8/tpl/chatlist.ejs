@@ -1,0 +1,33 @@
+<%
+
+for (var i=0; i<data.length; i++){
+
+ var arr=data[i].filename.split("_");
+ 
+ var title="Chat attiva";
+ if (arr.length>1){
+   var jul=arr[1];
+   
+   var anno=jul.substring(0,4);
+   var mese=jul.substring(4,6);
+   var giorno=jul.substring(6,8);
+   var ora=jul.substring(8,10);
+   var min=jul.substring(10,12);
+   
+   var date=new Date(anno,parseInt(mese,10)-1,giorno,ora,min);
+   
+   var wgiorno = ["domenica", "lunedì", "martedì", "mercoledì","giovedì", "venerdì","sabato"];
+  var wmese=["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+ 
+  var sdate=wgiorno[date.getDay()]+" "+giorno+" "+wmese[date.getMonth()]+" "+anno;
+   
+   title="Archiviata "+sdate; 
+   
+ }
+ var filename=data[i].filename   ;
+ var size=formatBytes(data[i].size);
+%>
+<li><a href="#" onclick="loadChatFile('<%=data[i].filename%>')"><span class="medium" style="font-weight: normal;"><%=title %></span><br><span style="font-weight: normal;" class="small"><%=size%></span></a></li>
+<%
+}
+%>

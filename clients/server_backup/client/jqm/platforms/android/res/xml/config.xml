@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="19" id="com.tkdr.appkwondo" version="1.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="AudioRecorderAPI">
+        <param name="android-package" value="com.emj365.plugins.AudioRecorderAPI" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <icon src="www/img/logotkdrozzano_icon.png" />
+    <icon density="ldpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+    <icon density="mdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+    <icon density="hdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+    <icon density="xhdpi" platform="android" src="www/img/logotkdrozzano_icon.png" />
+    <splash density="land-ldpi" src="resources/android/splash/screen.png" />
+    <splash density="land-mdpi" src="resources/android/splash/screen.png" />
+    <splash density="land-hdpi" src="resources/android/splash/screen.png" />
+    <splash density="land-xhdpi" src="resources/android/splash/screen.png" />
+    <splash density="land-xxhdpi" src="resources/android/splash/screen.png" />
+    <splash density="land-xxxhdpi" src="resources/android/splash/screen.png" />
+    <splash density="port-ldpi" src="resources/android/splash/screen.png" />
+    <splash density="port-mdpi" src="resources/android/splash/screen.png" />
+    <splash density="port-hdpi" src="resources/android/splash/screen.png" />
+    <splash density="port-xhdpi" src="resources/android/splash/screen.png" />
+    <splash density="port-xxhdpi" src="resources/android/splash/screen.png" />
+    <splash density="port-xxxhdpi" src="resources/android/splash/screen.png" />
+    <name>AppKwonDo</name>
+    <description>
+       AppKwonDoRozzanoCordova
+    </description>
+    <author email="demy@taekwondorozzano.com" href="http://cordova.io">
+        DemyKwonDo
+    </author>
+    <preference name="android-targetSdkVersion" value="19" />
+    <preference name="android-minSdkVersion" value="15" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

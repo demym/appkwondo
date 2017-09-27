@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/background.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/background.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/taekwondoka.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/taekwondoka.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/matchnull.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/matchnull.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/medaglia_bronzo.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/medaglia_bronzo.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/matchnoplay.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/matchnoplay.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/logo.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/logo.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/matchtoplay.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/matchtoplay.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/user.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/user.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/matchok.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/matchok.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/medaglia_oro.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/medaglia_oro.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/add_to_fav_1.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/add_to_fav_1.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/medaglia_argento.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/medaglia_argento.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/fight.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/fight.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/icon.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/icon.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/matchko.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/matchko.png"
+    },
+    {
+        "merged": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/build/intermediates/res/merged/F0F1F2F3F4F5/debug/drawable-mdpi/greenblink.png",
+        "source": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock/platforms/android/src/main/res/drawable-mdpi/greenblink.png"
+    }
+]

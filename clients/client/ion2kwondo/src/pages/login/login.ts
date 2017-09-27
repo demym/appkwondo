@@ -1,0 +1,116 @@
+import { Component, ViewChild } from "@angular/core";
+import { BackendProvider } from '../../providers/backend/backend';
+import { UtilsProvider } from '../../providers/utils/utils';
+//import { TabsPage } from '../../pages/tabs/tabs';
+import { HomePage } from '../../pages/home/home';
+
+import { NavController, AlertController /*LoadingController, AlertController, Loading */} from 'ionic-angular';
+
+@Component({
+  selector: 'page-login',
+  templateUrl: 'login.html'
+})
+export class LoginPage {
+  @ViewChild('chat') chat: any;
+  allnews = [];
+  socketHost: string;
+  
+  //loading: Loading;
+  //registerCredentials= { email: 'demymortelliti@it.ibm.com', password: 'ser56glr' };
+  registerCredentials = { email: 'youremail@it.ibm.com', password: '' };
+  constructor(private utils: UtilsProvider, private nav: NavController, private backend: BackendProvider, private alertCtrl: AlertController/*, private loadingCtrl: LoadingController*/) {
+
+
+  }
+
+  public createAccount() {
+    this.nav.push('RegisterPage');
+  }
+
+  public login() {
+    var questo = this;
+    //this.showLoading()
+    var logindata = this.registerCredentials;
+    if (this.backend.user.gcmtoken) {
+      if (this.backend.user.gcmtoken != "") {
+        logindata["gcmtoken"] = this.backend.user.gcmtoken;
+      }
+    }
+
+    this.backend.blueLogin(logindata, function (data) {
+      console.log("bluelogin result",data);
+      if (data.loggedin) {
+        if (String(data.loggedin) == "true") {
+          console.log("navigating to homepage");
+           questo.backend.getActiveChat(function(data){
+              console.log("chatmessages have been loaded");
+            });
+
+            questo.backend.getGare(function(data){
+              console.log("gare caricate");
+            })
+
+            questo.backend.getAtleti(function(data){
+              console.log("atleti caricati");
+            })
+
+            questo.nav.setRoot(HomePage);
+           
+          
+
+
+        } else {
+          //alert("login error");
+          console.log(data.error);
+          questo.showError("Login error")
+        }
+      }
+
+
+
+    })
+
+  }
+
+  showLoading() {
+    /*
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+      dismissOnPageChange: false
+    });
+    this.loading.present();
+    */
+  }
+
+  showError(text) {
+   
+    //this.loading.dismiss();
+
+    let alert = this.alertCtrl.create({
+      title: 'Login fallito',
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present(prompt);
+    
+  }
+
+
+  ionViewDidEnter() {
+    console.log("ionViewDidEnter login.ts");
+    var questo = this;
+    var json=this.utils.getJsonStorage("creds");
+    //alert(json);
+      console.log("JSONSTORAGE", json);
+      if (!json) {
+        console.log("regcreds are null")
+      } else {
+        questo.registerCredentials.email = json.email;
+        questo.registerCredentials.password = json.password;
+        console.log("regcreds", questo.registerCredentials);
+        //questo.login();
+      }
+    
+
+  }
+}

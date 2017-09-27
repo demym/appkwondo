@@ -1,0 +1,72 @@
+AAC_ADTS
+
+added in API level 16
+int AAC_ADTS
+AAC ADTS file format
+
+Constant Value: 6 (0x00000006)
+
+AMR_NB
+
+added in API level 10
+int AMR_NB
+AMR NB file format
+
+Constant Value: 3 (0x00000003)
+
+AMR_WB
+
+added in API level 10
+int AMR_WB
+AMR WB file format
+
+Constant Value: 4 (0x00000004)
+
+DEFAULT
+
+added in API level 1
+int DEFAULT
+Constant Value: 0 (0x00000000)
+
+MPEG_2_TS
+
+Android O Developer Preview
+int MPEG_2_TS
+H.264/AAC data encapsulated in MPEG2/TS
+
+Constant Value: 8 (0x00000008)
+
+MPEG_4
+
+added in API level 1
+int MPEG_4
+MPEG4 media file format
+
+Constant Value: 2 (0x00000002)
+
+RAW_AMR
+
+added in API level 3
+int RAW_AMR
+This constant was deprecated in API level 16.
+Deprecated in favor of MediaRecorder.OutputFormat.AMR_NB
+
+AMR NB file format
+
+Constant Value: 3 (0x00000003)
+
+THREE_GPP
+
+added in API level 1
+int THREE_GPP
+3GPP media file format
+
+Constant Value: 1 (0x00000001)
+
+WEBM
+
+added in API level 21
+int WEBM
+VP8/VORBIS data in a WEBM container
+
+Constant Value: 9 (0x00000009)

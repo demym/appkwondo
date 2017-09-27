@@ -1,0 +1,92 @@
+
+
+<ul data-role="listview" id="ulnextevents">
+<%
+
+conslog("eventi.ejs, data",data)
+
+ for(var i=0; i<data.length; i++) { 
+
+     var evento=data[i].gara;
+     var tipoevento="Gara";
+     if (evento.tipoevento) tipoevento="Evento";
+   
+     var diff=data[i].diff;
+
+     var backcolor="#f6f6f6";
+     if (tipoevento=="Evento") backcolor="#cceeff";
+
+     var difftext="fra "+Math.abs(diff)+" giorni";
+     var diffcolor="blue";
+
+     var absdiff=Math.abs(diff);
+
+     if (parseInt(absdiff,10)<14) diffcolor="red";
+
+     var maplocation="";
+     var showmap=false;
+
+     if (evento.maplocation.trim()!="") {
+       maplocation=evento.maplocation;
+       showmap=true;
+     }
+
+     var descr="";
+     if (evento.descr) descr=evento.descr;
+
+     var ora="";
+     if (evento.ora) ora=" - "+evento.ora;
+
+
+
+var colorclass="cblack";
+if (evento.stato.toLowerCase()=="disputata"){
+  colorclass="cgray";
+}
+if (evento.stato.toLowerCase()=="incorso"){
+  colorclass="cgreen";
+}
+
+%>
+<li  onclick="openEvent('<%=tipoevento%>','<%=evento.id%>')" class="ui-first-child <%=colorclass%>" id="ligare_<%=evento.id%>"  >
+<a style="background: <%=backcolor%>" class="fastClick gradient <%=colorclass%>" href="#" id='<%= evento.id %>_<%= evento._rev %>' data-ajax="false" data-transition="slide" sclass="ui-btn ui-btn-icon-right ui-icon-carat-r <%=colorclass%>">
+
+<div>
+<span class="riga1 font13" style="display: inline-block; font-size: 11px; width: 80px;"><b><%= tipoevento.toUpperCase() %></b></span>&nbsp;&nbsp;&nbsp;<span class="riga2 font13" style="color: <%=diffcolor%>"><b><%=difftext%></b></span><br>
+<span class="riga1 font13"><%= evento.title %></span><br>
+<span class="riga2 font13"><%= evento.location.toUpperCase() %> - <b><%=evento.data%><%=ora%></b></span>
+
+
+<%
+if (tipoevento=="Evento") {
+%>    
+<br><div class="riga2 font13" style="word-wrap: break-word; white-space:normal;"><i><%= descr %></i></div>
+
+<% 
+}
+   var stato=evento.stato;
+   var st_testo=stato;
+   if (stato=="nondisputata") st_testo="non disputata";
+   if (stato=="incorso") st_testo="in corso";
+   st_testo=st_testo.toUpperCase();
+   if (tipoevento=="Evento") st_testo="";
+
+   if (tipoevento=="Gara"){
+%>   
+<br><span class="riga3" style="font-size: 11px"><i><b><%=st_testo%></b></i></span>
+<%
+}
+
+
+%>
+
+</div>
+
+</a>
+
+ 
+</li>
+
+
+    <% } %>
+    </ul>

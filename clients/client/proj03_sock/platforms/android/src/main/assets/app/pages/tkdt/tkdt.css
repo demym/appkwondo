@@ -1,0 +1,20 @@
+.giornoenabled {
+    background-color: white;
+}
+
+.giornodisabled {
+    background-color: silver;
+}
+
+.titolo {
+    font-size: 13;
+    color: black;
+    margin: 0;
+  
+}
+
+.titolobar {
+    padding: 4;
+    margin: 0;
+    height: 60;
+}

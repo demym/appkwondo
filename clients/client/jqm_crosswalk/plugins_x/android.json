@@ -1,0 +1,42 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.barcodescanner": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        }
+    },
+    "dependent_plugins": {}
+}

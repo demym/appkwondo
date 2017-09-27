@@ -1,0 +1,50 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+ xmlns:PullRefresh="nativescript-pulltorefresh"
+ loaded="pageLoaded">
+   <ActionBar title="Gare" cssClass="actionbar">
+  
+	 <NavigationButton android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+
+    <ActionBar.actionItems>
+	    
+        <!--<ActionItem text="Gare"  ios.position="left" android.position="left" />
+        <ActionItem text="right" ios.position="right"/>-->
+		<android>
+        <ActionItem text="Refresh"   ios.position="right"  android.position="popup" tap="refetch"/>
+		</android>
+		 <ios>
+         <ActionItem ios.position="right" tap="refetch">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf021;" class="font-awesome"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+    
+      </ios>
+      </ActionBar.actionItems>
+	</ActionBar> 
+	 <StackLayout orientation="vertical">
+	 <GridLayout rows="20" columns="*,50">
+	<Label  id="count" textWrap="true" style="text-align: center; font-style:italic;" col="0" />
+	<ActivityIndicator  visibility="collapsed"  id="ai" busy="true"  col="1" />
+		</GridLayout>
+  <PullRefresh:PullToRefresh refresh="refetch" refreshing="{{loading}}">
+  <ListView items="{{ gare }}" id="lv1" itemTap="gareTap">
+	 <ListView.itemTemplate>
+	 <!--<GridLayout columns="*, auto" rows="auto, auto, auto" cssClass="session-container">-->
+	 <StackLayout cssClass="{{doc.stato!='disputata' ? 'session-container' : 'session-container-silver'}}" id="stack">
+	<!-- <Image  row="1" col="1" src="{{ 'res://add_to_fav_1'}}" />-->
+       <Label  text="{{ doc.title }}" textWrap="true" cssClass="lvlabel gara" />
+	   <Label  text="{{ doc.data + ' ' + doc.location }}" textWrap="true" cssClass="lvlabel location" />
+	   <Label  text="{{ doc.stato | getMinchia() }}" textWrap="true" cssClass="lvlabel stato" />
+	    <Label  text="{{ doc | getDatiGara() }}" textWrap="true" cssClass="lvlabel iscritti" />
+	   </StackLayout>
+	   
+    </ListView.itemTemplate>
+   </ListView>	
+     </PullRefresh:PullToRefresh>
+</StackLayout>
+  	
+
+</Page>

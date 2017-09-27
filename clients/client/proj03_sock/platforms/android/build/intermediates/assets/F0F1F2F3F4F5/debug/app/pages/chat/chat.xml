@@ -1,0 +1,322 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+xmlns:ChatView="nativescript-chatview" 
+xmlns:IC="nativescript-web-image-cache"
+loaded="onLoaded" >  
+<Page.actionBar>  
+
+   <ActionBar title="ChatKwonDo" cssClass="actionbar">
+    <NavigationButton android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+ <ActionBar.actionItems> 
+ <android>
+ 		 <ActionItem  android.systemIcon="arrow_up_float" ios.position="left" android.position="left" tap="scrollTop"/>
+		 <ActionItem  android.systemIcon="arrow_down_float" ios.position="left" android.position="left" tap="scrollBottom"/>
+           <ActionItem ios.position="right" tap="refetchChat">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf021;" class="font-awesome" style="margin: 10; font-size: 18"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+  </android>   
+   <ios>
+         <ActionItem ios.position="right" tap="scrollTop">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf062;" class="font-awesome"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+                 <ActionItem ios.position="right" tap="scrollBottom">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf063;" class="font-awesome"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+                  <ActionItem ios.position="right" tap="refreshChat">
+                    <ActionItem.actionView>
+                        <StackLayout>
+                            <Label text="&#xf021;" class="font-awesome"/>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+    
+      </ios>    
+<!--<ActionItem android.position="popup" tap="logout" text="Logout"/>  -->
+ </ActionBar.actionItems>  
+</ActionBar>  
+</Page.actionBar>  
+<AbsoluteLayout >
+
+
+<GridLayout top="0" id="gl" rows="auto" style="width: 100%; background-color: yellow; z-index: 5000;">
+<!--<ListView id="lvrt"   separatorColor="black" row="0"  >  
+ <ListView.itemTemplate> 
+ <StackLayout cssClass="rtstack">
+
+ <Label text="{{doc.matchid + ' - ' +doc.atletaname}}"  cssClass="rtlabel rtname"/>
+ 
+ <Label text="{{rtdata.text}}" cssClass="{{ rtdata.running ? 'rtlabel  rtrunning' : 'rtlabel  rtpaused'}}" />
+ <StackLayout style="width: 100%; height: 1; background-color: black"/>
+
+
+ </StackLayout>
+ </ListView.itemTemplate>  
+</ListView>-->  
+<ListView id="lvrt"   separatorColor="black" row="0"  >  
+ <ListView.itemTemplate> 
+ <StackLayout cssClass="rtstack">
+ <GridLayout columns="40,*" rows="auto,1" >
+
+ <WebView col="0" src="<img src='img/greenblink.gif' width='32' height='32' />" />
+ <StackLayout col="1">
+ <Label text="{{match.matchid + ' - ' +match.atletaname}}"  cssClass="rtlabel rtname"/>
+ 
+ <Label text="{{tnstext}}" cssClass="{{running ? 'rtlabel  rtrunning' : 'rtlabel  rtpaused'}}" />
+ 
+ </StackLayout>
+ <StackLayout  row="1" colSpan="2" style="width: 100%; height: 1; background-color: black"/>
+ 
+ </GridLayout>
+
+ </StackLayout>
+ </ListView.itemTemplate>  
+</ListView>  
+
+</GridLayout>
+
+
+ <GridLayout top="0" height="100%" width="100%" columns="*" rows="*, 50" sclassName="nsChatView-view schatbackground">  
+ 
+<!-- new chat interface -->
+<ListView id="lv1" items="{{chat}}"   itemTemplateSelector="selectItemTemplate" visibility="visible" separatorColor="transparent" cssClass="chatback" row="0"  >  
+<ListView.itemTemplates>
+
+
+<!-- template solo testo -->
+<template key="normal">
+    <StackLayout cssClass="chatview" sstyle="background-color: #ffe;">
+
+        <StackLayout  visibility="{{side=='left' ? 'visible' : 'collapsed'}}" class="msg_text">
+            <GridLayout width="100%" columns="*" rows="auto, auto" cssClass="msg  them ">
+             <StackLayout cssClass="msg_text">
+                <StackLayout orientation="horizontal">
+                    <!--<Image class="authorimg" width="30" height="30" stretch="aspectFill" verticalAlignment="top" src="" />-->
+                    <Label text="{{text}}" textWrap="true" verticalAlignment="top" sclass="msg_text"/>                                
+                </StackLayout>
+
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" />  
+                
+             
+            </StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+        <StackLayout  visibility="{{side=='center' ? 'visible' : 'collapsed'}}" class="msg_text">
+            <GridLayout columns="*" rows="auto, auto" cssClass="msg system">
+             <StackLayout cssClass="msg_text">
+                <StackLayout orientation="horizontal" horizontalAlignment="right">
+                    <Label text="{{text}}" sclass="msg_text" textWrap="true" verticalAlignment="top" />
+                    <!--<Image class="authorimg" stretch="aspectFill" height="30" width="30" verticalAlignment="top" src="" col="1" />-->
+                </StackLayout>
+               
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+                
+              
+             </StackLayout>   
+            </GridLayout>
+        </StackLayout>
+
+        <StackLayout  visibility="{{side=='right' ? 'visible' : 'collapsed'}}" class="msg_text">
+            <GridLayout columns="*" rows="auto, auto" cssClass="msg me">
+             <StackLayout cssClass="msg_text">
+                <StackLayout orientation="horizontal" horizontalAlignment="right">
+                    <Label text="{{text}}" sclass="msg_text" textWrap="true" verticalAlignment="top" />
+                    <!--<Image class="authorimg" stretch="aspectFill" height="30" width="30" verticalAlignment="top" src="" col="1" />-->
+                </StackLayout>
+               
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+                
+              
+             </StackLayout>   
+            </GridLayout>
+        </StackLayout>
+
+    </StackLayout>
+    </template>
+<!-- fine template solo testo -->
+
+
+<!-- template con immagine -->
+<template key="photo">
+    <StackLayout cssClass="chatview">
+
+        <StackLayout  visibility="{{side=='right' ? 'collapsed' : 'visible'}}" cssClass="msg_text">
+            <GridLayout width="100%" columns="*" rows="auto, auto" class="msg them">
+            
+            <StackLayout cssClass="msg_text">
+            <!--<Label text="PHOTO"/>-->
+                <StackLayout orientation="horizontal">
+               <!-- <IC:WebImage stretch="fill" row="0"  cssClass="chatimage"
+             col="0" src="{{fotourl}}">
+             </IC:WebImage>  -->
+                    <Image cssClass="chatimage" src="{{fotourl}}" />
+                     
+                </StackLayout>
+
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+               
+               
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+        <StackLayout  visibility="{{side=='right' ? 'visible' : 'collapsed'}}" cssClass="msg_text">
+            <GridLayout columns="*" rows="auto, auto" class="msg me">
+            <StackLayout cssClass="msg_text">
+            <!--<Label text="PHOTO"/>-->
+                <StackLayout orientation="horizontal" horizontalAlignment="right">
+                  <!--<IC:WebImage stretch="fill" row="0"  cssClass="chatimage"
+             col="0" src="{{fotourl}}">
+             </IC:WebImage>-->  
+                  <Image cssClass="chatimage" src="{{fotourl}}" />
+                </StackLayout>
+                
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+               
+                
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+    </StackLayout>
+    </template>
+<!-- fine template con immagine -->
+
+
+
+
+
+<!-- template con audio -->
+<template key="audio">
+    <StackLayout cssClass="chatview">
+        <!--<Label text="AUDIO"/>-->
+        <StackLayout  visibility="{{side=='right' ? 'collapsed' : 'visible'}}" cssClass="msg_text">
+            <GridLayout width="100%" columns="*" rows="auto, auto" class="msg them">
+            <StackLayout cssClass="msg_text">
+                <StackLayout orientation="horizontal">
+                   <!--<HtmlView html="{{html}}" />-->
+                   <GridLayout columns="60,60,*" style="padding: 0" >
+                   <Button col="0" tap="stopChatAudio" class="font-awesome" text="&#xf04d;" style="width: 130; margin: 0 0 0 0; padding: 0; background-color: transparent; color: black;"/>
+                   <Button col="1" tap="playChatAudio" class="font-awesome" text="&#xf04b;" style="width: 130; margin: 0 0 0 0; padding: 0; background-color: transparent; color: black;"/>
+                   </GridLayout>  
+                </StackLayout>
+
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+               
+               
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+        <StackLayout  visibility="{{side=='right' ? 'visible' : 'collapsed'}}" cssClass="msg_text">
+            <GridLayout columns="*" rows="auto, auto" class="msg me">
+            <StackLayout cssClass="msg_text">
+                <StackLayout orientation="horizontal" horizontalAlignment="right">
+                     <GridLayout columns="60,60,*" style="padding: 0" >
+                   <Button col="0" tap="stopChatAudio" class="font-awesome" text="&#xf04d;" style="width: 130; margin: 0 0 0 0; padding: 0; background-color: transparent; color: black;"/>
+                   <Button col="1" tap="playChatAudio" class="font-awesome" text="&#xf04b;" style="width: 130; margin: 0 0 0 0; padding: 0; background-color: transparent; color: black;"/>
+                   </GridLayout>  
+
+                </StackLayout>
+                
+                <Label class="msg_timestamp" text="{{nickname+' '+timestamp}}" verticalAlignment="top" row="1" colSpan="2" />  
+               
+                
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+    </StackLayout>
+    </template>
+<!-- fine template con audio -->
+
+
+
+</ListView.itemTemplates>
+</ListView>
+
+
+<!-- end new chat interface -->
+
+
+<!--
+
+ <ListView id="lv1_old"  scolSpan="2" srow="1" visibility="collapsed" separatorColor="transparent" className="nsChatView-messageList" row="0"  shorizontalAlignment="stretch" sverticalAlignment="stretch">  
+ <ListView.itemTemplate>  
+
+ <GridLayout className="{{ 'nsChatView-item-' + (isRight ? 'right' : 'left') }}"
+                  rows="auto" columns="auto,*,auto">
+
+        <StackLayout row="0" col="1"
+                     className="nsChatView-message">
+
+         
+          <Border className="nsChatView-messageArea">
+            <StackLayout className="nsChatView-content" id="messagebox"
+                         verticalAlignment="top" horizontalAlignment="{{ isRight ? 'right' : 'left' }}">
+
+            
+              <StackLayout orientation="horizontal">	
+<Label className="nsChatView-date"
+                     horizontalAlignment="{{ isRight ? 'right' : 'left' }}"
+                     text="{{ nickname }}"
+                     svisibility="{{ time ? 'visible' : 'collapsed' }}" />			  
+              
+					 <Label className="nsChatView-date"
+                     horizontalAlignment="{{ isRight ? 'right' : 'left' }}"
+                     text=" "
+                     svisibility="{{ time ? 'visible' : 'collapsed' }}" />
+					 <Label className="nsChatView-date"
+                     horizontalAlignment="{{ isRight ? 'right' : 'left' }}"
+                     text="{{ time }}"
+                     svisibility="{{ time ? 'visible' : 'collapsed' }}" />
+				
+              </StackLayout>
+              
+             
+              <Label className="nsChatView-messageText"
+                     horizontalAlignment="{{ isRight ? 'right' : 'left' }}"
+                     text="{{ text }}" textWrap="true" />
+            </StackLayout>
+          </Border>
+        </StackLayout>
+
+       
+        <Border row="0" col="{{ isRight ? '0' : '2' }}"
+                className="nsChatView-separator" />
+      </GridLayout>
+
+</ListView.itemTemplate>  
+</ListView>  
+
+-->
+ <GridLayout className="nsChatView-sendMessageArea" row="1"  style="padding: 0" rows="*" columns="*,50">
+ <TextField id="tf1" hint="Scrivi qui il tuo messaggio" tap="chatfocus" text="" row="0" col="0" />  
+ <Button col="1" id="chattext" visibility="{{ chatfocus ? 'visible' : 'collapsed'}}" text="&#xf0da;" style="font-size: 26; background-color: lightblue" tap="onTap" row="0"  class="font-awesome" />
+ 
+ <Button col="1" id="chataudio" visibility="{{ chatfocus ? 'collapsed' : 'visible'}}" text="&#xf130;" style="font-size: 26; background-color: lightblue" tap="recordAudio" row="0"  class="font-awesome" />
+ <Button col="1" id="chataudiostop" visibility="collapsed" text="&#xf04d;" style="font-size: 26; background-color: red" tap="recordAudio" row="0"  class="font-awesome" />
+ <AbsoluteLayout>
+    <Label text="&#xf030;" class="font-awesome" style="font-size: 24" tap="scattaFoto" top="11" left="{{fotoleft}}" />
+  </AbsoluteLayout> 
+  <AbsoluteLayout>
+    <Label id="labrecording" text="Registrazione in corso..." style="background-color: red; color: white; font-size: 16" visibility="collapsed" top="11" left="20" />
+  </AbsoluteLayout> 
+ </GridLayout>
+</GridLayout>  
+
+
+
+</AbsoluteLayout>
+</Page>  

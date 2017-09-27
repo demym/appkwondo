@@ -1,0 +1,1 @@
+{"plugins":["cordova-plugin-console","cordova-plugin-device","cordova-plugin-splashscreen","cordova-plugin-statusbar","cordova-plugin-whitelist","ionic-plugin-keyboard","phonegap-plugin-push","cordova-plugin-badge","cordova-sqlite-storage","cordova-plugin-themeablebrowser","cordova-plugin-appavailability","cordova-plugin-velda-devicefeedback"]}

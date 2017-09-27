@@ -1,0 +1,11 @@
+{
+     "android": {
+         "release": {
+             "keystore": "appkwondo.keystore",
+             "storePassword": "stevevai",
+             "alias": "appkwondo",
+             "password" : "stevevai",
+             "keystoreType": ""
+         }
+     }
+ }
