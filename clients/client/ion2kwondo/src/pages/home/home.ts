@@ -39,29 +39,36 @@ export class HomePage {
     {
       name: "ChatKwonDo",
       icon: "md-chatbubbles",
-      page: ChatPage
+      page: ChatPage,
+      authrequired: false
     },{
       name:"Gare",
       icon: "md-trophy",
-      page: GarePage
+      page: GarePage,
+      authrequired: false
     },{
       name: "Atleti",
       icon: "ios-people",
-      page: AtletiPage
+      page: AtletiPage,
+      authrequired: true
     },{
       name: "Eventi",
       icon: "md-calendar",
-      page: EventiPage
+      page: EventiPage,
+      authrequired: false
     },{
       name: "Società",
       icon: "md-flag",
-      page: SocietaPage
+      page: SocietaPage,
+      authrequired: true
     },{
       name: "Statistiche",
       icon: "md-stats",
-      page: StatsPage
+      page: StatsPage,
+      authrequired: false
     }
   ];
+  displayedmenu:any=[];
   user: any={};
   server:any={};
 
@@ -294,8 +301,26 @@ gotoPage(p){
   }
 
   ionViewDidLoad(){
+    var questo=this;
     this.user=this.backend.user;
     this.server=this.backend.rooturl;
+    var arr=[];
+    this.menu.forEach(function(item,idx){
+      if (questo.getAuth(item)) arr.push(item);
+
+    })
+    questo.displayedmenu=arr;
   }
 
+
+  getAuth(m){
+    var role=this.backend.user.role;
+    console.log("role",role);
+    var retvalue=true;
+    if (m.authrequired){
+      if (this.backend.user.role.toLowerCase()!="tkdradmin") retvalue=false;
+
+    }
+    return retvalue;
+  }
 }

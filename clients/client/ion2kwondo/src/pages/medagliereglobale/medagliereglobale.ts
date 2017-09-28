@@ -74,6 +74,7 @@ export class MedagliereglobalePage {
         questo.transform(clarr);
         let table: any=document.getElementsByClassName("table-striped")[0];
         table.border="1";
+        table.width="100%";
       
         //console.log("clarr",clarr,clarr.length);
 

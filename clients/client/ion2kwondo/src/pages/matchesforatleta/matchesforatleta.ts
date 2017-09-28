@@ -204,6 +204,7 @@ export class MatchesforatletaPage {
 
   showMatchconsole(m){
     //this.backend.matchconsoles.push(m);
+    if (this.backend.user.role.toLowerCase()!="tkdradmin") return;
     this.backend.playFeedback();
     this.navCtrl.push(MatchconsolePage,{
       match: m

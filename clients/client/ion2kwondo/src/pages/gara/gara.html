@@ -97,10 +97,16 @@
     </ion-refresher-content>
   </ion-refresher>
 
+  <ion-card *ngIf="showIscritti">
+    <ion-card-content>
+        Nessun incontro trovato
+    </ion-card-content>
+
+  </ion-card>
   <section id="iscritti" *ngIf="showIscritti">
    <ion-card>
-      <ion-card-header style="background: #ddd">
-        Nessun incontro<br>
+      <ion-card-header style="background: lightblue">
+      
         {{iscritti.length}} iscritti a questa gara
       </ion-card-header>
       <ion-card-content>

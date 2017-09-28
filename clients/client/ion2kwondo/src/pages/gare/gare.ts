@@ -76,6 +76,7 @@ export class GarePage {
 
   pressGara(g) {
     var questo = this;
+    if (questo.backend.user.role.toLowerCase()!="tkdradmin") return;
     console.log("pressed gara", g);
     let alert = this.alertCtrl.create({
       title: 'Modifica gara',

@@ -52,7 +52,7 @@ export class MyApp {
 
   constructor(public toastCtrl: ToastController, private deviceFeedback: DeviceFeedback, private app: App, private _SplashScreen: SplashScreen, public events: Events, private alertCtrl: AlertController, public platform: Platform, public backend: BackendProvider) {
     var questo = this;
-
+ 
 
     var IS_PRODUCTION = true;
 
@@ -167,6 +167,12 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
 
     this.nav.setRoot(page.component, params);
+  }
+
+  ionViewDidLoad(){
+    console.log("ROLE",this.backend.user.role);
+    this.user=this.backend.user;
+    console.log("USER",this.user);
   }
 
 
