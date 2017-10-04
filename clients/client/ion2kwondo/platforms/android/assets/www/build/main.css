@@ -30869,6 +30869,14 @@ page-medagliereglobale .info {
   text-align: center;
 }
 
+page-medagliereglobale .table-striped {
+  border: 1px solid black;
+}
+
+page-medagliereglobale .table-striped thead {
+  /* background: lightblue;*/
+}
+
 page-stats .subriga {
   color: gray;
   font-size: 14px;

@@ -31,6 +31,9 @@
         "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
+        "cordova-plugin-browsersync": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
@@ -47,6 +50,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
         "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
         "cordova-plugin-media-capture": {
@@ -74,12 +80,6 @@
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
         "org.solderzzc.base64imagesaverplugin": {
-            "PACKAGE_NAME": "com.tkdr.appkwondo"
-        },
-        "cordova-plugin-browsersync": {
-            "PACKAGE_NAME": "com.tkdr.appkwondo"
-        },
-        "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         }
     },

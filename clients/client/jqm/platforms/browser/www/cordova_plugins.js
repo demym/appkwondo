@@ -461,11 +461,13 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.6",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-badge": "0.7.2",
+    "cordova-plugin-browsersync": "0.1.1",
     "cordova-plugin-camera": "2.0.0",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-dialogs": "1.2.0",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-fileopener": "1.0.4",
+    "cordova-plugin-filepath": "1.0.2",
     "cordova-plugin-media-capture": "1.4.3",
     "cordova-plugin-splashscreen": "3.2.1",
     "cordova-plugin-statusbar": "2.2.3",
@@ -474,9 +476,7 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-x-socialsharing": "5.0.12",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
-    "org.solderzzc.base64imagesaverplugin": "0.6.0",
-    "cordova-plugin-browsersync": "0.1.1",
-    "cordova-plugin-filepath": "1.0.2"
+    "org.solderzzc.base64imagesaverplugin": "0.6.0"
 }
 // BOTTOM OF METADATA
 });

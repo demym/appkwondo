@@ -16,7 +16,7 @@ import * as xml2js from "xml2js";
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
-*/
+*/ 
 @Injectable()
 export class BackendProvider {
   //public rooturl = "https://bpeitaly.mybluemix.net";
@@ -827,6 +827,55 @@ export class BackendProvider {
     return $retrows;
   }
 
+  filterArray($m, filt, exact) {
+    if (!exact) exact = false;
+    //colog("filterrows: ")
+    //console.log($m)
+    var $retrows = [];
+    var rows = $m; //[{person:"me", age :"30"},{person:"you",age:"25"}];
+  
+    rows.forEach(function (item,i) {
+  
+      var row = rows[i];
+      var eligible = true;
+  
+      for (var key in row) {
+        // console.log("key: "+key + " . "+ row.doc[key]);
+        for (var fkey in filt) {
+          if (fkey == key) {
+            //console.log("found key ---->"+fkey);
+            var v1 = filt[fkey].toLowerCase();
+            if (v1.trim() != "") {
+              var v2 = row[key].toLowerCase();
+              if (exact) {
+                if (v2.trim() == v1.trim()) {
+                  // console.log("found !: "+v2);
+  
+                } else {
+                  eligible = eligible && false;
+                }
+              } else {
+                if (v2.indexOf(v1) > -1) {
+                  // console.log("found !: "+v2);
+  
+                } else {
+                  eligible = eligible && false;
+                }
+  
+  
+              }
+  
+            }
+  
+          }
+        }
+      }
+      if (eligible) $retrows.push(row);
+    });
+  
+    return $retrows;
+  }
+
 
   getRtMatches(callback) {
     var url = this.rooturl + "/realtime";
@@ -906,6 +955,7 @@ export class BackendProvider {
   getObjectArray(o) {
     var arr = [];
     for (var k in o) {
+      //console.log("found key",k);
       if (o.hasOwnProperty(k)) {
         var newProp = {
           name: k,
@@ -1234,6 +1284,39 @@ export class BackendProvider {
     txt = this.replaceAll(txt, "ù", "u'");
     return txt
   }
+
+  markGara(id, stato, callback) {
+
+    console.log("markgara",id,stato);
+
+    var questo=this;
+    
+      var postdata = {
+        
+        stato: stato,
+        id: id
+      }
+      
+      var url=questo.rooturl+"/gare/update";
+        questo.postData(url,postdata,function(data){
+          console.log("gara marked",postdata,data);
+          if (callback) callback(data);
+        })
+
+        /*
+      $.ajax({
+          url: rooturl + "/gare/update",
+          type: "POST",
+          data: data
+        })
+        .done(function (data) {
+          popGareCancel();
+          refreshGareServer();
+    
+        });
+        */
+    
+    }
 
 
 }

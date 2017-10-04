@@ -54,7 +54,7 @@ export class MyApp {
     var questo = this;
  
 
-    var IS_PRODUCTION = true;
+    var IS_PRODUCTION = false;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");

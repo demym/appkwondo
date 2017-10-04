@@ -120,6 +120,22 @@ router.get("/retrieve/:garaid", function (req, res) {
 
 })
 
+router.get("/retrieve/:garaid/nosave", function (req, res) {
+
+    var tkdt_garaid = req.params.garaid;
+   
+    getTkdtGara(tkdt_garaid, function (data) {
+        console.log("retrieved gara "+tkdt_garaid+" !");
+
+        res.send(data);
+       
+        //res.send(data);
+
+    })
+
+})
+
+
 router.get("/retrieveforme/:garaid", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;

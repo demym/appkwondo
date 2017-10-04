@@ -56,6 +56,7 @@ export class GaraPage {
     quadrato: ""
   }
   filtersApplied=false;
+  categoriecoperte:any={};
 
 
   info: any ={
@@ -164,6 +165,8 @@ export class GaraPage {
       questo.info.vinti=questo.backend.filterRows(questo.gara.matchesbyprog,{ disputato: "yes", vinto: "yes"});
       questo.info.persi=questo.backend.filterRows(questo.gara.matchesbyprog,{ disputato: "yes", vinto: "no"});
       console.log("questo.info",questo.info);
+      questo.categoriecoperte=questo.getCategorieCoperte();
+      console.log("categorie coperte",questo.categoriecoperte);
       
       if (callback) callback(data);
     })
@@ -523,6 +526,96 @@ getDerbyText(id){
 
    
   }
+
+
+  getCategorieCoperte(societa?: any) {
+    var questo=this;
+    
+        if (!societa) societa = "A.S.D. TAEKWONDO ROZZANO";
+        console.log("getCategorieCoperte",societa,questo.jgara);
+    
+        var result = {
+            cats: [],
+            text: "Dati ufficiali categorie non disponibili"
+        }
+        if (!questo.jgara.hasOwnProperty("tkdt")) return result;
+        if (questo.jgara) {
+           
+                var garadoc = questo.jgara;
+                var tkdtiscritti = garadoc.tkdt.atleti;
+                if (tkdtiscritti.length == 0) tkdtiscritti = garadoc.tkdt.atleti_iscritti;
+    
+                let roz = questo.backend.filterArray(tkdtiscritti, {
+                    societa: societa
+                }, true);
+                //console.log($roz);
+    
+                //sort by categoria
+    
+                roz.sort(function (a, b) {
+                    var a1 = a.catcintura + a.cateta + a.catpeso + a.sesso;
+                    var b1 = b.catcintura + b.cateta + b.catpeso + b.sesso;
+                    if (a1 > b1) return 1;
+                    if (a1 < b1) return -1;
+                    return 0;
+    
+    
+                })
+    
+                //scan categorie
+                var cat = "";
+                var catcount = 0;
+                var res = [];
+                roz.forEach(function (item,i) {
+                    var atl = roz[i];
+                    var cateta = atl.cateta;
+                    var catpeso = atl.catpeso;
+                    var catcintura = atl.catcintura;
+                    var sesso = atl.sesso;
+                    var catx = catcintura + cateta + catpeso + sesso;
+    
+                    if (catx != cat) {
+                        //count = 0;
+    
+                        var newcat = {
+                            cateta: cateta,
+                            catpeso: catpeso,
+                            catcintura: catcintura,
+                            sesso: sesso,
+                            atleti: []
+                        }
+    
+                        res.push(newcat);
+                        catcount++;
+                        cat = catx;
+    
+    
+                    }
+                    var lastres = res[res.length - 1];
+                    lastres.atleti.push(atl)
+                    //count++;
+    
+                })
+    
+                //console.log(res);
+    
+                var text = res.length + " categorie coperte con  " + roz.length + " atleti"
+                console.log(text);
+                res.forEach(function (ritem,ri) {
+                    var r = res[ri];
+                    //console.log(r.sesso+" - "+r.cateta+" - "+r.catcintura+" - "+r.catpeso+": "+r.atleti.length+" atleti");
+    
+                })
+    
+                result.cats = res;
+                result.text = text;
+    
+           
+    
+        }
+        return result;
+    
+    }
 
 
 

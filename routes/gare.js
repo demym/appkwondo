@@ -972,6 +972,8 @@ router.get("/updategarafromfile", function (req, res) {
 router.post('/update', function (req, res) {
 	var body = req.body;
 
+	console.log("body",body);
+
 	if (!req.body.id) body = JSON.parse(req.body); //check if JSON or stringified JSON
 
 	var id = body.id;

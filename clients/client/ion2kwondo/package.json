@@ -35,7 +35,6 @@
         "@ionic-native/transfer": "^3.13.1",
         "@ionic/storage": "2.0.1",
         "cordova-android": "^6.2.3",
-        "cordova-ios": "^4.4.0",
         "cordova-plugin-appavailability": "^0.4.2",
         "cordova-plugin-audio-recorder-api": "0.0.6",
         "cordova-plugin-badge": "^0.8.0",
@@ -127,8 +126,7 @@
             "cordova-plugin-fileopener": {}
         },
         "platforms": [
-            "android",
-            "ios"
+            "android"
         ]
     }
 }

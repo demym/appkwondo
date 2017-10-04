@@ -14,15 +14,119 @@
 
 
 <ion-content padding>
-
-  <ion-item *ngFor="let m of backend.getObjectArray(gara)">
-    <ion-row>
-    <ion-col class="label">{{m.name}}</ion-col>
-    </ion-row>
-  <ion-row>
-     <ion-col class="value">{{m.value}}</ion-col>
-    </ion-row>
+    <ion-item>
+        <ion-label >ID: {{gara.id}}</ion-label>
+  
+  
     </ion-item>
+    <ion-item>
+        <ion-label floating>TKDT_ID: </ion-label>
+        <ion-input [(ngModel)]="gara.tkdt_id"></ion-input>
+  
+    </ion-item>
+  <ion-item>
+      <ion-label floating>Title</ion-label>
+      <ion-input [(ngModel)]="gara.title"></ion-input>
+
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Location</ion-label>
+      <ion-input [(ngModel)]="gara.location"></ion-input>
+
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Data</ion-label>
+      <ion-input [(ngModel)]="gara.data"></ion-input>
+      <!--<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="gara.datafull"></ion-datetime>-->
+
+  </ion-item>
+  <ion-item>
+      <ion-label >Stato</ion-label>
+      
+      <ion-select [(ngModel)]="gara.stato">
+          <ion-option value="disputata">DISPUTATA</ion-option>
+          <ion-option value="nondisputata">NONDISPUTATA</ion-option>
+          <ion-option value="incorso">INCORSO</ion-option>
+      </ion-select>
+         
+       
+
+  </ion-item>
+  <ion-item>
+      <ion-label >Tipo</ion-label>
+      <ion-select [(ngModel)]="gara.tipo">
+          <ion-option value="combattimento">Combattimento</ion-option>
+          <ion-option value="forme">Forme</ion-option>
+        </ion-select>
+
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Map location</ion-label>
+      <ion-input [(ngModel)]="gara.maplocation"></ion-input>
+
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Iscritti </ion-label>
+      <ion-textarea [(ngModel)]="gara.iscritti"></ion-textarea>
+
+  </ion-item> 
+  <ion-item>
+      <ion-label floating>MyIscritti</ion-label>
+      <ion-input [(ngModel)]="gara.myiscritti"></ion-input>
+
+  </ion-item>
+
+  <!--<ion-item *ngFor="let m of backend.getObjectArray(gara)">
+  
+  <ion-label floating>{{m.name}}</ion-label>
+ <input type="text" [value]="m.value"/>
+  
+    </ion-item>-->
+ 
+
+    <ion-card *ngIf="tkdtgara">
+      <ion-card-header>
+        <ion-row>
+          <ion-col>
+              Dati Tkdt
+            </ion-col>
+          <ion-col col-2><button ion-button clear (tap)="retrieveTkdtGara(false)"><ion-icon name="md-refresh"></ion-icon></button></ion-col></ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        
+          <ion-row>
+              <ion-col col-6 class="label">Atleti iscritti</ion-col>
+              <ion-col >{{tkdtgara.atleti_iscritti.length}}</ion-col>
+          </ion-row>
+        
+
+          <ion-row>
+              <ion-col col-6 class="label">Atleti</ion-col>
+              <ion-col >{{tkdtgara.atleti.length}}</ion-col>
+          </ion-row>
+        
+
+          <ion-row>
+              <ion-col col-6 class="label">Tabulati</ion-col>
+              <ion-col >{{tkdtgara.tabulati.length}}</ion-col>
+          </ion-row>
+         
+
+          <ion-row>
+              <ion-col col-6 class="label">Giorni</ion-col>
+              <ion-col >{{tkdtgara.giorni.length}}</ion-col>
+          </ion-row>
+        
+
+          <button ion-button block (tap)="toggleTkdtJson()">Visualizza JSON</button>
+
+          <div *ngIf="tkdtjsonview" class="tkdt">{{getTkdtGara()}}</div>
+      </ion-card-content>
+    </ion-card>
+   
+     
+      
+
 
 </ion-content>
   <ion-footer>

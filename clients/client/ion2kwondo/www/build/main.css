@@ -30524,6 +30524,11 @@ page-editgara ion-fab[bottom] {
   bottom: 50px;
 }
 
+page-editgara .tkdt {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 page-gara {
   /*
 ion-label {
@@ -30867,6 +30872,14 @@ page-medagliereglobale .table-striped td {
 page-medagliereglobale .info {
   padding: 10px;
   text-align: center;
+}
+
+page-medagliereglobale .table-striped {
+  border: 1px solid black;
+}
+
+page-medagliereglobale .table-striped thead {
+  /* background: lightblue;*/
 }
 
 page-stats .subriga {

@@ -43,6 +43,8 @@
           <ion-row><ion-col col-4>Match disputati</ion-col><ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}}) </ion-col></ion-row>
            <ion-row><ion-col col-4>Match vinti</ion-col><ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}}) </ion-col></ion-row>
             <ion-row><ion-col col-4>Match persi</ion-col><ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}}) </ion-col></ion-row>
+            <ion-row><ion-col col-12>&nbsp;</ion-col></ion-row>
+            <ion-row><ion-col col-4>Categorie coperte</ion-col><ion-col class="infobold">{{categoriecoperte.text}}</ion-col></ion-row>
       <!--<div>Gara: {{jgara.title}}</div>
       <div>Location: {{jgara.location}}</div>
       <div>Data: {{jgara.data}}</div>
@@ -196,7 +198,9 @@
       <div>Location: {{jgara.location}}</div>
       <div>Data: {{jgara.data}}</div>
       <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>
-     
+      <br>
+      <div>{{categoriecoperte.text}}</div>
+      
     </ion-list>
 
   </section>

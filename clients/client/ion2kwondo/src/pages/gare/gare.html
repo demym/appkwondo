@@ -19,6 +19,9 @@
     <ion-refresher-content refreshingSpinner="ios">
         </ion-refresher-content>
   </ion-refresher>  
+  <div *ngIf="loading" style="width: 100%; text-align: center">
+    <ion-spinner name="ios"></ion-spinner>
+  </div>
 
 <ion-list *ngIf="backend.gare.length>0">
   <ion-item *ngFor="let g of backend.gare" (press)="pressGara(g)" (tap)="gotoGara(g.doc.id)" [ngClass]="g.doc.stato.toLowerCase()">

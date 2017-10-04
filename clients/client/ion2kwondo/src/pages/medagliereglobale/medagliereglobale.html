@@ -13,15 +13,79 @@
 
     <ion-title>Medagliere Globale</ion-title>
   </ion-navbar>
+  <ion-segment [(ngModel)]="activetab" color="secondary" (ionChange)="tabChanged($event)">
+    
+      
+      <ion-segment-button value="medagliereglobale">
+        <!--<ion-icon name="camera"></ion-icon>-->Globale
+      </ion-segment-button>
+      <ion-segment-button value="giornate" >
+          <!--<ion-icon name="bookmark"></ion-icon>-->Giornate
+      </ion-segment-button>
+
+    
+     
+    </ion-segment>
 
 </ion-header>
 
 
 <ion-content padding>
     <div *ngIf="loading" style="text-align: center; width: 100%"><ion-spinner center name="ios" ></ion-spinner></div>
+    
+    
+   
+    <section *ngIf="activetab=='medagliereglobale'" id="medagliereglobale">
     <div class="info" *ngIf="!loading">
-      <i>Clicca sulle medaglie per conoscere chi le ha conquistate </i>
+      <i>Clicca sui numeri per vedere i medagliati</i>
     </div>
     <div class="mg" [innerHTML]="html"></div>
+  </section>
+
+
+  <section *ngIf="activetab=='giornate'" id="giornate">
+      
+      <ion-segment [(ngModel)]="activegiorno" color="primary" (ionChange)="giornoChanged($event)" *ngIf="jgara.hasOwnProperty('tkdt')">
+          <ion-segment-button *ngFor="let g of jgara.tkdt.giorni; let i=index;" [value]="i">
+            {{g.titolo}}
+          </ion-segment-button>
+         
+            </ion-segment>
+
+        <button ion-button block (tap)="toggleSocieta()">Società</button>
+            <div *ngIf="activegiornata.hasOwnProperty('elenco_societa') && viewsocieta">
+        <ion-item *ngFor="let s of activegiornata.elenco_societa.rows; let p=index;" (tap)="toggleAtletiSocieta(s)">
+          {{s.societaname}} ({{s.atleti.length}})
+          <div style="margin-top: 7px; border: 1px solid silver" *ngIf="viewatletisocieta && (activesocieta==s.societaname)">
+            <ion-item *ngFor="let a of sorted(s.atleti,'nome')">
+              <span style="font-size: 14px;">{{a.nome}}</span><br>
+              <span style="font-size: 12px; color: gray;">{{a.sesso}} {{a.catpeso}} {{a.catcintura}}</span> 
+            </ion-item>
+          </div>
+        </ion-item>
+      </div>
+
+      <button ion-button block (tap)="toggleMedagliere()">Medagliere</button>
+      <div *ngIf="viewmedagliere">
+      <div *ngIf="activegiornata.hasOwnProperty('elenco_societa')">
+        <ion-item *ngFor="let s of activegiornata.elenco_societa.rows; let p=index;" (tap)="toggleAtletiSocieta(s)">
+          {{s.societaname}} ({{s.atleti.length}})
+          <div style="margin-top: 7px; border: 1px solid silver" *ngIf="viewatletisocieta && (activesocieta==s.societaname)">
+            <ion-item *ngFor="let a of sorted(s.atleti,'nome')">
+              <span style="font-size: 14px;">{{a.nome}}</span><br>
+              <span style="font-size: 12px; color: gray;">{{a.sesso}} {{a.catpeso}} {{a.catcintura}}</span> 
+            </ion-item>
+          </div>
+        </ion-item>
+      </div>
+</div>
+
+
+  
+    </section>
+
+  <section *ngIf="activetab=='societa'" id="societa">
+    Societa
+  </section>
  
 </ion-content>

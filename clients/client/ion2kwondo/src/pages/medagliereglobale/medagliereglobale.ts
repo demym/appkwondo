@@ -15,113 +15,354 @@ import { BackendProvider } from '../../providers/backend/backend';
 
 })
 export class MedagliereglobalePage {
-  html= "";
-  gara: any={};
-  jgara: any={};
-  loading=false;
+  html = "";
+  gara: any = {};
+  jgara: any = {};
+  loading = false;
+  toggles: any = {
+    medagliereglobale: true,
+    giornigara: false,
+    societa: false
+  }
+  activetab = "medagliereglobale";
+  activegiorno = 0;
+  activegiornata: any = {
+
+  };
+  viewatletisocieta = false;
+  viewsocieta = false;
+  viewmedagliere=false;
+  activesocieta = "";
+
+  jgaratemplate = {
+    atleti: [],
+    atleti_iscritti: [],
+    giorni: [],
+    tabulati: []
+  }
+
+  hasGiornate = false;
+  table;
 
   constructor(public backend: BackendProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     //this.html=navParams.get('html');
-    this.gara=navParams.get("gara");
+    this.gara = navParams.get("gara");
   }
 
   ionViewDidLoad() {
+    var questo = this;
     console.log('ionViewDidLoad MedagliereglobalePage');
-    this.jgara=this.navParams.get("gara");
-    this.getMedagliereGlobale();
+
+    questo.jgara = this.navParams.get("gara");
+
+    questo.getMedagliereGlobale(function () {
+
+
+      console.log("got medagliere globale");
+
+
+      if (questo.jgara.hasOwnProperty("tkdt")) {
+        if (questo.jgara.tkdt.hasOwnProperty("giorni")) {
+          if (questo.jgara.tkdt.giorni.length > 0) {
+            questo.activegiornata = questo.jgara.tkdt.giorni[0];
+            questo.hasGiornate = true
+
+          }
+        }
+
+
+      } else {
+        questo.jgara.tkdt = Object.assign({}, questo.jgaratemplate);
+        questo.activegiornata = {};
+        questo.hasGiornate = false;
+      }
+
+
+
+    });
+    questo.getSocieta();
   }
 
-  close(){
+  close() {
     this.viewCtrl.dismiss();
   }
 
 
-  getMedagliereGlobale(){
-    var questo=this;
+  getMedagliereGlobale(callback) {
+    var questo = this;
     var tkdt_rooturl = "https://www.tkdtechnology.it/index.php/welcome/";
-    var tkdt_garaid=questo.jgara.tkdt_id;
+    var tkdt_garaid = questo.jgara.tkdt_id;
     var giornataid;
     if (!giornataid) {
       if (questo.jgara.tkdt) {
         if (questo.jgara.tkdt.giorni) {
           if (questo.jgara.tkdt.giorni.length > 0) {
             giornataid = questo.jgara.tkdt.giorni[0].id;
-            console.log("using giornataid from tkdt structure",giornataid)
+            console.log("using giornataid from tkdt structure", giornataid)
           }
         }
       }
     }
-  
-  
-  
-    var url = questo.backend.rooturl + "/tkdt/medagliereglobale/" + giornataid;
-  
-    //var caricamentotext = imgtext + "Caricamento in corso...."
-  
-    questo.loading=true;
-    questo.backend.fetchText(url,function(data){
-      questo.loading=false;
-      console.log("got medagliere globale",data);
-      var pos=data.indexOf("<table class=");
 
-      questo.html=data.slice(pos);
-      setTimeout(function(){
-        let clarr: any=document.getElementsByClassName("link_w_tooltip_gold");
-        questo.transform(clarr);
-        clarr=document.getElementsByClassName("link_w_tooltip_silver");
-        questo.transform(clarr);
-        clarr=document.getElementsByClassName("link_w_tooltip_bronze");
-        questo.transform(clarr);
-        let table: any=document.getElementsByClassName("table-striped")[0];
-        table.border="1";
-        table.width="100%";
+
+
+    var url = questo.backend.rooturl + "/tkdt/medagliereglobale/" + giornataid;
+
+    //var caricamentotext = imgtext + "Caricamento in corso...."
+
+    questo.loading = true;
+    questo.backend.fetchText(url, function (data) {
+      questo.loading = false;
+      //console.log("got medagliere globale", data);
+      var pos = data.indexOf("<table class=");
+
+      questo.html = data.slice(pos);
       
+      setTimeout(function () {
+
+        questo.domize();
+
+        if (callback) callback();
+        /*
+        let clarr: any = document.getElementsByClassName("link_w_tooltip_gold");
+        questo.transform(clarr);
+        clarr = document.getElementsByClassName("link_w_tooltip_silver");
+        questo.transform(clarr);
+        clarr = document.getElementsByClassName("link_w_tooltip_bronze");
+        questo.transform(clarr);
+        let table: any = document.getElementsByClassName("table-striped")[0];
+        table.border = "1";
+        table.width = "100%";
+        */
+
         //console.log("clarr",clarr,clarr.length);
 
-     
-   
-      },1000)
-   
+
+
+      }, 1000)
+
       /*let profileModal = questo.modalCtrl.create(MedagliereglobalePage, { html: data });
       profileModal.present();*/
-    })  
+    })
 
-   
+
   }
 
   replaceAll(input, search, replacement) {
     var target = input;
     return target.replace(new RegExp(search, 'g'), replacement);
-} 
+  }
 
-transform(clarr){
-  var questo=this;
-  for (var i=0; i<clarr.length; i++){
-    // clarr[i].text="minchia";
-    let atleti=clarr[i].title;
-    atleti=questo.replaceAll(atleti,"<b>","");
-    atleti=questo.replaceAll(atleti,"</b>","");
+  transform(clarr) {
+    var questo = this;
+    for (var i = 0; i < clarr.length; i++) {
+      // clarr[i].text="minchia";
+      let atleti = clarr[i].title;
+      atleti = questo.replaceAll(atleti, "<b>", "");
+      atleti = questo.replaceAll(atleti, "</b>", "");
 
-    let arratleti=atleti.split("<br>");
-    arratleti.sort(function(a,b){
-      if (a>b) return 1;
-      if (a<b) return -1;
-      return 0;
+      let arratleti = atleti.split("<br>");
+      arratleti.sort(function (a, b) {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
 
-    })
+      })
 
-    atleti=arratleti.join("\n");
+      atleti = arratleti.join("\n");
 
-   // atleti=questo.replaceAll(atleti,"<br>","\n");
+      // atleti=questo.replaceAll(atleti,"<br>","\n");
 
-    console.log("atleti",atleti);
-    clarr[i].onclick=function(){
-      alert(atleti);
+      //console.log("atleti", atleti);
+      clarr[i].onclick = function () {
+        alert(atleti);
+      }
+
+
     }
 
+  }
 
-   }
 
-}
+  toggle(what) {
+    this.toggles[what] = !this.toggles[what];
+  }
+
+
+  getSocieta() {
+    var tkdt = Object.assign({}, this.jgaratemplate);
+    if (this.jgara.hasOwnProperty("tkdt")) tkdt = this.jgara.tkdt;
+    console.log("tkdt", tkdt);
+  }
+
+  getIndex(n) {
+    var retvalue = parseInt(n, 10);
+    return retvalue;
+  }
+
+  giornoChanged(ev) {
+
+    var n = parseInt(ev.value, 10);
+    console.log("giornochanged", n);
+    this.activegiornata = this.jgara.tkdt.giorni[n];
+    //console.log("activegiornata",this.activegiornata);
+  }
+
+  toggleSocieta(){
+    var questo=this;
+    console.log("togglesocieta");
+    questo.viewsocieta = !questo.viewsocieta;
+  }
+
+
+  toggleMedagliere(){
+    var questo=this;
+    console.log("togglemedagliere");
+    questo.viewmedagliere = !questo.viewmedagliere;
+  }
+
+  toggleAtletiSocieta(p) {
+    console.log("toggleatletisocieta", p);
+    var questo = this;
+    questo.viewatletisocieta = !questo.viewatletisocieta;
+
+    questo.activesocieta = p.societaname;
+
+    console.log(questo.activesocieta);
+  }
+
+  sorted(a, campo) {
+    a.sort(function (a, b) {
+      var a1 = a[campo];
+      var b1 = b[campo];
+      if (a1 > b1) return 1;
+      if (a1 < b1) return -1;
+      return 0;
+    })
+    console.log("sorted", a);
+    return a;
+
+  }
+
+
+  getCategorieCoperte(societa?: any) {
+    var questo = this;
+
+    if (!societa) societa = "A.S.D. TAEKWONDO ROZZANO";
+
+    var result = {
+      cats: [],
+      text: "Dati ufficiali categorie non disponibili"
+    }
+    if (questo.jgara.tkdt) return result;
+    if (questo.jgara) {
+
+      var garadoc = questo.jgara;
+      var tkdtiscritti = garadoc.tkdt.atleti;
+      if (tkdtiscritti.length == 0) tkdtiscritti = garadoc.tkdt.atleti_iscritti;
+
+      let roz = questo.backend.filterArray(tkdtiscritti, {
+        societa: societa
+      }, true);
+      //console.log($roz);
+
+      //sort by categoria
+
+      roz.sort(function (a, b) {
+        var a1 = a.catcintura + a.cateta + a.catpeso + a.sesso;
+        var b1 = b.catcintura + b.cateta + b.catpeso + b.sesso;
+        if (a1 > b1) return 1;
+        if (a1 < b1) return -1;
+        return 0;
+
+
+      })
+
+      //scan categorie
+      var cat = "";
+      var catcount = 0;
+      var res = [];
+      roz.forEach(function (item, i) {
+        var atl = roz[i];
+        var cateta = atl.cateta;
+        var catpeso = atl.catpeso;
+        var catcintura = atl.catcintura;
+        var sesso = atl.sesso;
+        var catx = catcintura + cateta + catpeso + sesso;
+
+        if (catx != cat) {
+          //count = 0;
+
+          var newcat = {
+            cateta: cateta,
+            catpeso: catpeso,
+            catcintura: catcintura,
+            sesso: sesso,
+            atleti: []
+          }
+
+          res.push(newcat);
+          catcount++;
+          cat = catx;
+
+
+        }
+        var lastres = res[res.length - 1];
+        lastres.atleti.push(atl)
+        //count++;
+
+      })
+
+      //console.log(res);
+
+      var text = res.length + " categorie coperte con  " + roz.length + " atleti"
+      console.log(text);
+      res.forEach(function (ritem, ri) {
+        var r = res[ri];
+        //console.log(r.sesso+" - "+r.cateta+" - "+r.catcintura+" - "+r.catpeso+": "+r.atleti.length+" atleti");
+
+      })
+
+      result.cats = res;
+      result.text = text;
+
+
+
+    }
+    return result;
+
+  }
+
+
+  domize() {
+    var questo = this;
+    setTimeout(function(){
+ 
+      let clarr: any = document.getElementsByClassName("link_w_tooltip_gold");
+      questo.transform(clarr);
+      clarr = document.getElementsByClassName("link_w_tooltip_silver");
+      questo.transform(clarr);
+      clarr = document.getElementsByClassName("link_w_tooltip_bronze");
+      questo.transform(clarr);
+      let table: any = document.getElementsByClassName("table-striped")[0];
+      console.log("table",table);
+    
+      if (table) {
+        table.border = "1";
+        table.width = "100%";
+      }
+
+    },300);
+    
+  }
+
+  tabChanged(ev) {
+    var questo = this;
+    console.log("tabchanged", ev.value);
+    if (ev.value == "medagliereglobale") {
+      if (questo.hasGiornate) questo.domize();
+    }
+  }
+
 
 }

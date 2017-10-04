@@ -17,6 +17,7 @@ import { DeviceFeedback } from '@ionic-native/device-feedback';
 })
 export class GarePage {
   gare = [];
+  loading=false;
 
   constructor(public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
 
@@ -87,6 +88,49 @@ export class GarePage {
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'SEGNA COME DISPUTATA',
+          handler: () => {
+            questo.loading=true;
+            questo.backend.markGara(g.doc.id,"disputata",function(data){
+              console.log(data);
+           
+              questo.refresh(function(){
+                console.log("gare refreshed");
+                questo.loading=false;
+               
+              })
+            })
+          }
+        },
+        {
+          text: 'SEGNA COME NONDISPUTATA',
+          handler: () => {
+            questo.loading=true;
+            questo.backend.markGara(g.doc.id,"nondisputata",function(data){
+              console.log(data);
+         
+              questo.refresh(function(){
+                console.log("gare refreshed");
+                questo.loading=false;
+              })
+            })
+          }
+        },
+        {
+          text: 'SEGNA COME INCORSO',
+          handler: () => {
+            questo.loading=true;
+            questo.backend.markGara(g.doc.id,"incorso",function(data){
+              console.log(data);
+              
+              questo.refresh(function(){
+                console.log("gare refreshed");
+                questo.loading=false;
+              })
+            })
           }
         },
         {
