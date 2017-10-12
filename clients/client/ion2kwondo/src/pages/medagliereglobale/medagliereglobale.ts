@@ -31,7 +31,10 @@ export class MedagliereglobalePage {
   };
   viewatletisocieta = false;
   viewsocieta = false;
+  viewsocietaiscritte = false;
   viewmedagliere=false;
+  viewmedagliereglobale=false;
+  viewtabulati=false;
   activesocieta = "";
 
   jgaratemplate = {
@@ -43,6 +46,7 @@ export class MedagliereglobalePage {
 
   hasGiornate = false;
   table;
+  societaiscritte=[];
 
   constructor(public backend: BackendProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     //this.html=navParams.get('html');
@@ -54,11 +58,12 @@ export class MedagliereglobalePage {
     console.log('ionViewDidLoad MedagliereglobalePage');
 
     questo.jgara = this.navParams.get("gara");
+    console.log("JGARA",questo.jgara)
 
-    questo.getMedagliereGlobale(function () {
+    questo.getMedagliereGlobale(function (data) {
 
 
-      console.log("got medagliere globale");
+      console.log("got medagliere globale",data);
 
 
       if (questo.jgara.hasOwnProperty("tkdt")) {
@@ -81,6 +86,7 @@ export class MedagliereglobalePage {
 
     });
     questo.getSocieta();
+    questo.societaiscritte=questo.getSocietaIscritte();
   }
 
   close() {
@@ -94,14 +100,17 @@ export class MedagliereglobalePage {
     var tkdt_garaid = questo.jgara.tkdt_id;
     var giornataid;
     if (!giornataid) {
-      if (questo.jgara.tkdt) {
-        if (questo.jgara.tkdt.giorni) {
+      if (questo.jgara.hasOwnProperty("tkdt")) {
+        if (questo.jgara.tkdt.hasOwnProperty("giorni")) {
           if (questo.jgara.tkdt.giorni.length > 0) {
             giornataid = questo.jgara.tkdt.giorni[0].id;
             console.log("using giornataid from tkdt structure", giornataid)
           }
         }
       }
+    } else {
+      console.log("giornataid not found !!");
+      
     }
 
 
@@ -191,6 +200,7 @@ export class MedagliereglobalePage {
 
   getSocieta() {
     var tkdt = Object.assign({}, this.jgaratemplate);
+    
     if (this.jgara.hasOwnProperty("tkdt")) tkdt = this.jgara.tkdt;
     console.log("tkdt", tkdt);
   }
@@ -204,7 +214,9 @@ export class MedagliereglobalePage {
 
     var n = parseInt(ev.value, 10);
     console.log("giornochanged", n);
+    if (n!=-1){
     this.activegiornata = this.jgara.tkdt.giorni[n];
+    } 
     //console.log("activegiornata",this.activegiornata);
   }
 
@@ -214,12 +226,32 @@ export class MedagliereglobalePage {
     questo.viewsocieta = !questo.viewsocieta;
   }
 
+  toggleSocietaIscritte(){
+    var questo=this;
+    console.log("togglesocieta");
+    questo.viewsocietaiscritte = !questo.viewsocietaiscritte;
+  }
+
+
 
   toggleMedagliere(){
     var questo=this;
     console.log("togglemedagliere");
     questo.viewmedagliere = !questo.viewmedagliere;
   }
+  toggleMedagliereGlobale(){
+    var questo=this;
+    console.log("togglemedagliereglobale");
+    questo.viewmedagliereglobale = !questo.viewmedagliereglobale;
+    if (questo.viewmedagliereglobale) questo.domize();
+  }
+  toggleTabulati(){
+    var questo=this;
+    console.log("toggletabulati");
+    questo.viewtabulati = !questo.viewtabulati;
+
+  }
+
 
   toggleAtletiSocieta(p) {
     console.log("toggleatletisocieta", p);
@@ -362,6 +394,73 @@ export class MedagliereglobalePage {
     if (ev.value == "medagliereglobale") {
       if (questo.hasGiornate) questo.domize();
     }
+  }
+
+  getSocietaIscritte(){
+    var questo=this;
+    var tiscr = questo.jgara.tkdt.atleti_iscritti;
+    
+      var socs = [];
+      var socindex = -1;
+    
+      tiscr.sort(function (a, b) {
+        var a1 = questo.replaceAll(a.societa,".", "");
+        var b1 = questo.replaceAll(b.societa,".", "");
+    
+        if (a1 > b1) return 1;
+        if (a1 < b1) return -1;
+        return 0;
+    
+      });
+    
+      var soc = "";
+      for (var i = 0; i < tiscr.length; i++) {
+        var iscr = tiscr[i];
+        var cat = iscr.sesso + " " + iscr.cateta + " " + iscr.catcintura + " " + iscr.catpeso;
+        //console.log(iscr);
+        var style = "color: black;";
+        if (iscr.societa == "A.S.D. TAEKWONDO ROZZANO") style = "color: blue; font-weight: bold;";
+    
+        if (iscr.societa != soc) {
+    
+    
+          soc = iscr.societa;
+          var iscrsoc = questo.backend.filterArray(tiscr, {
+            societa: soc
+          },true);
+          var liscrsoc = iscrsoc.length;
+    
+          iscrsoc.sort(function (a, b) {
+            var a1 = a.nome;
+            var b1 = b.nome;
+            if (a1 > b1) return 1;
+            if (a1 < b1) return -1;
+            return 0;
+    
+          })
+    
+          var newsoc = {
+            societa: soc,
+            atleti: iscrsoc
+          }
+          socs.push(newsoc)
+    
+          //console.log("iscrsoc",iscrsoc);
+    
+    
+          /*for (var j = 0; j < iscrsoc.length; j++) {
+    
+            var siscr = iscrsoc[j];
+    
+            var scat = siscr.sesso + " " + siscr.cateta + " " + siscr.catcintura + " " + siscr.catpeso;
+    
+          }*/
+    
+        }
+    
+      }
+      console.log(socs)
+      return socs;
   }
 
 

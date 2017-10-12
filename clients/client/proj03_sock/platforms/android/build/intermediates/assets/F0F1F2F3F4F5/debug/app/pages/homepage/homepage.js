@@ -8,6 +8,7 @@ var LocalNotifications = require("nativescript-local-notifications");
 var LabelModule = require("ui/label");
 var observable = require("data/observable");
 var utils = require("../../shared/utils");
+var backend = require("../../shared/backend");
 var glbservice = require("../../shared/globalservice");
 
 var frameModule = require("ui/frame");
@@ -24,7 +25,9 @@ var lv1;
 var menu = [{
         name: "ChatKwonDo",
         icon: "\uf0e6",
-        imgicon: "~/img/chaticon03.png"
+        imgicon: "~/img/chaticon03.png",
+        haswebview: true,
+        realtime: false
     }, {
         name: "Atleti",
         icon: "\uf007",
@@ -57,11 +60,32 @@ var menu = [{
 var gs = glbservice.GlobalService;
 
 gs.e.on("chatmsg", function (data) {
-    console.log("unreadchat", gs.unreadchat.length);
+    utils.conslog("unreadchat", gs.unreadchat.length);
     source.set("unreadchat", gs.unreadchat.length);
     menu[0].unreadchat = gs.unreadchat.length;
     refreshLv();
 });
+
+gs.e.on("realtimematches", function (data) {
+    utils.conslog("evento realtimematches in homepage !!", JSON.stringify(data));
+    var matches = data.object.matches;
+    updateRealTime(matches);
+})
+
+gs.e.on("sockmsg", function (ev) {
+    //console.log("evento sockmsg in chat !!!", JSON.stringify(ev));
+    var obj = ev.object;
+    var tipo = obj.type;
+    if (tipo == "notification") {
+
+        if (obj.updategara) {
+           // if (obj.updategara == "yes") renderRealTime();
+        }
+    }
+    //if (tipo == "realtime") renderRealTime();
+    //utils.colog("rtservice rtarray",JSON.stringify(rtservice.rtarray));
+
+})
 
 
 function refreshLv() {
@@ -77,10 +101,10 @@ function pageLoaded(args) {
 
     LocalNotifications.requestPermission().then((granted) => {
         if (granted) {
-            console.log("permission granted to localnotifications");
-        } else console.log("permission NOT granted to localnotifications");
+            utils.conslog("permission granted to localnotifications");
+        } else utils.conslog("permission NOT granted to localnotifications");
     })
-
+    source.set("realtime", false);
     source.set("unreadchat", gs.unreadchat.length);
     page.bindingContext = source;
     lv1 = view.getViewById(page, "lv1");
@@ -101,7 +125,7 @@ function pageLoaded(args) {
     */
     var lb1 = view.getViewById(page, "lb1");
     var lb2 = view.getViewById(page, "lb2");
-    console.log(lb1);
+    utils.conslog(lb1);
     lb1.text = "Ciao " + global.user.nickname + ", benvenuto in AppKwonDo";
     lb2.text = "";
     if (global.user.role.toLowerCase() == "tkdradmin") lb2.text = "Accesso amministratore eseguito";
@@ -138,7 +162,53 @@ function pageLoaded(args) {
     });
 
 
+    global.socket.emit('getrealtimematches');
+
+    //renderRealTime();
+
+
 }
+
+function renderRealTime(callback) {
+
+    backend.getRealtime(function (data) {
+        //console.log("realtime matches", data.length);
+        if (data.length > 0) {
+            source.set("realtime", true);
+            menu[0].realtime = true;
+
+        } else menu[0].realtime = false;
+        if (callback) callback(data);
+
+    })
+
+
+
+  
+}
+
+function updateRealTime(data) {
+
+    
+        utils.conslog("realtime matches", data.length);
+        //return;
+        if (data.length > 0) {
+            source.set("realtime", true);
+            menu[0].realtime = true;
+
+        } else {
+            menu[0].realtime = false;
+            source.set("realtime", false);
+        }
+        //if (callback) callback(data);
+
+    
+
+
+
+  
+}
+
 
 /*
 
@@ -186,7 +256,7 @@ function registerPush(){
 function listViewItemTap(args) {
     var index = args.index;
     var mitem = menu[index].name.toLowerCase();
-    console.log('Clicked item with index ' + index);
+    utils.conslog('Clicked item with index ' + index);
     if (mitem == "atleti") frameModule.topmost().navigate("pages/atleti/atleti");
     if (mitem == "gare") frameModule.topmost().navigate("pages/gare/gare");
     if (mitem == "societa") frameModule.topmost().navigate("pages/societa/societa");
@@ -211,7 +281,7 @@ function fetchAtleti(callback) {
         // Argument (r) is JSON object!
 
 
-        console.log("atleti rows: " + r.rows.length);
+        utils.conslog("atleti rows: " + r.rows.length);
 
         if (callback) callback(r);
     }, function (e) {

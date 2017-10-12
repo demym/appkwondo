@@ -1,7 +1,8 @@
 "use strict";
-var color_1 = require("color");
-var utils = require("utils/utils");
-var LoadingIndicator = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var color_1 = require("tns-core-modules/color");
+var utils = require("tns-core-modules/utils/utils");
+var LoadingIndicator = /** @class */ (function () {
     function LoadingIndicator() {
     }
     LoadingIndicator.prototype.show = function (options) {
@@ -49,7 +50,7 @@ var LoadingIndicator = (function () {
             }
             if (ios.mode) {
                 this._hud.mode = ios.mode;
-                if (ios.mode === MBProgressHUDModeCustomView && ios.customView) {
+                if (ios.mode === 4 /* CustomView */ && ios.customView) {
                     this._hud.customView = UIImageView.alloc().initWithImage(UIImage.imageNamed(ios.customView));
                 }
             }

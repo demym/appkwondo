@@ -16,7 +16,7 @@ exports.blueLogin = function (email, psw, callback) {
     var auth2 = "Basic " + utils.b64encode(email + ":" + psw);
 
     // console.log("Auth",auth);
-    console.log("auth2", auth2);
+    utils.conslog("auth2", auth2);
 
 
     //  var auth_encoded = "Basic "+android.util.Base64.encodeToString(auth.getBytes(), android.util.Base64.DEFAULT);
@@ -83,10 +83,10 @@ getPlanner = function (callback) {
 
 
 getReachme = function (callback) {
-    console.log("getreachme")
+    utils.conslog("getreachme")
 
     var more = global.user.company;
-    console.log(more);
+    utils.conslog(more);
     if (global.user.company.toLowerCase().trim() == "ibm") {
 
         if (global.user.selectedcustomer) {
@@ -95,12 +95,12 @@ getReachme = function (callback) {
     }
     var url = global.rooturl + "/reachme/all/" + more;
 
-    console.log(url);
+    utils.conslog(url);
     //var url=global.rooturl+"/reachme/all/"+global.user.role+"/"+global.user.email+"?token="+global.user.token;
 
     //console.log("url",url)
     fetchData(url, function (data) {
-        console.log("got reachme");
+        utils.conslog("got reachme");
         if (callback) callback(data);
 
 
@@ -114,7 +114,7 @@ exports.syncPlanner = function (callback) {
 
         utils.colog("getplanner done", data);
         file.writeJsonFile("planner.json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -127,7 +127,7 @@ exports.syncElibrary = function (callback) {
 
         utils.colog("getelibrary done", data);
         file.writeJsonFile("elibrary.json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -140,7 +140,7 @@ exports.syncReachme = function (callback) {
 
         utils.colog("getreachme done", data);
         file.writeJsonFile("reachme.json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -153,7 +153,7 @@ exports.syncAtleti = function (callback) {
 
         utils.colog("getatleti done", data);
         file.writeJsonFile("atleti.json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -166,7 +166,7 @@ exports.syncGare = function (callback) {
 
         utils.colog("getgare done", data);
         file.writeJsonFile("gare.json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -179,7 +179,7 @@ exports.syncGara = function (garaid, callback) {
 
         utils.colog("getgara " + garaid + " done ", data);
         file.writeJsonFile("gara_"+garaid+".json", data, function (fdata) {
-            console.log(JSON.stringify(fdata));
+            utils.conslog(JSON.stringify(fdata));
             if (callback) callback();
         })
 
@@ -191,7 +191,7 @@ exports.syncGara = function (garaid, callback) {
 getAtleti = function (callback) {
     var url = global.rooturl + "/atleti/findall";
     fetchData(url, function (data) {
-        console.log("got atleti");
+        utils.conslog("got atleti");
         if (callback) callback(data);
 
 
@@ -203,7 +203,7 @@ getAtleti = function (callback) {
 getGare = function (callback) {
     var url = global.rooturl + "/gare/findall";
     fetchData(url, function (data) {
-        console.log("got gare");
+        utils.conslog("got gare");
         if (callback) callback(data);
 
 
@@ -215,7 +215,7 @@ getGara = function (garaid, callback) {
     //var url=global.rooturl+"/gare/findall";
     var url = global.rooturl + "/gare/fullgarabyid/" + garaid + "?societaid=20160217220400";
     fetchData(url, function (data) {
-        console.log("got gara " + garaid);
+        utils.conslog("got gara " + garaid);
         if (callback) callback(data);
 
 
@@ -246,7 +246,7 @@ getHistoryAtleta = function (atletaid, callback) {
 getElibrary = function (callback) {
     var url = global.rooturl + "/elibrary/" + global.user.role + "/" + global.user.email + "?token=" + global.user.token;
     fetchData(url, function (data) {
-        console.log("got elibray");
+        utils.conslog("got elibray");
         if (callback) callback(data);
 
 
@@ -259,7 +259,7 @@ getTabulatoImage = function (tabulatoid, callback) {
     var url = global.rooturl + "/tkdt/tabulatoimage/" + tabulatoid + "?token=" + global.user.token;
     utils.conslog("calling url " + url);
     http.getString(url).then(function (response) {
-        console.log("got tabulatoimage", response);
+        utils.conslog("got tabulatoimage", response);
         if (callback) callback(response);
     });
 
@@ -273,7 +273,7 @@ function getTkdt(tkdtid,callback){
 
  var url="http://tkdr.herokuapp.com/tkdt/get/"+tkdtid;
     fetchData(url, function (data) {
-        console.log("got tkdt");
+        utils.conslog("got tkdt");
         if (callback) callback(data);
 
 
@@ -309,7 +309,7 @@ var postData = function (url, data, callback) {
         content: JSON.stringify(data)
     }).then(function (response) {
         var result = response.content.toJSON();
-         console.log(result);
+         utils.conslog(result);
         if (callback) callback(result);
        
     }, function (e) {
@@ -320,7 +320,7 @@ var postData = function (url, data, callback) {
 }
 
 fetchData = function (url, callback) {
-    console.log("fetchdata");
+    utils.conslog("fetchdata");
     if (url.indexOf("token") == -1) {
         if (url.indexOf("?") == -1) {
             url += "?token=" + global.user.token;

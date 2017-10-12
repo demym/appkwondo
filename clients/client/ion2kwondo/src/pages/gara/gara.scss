@@ -16,6 +16,14 @@ page-gara {
         font-style: italic;
     }
   
+    .list-md {
+      margin: 0px;
+    }
+
+    .card-md {
+      margin: 0px;
+      width: 100%;
+    }
 
 
 .imgicon {
@@ -95,6 +103,10 @@ page-gara {
     color: black;
     word-wrap: break-word;
     white-space: normal;
+}
+
+.card-content-md {
+  padding: 10px;
 }
 
 .incaston {

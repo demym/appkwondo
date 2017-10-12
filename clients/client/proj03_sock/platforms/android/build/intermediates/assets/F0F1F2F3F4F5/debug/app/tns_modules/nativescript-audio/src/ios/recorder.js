@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var TNSRecorder = (function (_super) {
     __extends(TNSRecorder, _super);
     function TNSRecorder() {
@@ -56,11 +55,41 @@ var TNSRecorder = (function (_super) {
             }
         });
     };
+    TNSRecorder.prototype.pause = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            try {
+                if (_this._recorder) {
+                    _this._recorder.pause();
+                }
+                resolve();
+            }
+            catch (ex) {
+                reject(ex);
+            }
+        });
+    };
+    TNSRecorder.prototype.resume = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            try {
+                if (_this._recorder) {
+                    _this._recorder.record();
+                }
+                resolve();
+            }
+            catch (ex) {
+                reject(ex);
+            }
+        });
+    };
     TNSRecorder.prototype.stop = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this._recorder.stop();
+                if (_this._recorder) {
+                    _this._recorder.stop();
+                }
                 _this._recorder.meteringEnabled = false;
                 resolve();
             }
@@ -73,11 +102,13 @@ var TNSRecorder = (function (_super) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this._recorder.stop();
-                _this._recorder.meteringEnabled = false;
-                _this._recordingSession.setActiveError(false, null);
-                _this._recorder.release();
-                _this._recorder = undefined;
+                if (_this._recorder) {
+                    _this._recorder.stop();
+                    _this._recorder.meteringEnabled = false;
+                    _this._recordingSession.setActiveError(false, null);
+                    _this._recorder.release();
+                    _this._recorder = undefined;
+                }
                 resolve();
             }
             catch (ex) {
@@ -86,14 +117,16 @@ var TNSRecorder = (function (_super) {
         });
     };
     TNSRecorder.prototype.isRecording = function () {
-        return this._recorder.recording;
+        return this._recorder && this._recorder.recording;
     };
     TNSRecorder.prototype.getMeters = function (channel) {
-        if (!this._recorder.meteringEnabled) {
-            this._recorder.meteringEnabled = true;
+        if (this._recorder) {
+            if (!this._recorder.meteringEnabled) {
+                this._recorder.meteringEnabled = true;
+            }
+            this._recorder.updateMeters();
+            return this._recorder.averagePowerForChannel(channel);
         }
-        this._recorder.updateMeters();
-        return this._recorder.averagePowerForChannel(channel);
     };
     TNSRecorder.prototype.audioRecorderDidFinishRecording = function (recorder, success) {
         console.log("audioRecorderDidFinishRecording: " + success);
@@ -102,4 +135,3 @@ var TNSRecorder = (function (_super) {
 }(NSObject));
 TNSRecorder.ObjCProtocols = [AVAudioRecorderDelegate];
 exports.TNSRecorder = TNSRecorder;
-//# sourceMappingURL=recorder.js.map

@@ -2,50 +2,49 @@
   "_args": [
     [
       {
-        "raw": "nativescript-toast",
+        "raw": "nativescript-toast@^1.4.5",
         "scope": null,
         "escapedName": "nativescript-toast",
         "name": "nativescript-toast",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^1.4.5",
+        "spec": ">=1.4.5 <2.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "nativescript-toast@latest",
-  "_id": "nativescript-toast@1.4.5",
+  "_from": "nativescript-toast@>=1.4.5 <2.0.0",
+  "_id": "nativescript-toast@1.4.6",
   "_inCache": true,
   "_location": "/nativescript-toast",
-  "_nodeVersion": "5.12.0",
+  "_nodeVersion": "6.11.1",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/nativescript-toast-1.4.5.tgz_1484215793358_0.41237575141713023"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nativescript-toast-1.4.6.tgz_1499922265128_0.9650790626183152"
   },
   "_npmUser": {
     "name": "hypery2k",
     "email": "contact@martinreinhardt-online.de"
   },
-  "_npmVersion": "3.8.6",
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nativescript-toast",
+    "raw": "nativescript-toast@^1.4.5",
     "scope": null,
     "escapedName": "nativescript-toast",
     "name": "nativescript-toast",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^1.4.5",
+    "spec": ">=1.4.5 <2.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.4.5.tgz",
-  "_shasum": "963765a8d439152ae7327e850c6aa2e97ed91516",
+  "_resolved": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.4.6.tgz",
+  "_shasum": "512464251028cf278c94cffcf65af8cc0f7ae4fa",
   "_shrinkwrap": null,
-  "_spec": "nativescript-toast",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "nativescript-toast@^1.4.5",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Tobias Hennig",
     "email": "tobias.hennig1@gmail.com",
@@ -61,10 +60,10 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "963765a8d439152ae7327e850c6aa2e97ed91516",
-    "tarball": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.4.5.tgz"
+    "shasum": "512464251028cf278c94cffcf65af8cc0f7ae4fa",
+    "tarball": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.4.6.tgz"
   },
-  "gitHead": "7a3a4fe0131202638d62ad3f0ca37bc1c1eb69f6",
+  "gitHead": "286fe3e1ed702808a09da97ef55c79b732a8a7ca",
   "homepage": "https://github.com/TobiasHennig/nativescript-toast#readme",
   "keywords": [
     "NativeScript",
@@ -111,5 +110,5 @@
     "test": "cd tmp/angular && cp -rp ../../samples/angular/* . && rm -rf platforms node_modules hooks && tns plugin add ../.. && tns install && tns build ios && tns build android"
   },
   "typings": "index.d.ts",
-  "version": "1.4.5"
+  "version": "1.4.6"
 }

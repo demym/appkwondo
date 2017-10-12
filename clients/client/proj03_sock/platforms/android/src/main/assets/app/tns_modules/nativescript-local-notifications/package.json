@@ -10,23 +10,23 @@
         "spec": ">=1.2.0 <2.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-local-notifications@>=1.2.0 <2.0.0",
-  "_id": "nativescript-local-notifications@1.2.1",
+  "_id": "nativescript-local-notifications@1.2.2",
   "_inCache": true,
   "_location": "/nativescript-local-notifications",
-  "_nodeVersion": "4.2.2",
+  "_nodeVersion": "6.10.3",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/nativescript-local-notifications-1.2.1.tgz_1483993490947_0.604074978036806"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nativescript-local-notifications-1.2.2.tgz_1502629100863_0.9494439647533"
   },
   "_npmUser": {
     "name": "eddyverbruggen",
     "email": "eddyverbruggen@gmail.com"
   },
-  "_npmVersion": "4.0.5",
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
     "raw": "nativescript-local-notifications@^1.2.0",
@@ -40,11 +40,11 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-local-notifications/-/nativescript-local-notifications-1.2.1.tgz",
-  "_shasum": "f8ce9a5d08a07360fe8089b0009f7a78a5be5f95",
+  "_resolved": "https://registry.npmjs.org/nativescript-local-notifications/-/nativescript-local-notifications-1.2.2.tgz",
+  "_shasum": "b57ce4c619cee555eddcc1c778cefe97534a71ec",
   "_shrinkwrap": null,
   "_spec": "nativescript-local-notifications@^1.2.0",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Telerik / Eddy Verbruggen",
     "email": "eddyverbruggen@gmail.com"
@@ -57,20 +57,17 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "f8ce9a5d08a07360fe8089b0009f7a78a5be5f95",
-    "tarball": "https://registry.npmjs.org/nativescript-local-notifications/-/nativescript-local-notifications-1.2.1.tgz"
+    "shasum": "b57ce4c619cee555eddcc1c778cefe97534a71ec",
+    "tarball": "https://registry.npmjs.org/nativescript-local-notifications/-/nativescript-local-notifications-1.2.2.tgz"
   },
-  "gitHead": "d21bbfbd37595c0d1dfef38498c2c8e25a14432b",
+  "gitHead": "72dadf6af785a14608dc31f657a530a69463d76f",
   "homepage": "https://github.com/eddyverbruggen/nativescript-local-notifications",
   "keywords": [
     "NativeScript",
     "Notification",
     "Local Notification"
   ],
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/eddyverbruggen/nativescript-local-notifications/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "main": "local-notifications",
   "maintainers": [
     {
@@ -93,5 +90,5 @@
   },
   "scripts": {},
   "typings": "local-notifications.d.ts",
-  "version": "1.2.1"
+  "version": "1.2.2"
 }

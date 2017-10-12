@@ -118,7 +118,7 @@ var RealtimeService = (function () {
     })
 
     evmanager.on("messaggiocaz", function () {
-        console.log("evmanager on messaggiocaz");
+        utils.conslog("evmanager on messaggiocaz");
 
     })
 
@@ -192,7 +192,7 @@ var RealtimeService = (function () {
                 }
             });
 
-            console.log("resulting rtarray after sync", rtarray.length);
+            utils.conslog("resulting rtarray after sync", rtarray.length);
 
             rtc=[];
             rtarray.forEach(function(item,idx){
@@ -202,8 +202,8 @@ var RealtimeService = (function () {
                 rtc.push(newrt);
 
             })
-            console.log("rtc",rtc.length);
-             console.log("resulting rtarray after sync", rtarray.length,rtc.length);
+            utils.conslog("rtc",rtc.length);
+            utils.conslog("resulting rtarray after sync", rtarray.length,rtc.length);
 
             //rtc=rtarray;
             if (rtarray.length != l) gs.trigger("realtimechange");
@@ -211,7 +211,7 @@ var RealtimeService = (function () {
         },
 
         getRtc: function(){
-            console.log("get rtc",rtc.length);
+            utils.conslog("get rtc",rtc.length);
             return rtc;
         },
 
@@ -220,11 +220,11 @@ var RealtimeService = (function () {
             utils.colog("called publicmethod of realtimeservice");
         },
         onSocketMsg: function (msg) {
-            console.log("RealtimeService onSocketMsg", msg.message)
+            utils.conslog("RealtimeService onSocketMsg", msg.message)
         },
 
         trigger: function (ev, evdata) {
-            console.log("realtimeservice triggering event", ev);
+            utils.conslog("realtimeservice triggering event", ev);
             var eventData = {
                 eventName: ev,
                 object: evdata

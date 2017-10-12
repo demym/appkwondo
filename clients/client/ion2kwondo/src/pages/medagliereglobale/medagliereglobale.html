@@ -36,16 +36,31 @@
     
    
     <section *ngIf="activetab=='medagliereglobale'" id="medagliereglobale">
-    <div class="info" *ngIf="!loading">
+    
+  <button ion-button block (tap)="toggleMedagliereGlobale()">Medagliere globale</button>
+  <div *ngIf="viewmedagliereglobale">
+  <div class="info" *ngIf="!loading">
       <i>Clicca sui numeri per vedere i medagliati</i>
     </div>
     <div class="mg" [innerHTML]="html"></div>
+  </div>  
+
+  <button ion-button block (tap)="toggleSocietaIscritte()">Società iscritte</button>
+  <div *ngIf="viewsocietaiscritte">
+<ion-item  *ngFor="let s of societaiscritte; let p=index;">
+<span style="word-wrap: break-word; white-space: normal;">{{s.societa}} ({{s.atleti.length}})</span> 
+
+</ion-item>
+</div>
   </section>
 
 
   <section *ngIf="activetab=='giornate'" id="giornate">
+
+   
       
       <ion-segment [(ngModel)]="activegiorno" color="primary" (ionChange)="giornoChanged($event)" *ngIf="jgara.hasOwnProperty('tkdt')">
+         
           <ion-segment-button *ngFor="let g of jgara.tkdt.giorni; let i=index;" [value]="i">
             {{g.titolo}}
           </ion-segment-button>
@@ -80,6 +95,23 @@
       </div>
 </div>
 
+<button ion-button block (tap)="toggleTabulati()">Tabulati</button>
+<div *ngIf="viewtabulati">
+<div *ngIf="activegiornata.hasOwnProperty('tabulati')">
+  <ion-item *ngFor="let s of activegiornata.tabulati.rows; let p=index;" >
+      <button ion-button (tap)="viewTabulato(s.oldhref)">Vedi</button> {{s.categoria_eta}} {{s.categoria_peso}} {{s.cintura_da}} {{s.cintura_a}}  
+    <div style="margin-top: 7px; border: 1px solid silver" *ngIf="viewatletisocieta && (activesocieta==s.societaname)">
+      <ion-item *ngFor="let a of sorted(s.atleti,'nome')">
+        <span style="font-size: 14px;">{{a.nome}}</span><br>
+        <span style="font-size: 12px; color: gray;">{{a.sesso}} {{a.catpeso}} {{a.catcintura}}</span> 
+      </ion-item>
+    </div>
+  </ion-item>
+</div>
+</div>
+
+
+
 
   
     </section>
@@ -87,5 +119,7 @@
   <section *ngIf="activetab=='societa'" id="societa">
     Societa
   </section>
+
+  
  
 </ion-content>

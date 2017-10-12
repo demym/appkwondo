@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "utf8",
+        "raw": "utf8@^2.1.2",
         "scope": null,
         "escapedName": "utf8",
         "name": "utf8",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^2.1.2",
+        "spec": ">=2.1.2 <3.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "utf8@latest",
+  "_from": "utf8@>=2.1.2 <3.0.0",
   "_id": "utf8@2.1.2",
   "_inCache": true,
   "_location": "/utf8",
@@ -29,23 +29,22 @@
   "_npmVersion": "3.10.8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "utf8",
+    "raw": "utf8@^2.1.2",
     "scope": null,
     "escapedName": "utf8",
     "name": "utf8",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^2.1.2",
+    "spec": ">=2.1.2 <3.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/utf8/-/utf8-2.1.2.tgz",
   "_shasum": "1fa0d9270e9be850d9b05027f63519bf46457d96",
   "_shrinkwrap": null,
-  "_spec": "utf8",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "utf8@^2.1.2",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Mathias Bynens",
     "url": "https://mathiasbynens.be/"

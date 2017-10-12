@@ -10,7 +10,7 @@
         "spec": ">=0.4.1 <0.5.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-socket.io@>=0.4.1 <0.5.0",
@@ -44,7 +44,7 @@
   "_shasum": "b0a9407b6170ff4d4f1ea608f0923e3724d68646",
   "_shrinkwrap": null,
   "_spec": "nativescript-socket.io@^0.4.1",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Nader Toukabri",
     "email": "contact@nader.tn"

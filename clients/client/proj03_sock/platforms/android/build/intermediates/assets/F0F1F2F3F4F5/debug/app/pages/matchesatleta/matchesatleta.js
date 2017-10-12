@@ -274,19 +274,19 @@ exports.tapUrl = function (args) {
 function onNavBtnTap(args) {
 
 
-		frameModule.topmost().goBack();
+	//	frameModule.topmost().goBack();
 
-/*
+
 	frameModule.topmost().navigate({
 		moduleName: "pages/gara/gara",
 		context: {
 			garaid: garaid,
 			refreshfilters: false,
-			refresh: true
+			refresh: false
 		}
 
 	});
-	*/
+
 
 
 }
@@ -296,14 +296,20 @@ function matchTap(args) {
 	utils.colog('Clicked item with index ' + index, global.user.role);
 	if (global.user.role.toLowerCase() != "tkdradmin") return;
 
+	var mode="single";
+	if (matches.rows[index].doc.realtime){
+		if (String(matches.rows[index].doc.realtime)=="true") mode="multi";
+	}
 
 	//var gara=gare.rows[index];
 	//console.log(gara.doc.title+" - "+gara.doc.id);
 	frameModule.topmost().navigate({
-		moduleName: "pages/matchmanager/matchmanager",
+		//moduleName: "pages/matchmanager/matchmanager",
+		moduleName: "pages/rtconsole/rtconsole",
 		context: {
 			garaid: garaid,
-			match: matches.rows[index].doc
+			match: matches.rows[index].doc,
+			mode: mode
 		}
 
 	});

@@ -43,7 +43,7 @@ exports.connect = function () {
         secure: false
         //forceWebsockets: true,
     });
-    console.log("socketservice socket", socket);
+    utils.conslog("socketservice socket", socket);
 
     global.socket.on('connect', function () {
         utils.colog('socketservice received connect');
@@ -110,13 +110,13 @@ exports.connect = function () {
 
 
                 var page = frameModule.topmost().currentPage;
-                console.log(page);
+                utils.conslog(page);
                 if (String(page).indexOf("chat.xml") == -1) {
                     utils.localNotify(msg.message);
 
-                    console.log("message out of chat page");
+                    utils.conslog("message out of chat page");
                     file.readJsonFile("unreadchat.json", function (data) {
-                        console.log(JSON.stringify(data));
+                        utils.conslog(JSON.stringify(data));
                         var chatter = msg.from_email2;
                         var found = false;
                         for (var i = 0; i < data.length; i++) {
@@ -135,7 +135,7 @@ exports.connect = function () {
 
                         }
                         file.writeJsonFile("unreadchat.json", data, function (fdata) {
-                            console.log(fdata);
+                            utils.conslog(fdata);
                             b.trigger("sockmsg", msg);
 
                         })
@@ -148,7 +148,7 @@ exports.connect = function () {
                     var newmsg = msg;
                     data.push(newmsg);
                     file.writeJsonFile("chatmessages.json", data, function (fdata) {
-                        console.log(fdata);
+                        utils.conslog(fdata);
 
 
                     })
@@ -208,11 +208,20 @@ exports.connect = function () {
 
     global.socket.on("realtime", function (data) {
         utils.conslog("socketservice received realtime");
-        b.trigger("sockmsg", data);
+        //b.trigger("sockmsg", data);
+    })
+
+     global.socket.on("realtimematches", function (data) {
+        utils.conslog("socketservice received realtimematches");
+        b.trigger("realtimematches", data);
+    })
+      global.socket.on("updategara", function (data) {
+        utils.conslog("socketservice received updategara");
+        b.trigger("updategara", data);
     })
 
     global.socket.on('getnickname', function (data) {
-        console.log('socketservice received getnickname', JSON.stringify(data));
+        utils.conslog('socketservice received getnickname', JSON.stringify(data));
         var msg = {
 			device: "mobile",
 			type: "clientspecs",

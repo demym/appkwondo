@@ -10,7 +10,7 @@
         "spec": "0.0.8",
         "type": "version"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-camera@0.0.8",
@@ -44,7 +44,7 @@
   "_shasum": "90b383ddb6431a193e520d3ce37409499c181bee",
   "_shrinkwrap": null,
   "_spec": "nativescript-camera@0.0.8",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "NativeScript team"
   },

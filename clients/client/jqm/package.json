@@ -6,9 +6,8 @@
         "android-camera-permission": "^1.0.0",
         "android.support.v4": "^21.0.1",
         "com.napolitano.cordova.plugin.intent": "https://github.com/napolitano/cordova-plugin-intent",
-        "cordova-android": "^6.2.3",
+        "cordova-android": "^5.2.2",
         "cordova-browser": "^4.1.0",
-        "cordova-ios": "^4.4.0",
         "cordova-plugin-android-permissions": "^0.11.0",
         "cordova-plugin-app-event": "~1.2.0",
         "cordova-plugin-background-mode": "^0.7.2",
@@ -63,8 +62,7 @@
         },
         "platforms": [
             "android",
-            "browser",
-            "ios"
+            "browser"
         ]
     }
 }

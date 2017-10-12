@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var app = require("application");
 var MediaRecorder = android.media.MediaRecorder;
 var TNSRecorder = (function () {
@@ -23,11 +22,15 @@ var TNSRecorder = (function () {
         }
     };
     TNSRecorder.prototype.start = function (options) {
-        console.log("TNSRECORDER START");
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this.recorder = new MediaRecorder();
+                if (_this.recorder) {
+                    _this.recorder.reset();
+                }
+                else {
+                    _this.recorder = new MediaRecorder();
+                }
                 if (options.source) {
                     _this.recorder.setAudioSource(options.source);
                 }
@@ -49,25 +52,21 @@ var TNSRecorder = (function () {
                 if (options.channels) {
                     _this.recorder.setAudioChannels(options.channels);
                 }
-                console.log("SAMPLERATE",options.sampleRate);
                 if (options.sampleRate) {
-                    console.log("setting samplerate");
                     _this.recorder.setAudioSamplingRate(options.sampleRate);
-                  
                 }
                 if (options.bitRate) {
                     _this.recorder.setAudioEncodingBitRate(options.bitRate);
                 }
-
                 _this.recorder.setOutputFile(options.filename);
                 _this.recorder.setOnErrorListener(new android.media.MediaRecorder.OnErrorListener({
-                    onError: function (mr, what, extra) {
-                        options.errorCallback({ mr: mr, what: what, extra: extra });
+                    onError: function (recorder, error, extra) {
+                        options.errorCallback({ recorder: recorder, error: error, extra: extra });
                     }
                 }));
                 _this.recorder.setOnInfoListener(new android.media.MediaRecorder.OnInfoListener({
-                    onInfo: function (mr, what, extra) {
-                        options.infoCallback({ mr: mr, what: what, extra: extra });
+                    onInfo: function (recorder, info, extra) {
+                        options.infoCallback({ recorder: recorder, info: info, extra: extra });
                     }
                 }));
                 _this.recorder.prepare();
@@ -85,11 +84,41 @@ var TNSRecorder = (function () {
         else
             return 0;
     };
+    TNSRecorder.prototype.pause = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            try {
+                if (_this.recorder) {
+                    _this.recorder.pause();
+                }
+                resolve();
+            }
+            catch (ex) {
+                reject(ex);
+            }
+        });
+    };
+    TNSRecorder.prototype.resume = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            try {
+                if (_this.recorder) {
+                    _this.recorder.resume();
+                }
+                resolve();
+            }
+            catch (ex) {
+                reject(ex);
+            }
+        });
+    };
     TNSRecorder.prototype.stop = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this.recorder.stop();
+                if (_this.recorder) {
+                    _this.recorder.stop();
+                }
                 resolve();
             }
             catch (ex) {
@@ -101,7 +130,9 @@ var TNSRecorder = (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this.recorder.release();
+                if (_this.recorder) {
+                    _this.recorder.release();
+                }
                 _this.recorder = undefined;
                 resolve();
             }
@@ -113,4 +144,3 @@ var TNSRecorder = (function () {
     return TNSRecorder;
 }());
 exports.TNSRecorder = TNSRecorder;
-//# sourceMappingURL=recorder.js.map

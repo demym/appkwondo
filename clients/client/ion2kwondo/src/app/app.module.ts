@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, Nav,IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, Nav,IonicErrorHandler,NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -47,6 +47,11 @@ import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/trans
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { IonicImageLoader } from 'ionic-image-loader';
 
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { FacebookProvider } from '../providers/facebook/facebook';
 
 @NgModule({
   declarations: [
@@ -132,10 +137,17 @@ import { IonicImageLoader } from 'ionic-image-loader';
     Camera,
     Transfer,
     SocialSharing,
+    NativePageTransitions,
+    LocalNotifications,
+    BackgroundMode,
+    TextToSpeech,
+
+
     
     
    
 
-    Badge]
+    Badge,
+    FacebookProvider]
 })
 export class AppModule {}

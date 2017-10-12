@@ -10,7 +10,7 @@
         "spec": ">=1.0.3 <2.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-chatview@>=1.0.3 <2.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "2e9415ba29bb2146ae1dacf94ec0d6dc2d0b136f",
   "_shrinkwrap": null,
   "_spec": "nativescript-chatview@^1.0.3",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Marcel Joachim Kloubert",
     "email": "marcel.kloubert@gmx.net"

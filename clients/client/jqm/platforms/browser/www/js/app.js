@@ -75,7 +75,7 @@ var chatuser = {
 
 var rtmatches = [];
 
-//var rooturl = "http://localhost:3000";
+var rooturl = "http://localhost:3000";
 //var rooturl="http://localhost";
 //var rooturl = "http://9.71.212.38:3000";
 //var rooturl = "http://192.168.1.106:3000";
@@ -84,7 +84,7 @@ var rtmatches = [];
 //var rooturl="http://demywl.mybluemix.net";
 //var rooturl="http://62.101.111.160:3000";
 //var rooturl = "http://appkwondo.mybluemix.net";
-var rooturl = "http://tkdr.herokuapp.com";
+//var rooturl = "http://tkdr.herokuapp.com";
 
 
 console.log("rooturl", rooturl);

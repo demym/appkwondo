@@ -10,7 +10,7 @@
         "spec": ">=1.3.2 <2.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-texttospeech@>=1.3.2 <2.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "e9f2e60623d782a1c90382064105f8396158056d",
   "_shrinkwrap": null,
   "_spec": "nativescript-texttospeech@^1.3.2",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Anarchic Knight",
     "email": "anarchicknight@gmail.com",

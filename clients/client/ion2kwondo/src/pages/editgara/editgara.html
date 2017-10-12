@@ -90,7 +90,7 @@
           <ion-col>
               Dati Tkdt
             </ion-col>
-          <ion-col col-2><button ion-button clear (tap)="retrieveTkdtGara(false)"><ion-icon name="md-refresh"></ion-icon></button></ion-col></ion-row>
+          <ion-col col-2><button *ngIf="!loadingtkdt" ion-button clear (tap)="retrieveTkdtGara(false)"><ion-icon name="md-refresh"></ion-icon></button><ion-spinner *ngIf="loadingtkdt" name="ios"></ion-spinner></ion-col></ion-row>
       </ion-card-header>
       <ion-card-content>
         
@@ -101,7 +101,7 @@
         
 
           <ion-row>
-              <ion-col col-6 class="label">Atleti</ion-col>
+              <ion-col col-6 class="label">Atleti effettivi</ion-col>
               <ion-col >{{tkdtgara.atleti.length}}</ion-col>
           </ion-row>
         
@@ -121,6 +121,7 @@
           <button ion-button block (tap)="toggleTkdtJson()">Visualizza JSON</button>
 
           <div *ngIf="tkdtjsonview" class="tkdt">{{getTkdtGara()}}</div>
+          <button ion-button block (tap)="matchTkdtIscritti()">Integra iscritti TKDT</button>
       </ion-card-content>
     </ion-card>
    
@@ -131,8 +132,8 @@
 </ion-content>
   <ion-footer>
     <ion-row class="footerrow">
-      <ion-col col-6><button color="secondary" ion-button full>Salva</button></ion-col>
-      <ion-col col-6><button ion-button full>Annulla</button></ion-col>
+      <ion-col col-6><button color="secondary" ion-button full (tap)="saveGara()" >Salva</button></ion-col>
+      <ion-col col-6><button ion-button full (tap)="cancelGara()">Annulla</button></ion-col>
     </ion-row>
   </ion-footer>
 

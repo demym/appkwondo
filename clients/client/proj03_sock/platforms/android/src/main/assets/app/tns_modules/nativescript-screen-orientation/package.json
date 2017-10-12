@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "nativescript-screen-orientation",
+        "raw": "nativescript-screen-orientation@^2.0.0",
         "scope": null,
         "escapedName": "nativescript-screen-orientation",
         "name": "nativescript-screen-orientation",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^2.0.0",
+        "spec": ">=2.0.0 <3.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "nativescript-screen-orientation@latest",
+  "_from": "nativescript-screen-orientation@>=2.0.0 <3.0.0",
   "_id": "nativescript-screen-orientation@2.0.0",
   "_inCache": true,
   "_location": "/nativescript-screen-orientation",
@@ -29,23 +29,22 @@
   "_npmVersion": "3.10.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nativescript-screen-orientation",
+    "raw": "nativescript-screen-orientation@^2.0.0",
     "scope": null,
     "escapedName": "nativescript-screen-orientation",
     "name": "nativescript-screen-orientation",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^2.0.0",
+    "spec": ">=2.0.0 <3.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-screen-orientation/-/nativescript-screen-orientation-2.0.0.tgz",
   "_shasum": "18e8b205edfeeb21ca4cc79e58faa1ff46f67e32",
   "_shrinkwrap": null,
-  "_spec": "nativescript-screen-orientation",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "nativescript-screen-orientation@^2.0.0",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Batheja Sumeet",
     "email": "sumeet@videospike.com"

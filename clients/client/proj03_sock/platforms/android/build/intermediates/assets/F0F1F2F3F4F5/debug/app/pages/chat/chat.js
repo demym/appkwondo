@@ -48,33 +48,28 @@ var player = new audio.TNSPlayer();
 var gs = glbservice.GlobalService;
 var rtservice = realtimeservice.RealtimeService;
 var chat = [];
-
-gs.e.on("realtimechange", function (data) {
-    //refreshChatStatuses();
-    console.log("evento realtime in chat !!!", JSON.stringify(data));
+var rtmatches=[];
 
 
 
-
-    lvrt.height = lvrtrowheight * rtarray.length;
-    gl.height = lvrt.height;
-    //utils.conslog("glheight",gl.height);
-    lvrt.refresh();
-
+gs.e.on("realtimematches", function (data) {
+    utils.conslog("evento realtimematches in chat.js !!", JSON.stringify(data));
+    var matches = data.object.matches;
+    updateRealTime(matches);
 })
 
 
 gs.e.on("sockmsg", function (ev) {
-    console.log("evento sockmsg in chat !!!",JSON.stringify(ev));
-    var obj=ev.object;
-    var tipo=obj.type;
-    if (tipo=="notification"){
+    //console.log("evento sockmsg in chat !!!");
+    var obj = ev.object;
+    var tipo = obj.type;
+    if (tipo == "notification") {
 
-        if (obj.updategara){
-            if (obj.updategara=="yes") renderRealTime();
+        if (obj.updategara) {
+           // if (obj.updategara == "yes") renderRealTime();
         }
     }
-    if (tipo=="realtime") renderRealTime();
+    
     //utils.colog("rtservice rtarray",JSON.stringify(rtservice.rtarray));
 
 })
@@ -85,17 +80,17 @@ gs.e.on("chatmsg", function (ev) {
     var ev1 = JSON.parse(JSON.stringify(ev.object));
     delete ev1.foto;
 
-    console.log("chatmsg received in chat.js");
+    utils.conslog("chatmsg received in chat.js");
 
     var data = ev.object;
 
     data.isRight = false;
     data.img = "~/img/user.png";
-    console.log("global.user.nickname", global.user.nickname);
+    utils.conslog("global.user.nickname", global.user.nickname);
     if (data.nickname == global.user.nickname) data.isRight = true;
-    console.log("chat length: " + chat.length);
+    utils.conslog("chat length: " + chat.length);
     chat.push(data);
-    console.log("chat length: " + chat.length);
+    utils.conslog("chat length: " + chat.length);
     source.set("chat", chat);
     //var lv1 = page.getViewById("lv1");
     //lv1.items=chat;
@@ -110,22 +105,33 @@ gs.e.on("chatmsg", function (ev) {
 })
 
 
-function renderRealTime() {
-    backend.getRealtime(function (data) {
-        console.log("matches in realtime", data.length);
-        console.log(JSON.stringify(data));
-        data.forEach(function(item,idx){
-          item.tnstext=item.text.replace(/<(?:.|\n)*?>/gm, '');
-        })
-        lvrt.items = data;
-        lvrt.height = lvrtrowheight * data.length;
-        //lvrt.items = rtarray;
-        //lvrt.height = lvrtrowheight * rtarray.length;
-        gl.height = lvrt.height;
-        lvrt.refresh();
 
 
+function updateRealTime(matches) {
+    var data=matches;
+    
+    data.forEach(function (item, idx) {
+        item.tnstext = item.text.replace(/<(?:.|\n)*?>/gm, '');
     })
+    rtmatches=data;
+    source.set("rtmatches",rtmatches);
+    //lvrt.items = data;
+    lvrt.height = lvrtrowheight * data.length;
+    //lvrt.items = rtarray;
+    //lvrt.height = lvrtrowheight * rtarray.length;
+    gl.height = lvrt.height;
+
+    lvrt.refresh();
+
+}
+
+function renderRealTime() {
+    //return;
+
+
+    global.socket.emit('getrealtimematches');
+
+    return;
 
 }
 
@@ -218,7 +224,7 @@ function rightizeChat() {
             }
 
         }
-        if (ch.audiourl) console.log("audiourl", ch.audiourl);
+        if (ch.audiourl) utils.conslog("audiourl", ch.audiourl);
         chat[i] = ch;
 
 
@@ -228,12 +234,12 @@ function rightizeChat() {
 }
 
 function onTap() {
-    console.log("ontap");
+    utils.conslog("ontap");
     var tf1 = page.getViewById("tf1");
     //var ht1=view.getViewById(page, "ht1");
     //ht1.html="<b>ciao frantoio</b>";
     if (!tf1.text) return;
-    console.log(tf1.text);
+    utils.conslog(tf1.text);
 
 
     var chatmsg = {
@@ -257,7 +263,7 @@ function onTap() {
 
 
 function postChat(msg) {
-    console.log("posting chat");
+    utils.conslog("posting chat");
     http.request({
         url: global.rooturl + "/chat/put",
         method: "POST",
@@ -268,7 +274,7 @@ function postChat(msg) {
     }).then(function (response) {
         //result = response.content.toJSON();
         // console.log("response",JSON.stringify(response));
-        console.log("chat posted");
+        utils.conslog("chat posted");
     }, function (e) {
         console.log("Error occurred " + e);
     });
@@ -279,8 +285,8 @@ function postChat(msg) {
 function onLoaded(args) {
     page = args.object;
     gs.unreadchat = [];
-    console.log("page loaded");
-    //source.set("rtarray",rtarray);
+    utils.conslog("page loaded");
+    source.set("rtmatches",rtmatches);
 
     lv1 = view.getViewById(page, "lv1");
     lvrt = page.getViewById("lvrt");
@@ -289,18 +295,18 @@ function onLoaded(args) {
 
     renderRealTime();
 
-   /* backend.getRealtime(function (data) {
-        console.log("matches in realtime", data.length);
-        console.log(JSON.stringify(data));
-        lvrt.items = data;
-        lvrt.height = lvrtrowheight * data.length;
-        //lvrt.items = rtarray;
-        //lvrt.height = lvrtrowheight * rtarray.length;
-        gl.height = lvrt.height;
-        lvrt.refresh();
+    /* backend.getRealtime(function (data) {
+         console.log("matches in realtime", data.length);
+         console.log(JSON.stringify(data));
+         lvrt.items = data;
+         lvrt.height = lvrtrowheight * data.length;
+         //lvrt.items = rtarray;
+         //lvrt.height = lvrtrowheight * rtarray.length;
+         gl.height = lvrt.height;
+         lvrt.refresh();
 
 
-    })*/
+     })*/
 
 
 
@@ -309,11 +315,11 @@ function onLoaded(args) {
 
     var width1 = platform.screen.mainScreen.widthDIPs;
     var width2 = platform.screen.mainScreen.widthPixels;
-    console.log("width", width1, width2);
+    utils.conslog("width", width1, width2);
 
     var pos = parseInt(width1, 10) - 80;
 
-    console.log("pos", pos);
+    utils.conslog("pos", pos);
 
     source.set("fotoleft", String(pos));
     //source.set("fotoleft",width1);
@@ -325,79 +331,13 @@ function onLoaded(args) {
     page.bindingContext = source;
     socket = global.socket;
 
-
-    /*
-    
-    global.socket.on('getnickname', function (data) {
-        console.log('global.socket getnickname in chat', data);
-    });
-
-
-    global.socket.on('chatmsg', function (data) {
-        console.log('global.socket chatmsg in chat');
-        console.log(JSON.stringify(data));
-        data.isRight = false;
-        data.img = "~/img/user.png";
-        if (data.nickname == global.nickname) data.isRight = true;
-        //console.log("chat length: "+chat.length);
-        chat.push(data);
-        var lv1 = view.getViewById(page, "lv1");
-        //lv1.items=chat;
-        lv1.refresh();
-        lv1.scrollToIndex(chat.length - 1);
-
-
-    });
-
-    global.socket.on('refreshgara', function (data) {
-        console.log('global.socket refreshgara in chat');
-        console.log(JSON.stringify(data));
-
-
-
-    });
-
-    global.socket.on('error', function (error) {
-        console.log('socket', 'error', error);
-    });
-
-    global.socket.on('connect', function () {
-        console.log('global.socket in chat', 'connect');
-      
-
-    });
-
-    global.socket.on('hi', function (data) {
-        console.log('socket', 'on', 'hi');
-    });
-
-    global.socket.on('ack', function (data) {
-        console.log('socket', 'on', 'ack');
-        data();
-    });
-
-    global.socket.on('takeDate', function (data) {
-        console.log('socket', 'on', 'takeDate', data);
-    });
-
-    global.socket.on('takeDateObj', function (data) {
-        console.log('socket', 'on', 'takeDateObj', JSON.stringify(data));
-    });
-
-    global.socket.on('takeUtf8', function (data) {
-        console.log('socket', 'on', 'takeUtf8', data);
-    });
-    */
-
-
-
     fetchChat(function (data) {
         chat = data.rows;
 
         var lastchattimestamp = chat[chat.length - 1].time;
         appSettings.setString("lastchattimestamp", lastchattimestamp);
         gs.unreadchat = [];
-        console.log("lastchattimestamp", lastchattimestamp);
+        utils.conslog("lastchattimestamp", lastchattimestamp);
         rightizeChat(chat);
         //console.log("Chat",JSON.stringify(chat))
         source.set("chat", chat);
@@ -408,20 +348,20 @@ function onLoaded(args) {
 }
 
 exports.refetchChat = function () {
-    console.log("refetching chat");
+    utils.conslog("refetching chat");
     fetchChat(function (data) {
         chat = data.rows;
 
         var lastchattimestamp = chat[chat.length - 1].time;
         appSettings.setString("lastchattimestamp", lastchattimestamp);
         gs.unreadchat = [];
-        console.log("lastchattimestamp", lastchattimestamp);
+        utils.conslog("lastchattimestamp", lastchattimestamp);
         rightizeChat(chat);
         //console.log("Chat",JSON.stringify(chat))
         //source.set("chat",chat);
         lv1.items = chat;
         lv1.scrollToIndex(chat.length - 1);
-        console.log("chat refetched");
+        utils.conslog("chat refetched");
     });
 
 
@@ -504,14 +444,14 @@ function doAddOnMessageReceivedCallback() {
 exports.playChatAudio = function (args) {
     var btn = args.object;
     var item = btn.bindingContext;
-    console.log("item", item.audiourl);
+    utils.conslog("item", item.audiourl);
     utils.playSound(item.audiourl);
     //utils.playRemoteSound(item.audiourl);
 }
 exports.stopChatAudio = function (args) {
     var btn = args.object;
     var item = btn.bindingContext;
-    console.log("item", item.audiourl);
+    utils.conslog("item", item.audiourl);
     utils.stopSound(item.audiourl);
 }
 
@@ -530,7 +470,7 @@ exports.selectItemTemplate = function (item, index, items) {
 
 
 exports.scattaFoto = function () {
-    console.log("scattafoto");
+    utils.conslog("scattafoto");
     var imageModule = require("ui/image");
 
     var options = {
@@ -542,18 +482,18 @@ exports.scattaFoto = function () {
     camera.requestPermissions();
     camera.takePicture(options)
         .then(function (imageAsset) {
-            console.log("Size: " + imageAsset.options.width + "x" + imageAsset.options.height);
-            console.log("keepAspectRatio: " + imageAsset.options.keepAspectRatio);
-            console.log("Photo saved in Photos/Gallery for Android or in Camera Roll for iOS");
+            utils.conslog("Size: " + imageAsset.options.width + "x" + imageAsset.options.height);
+            utils.conslog("keepAspectRatio: " + imageAsset.options.keepAspectRatio);
+            utils.conslog("Photo saved in Photos/Gallery for Android or in Camera Roll for iOS");
             /*var vbase64 = imageAsset.toBase64String("jpeg", 100);
             console.log("vbase64",vbase64);*/
             imageSource.fromAsset(imageAsset).then(function (res) {
-                console.log("res", res);
+                utils.conslog("res", res);
                 var myImageSource = res;
                 var base64 = myImageSource.toBase64String("jpeg", 100);
                 //console.log("base64",base64);
                 base64 = "data:image/jpeg;base64," + base64;
-                console.log(base64.substring(0, 40) + ".....");
+                utils.conslog(base64.substring(0, 40) + ".....");
                 var postdata = {
                     garaid: "",
                     nickname: global.user.nickname,
@@ -569,7 +509,7 @@ exports.scattaFoto = function () {
 }
 
 exports.chatfocus = function () {
-    console.log("chatfocus");
+    utils.conslog("chatfocus");
     source.set("chatfocus", true);
 }
 
@@ -605,7 +545,7 @@ exports.recordAudio = function (args) {
     var labrecording = page.getViewById("labrecording");
 
     var isrecording = source.get("isRecording");
-    console.log("recordaudio", isrecording)
+    utils.conslog("recordaudio", isrecording)
     if (isrecording) {
 
         //but.text="&#xf130";
@@ -613,14 +553,14 @@ exports.recordAudio = function (args) {
         butrecord.visibility = "visible";
         labrecording.visibility = "collapsed";
         player.dispose().then(function () {
-            console.log("Media Player Disposed");
+            utils.conslog("Media Player Disposed");
         }, function (err) {
             console.log(err);
         });
         //player = new audio.TNSPlayer();
         recorder.stop().then(function () {
             source.set("isRecording", false);
-            console.log("recording stopped");
+            utils.conslog("recording stopped");
 
 
             var sourceFile = fs.File.fromPath(recaudiofilename);
@@ -631,12 +571,12 @@ exports.recordAudio = function (args) {
                 error = e;
                 console.log("error", error);
             });
-            console.log("sonoqui");
+            utils.conslog("sonoqui");
             var b64;
             try {
                 //var b64 = src.toBase64String();
                 b64 = new bufferModule.Buffer(src).toString('base64');
-                console.log("b64", b64.substring(0, 40) + ".......");
+                utils.conslog("b64", b64.substring(0, 40) + ".......");
             } catch (e) {
                 console.log("error", e);
             }
@@ -647,7 +587,7 @@ exports.recordAudio = function (args) {
                 audioFile: recaudiofilename, // ~ = app directory
                 loop: true,
                 completeCallback: function () {
-                    console.log("play completed");
+                    utils.conslog("play completed");
                 },
                 errorCallback: function () {
                     console.log("error playing recorded file")
@@ -657,7 +597,7 @@ exports.recordAudio = function (args) {
                 player.getAudioTrackDuration().then(function (duration) {
                     // iOS: duration is in seconds
                     // Android: duration is in milliseconds
-                    console.log("song duration:", duration);
+                    utils.conslog("song duration:", duration);
                 });
             });
             recorded = true;
@@ -670,16 +610,16 @@ exports.recordAudio = function (args) {
 
             }).then(function (result) {
                 // result argument is boolean
-                console.log("Dialog result: " + result);
+                utils.conslog("Dialog result: " + result);
                 player.dispose().then(function () {
-                    console.log("Media Player Disposed");
+                    utils.conslog("Media Player Disposed");
                 }, function (err) {
                     console.log("error is dispose", err);
                 });
 
                 if (result) {
 
-                    console.log("trying to post audio");
+                    utils.conslog("trying to post audio");
                     var audio = "data:audio/mp3;base64," + b64;
                     //audio=b64;
                     var postdata = {
@@ -696,17 +636,17 @@ exports.recordAudio = function (args) {
 
 
         }, function (ex) {
-            console.log("ex", ex);
+            utils.conslog("ex", ex);
             source.set("isRecording", false);
 
         });
         return;
     } else {
 
-        console.log("preparing to record");
+        utils.conslog("preparing to record");
         recorder = new audio.TNSRecorder();
 
-        console.log("fname", recaudiofilename);
+        utils.conslog("fname", recaudiofilename);
 
 
 
@@ -719,7 +659,7 @@ exports.recordAudio = function (args) {
             bitRate: 16,
             //metering: true,
             infoCallback: function (infoObject) {
-                console.log("infocallback", JSON.stringify(infoObject));
+                utils.conslog("infocallback", JSON.stringify(infoObject));
             },
             errorCallback: function (errorObject) {
                 console.log("errorcallback", JSON.stringify(errorObject));
@@ -736,7 +676,7 @@ exports.recordAudio = function (args) {
         //but.text="OO";
         recorder.start(recorderOptions).then(function (result) {
             source.set("isRecording", true);
-            console.log("recording in progress");
+            utils.conslog("recording in progress");
             if (recorderOptions.metering) {
                 initMeter();
             }
@@ -758,7 +698,7 @@ function initMeter() {
     resetMeter();
     return;
     meterInterval = setInterval(function () {
-        console.log(recorder.getMeters());
+        utils.conslog(recorder.getMeters());
     }, 500);
 }
 
@@ -767,6 +707,14 @@ function resetMeter() {
         clearInterval(meterInterval);
         meterInterval = undefined;
     }
+}
+
+exports.tapRealtimeMatch=function(args){
+
+    var idx=args.index;
+     console.log("taprealtimematch",args.index);
+    //var bc=args.bindingContext;
+    //console.log("bc",JSON.stringify(bc[idx]));
 }
 
 exports.scrollBottom = scrollBottom;

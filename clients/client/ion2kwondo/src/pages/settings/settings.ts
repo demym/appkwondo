@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { BackendProvider } from '../../providers/backend/backend';
 
 /*
   Generated class for the Settings page.
@@ -12,11 +13,19 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
+  settings;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+    //this.settings = this.backend.appSettings;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  ionViewWillLeave() {
+    console.log("ionViewWillLeave SettingsPage");
+    window.localStorage.setItem("ion2kwondo_settings",JSON.stringify(this.backend.appSettings));
+  }
 }

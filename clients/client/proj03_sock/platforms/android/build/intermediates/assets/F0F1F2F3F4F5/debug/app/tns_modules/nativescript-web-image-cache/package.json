@@ -2,50 +2,49 @@
   "_args": [
     [
       {
-        "raw": "nativescript-web-image-cache@4.0.0",
+        "raw": "nativescript-web-image-cache@^4.0.0",
         "scope": null,
         "escapedName": "nativescript-web-image-cache",
         "name": "nativescript-web-image-cache",
-        "rawSpec": "4.0.0",
-        "spec": "4.0.0",
-        "type": "version"
+        "rawSpec": "^4.0.0",
+        "spec": ">=4.0.0 <5.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "nativescript-web-image-cache@4.0.0",
-  "_id": "nativescript-web-image-cache@4.0.0",
+  "_from": "nativescript-web-image-cache@>=4.0.0 <5.0.0",
+  "_id": "nativescript-web-image-cache@4.2.2",
   "_inCache": true,
   "_location": "/nativescript-web-image-cache",
-  "_nodeVersion": "6.4.0",
+  "_nodeVersion": "7.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/nativescript-web-image-cache-4.0.0.tgz_1491302964309_0.12013267236761749"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nativescript-web-image-cache-4.2.2.tgz_1500585022124_0.665475282818079"
   },
   "_npmUser": {
     "name": "bathejasumeet",
     "email": "sumeet@videospike.com"
   },
-  "_npmVersion": "3.10.3",
+  "_npmVersion": "4.2.0",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nativescript-web-image-cache@4.0.0",
+    "raw": "nativescript-web-image-cache@^4.0.0",
     "scope": null,
     "escapedName": "nativescript-web-image-cache",
     "name": "nativescript-web-image-cache",
-    "rawSpec": "4.0.0",
-    "spec": "4.0.0",
-    "type": "version"
+    "rawSpec": "^4.0.0",
+    "spec": ">=4.0.0 <5.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-web-image-cache/-/nativescript-web-image-cache-4.0.0.tgz",
-  "_shasum": "0f5f8565296b87fb49429c29da1aed0ed6d5f2bd",
+  "_resolved": "https://registry.npmjs.org/nativescript-web-image-cache/-/nativescript-web-image-cache-4.2.2.tgz",
+  "_shasum": "6b46e557f2976dfa13a01169c0e41c5ca02fd0e6",
   "_shrinkwrap": null,
-  "_spec": "nativescript-web-image-cache@4.0.0",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "nativescript-web-image-cache@^4.0.0",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Batheja Sumeet"
   },
@@ -57,8 +56,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "0f5f8565296b87fb49429c29da1aed0ed6d5f2bd",
-    "tarball": "https://registry.npmjs.org/nativescript-web-image-cache/-/nativescript-web-image-cache-4.0.0.tgz"
+    "shasum": "6b46e557f2976dfa13a01169c0e41c5ca02fd0e6",
+    "tarball": "https://registry.npmjs.org/nativescript-web-image-cache/-/nativescript-web-image-cache-4.2.2.tgz"
   },
   "gitHead": "8a80cde593cbb3ba3a0d94857f727ce6d1a277eb",
   "homepage": "https://github.com/VideoSpike/nativescript-web-image-cache#readme",
@@ -79,11 +78,14 @@
   "name": "nativescript-web-image-cache",
   "nativescript": {
     "platforms": {
-      "android": "2.3.0",
-      "ios": "2.3.0"
+      "android": "3.0.0",
+      "ios": "3.0.0"
     }
   },
   "optionalDependencies": {},
+  "peerDependencies": {
+    "tns-core-modules": "^3.0.0 || ^3.0.0-rc.1"
+  },
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
@@ -91,5 +93,5 @@
   },
   "scripts": {},
   "typings": "WebImageCache.d.ts",
-  "version": "4.0.0"
+  "version": "4.2.2"
 }

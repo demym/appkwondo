@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "id": "com.napolitano.cordova.plugin.intent.IntentPlugin",
+        "file": "plugins/com.napolitano.cordova.plugin.intent/www/android/IntentPlugin.js",
+        "pluginId": "com.napolitano.cordova.plugin.intent",
+        "clobbers": [
+            "IntentPlugin"
+        ]
+    },
+    {
         "id": "cordova-plugin-android-permissions.Permissions",
         "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
         "pluginId": "cordova-plugin-android-permissions",
@@ -272,6 +280,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-filepath.FilePath",
+        "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
+        "pluginId": "cordova-plugin-filepath",
+        "clobbers": [
+            "window.FilePath"
+        ]
+    },
+    {
         "id": "cordova-plugin-media-capture.CaptureAudioOptions",
         "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
         "pluginId": "cordova-plugin-media-capture",
@@ -419,22 +435,6 @@ module.exports = [
         "clobbers": [
             "window.Base64ImageSaverPlugin"
         ]
-    },
-    {
-        "id": "com.napolitano.cordova.plugin.intent.IntentPlugin",
-        "file": "plugins/com.napolitano.cordova.plugin.intent/www/android/IntentPlugin.js",
-        "pluginId": "com.napolitano.cordova.plugin.intent",
-        "clobbers": [
-            "IntentPlugin"
-        ]
-    },
-    {
-        "id": "cordova-plugin-filepath.FilePath",
-        "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
-        "pluginId": "cordova-plugin-filepath",
-        "clobbers": [
-            "window.FilePath"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -442,17 +442,20 @@ module.exports.metadata =
 {
     "android-camera-permission": "1.0.0",
     "android.support.v4": "21.0.1",
+    "com.napolitano.cordova.plugin.intent": "0.1.3",
     "cordova-plugin-android-permissions": "0.11.0",
     "cordova-plugin-app-event": "1.2.0",
     "cordova-plugin-audio-recorder-api": "0.0.1",
     "cordova-plugin-device": "1.1.6",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-badge": "0.7.2",
+    "cordova-plugin-browsersync": "0.1.1",
     "cordova-plugin-camera": "2.0.0",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-dialogs": "1.2.0",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-fileopener": "1.0.4",
+    "cordova-plugin-filepath": "1.0.2",
     "cordova-plugin-media-capture": "1.4.3",
     "cordova-plugin-splashscreen": "3.2.1",
     "cordova-plugin-statusbar": "2.2.3",
@@ -461,10 +464,7 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-x-socialsharing": "5.0.12",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
-    "org.solderzzc.base64imagesaverplugin": "0.6.0",
-    "com.napolitano.cordova.plugin.intent": "0.1.3",
-    "cordova-plugin-browsersync": "0.1.1",
-    "cordova-plugin-filepath": "1.0.2"
+    "org.solderzzc.base64imagesaverplugin": "0.6.0"
 };
 // BOTTOM OF METADATA
 });

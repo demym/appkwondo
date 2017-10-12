@@ -46,30 +46,41 @@ var chatsound = sound.create("~/sound/roundstart.mp3");
 var menu = global.menu;
 var player;
 
+var voicetime = 2000;
+var voicetimer;
+
 
 exports.playVoice = function (txt) {
 
 
+    //if (voicetimer) clearTimeout(voicetimer);
     if (appSettings.getBoolean("voice", false) == false) {
         console.log("voice settings is false");
         return;
     }
 
+
+
     var plat = platformModule.device.os.toLowerCase();
     var speakrate = 0.5;
 
     if (plat != "ios") speakrate = 1;
+    
+    //voicetimer = setTimeout(function () {
+        tts.speak({
+            text: txt, /// *** required ***
+            speakRate: speakrate, // optional - default is 1.0
+            pitch: 1.0, // optional - default is 1.0
+            volume: 1.0, // optional - default is 1.0
+            language: "it-IT", // optional - default is system language,*/
+            finishedCallback: function () {
+                console.log("finished speaking");
+            }
+        });
 
-    tts.speak({
-        text: txt, /// *** required ***
-        speakRate: speakrate, // optional - default is 1.0
-        pitch: 1.0, // optional - default is 1.0
-        volume: 1.0, // optional - default is 1.0
-        language: "it-IT", // optional - default is system language,*/
-        finishedCallback: function () {
-            console.log("finished speaking");
-        }
-    });
+    //}, voicetime)
+
+
 }
 
 
@@ -193,26 +204,26 @@ exports.playSound = function (fn) {
 
         if (!player) player = new audio.TNSPlayer();
 
-          player.playFromUrl({
-                audioFile: fn, // ~ = app directory
-                loop: false,
-                completeCallback: function () {
-                    console.log("audio play completed")
-                },
-                errorCallback: function () {
-                    console.log("audio play error")
-                },
-                infoCallback: function (args) {
-                    console.log("infocallback", JSON.stringify(args));
-                }
-            }).then(function () {
-                console.log("is playing")
-                /*player.getAudioTrackDuration().then(function (duration) {
-                    // iOS: duration is in seconds
-                    // Android: duration is in milliseconds
-                    console.log("song duration", duration);
-                });*/
-            });
+        player.playFromUrl({
+            audioFile: fn, // ~ = app directory
+            loop: false,
+            completeCallback: function () {
+                console.log("audio play completed")
+            },
+            errorCallback: function () {
+                console.log("audio play error")
+            },
+            infoCallback: function (args) {
+                console.log("infocallback", JSON.stringify(args));
+            }
+        }).then(function () {
+            console.log("is playing")
+            /*player.getAudioTrackDuration().then(function (duration) {
+                // iOS: duration is in seconds
+                // Android: duration is in milliseconds
+                console.log("song duration", duration);
+            });*/
+        });
 
 
 
@@ -267,6 +278,12 @@ colog = function () {
 conslog = function () {
     var dbg = debugActive;
     if (!dbg) return;
+    console.log.apply(console, arguments);
+}
+
+conslog2 = function () {
+    var dbg = debugActive;
+    //if (!dbg) return;
     console.log.apply(console, arguments);
 }
 
@@ -663,7 +680,7 @@ var filterRows = function ($m, filt, exact) {
                 if (fkey == key) {
                     //console.log("found key ---->"+fkey);
                     var v1 = filt[fkey].toLowerCase();
-                    
+
                     if (v1.trim() != "") {
                         var v2 = row.doc[key].toLowerCase();
                         //console.log(v2);
@@ -861,6 +878,7 @@ exports.getAudioUrl = function (callback) {
 
 exports.colog = colog;
 exports.conslog = conslog;
+exports.conslog2 = conslog2;
 exports.toggleMenu = toggleMenu;
 exports.getAtletaById = getAtletaById;
 exports.filterRows = filterRows;

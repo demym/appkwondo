@@ -29,7 +29,7 @@
 .msgemail {
   font-size: 14px;
   font-weight: bold;
-  padding: 8px;
+  padding: 5px;
 }
 .rtmatches {
   opacity: .9;
@@ -134,8 +134,9 @@ img.avatar {
     }
     .message.me {
       float: right;
-      background: #eee;
-      border: 1px solid #387ef5;
+      /*background: #eee;*/
+      background: #ffffb3;
+      border: 0px solid #387ef5;
       color: #222;
       text-align: right;
       img.avatar {

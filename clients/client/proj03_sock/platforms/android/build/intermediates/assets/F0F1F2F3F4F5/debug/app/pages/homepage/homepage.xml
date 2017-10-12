@@ -12,6 +12,7 @@
                     <ActionItem.actionView>
                         <StackLayout>
                             <Label text="&#xf05a;" class="font-awesome"/>
+							
                         </StackLayout>
                     </ActionItem.actionView>
                 </ActionItem>
@@ -20,13 +21,16 @@
 	</ActionBar> 
 	<StackLayout cssClass="height100">
 	
-
+   <GridLayout columns="auto,*" rows="50,*">
+   <WebView col="0" visibility="{{ realtime  ? 'visible' : 'collapsed'}}" style="background-color: black" col="2" src="<img src='img/greenblink.gif' width='24' height='24' />" />
+   <StackLayout col="1">
 	<Label id="lb1" text="prova" cssClass="benvenuto toplabel" />
 	<Label id="lb2" text=" " cssClass="admin toplabel" />
-
+	</StackLayout>
+   
 <!--<Label  col="2"  text="{{ unreadchat }}" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" cssClass="badge " />-->
   
-  <ListView items="{{ items }}" id="lv1" cssClass="height100" itemTap="listViewItemTap">
+  <ListView row="1" colSpan="2" items="{{ items }}" id="lv1" cssClass="height100" itemTap="listViewItemTap">
 	 <ListView.itemTemplate>
 	  <GridLayout rows="*" columns="50,*,50">
 	  <!--<Image src="{{ img }}" col="0"  />-->
@@ -35,9 +39,13 @@
 	  <!--<Image col="0" src="{{imgicon}}" style="margin: 5 0 0 5; width: 32; height: 32" />-->
        <Label col="1" text="{{ name }}" textWrap="true" cssClass="lvhomepage" />
 	   <Label  col="2"  style="height: 25; font-size: 14" text="{{ unreadchat }}" visibility="{{(unreadchat && (unreadchat>0)) ? 'visible' : 'collapsed'}}" cssClass="badgemini" />
+	  
+	   <!--<WebView visibility="{{ haswebview   ? 'visible' : 'collapsed'}}" style="background-color: black" col="2" src="<img src='img/greenblink.gif' width='24' height='24' />" />-->
 	   </GridLayout>
     </ListView.itemTemplate>
 	</ListView>
+	</GridLayout>
+	
 	</StackLayout>
  
 </Page>

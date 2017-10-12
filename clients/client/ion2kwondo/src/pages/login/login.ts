@@ -54,6 +54,14 @@ export class LoginPage {
               console.log("atleti caricati");
             })
 
+            var unread=window.localStorage.getItem("ion2kwondo_chatunread");
+            if (unread==null){
+              questo.backend.resetChatUnread();
+            } else {
+              questo.backend.setChatUnread(parseInt(unread,10));
+            }
+            console.log("chatunread set to "+questo.backend.unread+" by localstorage");
+            questo.backend.setBackgroundMode(true);
             questo.nav.setRoot(HomePage);
            
           

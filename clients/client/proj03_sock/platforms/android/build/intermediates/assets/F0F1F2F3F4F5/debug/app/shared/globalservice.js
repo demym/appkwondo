@@ -8,7 +8,7 @@ var GlobalService = (function () {
     var evmanager = new observableModule.Observable;
 
     evmanager.on("messaggiocaz",function(){
-        console.log("evmanager on messaggiocaz");
+        utils.conslog("evmanager on messaggiocaz");
 
     })
    
@@ -27,7 +27,7 @@ var GlobalService = (function () {
             // code
         },
         onSocketMsg: function (msg) {
-            console.log("BaseClass onSocketMsg", msg.message)
+            utils.conslog("BaseClass onSocketMsg", msg.message)
         },
        
         trigger: function (ev, evdata) {

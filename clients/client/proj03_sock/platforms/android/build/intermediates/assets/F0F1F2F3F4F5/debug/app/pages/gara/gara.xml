@@ -106,8 +106,8 @@ xmlns:Card="nativescript-cardview"
 	 <StackLayout orientation="horizontal">
 	   <StackLayout  cssClass="session-container" width="50">
 
-		 <Image id="imgmatch"  width="36" height="36" src="{{ doc.imgurl }}" />
-
+		 <Image id="imgmatch" visibility="{{doc.temporeale ? 'visible': 'visible'}}" width="36" height="36" src="{{ doc.imgurl }}" />
+    
 	   </StackLayout>
 	   <StackLayout cssClass="session-container" orientation="vertical">
        <Label text="{{ doc.matchid}}" textWrap="true" cssClass="{{'match match'+doc.matchcolor}}" />

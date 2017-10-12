@@ -34,6 +34,7 @@
     <ion-icon style="font-size: 22px !important" name="{{m.icon}}"></ion-icon>
       </ion-col>
       <ion-col style="font-size: 20px" >{{m.name}}</ion-col>
+      <ion-col col-1><ion-badge *ngIf="(backend.unread>0) && (m.name=='ChatKwonDo')" color="danger">{{backend.unread}}</ion-badge></ion-col>
       </ion-row>
   </ion-item>
   </ion-list>

@@ -1,4 +1,5 @@
-var file_system_1 = require("file-system");
+Object.defineProperty(exports, "__esModule", { value: true });
+var file_system_1 = require("../file-system");
 exports.debug = true;
 var applicationRootPath;
 function ensureAppRootPath() {

@@ -12,7 +12,7 @@
       <button *ngIf="hasMap()" ion-button style="font-size: 18px" (click)="showMap()"><ion-icon name="md-locate"></ion-icon>
 
 </button>
-<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>
+<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>
 
 </button>
 </ion-buttons>
@@ -114,15 +114,21 @@
       <ion-card-content>
         <ion-list *ngFor="let atl of atletiiscritti">
           <ion-item >
-            
-              <ion-row (tap)="showMatchesForAtleta(atl.id)">
+              <button ion-item  (tap)="showMatchesForAtleta(atl.id)">
+            <ion-grid>
+              <ion-row>
                   
                    <ion-col>
+                    
           <div class="atleta">{{atl.cognome}} {{atl.nome}}</div>
           <div class="categoria">{{atl.categoria.toUpperCase()}}</div>
                    </ion-col>
               </ion-row>
+            </ion-grid>
+          </button>
+          
         </ion-item>
+        <hr>
         <!--<ion-item-divider color="light"></ion-item-divider>-->
         </ion-list>
       </ion-card-content>
@@ -130,9 +136,9 @@
   </section>
 
 
-  <section id="matchesbyprog" *ngIf="view=='matchesbyprog'">
+  <section id="matchesbyprog" [hidden]="view!='matchesbyprog'" sngIf="view=='matchesbyprog'">
 
-          <ion-list>
+          <ion-list >
               <div *ngFor="let m of displayedgara.matchesbyprog.rows">
               <ion-item  *ngIf="m.doc.dadisputare=='yes'" (tap)="showMatchesForAtleta(m.doc.atletaid)">
                 <ion-row >
@@ -153,7 +159,7 @@
    
 
   </section>
-  <section id="matchesbyatleta" *ngIf="view=='matchesbyatleta'">
+  <section id="matchesbyatleta" [hidden]="view!='matchesbyatleta'"  sngIf="view=='matchesbyatleta'">
     <ion-list>
       <ion-item *ngFor="let m of displayedgara.matchesbyatleta.rows" (tap)="showMatchesForAtleta(m.id)">
         <ion-row>
@@ -161,6 +167,7 @@
           <ion-col>
             
             <div class="atleta">{{m.nome}}</div>
+            <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>
             <div class="matches">
               <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">
                 {{x.matchid}}
@@ -175,7 +182,7 @@
 
 
   
-  <section id="cronaca" *ngIf="view=='cronaca'">
+  <section id="cronaca" [hidden]="view!='cronaca'" sngIf="view=='cronaca'">
     <ion-list>
       <ion-item *ngFor="let m of gara.cronaca.rows">
         <ion-row>
@@ -191,7 +198,7 @@
 
   </section>
 
-  <section id="infogara" *ngIf="view=='infogara'">
+  <section id="infogara" [hidden]="view!='infogara'"  sngIf="view=='infogara'">
     <ion-list style="font-size: 14px">
      
       <div>Gara: {{jgara.title}}</div>

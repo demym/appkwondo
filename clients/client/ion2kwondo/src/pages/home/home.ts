@@ -106,8 +106,20 @@ export class HomePage {
 
 
 gotoPage(p){
-  this.deviceFeedback.acoustic();
-  this.navCtrl.push(p);
+  var questo=this;
+  this.backend.playFeedback(); //deviceFeedback.acoustic();
+  
+
+  
+
+  /*if (this.backend.isCordova()) {
+    console.log("isCordova");
+    this.navCtrl.push(p,{},{animate: false});
+  } else */
+   
+  this.navCtrl.push(p,{},questo.backend.navOptions);
+
+  //this.navCtrl.push(p,{});
 }
 
 

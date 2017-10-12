@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("utils/types");
 var file_system_1 = require("file-system");
 var utils = require('utils/utils');
@@ -38,6 +37,9 @@ var TNSPlayer = (function (_super) {
                 _this._infoCallback = options.infoCallback;
                 _this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(NSURL.fileURLWithPath(fileName));
                 _this._player.delegate = _this;
+                if (options.metering) {
+                    _this._player.meteringEnabled = true;
+                }
                 if (options.loop) {
                     _this._player.numberOfLoops = -1;
                 }
@@ -80,6 +82,9 @@ var TNSPlayer = (function (_super) {
                     _this._player = AVAudioPlayer.alloc().initWithDataError(data, null);
                     _this._player.delegate = _this;
                     _this._player.numberOfLoops = options.loop ? -1 : 0;
+                    if (options.metering) {
+                        _this._player.meteringEnabled = true;
+                    }
                     if (options.autoPlay)
                         _this._player.play();
                     resolve();
@@ -151,6 +156,18 @@ var TNSPlayer = (function (_super) {
             }
         });
     };
+    Object.defineProperty(TNSPlayer.prototype, "volume", {
+        get: function () {
+            return this._player ? this._player.volume : 0;
+        },
+        set: function (value) {
+            if (this._player) {
+                this._player.volume = value;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     TNSPlayer.prototype.dispose = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
@@ -220,4 +237,3 @@ var TNSPlayer = (function (_super) {
 }(NSObject));
 TNSPlayer.ObjCProtocols = [AVAudioPlayerDelegate];
 exports.TNSPlayer = TNSPlayer;
-//# sourceMappingURL=player.js.map

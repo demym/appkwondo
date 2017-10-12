@@ -13,6 +13,7 @@ import { DeviceFeedback } from '@ionic-native/device-feedback';
 
 import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
+import { AboutPage } from '../pages/about/about';
 import { ChatPage } from '../pages/chat/chat';
 import { Push } from 'ionic-native';
 import { BackendProvider } from '../providers/backend/backend';
@@ -52,7 +53,7 @@ export class MyApp {
 
   constructor(public toastCtrl: ToastController, private deviceFeedback: DeviceFeedback, private app: App, private _SplashScreen: SplashScreen, public events: Events, private alertCtrl: AlertController, public platform: Platform, public backend: BackendProvider) {
     var questo = this;
- 
+
 
     var IS_PRODUCTION = false;
 
@@ -60,7 +61,7 @@ export class MyApp {
       console.log("LOGGER IS DISABBLED!!!");
       backend.disableLogger();
     }
- 
+
 
 
     this.initializeApp();
@@ -69,9 +70,11 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Homepage', component: HomePage },
-      { title: 'Settings', component: SettingsPage },
+      { title: 'Impostazioni', component: SettingsPage },
       { title: 'Account', component: AccountPage },
-      { title: 'Logout', component: LoginPage }
+      { title: 'Logout', component: LoginPage },
+      { title: 'Informazioni', component: AboutPage },
+      { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
 
 
@@ -122,6 +125,7 @@ export class MyApp {
     events.subscribe("chatmsg", function (msg) {
 
       console.log("chatmsg in app.component.ts!", msg);
+      /*
       let toast = questo.toastCtrl.create({
         message: msg.nickname + " - " + msg.text,
         duration: 2000,
@@ -129,11 +133,13 @@ export class MyApp {
       });
       toast.present();
       questo.chatunread++;
+      */
     });
 
 
   }
   openPage(page) {
+    var questo = this;
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     if (page.title == "Logout") {
@@ -159,7 +165,16 @@ export class MyApp {
       });
       alert.present();
 
-    } else this.nav.setRoot(page.component);
+    } else {
+      if (page.title == "Chiudi Appkwondo") {
+        questo.platform.exitApp();
+      } else {
+        if (page.title == "Impostazioni") {
+          this.nav.push(page.component)
+
+        } else this.nav.setRoot(page.component);
+      }
+    }
   }
 
   openPageWithParams(page, params) {
@@ -169,10 +184,10 @@ export class MyApp {
     this.nav.setRoot(page.component, params);
   }
 
-  ionViewDidLoad(){
-    console.log("ROLE",this.backend.user.role);
-    this.user=this.backend.user;
-    console.log("USER",this.user);
+  ionViewDidLoad() {
+    console.log("ROLE", this.backend.user.role);
+    this.user = this.backend.user;
+    console.log("USER", this.user);
   }
 
 
@@ -241,12 +256,12 @@ export class MyApp {
         //questo.deviceFeedback.acoustic();
         questo.deviceFeedback.isFeedbackEnabled()
           .then((feedback) => {
-            console.log("deviceFeedback",feedback);
+            console.log("deviceFeedback", feedback);
             // {
             //   acoustic: true,
             //   haptic: true
             // }
-           // questo.deviceFeedback.acoustic();
+            // questo.deviceFeedback.acoustic();
 
             //this.deviceFeedback.haptic(0);
           });
@@ -262,9 +277,10 @@ export class MyApp {
 
         if (questo.nav.canGoBack()) {
           console.log("hw back nutton pressed, going back");
-          questo.deviceFeedback.acoustic();
-         
-          questo.nav.pop();
+          questo.backend.playFeedback();
+          let x = Object.assign({}, questo.backend.navOptions);
+          x.direction = "back";
+          questo.nav.pop(x);
         } else {
           console.log("nav cannot go back");
         }

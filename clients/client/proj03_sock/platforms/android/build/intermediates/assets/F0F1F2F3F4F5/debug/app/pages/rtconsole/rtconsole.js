@@ -7,6 +7,7 @@ var frameModule = require("ui/frame");
 var glbservice = require("../../shared/globalservice");
 var rts = require("../../shared/realtimeservice");
 var utils = require("../../shared/utils");
+var backend = require("../../shared/backend");
 var socket = require("../../shared/socket");
 var http = require("http");
 
@@ -15,6 +16,8 @@ var page;
 var tabview;
 var source = new observableModule.Observable();
 var consoleSelectedIdx = 0;
+
+
 
 //rtconsoles=rts.RealtimeService.rtc;
 
@@ -40,24 +43,73 @@ gs.e.on("realtimechange", function (ev) {
 
 
 
+var mode="single";
+var ctx;
+var emptymatch={"type":"realtime","to":"all","garaid":"20160610185130","matchid":"201606101852231000","matchnumber":"101","result":"0-0","round":"1","fineround":false,"running":true,"paused":false,"ammoniz1":0,"ammoniz2":0,"event":"realtime","text":"TEMPO REALE !<br> <font color='blue'>Round 1, IN CORSO, 1-0</font>","active":true}
+
 
 exports.pageLoaded = function (args) {
     page = args.object;
-    console.log("rtconsole loaded");
-    //source.set("rtconsole", rtconsoles[0]);
-    //source.set("tabs", tabs);
-    page.bindingContext = source;
     tabview = page.getViewById("tabview");
-    rtconsoles = rts.RealtimeService.getRtc();
-    console.log("rtconsoles found",rtconsoles.length);
+    console.log("rtconsole loaded");
+    source.set("hasconsole", false);
+    page.bindingContext = source;
+    
+    ctx=page.navigationContext;
+    mode=ctx.mode;
+
+    initMode(mode);
+
+   /* if (ctx){
+    if (ctx.match){
+       
+        var rt0=emptymatch;
+        rt0.match=ctx.match;
+        rtconsoles=[rt0];
+
+    } else  rtconsoles = rts.RealtimeService.getRtc();
+    } else  rtconsoles = rts.RealtimeService.getRtc();*/
+   
+   
+    
+   
+
+
+
+}
+
+function initMode(mode){
+    console.log("init mode ",mode);
+    source.set("temporeale",false);
+    if (mode=="single"){
+        
+        var rt0=emptymatch;
+        rt0.match=ctx.match;
+        rtconsoles=[rt0];
+       
+    }
+    if (mode=="multi"){
+         
+         rtconsoles = rts.RealtimeService.getRtc();
+        
+    }
+     initConsoles();
 
     
-    source.set("rtconsole", rtconsoles[0]);
-    console.log("rtconsoles", rtconsoles.length);
-    loadTabs();
 
+}
 
-    renderConsole(0);
+function initConsoles(initialIndex){
+    if (!initialIndex) initialIndex=0;
+    console.log("rtconsoles found", rtconsoles.length);
+    if (rtconsoles.length > 0) {
+        source.set("hasconsole", false);
+        source.set("rtconsole", rtconsoles[0]);
+        console.log("rtconsoles", rtconsoles.length);
+        loadTabs();
+        renderConsole(initialIndex);
+    }
+
 }
 
 
@@ -145,7 +197,12 @@ exports.butConsoleTap = function (args) {
         }).then(function (response) {
             //var result = response.content.toJSON();
             console.log("response", response);
+            var rtc=rts.RealtimeService.getRtc();
+            if (rtc.length>0) {
+                //multimode=true;
 
+                initMode("multi");
+            } else initMode("single");
 
             var sockmsg = {
                 type: "notification",
@@ -156,21 +213,21 @@ exports.butConsoleTap = function (args) {
 
             }
             socket.send(sockmsg);
-        
+
             utils.toast("Tempo reale " + text + " per " + rtcons.match.matchid + " " + rtcons.match.atletaname);
 
             return;
 
         }, function (e) {
             console.log("Error occurred " + e);
-            utils.toast("Errore "+e);
+            utils.toast("Errore " + e);
             return;
             //if (callback) callback(e);
         });
 
 
 
-        
+
     }
 
     var arrp = rtcons.result.split("-");
@@ -298,10 +355,30 @@ function renderConsole(idx) {
 
     consoleSelectedIdx = idx;
     source.set("rtconsole", new observableModule.Observable(rtcons));
+    if (rtcons.match.realtime){
+        if (String(rtcons.match.realtime)=="true"){
+            source.set("temporeale",true);
+        } else source.set("temporeale",false);
+    } 
 
 
 
 }
+
+function onNavBtnTap(args) {
+
+    /*frameModule.topmost().navigate({
+    	moduleName: "homepage",
+    	context: {}
+    	
+    });*/
+
+    frameModule.topmost().goBack();
+
+
+
+}
+
 
 exports.gotoChat = function () {
     frameModule.topmost().navigate({
@@ -309,3 +386,6 @@ exports.gotoChat = function () {
     });
 
 }
+
+
+exports.onNavBtnTap = onNavBtnTap;

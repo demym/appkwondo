@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, App, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, App, AlertController, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { GaraPage } from '../../pages/gara/gara';
 import { EditgaraPage } from '../../pages/editgara/editgara';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 /*
   Generated class for the GarePage page.
@@ -16,15 +17,25 @@ import { DeviceFeedback } from '@ionic-native/device-feedback';
   templateUrl: 'gare.html'
 })
 export class GarePage {
+  @ViewChild(Navbar) navBar: Navbar;
   gare = [];
-  loading=false;
+  loading = false;
 
-  constructor(public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(private nativePageTransitions: NativePageTransitions, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
+
+  ionViewWillLoad(){
+   
+  }
+  ionViewWillLeave() {
+    
+    
+    }
 
   ionViewDidLoad() {
-
+    //this.backend.setPushNativeTransition();
     console.log('ionViewDidLoad GarePagePage');
     this.gare = this.backend.gare;
+    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
     /*this.refresh(function(data){
      
     }) */
@@ -55,11 +66,14 @@ export class GarePage {
   }
 
   gotoGara(id) {
+    var questo = this;
     console.log("gotoGara", id);
     this.deviceFeedback.acoustic();
+    //ios-transition
+
     this.navCtrl.push(GaraPage, {
       id: id
-    });
+    }, questo.backend.navOptions);
   }
 
   getLen(m) {
@@ -77,7 +91,7 @@ export class GarePage {
 
   pressGara(g) {
     var questo = this;
-    if (questo.backend.user.role.toLowerCase()!="tkdradmin") return;
+    if (questo.backend.user.role.toLowerCase() != "tkdradmin") return;
     console.log("pressed gara", g);
     let alert = this.alertCtrl.create({
       title: 'Modifica gara',
@@ -93,14 +107,14 @@ export class GarePage {
         {
           text: 'SEGNA COME DISPUTATA',
           handler: () => {
-            questo.loading=true;
-            questo.backend.markGara(g.doc.id,"disputata",function(data){
+            questo.loading = true;
+            questo.backend.markGara(g.doc.id, "disputata", function (data) {
               console.log(data);
-           
-              questo.refresh(function(){
+
+              questo.refresh(function () {
                 console.log("gare refreshed");
-                questo.loading=false;
-               
+                questo.loading = false;
+
               })
             })
           }
@@ -108,13 +122,13 @@ export class GarePage {
         {
           text: 'SEGNA COME NONDISPUTATA',
           handler: () => {
-            questo.loading=true;
-            questo.backend.markGara(g.doc.id,"nondisputata",function(data){
+            questo.loading = true;
+            questo.backend.markGara(g.doc.id, "nondisputata", function (data) {
               console.log(data);
-         
-              questo.refresh(function(){
+
+              questo.refresh(function () {
                 console.log("gare refreshed");
-                questo.loading=false;
+                questo.loading = false;
               })
             })
           }
@@ -122,13 +136,13 @@ export class GarePage {
         {
           text: 'SEGNA COME INCORSO',
           handler: () => {
-            questo.loading=true;
-            questo.backend.markGara(g.doc.id,"incorso",function(data){
+            questo.loading = true;
+            questo.backend.markGara(g.doc.id, "incorso", function (data) {
               console.log(data);
-              
-              questo.refresh(function(){
+
+              questo.refresh(function () {
                 console.log("gare refreshed");
-                questo.loading=false;
+                questo.loading = false;
               })
             })
           }
@@ -139,7 +153,7 @@ export class GarePage {
             console.log('Buy clicked');
             questo.navCtrl.push(EditgaraPage, {
               gara: g.doc
-            })
+            }, questo.backend.navOptions)
           }
         },
         {
@@ -174,10 +188,21 @@ export class GarePage {
     alert.present();
   }
 
-  getClass(g){
-    var retvalue="";
-    if (g.doc.stato.toLowerCase()=="disputata") retvalue="garadisputata";
+  getClass(g) {
+    var retvalue = "";
+    if (g.doc.stato.toLowerCase() == "disputata") retvalue = "garadisputata";
     return retvalue;
+  }
+
+  setBackButtonAction(nb,nc) {
+    var questo = this;
+    nb.backButtonClick = () => {
+      //Write here wherever you wanna do
+      let x = Object.assign({}, questo.backend.navOptions);
+
+      x.direction = "back";
+      nc.pop(x);
+    }
   }
 
 

@@ -290,11 +290,15 @@ color: white;
 
 
 .rtstack {
-    /*background-color: #ff3; */
-    background-color: pink;
-    border-color: black; 
-    border-size: 1; 
-    opacity: .9;
+    /*background-color: black; */
+    background-color: white;
+    /*background-color: pink;*/
+    border-color: lightblue; 
+    border-width: 3; 
+    opacity: 2;
+    /*border-radius: 8;*/
+    /*margin: 5;*/
+    /*padding: 2;*/
 }
 
 .rtlabel {

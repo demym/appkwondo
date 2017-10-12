@@ -22,6 +22,7 @@ export class EditgaraPage {
   tkdtgara;
   mode="view";
   tkdtjsonview=false;
+  loadingtkdt=false;
 
 
   constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -34,8 +35,8 @@ export class EditgaraPage {
     this.gara = g;
 
   
-    this.gara.datafull=moment(this.gara.data.trim(),"DD/MM/YYYY",true);
-    console.log("datafull",this.gara.datafull);
+   // this.gara.datafull=moment(this.gara.data.trim(),"DD/MM/YYYY",true);
+   // console.log("datafull",this.gara.datafull);
 
     if (questo.gara.hasOwnProperty("tkdt_id")){
       if (questo.gara.tkdt_id.trim()!=""){
@@ -100,7 +101,7 @@ export class EditgaraPage {
 
   }
 
-
+ 
   retrieveTkdtGara(save){
     
     var questo=this;
@@ -109,11 +110,108 @@ export class EditgaraPage {
     var rtext="";
     if (!save) rtext="/nosave";
     var url=questo.backend.rooturl+"/tkdt/retrieve/"+tkdtid+rtext+"?societaid="+questo.backend.user.societaid;
+    questo.loadingtkdt=true;
     questo.backend.fetchData(url,function(data){
       console.log("retreive "+rtext+" dati ufficiali di gara  "+tkdtid,data);
       questo.tkdtgara=data;
+      questo.loadingtkdt=false;
   
     })
 
   }
+
+  saveGara(){
+    console.log(this.gara);
+  }
+
+  cancelGara(){
+    this.navCtrl.pop();
+  }
+
+
+  matchTkdtIscritti(){
+    var questo=this;
+    
+        /*
+            var cont = $(obj).closest("div[data-role=content]");
+            var ta=cont.find("textarea");
+            if (ta.length>0){
+                var val=ta.val();
+                var json=JSON.parse(val);
+                console.log(json);
+            }
+            */
+        var foundcount = 0;
+        var notfoundcount = 0;
+        var totali = 0;
+        var iscrittistring = "";
+        var notfound = [];
+    
+    
+        var json = {
+            atleti_iscritti: []
+        };
+    
+        if (questo.tkdtgara.hasOwnProperty("atleti_iscritti")) json = questo.tkdtgara;
+    
+        json.atleti_iscritti.forEach(function (item,i) {
+    
+    
+    
+            var row = json.atleti_iscritti[i];
+            var nome = row.nome.toLowerCase().trim();
+            var soc = row.societa;
+    
+    
+            if (soc == "A.S.D. TAEKWONDO ROZZANO") {
+    
+                totali++;
+                var atls = questo.backend.getAtletaByCognoNome(nome);
+                //console.log("ricerca "+nome+": "+atls.length);
+                if (atls.length > 0) {
+                    if (iscrittistring.trim() != "") iscrittistring += ",";
+                    iscrittistring += atls[0].id;
+                    foundcount++;
+                } else {
+                    console.log("atleta non trovato: ", nome);
+                    notfoundcount++;
+                    notfound.push(nome);
+                }
+            }
+    
+        })
+    
+        console.log("trovati " + foundcount + " su " + totali + " (" + notfoundcount + " non trovati)");
+        console.log("new iscritti string", iscrittistring);
+    
+        var r = confirm("trovati " + foundcount + " su " + totali + " (" + notfoundcount + " non trovati)\n\nVuoi sostituire il campo iscritti ?");
+        if (r == true) {
+
+
+            //var iscr = $("#page_editgara #iscritti");
+            //iscr.val(iscrittistring);
+          questo.gara.iscritti=iscrittistring;
+    
+    
+    
+    
+    
+        } else {
+    
+        }
+    
+        
+    
+        if (notfound.length > 0) {
+            var al="";
+            for (var i = 0; i < notfound.length; i++) {
+                //divnf.append("<span>" + notfound[i] + "</span><br>");
+                al+=notfound[i]+"/n";
+    
+            }
+            alert(al);
+    
+        }
+    
+    }
 }

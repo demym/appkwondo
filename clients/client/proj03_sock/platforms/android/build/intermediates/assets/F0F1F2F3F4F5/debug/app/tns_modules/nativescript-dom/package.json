@@ -10,7 +10,7 @@
         "spec": ">=1.0.8 <2.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-dom@>=1.0.8 <2.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "d34785d95bd57289e66ba681c6de864eef192900",
   "_shrinkwrap": null,
   "_spec": "nativescript-dom@^1.0.8",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Nathanael Anderson",
     "email": "nathan@master-technology.com"

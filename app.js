@@ -101,6 +101,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'www')));
 app.use(cors());
 
+var allowCrossDomain = function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+	res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+	next();
+}
+
+app.use(allowCrossDomain);
+
 
 //TOKEN check
 app.use(function (req, res, next) {
@@ -286,6 +297,7 @@ app.use(session({
 //app.use(passport.session());
 
 
+/*
 var allowCrossDomain = function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -296,6 +308,7 @@ var allowCrossDomain = function (req, res, next) {
 }
 
 app.use(allowCrossDomain);
+*/
 
 
 /**

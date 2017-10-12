@@ -2,50 +2,49 @@
   "_args": [
     [
       {
-        "raw": "nativescript-audio@3.1.4",
+        "raw": "nativescript-audio@^3.1.4",
         "scope": null,
         "escapedName": "nativescript-audio",
         "name": "nativescript-audio",
-        "rawSpec": "3.1.4",
-        "spec": "3.1.4",
-        "type": "version"
+        "rawSpec": "^3.1.4",
+        "spec": ">=3.1.4 <4.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "nativescript-audio@3.1.4",
-  "_id": "nativescript-audio@3.1.4",
+  "_from": "nativescript-audio@>=3.1.4 <4.0.0",
+  "_id": "nativescript-audio@3.5.0",
   "_inCache": true,
   "_location": "/nativescript-audio",
-  "_nodeVersion": "6.9.1",
+  "_nodeVersion": "7.5.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/nativescript-audio-3.1.4.tgz_1489624872024_0.946163765154779"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nativescript-audio-3.5.0.tgz_1499265577752_0.11200759396888316"
   },
   "_npmUser": {
-    "name": "walkerrunpdx",
-    "email": "walkerrunpdx@gmail.com"
+    "name": "bradmartin",
+    "email": "bradmartin0905@gmail.com"
   },
-  "_npmVersion": "3.10.9",
+  "_npmVersion": "3.10.5",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nativescript-audio@3.1.4",
+    "raw": "nativescript-audio@^3.1.4",
     "scope": null,
     "escapedName": "nativescript-audio",
     "name": "nativescript-audio",
-    "rawSpec": "3.1.4",
-    "spec": "3.1.4",
-    "type": "version"
+    "rawSpec": "^3.1.4",
+    "spec": ">=3.1.4 <4.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-audio/-/nativescript-audio-3.1.4.tgz",
-  "_shasum": "cdad41713a67894a66ba729c87e3814aa516e69c",
+  "_resolved": "https://registry.npmjs.org/nativescript-audio/-/nativescript-audio-3.5.0.tgz",
+  "_shasum": "38ba6dbbe8adc0f9037ba64cfaf5421c4d464c33",
   "_shrinkwrap": null,
-  "_spec": "nativescript-audio@3.1.4",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "nativescript-audio@^3.1.4",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Brad Martin",
     "email": "bradwaynemartin@gmail.com"
@@ -60,19 +59,19 @@
       "url": "https://github.com/NathanWalker"
     }
   ],
-  "dependencies": {},
-  "description": "NativeScript plugin to record and play audio.",
-  "devDependencies": {
-    "tns-core-modules": "^2.5.1",
-    "tns-platform-declarations": "^2.5.0",
+  "dependencies": {
+    "tns-core-modules": ">=3.0.0",
+    "tns-platform-declarations": ">=3.0.0",
     "typescript": "^2.1.0"
   },
+  "description": "NativeScript plugin to record and play audio.",
+  "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "cdad41713a67894a66ba729c87e3814aa516e69c",
-    "tarball": "https://registry.npmjs.org/nativescript-audio/-/nativescript-audio-3.1.4.tgz"
+    "shasum": "38ba6dbbe8adc0f9037ba64cfaf5421c4d464c33",
+    "tarball": "https://registry.npmjs.org/nativescript-audio/-/nativescript-audio-3.5.0.tgz"
   },
-  "gitHead": "1958f9c1020c6f8a78e3e814f6f8c4deac644eae",
+  "gitHead": "2905ccdc1f1ff22e26dc15e15fd1e8e6e67a8f49",
   "homepage": "https://github.com/bradmartin/nativescript-audio",
   "keywords": [
     "NativeScript",
@@ -95,6 +94,10 @@
       "email": "bradmartin0905@gmail.com"
     },
     {
+      "name": "vakrilov",
+      "email": "alexander.vakrilov@gmail.com"
+    },
+    {
       "name": "walkerrunpdx",
       "email": "walkerrunpdx@gmail.com"
     }
@@ -102,8 +105,8 @@
   "name": "nativescript-audio",
   "nativescript": {
     "platforms": {
-      "android": "2.3.0",
-      "ios": "2.3.0"
+      "android": "3.0.0",
+      "ios": "3.0.0"
     }
   },
   "optionalDependencies": {},
@@ -120,5 +123,5 @@
     "setup": "cd demo; npm i; cd ..; npm i; npm run build; cd demo; tns plugin add ..; cd .."
   },
   "typings": "index.d.ts",
-  "version": "3.1.4"
+  "version": "3.5.0"
 }

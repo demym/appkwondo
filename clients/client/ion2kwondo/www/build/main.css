@@ -30206,7 +30206,7 @@ page-atleta ion-fab[bottom] {
 .msgemail {
   font-size: 14px;
   font-weight: bold;
-  padding: 8px;
+  padding: 5px;
 }
 
 .rtmatches {
@@ -30314,8 +30314,9 @@ img.avatarbig {
 
 .chat .messages .message.me {
   float: right;
-  background: #eee;
-  border: 1px solid #387ef5;
+  /*background: #eee;*/
+  background: #ffffb3;
+  border: 0px solid #387ef5;
   color: #222;
   text-align: right;
 }
@@ -30553,6 +30554,15 @@ page-gara .derby {
   font-style: italic;
 }
 
+page-gara .list-md {
+  margin: 0px;
+}
+
+page-gara .card-md {
+  margin: 0px;
+  width: 100%;
+}
+
 page-gara .imgicon {
   position: relative;
   top: 0;
@@ -30625,6 +30635,10 @@ page-gara .text {
   color: black;
   word-wrap: break-word;
   white-space: normal;
+}
+
+page-gara .card-content-md {
+  padding: 10px;
 }
 
 page-gara .incaston {

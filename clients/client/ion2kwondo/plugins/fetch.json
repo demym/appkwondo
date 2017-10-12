@@ -60,7 +60,7 @@
     "cordova-plugin-badge": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-badge"
+            "id": "cordova-plugin-badge@^0.8.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -173,6 +173,54 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-fileopener"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.telerik.plugins.nativepagetransitions": {
+        "source": {
+            "type": "registry",
+            "id": "com.telerik.plugins.nativepagetransitions"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+        "source": {
+            "type": "registry",
+            "id": "de.appplant.cordova.plugin.local-notification@^0.8.5"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-app-event": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-app-event"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-background-mode": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-background-mode"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-tts": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-tts"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-nativeaudio": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-nativeaudio"
         },
         "is_top_level": true,
         "variables": {}

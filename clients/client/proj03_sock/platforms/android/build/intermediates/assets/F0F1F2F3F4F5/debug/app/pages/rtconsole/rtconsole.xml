@@ -23,10 +23,12 @@
     </ActionBar>
   </Page.actionBar>
  	  <!--<ScrollView>-->
-<StackLayout orientation="vertical" >
-<TabView id="tabview" selectedIndexChanged="onSelectedIndexChanged" style="height: 50"/>
+    
 
-<GridLayout columns="*,150" rows="45,45,20" id="console">
+<StackLayout  orientation="vertical" >
+<TabView id="tabview"  selectedIndexChanged="onSelectedIndexChanged" style="height: 50"/>
+
+<GridLayout  columns="*,150" rows="45,45,20" id="console">
   <Label id="matchlabel" style="margin: 5 5 5 5; font-weight: bold; font-size: 18" colSpan="2" row="0" text="{{rtconsole.match.matchid+' '+rtconsole.match.atletaname}}"/>
   
   <Label text="Tempo reale" col="0" row="1"/><Button id="butrealtime" text="TempoReale" tap="butConsoleTap" class="{{rtconsole.temporeale ? 'rtbuttonon' : 'rtbuttonoff'}}" row="1" col="1" style="width: 100%" /><!--<Switch row="1" col="1" id="rtswitch" checked="{{ rtconsole.active }}" propertyChange="rtChanged"/>-->

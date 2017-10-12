@@ -10,7 +10,7 @@
         "spec": ">=2.2.7 <3.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-floatingactionbutton@>=2.2.7 <3.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "69ef6a7f3ec81930563156b4218c79a8540b6425",
   "_shrinkwrap": null,
   "_spec": "nativescript-floatingactionbutton@^2.2.7",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Brad Martin",
     "email": "bradmartin0905@gmail.com",

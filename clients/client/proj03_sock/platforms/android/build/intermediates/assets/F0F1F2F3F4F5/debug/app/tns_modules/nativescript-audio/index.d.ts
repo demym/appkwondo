@@ -16,6 +16,11 @@ export interface AudioPlayerOptions {
     autoPlay?: boolean;
 
     /**
+     * Set true to enable audio metering.
+     */
+    metering?: boolean;
+
+    /**
      * Callback to execute when playback has completed.
      * @returns {Object} An object containing the native values for the callback.
      */
@@ -81,6 +86,7 @@ export interface AudioRecorderOptions {
 export interface TNSPlayerI {
     readonly ios?: any;
     readonly android?: any;
+    volume: any;
     initFromFile(options: AudioPlayerOptions): Promise<any>;
     playFromFile(options: AudioPlayerOptions): Promise<any>;
     initFromUrl(options: AudioPlayerOptions): Promise<any>;
@@ -95,6 +101,8 @@ export interface TNSPlayerI {
 }
 export interface TNSRecordI {
     start(options: AudioRecorderOptions): Promise<any>;
+    pause(): Promise<any>;
+    resume(): Promise<any>;
     stop(): Promise<any>;
     dispose(): Promise<any>;
 }
@@ -107,6 +115,7 @@ export declare class TNSPlayer {
     private _infoCallback;
     readonly ios: any;
     readonly android: any;
+    volume: any;
     initFromFile(options: AudioPlayerOptions): Promise<any>;
     playFromFile(options: AudioPlayerOptions): Promise<any>;
     initFromUrl(options: AudioPlayerOptions): Promise<any>;
@@ -128,6 +137,8 @@ export declare class TNSRecorder {
     private _recordingSession;
     static CAN_RECORD(): boolean;
     start(options: AudioRecorderOptions): Promise<any>;
+    pause(): Promise<any>;
+    resume(): Promise<any>;
     stop(): Promise<any>;
     dispose(): Promise<any>;
     isRecording(): any;

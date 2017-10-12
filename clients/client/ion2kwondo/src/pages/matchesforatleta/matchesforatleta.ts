@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, Events } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Events, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { MatchconsolePage } from '../../pages/matchconsole/matchconsole';
 import { GaraPage } from '../../pages/gara/gara';
@@ -15,6 +15,7 @@ import { GaraPage } from '../../pages/gara/gara';
   templateUrl: 'matchesforatleta.html'
 })
 export class MatchesforatletaPage {
+  @ViewChild(Navbar) navBar: Navbar;
   mfa: any=[];
   atletaid: any="";
   gara: any={};
@@ -44,6 +45,7 @@ export class MatchesforatletaPage {
 
   ionViewDidLoad() {
     var questo=this;
+    questo.backend.setBackButtonAction(questo.navBar,questo.navCtrl);
     console.log('ionViewDidLoad MatchesforatletaPagePage');
     this.atletaid=this.navParams.get("atletaid"); 
     this.gara=this.navParams.get("gara");

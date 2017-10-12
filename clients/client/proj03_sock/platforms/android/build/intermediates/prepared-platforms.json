@@ -1,8 +1,6 @@
 {
     "base-64": true,
     "buffer": true,
-    "base64-js": true,
-    "ieee754": true,
     "moment": true,
     "nativescript-audio": true,
     "nativescript-camera": true,
@@ -20,6 +18,10 @@
     "nativescript-toast": true,
     "nativescript-web-image-cache": true,
     "tns-core-modules": true,
-    "tns-core-modules-widgets": true,
-    "utf8": true
+    "utf8": true,
+    "base64-js": true,
+    "ieee754": true,
+    "tns-platform-declarations": true,
+    "typescript": true,
+    "tns-core-modules-widgets": true
 }

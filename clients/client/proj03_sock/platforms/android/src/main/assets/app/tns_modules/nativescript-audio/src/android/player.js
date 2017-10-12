@@ -1,7 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("utils/types");
+var app = require("application");
 var fs = require("file-system");
+var MediaPlayer = android.media.MediaPlayer;
 var TNSPlayer = (function () {
     function TNSPlayer() {
     }
@@ -25,7 +26,6 @@ var TNSPlayer = (function () {
             if (options.autoPlay !== false)
                 options.autoPlay = true;
             try {
-                var MediaPlayer = android.media.MediaPlayer;
                 var audioPath = void 0;
                 var fileName = types_1.isString(options.audioFile) ? options.audioFile.trim() : "";
                 if (fileName.indexOf("~/") === 0) {
@@ -46,22 +46,22 @@ var TNSPlayer = (function () {
                                 mp.seekTo(5);
                                 mp.start();
                             }
-                            options.completeCallback({ mp: mp });
+                            options.completeCallback({ player: mp });
                         }
                     }));
                 }
                 if (options.errorCallback) {
                     _this.player.setOnErrorListener(new MediaPlayer.OnErrorListener({
-                        onError: function (mp, what, extra) {
-                            options.errorCallback({ mp: mp, what: what, extra: extra });
+                        onError: function (player, error, extra) {
+                            options.errorCallback({ player: player, error: error, extra: extra });
                             return true;
                         }
                     }));
                 }
                 if (options.infoCallback) {
                     _this.player.setOnInfoListener(new MediaPlayer.OnInfoListener({
-                        onInfo: function (mp, what, extra) {
-                            options.infoCallback({ mp: mp, what: what, extra: extra });
+                        onInfo: function (player, info, extra) {
+                            options.infoCallback({ player: player, info: info, extra: extra });
                             return true;
                         }
                     }));
@@ -92,39 +92,39 @@ var TNSPlayer = (function () {
             if (options.autoPlay !== false)
                 options.autoPlay = true;
             try {
-                var MediaPlayer = android.media.MediaPlayer;
-                _this.player = new MediaPlayer();
+                var MediaPlayer_1 = android.media.MediaPlayer;
+                _this.player = new MediaPlayer_1();
                 _this.player.setAudioStreamType(android.media.AudioManager.STREAM_MUSIC);
                 _this.player.setDataSource(options.audioFile);
                 _this.player.prepareAsync();
                 if (options.completeCallback) {
-                    _this.player.setOnCompletionListener(new MediaPlayer.OnCompletionListener({
+                    _this.player.setOnCompletionListener(new MediaPlayer_1.OnCompletionListener({
                         onCompletion: function (mp) {
                             if (options.loop === true) {
                                 mp.seekTo(5);
                                 mp.start();
                             }
-                            options.completeCallback({ mp: mp });
+                            options.completeCallback({ player: mp });
                         }
                     }));
                 }
                 if (options.errorCallback) {
-                    _this.player.setOnErrorListener(new MediaPlayer.OnErrorListener({
-                        onError: function (mp, what, extra) {
-                            options.errorCallback({ mp: mp, what: what, extra: extra });
+                    _this.player.setOnErrorListener(new MediaPlayer_1.OnErrorListener({
+                        onError: function (player, error, extra) {
+                            options.errorCallback({ player: player, error: error, extra: extra });
                             return true;
                         }
                     }));
                 }
                 if (options.infoCallback) {
-                    _this.player.setOnInfoListener(new MediaPlayer.OnInfoListener({
-                        onInfo: function (mp, what, extra) {
-                            options.infoCallback({ mp: mp, what: what, extra: extra });
+                    _this.player.setOnInfoListener(new MediaPlayer_1.OnInfoListener({
+                        onInfo: function (player, info, extra) {
+                            options.infoCallback({ player: player, info: info, extra: extra });
                             return true;
                         }
                     }));
                 }
-                _this.player.setOnPreparedListener(new MediaPlayer.OnPreparedListener({
+                _this.player.setOnPreparedListener(new MediaPlayer_1.OnPreparedListener({
                     onPrepared: function (mp) {
                         if (options.autoPlay)
                             mp.start();
@@ -141,10 +141,10 @@ var TNSPlayer = (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                if (_this.player.isPlaying()) {
+                if (_this.player && _this.player.isPlaying()) {
                     _this.player.pause();
-                    resolve(true);
                 }
+                resolve(true);
             }
             catch (ex) {
                 reject(ex);
@@ -155,10 +155,10 @@ var TNSPlayer = (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                if (!_this.player.isPlaying()) {
+                if (_this.player && !_this.player.isPlaying()) {
                     _this.player.start();
-                    resolve(true);
                 }
+                resolve(true);
             }
             catch (ex) {
                 reject(ex);
@@ -166,7 +166,7 @@ var TNSPlayer = (function () {
         });
     };
     TNSPlayer.prototype.resume = function () {
-        this.player.start();
+        this.player && this.player.start();
     };
     TNSPlayer.prototype.seekTo = function (time) {
         var _this = this;
@@ -174,19 +174,34 @@ var TNSPlayer = (function () {
             try {
                 if (_this.player) {
                     _this.player.seekTo(time);
-                    resolve(true);
                 }
+                resolve(true);
             }
             catch (ex) {
                 reject(ex);
             }
         });
     };
+    Object.defineProperty(TNSPlayer.prototype, "volume", {
+        get: function () {
+            var mgr = app.android.context.getSystemService(android.content.Context.AUDIO_SERVICE);
+            return mgr.getStreamVolume(android.media.AudioManager.STREAM_MUSIC);
+        },
+        set: function (value) {
+            if (this.player) {
+                this.player.setVolume(value, value);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     TNSPlayer.prototype.dispose = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this.player.release();
+                if (_this.player) {
+                    _this.player.release();
+                }
                 resolve();
             }
             catch (ex) {
@@ -195,13 +210,13 @@ var TNSPlayer = (function () {
         });
     };
     TNSPlayer.prototype.isAudioPlaying = function () {
-        return this.player.isPlaying();
+        return this.player && this.player.isPlaying();
     };
     TNSPlayer.prototype.getAudioTrackDuration = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                var duration = _this.player.getDuration();
+                var duration = _this.player ? _this.player.getDuration() : 0;
                 resolve(duration.toString());
             }
             catch (ex) {
@@ -219,4 +234,3 @@ var TNSPlayer = (function () {
     return TNSPlayer;
 }());
 exports.TNSPlayer = TNSPlayer;
-//# sourceMappingURL=player.js.map

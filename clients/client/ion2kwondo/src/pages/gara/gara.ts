@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, ModalController, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { MatchesforatletaPage } from '../../pages/matchesforatleta/matchesforatleta';
 import { ChatPage } from '../../pages/chat/chat';
@@ -23,11 +23,18 @@ import * as moment from 'moment';
   templateUrl: 'gara.html'
 })
 export class GaraPage {
+  @ViewChild(Navbar) navBar: Navbar;
   gara: any = {
     gara:{
       rows:[]
     },
     matchesbyprog: {
+      rows: []
+    },
+    matchesbyatleta: {
+      rows: []
+    },
+    cronaca: {
       rows: []
     }
   };
@@ -36,6 +43,12 @@ export class GaraPage {
       rows:[]
     },
     matchesbyprog: {
+      rows: []
+    },
+    matchesbyatleta: {
+      rows: []
+    },
+    cronaca: {
       rows: []
     }
   };
@@ -82,8 +95,9 @@ export class GaraPage {
    }
 
   ionViewDidLoad() {
-
+    
      let questo = this;
+     this.backend.setBackButtonAction(this.navBar,this.navCtrl);
     questo.garaid = this.navParams.get("id");
     console.log('ionViewDidLoad GaraPage', this.garaid);
 
@@ -274,7 +288,7 @@ export class GaraPage {
       
       atletaid: aid,
       mfa: mfa
-    })
+    },questo.backend.navOptions)
   }
 
   getAtletaIscritto(i){
@@ -282,6 +296,10 @@ export class GaraPage {
   }
 
   getArrLen(m){
+
+    if (!m) return 0;
+
+    //console.log("m",m);
 
     var arr=m.split(",");
     var l=arr.length;
@@ -323,8 +341,9 @@ export class GaraPage {
   }
 
   gotoChat(){
+    var questo=this;
     this.deviceFeedback.acoustic();
-    this.navCtrl.push(ChatPage);
+    this.navCtrl.push(ChatPage,{},questo.backend.navOptions);
 
   }
 
@@ -344,7 +363,7 @@ export class GaraPage {
     //this.backend.openUrl(this.jgara.maplocation);
     this.navCtrl.push(MapPage,{
       mapsrc: questo.jgara.maplocation
-    })
+    },questo.backend.navOptions)
     
   }
 
@@ -489,7 +508,17 @@ getDerbyText(id){
 
 
   getMedagliereGlobale(){
+
+
+
     var questo=this;
+    console.log("tkdt_id",questo.jgara.tkdt_id);
+
+    if (questo.jgara.tkdt_id.trim()=="") {
+      alert("Dati ufficiali di gara non disponibili per questa gara");
+      return;
+    }
+
     let profileModal = questo.modalCtrl.create(MedagliereglobalePage, { gara: questo.gara.gara.rows[0].doc });
     profileModal.present();
 

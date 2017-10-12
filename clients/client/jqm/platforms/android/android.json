@@ -17,16 +17,16 @@
                             "count": 7
                         },
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+                            "count": 2
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-                            "count": 2
                         }
                     ],
                     "/manifest": [
@@ -95,6 +95,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"IntentPlugin\"><param name=\"android-package\" value=\"com.napolitano.cordova.plugin.intent.IntentPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
                             "count": 1
                         },
@@ -139,6 +143,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"FilePath\"><param name=\"android-package\" value=\"com.hiddentao.cordova.filepath.FilePath\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
                             "count": 1
                         },
@@ -169,14 +177,6 @@
                         {
                             "xml": "<feature name=\"Base64ImageSaverPlugin\"><param name=\"android-package\" value=\"org.solderzzc.Base64ImageSaverPlugin.Base64ImageSaverPlugin\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"IntentPlugin\"><param name=\"android-package\" value=\"com.napolitano.cordova.plugin.intent.IntentPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FilePath\"><param name=\"android-package\" value=\"com.hiddentao.cordova.filepath.FilePath\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -200,6 +200,9 @@
         "android.support.v4": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
+        "com.napolitano.cordova.plugin.intent": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
         "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
@@ -218,6 +221,9 @@
         "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
+        "cordova-plugin-browsersync": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
@@ -231,6 +237,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
         "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.tkdr.appkwondo"
+        },
+        "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
         },
         "cordova-plugin-media-capture": {
@@ -259,19 +268,18 @@
         },
         "org.solderzzc.base64imagesaverplugin": {
             "PACKAGE_NAME": "com.tkdr.appkwondo"
-        },
-        "com.napolitano.cordova.plugin.intent": {
-            "PACKAGE_NAME": "com.tkdr.appkwondo"
-        },
-        "cordova-plugin-browsersync": {
-            "PACKAGE_NAME": "com.tkdr.appkwondo"
-        },
-        "cordova-plugin-filepath": {
-            "PACKAGE_NAME": "com.tkdr.appkwondo"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "id": "com.napolitano.cordova.plugin.intent.IntentPlugin",
+            "file": "plugins/com.napolitano.cordova.plugin.intent/www/android/IntentPlugin.js",
+            "pluginId": "com.napolitano.cordova.plugin.intent",
+            "clobbers": [
+                "IntentPlugin"
+            ]
+        },
         {
             "id": "cordova-plugin-android-permissions.Permissions",
             "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
@@ -544,6 +552,14 @@
             ]
         },
         {
+            "id": "cordova-plugin-filepath.FilePath",
+            "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
+            "pluginId": "cordova-plugin-filepath",
+            "clobbers": [
+                "window.FilePath"
+            ]
+        },
+        {
             "id": "cordova-plugin-media-capture.CaptureAudioOptions",
             "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
             "pluginId": "cordova-plugin-media-capture",
@@ -691,38 +707,25 @@
             "clobbers": [
                 "window.Base64ImageSaverPlugin"
             ]
-        },
-        {
-            "id": "com.napolitano.cordova.plugin.intent.IntentPlugin",
-            "file": "plugins/com.napolitano.cordova.plugin.intent/www/android/IntentPlugin.js",
-            "pluginId": "com.napolitano.cordova.plugin.intent",
-            "clobbers": [
-                "IntentPlugin"
-            ]
-        },
-        {
-            "id": "cordova-plugin-filepath.FilePath",
-            "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
-            "pluginId": "cordova-plugin-filepath",
-            "clobbers": [
-                "window.FilePath"
-            ]
         }
     ],
     "plugin_metadata": {
         "android-camera-permission": "1.0.0",
         "android.support.v4": "21.0.1",
+        "com.napolitano.cordova.plugin.intent": "0.1.3",
         "cordova-plugin-android-permissions": "0.11.0",
         "cordova-plugin-app-event": "1.2.0",
         "cordova-plugin-audio-recorder-api": "0.0.1",
         "cordova-plugin-device": "1.1.6",
         "cordova-plugin-background-mode": "0.7.2",
         "cordova-plugin-badge": "0.7.2",
+        "cordova-plugin-browsersync": "0.1.1",
         "cordova-plugin-camera": "2.0.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-dialogs": "1.2.0",
         "cordova-plugin-file": "4.1.1",
         "cordova-plugin-fileopener": "1.0.4",
+        "cordova-plugin-filepath": "1.0.2",
         "cordova-plugin-media-capture": "1.4.3",
         "cordova-plugin-splashscreen": "3.2.1",
         "cordova-plugin-statusbar": "2.2.3",
@@ -731,9 +734,6 @@
         "cordova-plugin-whitelist": "1.2.1",
         "cordova-plugin-x-socialsharing": "5.0.12",
         "de.appplant.cordova.plugin.local-notification": "0.8.5",
-        "org.solderzzc.base64imagesaverplugin": "0.6.0",
-        "com.napolitano.cordova.plugin.intent": "0.1.3",
-        "cordova-plugin-browsersync": "0.1.1",
-        "cordova-plugin-filepath": "1.0.2"
+        "org.solderzzc.base64imagesaverplugin": "0.6.0"
     }
 }

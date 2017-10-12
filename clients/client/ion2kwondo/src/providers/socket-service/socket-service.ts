@@ -60,6 +60,15 @@ export class SocketService {
 
     });
 
+    this.socket.on("realtime",function(data){
+      console.log("socket realtime received !!",data);
+
+      questo.renderVoice(data);
+
+      
+      questo.events.publish('realtime', data, Date.now());
+    })
+
     this.socket.on("realtimematches",function(rtmatches){
       console.log("socket realtimematches received !!",rtmatches);
       questo.events.publish('realtimematches', rtmatches, Date.now());
@@ -108,7 +117,14 @@ export class SocketService {
        console.log("chatmsg in socket.ts!",msg);
        questo.msgs.push(msg);
        questo.backend.chatmessages.push(msg);
+       questo.backend.addChatUnread();
        questo.events.publish('chatmsg', msg);
+       console.log("isChatView",questo.backend.isChatView);
+       if (!questo.backend.isChatView){
+         console.log("local notification emitted");
+         questo.backend.localNotify(msg.nickname+" - "+msg.text);
+       }
+    
      });
 
     this.socket.on("message", (msg) => {
@@ -157,6 +173,18 @@ export class SocketService {
     })
   }
 
+
+  renderVoice(data){
+    var questo=this;
+    var text=data.match.atletaname;
+    text+=", "+data.result;
+    if (String(data.fineround)=="true"){
+      text+=". Fine round "+data.round;
+    }
+
+   
+    questo.backend.playVoice(text);
+  }
 
   resetUnreadMessagesFromEmail(email) {
     //console.log("resetunreadmessagesfromemail",email);

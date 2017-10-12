@@ -52,13 +52,13 @@ var isLoading = false;
 var source = new observableModule.Observable();
 var pokemon = ["Bulbasaur", "Charmander", "Squirtle"];
 var filters = global.garafilters;
-var filteredresults=false;
+var filteredresults = false;
 
 var displaymbp = {
-	rows:[]
+	rows: []
 };
 var displaympa = {
-	rows:[]
+	rows: []
 };
 
 var gs = glbservice.GlobalService;
@@ -96,6 +96,15 @@ gs.e.on("chatmsg", function (ev) {
 
 });
 
+gs.e.on("updategara", function (ev) {
+
+
+  console.log("updategara in gara !");
+  refreshGara();
+
+
+})
+
 barselectedIndex.addEventListener(observableModule.Observable.propertyChangeEvent, function (x) {
 	alert(x);
 });
@@ -116,15 +125,18 @@ function pageLoaded(args) {
 	console.log("pageloaded gara, navigated ", navigated);
 
 	page = args.object;
-	
+
 	var navigationContext = page.navigationContext;
-	var refreshfilters=false;
-	var caller="";
-	if (navigationContext.caller) caller=navigationContext.caller;
-	if (navigationContext.refreshfilters) refreshfilters=navigationContext.refreshfilters;
-	if (caller!="gare") refreshfilters=false;
+	var refreshfilters = false;
+	var caller = "";
+	if (navigationContext.caller) caller = navigationContext.caller;
+	if (navigationContext.refreshfilters) refreshfilters = navigationContext.refreshfilters;
+	if (caller != "gare") {
+		refreshfilters = false;
+
+	}
 	console.log("context", JSON.stringify(navigationContext));
-	
+
 	source.set("ori", "0");
 	source.set("argenti", "0");
 	source.set("bronzi", "0");
@@ -194,7 +206,7 @@ function pageLoaded(args) {
 		}
 	}
 	*/
-	filters=global.garafilters;
+	filters = global.garafilters;
 	if (navigationContext.refresh) {
 		if (String(navigationContext.refresh) == "true") {
 			refreshGara(function () {
@@ -202,10 +214,15 @@ function pageLoaded(args) {
 			});
 
 		}
+	} else {
+		setGaraInfo();
+		source.set("ori", model.medaglie.ori);
+		source.set("argenti", model.medaglie.argenti);
+		source.set("bronzi", model.medaglie.bronzi);
 	}
 
 	return;
-	
+
 
 }
 
@@ -217,9 +234,12 @@ function gotoChat() {
 
 }
 
-exports.gotoRtConsole=function() {
+exports.gotoRtConsole = function () {
 	frameModule.topmost().navigate({
-		moduleName: "pages/rtconsole/rtconsole"
+		moduleName: "pages/rtconsole/rtconsole",
+		context: {
+			mode: "multi"
+		}
 	});
 
 }
@@ -431,7 +451,7 @@ function matchAtletaTap(args) {
 	//alert(index);
 
 	//var atl = matchesbyatleta.rows[index];
-	var atl=displaympa.rows[index];
+	var atl = displaympa.rows[index];
 	console.log(atl);
 
 
@@ -713,7 +733,7 @@ function fetchMatches(id, callback) {
 		matchesbyprog = filterRows(r.matchesbyprog, {
 			dadisputare: "yes"
 		});
-		
+
 		tkdt = {
 			atleti_iscritti: [],
 			atleti: [],
@@ -1116,60 +1136,60 @@ function refreshAll(callback) {
 */
 
 function filterMatches() {
-	
-	displaymbp={
+
+	displaymbp = {
 		rows: []
 	};
-	displaympa={
+	displaympa = {
 		rows: []
 	}
 	//displaympa=matchesbyatleta.rows;
 	//return;
-    var hasFilters=false;
+	var hasFilters = false;
 	var mbp = gara.matchesbyprog.rows;
 
 	mbp.forEach(function (item, idx) {
 
-		var eligible=true;
+		var eligible = true;
 		var atl = utils.getAtletaById(item.doc.atletaid);
-		var cat=utils.getCategoria(atl.datanascita,garadata);
+		var cat = utils.getCategoria(atl.datanascita, garadata);
 
 		if (filters.sesso) {
-			hasFilters=true;
-			if (atl.sesso.toLowerCase().trim() != filters.sesso.toLowerCase().trim()) eligible=false;
-		
+			hasFilters = true;
+			if (atl.sesso.toLowerCase().trim() != filters.sesso.toLowerCase().trim()) eligible = false;
+
 		}
 		if (filters.categoria) {
-			hasFilters=true;
-			if (cat.toLowerCase().trim() != filters.categoria.toLowerCase().trim()) eligible=false;
+			hasFilters = true;
+			if (cat.toLowerCase().trim() != filters.categoria.toLowerCase().trim()) eligible = false;
 		}
 
 		//console.log(atl.cognome,atl.nome,eligible);
 		if (eligible) displaymbp.rows.push(item);
-	
+
 	})
 
 
-	filteredresults=hasFilters;
-	displaymbp=renderByProg(displaymbp);
+	filteredresults = hasFilters;
+	displaymbp = renderByProg(displaymbp);
 
-	
+
 
 	var mpa = gara.matchesbyatleta.rows;
 
 	mpa.forEach(function (item, idx) {
-		var eligible=true;
+		var eligible = true;
 		//console.log("item",item.nome);
-		var eligible=true;
+		var eligible = true;
 		var atl = utils.getAtletaById(item.id);
-		var cat=utils.getCategoria(atl.datanascita,garadata);
-		
+		var cat = utils.getCategoria(atl.datanascita, garadata);
+
 		if (filters.sesso) {
-			if (atl.sesso.toLowerCase().trim() != filters.sesso.toLowerCase().trim()) eligible=false;
-		
+			if (atl.sesso.toLowerCase().trim() != filters.sesso.toLowerCase().trim()) eligible = false;
+
 		}
 		if (filters.categoria) {
-			if (cat.toLowerCase().trim() != filters.categoria.toLowerCase().trim()) eligible=false;
+			if (cat.toLowerCase().trim() != filters.categoria.toLowerCase().trim()) eligible = false;
 		}
 
 		//console.log(atl.cognome,atl.nome,eligible);
@@ -1180,7 +1200,7 @@ function filterMatches() {
 
 
 
-	
+
 
 
 
@@ -1217,7 +1237,7 @@ function refreshGara(callback) {
 		isLoading = false;
 		//var medaglie = global.getMedaglieGara(matchesbyprog);
 		var medaglie = global.getMedaglieGara(displaymbp);
-		console.log("medaglie",JSON.stringify(medaglie));
+		console.log("medaglie", JSON.stringify(medaglie));
 		/*model.ori=medaglie.ori;
 		model.argenti=medaglie.argenti;
 		model.bronzi=medaglie.bronzi;*/
@@ -1248,7 +1268,7 @@ function refreshGara(callback) {
 
 		filterMatches();
 		medaglie = global.getMedaglieGara(displaymbp);
-		model.medaglie=medaglie;
+		model.medaglie = medaglie;
 		console.log("matches filtered");
 		source.set("model", model);
 		source.set("ori", model.medaglie.ori);
@@ -1259,11 +1279,11 @@ function refreshGara(callback) {
 		source.set("garalocationdata", model.gara.rows[0].doc.location.toUpperCase() + " - " + model.gara.rows[0].doc.data);
 		/*source.set("mbp", matchesbyprog.rows);
 		source.set("mba", matchesbyatleta.rows);*/
-		console.log("displaymbp",displaymbp.rows.length)
-		source.set("mbp",displaymbp.rows);
-		source.set("mba",displaympa.rows);
+		console.log("displaymbp", displaymbp.rows.length)
+		source.set("mbp", displaymbp.rows);
+		source.set("mba", displaympa.rows);
 		source.set("cronaca", gara.cronaca.rows);
-		source.set("filteredresults",filteredresults);
+		source.set("filteredresults", filteredresults);
 
 
 		var garaid = model.gara.rows[0].doc.id;
@@ -1285,7 +1305,7 @@ function refreshGara(callback) {
 		})
 		//utils.conslog("calling callback for refreshgara");
 		setGaraInfo();
-	
+
 		if (callback) callback();
 	});
 
@@ -1334,9 +1354,9 @@ function setGaraInfo() {
 	});
 	var p = d.rows.length - v.rows.length;
 
-	addCampo(lay,"Gara",gara.title,"campo");
-	addCampo(lay,"ID","ID: " + gara.id + " - TKDT_ID: " + gara.tkdt_id,"campo");
-	addCampo(lay,"Location",gara.location,"campo");
+	addCampo(lay, "Gara", gara.title, "campo");
+	addCampo(lay, "ID", "ID: " + gara.id + " - TKDT_ID: " + gara.tkdt_id, "campo");
+	addCampo(lay, "Location", gara.location, "campo");
 	/*var label = new labelModule.Label();
 	label.text = "ID: " + gara.id + " - TKDT_ID: " + gara.tkdt_id;
 	lay.addChild(label);
@@ -1445,15 +1465,15 @@ function setGaraInfo() {
 
 }
 
-function addCampo(lay,descr,text,classname){
+function addCampo(lay, descr, text, classname) {
 	var label = new labelModule.Label();
 	label.text = descr;
-	label.className="campolabel";
+	label.className = "campolabel";
 	lay.addChild(label);
 
 	label = new labelModule.Label();
 	label.text = text;
-	label.className=classname;
+	label.className = classname;
 	lay.addChild(label);
 
 }
@@ -1484,20 +1504,20 @@ exports.filterData = function () {
 	var context = {
 		filters: filters
 	};
-	console.log("context",JSON.stringify(context));
+	console.log("context", JSON.stringify(context));
 
 	page.showModal("pages/garafilters/garafilters", context, function closeCallback(data) {
-		
+
 		//alert(JSON.stringify(data));
-		if (data){
-		filters = data;
-		global.garafilters=filters;
-		console.log("filters", JSON.stringify(filters));
-		refreshGara(function(){
-			console.log("refreshgara done");
-		})
+		if (data) {
+			filters = data;
+			global.garafilters = filters;
+			console.log("filters", JSON.stringify(filters));
+			refreshGara(function () {
+				console.log("refreshgara done");
+			})
 		}
-	
+
 
 		// Log the user in...
 	}, false);

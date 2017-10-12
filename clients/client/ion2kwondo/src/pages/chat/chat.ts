@@ -1,6 +1,6 @@
 import { ModalController, AlertController, IonicApp, Events, Content } from 'ionic-angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Nav, NavController, NavParams, Platform } from 'ionic-angular';
+import { Nav, NavController, NavParams, Platform,Navbar } from 'ionic-angular';
 import { SocketService } from '../../providers/socket-service/socket-service';
 import { BackendProvider } from '../../providers/backend/backend';
 import * as moment from 'moment';
@@ -18,6 +18,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 
 export class ChatPage implements OnInit {
+  @ViewChild(Navbar) navBar: Navbar;
   msg: any = "";
   msgs: any = [];
   friend: any = {};
@@ -133,7 +134,10 @@ export class ChatPage implements OnInit {
 
   ionViewDidLoad() {
     var questo = this;
+    questo.backend.setBackButtonAction(questo.navBar,questo.nav);
     console.log("ionviewdidload chat.ts");
+    questo.backend.resetChatUnread();
+    questo.backend.isChatView=true;
     /*this.msgs=this.backend.chatmessages;
      setTimeout(() => {
         if (questo.content) {
@@ -273,6 +277,7 @@ export class ChatPage implements OnInit {
     var questo=this;
     this.e.subscribe("chatmsg", function (msg) {
       console.log("chatmsg in chat.ts !!", msg);
+      questo.backend.unread=0;
       //questo.msgs.push(msg);
       if (questo.content) {
         console.log("content ce sta");
@@ -301,11 +306,14 @@ export class ChatPage implements OnInit {
   ionViewDidLeave() {
     console.log("ionviewdidleave");
     //this.e.publish("exitedchat", "exitedchat");
+    this.backend.isChatView=false;
     this.e.unsubscribe('chatmsg');
     this.e.unsubscribe("realtimematches");
    
 
   }
+
+  
 
   ngAfterViewInit(): void {
 

@@ -9,6 +9,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"NativePageTransitions\"><param name=\"android-package\" value=\"com.telerik.plugins.nativepagetransitions.NativePageTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"AppAvailability\"><param name=\"android-package\" value=\"com.ohh2ahh.appavailability.AppAvailability\" /></feature>",
                             "count": 1
                         },
@@ -17,15 +21,27 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"AndroidLaunchMode\" value=\"singleInstance\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
                         {
@@ -81,11 +97,19 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NativeAudio\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.nativeaudio.NativeAudio\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -107,15 +131,23 @@
                             "count": 1
                         },
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
                             "count": 1
                         },
                         {
@@ -143,41 +175,41 @@
                             "count": 1
                         }
                     ],
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 7
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-                            "count": 2
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        }
-                    ],
-                    "application": [
-                        {
-                            "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"android.support.v4.content.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/provider_paths\" /></provider>",
-                            "count": 1
-                        }
-                    ],
                     "/manifest/application": [
                         {
+                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.TriggerReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.ClearReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.notification.TriggerReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.notification.ClearReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.RestoreReceiver\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.notification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
                             "count": 1
                         },
                         {
@@ -204,7 +236,44 @@
                             "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.RegistrationIntentService\" />",
                             "count": 1
                         }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 8
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "application": [
+                        {
+                            "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"android.support.v4.content.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/provider_paths\" /></provider>",
+                            "count": 1
+                        }
                     ]
+                }
+            },
+            "res/values/facebookconnect.xml": {
+                "parents": {
+                    "/*": []
                 }
             },
             "res/values/strings.xml": {
@@ -216,80 +285,116 @@
                         }
                     ]
                 }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"TTS\"><param name=\"android-package\" value=\"com.wordsbaking.cordova.tts.TTS\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-appavailability": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-audio-recorder-api": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
-        },
-        "cordova-plugin-badge": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
-        },
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-fileopener": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-themeablebrowser": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-velda-devicefeedback": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "es6-promise-plugin": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "403763864066",
-            "PACKAGE_NAME": "com.tkdr.ion2kwondo"
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-tts": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+            "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+            "pluginId": "com.telerik.plugins.nativepagetransitions",
+            "clobbers": [
+                "window.plugins.nativepagetransitions"
+            ]
+        },
         {
             "id": "cordova-plugin-appavailability.AppAvailability",
             "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
@@ -304,6 +409,23 @@
             "pluginId": "cordova-plugin-audio-recorder-api",
             "clobbers": [
                 "window.plugins.audioRecorderAPI"
+            ]
+        },
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-background-mode.BackgroundMode",
+            "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+            "pluginId": "cordova-plugin-background-mode",
+            "clobbers": [
+                "cordova.plugins.backgroundMode",
+                "plugin.backgroundMode"
             ]
         },
         {
@@ -344,14 +466,6 @@
             "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverHandle"
-            ]
-        },
-        {
-            "id": "cordova-plugin-device.device",
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
             ]
         },
         {
@@ -690,6 +804,33 @@
             ]
         },
         {
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "clobbers": [
+                "cordova.plugins.notification.local",
+                "plugin.notification.local"
+            ]
+        },
+        {
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Core",
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-core.js",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "clobbers": [
+                "cordova.plugins.notification.local.core",
+                "plugin.notification.local.core"
+            ]
+        },
+        {
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Util",
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-util.js",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "merges": [
+                "cordova.plugins.notification.local.core",
+                "plugin.notification.local.core"
+            ]
+        },
+        {
             "id": "ionic-plugin-keyboard.keyboard",
             "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
             "pluginId": "ionic-plugin-keyboard",
@@ -705,16 +846,35 @@
             "clobbers": [
                 "PushNotification"
             ]
+        },
+        {
+            "id": "cordova-plugin-tts.tts",
+            "file": "plugins/cordova-plugin-tts/www/tts.js",
+            "pluginId": "cordova-plugin-tts",
+            "clobbers": [
+                "TTS"
+            ]
+        },
+        {
+            "id": "cordova-plugin-nativeaudio.nativeaudio",
+            "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
+            "pluginId": "cordova-plugin-nativeaudio",
+            "clobbers": [
+                "window.plugins.NativeAudio"
+            ]
         }
     ],
     "plugin_metadata": {
+        "com.telerik.plugins.nativepagetransitions": "0.6.5",
+        "cordova-plugin-app-event": "1.2.1",
         "cordova-plugin-appavailability": "0.4.2",
         "cordova-plugin-audio-recorder-api": "0.0.1",
+        "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-background-mode": "0.7.2",
         "cordova-plugin-badge": "0.8.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-camera": "2.4.1",
         "cordova-plugin-console": "1.0.5",
-        "cordova-plugin-device": "1.1.4",
         "cordova-plugin-file": "4.3.3",
         "cordova-plugin-file-transfer": "1.6.3",
         "cordova-plugin-fileopener": "1.0.5",
@@ -728,7 +888,10 @@
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-x-socialsharing": "5.1.8",
         "cordova-sqlite-storage": "2.0.4",
+        "de.appplant.cordova.plugin.local-notification": "0.8.5",
         "ionic-plugin-keyboard": "2.2.1",
-        "phonegap-plugin-push": "1.10.4"
+        "phonegap-plugin-push": "1.10.4",
+        "cordova-plugin-tts": "0.2.3",
+        "cordova-plugin-nativeaudio": "3.0.9"
     }
 }

@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "nativescript-sound",
+        "raw": "nativescript-sound@^1.0.4",
         "scope": null,
         "escapedName": "nativescript-sound",
         "name": "nativescript-sound",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^1.0.4",
+        "spec": ">=1.0.4 <2.0.0",
+        "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
-  "_from": "nativescript-sound@latest",
+  "_from": "nativescript-sound@>=1.0.4 <2.0.0",
   "_id": "nativescript-sound@1.0.4",
   "_inCache": true,
   "_location": "/nativescript-sound",
@@ -25,23 +25,22 @@
   "_npmVersion": "2.11.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nativescript-sound",
+    "raw": "nativescript-sound@^1.0.4",
     "scope": null,
     "escapedName": "nativescript-sound",
     "name": "nativescript-sound",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^1.0.4",
+    "spec": ">=1.0.4 <2.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz",
   "_shasum": "e8ad0aacd8eb5fb4e352fb5ae9fdd2d60de399eb",
   "_shrinkwrap": null,
-  "_spec": "nativescript-sound",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_spec": "nativescript-sound@^1.0.4",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "John Bristowe",
     "email": "john@bristowe.com",

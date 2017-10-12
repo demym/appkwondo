@@ -11,7 +11,7 @@ if (application.android) {
 }
 
 application.cssFile = "./app.css";
-application.resources["visitedwebview"] = false;
+//application.resources["visitedwebview"] = false;
 
 //GLOBALS
 

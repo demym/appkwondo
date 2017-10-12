@@ -28,7 +28,7 @@ var gs = glbservice.GlobalService;
 function pageLoaded(args) {
 
 	 orientationModule.setCurrentOrientation("portrait",function(){
-                console.log("portrait orientation set");
+                utils.conslog("portrait orientation set");
             });
 
 	
@@ -52,7 +52,7 @@ function loginTap() {
 
 	backend.blueLogin(u.text, p.text, function (ldata) {
 
-		console.log(JSON.stringify(ldata));
+		utils.conslog(JSON.stringify(ldata));
 
 		if (ldata.loggedin) {
 
@@ -106,7 +106,7 @@ function loginTapOld() {
 
 
 function doLogin() {
-	console.log("dologin");
+	utils.conslog("dologin");
 
 	//var authorization = "Basic " + window.btoa(email + ":" + psw);
 	var auth = new java.lang.String(u.text + ":" + p.text);
@@ -118,11 +118,11 @@ function doLogin() {
 		"authorization": auth_encoded
 	}
 
-	console.log(JSON.stringify(user));
+	utils.conslog(JSON.stringify(user));
 
 	var url = global.rooturl + "/atleti/login";
 	//url=url.replace("http://","");
-	console.log(url);
+	utils.conslog(url);
 
 	/*fetch(url, {
 		method: "POST",
@@ -148,7 +148,7 @@ function doLogin() {
 		content: JSON.stringify(user)
 	}).then(function (response) {
 		result = response.content.toJSON();
-		console.log(JSON.stringify(result));
+		utils.conslog(JSON.stringify(result));
 
 		if (result.loggedin) {
 
@@ -223,8 +223,8 @@ initApp = function (callback) {
 					backend.fetchChat(function (cdata) {
 
 						var lastchattimestamp = appSettings.getString("lastchattimestamp", "");
-						console.log("lastchattimestamp", lastchattimestamp);
-						console.log("cdata",cdata.rows.length);
+						utils.conslog("lastchattimestamp", lastchattimestamp);
+						utils.conslog("cdata",cdata.rows.length);
 						cdata.rows.forEach(function (item, index) {
 							if (item.time > lastchattimestamp) {
 								//console.log("pushing");
@@ -232,9 +232,12 @@ initApp = function (callback) {
 								//console.log("pushed");
 							}
 						})
-						console.log("unreadchat", gs.unreadchat.length);
+						utils.conslog("unreadchat", gs.unreadchat.length);
 						
+
 						if (callback) callback();
+						
+						
 
 
 

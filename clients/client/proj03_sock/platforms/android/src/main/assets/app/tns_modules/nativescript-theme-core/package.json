@@ -10,7 +10,7 @@
         "spec": ">=0.2.1 <0.3.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-theme-core@>=0.2.1 <0.3.0",
@@ -44,7 +44,7 @@
   "_shasum": "ca27c5030a1619cc8148f436330af5d2d381f629",
   "_shrinkwrap": null,
   "_spec": "nativescript-theme-core@^0.2.1",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Telerik",
     "email": "support@telerik.com"

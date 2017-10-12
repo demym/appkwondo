@@ -10,7 +10,7 @@
         "spec": ">=1.1.10 <2.0.0",
         "type": "range"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock"
     ]
   ],
   "_from": "nativescript-pulltorefresh@>=1.1.10 <2.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "422a566cec95e41c8efe2620be4d6d0c0e17a75c",
   "_shrinkwrap": null,
   "_spec": "nativescript-pulltorefresh@^1.1.10",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/proj03_sock",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/proj03_sock",
   "author": {
     "name": "Brad Martin",
     "email": "bradwaynemartin@gmail.com",

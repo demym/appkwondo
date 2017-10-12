@@ -63,19 +63,19 @@ loaded="onLoaded" >
  </StackLayout>
  </ListView.itemTemplate>  
 </ListView>-->  
-<ListView id="lvrt"   separatorColor="black" row="0"  >  
+<ListView id="lvrt" items="{{rtmatches}}" tap="tapRealtimeMatch" separatorColor="black" row="0"  >  
  <ListView.itemTemplate> 
  <StackLayout cssClass="rtstack">
- <GridLayout columns="40,*" rows="auto,1" >
+ <GridLayout columns="40,*" rows="auto,1"  >
 
- <WebView col="0" src="<img src='img/greenblink.gif' width='32' height='32' />" />
+ <!--<WebView style="background-color: transparent" col="0" src="<img src='img/greenblink.gif' width='24' height='24' />" />-->
  <StackLayout col="1">
  <Label text="{{match.matchid + ' - ' +match.atletaname}}"  cssClass="rtlabel rtname"/>
  
  <Label text="{{tnstext}}" cssClass="{{running ? 'rtlabel  rtrunning' : 'rtlabel  rtpaused'}}" />
  
  </StackLayout>
- <StackLayout  row="1" colSpan="2" style="width: 100%; height: 1; background-color: black"/>
+ <StackLayout  row="1" colSpan="2" style="width: 100%; height: 1; background-color: silver"/>
  
  </GridLayout>
 
