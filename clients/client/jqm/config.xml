@@ -52,6 +52,7 @@
     </platform>
     <engine name="android" spec="^5.2.2" />
     <engine name="browser" spec="^4.1.0" />
+    <engine name="ios" spec="^4.4.0" />
     <plugin name="android-camera-permission" spec="^1.0.0" />
     <plugin name="android.support.v4" spec="^21.0.1" />
     <plugin name="com.napolitano.cordova.plugin.intent" spec="https://github.com/napolitano/cordova-plugin-intent" />

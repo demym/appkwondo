@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Events, Navbar } from 'ionic-angular';
+import { NavController,AlertController, NavParams, Events, Navbar, ToastController } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { MatchconsolePage } from '../../pages/matchconsole/matchconsole';
 import { GaraPage } from '../../pages/gara/gara';
+import { ChatPage } from '../../pages/chat/chat';
 
 /*
   Generated class for the MatchesforatletaPage page.
@@ -32,14 +33,16 @@ export class MatchesforatletaPage {
   tkdtatletaarr: any=[];
   tabulato: any={};
   tabulatoimg: any="assets/img/boxbianco.jpg";
+  activetab= "matches";
+  loading=false;
 
-
-  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
     var questo=this;
     this.events.subscribe("updatematchesforatleta",function(m){
       console.log("updatematchesforatleta in matchesforatleta.ts !!");
       questo.mfa=questo.backend.filterRows(m,{atletaid: questo.atletaid}).rows;
       console.log("questo.mfa",questo.mfa);
+      
     })
   }
 
@@ -222,6 +225,207 @@ export class MatchesforatletaPage {
     retvalue=retvalue.toUpperCase();
     if (!id) retvalue="";
     return retvalue;
+
+  }
+
+  tapSegment(item){
+
+  }
+
+  addMatches(){
+    var questo=this;
+    const alert = this.alertCtrl.create({
+      title: 'Aggiungi match',
+      inputs: [
+        {
+          name: 'matches',
+          placeholder: 'Match separati da virgola',
+          value: "101"
+        }
+      ],
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'OK, aggiungi',
+          handler: data => {
+            console.log("matches",data.matches);
+            questo.performAddMatches(data.matches);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+
+  performAddMatches(matches){
+    var questo=this;
+    //var $mid = $("#popAddMatch #matchid");
+    //var $color = $("#popAddMatch #color").val();
+
+    var color="red";
+    var matchid=matches;
+    var selectedAtl=questo.backend.getAtletaById(questo.atletaid);
+    var garaid=questo.backend.activegara.gara.rows[0].doc.id
+  
+  
+    //var progid=$mid.val().substring(1);
+  
+    var progid = matchid; //get last two characters for match progid- updated 25/01/2016
+  
+  
+    //var datanascita=$atleta.find("datanascita").text();
+    var datanascita = selectedAtl.datanascita;
+    var atletaname = selectedAtl.cognome + " " + selectedAtl.nome;
+    var atletaid = selectedAtl.id;
+    //var atletaname=$atleta.find("cognome").text()+" "+$atleta.find("nome").text();
+    //alert(datanascita);
+    //return;
+  
+    var doc = {
+      progid: progid,
+      societaid: questo.backend.settings.mysocieta,
+      societaname: questo.backend.settings.mysocietaname,
+      garaid: garaid,
+      atletaid: atletaid,
+      atletaname: atletaname,
+      risultato: "",
+      ordine: "1",
+      vinto: "no",
+      disputato: "no",
+      dadisputare: "yes",
+      matchid: matches,
+      color: color,
+      lastupdate: "never",
+      datanascita: datanascita
+  
+    }
+  
+    var url=questo.backend.rooturl+"/matches/add/"+garaid;
+    
+    questo.loading=true;
+ 
+    questo.backend.postData(url,doc,function(data){
+      console.log("posted",data);
+      questo.backend.getGara(garaid,function(gdata){
+        questo.refresh(function(){
+
+          questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
+          questo.loading=false;
+          const toast = questo.toastCtrl.create({
+            message: 'Match aggiunti',
+            duration: 3000,
+            position: 'middle'
+          });
+        
+          toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+          });
+        
+          toast.present();
+
+
+        })
+
+      })
+    })
+  
+  
+    //console.log(JSON.stringify(doc));
+  /*
+    $.ajax({
+        url: rooturl + "/matches/add/" + garaid,
+        type: "POST",
+        data: doc
+      })
+      .done(function (data) {
+     
+        if (data.error) {
+          console.log("error");
+        } else {
+          console.log("posted")
+         
+          $(data.addedmatches.rows).each(function (i) {
+  
+            var row = data.addedmatches.rows[i];
+            var addedid = row.doc.id;
+            var cat = getCategoria(row.doc.datanascita);
+            colog("derbies");
+            colog("$allmatches")
+            var $allmatches = jGara.matchesbyprog;
+            colog($allmatches);
+            $allmatches.rows.push(row);
+            var derbies = getDerby(addedid, cat);
+            colog(derbies);
+            if (derbies.rows.length > 0) {
+              if ($allmatches.rows.length > 0) {
+                
+                var derbyid = derbies.rows[0].doc.id;
+              
+                var urld = "/matches/update/" + jcurrentgara.id + "/" + addedid;
+  
+                $.ajax({
+                  type: "POST",
+                  url: rooturl + urld,
+                  data: {
+                    derby: derbyid
+                  },
+                  async: false
+                });
+  
+                urld = "/matches/update/" + jcurrentgara.id + "/" + derbyid;
+                $.ajax({
+                  type: "POST",
+                  url: rooturl + urld,
+                  data: {
+                    derby: addedid
+                  },
+                  async: false
+                });
+  
+  
+  
+  
+              
+              }
+            }
+  
+          })
+          toast("Match " + doc.matchid + " added for atleta " + selectedAtl.cognome + " " + selectedAtl.nome);
+          openGara(jGara.gara.rows[0].doc.id, function () {
+           
+            refreshIscritti();
+            $("#popAddMatch").popup("close");
+            showMatchesForAtleta(selectedAtl.id)
+  
+          })
+  
+  
+  
+        }
+  
+       
+      })
+      .fail(function () {
+        toast("Error posting", "long");
+  
+      });
+  
+  */
+
+  }
+
+
+  gotoChat(){
+    var questo=this;
+    this.backend.playFeedback();
+    this.navCtrl.push(ChatPage,{},questo.backend.navOptions);
 
   }
 

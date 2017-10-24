@@ -686,7 +686,9 @@ router.post('/login', function (req, res) {
 	if (arrpsw.indexOf(pw) > -1) {
 		ret = {
 			"loggedin": "true",
-			role: "tkdradmin"
+			role: "tkdradmin",
+			"email": em,
+			"nickname": em
 		};
 		role = "tkdradmin";
 
@@ -696,6 +698,8 @@ router.post('/login', function (req, res) {
 	if (pw == "ondablu") {
 		ret = {
 			"loggedin": "true",
+			"email": em,
+			"nickname": em,
 			role: "tkdruser"
 		};
 		role = "tkdruser";

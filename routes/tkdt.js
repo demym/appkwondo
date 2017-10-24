@@ -146,7 +146,7 @@ router.get("/retrieveforme/:garaid", function (req, res) {
         var newfname = "tkdt_" + tkdt_garaid + ".json";
         mongo.updatefile(newfname, rows, function (mdata) {
 
-            console.log(mdata);
+            //console.log(mdata);
             res.send(data);
 
         });

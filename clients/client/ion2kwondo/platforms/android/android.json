@@ -25,18 +25,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"AndroidLaunchMode\" value=\"singleInstance\" />",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
                             "count": 1
                         },
@@ -66,6 +54,10 @@
                         },
                         {
                             "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NativeAudio\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.nativeaudio.NativeAudio\" /></feature>",
                             "count": 1
                         },
                         {
@@ -105,11 +97,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"NativeAudio\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.nativeaudio.NativeAudio\" /></feature>",
+                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
                             "count": 1
                         }
                     ]
@@ -132,7 +124,7 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
-                            "count": 2
+                            "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
@@ -141,45 +133,9 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"${applicationId}.permission.PushHandlerActivity\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<permission android:name=\"${applicationId}.permission.PushHandlerActivity\" android:protectionLevel=\"signature\" />",
-                            "count": 1
                         }
                     ],
                     "/manifest/application": [
-                        {
-                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
-                            "count": 1
-                        },
                         {
                             "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
                             "count": 1
@@ -213,27 +169,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" android:permission=\"${applicationId}.permission.PushHandlerActivity\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<receiver android:name=\"com.adobe.phonegap.push.BackgroundActionButtonHandler\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"${applicationId}\" /></intent-filter></receiver>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.GCMIntentService\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /></intent-filter></service>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.PushInstanceIDListenerService\"><intent-filter><action android:name=\"com.google.android.gms.iid.InstanceID\" /></intent-filter></service>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.RegistrationIntentService\" />",
+                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
                             "count": 1
                         }
                     ],
@@ -271,21 +207,6 @@
                     ]
                 }
             },
-            "res/values/facebookconnect.xml": {
-                "parents": {
-                    "/*": []
-                }
-            },
-            "res/values/strings.xml": {
-                "parents": {
-                    "/resources": [
-                        {
-                            "xml": "<string name=\"google_app_id\" translatable=\"false\">403763864066</string>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
             "config.xml": {
                 "parents": {
                     "/*": [
@@ -294,6 +215,11 @@
                             "count": 1
                         }
                     ]
+                }
+            },
+            "res/values/strings.xml": {
+                "parents": {
+                    "/resources": []
                 }
             }
         }
@@ -312,9 +238,6 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-badge": {
@@ -344,6 +267,9 @@
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -351,6 +277,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-tts": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-velda-devicefeedback": {
@@ -374,14 +303,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "403763864066",
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-tts": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-nativeaudio": {
+        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
@@ -417,15 +339,6 @@
             "pluginId": "cordova-plugin-device",
             "clobbers": [
                 "device"
-            ]
-        },
-        {
-            "id": "cordova-plugin-background-mode.BackgroundMode",
-            "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
-            "pluginId": "cordova-plugin-background-mode",
-            "clobbers": [
-                "cordova.plugins.backgroundMode",
-                "plugin.backgroundMode"
             ]
         },
         {
@@ -750,6 +663,14 @@
             "runs": true
         },
         {
+            "id": "cordova-plugin-nativeaudio.nativeaudio",
+            "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
+            "pluginId": "cordova-plugin-nativeaudio",
+            "clobbers": [
+                "window.plugins.NativeAudio"
+            ]
+        },
+        {
             "id": "cordova-plugin-splashscreen.SplashScreen",
             "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
             "pluginId": "cordova-plugin-splashscreen",
@@ -771,6 +692,14 @@
             "pluginId": "cordova-plugin-themeablebrowser",
             "clobbers": [
                 "cordova.ThemeableBrowser"
+            ]
+        },
+        {
+            "id": "cordova-plugin-tts.tts",
+            "file": "plugins/cordova-plugin-tts/www/tts.js",
+            "pluginId": "cordova-plugin-tts",
+            "clobbers": [
+                "TTS"
             ]
         },
         {
@@ -840,27 +769,12 @@
             "runs": true
         },
         {
-            "id": "phonegap-plugin-push.PushNotification",
-            "file": "plugins/phonegap-plugin-push/www/push.js",
-            "pluginId": "phonegap-plugin-push",
+            "id": "cordova-plugin-background-mode.BackgroundMode",
+            "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+            "pluginId": "cordova-plugin-background-mode",
             "clobbers": [
-                "PushNotification"
-            ]
-        },
-        {
-            "id": "cordova-plugin-tts.tts",
-            "file": "plugins/cordova-plugin-tts/www/tts.js",
-            "pluginId": "cordova-plugin-tts",
-            "clobbers": [
-                "TTS"
-            ]
-        },
-        {
-            "id": "cordova-plugin-nativeaudio.nativeaudio",
-            "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
-            "pluginId": "cordova-plugin-nativeaudio",
-            "clobbers": [
-                "window.plugins.NativeAudio"
+                "cordova.plugins.backgroundMode",
+                "plugin.backgroundMode"
             ]
         }
     ],
@@ -870,7 +784,6 @@
         "cordova-plugin-appavailability": "0.4.2",
         "cordova-plugin-audio-recorder-api": "0.0.1",
         "cordova-plugin-device": "1.1.4",
-        "cordova-plugin-background-mode": "0.7.2",
         "cordova-plugin-badge": "0.8.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-camera": "2.4.1",
@@ -880,9 +793,11 @@
         "cordova-plugin-fileopener": "1.0.5",
         "cordova-plugin-media": "3.0.1",
         "cordova-plugin-media-capture": "1.4.3",
+        "cordova-plugin-nativeaudio": "3.0.9",
         "cordova-plugin-splashscreen": "4.0.3",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-themeablebrowser": "0.2.17",
+        "cordova-plugin-tts": "0.2.3",
         "cordova-plugin-velda-devicefeedback": "0.0.2",
         "cordova-plugin-whitelist": "1.3.1",
         "es6-promise-plugin": "4.1.0",
@@ -890,8 +805,6 @@
         "cordova-sqlite-storage": "2.0.4",
         "de.appplant.cordova.plugin.local-notification": "0.8.5",
         "ionic-plugin-keyboard": "2.2.1",
-        "phonegap-plugin-push": "1.10.4",
-        "cordova-plugin-tts": "0.2.3",
-        "cordova-plugin-nativeaudio": "3.0.9"
+        "cordova-plugin-background-mode": "0.7.2"
     }
 }

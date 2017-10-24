@@ -551,7 +551,7 @@ export class ChatPage implements OnInit {
       this.camera.getPicture(options).then((imageData) => {
         // imageData is either a base64 encoded string or a file URI
         // If it's base64:
-
+        console.log("imagedata",imageData);
         let base64Image = 'data:image/jpeg;base64,' + imageData;
         console.log("base64image", base64Image);
         var postdata = {
@@ -640,7 +640,53 @@ export class ChatPage implements OnInit {
 
   }
 
+
+  shareText(url){
+    console.log("shareText",url);
+    this.socialSharing.share(url, null, null, null).then(() => {
+      console.log("share successfull")
+    }).catch(() => {
+      // Sharing via email is not possible
+      console.log("error in share");
+    });
+
+  }
+
+  shareAudio(item){
+    
+    console.log("shareAudio",item);
+    var url=item.audiourl;
+    
+    this.socialSharing.share(null, null, url, null).then(() => {
+      console.log("share successfull")
+    }).catch(() => {
+      // Sharing via email is not possible
+      console.log("error in share");
+    });
+    
+
+  }
+
+  share(item){
+
+    console.log("item",item);
+
+    var url="";
+    
+
+
+
+    this.socialSharing.share(null, null, url, null).then(() => {
+      console.log("share successfull")
+    }).catch(() => {
+      // Sharing via email is not possible
+      console.log("error in share");
+    });
+
+  }
+
   shareFoto(url) {
+    console.log("shareFoto",url);
     this.socialSharing.share(null, null, url, null).then(() => {
       console.log("share successfull")
     }).catch(() => {

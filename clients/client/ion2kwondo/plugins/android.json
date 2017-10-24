@@ -16,9 +16,6 @@
         "cordova-plugin-audio-recorder-api": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-background-mode": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
         "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -46,6 +43,9 @@
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -53,6 +53,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-tts": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-velda-devicefeedback": {
@@ -73,14 +76,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "403763864066",
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-tts": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-nativeaudio": {
+        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },

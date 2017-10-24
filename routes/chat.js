@@ -493,8 +493,8 @@ router.get("/archive", function (req, res) {
 		"rows": []
 	}
 
-	mongo.archivefile("chat.json", newfname, function (data) {
-		mongo.resetfile("chat.json", empty, function (rdata) {
+	mongo.archivefile("chatno64.json", newfname, function (data) {
+		mongo.resetfile("chatno64.json", empty, function (rdata) {
 
 			utils.colog("chat.json archived to " + newfname + " and chat.json resetted");
 			res.send(data);

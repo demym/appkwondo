@@ -22,17 +22,17 @@
      <div sstyle="background: #ddd; padding: 0px;">
      <button class="incaston"  full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; " (tap)="toggleInfobar()"  >
      <ion-row>
-       <ion-col col-1 fixed style="color: gray; sfont-size: 26px;">
+       <ion-col col-1 fixed style="color: gray; ">
        <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>
        <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>
        </ion-col>
-       <ion-col col-10 style="salign-items: center; sdisplay: flex; font-size: 13px;"><b>{{jgara.title}}</b><!--<i>{{jgara.data}} - {{jgara.location}}</i>--></ion-col>
+       <ion-col col-10 style="font-size: 13px;"><b>{{jgara.title}}</b><!--<i>{{jgara.data}} - {{jgara.location}}</i>--></ion-col>
        <ion-col col-1 style="text-align: right"><img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif"/></ion-col>
        
        </ion-row>
     </button>
       
-     <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; smargin: 2px; ">
+     <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">
   
        <div >
          <ion-row><ion-col col-4>Gara</ion-col><ion-col class="infobold">{{jgara.title}}</ion-col></ion-row>

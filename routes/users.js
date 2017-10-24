@@ -1,38 +1,425 @@
 var express = require('express');
 var router = express.Router();
-var userServices = require("../services/userService");
+var request = require('request');
+var mongo = require('../routes/mongo');
+var utils = require("../routes/utils");
+var mail=require("../routes/mail");
+var moment = require("moment");
+var uuid = require('node-uuid');
+var jwt = require('jsonwebtoken');
+var superSecret = "inespugnabile"
+var tokenExpireMinutes = 60;
 
 
-/* GET users root resource. */
-router.get('/', function(req, res) {
-	res.send('respond with a resource');
+
+router.get("/list", function (req, res) {
+    mongo.getfile("users.json", function (data) {
+        res.send(data);
+    })
+})
+
+
+router.get("/add", function (req, res) {
+    var doc = {
+        doc: {
+
+            email: "tkdruser@yahoo.it",
+            nickname: "TkdrUser",
+            password: "stevevai",
+            role: "tkdruser",
+            active: "true"
+
+
+
+        }
+
+    }
+
+    var mom = moment().format("YYYYMMDDHHmmSS");
+    doc.doc.id = mom;
+
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == doc.doc.email) found = true;
+        })
+
+        if (!found) {
+            mongo.addRecord("users.json", "", doc, function (ddata) {
+
+                res.send(ddata);
+            })
+
+        } else {
+            var retvalue = {
+                error: true,
+                msg: "User " + doc.doc.email + " already existing"
+            }
+            res.send(retvalue);
+        }
+    })
+
+
+})
+
+
+router.get("/delete", function (req, res) {
+    var email = "demym@yahoo.it";
+    var id = "";
+    mongo.getfile("users.json", function (data) {
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == email) {
+                if (item.doc.hasOwnProperty("id")) {
+                    id = item.doc.id;
+                }
+
+            }
+
+        })
+
+        mongo.deleteRecord("users.json", id, function (ddata) {
+            res.send(ddata);
+        })
+    })
+
+
 });
 
-/* GET all users. */
-// ############################## UNCOMMENT FOR DEMO
-router.get('/getAllUsers', function(req, res) {
-	userServices.getAllUsers(function(obj) {
-		console.log("###### users ( /getAllUsers route ) -->  " + JSON.stringify(obj));
-		res.send(obj);
-	});
+router.post("/delete", function (req, res) {
+    var email = req.body.email;
+    var id = "";
+    mongo.getfile("users.json", function (data) {
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == email) {
+                if (item.doc.hasOwnProperty("id")) {
+                    id = item.doc.id;
+                }
+
+            }
+
+        })
+
+        mongo.deleteRecord("users.json", id, function (ddata) {
+            res.send(ddata);
+        })
+    })
+
+
 });
 
 
-/* ADD user. */
-router.post('/addUser', function(req, res) {
-	userServices.addUser(req.body, function(obj) {
-		console.log("###### users ( /addUser route ) -->  " + JSON.stringify(obj));
-		res.send(obj);
-	});
+router.get("/register/:email/:nickname", function (req, res) {
+    var email = req.params.email;
+    var nickname = req.params.nickname;
+    var randomstring = Math.random().toString(36).slice(-8);
+    var doc = {
+        doc: {
+
+            email: email,
+            nickname: nickname,
+            password: randomstring,
+            role: "tkdruser",
+            active: "false"
+
+
+
+        }
+
+    }
+
+    var mom = moment().format("YYYYMMDDHHmmSS");
+    doc.doc.id = mom;
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == doc.doc.email) found = true;
+        })
+
+        if (!found) {
+            mongo.addRecord("users.json", "", doc, function (ddata) {
+
+                res.send(ddata);
+            })
+
+        } else {
+            var retvalue = {
+                error: true,
+                msg: "User " + doc.doc.email + " already existing"
+            }
+            res.send(retvalue);
+
+        }
+
+
+
+    })
+
+})
+
+router.post("/register", function (req, res) {
+
+    var email = req.body.email;
+    var nickname = req.body.nickname;
+    var password=req.body.psw;
+  
+    var randomstring = Math.random().toString(36).slice(-8);
+    var doc = {
+        doc: {
+
+            email: email,
+            nickname: nickname,
+            password: password,
+            role: "tkdruser",
+            active: "false"
+
+
+
+        }
+
+    }
+
+    var mom = moment().format("YYYYMMDDHHmmSS");
+    doc.doc.id = mom;
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == doc.doc.email) found = true;
+        })
+
+        if (!found) {
+            mongo.addRecord("users.json", "", doc, function (ddata) {
+
+
+              var html="<b>"+nickname+" ("+email+")</b> ha inviato una richiesta di registrazione ad Appkwondo<br><br><a href='#'>Approva</a><br><a href='#'>Rifiuta</a>"
+                   
+
+              var mailobj={
+                from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+                to: "demym@yahoo.it", // list of receivers
+                subject: "Richiesta di registrazione ad Appkwondo da "+email, // Subject line
+                text: html, // plaintext body
+                html: html // html body
+            }
+
+              mail.sendMail(mailobj,function(mdata){
+                res.send(ddata);
+
+              })
+           
+
+               
+            })
+
+        } else {
+            var retvalue = {
+                error: true,
+                msg: "User " + doc.doc.email + " already existing"
+            }
+            res.send(retvalue);
+
+        }
+
+
+
+    })
+
+})
+
+
+router.get("/approve/:email",function(req,res){
+    var email=req.params.email;
+    var id="";
+    var user={};
+    mongo.getfile("users.json",function(data){
+        var found=false;
+        data.rows.forEach(function(item,idx){
+            if (item.doc.email==email) {
+                id=item.doc.id;
+                user=item.doc;
+                found=true;
+            }
+        })
+
+        if (found){
+
+            var doc={
+                doc: user
+            };
+                             
+            doc.doc.active=true;
+            mongo.updateRecord("users.json",id,doc,function(udata){
+
+                var html="La tua registrazione su Appkwondo è stata completata con successo<br><br>";
+                html+="I tuoi dati di accesso saranno i seguenti<br><br>";
+                html+="E-mail: <b>"+doc.doc.email+"</b><br>";
+                html+="Password: <b>"+doc.doc.password+"</b> (potrai cambiarla in ogni momento dall'app stessa)";
+
+    
+
+              var mailobj={
+                from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+                to: doc.doc.email, // list of receivers
+                subject: "La tua registrazione Appkwondo", // Subject line
+                text: html, // plaintext body
+                html: html // html body
+            }
+
+              mail.sendMail(mailobj,function(mdata){
+                res.send(mdata);
+
+              })
+
+
+
+
+               
+            })
+
+        } else {
+            var retvalue={
+                error: true,
+                msg: "User "+email+" not found"
+            }
+            res.send(ret)
+        }
+
+        
+    })
+
+})
+
+
+
+router.post('/login', function (req, res) {
+	//var em=req.body.email;
+	//var pw=req.body.password;
+	var role = "tkdruser";
+
+	var ret = {
+		"loggedin": "false"
+	};
+
+	var adminpsw = "Ser07glr,Taeguk,Masterkwondo";
+
+
+	var auth = req.body.authorization;
+	//console.log("auth: "+auth);
+
+	var tmp = auth.split(' '); // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
+	var buf = new Buffer(tmp[1], 'base64'); // create a buffer and tell it the data coming in is base64
+	var plain_auth = buf.toString(); // read it back out as a string
+	//console.log("Decoded Authorization ", plain_auth);
+
+	// At this point plain_auth = "username:password"
+	var creds = plain_auth.split(':'); // split on a ':'
+	var username = creds[0];
+	var password = creds[1];
+
+	//console.log(username+" - "+password);
+
+	var em = username;
+    var pw = password;
+    
+    var loggedin=false;
+    var user={};
+
+    mongo.getfile("users.json",function(data){
+        data.rows.forEach(function(item,idx){
+               if ((item.doc.email==em)  && (item.doc.password==pw)) {
+                   loggedin=true;
+                   user=item.doc;
+               }
+        })
+
+        if (loggedin){
+            user.loggedin=loggedin;
+            var tokenv4 = uuid.v4();
+            var token = jwt.sign(em, superSecret
+                /*,{
+                                  expiresIn: "1 days" 
+                       }*/
+            );
+            user.token = token;
+            res.send(user);
+        } else {
+            user.loggedin=false;
+            res.send(user);
+        }
+    })
+
+
+
 });
 
-/* DELETE user by ID. */
-router.get('/deleteUser/:objd', function(req, res) {
-	var userId = req.params.objd;
-	console.log('########## about to delete user: ' + userId);
-	userServices.deleteUser(userId, function(obj) {
-		console.log("###### users ( /deleteUser route ) -->  " + JSON.stringify(obj));
-		res.send(obj);
-	});
+
+router.get("/regpending/html",function(req,res){
+
+    var htm="<style>table td { font-size: 22px}</style><table width='100%' border=1>";
+    
+
+   mongo.getfile("users.json",function(data){
+       data.rows.forEach(function(item,idx){
+          var active=false;
+          if (item.doc.hasOwnProperty("active")){
+              if (String(item.doc.active)=="true"){
+                  active=true;
+              }
+          }
+
+          if (!active){
+            htm+="<tr><td>"+item.doc.email+"</td><td>"+item.doc.nickname+"</td><td><a href='/users/approve/"+item.doc.email+"'>APPROVA</a></td></tr>";
+
+
+          }
+           
+
+       })
+       htm+="</tr></table>";
+       res.send(htm);
+   })
+
 });
-module.exports = router;
+
+
+router.get("/regpending",function(req,res){
+    
+       
+
+        var ret={
+            rows: []
+        }
+    
+       mongo.getfile("users.json",function(data){
+           data.rows.forEach(function(item,idx){
+              var active=false;
+              if (item.doc.hasOwnProperty("active")){
+                  if (String(item.doc.active)=="true"){
+                      active=true;
+                  }
+              }
+    
+              if (!active){
+                  ret.rows.push(item);
+              
+    
+    
+              }
+               
+    
+           })
+          
+           res.send(ret);
+       })
+    
+    });
+
+
+
+
+
+
+
+
+
+
+    module.exports = router;

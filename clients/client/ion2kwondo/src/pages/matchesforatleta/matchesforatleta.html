@@ -8,12 +8,35 @@
 
   <ion-navbar>
     <ion-title>Incontri per {{atleta.cognome}} {{atleta.nome}}</ion-title>
+    <ion-buttons end>
+    <button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>
+      
+      </button>
+      <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="addMatches()"><ion-icon name="md-add-circle"></ion-icon>
+        
+        </button>
+
+      </ion-buttons>
   </ion-navbar>
+  <ion-segment class="segment" (tap)="tapSegment()" color="light" [(ngModel)]="activetab">
+      <ion-segment-button  value="matches">
+       <!-- <ion-icon name="camera"></ion-icon>-->Match
+      </ion-segment-button>
+      <ion-segment-button  value="details">
+          <!-- <ion-icon name="camera"></ion-icon>-->Dettagli atleta
+         </ion-segment-button>
+  </ion-segment>
 
 </ion-header>
 
 
 <ion-content spadding>
+
+  <div *ngIf="loading" style="text-align:center">
+    <ion-spinner name="ios"></ion-spinner>
+  </div>
+
+  <section *ngIf="activetab=='matches'">
 
   <section *ngIf="mfa.length==0">
     <ion-card>
@@ -39,6 +62,9 @@
       </ion-item>
       </ng-container>
     </ion-list>
+
+  </section>
+  <section *ngIf="activetab=='details'">
       <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTkdtCategoria=!viewTkdtCategoria">Dati ufficiali categoria</button>
     <ion-list *ngIf="viewTkdtCategoria">
       <ion-item  style="font-size:12px" *ngFor="let a of tkdtatletaarr"> 
@@ -49,6 +75,8 @@
         </ion-row>
       </ion-item>
       </ion-list>
+
+
      <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewAvversari=!viewAvversari">Avversari in categoria ({{avversari.length}})</button>
     <ion-list *ngIf="viewAvversari">
       <ion-item  style="font-size:12px" *ngFor="let avv of avversari"> 
@@ -87,6 +115,8 @@
          </ion-row>
         </ion-item>
     </ion-list>  
+
+  </section>
 
 
 </ion-content>

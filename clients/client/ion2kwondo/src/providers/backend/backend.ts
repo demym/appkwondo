@@ -24,8 +24,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class BackendProvider {
   @ViewChild('content') nav: NavController
 
-  public rooturl = "http://tkdr.herokuapp.com";
-  //public rooturl = "http://localhost:3000";
+  //public rooturl = "http://tkdr.herokuapp.com";
+  public rooturl = "http://localhost:3000";
   //9.71.212.38
   //public rooturl="http://9.71.212.38:3000";
   //public rooturl="http://192.168.1.107:3000";
@@ -68,7 +68,7 @@ export class BackendProvider {
   matchconsoles: any = [];
 
   navOptions: any = {
-    animate: true,
+    animate: false,
     animation: 'md-transition'
   };
   unread = 0;
@@ -77,6 +77,11 @@ export class BackendProvider {
   voicetime = 1000;
   soundtimer;
   soundtime = 1000;
+
+  settings: any={
+    mysocieta: "20160217220400",
+    mysocietaname: "ASD Taekwondo Rozzano"
+  }
 
 
   constructor(private tts: TextToSpeech, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public badge: Badge, private nativePageTransitions: NativePageTransitions, public feedback: DeviceFeedback, private storage: Storage, public events: Events, public platform: Platform, public http: Http, private utils: UtilsProvider) {

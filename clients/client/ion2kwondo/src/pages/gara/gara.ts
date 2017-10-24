@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Content } from 'ionic-angular';
 import { NavController, NavParams, ModalController, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { MatchesforatletaPage } from '../../pages/matchesforatleta/matchesforatleta';
@@ -24,6 +25,7 @@ import * as moment from 'moment';
 })
 export class GaraPage {
   @ViewChild(Navbar) navBar: Navbar;
+  @ViewChild(Content) content: Content;
   gara: any = {
     gara:{
       rows:[]
@@ -104,6 +106,8 @@ export class GaraPage {
     
     
     questo.refresh(function (data) {
+
+      questo.content.resize();
 
     })
     

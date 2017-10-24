@@ -2888,8 +2888,8 @@ function setResultOk(match, atl, mfa, callback) {
 			var ordbinarr = new Array("finale", "semifinale", "quarto di finale", "ottavo di finale", "sedicesimo di finale", "trentaduesimo di finale");
 			var result = match.risultato;
 			var goldenpoint = false;
-			if (match.goldenpoint) {
-				if (String(match.goldenpoint == 'true')) goldenpoint = true;
+			if (match.hasOwnProperty("goldenpoint")) {
+				if (String(match.goldenpoint) == 'true') goldenpoint = true;
 			}
 			console.log("goldenpoint: " + goldenpoint);
 			//return;
@@ -3266,7 +3266,7 @@ function setResultOk(match, atl, mfa, callback) {
 
 
 
-				var mfname = "chat.json";
+				var mfname = "chatno64.json";
 				mongo.addRecord(mfname, "", chat, function (cdata) {
 					console.log("chat record inserted",cdata);
 					if (io) {

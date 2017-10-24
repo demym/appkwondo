@@ -75,7 +75,7 @@
   
     <ion-list  *ngFor="let m of backend.chatmessages" > <!--*ngFor="let m of msgs"-->
 
-      <ion-item  class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
+      <ion-item class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
        
           <div class="msgemail">{{m.nickname}}    <span class="date">{{ getNormalDate(m.time) }}</span></div> 
        
@@ -87,12 +87,12 @@
       </div><br *ngIf="m.fotourl && !m.foto">
 
       <!--<img-loader *ngIf="m.fotourl" [src]="m.fotourl"></img-loader>-->
-        <div  *ngIf="m.audio" class="divcont">  
-       <audio style="width: 100%" *ngIf="m.audio" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
+        <div (press)="shareAudio(m)" *ngIf="m.audio" class="divcont">  
+       <audio   style="width: 100%" *ngIf="m.audio" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
     Your browser does not support the audio element.
      </audio></div><br *ngIf="m.audio">
       
-      <span *ngIf="m.text.trim()!=''" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=''" >
+      <span  (press)="shareText(m.text)" *ngIf="m.text.trim()!=''" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=''" >
      
       </ion-item>
     </ion-list>

@@ -52,6 +52,7 @@ var atleti = require('./routes/atleti'),
 	societa = require('./routes/societa'),
 	utils = require("./routes/utils"),
 	realtime = require("./routes/realtime"),
+	users = require("./routes/users"),
 	eventi = require("./routes/eventi");
 //mysql = require('./routes/mysql');;
 //contacts = require('./routes/contacts'),
@@ -381,6 +382,7 @@ app.use("/matches", matches)
 app.use("/chat", chat)
 app.use("/tkdt", tkdt)
 app.use("/eventi", eventi)
+app.use("/users", users)
 
 
 

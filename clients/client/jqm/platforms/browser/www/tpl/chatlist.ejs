@@ -27,7 +27,7 @@ for (var i=0; i<data.length; i++){
  var filename=data[i].filename   ;
  var size=formatBytes(data[i].size);
 %>
-<li><a href="#" onclick="loadChatFile('<%=data[i].filename%>')"><span class="medium" style="font-weight: normal;"><%=title %></span><br><span style="font-weight: normal;" class="small"><%=size%></span></a></li>
+<li><a href="#" onclick="loadChatFile('<%=data[i].filename%>')"><span class="medium" style="font-weight: normal;"><%=title %></span><br><span class="small" style="font-weight: normal;"><%=filename %></span><br><span style="font-weight: normal;" class="small"><%=size%></span></a></li>
 <%
 }
 %>

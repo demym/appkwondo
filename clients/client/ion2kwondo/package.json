@@ -42,10 +42,12 @@
     "@ionic/storage": "2.0.1",
     "com.telerik.plugins.nativepagetransitions": "^0.6.5",
     "cordova-android": "^6.2.3",
+    "cordova-browser": "^4.1.0",
+    "cordova-ios": "^4.4.0",
     "cordova-plugin-app-event": "file:node_modules/cordova-plugin-app-event",
     "cordova-plugin-appavailability": "^0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.6",
-    "cordova-plugin-background-mode": "^0.7.2",
+    "cordova-plugin-background-mode": "git+https://github.com/DavidWiesner/cordova-plugin-background-mode.git#disable-singleInstance",
     "cordova-plugin-badge": "^0.8.0",
     "cordova-plugin-camera": "^2.4.1",
     "cordova-plugin-compat": "^1.1.0",
@@ -75,7 +77,6 @@
     "ionicons": "3.0.0",
     "moment": "^2.18.1",
     "ng2-cordova-oauth": "0.0.8",
-    "phonegap-plugin-push": "^1.10.4",
     "rxjs": "5.4.0",
     "socket.io-client": "^2.0.2",
     "sw-toolbox": "3.6.0",
@@ -111,9 +112,6 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-whitelist": {},
       "ionic-plugin-keyboard": {},
-      "phonegap-plugin-push": {
-        "SENDER_ID": "403763864066"
-      },
       "cordova-plugin-badge": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-themeablebrowser": {},
@@ -138,12 +136,13 @@
       "cordova-plugin-fileopener": {},
       "com.telerik.plugins.nativepagetransitions": {},
       "de.appplant.cordova.plugin.local-notification": {},
-      "cordova-plugin-background-mode": {},
       "cordova-plugin-tts": {},
-      "cordova-plugin-nativeaudio": {}
+      "cordova-plugin-nativeaudio": {},
+      "cordova-plugin-background-mode": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

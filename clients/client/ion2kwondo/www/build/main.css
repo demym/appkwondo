@@ -30710,6 +30710,10 @@ page-gara .filtapplied {
   border: 1px solid yellow;
 }
 
+page-gara .toolbar-ios .segment-ios {
+  position: relative;
+}
+
 page-gare .disputata {
   color: #555;
 }
@@ -30784,10 +30788,10 @@ ion-segment ion-segment-button.segment-button {
 }
 
 .login-content {
-  background-image: url("../assets/img/loginback.jpg");
-  background-repeat: repeat;
+  background-image: url("../assets/img/loginback3.jpg");
+  background-repeat: none;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   /*opacity: .3;*/
 }
 

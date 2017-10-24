@@ -47,16 +47,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "phonegap-plugin-push": {
-        "source": {
-            "type": "registry",
-            "id": "phonegap-plugin-push@1.10.4"
-        },
-        "is_top_level": true,
-        "variables": {
-            "SENDER_ID": "403763864066"
-        }
-    },
     "cordova-plugin-badge": {
         "source": {
             "type": "registry",
@@ -201,14 +191,6 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-background-mode": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-background-mode"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-tts": {
         "source": {
             "type": "registry",
@@ -221,6 +203,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-nativeaudio"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-background-mode": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/DavidWiesner/cordova-plugin-background-mode#disable-singleInstance"
         },
         "is_top_level": true,
         "variables": {}

@@ -89,7 +89,7 @@ import { FacebookProvider } from '../providers/facebook/facebook';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{ animate: false}),
     IonicStorageModule.forRoot(),
     IonicImageLoader.forRoot()
   ],

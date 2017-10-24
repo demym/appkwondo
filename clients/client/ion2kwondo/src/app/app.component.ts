@@ -55,7 +55,7 @@ export class MyApp {
     var questo = this;
 
 
-    var IS_PRODUCTION = false;
+    var IS_PRODUCTION = true;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");
@@ -167,7 +167,28 @@ export class MyApp {
 
     } else {
       if (page.title == "Chiudi Appkwondo") {
-        questo.platform.exitApp();
+        const alert = questo.alertCtrl.create({
+          title: 'Chiudi Appkwondo',
+          message: 'Vuoi veramente chiudere Appkwondo V2 ?',
+          buttons: [
+            {
+              text: 'Annulla',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            },
+            {
+              text: 'OK',
+              handler: () => {
+                console.log('OK clicked');
+                questo.platform.exitApp();
+              }
+            }
+          ]
+        });
+        alert.present();
+       
       } else {
         if (page.title == "Impostazioni") {
           this.nav.push(page.component)
