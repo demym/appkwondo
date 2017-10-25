@@ -73,6 +73,8 @@ export class LoginPage {
           console.log(data.error);
           questo.showError("Login error")
         }
+      } else {
+        alert("Login fallito, controlla i tuoi dati di accesso")
       }
 
 

@@ -120,6 +120,7 @@ app.use(function (req, res, next) {
 	var whitelist = [
 		"/atleti/login",
 		"/users/login",
+		"/users/register",
 		"/token/true",
 		"/token/false",
 		"/listusers?token=nonsientramai",

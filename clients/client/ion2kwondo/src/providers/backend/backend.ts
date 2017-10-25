@@ -510,8 +510,13 @@ getChatMessages(callback) {
 
 fetchText(url, callback) {
   //("fetchdata");
-  if (url.indexOf("token") == -1) url += "?token=" + this.token;
-  //utils.colog("calling url ", url);
+  if (url.indexOf("token") == -1) {
+    if (url.indexOf("?") > -1) {
+      url += "&token=" + this.user.token;
+
+    } else url += "?token=" + this.user.token;
+
+  }
 
   this.http.get(url).map(res => res.text()).subscribe(data => {
     //console.log("fetchText data",data);
@@ -524,9 +529,9 @@ fetchData(url, callback) {
   //("fetchdata");
   if (url.indexOf("token") == -1) {
     if (url.indexOf("?") > -1) {
-      url += "&token=" + this.token;
+      url += "&token=" + this.user.token;
 
-    } else url += "?token=" + this.token;
+    } else url += "?token=" + this.user.token;
 
   }
   //utils.colog("calling url ", url);
@@ -609,6 +614,15 @@ twitterSearch(query, callback) {
 }
 
 postData(url, data, callback) {
+
+  if (url.indexOf("token") == -1) {
+    if (url.indexOf("?") > -1) {
+      url += "&token=" + this.user.token;
+
+    } else url += "?token=" + this.user.token;
+
+  }
+
   this.http.post(url, data)
     .subscribe(data => {
       var result = data.json();

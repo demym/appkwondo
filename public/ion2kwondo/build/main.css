@@ -30206,7 +30206,7 @@ page-atleta ion-fab[bottom] {
 .msgemail {
   font-size: 14px;
   font-weight: bold;
-  padding: 8px;
+  padding: 5px;
 }
 
 .rtmatches {
@@ -30314,8 +30314,9 @@ img.avatarbig {
 
 .chat .messages .message.me {
   float: right;
-  background: #eee;
-  border: 1px solid #387ef5;
+  /*background: #eee;*/
+  background: #ffffb3;
+  border: 0px solid #387ef5;
   color: #222;
   text-align: right;
 }
@@ -30553,6 +30554,15 @@ page-gara .derby {
   font-style: italic;
 }
 
+page-gara .list-md {
+  margin: 0px;
+}
+
+page-gara .card-md {
+  margin: 0px;
+  width: 100%;
+}
+
 page-gara .imgicon {
   position: relative;
   top: 0;
@@ -30627,6 +30637,10 @@ page-gara .text {
   white-space: normal;
 }
 
+page-gara .card-content-md {
+  padding: 10px;
+}
+
 page-gara .incaston {
   padding: 4px;
   width: 100%;
@@ -30694,6 +30708,10 @@ page-gara .filt {
 
 page-gara .filtapplied {
   border: 1px solid yellow;
+}
+
+page-gara .toolbar-ios .segment-ios {
+  position: relative;
 }
 
 page-gare .disputata {
@@ -30770,10 +30788,10 @@ ion-segment ion-segment-button.segment-button {
 }
 
 .login-content {
-  background-image: url("../assets/img/loginback.jpg");
-  background-repeat: repeat;
+  background-image: url("../assets/img/loginback3.jpg");
+  background-repeat: none;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   /*opacity: .3;*/
 }
 
