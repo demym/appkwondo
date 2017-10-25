@@ -420,7 +420,23 @@ router.get("/regpending",function(req,res){
 
 
 
+router.get("/testmail",function(req,res){
+    var html="test mail from appkwondo";
+    var mailobj={
+        from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+        to: "demym@yahoo.it", // list of receivers
+        subject: html, // Subject line
+        text: html, // plaintext body
+        html: html // html body
+    }
 
+      mail.sendMail(mailobj,function(mdata){
+        res.send(mdata);
+
+      })
+
+
+});
 
 
     module.exports = router;

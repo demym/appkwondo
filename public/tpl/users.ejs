@@ -19,24 +19,24 @@ rows.forEach(function(item,idx){
 <tr <%=st%> >
 <td><%=item.doc.email%><br><span style="font-size: 12px"><%=item.doc.nickname%></span></td>
 
+<td>
 <%
-  if (active=="true") {
+  if (active!="true") {
 
       %>
 
-      <td><a onclick="deleteUser('<%=item.doc.email%>')">ELIMINA</a></td>
-<%
-
-  } else {
-
-      %>
-
-      <td><a onclick="approveUser('<%=item.doc.email%>')">APPROVA</a></td>
-
+      <a onclick="approveUser('<%=item.doc.email%>')">APPROVA</a><br>
+      
       <%
   }
+      %>
 
-%>
+      <a onclick="deleteUser('<%=item.doc.email%>')">ELIMINA</a>
+
+      </td>
+
+
+
 
 </tr>
 

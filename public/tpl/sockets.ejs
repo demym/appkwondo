@@ -18,6 +18,12 @@ for(var i=0; i<data.length; i++) {
 	 if (data[i].appversion) {
 	   if (data[i].appversion.trim()!="") appv=data[i].appversion.toUpperCase();
 	 }
+
+	 var email="";
+	  if (data[i].hasOwnProperty("email")) {
+	   if (data[i].email.trim()!="") email=data[i].email;
+	 }
+
     
 %>
         <li sdata-theme='c' class="gradient" >
@@ -26,6 +32,7 @@ for(var i=0; i<data.length; i++) {
 				</div>
 				<div>
 				<span class="medium" style="color: <%= color %>"><%= nick %></span><br>
+				<span class="msmall" style="color: <%= color %>"><%= email %></span><br>
                 <span class="msmall" style="color: <%= color %>" ><%= data[i].id %></span> - <span class="medium" style="color: <%= color %>"><%= data[i].device %></span><br>
 				<span class="msmall" style="color: <%= color %>"><%= data[i].ipaddress %></span><br>
 				<span class="msmall" style="color: <%= color %>"><%= appv %></span><br>

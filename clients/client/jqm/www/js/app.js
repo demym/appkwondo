@@ -7796,8 +7796,9 @@ function isValidEmail(str) {
 }
 
 
-function doLogin() {
+function doLogin(auto) {
 
+	
 
 	conslog("socket", socket);
 	if (!socket) socket = io.connect(rooturl);
@@ -7827,6 +7828,7 @@ function doLogin() {
 		})
 		text = "Sono stati riscontrati i seguenti errori: \n\n\n" + text;
 		alert(text);
+		if (auto) $.mobile.changePage("#login");
 		return;
 	}
 
@@ -10236,8 +10238,8 @@ function refreshAtletiServer() {
 
 
 function progressStart(text) {
-	//if (isPhone) {
-	if (1 == 0) {
+	if (isPhone) {
+	//if (1 == 0) {
 
 		navigator.notification.activityStart(text, "caricamento...");
 	} else {
@@ -10252,8 +10254,8 @@ function progressStart(text) {
 }
 
 function progressStop() {
-	//if (isPhone) {
-	if (1 == 0) {
+	if (isPhone) {
+	//if (1 == 0) {
 		navigator.notification.activityStop();
 	} else {
 		$.mobile.loading('hide');
@@ -15037,7 +15039,7 @@ function autoLogin() {
 				console.log("doing autologin");
 				$("#login #txt-email").val(em);
 				$("#login #txt-password").val(pw);
-				doLogin();
+				doLogin(true);
 			} else {
 				toast("Login automatico fallito");
 				deleteCookie("email");

@@ -26,7 +26,7 @@ var logActive = true;
 
 var superSecret = "inespugnabile"
 var tokenExpireMinutes = 60;
-var usewhitelist = false; //true=token is used     false=token is not used
+var usewhitelist = true; //true=token is used     false=token is not used
 
 process.on('uncaughtException', function (err) {
   console.error(err);
@@ -119,6 +119,9 @@ app.use(function (req, res, next) {
 
 	var whitelist = [
 		"/atleti/login",
+		"/users/login",
+		"/token/true",
+		"/token/false",
 		"/listusers?token=nonsientramai",
 		"/clearlog?token=nonsientramai",
 		"/cordova.js",
@@ -403,6 +406,24 @@ app.get("/zipdata", function (req, res) {
 
 })
 
+app.get("/token/:enabled",function(req,res){
+	var enabled=req.params.enabled;
+
+	var text=""
+
+	if (String(enabled)=="true"){
+	   text="tokens enabled, app is now protected";
+	   usewhitelist=true;
+	} else {
+		text="tokens disabled, app is now unprotected";
+		usewhitelist=false;
+	}
+
+	res.send(text);
+
+
+})
+
 app.get("/mongoprova",function(req,res){
 	mongo.prova(function(err,data){
 		console.log("firnuto",err,data);
@@ -509,6 +530,8 @@ app.get("/socketusers", function (req, res) {
 
 	res.send(out);
 });
+
+
 
 
 app.get("/socketusersold", function (req, res) {
