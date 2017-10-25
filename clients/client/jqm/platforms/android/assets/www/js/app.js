@@ -6,7 +6,7 @@ var role = "tkdruser";
 var fbloggedin = false;
 var chatrefreshcount = 0;
 var tipogara = "combattimento";
-var ranking_sortcampo="ranking_tkdr";
+var ranking_sortcampo = "ranking_tkdr";
 
 var lastrtmatches = [];
 
@@ -51,6 +51,8 @@ var tkdt_iscritti = {
 	avversari: [],
 	rows: []
 }
+
+var user = {};
 
 var realtime = {
 	round: "1",
@@ -785,10 +787,10 @@ function openTabulato(h) {
 	//return;
 	progressStart("Caricamento..");
 	$.ajax({
-			url: h,
-			type: "GET",
-			dataType: "html"
-		})
+		url: h,
+		type: "GET",
+		dataType: "html"
+	})
 		.done(function (data) {
 			colog(data);
 			var img = $(data).find("img[alt=drawing_load_error]");
@@ -807,14 +809,14 @@ function openTabulatoPageNew(url) {
 
 	var urlx = rooturl + "/crossd";
 	$.ajax({
-			type: "POST",
-			url: urlx,
-			data: {
-				url: url,
-				format: ""
-			},
-			dataType: "html"
-		})
+		type: "POST",
+		url: urlx,
+		data: {
+			url: url,
+			format: ""
+		},
+		dataType: "html"
+	})
 
 
 		/*$.ajax({
@@ -854,14 +856,14 @@ function openTabulatoPage(obj, h) {
 	var url = rooturl + "/gettkdtabulato"
 	progressStart("Caricamento..");
 	$.ajax({
-			url: url,
-			type: "POST",
-			dataType: "html",
-			data: {
-				url: h
+		url: url,
+		type: "POST",
+		dataType: "html",
+		data: {
+			url: h
 
-			}
-		})
+		}
+	})
 		.done(function (data) {
 			colog(data);
 			var img = $(data).find("img[alt=drawing_load_error]");
@@ -903,10 +905,10 @@ function getTabulatoImg(h, callback) {
 
 	progressStart("Caricamento..");
 	$.ajax({
-			url: h,
-			type: "GET",
-			dataType: "html"
-		})
+		url: h,
+		type: "GET",
+		dataType: "html"
+	})
 		.done(function (data) {
 			colog(data);
 			var img = $(data).find("img[alt=drawing_load_error]");
@@ -938,20 +940,20 @@ function getCrossd(url) {
 
 	var urlx = rooturl + "/crossd";
 	$.ajax({
-			type: "POST",
-			url: urlx,
-			data: {
-				url: url,
-				format: ""
-			}
-		})
+		type: "POST",
+		url: urlx,
+		data: {
+			url: url,
+			format: ""
+		}
+	})
 
 
 		/*$.ajax({
 			url: url,
 			type: "GET"
 		})*/
-		.done(function (data) {})
+		.done(function (data) { })
 		.error(function (error) {
 			console.log("error", error);
 		})
@@ -1002,13 +1004,13 @@ function getTkdTechnologyGiornata(giornataid, titolo, callback) {
 	$("#page_tkdtnew_giorno #cat").html(caricamentotext);
 	var urlx = rooturl + "/crossd";
 	$.ajax({
-			type: "POST",
-			url: urlx,
-			data: {
-				url: url,
-				format: ""
-			}
-		})
+		type: "POST",
+		url: urlx,
+		data: {
+			url: url,
+			format: ""
+		}
+	})
 		.done(function (data) {
 
 			var page = $("#page_tkdtnew_giorno");
@@ -1243,13 +1245,13 @@ function getTkdTechnologyNew(tkdt_garaid, callback) {
 	var urlx = rooturl + "/crossd"
 
 	$.ajax({
-			type: "POST",
-			url: urlx,
-			data: {
-				url: tabulatigiorni_url,
-				format: ""
-			}
-		})
+		type: "POST",
+		url: urlx,
+		data: {
+			url: tabulatigiorni_url,
+			format: ""
+		}
+	})
 
 
 		/*$.ajax({
@@ -1347,9 +1349,9 @@ function getTkdTechnology(callback) {
 	//var url="http://demo.tkdtechnology.it";		 
 
 	$.ajax({
-			url: url,
-			type: "GET"
-		})
+		url: url,
+		type: "GET"
+	})
 		.done(function (data) {
 
 			tkdt_iscritti = {
@@ -1704,7 +1706,7 @@ var app = {
 		var pageid = $.mobile.activePage.attr('id');
 		playFeedback();
 		$("#" + pageid + " #btnBack").trigger("click");
-		
+
 
 	},
 
@@ -1806,7 +1808,7 @@ var app = {
 					window.FilePath.resolveNativePath(fname, function (localFileUri) {
 
 						fname = localFileUri;
-						readFromFile(fname, function(data) {
+						readFromFile(fname, function (data) {
 							console.log("readfromfile callback", data);
 						})
 
@@ -1861,9 +1863,9 @@ var app = {
 
 	loadAllSchede: function (callback) {
 		$.ajax({
-				url: rooturl + "/atleti/findall?societaid=" + settings.mysocieta,
-				type: "GET"
-			})
+			url: rooturl + "/atleti/findall?societaid=" + settings.mysocieta,
+			type: "GET"
+		})
 			.done(function (data) {
 				//alert(JSON.stringify(data));
 				$atleti = data;
@@ -1874,9 +1876,9 @@ var app = {
 	},
 	loadAllGare: function (callback) {
 		$.ajax({
-				url: rooturl + "/gare/findall?societa=" + settings.mysocieta,
-				type: "GET"
-			})
+			url: rooturl + "/gare/findall?societa=" + settings.mysocieta,
+			type: "GET"
+		})
 			.done(function (data) {
 				//alert(JSON.stringify(data));
 				callback(data);
@@ -1887,9 +1889,9 @@ var app = {
 };
 
 
-function showCarousel(){
-	var page=$("#page_carousel");
-	
+function showCarousel() {
+	var page = $("#page_carousel");
+
 	var html = new EJS({
 		url: 'tpl/carousel.ejs'
 	}).render({});
@@ -1904,17 +1906,17 @@ function showCarousel(){
 
 function readFromFile(fileEntry, cb) {
 
-		fileEntry.file(function (file) {
-			var reader = new FileReader();
+	fileEntry.file(function (file) {
+		var reader = new FileReader();
 
-			reader.onloadend = function (e) {
-				console.log("letto !!");
-				cb(this.result);
-			};
+		reader.onloadend = function (e) {
+			console.log("letto !!");
+			cb(this.result);
+		};
 
-			reader.readAsText(file);
-		}, errorHandler.bind(null, fileEntry));
-	
+		reader.readAsText(file);
+	}, errorHandler.bind(null, fileEntry));
+
 }
 
 
@@ -1984,7 +1986,7 @@ function playSound(filename) {
 
 function myToast(wnot) {
 
-	
+
 	var pageid = $.mobile.activePage.attr('id');
 	colog("current pageid: " + pageid)
 	//alert(html);
@@ -2103,7 +2105,7 @@ function closePanel() {
 function updateHomeInfos() {
 	conslog('updateHomeInfos')
 	$(".serverspan").html("Connesso al server: " + rooturl.replace("http://", "").replace("https://", ""));
-	$("#userName").html("<b><font style='color: blue'>" + chatuser.nickname.toUpperCase() + "</font></b>");
+	$("#userName").html("<b><font style='color: blue'>" + chatuser.nickname + "</font></b><br><span class='small'>"+user.email+"</span>");
 
 	if (settings) {
 		$(".societaspan").html("Società: " + settings.mysocietaname);
@@ -2241,8 +2243,8 @@ function recordChatAudio() {
 					$("#page_chat #chataudio2").attr("src", "img/audio.png");
 					console.log("registrazione terminata");
 				}, {
-					limit: 1
-				});
+						limit: 1
+					});
 			}
 
 
@@ -2629,10 +2631,10 @@ function showTkdt2() {
 	var url = rooturl + "/tkdt/get/" + tid;
 	progressStart("Recupero dati ufficiali di gara " + tid + " ....")
 	$.ajax({
-			type: "GET",
-			url: url
+		type: "GET",
+		url: url
 
-		})
+	})
 		.done(function (data) {
 			colog(data);
 			progressStop();
@@ -2807,9 +2809,9 @@ function showTkdtMedagliereGlobale(giornataid) {
 	//$("#page_tkdtnew_giorno #cat").html(caricamentotext);
 	progressStart("Caricamento medagliere globale");
 	$.ajax({
-			type: "GET",
-			url: url
-		})
+		type: "GET",
+		url: url
+	})
 		.done(function (data) {
 			colog("got medagliereglobale for giornata " + giornataid);
 			progressStop();
@@ -2886,7 +2888,7 @@ function tapMedals() {
 	showTkdtMedagliereGlobale();
 }
 
-var isDraggin=false;
+var isDraggin = false;
 
 function docready() {
 
@@ -2908,13 +2910,13 @@ function docready() {
 	*/
 
 	//pulltorefresh own implementation
-	
 
 
- 
-  // Callback function references the event target and adds the 'swipe' class to it
-  
-	
+
+
+	// Callback function references the event target and adds the 'swipe' class to it
+
+
 
 
 	if (isPhone) {
@@ -3149,48 +3151,48 @@ push.on('error', function(e) {
 
 		recorder.stop = function () {
 			window.plugins.audioRecorderAPI.stop(function (msg) {
-					// success 
-					var fname = msg.substring(1);
-					var arr = msg.split("/");
-					fname = 'file://' + msg;
-					conslog("STOP, fname: " + fname);
-					conslog("msg: " + msg);
-					myToast({
-						body: fname + "<br>" + msg
+				// success 
+				var fname = msg.substring(1);
+				var arr = msg.split("/");
+				fname = 'file://' + msg;
+				conslog("STOP, fname: " + fname);
+				conslog("msg: " + msg);
+				myToast({
+					body: fname + "<br>" + msg
+				});
+
+				window.resolveLocalFileSystemURL(fname,
+					function (fileEntry) {
+						conslog("fileEntry: ", fileEntry)
+						fileEntry.file(function (file) {
+							conslog("file: ", file)
+
+
+							var reader = new FileReader();
+							conslog("reader", reader);
+							reader.onload = function () {
+								conslog('onload readystate: ' + reader.readyState);
+								var dataURL = reader.result;
+								conslog(dataURL);
+								sounddata = dataURL;
+							};
+							reader.onloadend = function (evt) {
+								conslog("onloadend", evt)
+								//var content = this.result;
+								//console.log(content);
+							}
+							reader.onloadstart = printEventType;
+							reader.onprogress = printEventType;
+							reader.readAsDataURL(file);
+						});
+					},
+					function (error) {
+						console.log("error reading file", error)
+
 					});
 
-					window.resolveLocalFileSystemURL(fname,
-						function (fileEntry) {
-							conslog("fileEntry: ", fileEntry)
-							fileEntry.file(function (file) {
-								conslog("file: ", file)
-
-
-								var reader = new FileReader();
-								conslog("reader", reader);
-								reader.onload = function () {
-									conslog('onload readystate: ' + reader.readyState);
-									var dataURL = reader.result;
-									conslog(dataURL);
-									sounddata = dataURL;
-								};
-								reader.onloadend = function (evt) {
-									conslog("onloadend", evt)
-									//var content = this.result;
-									//console.log(content);
-								}
-								reader.onloadstart = printEventType;
-								reader.onprogress = printEventType;
-								reader.readAsDataURL(file);
-							});
-						},
-						function (error) {
-							console.log("error reading file", error)
-
-						});
-
-					conslog('stopaudio ok: ' + msg);
-				},
+				conslog('stopaudio ok: ' + msg);
+			},
 				function (msg) {
 					// failed 
 					conslog('stopaudio ko!!: ' + msg);
@@ -3208,47 +3210,47 @@ push.on('error', function(e) {
 
 		recorder.stopcb = function (callback) {
 			window.plugins.audioRecorderAPI.stop(function (msg) {
-					// success 
-					var fname = msg.substring(1);
-					var arr = msg.split("/");
-					fname = 'file://' + msg;
-					console.log("STOP, fname: " + fname);
-					conslog("msg: " + msg);
-					//myToast({body: fname+"<br>"+msg});
+				// success 
+				var fname = msg.substring(1);
+				var arr = msg.split("/");
+				fname = 'file://' + msg;
+				console.log("STOP, fname: " + fname);
+				conslog("msg: " + msg);
+				//myToast({body: fname+"<br>"+msg});
 
-					window.resolveLocalFileSystemURL(fname,
-						function (fileEntry) {
-							conslog("fileEntry: ", fileEntry)
-							fileEntry.file(function (file) {
-								conslog("file: ", file)
+				window.resolveLocalFileSystemURL(fname,
+					function (fileEntry) {
+						conslog("fileEntry: ", fileEntry)
+						fileEntry.file(function (file) {
+							conslog("file: ", file)
 
 
-								var reader = new FileReader();
-								conslog("reader", reader);
-								reader.onload = function () {
-									conslog('onload readystate: ' + reader.readyState);
-									var dataURL = reader.result;
-									conslog(dataURL);
-									sounddata = dataURL;
-									callback(dataURL);
-								};
-								reader.onloadend = function (evt) {
-									conslog("onloadend", evt)
-									//var content = this.result;
-									//console.log(content);
-								}
-								reader.onloadstart = printEventType;
-								reader.onprogress = printEventType;
-								reader.readAsDataURL(file);
-							});
-						},
-						function (error) {
-							console.log("error reading file", error)
-
+							var reader = new FileReader();
+							conslog("reader", reader);
+							reader.onload = function () {
+								conslog('onload readystate: ' + reader.readyState);
+								var dataURL = reader.result;
+								conslog(dataURL);
+								sounddata = dataURL;
+								callback(dataURL);
+							};
+							reader.onloadend = function (evt) {
+								conslog("onloadend", evt)
+								//var content = this.result;
+								//console.log(content);
+							}
+							reader.onloadstart = printEventType;
+							reader.onprogress = printEventType;
+							reader.readAsDataURL(file);
 						});
+					},
+					function (error) {
+						console.log("error reading file", error)
 
-					conslog('stopaudio ok: ' + msg);
-				},
+					});
+
+				conslog('stopaudio ok: ' + msg);
+			},
 				function (msg) {
 					// failed 
 					conslog('stopaudio ko!!: ' + msg);
@@ -3599,7 +3601,7 @@ push.on('error', function(e) {
 	$.ajaxSetup({
 		cache: false
 		,
-				beforeSend: function (xhr) { xhr.setRequestHeader('x-auth-token', getCookie("token")); }
+		beforeSend: function (xhr) { xhr.setRequestHeader('x-auth-token', getCookie("token")); }
 
 	});
 	/*
@@ -3643,7 +3645,7 @@ push.on('error', function(e) {
 					//var html2=new EJS({url: 'tpl/matchesrealtime2.ejs'}).render(jGara.realtime.rows)
 					//var html2=new EJS({url: 'tpl/matchesrealtime.ejs'}).render(realtimeArray);
 					//$("#page_chat .chatrealtime .rtul").empty().append(html2);
-
+					refreshMatchesForAtleta();
 
 					//updateTempoRealePage();
 				});
@@ -3679,9 +3681,9 @@ push.on('error', function(e) {
 					var nonletti = jGara.cronaca.rows.length - cronaca_read.length;
 					if (nonletti < 0) nonletti = 0;
 					$.ajax({
-							url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
-							type: "GET"
-						})
+						url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
+						type: "GET"
+					})
 						.done(function (data) {
 
 							jGara.cronaca = data;
@@ -3737,9 +3739,9 @@ push.on('error', function(e) {
 			var nonletti = jGara.cronaca.rows.length - cronaca_read.length;
 			if (nonletti < 0) nonletti = 0;
 			$.ajax({
-					url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
-					type: "GET"
-				})
+				url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
+				type: "GET"
+			})
 				.done(function (data) {
 
 					jGara.cronaca = data;
@@ -4566,9 +4568,9 @@ function sendCronacaElements() {
 			})
 
 			$.ajax({
-					url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
-					type: "GET"
-				})
+				url: rooturl + "/matches/getcronaca/" + jcurrentgara.id,
+				type: "GET"
+			})
 				.done(function (data) {
 
 					jGara.cronaca = data;
@@ -4676,15 +4678,15 @@ function getChatFoto() {
 					console.log(postdata);
 
 
-				
+
 					var html = new EJS({
 						url: 'tpl/chatsingle.ejs'
 					}).render(postdata);
-			
+
 					$("#page_chat").find(".container").append(html);
 
 					chatScrollBottom();
-					
+
 
 					//$.mobile.silentScroll(9999999);
 					//$('html,body').animate({scrollTop:9999999}, 500);
@@ -5304,57 +5306,57 @@ function updRealtimeResult(data) {
 				a.find("img.imgicon").attr("src", "images/greenblink.gif");
 
 			} else
-			if (ev == "matchstart") {
-				a.find("img.imgicon").attr("src", "images/greenblink.gif");
-				playSound("img/roundstart");
-				//playVoice("Inizio round "+data.round);
-			} else {
-
-				//a.find("span.soft").html(testo);
-
-				if (data.active) {
-					conslog("realtime active !")
-					if (a.find("span.realtime").length == 0) {
-						a.find("div").append("<span class='realtime'></span>")
-						conslog("creating realtime div " + a.find("span.realtime").length);
-						conslog(testo);
-					}
-					a.find("span.vinto").hide();
-					a.find("span.realtime").html(testo);
-					//a.find("span.soft").show();	 
-					var ris = data.result.split("-");
-
-
-
-
-					if (ris.length > 0) {
-
-						var vtext = data.match.atletaname + " " + data.result.replace("-", " a ");
-
-						if (data.fineround) {
-							if (String(data.fineround) == "true") {
-								colog("fine round !!!");
-								var ris = data.result.split("-");
-								//if (ris.length > 0) {
-								var vtext = data.match.atletaname + ". Fine round " + data.round + ". Punteggio: " + data.result.replace("-", " a ");
-								//playVoice(vtext);
-								//}
-								//return;
-							}
-						}
-
-						playVoice(vtext);
-					}
-
-					if (a.find("img.blinkicon").length == 0) a.prepend("<img src='images/greenblink.gif' class='imgicon blinkicon' />")
-					a.find("img.imgicon:eq(1)").hide();
-					a.find("span.vinto").hide();
-					//a.find("img.imgicon").attr("src","images/greenblink.gif")  
+				if (ev == "matchstart") {
+					a.find("img.imgicon").attr("src", "images/greenblink.gif");
+					playSound("img/roundstart");
+					//playVoice("Inizio round "+data.round);
 				} else {
 
-				}
+					//a.find("span.soft").html(testo);
 
-			}
+					if (data.active) {
+						conslog("realtime active !")
+						if (a.find("span.realtime").length == 0) {
+							a.find("div").append("<span class='realtime'></span>")
+							conslog("creating realtime div " + a.find("span.realtime").length);
+							conslog(testo);
+						}
+						a.find("span.vinto").hide();
+						a.find("span.realtime").html(testo);
+						//a.find("span.soft").show();	 
+						var ris = data.result.split("-");
+
+
+
+
+						if (ris.length > 0) {
+
+							var vtext = data.match.atletaname + " " + data.result.replace("-", " a ");
+
+							if (data.fineround) {
+								if (String(data.fineround) == "true") {
+									colog("fine round !!!");
+									var ris = data.result.split("-");
+									//if (ris.length > 0) {
+									var vtext = data.match.atletaname + ". Fine round " + data.round + ". Punteggio: " + data.result.replace("-", " a ");
+									//playVoice(vtext);
+									//}
+									//return;
+								}
+							}
+
+							playVoice(vtext);
+						}
+
+						if (a.find("img.blinkicon").length == 0) a.prepend("<img src='images/greenblink.gif' class='imgicon blinkicon' />")
+						a.find("img.imgicon:eq(1)").hide();
+						a.find("span.vinto").hide();
+						//a.find("img.imgicon").attr("src","images/greenblink.gif")  
+					} else {
+
+					}
+
+				}
 		}
 
 
@@ -5402,36 +5404,36 @@ function updRealtimeResult_old(data) {
 				a.find("span.soft").html(testo);
 				a.find("img.imgicon").attr("src", "images/greenblink.gif")
 			} else
-			if (ev == "matchstart") {
-				a.find("img.imgicon").attr("src", "images/greenblink.gif")
-			} else {
-
-				//a.find("span.soft").html(testo);
-
-				if (data.active) {
-					conslog("realtime active !")
-					if (a.find("span.realtime").length == 0) {
-						a.find("div").append("<span class='realtime'></span>")
-						console.log("creating realtime div " + a.find("span.realtime").length);
-						console.log(testo);
-					}
-					a.find("span.vinto").hide();
-					a.find("span.realtime").html(testo);
-					//a.find("span.soft").show();	 
-					if (a.find("img.blinkicon").length == 0) a.prepend("<img src='images/greenblink.gif' class='imgicon blinkicon' />")
-					a.find("img.imgicon:eq(1)").hide();
-					a.find("span.vinto").hide();
-					//a.find("img.imgicon").attr("src","images/greenblink.gif")  
+				if (ev == "matchstart") {
+					a.find("img.imgicon").attr("src", "images/greenblink.gif")
 				} else {
-					conslog("realtime not active !")
-					a.find("span.realtime").remove();
-					a.find("span.vinto").show();
-					a.find("img.blinkicon").remove();
-					a.find("img.imgicon:first").show();
-					a.find("span.vinto").show();
-				}
 
-			}
+					//a.find("span.soft").html(testo);
+
+					if (data.active) {
+						conslog("realtime active !")
+						if (a.find("span.realtime").length == 0) {
+							a.find("div").append("<span class='realtime'></span>")
+							console.log("creating realtime div " + a.find("span.realtime").length);
+							console.log(testo);
+						}
+						a.find("span.vinto").hide();
+						a.find("span.realtime").html(testo);
+						//a.find("span.soft").show();	 
+						if (a.find("img.blinkicon").length == 0) a.prepend("<img src='images/greenblink.gif' class='imgicon blinkicon' />")
+						a.find("img.imgicon:eq(1)").hide();
+						a.find("span.vinto").hide();
+						//a.find("img.imgicon").attr("src","images/greenblink.gif")  
+					} else {
+						conslog("realtime not active !")
+						a.find("span.realtime").remove();
+						a.find("span.vinto").show();
+						a.find("img.blinkicon").remove();
+						a.find("img.imgicon:first").show();
+						a.find("span.vinto").show();
+					}
+
+				}
 		}
 
 
@@ -5485,11 +5487,11 @@ var scheda = {
 
 			colog("posting " + JSON.stringify(scheda.data));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/" + func,
-					type: "POST",
-					data: scheda.data
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/" + func,
+				type: "POST",
+				data: scheda.data
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -5577,9 +5579,9 @@ var scheda = {
 		delete scheda.data._id;
 		delete scheda.data._rev;
 		$.ajax({
-				url: rooturl + "/schede/findById/" + id,
-				type: "GET"
-			})
+			url: rooturl + "/schede/findById/" + id,
+			type: "GET"
+		})
 			.done(function (data) {
 				colog("loadbyid " + id + ": " + JSON.stringify(data));
 				scheda.data = data;
@@ -5596,15 +5598,15 @@ var scheda = {
 		if (id != "") {
 			//app.storage.removeItem($.trim(nome));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/delScheda",
-					type: "POST",
-					//data: {id: scheda.data._id, rev: scheda.data._rev 
-					data: {
-						id: id,
-						rev: rev
-					}
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/delScheda",
+				type: "POST",
+				//data: {id: scheda.data._id, rev: scheda.data._rev 
+				data: {
+					id: id,
+					rev: rev
+				}
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -5627,10 +5629,10 @@ var scheda = {
 	send: function (listaSchede, successCallback, failCallback) {
 
 		$.ajax({
-				url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-				type: "POST",
-				data: listaSchede
-			})
+			url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+			type: "POST",
+			data: listaSchede
+		})
 			.done(function (data) {
 				// navigator.notification.alert(data, function() {}, "Avviso");
 				//alert(data);
@@ -5694,11 +5696,11 @@ var gara = {
 
 			colog("posting " + JSON.stringify(scheda.data));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/" + func,
-					type: "POST",
-					data: scheda.data
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/" + func,
+				type: "POST",
+				data: scheda.data
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -5783,9 +5785,9 @@ var gara = {
 		delete scheda.data._id;
 		delete scheda.data._rev;
 		$.ajax({
-				url: rooturl + "/gare/findById/" + id + "?societa=" + settings.mysocieta,
-				type: "GET"
-			})
+			url: rooturl + "/gare/findById/" + id + "?societa=" + settings.mysocieta,
+			type: "GET"
+		})
 			.done(function (data) {
 				$gara = data.rows[0];
 				jcurrentgara = $gara.doc;
@@ -5812,15 +5814,15 @@ var gara = {
 		if (id != "") {
 			//app.storage.removeItem($.trim(nome));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/delScheda",
-					type: "POST",
-					//data: {id: scheda.data._id, rev: scheda.data._rev 
-					data: {
-						id: id,
-						rev: rev
-					}
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/delScheda",
+				type: "POST",
+				//data: {id: scheda.data._id, rev: scheda.data._rev 
+				data: {
+					id: id,
+					rev: rev
+				}
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -5843,10 +5845,10 @@ var gara = {
 	send: function (listaSchede, successCallback, failCallback) {
 
 		$.ajax({
-				url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-				type: "POST",
-				data: listaSchede
-			})
+			url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+			type: "POST",
+			data: listaSchede
+		})
 			.done(function (data) {
 				// navigator.notification.alert(data, function() {}, "Avviso");
 				//alert(data);
@@ -5909,11 +5911,11 @@ var atleta = {
 
 			colog("posting " + JSON.stringify(scheda.data));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/" + func,
-					type: "POST",
-					data: scheda.data
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/" + func,
+				type: "POST",
+				data: scheda.data
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -5999,9 +6001,9 @@ var atleta = {
 		delete scheda.data._id;
 		delete scheda.data._rev;
 		$.ajax({
-				url: rooturl + "/atleti/findById/" + id,
-				type: "GET"
-			})
+			url: rooturl + "/atleti/findById/" + id,
+			type: "GET"
+		})
 			.done(function (data) {
 				colog("loadbyid " + id + ": " + JSON.stringify(data));
 				scheda.data = data;
@@ -6018,15 +6020,15 @@ var atleta = {
 		if (id != "") {
 			//app.storage.removeItem($.trim(nome));
 			$.ajax({
-					//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-					url: rooturl + "/schede/delScheda",
-					type: "POST",
-					//data: {id: scheda.data._id, rev: scheda.data._rev 
-					data: {
-						id: id,
-						rev: rev
-					}
-				})
+				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+				url: rooturl + "/schede/delScheda",
+				type: "POST",
+				//data: {id: scheda.data._id, rev: scheda.data._rev 
+				data: {
+					id: id,
+					rev: rev
+				}
+			})
 				.done(function (data) {
 					// navigator.notification.alert(data, function() {}, "Avviso");
 					//alert("done: "+data);
@@ -6049,10 +6051,10 @@ var atleta = {
 	send: function (listaSchede, successCallback, failCallback) {
 
 		$.ajax({
-				url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-				type: "POST",
-				data: listaSchede
-			})
+			url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+			type: "POST",
+			data: listaSchede
+		})
 			.done(function (data) {
 				// navigator.notification.alert(data, function() {}, "Avviso");
 				//alert(data);
@@ -6728,10 +6730,10 @@ function refreshGareServer(filtro) {
 					data.rev = rev;
 
 					$.ajax({
-							url: rooturl + "/gare/delete",
-							type: "POST",
-							data: data
-						})
+						url: rooturl + "/gare/delete",
+						type: "POST",
+						data: data
+					})
 						.done(function (data) {
 							// navigator.notification.alert(data, function() {}, "Avviso");
 							//alert("done: "+data);
@@ -6780,10 +6782,10 @@ function markGara(id, stato) {
 	}
 
 	$.ajax({
-			url: rooturl + "/gare/update",
-			type: "POST",
-			data: data
-		})
+		url: rooturl + "/gare/update",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			popGareCancel();
 			refreshGareServer();
@@ -6799,10 +6801,10 @@ function editEvento(id) {
 	var page = $("#page_editevento");
 
 	$.ajax({
-			url: rooturl + "/eventi/findbyid/" + id,
-			type: "GET"
+		url: rooturl + "/eventi/findbyid/" + id,
+		type: "GET"
 
-		})
+	})
 		.done(function (data) {
 
 
@@ -6844,10 +6846,10 @@ function viewEvento(id) {
 	var page = $("#page_viewevento");
 
 	$.ajax({
-			url: rooturl + "/eventi/findbyid/" + id,
-			type: "GET"
+		url: rooturl + "/eventi/findbyid/" + id,
+		type: "GET"
 
-		})
+	})
 		.done(function (data) {
 
 
@@ -6909,12 +6911,12 @@ function editEventoOk() {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/eventi/update",
-			//dataType: "JSON",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/eventi/update",
+		//dataType: "JSON",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -6992,10 +6994,10 @@ function editGara(id) {
 		if (gara.doc.tkdt_id.trim() != "") {
 			progressStart("lettura dati di gara ufficiale " + gara.doc.tkdt_id);
 			$.ajax({
-					url: rooturl + "/tkdt/getfromfile/" + gara.doc.tkdt_id + "?societaid=" + settings.mysocieta,
-					dataType: "json",
-					type: "GET"
-				})
+				url: rooturl + "/tkdt/getfromfile/" + gara.doc.tkdt_id + "?societaid=" + settings.mysocieta,
+				dataType: "json",
+				type: "GET"
+			})
 				.done(function (data) {
 					progressStop();
 
@@ -7122,12 +7124,12 @@ function editGaraOk() {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/gare/update",
-			//dataType: "JSON",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/gare/update",
+		//dataType: "JSON",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -7142,9 +7144,9 @@ function editGaraOk() {
 							console.log("saving tkdt");
 							var turl = rooturl + "/tkdt/retrieve/" + data.tkdt_id;
 							$.ajax({
-									type: "GET",
-									url: turl
-								})
+								type: "GET",
+								url: turl
+							})
 								.done(function (data) {
 
 									console.log("retrieved and saved tkdt " + data.tkdt_id + " to file");
@@ -7207,10 +7209,10 @@ function popGareCloseRemove() {
 function loadFullGaraById(id, callback) {
 	//alert(settings.societa)
 	$.ajax({
-			url: rooturl + "/gare/fullgarabyid/" + id + "?societaid=" + settings.mysocieta,
-			dataType: "json",
-			type: "GET"
-		})
+		url: rooturl + "/gare/fullgarabyid/" + id + "?societaid=" + settings.mysocieta,
+		dataType: "json",
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(data.rows.length);
 
@@ -7657,6 +7659,143 @@ function openGara(id, callback) {
 }
 
 
+function approveUser(em) {
+	var url = rooturl + "/users/approve/" + em;
+	$.get(url, function (data) {
+		showPendingRegs();
+	})
+}
+
+
+function changeUserView() {
+
+	var val = $("#page_regpendings #userview").val();
+
+
+
+	var url = rooturl + "/users/regpending";
+	if (val == "all") url = rooturl + "/users/list";
+
+
+	$.get(url, function (data) {
+
+		var html = new EJS({
+			url: 'tpl/users.ejs'
+		}).render(data.rows);
+
+
+
+		$("#page_regpendings #table").html(html);
+	});
+
+
+}
+
+function showPendingRegs() {
+
+	$.mobile.changePage("#page_regpendings");
+	changeUserView();
+	return;
+
+	var url = rooturl + "/users/regpending";
+
+
+	$.get(url, function (data) {
+
+		var html = new EJS({
+			url: 'tpl/users.ejs'
+		}).render(data.rows);
+
+
+
+		$("#page_regpendings #table").html(html);
+		$.mobile.changePage("#page_regpendings");
+
+
+	})
+
+}
+
+function showRegisterPage() {
+
+	$.mobile.changePage("#registeruser");
+}
+
+
+function deleteUser(email) {
+	if (confirm("Sicuro di voler cancellare questo utente ?")) {
+		var url = rooturl + "/users/delete";
+		var doc = {
+			email: email
+		}
+		$.post(url, doc, function (data) {
+			console.log(data);
+			//alert("user cancellato !");
+			changeUserView();
+
+		})
+	}
+}
+
+function doRegisterUser() {
+	var page = $("#registeruser");
+	var email = page.find("#reg-email").val();
+	var nick = page.find("#reg-nickname").val();
+	var pass = page.find("#reg-password").val();
+	var url = rooturl + "/users/register";
+
+
+	var errors = [];
+
+	if (email.trim() == "") errors.push("Fornisci una email");
+	if (email.trim() != "") {
+		if (!isValidEmail(email)) errors.push("Fornisci una email valida");
+	}
+	if (nick.trim() == "") errors.push("Fornisci un nickname");
+	if (pass.trim() == "") errors.push("Fornisci una password");
+
+	var text = "";
+	if (errors.length > 0) {
+		errors.forEach(function (item, idx) {
+			text += item + "\n";
+		})
+		text = "Sono stati riscontrati i seguenti errori: \n\n\n" + text;
+		alert(text);
+		return;
+	}
+
+	var reguser = {
+		email: email,
+		nickname: nick,
+		psw: pass
+	}
+	$.post(url, reguser, function (data) {
+		console.log(data);
+		var error = false;
+		if (data.hasOwnProperty("error")) {
+			if (String(data.error) == "true") {
+				error = true;
+			}
+		}
+
+		if (!error) {
+			var text = "Grazie ! Registrazione completata ! Riceverai a breve una email all'indirizzo " + reguser.email + " con i dettagli per l'attivazione della tua userid su AppKwonDo";
+			alert(text);
+			$.mobile.back();
+		} else {
+			var text = data.msg;
+			alert(text);
+		}
+	});
+
+}
+
+
+function isValidEmail(str) {
+	return typeof str === 'string' && /^[\w+\d+._]+\@[\w+\d+_+]+\.[\w+\d+._]{2,8}$/.test(str);
+}
+
+
 function doLogin() {
 
 
@@ -7671,9 +7810,30 @@ function doLogin() {
 	var ckal = page.find("#chck-autologin").prop("checked");
 	//var ckal=page.find("#chck-autologin:checked").length;
 
+
+	var errors = [];
+
+	if (email.trim() == "") errors.push("Fornisci una email");
+	if (email.trim() != "") {
+		if (!isValidEmail(email)) errors.push("Fornisci una email valida");
+	}
+	
+	if (psw.trim() == "") errors.push("Fornisci una password");
+
+	var text = "";
+	if (errors.length > 0) {
+		errors.forEach(function (item, idx) {
+			text += item + "\n";
+		})
+		text = "Sono stati riscontrati i seguenti errori: \n\n\n" + text;
+		alert(text);
+		return;
+	}
+
 	//alert("ckal: "+ckal);
 
-	var url = rooturl + "/atleti/login";
+	//var url = rooturl + "/atleti/login";
+	var url = rooturl + "/users/login";
 	conslog("Accessing url " + url);
 
 
@@ -7685,29 +7845,32 @@ function doLogin() {
 	var authorization = "Basic " + window.btoa(email + ":" + psw);
 
 	$.ajax({
-			url: url,
-			data: {
-				email: email,
-				password: psw,
-				authorization: authorization
-			},
-			type: "POST"
-		})
+		url: url,
+		data: {
+			email: email,
+			password: psw,
+			authorization: authorization
+		},
+		type: "POST"
+	})
 		.done(function (data) {
 			progressStop();
 
-			colog("login result: " + JSON.stringify(data));
-			role = data.role;
-			//if (data.role=="admin")
-			loggedin = true;
-			if (data.loggedin == "true") {
+			console.log("login result", data);
+
+
+			if (String(data.loggedin) == "true") {
+				user = data;
+				role = user.role;
+				//if (data.role=="admin")
+				loggedin = true;
 				myToast({
 					body: "login eseguito con successo"
 				});
 				var token = data.token;
 
 
-				chatuser.nickname = email;
+				chatuser.nickname = user.nickname;
 				var msg = {
 					device: "browser",
 					type: "clientspecs",
@@ -7752,14 +7915,16 @@ function doLogin() {
 				if (ck) {
 
 					setCookie("email", email, cookieDays);
+					setCookie("nickname", user.nickname, cookieDays)
 					setCookie("psw", psw, cookieDays);
 					setCookie("token", token);
-					console.log("saved token ",token);
+					console.log("saved token ", token);
 					colog("setted rememberme cookies")
 				} else {
 					deleteCookie("email");
 					deleteCookie("psw");
 					deleteCookie("token");
+					deleteCookie("nickname");
 
 					colog("deleted rememberme cookies");
 
@@ -7804,12 +7969,19 @@ function doLogin() {
 
 
 			} else {
+				console.log("login unsuccessfull");
+				alert("Login fallito");
+				//var caricamentotext = imgtext + "Accesso in corso..."
+				$("#login #loginbutton").html("Accedi");
+				
+				return;
 				$("#login #dlg-invalid-credentials").popup().popup("open");
 				deleteCookie("email");
 				deleteCookie("psw");
 				deleteCookie("autologin");
+			
 				$("#index .loginspan").html("");
-				console.log("showin login page")
+				console.log("showin login page");
 				showLoginPage();
 			}
 
@@ -7903,10 +8075,10 @@ function playVoice(text) {
 
 function refreshNews(callback) {
 	$.ajax({
-			url: rooturl + "/news",
-			dataType: "json",
-			type: "GET"
-		})
+		url: rooturl + "/news",
+		dataType: "json",
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(data.rows.length);
 			var html = new EJS({
@@ -7962,9 +8134,9 @@ function setActiveTab(n) {
 function loadCronaca(id, callback) {
 	colog("loadcronaca for gara " + id);
 	$.ajax({
-			url: rooturl + "/matches/getcronaca/" + id,
-			type: "GET"
-		})
+		url: rooturl + "/matches/getcronaca/" + id,
+		type: "GET"
+	})
 		.done(function (data) {
 			$("#gara #listacronaca").empty();
 			if (!data.error) {
@@ -8213,9 +8385,9 @@ function loadMatchesByProgOld(id, options) {
 	$.extend(opt, options);
 	colog("loadmatchesbyprog " + id);
 	$.ajax({
-			url: rooturl + "/matches/findbygaraid/" + id + "?societa=" + settings.mysocieta,
-			type: "GET"
-		})
+		url: rooturl + "/matches/findbygaraid/" + id + "?societa=" + settings.mysocieta,
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(JSON.stringify(data));
 			$matches = data;
@@ -8605,9 +8777,9 @@ function loadMatchesByProg(id, options) {
 	$.extend(opt, options);
 	colog("loadmatchesbyprog " + id);
 	$.ajax({
-			url: rooturl + "/matches/findbygaraid/" + id + "?societa=" + settings.mysocieta,
-			type: "GET"
-		})
+		url: rooturl + "/matches/findbygaraid/" + id + "?societa=" + settings.mysocieta,
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(JSON.stringify(data));
 			$matches = data;
@@ -9004,9 +9176,9 @@ function renderMatchesByProg($mbp) {
 function loadMatchesByAtletaOld(id) {
 	colog("loadmatchesbyatleta " + id);
 	$.ajax({
-			url: rooturl + "/matches/findbygaraid/byatleta/" + id + "?societa=" + settings.mysocieta,
-			type: "GET"
-		})
+		url: rooturl + "/matches/findbygaraid/byatleta/" + id + "?societa=" + settings.mysocieta,
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(JSON.stringify(data));
 			var $matchesbyatleta = data;
@@ -9087,9 +9259,9 @@ function loadMatchesByAtletaOld(id) {
 function loadMatchesByAtleta(id) {
 	colog("loadmatchesbyatleta " + id);
 	$.ajax({
-			url: rooturl + "/matches/findbygaraid/byatleta/" + id + "?societa=" + settings.mysocieta,
-			type: "GET"
-		})
+		url: rooturl + "/matches/findbygaraid/byatleta/" + id + "?societa=" + settings.mysocieta,
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(JSON.stringify(data));
 			var $matchesbyatleta = data;
@@ -9488,9 +9660,9 @@ function refreshSocietaServer() {
 	//progressStart("Lettura dati");
 
 	$.ajax({
-			url: rooturl + "/societa/findall",
-			type: "GET"
-		})
+		url: rooturl + "/societa/findall",
+		type: "GET"
+	})
 		.done(function (data) {
 			//app.loadAllSchede(function(data){
 
@@ -9537,9 +9709,9 @@ function refreshSocietaServer() {
 					progressStart("Lettura dati");
 
 					$.ajax({
-							url: rooturl + "/societa/findall",
-							type: "GET"
-						})
+						url: rooturl + "/societa/findall",
+						type: "GET"
+					})
 						.done(function (data) {
 							//alert(JSON.stringify(data));
 							//alert(data.length);
@@ -9588,10 +9760,10 @@ function refreshSocietaServer() {
 						data.rev = rev;
 
 						$.ajax({
-								url: rooturl + "/societa/delete",
-								type: "POST",
-								data: data
-							})
+							url: rooturl + "/societa/delete",
+							type: "POST",
+							data: data
+						})
 							.done(function (data) {
 								// navigator.notification.alert(data, function() {}, "Avviso");
 								//alert("done: "+data);
@@ -9641,9 +9813,9 @@ function refreshEventiServer(callback) {
 	//progressStart("Lettura dati");
 
 	$.ajax({
-			url: rooturl + "/eventi/findall",
-			type: "GET"
-		})
+		url: rooturl + "/eventi/findall",
+		type: "GET"
+	})
 		.done(function (data) {
 			//app.loadAllSchede(function(data){
 
@@ -9736,10 +9908,10 @@ function refreshEventiServer(callback) {
 						data.rev = rev;
 
 						$.ajax({
-								url: rooturl + "/eventi/delete",
-								type: "POST",
-								data: data
-							})
+							url: rooturl + "/eventi/delete",
+							type: "POST",
+							data: data
+						})
 							.done(function (data) {
 								// navigator.notification.alert(data, function() {}, "Avviso");
 								//alert("done: "+data);
@@ -10020,10 +10192,10 @@ function refreshAtletiServer() {
 					data.rev = rev;
 
 					$.ajax({
-							url: rooturl + "/atleti/delete",
-							type: "POST",
-							data: data
-						})
+						url: rooturl + "/atleti/delete",
+						type: "POST",
+						data: data
+					})
 						.done(function (data) {
 							// navigator.notification.alert(data, function() {}, "Avviso");
 							//alert("done: "+data);
@@ -10176,7 +10348,7 @@ function refreshSchede() {
 
 function alerta(txt) {
 	if (isPhone) {
-		navigator.notification.alert(txt, function () {}, "Avviso");
+		navigator.notification.alert(txt, function () { }, "Avviso");
 	} else debugga(txt);
 
 }
@@ -10261,9 +10433,9 @@ function gConfirm(question, title, onYes, onNo) {
 function importAtleti() {
 	// var tkurl="http://localhost:3000"	
 	$.ajax({
-			url: rooturl + "/atleti/findall",
-			type: "GET"
-		})
+		url: rooturl + "/atleti/findall",
+		type: "GET"
+	})
 		.done(function (data) {
 			//alert(JSON.stringify(data));
 			alert(data.length);
@@ -12470,7 +12642,7 @@ function setResult(obj) {
 
 	$("#popResult #matchid").val(matchid);
 	$("#popResult #matchnumber").val(matchnumber);
-	//$("#popResult #checkgp").prop("checked",false);
+	$("#popResult #checkgp").prop("checked", false);
 
 
 
@@ -12714,7 +12886,7 @@ function sgetMatchesForAtleta(input, atletaid) {
 }
 
 
-function setResultOK() {
+function setResultOK2() {
 	var doposts = false;
 	var notifica = true;
 
@@ -13177,6 +13349,86 @@ function setResultOK() {
 }
 
 
+function setResultOK(callback) {
+
+	var id = $("#popResult #matchid").val();
+	var matchnumber = $("#popResult #matchnumber").val();
+	conslog("setting result for match " + id);
+
+	delMatchFromRealtime(id);
+	deleteFromConsoles(id);
+
+	var result = $("#popResult #risult").val();
+	var goldenpoint = $("#popResult #checkgp").prop("checked");
+	//if (questo.selectedConsole.round.toLowerCase()=="gp") goldenpoint=true;
+	//match.goldenpoint=goldenpoint;
+	//match.risultato=questo.selectedConsole.result;
+	//var atl=questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
+	//var mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id});
+
+	//alert(goldenpoint);
+	var match = getMatchById(id);
+	match.goldenpoint = goldenpoint;
+	match.risultato = result;
+
+
+	var atl = getAtletaById(match.atletaid);
+	var mfa = filterRows(jGara.matchesbyprog, {
+		"atletaid": atl.id
+	});
+
+
+
+	var doc = {
+		match: match,
+		atl: atl,
+		mfa: mfa
+	}
+	var url = rooturl + "/matches/setresultok";
+	console.log("posting result, match", match);
+	progressStart();
+	postData(url, doc, function (data) {
+		console.log("gara refreshed");
+		//
+		progressStop();
+		//showMatchesForAtleta(atl.id);
+		//window.history.back();
+		$.mobile.changePage("#matchesatleta");
+		//var back = $.mobile.activePage.prev('[data-role=page]');
+		//$.mobile.changePage(back)
+		//$.mobile.back();
+		//openGara(jGara.gara.rows[0].doc.id, function () {
+		// refreshMatches(function(){
+
+
+
+
+		//if (callback) callback(data);
+
+		//});
+
+		/*refreshCurrentGara(function(d){
+			
+		})*/
+
+
+	})
+}
+
+
+function postData(url, doc, callback) {
+	$.post(url, doc, function (data) {
+		if (callback) callback(data);
+	})
+
+}
+
+
+
+
+
+
+
 function getDerby(id, category) {
 	colog("getDerby for matchid " + id + " in category " + category);
 	var retvalue = {
@@ -13402,10 +13654,10 @@ function addMatchOK() {
 	//console.log(JSON.stringify(doc));
 
 	$.ajax({
-			url: rooturl + "/matches/add/" + jcurrentgara.id,
-			type: "POST",
-			data: doc
-		})
+		url: rooturl + "/matches/add/" + jcurrentgara.id,
+		type: "POST",
+		data: doc
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -13543,10 +13795,10 @@ function addMatchFormeOK() {
 	//console.log(JSON.stringify(doc));
 
 	$.ajax({
-			url: rooturl + "/matches/addforme/" + jcurrentgara.id,
-			type: "POST",
-			data: doc
-		})
+		url: rooturl + "/matches/addforme/" + jcurrentgara.id,
+		type: "POST",
+		data: doc
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -13923,7 +14175,7 @@ function searchMatches() {
 			if (result[i].vinto == "yes") {
 				vinti++
 			} else persi++
-				disputati++;
+			disputati++;
 			if (result[i].medagliamatch == "oro") ori++;
 			if (result[i].medagliamatch == "argento") argenti++;
 			if (result[i].medagliamatch == "bronzo") bronzi++;
@@ -14018,11 +14270,11 @@ function addAtletaOk(obj) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/atleti/add",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/atleti/add",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14070,11 +14322,11 @@ function addSocietaOk(obj) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/societa/add",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/societa/add",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14121,11 +14373,11 @@ function addGaraOk(obj) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/gare/add",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/gare/add",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14172,11 +14424,11 @@ function addEventoOk(obj) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/eventi/add",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/eventi/add",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14352,11 +14604,11 @@ function editAtletaOk(obj) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/atleti/update/" + hid,
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/atleti/update/" + hid,
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14448,11 +14700,11 @@ function addIscrittiOk() {
 	data.id = jcurrentgara.id;
 	data.iscritti = iscr;
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/gare/update",
-			type: "POST",
-			data: data
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/gare/update",
+		type: "POST",
+		data: data
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -14917,10 +15169,10 @@ function listChats() {
 
 	$.ajax({
 
-			url: url,
-			type: "GET",
-			data: {}
-		})
+		url: url,
+		type: "GET",
+		data: {}
+	})
 		.done(function (data) {
 			conslog("chat listate");
 			progressStop();
@@ -14943,10 +15195,10 @@ function listChats() {
 
 						$.ajax({
 
-								url: curl,
-								type: "GET",
-								data: {}
-							})
+							url: curl,
+							type: "GET",
+							data: {}
+						})
 							.done(function (data) {
 								console.log("data");
 								listChats();
@@ -14974,11 +15226,11 @@ function resetChat() {
 
 	gConfirm("Sei sicuro di voler resettare la chat per questa gara ? ?", "Reset chat", function () {
 		$.ajax({
-				//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-				url: url,
-				type: "GET",
-				data: {}
-			})
+			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+			url: url,
+			type: "GET",
+			data: {}
+		})
 			.done(function (data) {
 				conslog("chat resettata");
 				refreshChat();
@@ -14990,10 +15242,10 @@ function resetChat() {
 				})
 				gotoChat(true);
 			});
-	}, function () {});
+	}, function () { });
 }
 
-function gotoRanking(){
+function gotoRanking() {
 	$.mobile.changePage("#page_ranking");
 	updateRankingTkdr();
 }
@@ -15040,13 +15292,13 @@ function postChat(msg) {
 	playSound("img/chatsend");
 	$("#page_chat #chatmsg").val("");
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: url,
-			type: "POST",
-			data: msg
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: url,
+		type: "POST",
+		data: msg
+	})
 		.done(function (data) {
-			console.log("chat posted !!",data);
+			console.log("chat posted !!", data);
 
 			$("#page_chat #chatmsg").val("");
 
@@ -15563,11 +15815,11 @@ function sendGCM(txt) {
 
 
 	$.ajax({
-			//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
-			url: rooturl + "/matches/notify",
-			type: "POST",
-			data: obj
-		})
+		//url: "http://ssodemyapp.mybluemix.net/schede/addScheda",
+		url: rooturl + "/matches/notify",
+		type: "POST",
+		data: obj
+	})
 		.done(function (data) {
 			// navigator.notification.alert(data, function() {}, "Avviso");
 			//alert("done: "+data);
@@ -15787,10 +16039,10 @@ function deleteGara(id) {
 		data.rev = rev;
 
 		$.ajax({
-				url: rooturl + "/gare/delete",
-				type: "POST",
-				data: data
-			})
+			url: rooturl + "/gare/delete",
+			type: "POST",
+			data: data
+		})
 			.done(function (data) {
 				// navigator.notification.alert(data, function() {}, "Avviso");
 				//alert("done: "+data);
@@ -15845,10 +16097,10 @@ function showSockets(callback) {
 	//progressStart("Caricamento","");
 	$("#page_sockets #pconn").html("Aggiornamento...");
 	$.ajax({
-			url: rooturl + "/socketusers",
-			type: "GET",
-			data: sdata
-		})
+		url: rooturl + "/socketusers",
+		type: "GET",
+		data: sdata
+	})
 		.done(function (data) {
 			var html = new EJS({
 				url: 'tpl/sockets.ejs'
@@ -15870,9 +16122,9 @@ function resetLog() {
 	var url = rooturl + "/clearlog";
 	progressStart();
 	$.ajax({
-			url: url,
-			type: "GET"
-		})
+		url: url,
+		type: "GET"
+	})
 		.done(function (data) {
 
 			console.log(data);
@@ -15892,9 +16144,9 @@ function gotoLog() {
 	var url = rooturl + "/log.txt";
 	progressStart();
 	$.ajax({
-			url: url,
-			type: "GET"
-		})
+		url: url,
+		type: "GET"
+	})
 		.done(function (data) {
 
 			//$("#page_log #content").html(data);
@@ -16044,6 +16296,7 @@ function fb_getInfo(callback) {
 			//alert($("#fbuser").length);
 			//alert($("#index #fbuser").length);
 			$("#index #fbuser #userName").html(chatuser.nickname);
+			$("#index #fbuser #eMail").html(user.email);
 			$("#index #fbuser #userPic").attr('src', 'http://graph.facebook.com/' + data.id + '/picture?type=small');
 			$("#index #fbuser").show();
 			if (callback) callback();
@@ -16300,7 +16553,7 @@ var statrows = [];
 function updateRankingTkdr() {
 
 	//var anno = $("#page_ranking #selanno").val();
-	var anno="";
+	var anno = "";
 
 	var annotext = "";
 
@@ -16349,12 +16602,12 @@ function updateRankingTkdr() {
 
 			}
 
-			console.log("sorting by "+ranking_sortcampo);
-			data.rows.sort(function(a,b){
-				var a1=a.doc[ranking_sortcampo];
-				var b1=b.doc[ranking_sortcampo];
-				if (a1>b1) return -1;
-				if (a1<b1) return 1;
+			console.log("sorting by " + ranking_sortcampo);
+			data.rows.sort(function (a, b) {
+				var a1 = a.doc[ranking_sortcampo];
+				var b1 = b.doc[ranking_sortcampo];
+				if (a1 > b1) return -1;
+				if (a1 < b1) return 1;
 				return 0;
 
 			})
@@ -16368,7 +16621,7 @@ function updateRankingTkdr() {
 
 			$("#page_ranking #ranking").html(html);
 			$("#page_ranking #updranking").html(btext);
-			
+
 			$("#page_ranking #ulranking").listview();
 			$("#page_ranking #ulranking").listview("refresh");
 			$("#page_ranking").trigger("pagecreate");
@@ -16386,11 +16639,11 @@ function updateRankingTkdr() {
 
 
 
-function sortStats(tipostat){
+function sortStats(tipostat) {
 
-	ranking_sortcampo=tipostat;
+	ranking_sortcampo = tipostat;
 	updateRankingTkdr();
-	
+
 	/*
 
 	if (tipostat == "match") ranking_sortcampo="matchdisputati";
@@ -16811,7 +17064,7 @@ function goBack() {
 }
 
 
-function clickAtletaRanking(id){
-	var atl=getAtletaById(id);
-	console.log("clicked atletaid "+id,atl);
+function clickAtletaRanking(id) {
+	var atl = getAtletaById(id);
+	console.log("clicked atletaid " + id, atl);
 }

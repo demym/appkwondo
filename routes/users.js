@@ -340,6 +340,7 @@ router.post('/login', function (req, res) {
                        }*/
             );
             user.token = token;
+            delete user.password;
             res.send(user);
         } else {
             user.loggedin=false;

@@ -487,6 +487,7 @@ app.get("/socketusers", function (req, res) {
 			var e = clients[i];
 			var appv = "";
 			if (e.appversion) appv = e.appversion;
+			if (e.hasOwnProperty("id")){
 			var cl = {
 				id: e.id,
 				email: e.email,
@@ -498,6 +499,7 @@ app.get("/socketusers", function (req, res) {
 				appversion: appv
 			}
 			out.push(cl)
+		}
 
 		}
 
@@ -958,7 +960,7 @@ io.sockets.on('connection', function (socket) {
 	var address = socket.handshake.address;
 	global.socket=socket;
 	socket.ipaddress = address;
-	utils.colog("socket id " + socket.id + " connected from ip " + address);
+	console.log("socket id " + socket.id + " connected from ip " + address);
 	//socket.broadcast.emit("refreshsockets", {text: "Socket "+socket.id+" connected"});
 	io.to(socket.id).emit("getnickname", {
 		sockid: socket.id
@@ -1013,7 +1015,9 @@ io.sockets.on('connection', function (socket) {
 		var toid = "";
 		var tipo = msg.type;
 		var nick = "";
+		var email="";
 		if (msg.nickname) nick = msg.nickname;
+		if (msg.hasOwnProperty("email")) email=msg.email;
 		if (msg.to) toid = msg.to;
 		if (toid.toLowerCase().trim() == "all") toid = "";
 
@@ -1026,10 +1030,11 @@ io.sockets.on('connection', function (socket) {
 		}
 
 		if (tipo == "clientspecs") {
-			utils.colog("received clientspecs from " + socket.id + ":");
-			utils.colog(msg);
+			console.log("received clientspecs from " + socket.id + ":",msg);
+			
 			socket.device = msg.device;
 			socket.nickname = nick;
+			socket.email=email;
 			if (msg.appversion) socket.appversion = msg.appversion;
 			io.emit('auserhasconnected');
 			//socket.broadcast.emit("auserhasconnected", socket);
@@ -1130,7 +1135,7 @@ io.sockets.on('connection', function (socket) {
 
 
 	socket.on('connected', function (msg) {
-		utils.colog("socket connected");
+		console.log("socket connected",msg);
 		//io.to(socket.id).emit("getclientspecs", msg);
 		io.to(socket.id).emit("getnickname", {
 			sockid: socket.id

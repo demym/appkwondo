@@ -2105,7 +2105,7 @@ function closePanel() {
 function updateHomeInfos() {
 	conslog('updateHomeInfos')
 	$(".serverspan").html("Connesso al server: " + rooturl.replace("http://", "").replace("https://", ""));
-	$("#userName").html("<b><font style='color: blue'>" + chatuser.nickname.toUpperCase() + "</font></b>");
+	$("#userName").html("<b><font style='color: blue'>" + chatuser.nickname + "</font></b><br><span class='small'>"+user.email+"</span>");
 
 	if (settings) {
 		$(".societaspan").html("Società: " + settings.mysocietaname);
@@ -7722,13 +7722,13 @@ function showRegisterPage() {
 }
 
 
-function deleteUser(email){
-	if (confirm("Sicuro di voler cancellare questo utente ?")){
-		var url=rooturl+"/users/delete";
-		var doc={
+function deleteUser(email) {
+	if (confirm("Sicuro di voler cancellare questo utente ?")) {
+		var url = rooturl + "/users/delete";
+		var doc = {
 			email: email
 		}
-		$.post(url,doc,function(data){
+		$.post(url, doc, function (data) {
 			console.log(data);
 			//alert("user cancellato !");
 			changeUserView();
@@ -7809,6 +7809,26 @@ function doLogin() {
 	var ck = page.find("#chck-rememberme").prop("checked");
 	var ckal = page.find("#chck-autologin").prop("checked");
 	//var ckal=page.find("#chck-autologin:checked").length;
+
+
+	var errors = [];
+
+	if (email.trim() == "") errors.push("Fornisci una email");
+	if (email.trim() != "") {
+		if (!isValidEmail(email)) errors.push("Fornisci una email valida");
+	}
+	
+	if (psw.trim() == "") errors.push("Fornisci una password");
+
+	var text = "";
+	if (errors.length > 0) {
+		errors.forEach(function (item, idx) {
+			text += item + "\n";
+		})
+		text = "Sono stati riscontrati i seguenti errori: \n\n\n" + text;
+		alert(text);
+		return;
+	}
 
 	//alert("ckal: "+ckal);
 
@@ -7951,12 +7971,17 @@ function doLogin() {
 			} else {
 				console.log("login unsuccessfull");
 				alert("Login fallito");
+				//var caricamentotext = imgtext + "Accesso in corso..."
+				$("#login #loginbutton").html("Accedi");
+				
+				return;
 				$("#login #dlg-invalid-credentials").popup().popup("open");
 				deleteCookie("email");
 				deleteCookie("psw");
 				deleteCookie("autologin");
+			
 				$("#index .loginspan").html("");
-				console.log("showin login page")
+				console.log("showin login page");
 				showLoginPage();
 			}
 
@@ -16271,6 +16296,7 @@ function fb_getInfo(callback) {
 			//alert($("#fbuser").length);
 			//alert($("#index #fbuser").length);
 			$("#index #fbuser #userName").html(chatuser.nickname);
+			$("#index #fbuser #eMail").html(user.email);
 			$("#index #fbuser #userPic").attr('src', 'http://graph.facebook.com/' + data.id + '/picture?type=small');
 			$("#index #fbuser").show();
 			if (callback) callback();

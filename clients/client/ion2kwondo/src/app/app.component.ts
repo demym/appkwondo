@@ -6,6 +6,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { UsersPage } from '../pages/users/users';
+import { ConnectionsPage } from '../pages/connections/connections';
 import { Events } from 'ionic-angular';
 import { App, Tabs, ToastController } from 'ionic-angular';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
@@ -55,7 +57,7 @@ export class MyApp {
     var questo = this;
 
 
-    var IS_PRODUCTION = true;
+    var IS_PRODUCTION = false;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");
@@ -68,12 +70,14 @@ export class MyApp {
 
 
     // used for an example of ngFor and navigation
-    this.pages = [
+    this.pages= [
       { title: 'Homepage', component: HomePage },
-      { title: 'Impostazioni', component: SettingsPage },
+      { title: 'Impostazioni', component: SettingsPage},
       { title: 'Account', component: AccountPage },
       { title: 'Logout', component: LoginPage },
       { title: 'Informazioni', component: AboutPage },
+      { title: 'Users', component: UsersPage },
+      { title: 'Connessioni', component: ConnectionsPage },
       { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
 

@@ -29,6 +29,9 @@ import { FiltersPage } from '../pages/filters/filters';
 import { MatchesforatletaPage } from '../pages/matchesforatleta/matchesforatleta';
 import { MedagliereglobalePage } from '../pages/medagliereglobale/medagliereglobale';
 import { MapPage } from '../pages/map/map';
+import { RegisterPage } from '../pages/register/register';
+import { UsersPage } from '../pages/users/users';
+import { ConnectionsPage } from '../pages/connections/connections';
 
 import { SocketService } from '../providers/socket-service/socket-service';
 import { BackendProvider } from '../providers/backend/backend';
@@ -84,7 +87,10 @@ import { FacebookProvider } from '../providers/facebook/facebook';
     StatsPage,
     FiltersPage,
     ScrollableTabs,
-    MedagliereglobalePage
+    MedagliereglobalePage,
+    RegisterPage,
+    UsersPage,
+    ConnectionsPage
   ],
   imports: [
     BrowserModule,
@@ -123,7 +129,10 @@ import { FacebookProvider } from '../providers/facebook/facebook';
     MatchesforatletaPage,
     MatchconsolePage,
     MapPage,
-    MedagliereglobalePage
+    MedagliereglobalePage,
+    RegisterPage,
+    UsersPage,
+    ConnectionsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     SocketService,

@@ -3,6 +3,7 @@ import { BackendProvider } from '../../providers/backend/backend';
 import { UtilsProvider } from '../../providers/utils/utils';
 //import { TabsPage } from '../../pages/tabs/tabs';
 import { HomePage } from '../../pages/home/home';
+import { RegisterPage } from '../../pages/register/register';
 
 import { NavController, AlertController /*LoadingController, AlertController, Loading */} from 'ionic-angular';
 
@@ -24,7 +25,7 @@ export class LoginPage {
   }
 
   public createAccount() {
-    this.nav.push('RegisterPage');
+    this.nav.push(RegisterPage);
   }
 
   public login() {

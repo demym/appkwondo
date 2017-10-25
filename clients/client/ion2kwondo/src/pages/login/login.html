@@ -1,5 +1,5 @@
 <ion-content class="login-content" padding>
-  <ion-row class="logo-row" sstyle="height: 100px;">
+  <ion-row class="logo-row" sstyle="height: 200px;">
     <ion-col></ion-col>
     <ion-col style="padding: 4px !important; justify-content: center;" >
      <!--<img  src="assets/img/logotkdrozzano.png"/>-->
@@ -9,7 +9,7 @@
   </ion-row>
   
   <div class="login-box">
-    <p style="text-align:center; font-size: 14px; color: white;">Benvenuto in Appkwondo V2<br><br> Inserisci user e password per accedere</p>
+    <p style="text-align:center; font-size: 14px; color: white;">Benvenuto in Appkwondo V2<br><br> Già registrato ? Inserisci user e password per accedere</p>
     <form (ngSubmit)="login()" #registerForm="ngForm">
       <ion-row>
         <ion-col>
@@ -30,12 +30,19 @@
       <ion-row>
         <ion-col class="signup-col">
           <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" icon-left style="height: 40px"><ion-icon name="md-key"></ion-icon>Accedi</button>
-          <br>
-          <!--<button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>-->
+          
+         
         </ion-col>
       </ion-row>
       
     </form>
+    <ion-row>
+      <ion-col>
+          <p style="text-align:center; font-size: 14px; color: white;">Non ancora registrato ? Registrati</p>
+          <button ion-button class="register-btn" block  (click)="createAccount()">Registrati</button>
+
+      </ion-col>
+    </ion-row>
   </div>
 
 

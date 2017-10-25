@@ -24,8 +24,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class BackendProvider {
   @ViewChild('content') nav: NavController
 
-  //public rooturl = "http://tkdr.herokuapp.com";
-  public rooturl = "http://localhost:3000";
+  public rooturl = "http://tkdr.herokuapp.com";
+  //public rooturl = "http://localhost:3000";
   //9.71.212.38
   //public rooturl="http://9.71.212.38:3000";
   //public rooturl="http://192.168.1.107:3000";
@@ -542,7 +542,7 @@ blueLogin(user, callback) {
   console.log("bluelogin", user);
   var email = user.email;
   var psw = user.password;
-  var url = this.rooturl + "/atleti/login";
+  var url = this.rooturl + "/users/login";
   var questo = this;
   var authorization = "Basic " + window.btoa(email + ":" + psw);
   console.log("authorization", authorization);

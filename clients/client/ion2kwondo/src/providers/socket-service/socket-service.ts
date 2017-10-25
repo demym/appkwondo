@@ -60,6 +60,30 @@ export class SocketService {
 
     });
 
+    this.socket.on("getnickname", (msg) => {
+      console.log('socket getnickname received', msg);
+      var connsock = {
+        useremail: this.backend.user.email
+      };
+      var m = {
+        device: "browser",
+        type: "clientspecs",
+        nickname: questo.backend.user.nickname,
+        email: questo.backend.user.email,
+        appversion: "2.0.0"
+  
+      }
+
+      if (questo.platform.is("cordova")) m.device = "mobile";
+  
+      //if (message) msg=message;
+  
+      //questo.socket.send(msg);
+  
+      questo.socket.emit('message', m);
+
+    });
+
     this.socket.on("realtime",function(data){
       console.log("socket realtime received !!",data);
 
