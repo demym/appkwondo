@@ -108,9 +108,21 @@ if (showdate) {
    Your browser does not support the audio element.
      </audio><br>
 	 
-	   <% }} %> 
+	   <% }}
+	   
+	   if ((row.audio) && isIOS) {
+			if (row.audio.trim()!="") {
+	   
+	   
+	    %> 
+
+		<audio   style="width: 100%" src="<%=row.audio%>" controls>
+    Your browser does not support the audio element.
+     </audio>
+		
 	   
 	    <%
+			}}
 		var done=false;
 		if ((row.audiofilename) && isIOS) {
 		  if (row.audiofilename.trim()!="") {
