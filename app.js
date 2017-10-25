@@ -121,6 +121,7 @@ app.use(function (req, res, next) {
 		"/atleti/login",
 		"/users/login",
 		"/users/register",
+		"/data/chatmedia",
 		"/token/true",
 		"/token/false",
 		"/listusers?token=nonsientramai",
