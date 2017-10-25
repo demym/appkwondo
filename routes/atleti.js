@@ -636,8 +636,16 @@ router.get("/ranking/html", function (req, res) {
 
 })
 
+router.post("/login",function(req,res){
+	var ret = {
+		"loggedin": "false"
+	};
 
-router.post('/login', function (req, res) {
+	res.send(ret);
+})
+
+
+router.post('/loginold', function (req, res) {
 	//var em=req.body.email;
 	//var pw=req.body.password;
 	var role = "tkdruser";
