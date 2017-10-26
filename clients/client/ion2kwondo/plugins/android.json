@@ -16,6 +16,9 @@
         "cordova-plugin-audio-recorder-api": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -74,9 +77,6 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },

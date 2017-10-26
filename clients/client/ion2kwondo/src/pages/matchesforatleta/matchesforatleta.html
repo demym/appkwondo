@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Incontri per {{atleta.cognome}} {{atleta.nome}}</ion-title>
+    <ion-title>Match atleta</ion-title>
     <ion-buttons end>
     <button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>
       
@@ -18,7 +18,7 @@
 
       </ion-buttons>
   </ion-navbar>
-  <ion-segment class="segment" (tap)="tapSegment()" color="light" [(ngModel)]="activetab">
+  <ion-segment (tap)="tapSegment()" [(ngModel)]="activetab">
       <ion-segment-button  value="matches">
        <!-- <ion-icon name="camera"></ion-icon>-->Match
       </ion-segment-button>

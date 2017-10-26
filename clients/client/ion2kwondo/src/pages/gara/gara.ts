@@ -99,8 +99,8 @@ export class GaraPage {
   ionViewDidLoad() {
     
      let questo = this;
-     this.backend.setBackButtonAction(this.navBar,this.navCtrl);
-    questo.garaid = this.navParams.get("id");
+     //questo.backend.setBackButtonAction(questo.navBar,questo.navCtrl);
+    questo.garaid = questo.navParams.get("id");
     console.log('ionViewDidLoad GaraPage', this.garaid);
 
     

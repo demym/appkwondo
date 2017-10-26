@@ -1,9 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>AppKwonDo</ion-title>
+    <!--<button ion-button menuToggle="right" end>
+        <ion-icon name="menu"></ion-icon>
+      </button>-->
     <ion-buttons end>
 
 
@@ -22,6 +25,7 @@
   <ion-card>
     <ion-card-content>
       <div class="benvenuto">Benvenuto <b>{{user.nickname}}</b></div>
+      <div class="server">{{user.email}}</div>
       <div class="server">Connesso al server {{server}}</div>
       <div class="admin" *ngIf="user.role=='tkdradmin'">Accesso amministratore eseguito</div>
     </ion-card-content>

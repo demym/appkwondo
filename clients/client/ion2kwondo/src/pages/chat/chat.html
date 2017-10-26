@@ -1,8 +1,7 @@
 <ion-header>
   <ion-navbar>
   
-    <ion-title>
-      <ion-toolbar>
+
        <ion-title>ChatKwonDo</ion-title>
         <!--<ion-grid class="no-padding">
           <ion-row>
@@ -31,10 +30,8 @@
           </ion-row>
         </ion-grid>-->
         <!--</ion-title>-->
-      </ion-toolbar>
-    </ion-title>
-  
-  </ion-navbar>
+      </ion-navbar>
+
    <!-- <ion-card>-->
 
       
@@ -88,14 +85,37 @@
 
       <!--<img-loader *ngIf="m.fotourl" [src]="m.fotourl"></img-loader>-->
         <div (press)="shareAudio(m)" *ngIf="m.audio" class="divcont">  
-       <audio   style="width: 100%" *ngIf="m.audio" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
+            <!--<audio-track #audio   [track]="getTrack(m)" (onFinish)="onTrackFinished($event)">
+            <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+            <audio-track-progress-bar dark duration progress [audioTrack]="audio" ></audio-track-progress-bar>
+            </audio-track>-->
+      <audio   style="width: 100%" *ngIf="m.audio" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
     Your browser does not support the audio element.
      </audio></div><br *ngIf="m.audio">
+
+
+     
+
+    
+    
+
       
       <span  (press)="shareText(m.text)" *ngIf="m.text.trim()!=''" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=''" >
      
       </ion-item>
     </ion-list>
+    <!--<audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
+      <ion-item>  
+        <ion-thumbnail item-left>
+          <img src="{{audio.art}}">
+          <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+        </ion-thumbnail>
+        <div item-content style="width:100%">
+          <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>
+          <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? 'visible' : 'hidden'}"></audio-track-progress-bar>
+        </div>
+      </ion-item>    
+    </audio-track>-->
     </div>
    
  

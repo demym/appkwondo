@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" side="left">
   <ion-header >
     <ion-toolbar>
       <ion-title>Menu</ion-title>
@@ -37,6 +37,18 @@
 
   </ion-content>
 
+</ion-menu>
+
+
+<ion-menu [content]="content" side="right">
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Menuright</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu" style="overflow-y: hidden">
+  </ion-content>
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

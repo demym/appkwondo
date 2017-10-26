@@ -56,6 +56,14 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { FacebookProvider } from '../providers/facebook/facebook';
 
+//import { IonicAudioModule, WebAudioProvider, CordovaMediaProvider, defaultAudioProviderFactory } from 'ionic-audio';
+
+/*
+export function myCustomAudioProviderFactory() {
+  return (window.hasOwnProperty('cordova')) ? new CordovaMediaProvider() : new WebAudioProvider();
+}
+*/
+
 @NgModule({
   declarations: [
     MyApp,
@@ -95,9 +103,13 @@ import { FacebookProvider } from '../providers/facebook/facebook';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp,{ animate: false}),
+    IonicModule.forRoot(MyApp,{ 
+      backButtonText: '',
+      backButtonIcon: 'ios-arrow-back',
+      animate: false}),
     IonicStorageModule.forRoot(),
     IonicImageLoader.forRoot()
+    //IonicAudioModule.forRoot(defaultAudioProviderFactory)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

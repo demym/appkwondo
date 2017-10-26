@@ -33,6 +33,15 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "pluginId": "cordova-plugin-background-mode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
+    },
+    {
         "id": "cordova-plugin-badge.Badge",
         "file": "plugins/cordova-plugin-badge/www/badge.js",
         "pluginId": "cordova-plugin-badge",
@@ -458,15 +467,6 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "id": "cordova-plugin-background-mode.BackgroundMode",
-        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
-        "pluginId": "cordova-plugin-background-mode",
-        "clobbers": [
-            "cordova.plugins.backgroundMode",
-            "plugin.backgroundMode"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -477,6 +477,7 @@ module.exports.metadata =
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.1",
     "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-badge": "0.8.0",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.4.1",
@@ -497,8 +498,7 @@ module.exports.metadata =
     "cordova-plugin-x-socialsharing": "5.1.8",
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-background-mode": "0.7.2"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

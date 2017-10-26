@@ -1,6 +1,6 @@
 import { ModalController, AlertController, IonicApp, Events, Content } from 'ionic-angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Nav, NavController, NavParams, Platform,Navbar } from 'ionic-angular';
+import { Nav, NavController, NavParams, Platform, Navbar } from 'ionic-angular';
 import { SocketService } from '../../providers/socket-service/socket-service';
 import { BackendProvider } from '../../providers/backend/backend';
 import * as moment from 'moment';
@@ -11,6 +11,7 @@ import { File, Entry } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+//import { AudioProvider } from 'ionic-audio';
 
 
 @Component({
@@ -32,10 +33,13 @@ export class ChatPage implements OnInit {
   rtmatches: any = [];
   recording = false;
   loading = false;
+  myTracks:any;
+  allTracks:any;
+  selectedTrack:any;
 
 
 
-  constructor(public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: Transfer, private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
+  constructor(/*private _audioProvider: AudioProvider,*/ public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: Transfer, private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
     public nav: NavController,
     public modal: ModalController,
     public iapp: IonicApp,
@@ -48,74 +52,91 @@ export class ChatPage implements OnInit {
 
     var questo = this;
     this.me = this.backend.user;
+    /*this.myTracks = [{
+      src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
+      artist: 'John Mayer',
+      title: 'Why Georgia',
+      art: 'img/johnmayer.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
+    },
+    {
+      src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t30-MP3-V0.mp3',
+      artist: 'John Mayer',
+      title: 'Who Says',
+      art: 'img/johnmayer.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    }];
+ 
 
+
+    */
+
+
+    /*
+        this.socket.socketService.subscribe(event => {
     
-
+          console.log('event received in chat.ts', event);
+          if (event.category === 'auserhasconnected') {
     
-
-/*
-    this.socket.socketService.subscribe(event => {
-
-      console.log('event received in chat.ts', event);
-      if (event.category === 'auserhasconnected') {
-
-        console.log("auserhasconnected in chat.ts", event);
-        console.log("this.friend", this.friend);
-        if (event.message.user.email == this.friend.doc.email) {
-          console.log("it's him !!");
-          this.friend.connected = true;
-        }
-
-
-      }
-
-
-      if (event.category === 'auserhasdisconnected') {
-        // questo.refresh(function () {
-        console.log("auserhasdisconnected in chat.ts", event);
-        console.log("this.friend", this.friend);
-        if (event.message.email == this.friend.doc.email) {
-          console.log("it's him !!");
-          this.friend.connected = false;
-        }
-
-
-      }
-
-      if (event.category == 'chatmsg') {
-        console.log("chatmsg received in chat.ts !!", event);
-
-
-      }
-      if (event.category === 'message') {
-
-
-        console.log("new message in chat.ts", event);
-
-        this.msgs = this.filterChatMessages2(questo.socket.msgs);
-        let currentPage = this.nav.getActive().name;
-        console.log('current page is: ', currentPage);
-
-
-
-        if (currentPage == "ChatPage") {
-          questo.socket.clearUnreadForEmail(questo.friend.doc.email);
-
-          setTimeout(() => {
-            if (questo.content) questo.content.scrollToBottom();
-
-          });
-        }
-
-      }
-
-    }); //end of subscribe
-*/
+            console.log("auserhasconnected in chat.ts", event);
+            console.log("this.friend", this.friend);
+            if (event.message.user.email == this.friend.doc.email) {
+              console.log("it's him !!");
+              this.friend.connected = true;
+            }
+    
+    
+          }
+    
+    
+          if (event.category === 'auserhasdisconnected') {
+            // questo.refresh(function () {
+            console.log("auserhasdisconnected in chat.ts", event);
+            console.log("this.friend", this.friend);
+            if (event.message.email == this.friend.doc.email) {
+              console.log("it's him !!");
+              this.friend.connected = false;
+            }
+    
+    
+          }
+    
+          if (event.category == 'chatmsg') {
+            console.log("chatmsg received in chat.ts !!", event);
+    
+    
+          }
+          if (event.category === 'message') {
+    
+    
+            console.log("new message in chat.ts", event);
+    
+            this.msgs = this.filterChatMessages2(questo.socket.msgs);
+            let currentPage = this.nav.getActive().name;
+            console.log('current page is: ', currentPage);
+    
+    
+    
+            if (currentPage == "ChatPage") {
+              questo.socket.clearUnreadForEmail(questo.friend.doc.email);
+    
+              setTimeout(() => {
+                if (questo.content) questo.content.scrollToBottom();
+    
+              });
+            }
+    
+          }
+    
+        }); //end of subscribe
+    */
 
 
 
 
   }
+
+
 
 
 
@@ -134,10 +155,10 @@ export class ChatPage implements OnInit {
 
   ionViewDidLoad() {
     var questo = this;
-    questo.backend.setBackButtonAction(questo.navBar,questo.nav);
+    questo.backend.setBackButtonAction(questo.navBar, questo.nav);
     console.log("ionviewdidload chat.ts");
     questo.backend.resetChatUnread();
-    questo.backend.isChatView=true;
+    questo.backend.isChatView = true;
     /*this.msgs=this.backend.chatmessages;
      setTimeout(() => {
         if (questo.content) {
@@ -158,7 +179,7 @@ export class ChatPage implements OnInit {
       console.log("rtmatches", questo.rtmatches);
     })
 
-    
+
     questo.msgs = questo.backend.chatmessages;
     setTimeout(() => {
       if (questo.content) questo.content.scrollToBottom();
@@ -166,7 +187,7 @@ export class ChatPage implements OnInit {
     }, 500);
 
     if (1 == 1) return;
-    
+
 
     this.loading = true;
     this.backend.getActiveChat(function (data) {
@@ -266,18 +287,18 @@ export class ChatPage implements OnInit {
     return ms;
   }
 
-  
+
 
   goBack() {
     this.nav.setRoot(TabsPage, { tab: 2 });
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
 
-    var questo=this;
+    var questo = this;
     this.e.subscribe("chatmsg", function (msg) {
       console.log("chatmsg in chat.ts !!", msg);
-      questo.backend.unread=0;
+      questo.backend.unread = 0;
       //questo.msgs.push(msg);
       if (questo.content) {
         console.log("content ce sta");
@@ -296,7 +317,7 @@ export class ChatPage implements OnInit {
       questo.rtmatches = rtmatches.matches;
       console.log("rtmatches", questo.rtmatches);
     })
-     this.e.subscribe("updategara", function (rtmatches, time) {
+    this.e.subscribe("updategara", function (rtmatches, time) {
       //console.log("realtimematches in chat.ts !!", rtmatches);
       //questo.rtmatches = rtmatches.matches;
       //console.log("rtmatches", questo.rtmatches);
@@ -306,14 +327,14 @@ export class ChatPage implements OnInit {
   ionViewDidLeave() {
     console.log("ionviewdidleave");
     //this.e.publish("exitedchat", "exitedchat");
-    this.backend.isChatView=false;
+    this.backend.isChatView = false;
     this.e.unsubscribe('chatmsg');
     this.e.unsubscribe("realtimematches");
-   
+
 
   }
 
-  
+
 
   ngAfterViewInit(): void {
 
@@ -551,7 +572,7 @@ export class ChatPage implements OnInit {
       this.camera.getPicture(options).then((imageData) => {
         // imageData is either a base64 encoded string or a file URI
         // If it's base64:
-        console.log("imagedata",imageData);
+        console.log("imagedata", imageData);
         let base64Image = 'data:image/jpeg;base64,' + imageData;
         console.log("base64image", base64Image);
         var postdata = {
@@ -641,8 +662,8 @@ export class ChatPage implements OnInit {
   }
 
 
-  shareText(url){
-    console.log("shareText",url);
+  shareText(url) {
+    console.log("shareText", url);
     this.socialSharing.share(url, null, null, null).then(() => {
       console.log("share successfull")
     }).catch(() => {
@@ -652,27 +673,27 @@ export class ChatPage implements OnInit {
 
   }
 
-  shareAudio(item){
-    
-    console.log("shareAudio",item);
-    var url=item.audiourl;
-    
+  shareAudio(item) {
+
+    console.log("shareAudio", item);
+    var url = item.audiourl;
+
     this.socialSharing.share(null, null, url, null).then(() => {
       console.log("share successfull")
     }).catch(() => {
       // Sharing via email is not possible
       console.log("error in share");
     });
-    
+
 
   }
 
-  share(item){
+  share(item) {
 
-    console.log("item",item);
+    console.log("item", item);
 
-    var url="";
-    
+    var url = "";
+
 
 
 
@@ -686,7 +707,7 @@ export class ChatPage implements OnInit {
   }
 
   shareFoto(url) {
-    console.log("shareFoto",url);
+    console.log("shareFoto", url);
     this.socialSharing.share(null, null, url, null).then(() => {
       console.log("share successfull")
     }).catch(() => {
@@ -695,7 +716,34 @@ export class ChatPage implements OnInit {
     });
   }
 
- 
+  /*
 
+  ngAfterContentInit() {     
+    // get all tracks managed by AudioProvider so we can control playback via the API
+    this.allTracks = this._audioProvider.tracks; 
+  }
   
+  playSelectedTrack() {
+    // use AudioProvider to control selected track 
+    this._audioProvider.play(this.selectedTrack);
+  }
+  
+  pauseSelectedTrack() {
+     // use AudioProvider to control selected track 
+     this._audioProvider.pause(this.selectedTrack);
+  }
+         
+  onTrackFinished(track: any) {
+    console.log('Track finished', track)
+  } 
+
+  getTrack(m){
+    var tr={
+      src: m.audio
+    }
+    return tr;
+  }
+
+  */
+
 }

@@ -23,7 +23,7 @@ var crnonletti = 0;
 var garanotifyid = "";
 
 var facebookcheck = true;
-var debugActive = false;
+var debugActive = true;
 var notifyeventdays = 2;
 var nexteventscount = 0;
 
@@ -10238,8 +10238,8 @@ function refreshAtletiServer() {
 
 
 function progressStart(text) {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 
 		navigator.notification.activityStart(text, "caricamento...");
 	} else {
@@ -10254,8 +10254,8 @@ function progressStart(text) {
 }
 
 function progressStop() {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 		navigator.notification.activityStop();
 	} else {
 		$.mobile.loading('hide');
@@ -10283,7 +10283,7 @@ function refreshSchede() {
 		li.off(tapevent);
 		li.on(tapevent, function () {
 
-			scheda.load($(this).text());
+			scheda.load($(this).text.());
 			//navigator.notification.alert(JSON.stringify(scheda.data), function() {}, "Avviso");
 
 
