@@ -28,23 +28,24 @@
            </ion-col>
            <ion-col col-10 style="font-size: 13px;"><b>{{jgara.title}}</b><!--<i>{{jgara.data}} - {{jgara.location}}</i>--></ion-col>
            <ion-col col-1 style="text-align: right"><img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif"/></ion-col>
-           
+            
            </ion-row>
         </button>
           
          <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">
       
            <div >
-             <ion-row><ion-col col-4>Gara</ion-col><ion-col class="infobold">{{jgara.title}}</ion-col></ion-row>
-             <ion-row><ion-col col-4>Location</ion-col><ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a></ion-col></ion-row>
-             <ion-row><ion-col col-4>Data</ion-col><ion-col class="infobold">{{jgara.data}}</ion-col></ion-row>
-             <ion-row><ion-col col-4>&nbsp;</ion-col><ion-col>&nbsp;</ion-col></ion-row>
-             <ion-row><ion-col col-4>Iscritti</ion-col><ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,'iscritti').femmine}}, M: {{getMaschiFemmine(iscritti,'iscritti').maschi}}) </ion-col></ion-row>
-              <ion-row><ion-col col-4>Match disputati</ion-col><ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}}) </ion-col></ion-row>
-               <ion-row><ion-col col-4>Match vinti</ion-col><ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}}) </ion-col></ion-row>
-                <ion-row><ion-col col-4>Match persi</ion-col><ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}}) </ion-col></ion-row>
+             <ion-row><ion-col class="infobold">{{jgara.title}}</ion-col></ion-row>
+             <ion-row><ion-col  class="infobold">{{jgara.location}} &nbsp;&nbsp;<!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>--></ion-col></ion-row>
+             <ion-row><ion-col  class="infobold">{{jgara.data}}</ion-col></ion-row>
+             <ion-row><ion-col><button ion-button small (tap)="showMap()">Visualizza mappa</button></ion-col></ion-row>
+             <ion-row><ion-col col-5>&nbsp;</ion-col><ion-col>&nbsp;</ion-col></ion-row>
+             <ion-row><ion-col col-5>Iscritti</ion-col><ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,'iscritti').femmine}}, M: {{getMaschiFemmine(iscritti,'iscritti').maschi}}) </ion-col></ion-row>
+              <ion-row><ion-col col-5>Match disputati</ion-col><ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}}) </ion-col></ion-row>
+               <ion-row><ion-col col-5>Match vinti</ion-col><ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}}) </ion-col></ion-row>
+                <ion-row><ion-col col-5>Match persi</ion-col><ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}}) </ion-col></ion-row>
                 <ion-row><ion-col col-12>&nbsp;</ion-col></ion-row>
-                <ion-row><ion-col col-4>Categorie coperte</ion-col><ion-col class="infobold">{{categoriecoperte.text}}</ion-col></ion-row>
+                <ion-row><ion-col class="infobold">{{categoriecoperte.text}}</ion-col></ion-row>
           <!--<div>Gara: {{jgara.title}}</div>
           <div>Location: {{jgara.location}}</div>
           <div>Data: {{jgara.data}}</div>

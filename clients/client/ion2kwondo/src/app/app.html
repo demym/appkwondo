@@ -16,6 +16,7 @@
       
       <ion-col style="padding: 8px !important;">
         <span class="username">{{backend.user.nickname}}</span><br>
+        <span class="email">{{backend.user.email}}</span><br>
       <!--<span class="useremail">{{user.email}}</span><br>-->
       <span class="userrole">{{backend.user.role}}</span>
     
@@ -40,6 +41,7 @@
 </ion-menu>
 
 
+<!--
 <ion-menu [content]="content" side="right">
   <ion-header >
     <ion-toolbar>
@@ -50,6 +52,7 @@
   <ion-content class="menu" style="overflow-y: hidden">
   </ion-content>
 </ion-menu>
+-->
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

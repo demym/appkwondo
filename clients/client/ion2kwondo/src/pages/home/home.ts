@@ -2,7 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { SocketService } from '../../providers/socket-service/socket-service';
 import { BackendProvider } from '../../providers/backend/backend';
 import { Platform, AlertController, Content,LoadingController,ToastController } from 'ionic-angular';
-import { NavController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { AppAvailability } from '@ionic-native/app-availability';
 
 import { ChatPage } from '../../pages/chat/chat';
@@ -322,6 +322,7 @@ gotoPage(p){
 
     })
     questo.displayedmenu=arr;
+
   }
 
 

@@ -13,4 +13,66 @@
     This is a combination of Ionic 2 Tabs and Sidemenu. For more info, see related <a href="https://blog.khophi.co/ionic-2-side-menu-tabs/">Ionic 2 Sidemenu and Tabs</a> article by <a href="https://blog.khophi.co">Khophi's Dev</a>
   </p>
   <button ion-button block (tap)="goFB()">GO FB</button>
+
+  <!--<ion-segment #ionSeg [scrollable-segments]="ionSeg" >
+    <ion-segment-button value="urzu">Urzu</ion-segment-button>
+    <ion-segment-button value="parzo">Parzo</ion-segment-button>
+    <ion-segment-button value="muzio">Muzio</ion-segment-button>
+  </ion-segment>-->
+
+
+  <ion-scroll scrollX="true" style="width:100vw;height:350px" >
+      <ion-segment [(ngModel)]="relationship" color="primary">
+      
+      
+            <ion-segment-button value="friends" (ionSelect)="selectedEnemies()">
+              Friends
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+             <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+            <ion-segment-button value="enemies" (ionSelect)="selectedEnemies()">
+              Enemies
+            </ion-segment-button>
+      
+          </ion-segment>
+            </ion-scroll>
+
+
+<!--
+  <ion-tabs #ionTabs [scrollable-tabs]="ionTabs" [opts]="scrollableTabsopts" selectedIndex='0' color="{{tabsColor}}" mode='{{tabsMode}}'
+	tabsHighlight="true" tabsPlacement="{{tabsPlacement}}">
+	<ion-tab [root]="HomeRoot" [show]='tabToShow[0]' tabIcon="home" tabTitle="Home"></ion-tab>
+	<ion-tab [root]="CalendarRoot" [show]='tabToShow[1]' tabIcon="calendar" tabTitle="Calendar"></ion-tab>
+	<ion-tab [root]="CameraRoot" [show]='tabToShow[2]' tabIcon="camera" tabTitle="Camera"></ion-tab>
+	<ion-tab [root]="CloudRoot" [show]='tabToShow[3]' tabIcon="cloud" tabTitle="Cloud"></ion-tab>
+	<ion-tab [root]="ContactRoot" [show]='tabToShow[4]' tabIcon="contact" tabTitle="Contact"></ion-tab>
+	<ion-tab [root]="FolderRoot" [show]='tabToShow[5]' tabIcon="folder" tabTitle="Folder"></ion-tab>
+	<ion-tab [root]="MapRoot" [show]='tabToShow[6]' tabIcon="map" tabTitle="Map"></ion-tab>
+	<ion-tab [root]="SettingsRoot" [show]='tabToShow[7]' tabIcon="settings" tabTitle="Settings"></ion-tab>
+	<ion-tab [root]="AboutRoot" [show]='tabToShow[8]' tabIcon="information-circle" tabTitle="About"></ion-tab>
+  </ion-tabs>
+  
+-->
 </ion-content>

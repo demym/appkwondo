@@ -3,11 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Account</ion-title>
+    <ion-title>Gestione Account</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-<p>
-  This is accounts page
-</p>
+<ion-item>
+  <b>{{backend.user.nickname}}</b><br>
+  {{backend.user.email}}<br>
+  {{backend.user.appversion}}<br>
+  <button ion-button (tap)="changePsw()">Modifica password</button>
+</ion-item>
 </ion-content>

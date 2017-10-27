@@ -17,7 +17,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
 import { AboutPage } from '../pages/about/about';
 import { ChatPage } from '../pages/chat/chat';
-import { Push } from 'ionic-native';
+//import { Push } from 'ionic-native';
 import { BackendProvider } from '../providers/backend/backend';
 
 
@@ -40,7 +40,10 @@ export class MyApp {
     "md-settings",
     "md-person",
     "md-exit",
-    "md-home"
+    "md-information-circle",
+    "ios-people",
+    "md-wifi",
+    "md-close-circle"
   ]
   isChatPage = false;
   realtimeEvents = false;
@@ -70,9 +73,9 @@ export class MyApp {
 
 
     // used for an example of ngFor and navigation
-    this.pages= [
+    this.pages = [
       { title: 'Homepage', component: HomePage },
-      { title: 'Impostazioni', component: SettingsPage},
+      { title: 'Impostazioni', component: SettingsPage },
       { title: 'Account', component: AccountPage },
       { title: 'Logout', component: LoginPage },
       { title: 'Informazioni', component: AboutPage },
@@ -80,6 +83,8 @@ export class MyApp {
       { title: 'Connessioni', component: ConnectionsPage },
       { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
+
+
 
 
 
@@ -192,9 +197,10 @@ export class MyApp {
           ]
         });
         alert.present();
-       
+
       } else {
-        if (page.title == "Impostazioni") {
+        var pushpages = ["Impostazioni", "Users", "Connessioni", "Informazioni", "Account"];
+        if (pushpages.indexOf(page.title) > -1) {
           this.nav.push(page.component)
 
         } else this.nav.setRoot(page.component);
@@ -250,7 +256,7 @@ export class MyApp {
       //Splashscreen.hide();
 
       if (this.platform.is('cordova')) {
-        var push = Push.init({
+        /*var push = Push.init({
           android: {
             senderID: "403763864066"
           },
@@ -275,7 +281,7 @@ export class MyApp {
         });
         push.on('error', (e) => {
           console.log(e.message);
-        });
+        });*/
 
 
         //questo.deviceFeedback.acoustic();
@@ -298,7 +304,9 @@ export class MyApp {
       }
 
 
-      this.platform.registerBackButtonAction(() => {
+      questo.platform.registerBackButtonAction(() => {
+
+
 
         if (questo.nav.canGoBack()) {
           console.log("hw back nutton pressed, going back");
@@ -330,6 +338,16 @@ export class MyApp {
             //   haptic: true
             // }
           });
+      }
+
+      if (questo.platform.is('ios')) {
+        questo.backend.navOptions = {
+          animate: true,
+          animation: 'ios-transition'
+
+        }
+
+
       }
 
 

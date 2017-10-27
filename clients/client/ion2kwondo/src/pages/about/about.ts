@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import {HomePage} from '../../pages/home/home'
 
 import { FacebookProvider } from '../../providers/facebook/facebook';
 import { Observable } from 'rxjs/Rx';  
 import 'rxjs/add/operator/map';
+
+import { ScrollableTabs } from '../../components/scrollable-tabs/scrollable-tabs';
+
 
 @Component({
   selector: 'page-about',
@@ -12,9 +16,32 @@ import 'rxjs/add/operator/map';
 })
 export class AboutPage {
   public posts: Observable<any[]>;
+  relationship="friends";
+
+
+  AboutRoot: any = HomePage;
+  CalendarRoot: any = HomePage;
+  CameraRoot: any = HomePage;
+  CloudRoot: any = HomePage;
+  ContactRoot: any = HomePage;
+  FolderRoot: any = HomePage;
+  HomeRoot: any = HomePage;
+  MapRoot: any = HomePage;
+  SettingsRoot: any = HomePage;
+
+  tabsColor: string = "default";
+  tabsMode: string = "md";
+  tabsPlacement: string = "top";
+
+  tabToShow: Array<boolean> = [true, true, true, true, true, true, true, true, true];
+  scrollableTabsopts: any = {};
 
   constructor(private fb: FacebookProvider, public navCtrl: NavController) {
 
+  }
+
+  selectedEnemies(){
+    console.log(this.relationship);
   }
 
   goFB() {

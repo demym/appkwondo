@@ -1301,7 +1301,14 @@ getTabulatoImg(h, callback) {
   //return;
   var arr = h.split("id=");
   var tabid = arr[1];
-  var url = this.rooturl + "/tkdt/tabulatoimage/" + tabid
+  var url = this.rooturl + "/tkdt/tabulatoimage/" + tabid;
+  if (url.indexOf("token") == -1) {
+    if (url.indexOf("?") > -1) {
+      url += "&token=" + this.user.token;
+
+    } else url += "?token=" + this.user.token;
+
+  }
 
   this.http.get(url).map(res => res.text()).subscribe(
     (data) => {

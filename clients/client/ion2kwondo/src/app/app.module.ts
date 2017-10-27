@@ -36,6 +36,7 @@ import { ConnectionsPage } from '../pages/connections/connections';
 import { SocketService } from '../providers/socket-service/socket-service';
 import { BackendProvider } from '../providers/backend/backend';
 import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
+import { ScrollableSegments } from '../components/scrollable-segments/scrollable-segments';
 import { UtilsProvider } from '../providers/utils/utils';
 import { Badge } from '@ionic-native/badge';
 import { Storage, IonicStorageModule } from '@ionic/storage';
@@ -95,6 +96,7 @@ export function myCustomAudioProviderFactory() {
     StatsPage,
     FiltersPage,
     ScrollableTabs,
+    ScrollableSegments,
     MedagliereglobalePage,
     RegisterPage,
     UsersPage,
@@ -105,8 +107,9 @@ export function myCustomAudioProviderFactory() {
     HttpModule,
     IonicModule.forRoot(MyApp,{ 
       backButtonText: '',
+      activator: 'ripple',
       backButtonIcon: 'ios-arrow-back',
-      animate: false}),
+      animate: true}),
     IonicStorageModule.forRoot(),
     IonicImageLoader.forRoot()
     //IonicAudioModule.forRoot(defaultAudioProviderFactory)

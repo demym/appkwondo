@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { BackendProvider } from '../../providers/backend/backend';
 /*
   Generated class for the Account page.
 
@@ -13,10 +13,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
+  }
+
+  changePsw(){
+    alert("changepsw")
   }
 
 }
