@@ -7,10 +7,17 @@ import * as moment from 'moment';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { ChatfotoPage } from '../../pages/chatfoto/chatfoto';
 import { DomSanitizer } from '@angular/platform-browser';
-import { File, Entry } from '@ionic-native/file';
+import { Entry } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
+import { Transfer} from '@ionic-native/transfer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { MediaPlugin, MediaObject, MediaError } from '@ionic-native/media';
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions} from '@ionic-native/streaming-media';
+
+
 //import { AudioProvider } from 'ionic-audio';
 
 
@@ -33,18 +40,20 @@ export class ChatPage implements OnInit {
   rtmatches: any = [];
   recording = false;
   loading = false;
-  myTracks:any;
-  allTracks:any;
-  selectedTrack:any;
+  myTracks: any;
+  allTracks: any;
+  selectedTrack: any;
 
 
 
-  constructor(/*private _audioProvider: AudioProvider,*/ public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: Transfer, private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
+  constructor(/*private _audioProvider: AudioProvider,*/ public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: FileTransfer,private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
     public nav: NavController,
     public modal: ModalController,
     public iapp: IonicApp,
     public e: Events,
     public socket: SocketService,
+    private mediaPlugin: MediaPlugin,
+    private streamingMedia: StreamingMedia,
     public backend: BackendProvider) {
 
 
@@ -560,34 +569,49 @@ export class ChatPage implements OnInit {
     console.log("takefoto");
 
     if (questo.platform.is("cordova")) {
-      const options: CameraOptions = {
-        quality: 80,
-        targetWidth: 500,
-        targetHeight: 500,
-        destinationType: this.camera.DestinationType.DATA_URL,
-        encodingType: this.camera.EncodingType.JPEG,
-        mediaType: this.camera.MediaType.PICTURE
-      }
 
-      this.camera.getPicture(options).then((imageData) => {
-        // imageData is either a base64 encoded string or a file URI
-        // If it's base64:
-        console.log("imagedata", imageData);
-        let base64Image = 'data:image/jpeg;base64,' + imageData;
-        console.log("base64image", base64Image);
-        var postdata = {
-          garaid: "",
-          nickname: questo.backend.user.nickname,
-          sockid: questo.backend.user.sockid,
-          foto: base64Image,
-          text: ""
+      questo.getImageSource(function (data) {
+        console.log("getimagesource dialog returns ", data);
+
+        if (data == "cancel") return;
+
+        
+
+        var sourcetype = questo.camera.PictureSourceType.CAMERA;
+
+        if (data == "gallery") sourcetype = questo.camera.PictureSourceType.PHOTOLIBRARY;
+
+
+        const options: CameraOptions = {
+          quality: 80,
+          targetWidth: 500,
+          targetHeight: 500,
+          destinationType: questo.camera.DestinationType.DATA_URL,
+          encodingType: questo.camera.EncodingType.JPEG,
+          mediaType: questo.camera.MediaType.PICTURE,
+          sourceType: sourcetype
         }
-        questo.backend.postChat(postdata, function (data) {
-          console.log("foto posted to chat !!");
-        })
-      }, (err) => {
-        console.log("error taking picture", err);
-      });
+
+        questo.camera.getPicture(options).then((imageData) => {
+          // imageData is either a base64 encoded string or a file URI
+          // If it's base64:
+          console.log("imagedata", imageData);
+          let base64Image = 'data:image/jpeg;base64,' + imageData;
+          console.log("base64image", base64Image);
+          var postdata = {
+            garaid: "",
+            nickname: questo.backend.user.nickname,
+            sockid: questo.backend.user.sockid,
+            foto: base64Image,
+            text: ""
+          }
+          questo.backend.postChat(postdata, function (data) {
+            console.log("foto posted to chat !!");
+          })
+        }, (err) => {
+          console.log("error taking picture", err);
+        });
+      })
     }
 
 
@@ -745,5 +769,97 @@ export class ChatPage implements OnInit {
   }
 
   */
+
+
+  gotoTop() {
+    var questo = this;
+    if (questo.content) questo.content.scrollToTop();
+
+
+  }
+
+  gotoBottom() {
+    var questo = this;
+    if (questo.content) questo.content.scrollToBottom();
+
+  }
+
+
+
+  getImageSource(callback) {
+    var questo = this;
+    const alert = questo.alertCtrl.create({
+      title: 'Seleziona sorgente',
+      message: 'Select sorgente immagine',
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+            callback("cancel");
+          }
+        },
+        {
+          text: 'FOTOCAMERA',
+          handler: () => {
+            console.log('CAMERA clicked');
+            callback("camera");
+          }
+        }
+        ,
+        {
+          text: 'GALLERIA',
+          handler: () => {
+            console.log('GALLERY clicked');
+            callback("gallery");
+          }
+        }
+      ]
+    });
+    alert.present();
+
+
+  }
+
+  isCordovaIOS(){
+    var questo=this;
+    var retvalue=false;
+
+    var isCordova=questo.platform.is("cordova");
+    var isIOS=questo.platform.is("ios");
+    console.log("iscordova",isCordova,"isIOS",isIOS);
+
+    if (isCordova && isIOS) retvalue=true;
+    
+    console.log("retvalue",retvalue);
+    
+    return retvalue;
+  }
+
+
+  playAudioIos(m){
+    console.log(m);
+    if (m.hasOwnProperty("audiourl")) window.open(m.audiourl);
+   
+  }
+
+
+  downloadFileAndPlay(url){
+
+    console.log("dowloadandplay",url);
+
+    let options: StreamingAudioOptions = {
+      successCallback: () => { console.log('Video played') },
+      errorCallback: (e) => { console.log('Error streaming') },
+      initFullscreen: false
+    };
+    
+    this.streamingMedia.playAudio(url, options);
+    if (2==2) return;
+    
+   
+  }
+
 
 }

@@ -6,6 +6,7 @@ for(var i=0; i<data.length; i++) { %>
             <a class="gradient" id='<%= data[i].id %>' href='#' onclick="showMatchesForAtleta('<%= data[i].id%>'); $.mobile.changePage('#matchesatleta');" data-transition='slide'>
                 <span class="medium"><%= data[i].nome %></span><br>
 				<span class="small"><%= data[i].sesso %></span> - <span class="small"><%= data[i].categoria.toUpperCase() %></span><br>
+                <span class="small"><%= data[i].tkdtcategoria %></span><br>
 				<div class="ui-li-count"><%= getMatchesCountForAtleta(data[i].id) %></div>
             </a>
         </li>

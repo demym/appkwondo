@@ -142,10 +142,15 @@ export class GaraPage {
         if (doc.realtime){
           if (String(doc.realtime)=="true") rtcount++;
         }
-
+        doc.tkdtcategoria=questo.getTkdtCategoria(doc.atletaid);
 
         
       })
+
+      questo.gara.matchesbyatleta.rows.forEach(function (item, idx) {
+        item.tkdtcategoria=questo.getTkdtCategoria(item.id);
+
+      });
 
     
 
@@ -156,6 +161,7 @@ export class GaraPage {
 
       questo.iscritti.forEach(function(item,idx){
         var atl=questo.getAtletaIscritto(item);
+        atl.tkdtcategoria=questo.getTkdtCategoria(atl.id);
         questo.atletiiscritti.push(atl);
 
       })
@@ -185,6 +191,7 @@ export class GaraPage {
       console.log("questo.info",questo.info);
       questo.categoriecoperte=questo.getCategorieCoperte();
       console.log("categorie coperte",questo.categoriecoperte);
+      
       
       if (callback) callback(data);
     })
@@ -394,8 +401,24 @@ getDerbyText(id){
 
   }
 
+
+  getTkdtCategoria(atletaid){
+
+    var atleta=this.backend.getAtletaById(atletaid);
+    console.log("atleta",atleta);
+    
+  
+    var tkdtatleta=this.backend.getTkdtAtleta(atleta);
+    var cateta=tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+    return cateta;
+    
+  }
+
+ 
+
   setFilters(){
     var questo=this;
+    
     let profileModal = this.modalCtrl.create(FiltersPage, questo.filters);
     profileModal.onDidDismiss(data => {
       console.log("modal return",data);

@@ -17,13 +17,13 @@ var consoles = [];
 
 var page_popup = true;
 
-var appversion = "1.4.4";
+var appversion = "1.4.5";
 
 var crnonletti = 0;
 var garanotifyid = "";
 
 var facebookcheck = true;
-var debugActive = false;
+var debugActive = true;
 var notifyeventdays = 2;
 var nexteventscount = 0;
 
@@ -3919,7 +3919,8 @@ push.on('error', function(e) {
 			device: "browser",
 			type: "clientspecs",
 			nickname: chatuser.nickname,
-			appversion: appversion
+			appversion: appversion,
+			email: user.email
 
 		}
 		if (isPhone) msg.device = "mobile";
@@ -4064,8 +4065,10 @@ push.on('error', function(e) {
 		conslog("options", settings);
 
 
-		refreshAtletiServer();
-		refreshGareServer();
+		refreshAtletiServer(function(){
+			refreshGareServer();
+		});
+	
 
 		//updateHomeInfos();
 		/*
@@ -7359,6 +7362,15 @@ function renderGaraInfo($matches) {
 
 }
 
+
+function getTkdtCategoria(atl){
+	var tkdtatleta = getTkdtAtleta(atl);
+	console.log("getTkdtCategoria",tkdtatleta);
+	var tkdtcategoria=atl.sesso.toUpperCase()+"  "+tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+	if (tkdtatleta.nome=="atleta non trovato") tkdtcategoria="Dati ufficiali categoria non disponibili"
+	return tkdtcategoria;
+}
+
 function openGara(id, callback) {
 	//realtimeArray=[];
 	var floatrt = $("#gara #floatrt");
@@ -7459,6 +7471,20 @@ function openGara(id, callback) {
 			jmatchesbyprog = data.matchesbyprog;
 			jmatchesbyprog = filterMatches(data.matchesbyprog.rows, true);
 			jmatchesbyatleta = filterMatchesByAtleta(data.matchesbyatleta.rows);
+			jmatchesbyprog.rows.forEach(function(item,idx){
+				var atletaid=item.doc.atletaid;
+				var atl=getAtletaById(atletaid);
+				//var tkdtatleta = getTkdtAtleta(atl);
+				var tkdtcategoria=getTkdtCategoria(atl);
+				item.doc.tkdtcategoria=tkdtcategoria;
+			})
+			jmatchesbyatleta.rows.forEach(function(item,idx){
+				var atletaid=item.id;
+				var atl=getAtletaById(atletaid);
+				//var tkdtatleta = getTkdtAtleta(atl);
+				var tkdtcategoria=getTkdtCategoria(atl);
+				item.tkdtcategoria=tkdtcategoria;
+			})
 			//renderMatchesByProg(data.matchesbyprog);
 			renderMatchesByProg(jmatchesbyprog);
 			renderMatchesByAtleta(jmatchesbyatleta);
@@ -7791,8 +7817,13 @@ function doRegisterUser() {
 }
 
 
-function isValidEmail(str) {
+function isValidEmail2(str) {
 	return typeof str === 'string' && /^[\w+\d+._]+\@[\w+\d+_+]+\.[\w+\d+._]{2,8}$/.test(str);
+}
+
+function isValidEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
 
 
@@ -7877,7 +7908,8 @@ function doLogin(auto) {
 					device: "browser",
 					type: "clientspecs",
 					nickname: chatuser.nickname,
-					appversion: appversion
+					appversion: appversion,
+					email: user.email
 
 				}
 				if (isPhone) msg.device = "mobile";
@@ -10070,7 +10102,7 @@ function getHistoryForAtletaId(atletaid) {
 }
 
 
-function refreshAtletiServer() {
+function refreshAtletiServer(callback) {
 	//var pageid=$.mobile.activePage.attr('id');
 	//var pageId="#"+pageid;
 	debugga("refreshAtletiServer");
@@ -10231,6 +10263,7 @@ function refreshAtletiServer() {
 		}
 		//navigator.notification.activityStop();
 		// progressStop();
+		if (callback) callback();
 	});
 
 }
@@ -10238,8 +10271,8 @@ function refreshAtletiServer() {
 
 
 function progressStart(text) {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 
 		navigator.notification.activityStart(text, "caricamento...");
 	} else {
@@ -10254,8 +10287,8 @@ function progressStart(text) {
 }
 
 function progressStop() {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 		navigator.notification.activityStop();
 	} else {
 		$.mobile.loading('hide');
@@ -10830,6 +10863,46 @@ function bindGaraPage() {
 
 
 	});
+
+}
+
+function setFilters(){
+	console.log("clicked filters");
+	conslog("clicked on filters");
+	var lv = $("#gara ul#ulcategorie");
+	lv.listview();
+	lv.listview("refresh");
+	//$("#gara #dialogCategorie").popup();
+	//$("#dialogCategorie").popup('open', {positionTo: '.spancat'});
+	//e.preventDefault();
+	var html = new EJS({
+		url: 'tpl/popfilters.ejs'
+	}).render({});
+	openPopup(html, "Filtri");
+	//$("temppopup").css("width","100%").css("heigth","98%");
+
+	$("#temppopup #setfilt").button();
+	$("#temppopup #resetfilt").button();
+	$("#temppopup td").css("padding", "5px");
+	$("#temppopup").css("padding", "5px").css("top", "10px !important");
+	//$("#temppopup select").selectmenu();
+
+	if (garaFilters.categoria != "") {
+		$("#temppopup #categ").val(garaFilters.categoria)
+	} else $("#temppopup #categ").val("_");
+
+	if (garaFilters.sesso != "") {
+		$("#temppopup #sex").val(garaFilters.sesso);
+	} else $("#temppopup #sex").val("_");
+
+	if (garaFilters.medaglia != "") {
+		$("#temppopup #medag").val(garaFilters.medaglia);
+	} else $("#temppopup #medag").val("_");
+
+	if (garaFilters.quadrato != "") {
+		$("#temppopup #quadrato").val(garaFilters.quadrato);
+	} else $("#temppopup #quadrato").val("_");
+	//$("#gara #dialogCategorie").popup('open');
 
 }
 
@@ -11643,6 +11716,9 @@ function refreshIscritti(returnhtml) {
 		doc.id = at.id;
 		doc.sesso = at.sesso;
 		doc.categoria = getCategoria(at.datanascita);
+		var tkdtatleta = getTkdtAtleta(at);
+		var tkdtcategoria=getTkdtCategoria(at);
+		doc.tkdtcategoria=tkdtcategoria;
 
 		atls.push(doc);
 

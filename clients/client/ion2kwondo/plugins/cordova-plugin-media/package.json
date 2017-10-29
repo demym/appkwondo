@@ -10,7 +10,7 @@
         "spec": "3.0.1",
         "type": "version"
       },
-      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/ion2kwondo/node_modules"
+      "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/node_modules"
     ]
   ],
   "_from": "cordova-plugin-media@3.0.1",
@@ -45,7 +45,7 @@
   "_shasum": "5e46e76cfa77d4ed28a87598cb0728e4ebab6f27",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-media@3.0.1",
-  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/client/ion2kwondo/node_modules",
+  "_where": "/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },

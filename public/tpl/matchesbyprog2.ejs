@@ -102,8 +102,7 @@
     <div>
 	
 	<span class="match lgreen"><%= data[i].doc.matchid %></span><br>
-	<span class="categoria"><%= getCategoria(data[i].doc.datanascita).toUpperCase() %></span><br>
-	<div class="ui-grid-a">
+		<div class="ui-grid-a">
     <div class="ui-block-a">
 	<span class="atleta" style="width: 50%"><%= data[i].doc.atletaname %></span>
 	</div>
@@ -112,6 +111,9 @@
 	</div>
     
 </div>
+	<span class="categoria"><%= getCategoria(data[i].doc.datanascita).toUpperCase() %></span><br>
+	<span class="categoria"><%= data[i].doc.tkdtcategoria %></span><br>
+
 	<%	
 	  var vclass="";
 	  var parola="Non disputato"

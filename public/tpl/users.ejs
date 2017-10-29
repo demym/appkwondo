@@ -17,7 +17,10 @@ rows.forEach(function(item,idx){
 %>
 
 <tr <%=st%> >
-<td><%=item.doc.email%><br><span style="font-size: 12px"><%=item.doc.nickname%></span></td>
+<td><%=item.doc.email%><br>
+<span style="font-size: 12px"><%=item.doc.nickname%></span><br>
+<span style="font-size: 11px"><%=item.doc.password%></span><br>
+</td>
 
 <td>
 <%

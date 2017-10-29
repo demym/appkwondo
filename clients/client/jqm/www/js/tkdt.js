@@ -773,9 +773,13 @@ function getTkdtAtleta(atleta) {
     acnome = acnome.replace("ù", "u'");
 
     var source = tkdt_atleti;
+    var hastkdt_atleti=true;
 
-    if (tkdt_atleti.length == 0) source = tkdt_atleti_iscritti;
-
+    if (tkdt_atleti.length == 0) {
+        hastkdt_atleti=false;
+        source = tkdt_atleti_iscritti;
+    }
+    var found=false;
     $(source).each(function (i) {
 
 
@@ -793,12 +797,55 @@ function getTkdtAtleta(atleta) {
         if ((atlnome == nome.trim()) || (atlnome == nomex.trim())) {
             colog("TROVATO !!");
             retvalue = atl;
+            found=true;
         }
 
 
 
 
     })
+
+
+    if (!found && hastkdt_atleti){
+        found=false;
+        $(tkdt_atleti_iscritti).each(function (i) {
+            
+            
+                    var nome = anome + " " + acnome;
+                    var nomex = acnome + " " + anome;
+            
+                    var atl = tkdt_atleti_iscritti[i];
+                    var atlnome = atl.nome.toLowerCase().trim();
+                    atlnome = normalizeAccento(atlnome);
+            
+            
+                    //console.log(atlnome);
+                    //console.log(atlnome, nome);
+                    if (atlnome.indexOf("colangel") > -1) colog(atlnome, nome);
+                    if ((atlnome == nome.trim()) || (atlnome == nomex.trim())) {
+                        colog("TROVATO !!");
+                        retvalue = atl;
+                        found=true;
+                    }
+            
+            
+            
+            
+                })
+    }
+
+
+    if (!found){
+        retvalue = {
+            nome: "atleta non trovato",
+            catcintura: "--",
+            catpeso: "--",
+            cateta: "--",
+            societa: "--",
+            sesso: "--",
+            giorno: "--"
+        };
+    }
 
     return retvalue;
 
@@ -815,8 +862,13 @@ function getTkdtAtletiCategoria(cateta, catcintura, catpeso, sesso) {
     var avversari = [];
 
     var source = tkdt_atleti;
+    var hastdkt_atleti=true;
+    var found=false;
 
-    if (tkdt_atleti.length == 0) source = tkdt_atleti_iscritti;
+    if (tkdt_atleti.length == 0) {
+        source = tkdt_atleti_iscritti;
+        hastdkt_atleti=false;
+    }
 
     $(source).each(function (i) {
 
@@ -847,6 +899,7 @@ function getTkdtAtletiCategoria(cateta, catcintura, catpeso, sesso) {
 
     })
 
+   
     return avversari;
 
 }

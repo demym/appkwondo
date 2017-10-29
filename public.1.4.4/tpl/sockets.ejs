@@ -1,0 +1,45 @@
+<!--<li data-role="list-divider" data-position="fixed" role="heading" data-theme="b"><%= data.length%> schede</li>-->
+<p id="pconn" align='center'><%= data.length %> utenti connessi ad AppKwonDo</p>
+<br>
+<ul data-role="listview" id="ulsockets">
+<% 
+ var sid=getCookie("socketid");
+ var color="black";
+ 
+for(var i=0; i<data.length; i++) { 
+     color="black"; 
+     if (sid==data[i].id) color="green";
+	 var nick="";
+	 if (data[i].nickname){
+	   if (data[i].nickname.trim()!="") nick=data[i].nickname.toUpperCase();
+	 }
+	 
+	 var appv="";
+	 if (data[i].appversion) {
+	   if (data[i].appversion.trim()!="") appv=data[i].appversion.toUpperCase();
+	 }
+
+	 var email="";
+	  if (data[i].hasOwnProperty("email")) {
+	   if (data[i].email.trim()!="") email=data[i].email;
+	 }
+
+    
+%>
+        <li sdata-theme='c' class="gradient" >
+            <a class="gradient"  onclick="clickSocket('<%= data[i].id %>','<%=nick%>')" id='<%= data[i].id %>' href='#' data-transition='slide'>
+			    <div class="chatthumbdiv fill"><img src="images/person.png" class="chatthumb" />
+				</div>
+				<div>
+				<span class="medium" style="color: <%= color %>"><%= nick %></span><br>
+				<span class="msmall" style="color: <%= color %>"><%= email %></span><br>
+                <span class="msmall" style="color: <%= color %>" ><%= data[i].id %></span> - <span class="medium" style="color: <%= color %>"><%= data[i].device %></span><br>
+				<span class="msmall" style="color: <%= color %>"><%= data[i].ipaddress %></span><br>
+				<span class="msmall" style="color: <%= color %>"><%= appv %></span><br>
+				</div>
+
+				
+            </a>
+        </li>
+    <% } %>
+</ul>	

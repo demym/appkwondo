@@ -12,7 +12,7 @@
   <ion-list>
     <ion-item>
       <ion-label>Server</ion-label>
-      <ion-select [(ngModel)]="backend.appSettings.server">
+      <ion-select [(ngModel)]="backend.appSettings.server" (ionChange)="onServerChange($event)">
         <ion-option value="http://tkdr.herokuapp.com">Heroku</ion-option>
         <ion-option value="http://appkwondo.mybluemix.net">Bluemix</ion-option>
       </ion-select>

@@ -124,8 +124,9 @@
                       
                        <ion-col>
                         
-              <div class="atleta">{{atl.cognome}} {{atl.nome}}</div>
-              <div class="categoria">{{atl.categoria.toUpperCase()}}</div>
+              <div class="iscrittonome">{{atl.cognome}} {{atl.nome}}</div>
+              <div class="iscritti">{{atl.sesso}} - {{atl.categoria.toUpperCase()}}</div>
+              <div class="iscritti">{{atl.tkdtcategoria}}</div>
                        </ion-col>
                   </ion-row>
                 </ion-grid>
@@ -151,6 +152,7 @@
                         <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>
                         <div class="atleta">{{m.doc.atletaname}}</div>
                         <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>
+                        <div class="iscritti">{{m.doc.tkdtcategoria}}</div>
                         <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>
                          <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{getDerbyText(m.doc.derby)}}</div>
                       </ion-col>
@@ -172,6 +174,7 @@
                 
                 <div class="atleta">{{m.nome}}</div>
                 <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>
+                <div class="iscritti">{{m.tkdtcategoria}}</div>
                 <div class="matches">
                   <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">
                     {{x.matchid}}

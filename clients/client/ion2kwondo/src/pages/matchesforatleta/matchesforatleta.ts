@@ -429,4 +429,125 @@ export class MatchesforatletaPage {
 
   }
 
+
+  openTabulato(url){
+    window.open(url,);
+
+  }
+
+
+  deleteMatch(m) {
+    var questo=this;
+
+    const alrt = questo.alertCtrl.create({
+      title: 'Conferma eliminazione match',
+      message: "Vuoi davvero eliminare il match " + m.matchid + " ?",
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Si, elimina',
+          handler: () => {
+            console.log('OK clicked');
+            alert("elimina ok");
+          
+          }
+        }
+      ]
+    });
+    alrt.present();
+    
+    /*
+      var id = delmatchid;
+    
+      gConfirm("Sei sicuro di voler cancellare l'incontro ?", "Conferma", function () {
+    
+        colog("deleting matchid " + id);
+    
+        var url = "updagent.php?action=delete&tag=match";
+    
+    
+        //find and reset its derby counterpart, if there is one
+        var $allmatches = jGara.matchesbyprog;
+        $($allmatches.rows).each(function (i) {
+          var meid = $allmatches.rows[i].doc.id;
+          var doc = $allmatches.rows[i].doc;
+          if (meid.trim() == id.trim()) {
+            if (doc.derby) {
+    
+              if (doc.derby.trim() != "") {
+                var did = doc.derby;
+    
+                var urld = "/matches/update/" + jcurrentgara.id + "/" + did;
+    
+                $.ajax({
+                  type: "POST",
+                  url: rooturl + urld,
+                  data: {
+                    derby: null
+                  },
+                  async: false
+                });
+    
+                colog("resetted derby flag on matchid " + did);
+    
+    
+              }
+    
+    
+            }
+          }
+    
+        })
+    
+        url += "&id=" + id;
+        url += "&garaid=" + garaid;
+    
+        url = "/matches/delete/" + jcurrentgara.id + "/" + id;
+    
+        $.post(rooturl + url, {
+          a: '1'
+        }, function () {
+          delmatchid = "";
+          openGara(jcurrentgara.id, function () {
+    
+            //refreshMatches(function() {
+    
+            var tipogara = "combattimento";
+            if (jcurrentgara.tipo) {
+              if (jcurrentgara.tipo == "forme") tipogara = "forme";
+    
+            }
+            $("#matchesatleta #popDelMatch").popup("close");
+            if (tipogara == "combattimento") {
+    
+              showMatchesForAtleta(selectedAtl.id);
+    
+            } else {
+    
+              showMatchesForAtletaForme(selectedAtl.id);
+    
+            }
+    
+    
+    
+            // $.mobile.changePage("#matchesatleta");
+    
+          })
+    
+        });
+    
+      }, function () {
+        cancelDelMatch()
+    
+      });
+      */
+    
+    }
+
 }

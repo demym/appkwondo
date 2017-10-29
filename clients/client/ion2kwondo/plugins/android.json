@@ -40,9 +40,6 @@
         "cordova-plugin-fileopener": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -77,6 +74,12 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "com.hutchind.cordova.plugins.streamingmedia": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },

@@ -48,7 +48,7 @@
 
    <ion-list>
       <ng-container *ngFor="let m of mfa">
-      <ion-item  (tap)="showMatchconsole(m.doc)">
+      <ion-item  (press)="deleteMatch(m.doc)" (tap)="showMatchconsole(m.doc)">
         <ion-row >
           <ion-col col-2><img width="32" height="32" src="{{getImg(m)}}" /></ion-col>
           <ion-col>
@@ -92,8 +92,12 @@
       </ion-list>
        <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTabulato=!viewTabulato">Tabulato</button>
     <ion-item *ngIf="viewTabulato">
+     
       {{tabulato.tabname}}<br>
-      <img [src]="tabulatoimg" />
+      <p>
+          <i>Clicca sul tabulato per ingrandirlo</i>
+        </p><br>
+      <img (tap)="openTabulato(tabulatoimg)" [src]="tabulatoimg" />
      <!-- <div (tap)="backend.getTabulatoImg(tabulato.oldhref)" >Tabulato</div>--> 
     </ion-item>
     <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewHistory=!viewHistory">Storico Atleta</button>

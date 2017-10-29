@@ -111,14 +111,6 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-media": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-media@3.0.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-audio-recorder-api": {
         "source": {
             "type": "registry",
@@ -211,6 +203,22 @@
         "source": {
             "type": "registry",
             "id": "https://github.com/DavidWiesner/cordova-plugin-background-mode#disable-singleInstance"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-media": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-media@3.0.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.hutchind.cordova.plugins.streamingmedia": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-streaming-media"
         },
         "is_top_level": true,
         "variables": {}

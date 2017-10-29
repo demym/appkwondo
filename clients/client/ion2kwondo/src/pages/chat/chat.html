@@ -3,6 +3,10 @@
   
 
        <ion-title>ChatKwonDo</ion-title>
+       <ion-buttons end>
+          <button ion-button style="font-size: 18px" (click)="gotoTop()"><ion-icon name="md-arrow-up"></ion-icon></button>
+    <button ion-button style="font-size: 18px" (click)="gotoBottom()"><ion-icon name="md-arrow-down"></ion-icon></button>
+    </ion-buttons>
         <!--<ion-grid class="no-padding">
           <ion-row>
             <ion-col width-20>
@@ -89,9 +93,11 @@
             <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
             <audio-track-progress-bar dark duration progress [audioTrack]="audio" ></audio-track-progress-bar>
             </audio-track>-->
-      <audio   style="width: 100%" *ngIf="m.audio" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
+      <audio   style="width: 100%" *ngIf="m.audio && !isCordovaIOS()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
     Your browser does not support the audio element.
-     </audio></div><br *ngIf="m.audio">
+     </audio><br>
+     <button *ngIf="isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
+    </div><br *ngIf="m.audio"> 
 
 
      
@@ -134,7 +140,7 @@
           <ion-input  (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>
         </ion-col>
         <ion-col col-2 *ngIf="chatButton=='audio'">
-          <button  [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"><ion-icon name="md-microphone"></ion-icon></button> 
+          <button style="height: 100%" block [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> 
           </ion-col>
                <ion-col *ngIf="chatButton=='text'" col-2>
           <button  class="chatbutton" ion-button (click)="sendMessage()"><ion-icon name="md-send"></ion-icon></button> 

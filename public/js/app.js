@@ -17,7 +17,7 @@ var consoles = [];
 
 var page_popup = true;
 
-var appversion = "1.4.4";
+var appversion = "1.4.5";
 
 var crnonletti = 0;
 var garanotifyid = "";
@@ -52,7 +52,9 @@ var tkdt_iscritti = {
 	rows: []
 }
 
-var user = {};
+var user = {
+	token: "eyJhbGciOiJIUzI1NiJ9.ZGVteW1AeWFob28uaXQ.oTBSwtNyFE4OLWby0ATY4g-WUBd7OUPp-EaIv_r_2vQ"
+};
 
 var realtime = {
 	round: "1",
@@ -142,6 +144,7 @@ var activeTab = 0;
 var jmatchesbyatleta = []
 var jmatchesbyprog = [];
 var $atleti = {};
+var displayedAtleti={};
 var $allatleti = {};
 var delmatchid = "";
 var prevSelection = "tab1";
@@ -3601,7 +3604,11 @@ push.on('error', function(e) {
 	$.ajaxSetup({
 		cache: false
 		,
-		beforeSend: function (xhr) { xhr.setRequestHeader('x-auth-token', getCookie("token")); }
+		beforeSend: function (xhr) { 
+			colog("beforesend",user.token);
+			//xhr.setRequestHeader('x-auth-token', getCookie("token"));
+			xhr.setRequestHeader('x-auth-token', user.token);
+		 }
 
 	});
 	/*
@@ -3919,7 +3926,8 @@ push.on('error', function(e) {
 			device: "browser",
 			type: "clientspecs",
 			nickname: chatuser.nickname,
-			appversion: appversion
+			appversion: appversion,
+			email: user.email
 
 		}
 		if (isPhone) msg.device = "mobile";
@@ -4064,8 +4072,10 @@ push.on('error', function(e) {
 		conslog("options", settings);
 
 
-		refreshAtletiServer();
-		refreshGareServer();
+		refreshAtletiServer(function(){
+			refreshGareServer();
+		});
+	
 
 		//updateHomeInfos();
 		/*
@@ -7359,6 +7369,15 @@ function renderGaraInfo($matches) {
 
 }
 
+
+function getTkdtCategoria(atl){
+	var tkdtatleta = getTkdtAtleta(atl);
+	colog("getTkdtCategoria",tkdtatleta);
+	var tkdtcategoria=atl.sesso.toUpperCase()+"  "+tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+	if (tkdtatleta.nome=="atleta non trovato") tkdtcategoria="Dati ufficiali categoria non disponibili"
+	return tkdtcategoria;
+}
+
 function openGara(id, callback) {
 	//realtimeArray=[];
 	var floatrt = $("#gara #floatrt");
@@ -7459,6 +7478,20 @@ function openGara(id, callback) {
 			jmatchesbyprog = data.matchesbyprog;
 			jmatchesbyprog = filterMatches(data.matchesbyprog.rows, true);
 			jmatchesbyatleta = filterMatchesByAtleta(data.matchesbyatleta.rows);
+			jmatchesbyprog.rows.forEach(function(item,idx){
+				var atletaid=item.doc.atletaid;
+				var atl=getAtletaById(atletaid);
+				//var tkdtatleta = getTkdtAtleta(atl);
+				var tkdtcategoria=getTkdtCategoria(atl);
+				item.doc.tkdtcategoria=tkdtcategoria;
+			})
+			jmatchesbyatleta.rows.forEach(function(item,idx){
+				var atletaid=item.id;
+				var atl=getAtletaById(atletaid);
+				//var tkdtatleta = getTkdtAtleta(atl);
+				var tkdtcategoria=getTkdtCategoria(atl);
+				item.tkdtcategoria=tkdtcategoria;
+			})
 			//renderMatchesByProg(data.matchesbyprog);
 			renderMatchesByProg(jmatchesbyprog);
 			renderMatchesByAtleta(jmatchesbyatleta);
@@ -7791,8 +7824,13 @@ function doRegisterUser() {
 }
 
 
-function isValidEmail(str) {
+function isValidEmail2(str) {
 	return typeof str === 'string' && /^[\w+\d+._]+\@[\w+\d+_+]+\.[\w+\d+._]{2,8}$/.test(str);
+}
+
+function isValidEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
 
 
@@ -7845,6 +7883,7 @@ function doLogin(auto) {
 	$("#login #loginbutton").html(caricamentotext);
 
 	var authorization = "Basic " + window.btoa(email + ":" + psw);
+	var encuser= window.btoa(email + ":" + psw);
 
 	$.ajax({
 		url: url,
@@ -7858,11 +7897,12 @@ function doLogin(auto) {
 		.done(function (data) {
 			progressStop();
 
-			console.log("login result", data);
+			colog("login result", data);
 
 
 			if (String(data.loggedin) == "true") {
 				user = data;
+				colog("server returns user",user);
 				role = user.role;
 				//if (data.role=="admin")
 				loggedin = true;
@@ -7877,7 +7917,8 @@ function doLogin(auto) {
 					device: "browser",
 					type: "clientspecs",
 					nickname: chatuser.nickname,
-					appversion: appversion
+					appversion: appversion,
+					email: user.email
 
 				}
 				if (isPhone) msg.device = "mobile";
@@ -7910,18 +7951,33 @@ function doLogin(auto) {
 					$(".showadmin").hide();
 				}
 				console.log("ckal: " + ckal);
+				var alogin=false;
 				if (ckal) {
 					console.log("setting autologin true")
 					setCookie("autologin", "true", cookieDays);
+					alogin=true;
 				}
 				if (ck) {
 
-					setCookie("email", email, cookieDays);
+					var u={
+						email: email,
+						nickname: user.nickname,
+						encuser: encuser,
+						token: token,
+						autologin: alogin,
+						socketid: chatuser.sockid
+					}
+
+					setCookie("appkwondo_user",JSON.stringify(u));
+					//setCookie("token", token);
+
+
+					/*setCookie("email", email, cookieDays);
 					setCookie("nickname", user.nickname, cookieDays)
 					setCookie("psw", psw, cookieDays);
 					setCookie("token", token);
-					console.log("saved token ", token);
-					colog("setted rememberme cookies")
+					console.log("saved token ", token);*/
+					colog("setted user cookies")
 				} else {
 					deleteCookie("email");
 					deleteCookie("psw");
@@ -10070,7 +10126,7 @@ function getHistoryForAtletaId(atletaid) {
 }
 
 
-function refreshAtletiServer() {
+function refreshAtletiServer(callback) {
 	//var pageid=$.mobile.activePage.attr('id');
 	//var pageId="#"+pageid;
 	debugga("refreshAtletiServer");
@@ -10080,12 +10136,18 @@ function refreshAtletiServer() {
 	$("#page_atleti #recnum span").html(caricamentotext);
 	app.loadAllSchede(function (data) {
 
+		colog("atleti:",data);
+		displayedAtleti= Object.assign({}, data);
+
+		
+
 		if (data.error) {
 			toast("errore", "long");
 
 		} else {
 
 			//alert(data);
+			//var adata=Object.assign({}, data);
 			conslog("Atleti caricati da " + rooturl);
 
 			var elencoSchede = $("#lista_atleti");
@@ -10231,6 +10293,7 @@ function refreshAtletiServer() {
 		}
 		//navigator.notification.activityStop();
 		// progressStop();
+		if (callback) callback();
 	});
 
 }
@@ -10238,8 +10301,8 @@ function refreshAtletiServer() {
 
 
 function progressStart(text) {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 
 		navigator.notification.activityStart(text, "caricamento...");
 	} else {
@@ -10254,8 +10317,8 @@ function progressStart(text) {
 }
 
 function progressStop() {
-	if (isPhone) {
-	//if (1 == 0) {
+	//if (isPhone) {
+	if (1 == 0) {
 		navigator.notification.activityStop();
 	} else {
 		$.mobile.loading('hide');
@@ -10830,6 +10893,46 @@ function bindGaraPage() {
 
 
 	});
+
+}
+
+function setFilters(){
+	console.log("clicked filters");
+	conslog("clicked on filters");
+	var lv = $("#gara ul#ulcategorie");
+	lv.listview();
+	lv.listview("refresh");
+	//$("#gara #dialogCategorie").popup();
+	//$("#dialogCategorie").popup('open', {positionTo: '.spancat'});
+	//e.preventDefault();
+	var html = new EJS({
+		url: 'tpl/popfilters.ejs'
+	}).render({});
+	openPopup(html, "Filtri");
+	//$("temppopup").css("width","100%").css("heigth","98%");
+
+	$("#temppopup #setfilt").button();
+	$("#temppopup #resetfilt").button();
+	$("#temppopup td").css("padding", "5px");
+	$("#temppopup").css("padding", "5px").css("top", "10px !important");
+	//$("#temppopup select").selectmenu();
+
+	if (garaFilters.categoria != "") {
+		$("#temppopup #categ").val(garaFilters.categoria)
+	} else $("#temppopup #categ").val("_");
+
+	if (garaFilters.sesso != "") {
+		$("#temppopup #sex").val(garaFilters.sesso);
+	} else $("#temppopup #sex").val("_");
+
+	if (garaFilters.medaglia != "") {
+		$("#temppopup #medag").val(garaFilters.medaglia);
+	} else $("#temppopup #medag").val("_");
+
+	if (garaFilters.quadrato != "") {
+		$("#temppopup #quadrato").val(garaFilters.quadrato);
+	} else $("#temppopup #quadrato").val("_");
+	//$("#gara #dialogCategorie").popup('open');
 
 }
 
@@ -11643,6 +11746,9 @@ function refreshIscritti(returnhtml) {
 		doc.id = at.id;
 		doc.sesso = at.sesso;
 		doc.categoria = getCategoria(at.datanascita);
+		var tkdtatleta = getTkdtAtleta(at);
+		var tkdtcategoria=getTkdtCategoria(at);
+		doc.tkdtcategoria=tkdtcategoria;
 
 		atls.push(doc);
 
@@ -11737,6 +11843,7 @@ function showMatchesForAtleta(id) {
 		var match = $allmatches.rows[i];
 		var aid = match.doc.atletaid;
 		if (aid == id) {
+			match.doc.tkdtcategoria=getTkdtCategoria(atl);
 			$matchesForAtleta.push(match);
 
 		}
@@ -15026,15 +15133,31 @@ var deleteCookie = function (name) {
 
 
 function autoLogin() {
+
+	var ucookie=getCookie("appkwondo_user");
+
+	
+
 	var em = getCookie("email");
 	var pw = getCookie("psw");
 	var al = getCookie("autologin");
+
+	if (ucookie){
+		console.log("has appkwondo_user cookie !!");
+		var u=JSON.parse(ucookie);
+		var encu=window.atob(u.encuser);
+		//console.log("encu !!",encu);
+		em=encu.split(":")[0];
+		pw=encu.split(":")[1];
+		al=u.autologin;
+	}
+
 	fbloggedin = true;
 	colog("autologin cookie: " + al);
 
 	if (al) {
 		//)alert(al);
-		if (al == "true") {
+		if (String(al) == "true") {
 			if (em && pw) {
 				console.log("doing autologin");
 				$("#login #txt-email").val(em);
@@ -15060,10 +15183,23 @@ function autoLogin() {
 
 function showLoginPage() {
 
+	var ucookie=getCookie("appkwondo_user");
+
+	
 	//alert("showLoginPage");
 	var em = getCookie("email");
 	var pw = getCookie("psw");
 	var al = getCookie("autologin");
+
+	if (ucookie){
+		console.log("has appkwondo_user cookie !!");
+		var u=JSON.parse(ucookie);
+		var encu=window.atob(u.encuser);
+		colog("user !!",u);
+		em=encu.split(":")[0];
+		pw=encu.split(":")[1];
+		al=u.autologin;
+	}
 
 	console.log(al);
 

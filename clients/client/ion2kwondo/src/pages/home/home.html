@@ -22,12 +22,22 @@
 
 <ion-content spadding class="ion-content">
 
+   
   <ion-card>
     <ion-card-content>
-      <div class="benvenuto">Benvenuto <b>{{user.nickname}}</b></div>
-      <div class="server">{{user.email}}</div>
-      <div class="server">Connesso al server {{server}}</div>
-      <div class="admin" *ngIf="user.role=='tkdradmin'">Accesso amministratore eseguito</div>
+      <ion-row>
+        <ion-col col-9>
+            <div class="benvenuto">Benvenuto <b>{{user.nickname}}</b></div>
+            <div class="server">{{user.email}}</div>
+            <div class="server">Connesso al server {{server}}</div>
+            <div class="admin" *ngIf="user.role=='tkdradmin'">Accesso amministratore eseguito</div>
+
+        </ion-col>
+        <ion-col col-3 style="text-align: right">
+            <button clear ion-button (tap)="myAccount()"><ion-icon class="baricon" name="md-settings"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+
     </ion-card-content>
     </ion-card>
   

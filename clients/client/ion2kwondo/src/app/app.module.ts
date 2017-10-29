@@ -56,6 +56,9 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { FacebookProvider } from '../providers/facebook/facebook';
+import { MediaPlugin, MediaObject } from '@ionic-native/media';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
 //import { IonicAudioModule, WebAudioProvider, CordovaMediaProvider, defaultAudioProviderFactory } from 'ionic-audio';
 
@@ -165,12 +168,9 @@ export function myCustomAudioProviderFactory() {
     LocalNotifications,
     BackgroundMode,
     TextToSpeech,
-
-
-    
-    
-   
-
+    MediaPlugin,
+    StreamingMedia,
+    FileTransfer,
     Badge,
     FacebookProvider]
 })

@@ -1,0 +1,19 @@
+<!--<li data-role="list-divider" data-position="fixed" role="heading" data-theme="b"><%= data.length%> schede</li>-->
+<% for(var i=0; i<data.length; i++) { %>
+        <li sdata-theme='c' class="sgradient ">
+            <a class="gradient" id='<%= data[i].doc.id %>_<%= data[i].doc._rev %>' href='#' data-transition='slide'>
+                <span class="medium"><%= data[i].doc.cognome.toUpperCase() + " " + data[i].doc.nome.toUpperCase() %></span><br><span class="small">
+				<% if (data[i].doc.sesso) { %>
+				<%=	 data[i].doc.sesso.toUpperCase() %>
+				
+				<% } %> -
+				<% if (data[i].doc.datanascita) { %>
+				<%=	 getCategoria(data[i].doc.datanascita,true).toUpperCase() %>
+				
+				<% } %>
+				
+				
+				</span>
+            </a>
+        </li>
+    <% } %>

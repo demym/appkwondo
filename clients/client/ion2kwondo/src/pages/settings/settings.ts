@@ -28,4 +28,9 @@ export class SettingsPage {
     console.log("ionViewWillLeave SettingsPage");
     window.localStorage.setItem("ion2kwondo_settings",JSON.stringify(this.backend.appSettings));
   }
+
+  onServerChange(ev){
+    console.log("onserverchange",ev);
+    this.backend.rooturl=ev;
+  }
 }

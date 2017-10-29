@@ -279,22 +279,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-media.MediaError",
-        "file": "plugins/cordova-plugin-media/www/MediaError.js",
-        "pluginId": "cordova-plugin-media",
-        "clobbers": [
-            "window.MediaError"
-        ]
-    },
-    {
-        "id": "cordova-plugin-media.Media",
-        "file": "plugins/cordova-plugin-media/www/Media.js",
-        "pluginId": "cordova-plugin-media",
-        "clobbers": [
-            "window.Media"
-        ]
-    },
-    {
         "id": "cordova-plugin-media-capture.CaptureAudioOptions",
         "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
         "pluginId": "cordova-plugin-media-capture",
@@ -467,6 +451,30 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-media.MediaError",
+        "file": "plugins/cordova-plugin-media/www/MediaError.js",
+        "pluginId": "cordova-plugin-media",
+        "clobbers": [
+            "window.MediaError"
+        ]
+    },
+    {
+        "id": "cordova-plugin-media.Media",
+        "file": "plugins/cordova-plugin-media/www/Media.js",
+        "pluginId": "cordova-plugin-media",
+        "clobbers": [
+            "window.Media"
+        ]
+    },
+    {
+        "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
+        "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
+        "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
+        "clobbers": [
+            "streamingMedia"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -485,7 +493,6 @@ module.exports.metadata =
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
     "cordova-plugin-fileopener": "1.0.5",
-    "cordova-plugin-media": "3.0.1",
     "cordova-plugin-media-capture": "1.4.3",
     "cordova-plugin-nativeaudio": "3.0.9",
     "cordova-plugin-splashscreen": "4.0.3",
@@ -498,7 +505,9 @@ module.exports.metadata =
     "cordova-plugin-x-socialsharing": "5.1.8",
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "cordova-plugin-media": "3.0.1",
+    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4"
 };
 // BOTTOM OF METADATA
 });

@@ -11,6 +11,7 @@ import { AtletiPage } from '../../pages/atleti/atleti';
 import { EventiPage } from '../../pages/eventi/eventi';
 import { SocietaPage } from '../../pages/societa/societa';
 import { StatsPage } from '../../pages/stats/stats';
+import { AccountPage } from '../../pages/account/account';
 
 import { DeviceFeedback } from '@ionic-native/device-feedback';
 
@@ -335,5 +336,11 @@ gotoPage(p){
 
     }
     return retvalue;
+  }
+
+  myAccount(){
+    var questo=this;
+    this.navCtrl.push(AccountPage,{},questo.backend.navOptions);
+
   }
 }

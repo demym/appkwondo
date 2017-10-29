@@ -91,6 +91,7 @@ export class BackendProvider {
       var ja = JSON.parse(a);
 
       this.appSettings = ja;
+      this.rooturl=this.appSettings.server;
       console.log("found settings cookie, using it", ja);
     }
     //this.browser=

@@ -1,5 +1,17 @@
 page-gara {
 
+  .iscrittonome {
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+  }
+
+  .iscritti {
+    font-weight: bold;
+    color: #222;
+    font-size: 11px;
+  }
+
   .ssegment {
     background: #ddd;
   }
@@ -190,6 +202,8 @@ ion-row {
 .toolbar-ios .segment-ios {
   position: relative;
 }
+
+
 
 
 
