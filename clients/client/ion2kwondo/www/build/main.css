@@ -30162,6 +30162,10 @@ ion-navbar.toolbar {
   border-radius: 8px;
 }
 
+ion-app.md [padding], ion-app.md [padding] .scroll-content {
+  padding: 5px;
+}
+
 page-about ion-segment {
   display: block;
   white-space: nowrap;
@@ -30690,7 +30694,7 @@ page-gara .incaston {
   background: #222;
   color: #eee;
   font-size: 14px;
-  height: 30px;
+  height: 35px;
 }
 
 page-gara ion-item {
@@ -30749,6 +30753,14 @@ page-gara .filtapplied {
 
 page-gara .toolbar-ios .segment-ios {
   position: relative;
+}
+
+page-gara .iscrittiitem ion-label {
+  margin: 8px;
+}
+
+page-gara .iscrittiitem .item-inner {
+  border-bottom: 0px;
 }
 
 page-gare .disputata {

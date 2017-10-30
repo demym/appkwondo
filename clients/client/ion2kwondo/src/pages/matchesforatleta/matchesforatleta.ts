@@ -63,8 +63,13 @@ export class MatchesforatletaPage {
     console.log("this.atleta",this.atleta);
     var cat=this.getCategoria(this.atleta.datanascita);
     this.tkdtatleta=this.backend.getTkdtAtleta(this.atleta);
-    this.avversari=this.backend.getTkdtAtletiCategoria(this.tkdtatleta.cateta,this.tkdtatleta.catcintura,this.tkdtatleta.catpeso,this.tkdtatleta.sesso);
+
     
+    var avversari=this.backend.getTkdtAtletiCategoria(this.tkdtatleta.cateta,this.tkdtatleta.catcintura,this.tkdtatleta.catpeso,this.tkdtatleta.sesso);
+    
+    avversari.forEach(function(item,idx){
+      if (item.nome.toLowerCase()!=questo.tkdtatleta.nome.toLowerCase()) questo.avversari.push(item);
+    });
 
     
 
@@ -229,11 +234,12 @@ export class MatchesforatletaPage {
   }
 
   tapSegment(item){
-
+    this.backend.playFeedback();
   }
 
   addMatches(){
     var questo=this;
+    questo.backend.playFeedback();
     const alert = this.alertCtrl.create({
       title: 'Aggiungi match',
       inputs: [
@@ -248,6 +254,7 @@ export class MatchesforatletaPage {
           text: 'Annulla',
           role: 'cancel',
           handler: data => {
+            questo.backend.playFeedback();
             console.log('Cancel clicked');
           }
         },
@@ -255,6 +262,7 @@ export class MatchesforatletaPage {
           text: 'OK, aggiungi',
           handler: data => {
             console.log("matches",data.matches);
+            questo.backend.playFeedback();
             questo.performAddMatches(data.matches);
           }
         }

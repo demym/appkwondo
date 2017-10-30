@@ -142,15 +142,17 @@ export class GaraPage {
         if (doc.realtime){
           if (String(doc.realtime)=="true") rtcount++;
         }
-        doc.tkdtcategoria=questo.getTkdtCategoria(doc.atletaid);
+        //doc.tkdtcategoria=questo.backend.getTkdtCategoria(doc.atletaid);
 
         
       })
 
+      /*
       questo.gara.matchesbyatleta.rows.forEach(function (item, idx) {
-        item.tkdtcategoria=questo.getTkdtCategoria(item.id);
+        item.tkdtcategoria=questo.backend.getTkdtCategoria(item.id);
 
       });
+      */
 
     
 
@@ -161,7 +163,7 @@ export class GaraPage {
 
       questo.iscritti.forEach(function(item,idx){
         var atl=questo.getAtletaIscritto(item);
-        atl.tkdtcategoria=questo.getTkdtCategoria(atl.id);
+        //atl.tkdtcategoria=questo.backend.getTkdtCategoria(atl.id);
         questo.atletiiscritti.push(atl);
 
       })
@@ -195,6 +197,15 @@ export class GaraPage {
       
       if (callback) callback(data);
     })
+  }
+
+  doRefreshStandAlone(){
+    var questo=this;
+    questo.loading=true;
+    questo.refresh(function (data) {
+      questo.loading=false;
+    })
+
   }
 
   doRefresh(refresher) {
@@ -293,7 +304,7 @@ export class GaraPage {
     })
     console.log(mfa);
     var questo=this;
-    questo.deviceFeedback.acoustic();
+    questo.backend.playFeedback();
     this.navCtrl.push(MatchesforatletaPage,{
       gara: questo.gara,
       
@@ -321,12 +332,14 @@ export class GaraPage {
 
   toggleInfobar(){
     this.viewInfobar=!this.viewInfobar;
-    this.deviceFeedback.acoustic();
+    this.backend.playFeedback();
+    //this.deviceFeedback.acoustic();
   }
 
   tapSegment(){
     console.log("tapSegment");
-    this.deviceFeedback.acoustic();
+    this.backend.playFeedback();
+    //this.deviceFeedback.acoustic();
 
   }
 
@@ -353,7 +366,8 @@ export class GaraPage {
 
   gotoChat(){
     var questo=this;
-    this.deviceFeedback.acoustic();
+    //this.deviceFeedback.acoustic();
+    questo.backend.playFeedback();
     this.navCtrl.push(ChatPage,{},questo.backend.navOptions);
 
   }
@@ -367,7 +381,8 @@ export class GaraPage {
   }
 
   showMap(){
-    this.deviceFeedback.acoustic();
+    this.backend.playFeedback();
+    //this.deviceFeedback.acoustic();
     var questo=this;
     //var url=questo.sanitizer.bypassSecurityTrustUrl(jgara.maplocation);
 
@@ -401,7 +416,7 @@ getDerbyText(id){
 
   }
 
-
+/*
   getTkdtCategoria(atletaid){
 
     var atleta=this.backend.getAtletaById(atletaid);
@@ -409,16 +424,20 @@ getDerbyText(id){
     
   
     var tkdtatleta=this.backend.getTkdtAtleta(atleta);
-    var cateta=tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+    console.log("tkdtatleta",tkdtatleta);
+ 
+    var cateta=atleta.sesso.toUpperCase()+" "+tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+    if (tkdtatleta.nome=="atleta non trovato") cateta="Categoria ufficiale non disponibile";
     return cateta;
     
   }
+  */
 
  
 
   setFilters(){
     var questo=this;
-    
+    questo.backend.playFeedback();
     let profileModal = this.modalCtrl.create(FiltersPage, questo.filters);
     profileModal.onDidDismiss(data => {
       console.log("modal return",data);
@@ -539,6 +558,7 @@ getDerbyText(id){
 
 
     var questo=this;
+    questo.backend.playFeedback();
     console.log("tkdt_id",questo.jgara.tkdt_id);
 
     if (questo.jgara.tkdt_id.trim()=="") {

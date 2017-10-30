@@ -17,7 +17,7 @@ var consoles = [];
 
 var page_popup = true;
 
-var appversion = "1.4.5";
+var appversion = "1.4.6";
 
 var crnonletti = 0;
 var garanotifyid = "";
@@ -7478,7 +7478,7 @@ function openGara(id, callback) {
 			jmatchesbyprog = data.matchesbyprog;
 			jmatchesbyprog = filterMatches(data.matchesbyprog.rows, true);
 			jmatchesbyatleta = filterMatchesByAtleta(data.matchesbyatleta.rows);
-			jmatchesbyprog.rows.forEach(function(item,idx){
+			/*jmatchesbyprog.rows.forEach(function(item,idx){
 				var atletaid=item.doc.atletaid;
 				var atl=getAtletaById(atletaid);
 				//var tkdtatleta = getTkdtAtleta(atl);
@@ -7491,7 +7491,7 @@ function openGara(id, callback) {
 				//var tkdtatleta = getTkdtAtleta(atl);
 				var tkdtcategoria=getTkdtCategoria(atl);
 				item.tkdtcategoria=tkdtcategoria;
-			})
+			})*/
 			//renderMatchesByProg(data.matchesbyprog);
 			renderMatchesByProg(jmatchesbyprog);
 			renderMatchesByAtleta(jmatchesbyatleta);
@@ -11746,9 +11746,9 @@ function refreshIscritti(returnhtml) {
 		doc.id = at.id;
 		doc.sesso = at.sesso;
 		doc.categoria = getCategoria(at.datanascita);
-		var tkdtatleta = getTkdtAtleta(at);
+		/*var tkdtatleta = getTkdtAtleta(at);
 		var tkdtcategoria=getTkdtCategoria(at);
-		doc.tkdtcategoria=tkdtcategoria;
+		doc.tkdtcategoria=tkdtcategoria;*/
 
 		atls.push(doc);
 
@@ -11843,7 +11843,7 @@ function showMatchesForAtleta(id) {
 		var match = $allmatches.rows[i];
 		var aid = match.doc.atletaid;
 		if (aid == id) {
-			match.doc.tkdtcategoria=getTkdtCategoria(atl);
+			//match.doc.tkdtcategoria=getTkdtCategoria(atl);
 			$matchesForAtleta.push(match);
 
 		}

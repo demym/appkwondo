@@ -25,11 +25,13 @@ export class LoginPage {
   }
 
   public createAccount() {
+    this.backend.playFeedback();
     this.nav.push(RegisterPage);
   }
 
   public login() {
     var questo = this;
+    questo.backend.playFeedback();
     //this.showLoading()
     var logindata = this.registerCredentials;
     if (this.backend.user.gcmtoken) {
@@ -110,14 +112,16 @@ export class LoginPage {
   ionViewDidEnter() {
     console.log("ionViewDidEnter login.ts");
     var questo = this;
-    var json=this.utils.getJsonStorage("creds");
+    var json=this.utils.getJsonStorage("ion2kwondo_creds");
     //alert(json);
       console.log("JSONSTORAGE", json);
       if (!json) {
         console.log("regcreds are null")
       } else {
-        questo.registerCredentials.email = json.email;
-        questo.registerCredentials.password = json.password;
+        var em=window.atob(json).split(":")[0];
+        var pw=window.atob(json).split(":")[1];
+        questo.registerCredentials.email = em;
+        questo.registerCredentials.password = pw;
         console.log("regcreds", questo.registerCredentials);
         //questo.login();
       }

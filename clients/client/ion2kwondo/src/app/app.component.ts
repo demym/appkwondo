@@ -60,7 +60,7 @@ export class MyApp {
     var questo = this;
 
 
-    var IS_PRODUCTION = false;
+    var IS_PRODUCTION = true;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");
@@ -149,6 +149,7 @@ export class MyApp {
   }
   openPage(page) {
     var questo = this;
+    questo.backend.playFeedback();
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     if (page.title == "Logout") {
@@ -211,7 +212,7 @@ export class MyApp {
   openPageWithParams(page, params) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-
+    this.backend.playFeedback();
     this.nav.setRoot(page.component, params);
   }
 
@@ -357,6 +358,7 @@ export class MyApp {
     });
 
 
+    /*
     questo.backend.getRtMatches(function (data) {
       console.log("got rtmatches in app.component.ts", data);
       if (data.length > 0) {
@@ -365,11 +367,13 @@ export class MyApp {
         questo.realtimeEvents = false;
       }
     })
+    */
   }
 
 
 
   gotoChat() {
+    
     console.log("app this", this);
     this.nav.push(ChatPage);
   }

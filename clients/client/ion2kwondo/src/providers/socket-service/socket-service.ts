@@ -62,6 +62,7 @@ export class SocketService {
 
     this.socket.on("getnickname", (msg) => {
       console.log('socket getnickname received', msg);
+      questo.backend.user.sockid=msg.sockid;
       var connsock = {
         useremail: this.backend.user.email
       };
@@ -140,14 +141,22 @@ export class SocketService {
      this.socket.on("chatmsg", (msg) => {
        console.log("chatmsg in socket.ts!",msg);
        questo.msgs.push(msg);
-       questo.backend.chatmessages.push(msg);
-       questo.backend.addChatUnread();
-       questo.events.publish('chatmsg', msg);
-       console.log("isChatView",questo.backend.isChatView);
-       if (!questo.backend.isChatView){
-         console.log("local notification emitted");
-         questo.backend.localNotify(msg.nickname+" - "+msg.text);
+       var sockid=msg.sockid;
+       var addit=false;
+       if (msg.audio) addit=true;
+       if (sockid!=questo.backend.user.sockid) addit=true;
+       if (addit){
+        questo.backend.chatmessages.push(msg);
+        questo.backend.addChatUnread();
+        questo.events.publish('chatmsg', msg);
+        console.log("isChatView",questo.backend.isChatView);
+        if (!questo.backend.isChatView){
+          console.log("local notification emitted");
+          questo.backend.localNotify(msg.nickname+" - "+msg.text);
+        }
+
        }
+     
     
      });
 

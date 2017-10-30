@@ -23,7 +23,7 @@ var crnonletti = 0;
 var garanotifyid = "";
 
 var facebookcheck = true;
-var debugActive = true;
+var debugActive = false;
 var notifyeventdays = 2;
 var nexteventscount = 0;
 
@@ -52,7 +52,9 @@ var tkdt_iscritti = {
 	rows: []
 }
 
-var user = {};
+var user = {
+	token: "eyJhbGciOiJIUzI1NiJ9.ZGVteW1AeWFob28uaXQ.oTBSwtNyFE4OLWby0ATY4g-WUBd7OUPp-EaIv_r_2vQ"
+};
 
 var realtime = {
 	round: "1",
@@ -142,6 +144,7 @@ var activeTab = 0;
 var jmatchesbyatleta = []
 var jmatchesbyprog = [];
 var $atleti = {};
+var displayedAtleti={};
 var $allatleti = {};
 var delmatchid = "";
 var prevSelection = "tab1";
@@ -3601,7 +3604,11 @@ push.on('error', function(e) {
 	$.ajaxSetup({
 		cache: false
 		,
-		beforeSend: function (xhr) { xhr.setRequestHeader('x-auth-token', getCookie("token")); }
+		beforeSend: function (xhr) { 
+			colog("beforesend",user.token);
+			//xhr.setRequestHeader('x-auth-token', getCookie("token"));
+			xhr.setRequestHeader('x-auth-token', user.token);
+		 }
 
 	});
 	/*
@@ -7365,7 +7372,7 @@ function renderGaraInfo($matches) {
 
 function getTkdtCategoria(atl){
 	var tkdtatleta = getTkdtAtleta(atl);
-	console.log("getTkdtCategoria",tkdtatleta);
+	colog("getTkdtCategoria",tkdtatleta);
 	var tkdtcategoria=atl.sesso.toUpperCase()+"  "+tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
 	if (tkdtatleta.nome=="atleta non trovato") tkdtcategoria="Dati ufficiali categoria non disponibili"
 	return tkdtcategoria;
@@ -7876,6 +7883,7 @@ function doLogin(auto) {
 	$("#login #loginbutton").html(caricamentotext);
 
 	var authorization = "Basic " + window.btoa(email + ":" + psw);
+	var encuser= window.btoa(email + ":" + psw);
 
 	$.ajax({
 		url: url,
@@ -7889,11 +7897,12 @@ function doLogin(auto) {
 		.done(function (data) {
 			progressStop();
 
-			console.log("login result", data);
+			colog("login result", data);
 
 
 			if (String(data.loggedin) == "true") {
 				user = data;
+				colog("server returns user",user);
 				role = user.role;
 				//if (data.role=="admin")
 				loggedin = true;
@@ -7942,18 +7951,33 @@ function doLogin(auto) {
 					$(".showadmin").hide();
 				}
 				console.log("ckal: " + ckal);
+				var alogin=false;
 				if (ckal) {
 					console.log("setting autologin true")
 					setCookie("autologin", "true", cookieDays);
+					alogin=true;
 				}
 				if (ck) {
 
-					setCookie("email", email, cookieDays);
+					var u={
+						email: email,
+						nickname: user.nickname,
+						encuser: encuser,
+						token: token,
+						autologin: alogin,
+						socketid: chatuser.sockid
+					}
+
+					setCookie("appkwondo_user",JSON.stringify(u));
+					//setCookie("token", token);
+
+
+					/*setCookie("email", email, cookieDays);
 					setCookie("nickname", user.nickname, cookieDays)
 					setCookie("psw", psw, cookieDays);
 					setCookie("token", token);
-					console.log("saved token ", token);
-					colog("setted rememberme cookies")
+					console.log("saved token ", token);*/
+					colog("setted user cookies")
 				} else {
 					deleteCookie("email");
 					deleteCookie("psw");
@@ -10112,12 +10136,18 @@ function refreshAtletiServer(callback) {
 	$("#page_atleti #recnum span").html(caricamentotext);
 	app.loadAllSchede(function (data) {
 
+		colog("atleti:",data);
+		displayedAtleti= Object.assign({}, data);
+
+		
+
 		if (data.error) {
 			toast("errore", "long");
 
 		} else {
 
 			//alert(data);
+			//var adata=Object.assign({}, data);
 			conslog("Atleti caricati da " + rooturl);
 
 			var elencoSchede = $("#lista_atleti");
@@ -11813,6 +11843,7 @@ function showMatchesForAtleta(id) {
 		var match = $allmatches.rows[i];
 		var aid = match.doc.atletaid;
 		if (aid == id) {
+			match.doc.tkdtcategoria=getTkdtCategoria(atl);
 			$matchesForAtleta.push(match);
 
 		}
@@ -15102,15 +15133,31 @@ var deleteCookie = function (name) {
 
 
 function autoLogin() {
+
+	var ucookie=getCookie("appkwondo_user");
+
+	
+
 	var em = getCookie("email");
 	var pw = getCookie("psw");
 	var al = getCookie("autologin");
+
+	if (ucookie){
+		console.log("has appkwondo_user cookie !!");
+		var u=JSON.parse(ucookie);
+		var encu=window.atob(u.encuser);
+		//console.log("encu !!",encu);
+		em=encu.split(":")[0];
+		pw=encu.split(":")[1];
+		al=u.autologin;
+	}
+
 	fbloggedin = true;
 	colog("autologin cookie: " + al);
 
 	if (al) {
 		//)alert(al);
-		if (al == "true") {
+		if (String(al) == "true") {
 			if (em && pw) {
 				console.log("doing autologin");
 				$("#login #txt-email").val(em);
@@ -15136,10 +15183,23 @@ function autoLogin() {
 
 function showLoginPage() {
 
+	var ucookie=getCookie("appkwondo_user");
+
+	
 	//alert("showLoginPage");
 	var em = getCookie("email");
 	var pw = getCookie("psw");
 	var al = getCookie("autologin");
+
+	if (ucookie){
+		console.log("has appkwondo_user cookie !!");
+		var u=JSON.parse(ucookie);
+		var encu=window.atob(u.encuser);
+		colog("user !!",u);
+		em=encu.split(":")[0];
+		pw=encu.split(":")[1];
+		al=u.autologin;
+	}
 
 	console.log(al);
 

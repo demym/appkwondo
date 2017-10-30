@@ -38,7 +38,8 @@ export class BackendProvider {
       oauth_token: "",
       oauth_verifier: ""
     },
-    role: "BP_GUEST"
+    role: "BP_GUEST",
+    sockid: "unknown"
   };
   browser;
   debugActive = true;
@@ -580,7 +581,9 @@ blueLogin(user, callback) {
 
       if (questo.user.role == "IBM_ADMIN") questo.isIbmAdmin = true;
 
-      questo.utils.setJsonStorage("creds", user);
+      var creds=window.btoa(user.email+":"+user.password);
+
+      questo.utils.setJsonStorage("ion2kwondo_creds", creds); 
       questo.getAtleti(function () { });
 
       if (callback) callback(data);
@@ -941,6 +944,15 @@ filterArray($m, filt, exact) {
 
 getRtMatches(callback) {
   var url = this.rooturl + "/realtime";
+
+  if (url.indexOf("token") == -1) {
+    if (url.indexOf("?") > -1) {
+      url += "&token=" + this.user.token;
+
+    } else url += "?token=" + this.user.token;
+
+  }
+
   this.fetchData(url, function (data) {
     if (callback) callback(data);
 
@@ -990,12 +1002,15 @@ postChat(msg, callback) {
 
   //playSound("img/chatsend");
   //$("#page_chat #chatmsg").val("");
+  
+  
+  console.log("posting chat message",msg);
   questo.postData(url, msg, function (data) {
     console.log("chatmsg sent");
     if (callback) callback();
 
   })
-
+  
 }
 
 
@@ -1581,6 +1596,25 @@ setBackgroundMode(v){
   } else this.backgroundMode.disable();
 
 }
+
+
+getTkdtCategoria(atletaid){
+
+      var questo=this;
+  
+      var atleta=questo.getAtletaById(atletaid);
+      console.log("atleta",atleta);
+      
+    
+      var tkdtatleta=questo.getTkdtAtleta(atleta);
+      console.log("tkdtatleta",tkdtatleta);
+   
+      var cateta=atleta.sesso.toUpperCase()+" "+tkdtatleta.catpeso+"kg - "+tkdtatleta.catcintura;
+      if (tkdtatleta.nome=="atleta non trovato") cateta="Categoria ufficiale non disponibile";
+      return cateta;
+      
+    }
+  
 
 
 

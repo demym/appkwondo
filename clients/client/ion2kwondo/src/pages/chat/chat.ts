@@ -358,15 +358,18 @@ export class ChatPage implements OnInit {
     var text = questo.msg;
     questo.msg = "";
 
-
-    questo.backend.postChat({
+    var m={
       garaid: "",
       nickname: questo.backend.user.nickname,
       sockid: questo.backend.user.sockid,
       //audio: data,
       text: text
-    }, function () {
 
+    }
+
+    questo.postLocalChat(m);
+    questo.backend.postChat(m, function () {
+      questo.gotoBottom();
     });
 
 
@@ -492,14 +495,17 @@ export class ChatPage implements OnInit {
                       //console.log(dataURL);
                       var sounddata = dataURL;
                       console.log("sounddata", sounddata);
-                      questo.backend.postChat({
-
+                      var msg={
                         nickname: questo.backend.user.nickname,
                         sockid: questo.backend.user.sockid,
                         audio: sounddata,
                         text: ""
-                      }, function () {
+
+                      }
+                      //questo.postLocalChat(msg);
+                      questo.backend.postChat(msg, function () {
                         console.log("audio posted !!")
+                        questo.gotoBottom();
                       });
                     };
                     reader.onloadend = function (evt) {
@@ -605,8 +611,10 @@ export class ChatPage implements OnInit {
             foto: base64Image,
             text: ""
           }
+          questo.postLocalChat(postdata);
           questo.backend.postChat(postdata, function (data) {
             console.log("foto posted to chat !!");
+            questo.gotoBottom();
           })
         }, (err) => {
           console.log("error taking picture", err);
@@ -685,6 +693,18 @@ export class ChatPage implements OnInit {
 
   }
 
+  shareItem(m){
+    console.log("shareItem",m);
+    if (m.audiourl) {
+      this.shareAudio(m);
+      return;
+    }
+    if (m.fotourl) {
+      this.shareFoto(m.fotourl)
+      return;
+    }
+
+  }
 
   shareText(url) {
     console.log("shareText", url);
@@ -698,7 +718,7 @@ export class ChatPage implements OnInit {
   }
 
   shareAudio(item) {
-
+    this.backend.playFeedback();
     console.log("shareAudio", item);
     var url = item.audiourl;
 
@@ -715,6 +735,7 @@ export class ChatPage implements OnInit {
   share(item) {
 
     console.log("item", item);
+    this.backend.playFeedback();
 
     var url = "";
 
@@ -732,6 +753,7 @@ export class ChatPage implements OnInit {
 
   shareFoto(url) {
     console.log("shareFoto", url);
+    this.backend.playFeedback();
     this.socialSharing.share(null, null, url, null).then(() => {
       console.log("share successfull")
     }).catch(() => {
@@ -780,6 +802,7 @@ export class ChatPage implements OnInit {
 
   gotoBottom() {
     var questo = this;
+
     if (questo.content) questo.content.scrollToBottom();
 
   }
@@ -822,17 +845,24 @@ export class ChatPage implements OnInit {
 
   }
 
+
+  isCordova(){
+    var isCordova=this.platform.is("cordova");
+    return isCordova;
+
+  }
+
   isCordovaIOS(){
     var questo=this;
     var retvalue=false;
 
     var isCordova=questo.platform.is("cordova");
     var isIOS=questo.platform.is("ios");
-    console.log("iscordova",isCordova,"isIOS",isIOS);
+    //console.log("iscordova",isCordova,"isIOS",isIOS);
 
     if (isCordova && isIOS) retvalue=true;
     
-    console.log("retvalue",retvalue);
+   // console.log("retvalue",retvalue);
     
     return retvalue;
   }
@@ -848,7 +878,7 @@ export class ChatPage implements OnInit {
   downloadFileAndPlay(url){
 
     console.log("dowloadandplay",url);
-
+    
     let options: StreamingAudioOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: (e) => { console.log('Error streaming') },
@@ -858,6 +888,20 @@ export class ChatPage implements OnInit {
     this.streamingMedia.playAudio(url, options);
     if (2==2) return;
     
+   
+  }
+
+  postLocalChat(msg){
+    var questo=this;
+    var tim=moment().format("YYYYMMDDHHmmSS");
+    var sockid=questo.backend.user.sockid;
+    var localmsg = Object.assign({}, msg);
+    localmsg.time=tim;
+    localmsg.sockid=sockid;
+    questo.backend.chatmessages.push(localmsg);
+    setTimeout(function(){
+      questo.gotoBottom();
+    },300)
    
   }
 

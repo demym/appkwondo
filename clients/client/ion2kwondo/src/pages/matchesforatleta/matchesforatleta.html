@@ -65,7 +65,7 @@
 
   </section>
   <section *ngIf="activetab=='details'">
-      <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTkdtCategoria=!viewTkdtCategoria">Dati ufficiali categoria</button>
+      <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTkdtCategoria=!viewTkdtCategoria; backend.playFeedback();">Dati ufficiali categoria</button>
     <ion-list *ngIf="viewTkdtCategoria">
       <ion-item  style="font-size:12px" *ngFor="let a of tkdtatletaarr"> 
         <ion-row>
@@ -77,7 +77,7 @@
       </ion-list>
 
 
-     <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewAvversari=!viewAvversari">Avversari in categoria ({{avversari.length}})</button>
+     <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewAvversari=!viewAvversari; backend.playFeedback();">Avversari in categoria ({{avversari.length}})</button>
     <ion-list *ngIf="viewAvversari">
       <ion-item  style="font-size:12px" *ngFor="let avv of avversari"> 
         <ion-row>
@@ -90,7 +90,7 @@
         </ion-row>
       </ion-item>
       </ion-list>
-       <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTabulato=!viewTabulato">Tabulato</button>
+       <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTabulato=!viewTabulato; backend.playFeedback();">Tabulato</button>
     <ion-item *ngIf="viewTabulato">
      
       {{tabulato.tabname}}<br>
@@ -100,7 +100,7 @@
       <img (tap)="openTabulato(tabulatoimg)" [src]="tabulatoimg" />
      <!-- <div (tap)="backend.getTabulatoImg(tabulato.oldhref)" >Tabulato</div>--> 
     </ion-item>
-    <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewHistory=!viewHistory">Storico Atleta</button>
+    <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewHistory=!viewHistory; backend.playFeedback();">Storico Atleta</button>
     <ion-list *ngIf="viewHistory">
       <ion-item> 
           <ion-row style="padding: 2px !important; font-size: 12px; background: #eee;">

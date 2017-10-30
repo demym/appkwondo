@@ -54,6 +54,7 @@ export class MatchconsolePage {
   }
 
   tapSegment(c, i) {
+ 
     this.selectedMatchId = c.match.id;
     this.selectedMatch = c.match;
     this.selectedConsole = c;
@@ -249,7 +250,7 @@ export class MatchconsolePage {
     */
 		//addMatchToRealtime(selectedid);
 
-		var color = "black";
+		color = "black";
 
 		if (questo.selectedConsole.active) color = "blue";
 

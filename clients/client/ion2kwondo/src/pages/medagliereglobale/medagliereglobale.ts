@@ -90,6 +90,7 @@ export class MedagliereglobalePage {
   }
 
   close() {
+    this.backend.playFeedback();
     this.viewCtrl.dismiss();
   }
 
@@ -194,6 +195,7 @@ export class MedagliereglobalePage {
 
 
   toggle(what) {
+    this.backend.playFeedback();
     this.toggles[what] = !this.toggles[what];
   }
 
@@ -222,12 +224,14 @@ export class MedagliereglobalePage {
 
   toggleSocieta(){
     var questo=this;
+    questo.backend.playFeedback();
     console.log("togglesocieta");
     questo.viewsocieta = !questo.viewsocieta;
   }
 
   toggleSocietaIscritte(){
     var questo=this;
+    questo.backend.playFeedback();
     console.log("togglesocieta");
     questo.viewsocietaiscritte = !questo.viewsocietaiscritte;
   }
@@ -236,17 +240,20 @@ export class MedagliereglobalePage {
 
   toggleMedagliere(){
     var questo=this;
+    questo.backend.playFeedback();
     console.log("togglemedagliere");
     questo.viewmedagliere = !questo.viewmedagliere;
   }
   toggleMedagliereGlobale(){
     var questo=this;
+    questo.backend.playFeedback();
     console.log("togglemedagliereglobale");
     questo.viewmedagliereglobale = !questo.viewmedagliereglobale;
     if (questo.viewmedagliereglobale) questo.domize();
   }
   toggleTabulati(){
     var questo=this;
+    questo.backend.playFeedback();
     console.log("toggletabulati");
     questo.viewtabulati = !questo.viewtabulati;
 
@@ -256,6 +263,7 @@ export class MedagliereglobalePage {
   toggleAtletiSocieta(p) {
     console.log("toggleatletisocieta", p);
     var questo = this;
+    questo.backend.playFeedback();
     questo.viewatletisocieta = !questo.viewatletisocieta;
 
     questo.activesocieta = p.societaname;
@@ -390,6 +398,7 @@ export class MedagliereglobalePage {
 
   tabChanged(ev) {
     var questo = this;
+    questo.backend.playFeedback();
     console.log("tabchanged", ev.value);
     if (ev.value == "medagliereglobale") {
       if (questo.hasGiornate) questo.domize();

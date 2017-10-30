@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { BackendProvider } from '../../providers/backend/backend';
 
 /**
  * Generated class for the FiltersPage page.
@@ -20,7 +21,7 @@ export class FiltersPage {
     quadrato: ""
   }
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public params: NavParams) {
+  constructor(public backend: BackendProvider, public viewCtrl: ViewController, public navCtrl: NavController, public params: NavParams) {
     this.filters={
       sesso: params.get('sesso'),
       categoria: params.get('categoria'),
@@ -36,6 +37,7 @@ export class FiltersPage {
   }
 
   resetFilters(){
+    this.backend.playFeedback();
     for (var k in this.filters){
       this.filters[k]="";
       console.log("resetFilters done",this.filters);
@@ -44,10 +46,12 @@ export class FiltersPage {
   }
 
   applyFilters(){
+    this.backend.playFeedback();
     this.viewCtrl.dismiss(this.filters);
   }
 
   cancel(){
+    this.backend.playFeedback();
     this.viewCtrl.dismiss();
   }
 

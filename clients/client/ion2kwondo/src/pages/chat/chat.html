@@ -4,8 +4,8 @@
 
        <ion-title>ChatKwonDo</ion-title>
        <ion-buttons end>
-          <button ion-button style="font-size: 18px" (click)="gotoTop()"><ion-icon name="md-arrow-up"></ion-icon></button>
-    <button ion-button style="font-size: 18px" (click)="gotoBottom()"><ion-icon name="md-arrow-down"></ion-icon></button>
+          <button ion-button style="font-size: 18px" (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
+    <button ion-button style="font-size: 18px" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
     </ion-buttons>
         <!--<ion-grid class="no-padding">
           <ion-row>
@@ -76,27 +76,27 @@
   
     <ion-list  *ngFor="let m of backend.chatmessages" > <!--*ngFor="let m of msgs"-->
 
-      <ion-item class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
+      <ion-item (press)="shareItem(m)" class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
        
           <div class="msgemail">{{m.nickname}}    <span class="date">{{ getNormalDate(m.time) }}</span></div> 
        
          <div  *ngIf="m.foto" class="divcont">  
       <img class="ionimg" (press)="shareFoto(m.foto)" (tap)="openFoto(m.foto,m)" [src]="getBase64(m.foto)" />
       </div><br *ngIf="m.foto">
-      <div  *ngIf="m.fotourl && !m.foto" class="divcont">  
-      <img class="ionimg" (press)="shareFoto(m.fotourl)" (tap)="openFoto(m.fotourl,m)" [src]="m.fotourl" />
+      <div  *ngIf="m.fotourl && !m.foto" class="divcont">  <!-- (press)="shareFoto(m.fotourl)" -->
+      <img class="ionimg"  (tap)="openFoto(m.fotourl,m)" [src]="m.fotourl" />
       </div><br *ngIf="m.fotourl && !m.foto">
 
       <!--<img-loader *ngIf="m.fotourl" [src]="m.fotourl"></img-loader>-->
-        <div (press)="shareAudio(m)" *ngIf="m.audio" class="divcont">  
+        <div  *ngIf="m.audio" class="divcont">  <!--(press)="shareAudio(m)"-->
             <!--<audio-track #audio   [track]="getTrack(m)" (onFinish)="onTrackFinished($event)">
             <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
             <audio-track-progress-bar dark duration progress [audioTrack]="audio" ></audio-track-progress-bar>
             </audio-track>-->
-      <audio   style="width: 100%" *ngIf="m.audio && !isCordovaIOS()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
+      <audio   style="width: 100%" *ngIf="m.audio && !isCordova()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
     Your browser does not support the audio element.
      </audio><br>
-     <button *ngIf="isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
+     <button *ngIf="isCordova() || isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
     </div><br *ngIf="m.audio"> 
 
 
