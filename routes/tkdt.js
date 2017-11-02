@@ -9,12 +9,20 @@ var utils = require("../routes/utils");
 
 var tkdt_rooturl = "https://www.tkdtechnology.it/index.php/welcome/";
 
+var tabulato_word="show";
+
+router.get("/tabulatoimage/use/:word",function(req,res){
+    var word=req.params.word;
+    tabulato_word=word;
+    res.send("Tabulato word setted to "+word);
+})
+
 
 router.get("/tabulatoimage/:tabulatoid", function (req, res) {
 
     var tabulatoid = req.params.tabulatoid;
 
-    var url = "https://www.tkdtechnology.it/index.php/welcome/vedi_tabulato?id=" + tabulatoid;
+    var url = "https://www.tkdtechnology.it/index.php/welcome/"+tabulato_word+"_tabulato?id=" + tabulatoid;
     //url=pageurl;
     request(url, function (error, response, html) {
         if (!error && response.statusCode == 200) {
