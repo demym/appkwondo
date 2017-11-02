@@ -83,7 +83,7 @@ export class GaraPage {
    
     this.events.subscribe("updategara",function(msg,time){
       console.log("refreshgara in gara.ts !!");
-      questo.refresh(function(){
+      questo.refreshCurrentGara(function(data){
         questo.backend.syncConsoles(questo.gara.matchesbyprog);
         // questo.events.publish("realtimematches",questo.gara.matchesbyprog);
         questo.events.publish("consolessynced",questo.gara.matchesbyprog);
@@ -198,6 +198,93 @@ export class GaraPage {
       if (callback) callback(data);
     })
   }
+
+
+  refreshCurrentGara(callback) {
+    var questo = this;
+    questo.loading=true;
+    questo.atletiiscritti=[];
+    questo.backend.getCurrentGara(function (data) {
+      //let data= Object.assign({}, d);
+      console.log("got gara",data,data.matchesbyatleta.rows.length);
+     
+     
+      questo.gara = data;
+      
+      console.log("sono qui");
+      questo.jgara=data.gara.rows[0].doc;
+      console.log("e poi qui");
+      var rtcount=0;
+      if (questo.gara.matchesbyprog.rows.length==0) questo.showIscritti=true;
+
+      questo.gara.matchesbyprog.rows.forEach(function (item, idx) {
+        var doc = item.doc;
+        var imgsrc = "matchtoplay.png";
+        if (doc.disputato == "yes") {
+          imgsrc = "matchko.png";
+          if (doc.vinto == "yes") imgsrc = "matchok.png";
+        }
+        doc.imgsrc = "assets/img/" + imgsrc;
+        if (doc.realtime){
+          if (String(doc.realtime)=="true") rtcount++;
+        }
+        //doc.tkdtcategoria=questo.backend.getTkdtCategoria(doc.atletaid);
+
+        
+      })
+
+      /*
+      questo.gara.matchesbyatleta.rows.forEach(function (item, idx) {
+        item.tkdtcategoria=questo.backend.getTkdtCategoria(item.id);
+
+      });
+      */
+
+    
+
+      console.log("gara", questo.gara);
+      console.log("jgara", questo.jgara);
+      questo.realtimecount=rtcount;
+      questo.iscritti=questo.jgara.iscritti.split(",");
+
+      questo.iscritti.forEach(function(item,idx){
+        var atl=questo.getAtletaIscritto(item);
+        //atl.tkdtcategoria=questo.backend.getTkdtCategoria(atl.id);
+        questo.atletiiscritti.push(atl);
+
+      })
+      questo.atletiiscritti.sort(function(a,b){
+        var a1=a.cognome+a.nome;
+        var b1=b.cognome+b.nome;
+        if (a1>b1) return 1;
+        if (a1<b1) return -1;
+        return 0;
+      })
+
+      if (questo.filtersApplied){
+        questo.displayedgara=questo.filterGara(questo.gara);
+        
+        
+      } else questo.displayedgara=questo.gara;
+
+      console.log("displayedgara",questo.displayedgara);
+
+
+      console.log("atletiiscritti",questo.atletiiscritti);
+      questo.loading=false;
+      questo.info.dadisputare=questo.backend.filterRows(questo.gara.matchesbyprog,{ dadisputare: "yes"});
+      questo.info.disputati=questo.backend.filterRows(questo.gara.matchesbyprog,{ disputato: "yes"});
+      questo.info.vinti=questo.backend.filterRows(questo.gara.matchesbyprog,{ disputato: "yes", vinto: "yes"});
+      questo.info.persi=questo.backend.filterRows(questo.gara.matchesbyprog,{ disputato: "yes", vinto: "no"});
+      console.log("questo.info",questo.info);
+      questo.categoriecoperte=questo.getCategorieCoperte();
+      console.log("categorie coperte",questo.categoriecoperte);
+      
+      
+      if (callback) callback(data);
+    })
+  }
+
 
   doRefreshStandAlone(){
     var questo=this;
@@ -407,7 +494,7 @@ export class GaraPage {
 getDerbyText(id){
      
     var m=this.backend.getMatchById(id);
-    //console.log("M",id,m);
+    console.log("getderbytext for",id,m);
     var atl=this.backend.getAtletaById(m.rows[0].doc.atletaid);
     var retvalue="derby con "+atl.cognome+" "+atl.nome+" !!";
     retvalue=retvalue.toUpperCase();
@@ -446,7 +533,7 @@ getDerbyText(id){
       for (var k in questo.filters){
         if (questo.filters[k].trim()!="") questo.filtersApplied=true;
       }
-      questo.refresh(function(){
+      questo.refresh(function(data){
         console.log("refreshed");
       })
     });

@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -38,6 +41,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-media": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-media-capture": {
@@ -76,10 +82,12 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "com.hutchind.cordova.plugins.streamingmedia": {
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "23+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "embedded",
+            "XWALK_MULTIPLEAPK": "true",
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },

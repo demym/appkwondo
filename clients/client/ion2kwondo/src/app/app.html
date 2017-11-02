@@ -27,10 +27,11 @@
       
           
       
-     
-      <button menuClose ion-item *ngFor="let p of pages; let i=index;" (click)="openPage(p)" icon-left>
+     <section *ngFor="let p of pages; let i=index;">
+      <button menuClose ion-item  (click)="openPage(p)" icon-left *ngIf="isVisibleMenu(p.title)">
         <ion-icon name="{{icons[i]}}"></ion-icon>{{p.title}}
       </button>
+      </section>
       
        
     </ion-list>

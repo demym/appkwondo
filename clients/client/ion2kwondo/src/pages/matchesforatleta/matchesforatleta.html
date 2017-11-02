@@ -15,7 +15,7 @@
       <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="addMatches()"><ion-icon name="md-add-circle"></ion-icon>
         
         </button>
-
+        <button (tap)="initView(); backend.playFeedback();" ion-button style="font-size: 18px"><ion-icon name="md-refresh"></ion-icon></button>
       </ion-buttons>
   </ion-navbar>
   <ion-segment (tap)="tapSegment()" [(ngModel)]="activetab">
@@ -56,7 +56,7 @@
             <div class="atleta">{{m.doc.atletaname}}</div>
             <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>
             <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>
-            <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{getDerbyText(m.doc.derby)}}</div>
+            <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>
           </ion-col>
         </ion-row>
       </ion-item>

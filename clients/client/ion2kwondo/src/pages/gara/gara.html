@@ -154,8 +154,11 @@
   </ion-refresher>-->
 
   <ion-card *ngIf="showIscritti">
-    <ion-card-content>
-      Nessun incontro trovato
+    <ion-card-content style="text-align: center">
+      <span style="color: red">Nessun incontro trovato</span><br>
+      <div style="height: 105px; text-align: center">
+      <img style="width: 100px; height: 100px; margin: auto; " src="assets/img/fight.png" />
+    </div>
     </ion-card-content>
 
   </ion-card>
@@ -201,7 +204,7 @@
               <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>
               <!--<div class="iscritti">{{m.doc.tkdtcategoria}}</div>-->
               <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>
-              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{getDerbyText(m.doc.derby)}}</div>
+              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>
             </ion-col>
           </ion-row>
         </ion-item>

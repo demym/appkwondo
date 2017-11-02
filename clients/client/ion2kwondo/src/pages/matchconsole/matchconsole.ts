@@ -20,21 +20,28 @@ export class MatchconsolePage {
   selectedMatch: any = {};
   selectedConsole: any = {};
   selConsoleIndex = -1;
+  disabledcontrols=false;
 
   constructor(public socket: SocketService, public events: Events,public toastCtrl: ToastController, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
     var questo=this;
-      events.subscribe("updategara",function(msg,time){
-      console.log("refreshgara in matchconsole.ts !!");
-      //questo.refresh(function(){
-        //questo.backend.syncConsoles(questo.gara.matchesbyprog);
-        //questo.events.publish("updatematchesforatleta",questo.gara.matchesbyprog);
-      //});
-    })
+
+   
+
   }
 
   ionViewWillLoad() {
 
     var questo = this;
+
+    /*questo.events.subscribe("updategara",function(msg,time){
+      console.log("refreshgara in matchconsole.ts !!");
+      //questo.disabledcontrols=false;
+      //questo.refresh(function(){
+        //questo.backend.syncConsoles(questo.gara.matchesbyprog);
+        //questo.events.publish("updatematchesforatleta",questo.gara.matchesbyprog);
+      //});
+    })*/
+
     var match = this.navParams.get("match");
     var id = match.id;
     this.selectedMatchId = id;
@@ -51,6 +58,8 @@ export class MatchconsolePage {
     })
     //this.selectedMatchId=this.selectedMatch.id;
     console.log('ionViewDidLoad MatchconsolePage, selectedconsole', questo.selectedConsole);
+
+   
   }
 
   tapSegment(c, i) {
@@ -67,6 +76,7 @@ export class MatchconsolePage {
 
   ionViewWillLeave() {
     console.log("Looks like I'm about to leave :(");
+    //this.events.unsubscribe("updategara");
     
   }
 
@@ -110,6 +120,7 @@ export class MatchconsolePage {
       admin_action: action
     }
     //sendRealtime(true);
+    questo.disabledcontrols=true;
     questo.backend.postData(url, doc, function (data) {
       let toast = questo.toastCtrl.create({
         message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
@@ -119,9 +130,11 @@ export class MatchconsolePage {
 
       toast.onDidDismiss(() => {
         console.log('Dismissed toast');
+        questo.disabledcontrols=false;
       });
 
       toast.present();
+     
 
 
 
@@ -130,9 +143,7 @@ export class MatchconsolePage {
 
 
     if (1 == 1) return;
-    var questo = this;
-    var newvalue = "true";
-    var newtesto = "attivato";
+
     if (String(this.selectedConsole.match.realtime) == "true") {
       newvalue = "false";
       newtesto = "disattivato"

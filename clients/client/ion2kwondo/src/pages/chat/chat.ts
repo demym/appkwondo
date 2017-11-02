@@ -162,63 +162,6 @@ export class ChatPage implements OnInit {
 
   }
 
-  ionViewDidLoad() {
-    var questo = this;
-    questo.backend.setBackButtonAction(questo.navBar, questo.nav);
-    console.log("ionviewdidload chat.ts");
-    questo.backend.resetChatUnread();
-    questo.backend.isChatView = true;
-    /*this.msgs=this.backend.chatmessages;
-     setTimeout(() => {
-        if (questo.content) {
-          console.log("questo.content ce sta");
-          questo.content.scrollToBottom();
-        } 
-     
-      }, 300);
-
-
-
-   
-
-    if (1==1) return;*/
-
-    this.backend.getRtMatches(function (data) {
-      questo.rtmatches = data;
-      console.log("rtmatches", questo.rtmatches);
-    })
-
-
-    questo.msgs = questo.backend.chatmessages;
-    setTimeout(() => {
-      if (questo.content) questo.content.scrollToBottom();
-
-    }, 500);
-
-    if (1 == 1) return;
-
-
-    this.loading = true;
-    this.backend.getActiveChat(function (data) {
-
-      console.log("got chat", data);
-      questo.msgs = questo.backend.chatmessages;
-
-      questo.loading = false;
-
-      setTimeout(() => {
-        if (questo.content) questo.content.scrollToBottom();
-
-      }, 500);
-
-    })
-
-
-
-
-
-
-  }
 
   refresh(callback) {
 
@@ -302,9 +245,78 @@ export class ChatPage implements OnInit {
     this.nav.setRoot(TabsPage, { tab: 2 });
   }
 
+  initView(){
+    var questo = this;
+    questo.backend.setBackButtonAction(questo.navBar, questo.nav);
+    console.log("ionviewdidload chat.ts");
+    questo.backend.resetChatUnread();
+    questo.backend.isChatView = true;
+    /*this.msgs=this.backend.chatmessages;
+     setTimeout(() => {
+        if (questo.content) {
+          console.log("questo.content ce sta");
+          questo.content.scrollToBottom();
+        } 
+     
+      }, 300);
+
+
+
+   
+
+    if (1==1) return;*/
+
+    this.backend.getRtMatches(function (data) {
+      questo.rtmatches = data;
+      console.log("rtmatches", questo.rtmatches);
+    })
+
+
+    questo.msgs = questo.backend.chatmessages;
+    setTimeout(() => {
+      if (questo.content) questo.content.scrollToBottom();
+
+    }, 500);
+  }
+
+
+  ionViewDidLoad() {
+  
+    var questo=this;
+    if (1 == 1) return;
+
+
+    this.loading = true;
+    this.backend.getActiveChat(function (data) {
+
+      console.log("got chat", data);
+      questo.msgs = questo.backend.chatmessages;
+
+      questo.loading = false;
+
+      setTimeout(() => {
+        if (questo.content) questo.content.scrollToBottom();
+
+      }, 500);
+
+    })
+
+
+
+
+
+
+  }
+
   ionViewWillEnter() {
+    console.log("ionviewwillenter chat.ts")
 
     var questo = this;
+
+    this.initView();
+    /////////////////
+
+
     this.e.subscribe("chatmsg", function (msg) {
       console.log("chatmsg in chat.ts !!", msg);
       questo.backend.unread = 0;

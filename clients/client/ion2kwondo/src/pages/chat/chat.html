@@ -44,6 +44,21 @@
 
 
     <!--</ion-card>-->
+    <section sstyle="position: fixed; top: 65px; width: 100%; height: 40px; z-index: 9000;" id="realtime" *ngIf="rtmatches.length>0">
+      
+        <ion-item class="rtmatches" *ngFor="let rt of rtmatches">
+          <ion-row>
+            <ion-col col-2><img src="assets/img/greenblink.gif" /></ion-col>
+            <ion-col>
+            <ion-row><ion-col><div class="match">{{rt.match.matchid}} - {{rt.match.atletaname}}</div></ion-col></ion-row>
+            <ion-row><ion-col><div class="match" [innerHTML]="rt.text"></div></ion-col></ion-row>
+            </ion-col>
+          </ion-row>
+          </ion-item>
+      
+  
+    </section>  
+  
     
 
 </ion-header>
@@ -54,21 +69,7 @@
     <ion-refresher-content refreshingSpinner="ios">
         </ion-refresher-content>
   </ion-refresher>  
-  <section style="position: fixed; top: 65px; width: 100%; height: 40px; z-index: 9000;" id="realtime" *ngIf="rtmatches.length>0">
-    
-      <ion-item class="rtmatches" *ngFor="let rt of rtmatches">
-        <ion-row>
-          <ion-col col-2><img src="assets/img/greenblink.gif" /></ion-col>
-          <ion-col>
-          <ion-row><ion-col><div class="match">{{rt.match.matchid}} - {{rt.match.atletaname}}</div></ion-col></ion-row>
-          <ion-row><ion-col><div class="match" [innerHTML]="rt.text"></div></ion-col></ion-row>
-          </ion-col>
-        </ion-row>
-        </ion-item>
-    
-
-  </section>  
-
+  
   <!--<div [ngClass]="friend.connected ? '' : 'overlay'"></div>-->
   <div *ngIf="loading" style="text-align:center"><ion-spinner  text-center name="ios" *ngIf="loading"></ion-spinner></div>
   <div class="messages"> 
@@ -140,7 +141,7 @@
           <ion-input  (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>
         </ion-col>
         <ion-col col-2 *ngIf="chatButton=='audio'">
-          <button style="height: 100%" block [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> 
+          <button style="height: 40px" block [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> 
           </ion-col>
                <ion-col *ngIf="chatButton=='text'" col-2>
           <button  class="chatbutton" ion-button (click)="sendMessage()"><ion-icon name="md-send"></ion-icon></button> 

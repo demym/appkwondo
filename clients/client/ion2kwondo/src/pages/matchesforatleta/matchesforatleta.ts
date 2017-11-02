@@ -38,12 +38,42 @@ export class MatchesforatletaPage {
 
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
     var questo=this;
-    this.events.subscribe("updatematchesforatleta",function(m){
+  
+  }
+
+  ionViewWillEnter(){
+    
+    var questo=this;
+    questo.initView();
+    console.log("ionviewwillenter in matchesforatleta.ts");
+    questo.events.subscribe("updatematchesforatleta",function(m){
       console.log("updatematchesforatleta in matchesforatleta.ts !!");
-      questo.mfa=questo.backend.filterRows(m,{atletaid: questo.atletaid}).rows;
+      questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
       console.log("questo.mfa",questo.mfa);
       
     })
+    /*
+    questo.events.subscribe("updatematchesforatleta",function(m){
+      console.log("updatematchesforatleta in matchesforatleta.ts !!");
+      questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
+      console.log("questo.mfa",questo.mfa);
+      
+    })
+    questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
+    */
+  }
+
+  initView(){
+    var questo=this;
+    console.log("initView in matchesforatleta.ts");
+   
+    questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
+  }
+
+  ionViewWillLeave(){
+    var questo=this;
+    console.log("ionviewwillleave in matchesforatleta.ts");
+    questo.events.unsubscribe("updatematchesforatleta");
   }
 
   ionViewDidLoad() {
@@ -215,19 +245,30 @@ export class MatchesforatletaPage {
   showMatchconsole(m){
     //this.backend.matchconsoles.push(m);
     if (this.backend.user.role.toLowerCase()!="tkdradmin") return;
+ 
     this.backend.playFeedback();
+    console.log(this.backend.activegara);
+    if (this.backend.activegara.gara.rows[0].doc.stato!="incorso") return;
     this.navCtrl.push(MatchconsolePage,{
       match: m
     });
   }
 
   getDerbyText(id){ 
-     
+    var retvalue=""; 
     var m=this.backend.getMatchById(id);
     //console.log("M",m);
-    var atl=this.backend.getAtletaById(m.rows[0].doc.atletaid);
-    var retvalue="derby con "+atl.cognome+" "+atl.nome+" !!";
-    retvalue=retvalue.toUpperCase();
+    if (m){
+      if (m.hasOwnProperty("rows")){
+        if (m.rows[0].hasOwnProperty("doc")){
+          var atl=this.backend.getAtletaById(m.rows[0].doc.atletaid);
+          retvalue="derby con "+atl.cognome+" "+atl.nome+" !!";
+          retvalue=retvalue.toUpperCase();
+
+        }
+      }
+    }
+  
     if (!id) retvalue="";
     return retvalue;
 
@@ -439,7 +480,7 @@ export class MatchesforatletaPage {
 
 
   openTabulato(url){
-    window.open(url,);
+    window.open(url,'_system');
 
   }
 

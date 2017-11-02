@@ -39,10 +39,11 @@ export class MyApp {
     "md-home",
     "md-settings",
     "md-person",
-    "md-exit",
+    
     "md-information-circle",
     "ios-people",
     "md-wifi",
+    "md-exit",
     "md-close-circle"
   ]
   isChatPage = false;
@@ -77,10 +78,11 @@ export class MyApp {
       { title: 'Homepage', component: HomePage },
       { title: 'Impostazioni', component: SettingsPage },
       { title: 'Account', component: AccountPage },
-      { title: 'Logout', component: LoginPage },
+      
       { title: 'Informazioni', component: AboutPage },
       { title: 'Users', component: UsersPage },
       { title: 'Connessioni', component: ConnectionsPage },
+      { title: 'Logout', component: LoginPage },
       { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
 
@@ -92,6 +94,7 @@ export class MyApp {
     events.subscribe('username:changed', user => {
       console.log("user changed !!!", user);
       this.user = user;
+
     })
 
     events.subscribe('enteredchat', user => {
@@ -389,5 +392,24 @@ export class MyApp {
     return isvalid;
     
   }*/
+
+
+  isVisibleMenu(text){
+    
+    var questo=this;
+    var retvalue=true;
+    var t=text.toLowerCase();
+
+    var adminpages=["users","connessioni"];
+
+    if (adminpages.indexOf(t)>-1) {
+      //console.log("this is an admin page !",questo.backend.user.role);
+      if (questo.backend.user.role!='tkdradmin') retvalue=false;
+
+    }
+   // console.log("isVisibleMenu",text,retvalue);
+    return retvalue;
+
+  }
 
 }

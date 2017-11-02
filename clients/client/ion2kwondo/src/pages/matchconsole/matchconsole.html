@@ -38,32 +38,32 @@
   <div *ngIf="(selectedConsole.match.realtime=='true') || (selectedConsole.match.realtime==true) ">
   <ion-row>
     <ion-col col-6>
-      <button ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? 'incorso' : ''">{{getPauseText()}}</button>
+      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? 'incorso' : ''">{{getPauseText()}}</button>
     </ion-col>
     <ion-col col-6>
-      <button ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? 'roundactive' : ''">FINEROUND</button>
+      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? 'roundactive' : ''">FINEROUND</button>
     </ion-col>
 
   </ion-row>
   <ion-row>
-    <ion-col col-3><button ion-button full (tap)="tapRound('1')" color="light" [ngClass]="(selectedConsole.round=='1') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='1' ? 'roundactive' : ''">1</button></ion-col>
-    <ion-col col-3><button ion-button full (tap)="tapRound('2')" color="light" [ngClass]="(selectedConsole.round=='2') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='2' ? 'roundactive' : ''">2</button></ion-col>
-    <ion-col col-3><button ion-button full (tap)="tapRound('3')" color="light" [ngClass]="(selectedConsole.round=='3') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='3' ? 'roundactive' : ''">3</button></ion-col>
-    <ion-col col-3><button ion-button full (tap)="tapRound('GP')" color="light" [ngClass]="(selectedConsole.round=='GP') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='GP' ? 'roundactive' : ''">GP</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('1')" color="light" [ngClass]="(selectedConsole.round=='1') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='1' ? 'roundactive' : ''">1</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('2')" color="light" [ngClass]="(selectedConsole.round=='2') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='2' ? 'roundactive' : ''">2</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('3')" color="light" [ngClass]="(selectedConsole.round=='3') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='3' ? 'roundactive' : ''">3</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('GP')" color="light" [ngClass]="(selectedConsole.round=='GP') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='GP' ? 'roundactive' : ''">GP</button></ion-col>
   </ion-row>
   </div>
   <br>
   <ion-row>
     
-    <ion-col col-2><button ion-button full color="light" (tap)="tapPlus('plus_1')">+</button></ion-col>
-    <ion-col col-2><button ion-button full color="light" (tap)="tapPlus('minus_1')">-</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_1')">+</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_1')">-</button></ion-col>
     <ion-col col-1></ion-col>
-    <ion-col col-2><ion-input [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>
+    <ion-col col-2><ion-input [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>
     <ion-col col-1></ion-col>
-    <ion-col col-2><button ion-button full color="light" (tap)="tapPlus('plus_2')">+</button></ion-col>
-    <ion-col col-2><button ion-button full color="light" (tap)="tapPlus('minus_2')">-</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_2')">+</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_2')">-</button></ion-col>
   </ion-row>
   <br>
-  <button ion-button full (tap)="setResult()">Convalida risultato</button>  
+  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  
 
 </ion-content>

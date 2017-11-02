@@ -154,6 +154,13 @@ export class SocketService {
           console.log("local notification emitted");
           questo.backend.localNotify(msg.nickname+" - "+msg.text);
         }
+        if (msg.hasOwnProperty("nickname")){
+          if (msg.nickname.toLowerCase()=="system"){
+            var txt=msg.text.replace("-"," a ");
+            txt=txt.replace("n."," numero ");
+            questo.backend.playVoice(txt);
+          }
+        }
 
        }
      

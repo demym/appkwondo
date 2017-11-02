@@ -65,7 +65,23 @@ export class BackendProvider {
 
 
   }
-  activegara: any = {};
+  activegara: any = {
+    gara: {
+      rows: []
+    },
+    cronaca: {
+      rows: []
+    },
+    matchesbyatleta: {
+      rows:[]
+    },
+    matchesbyprog: {
+      rows: []
+    },
+    realtime: {
+      rows:[]
+    }
+  };
   matchconsoles: any = [];
 
   navOptions: any = {
@@ -129,26 +145,31 @@ export class BackendProvider {
 
     if (this.appSettings.voice) {
 
-      console.log("playing tts", text);
+    
       questo.voicetimer = setTimeout(function () {
+        console.log("playing tts", text);
         var pl = questo.platform.is("cordova");
         if (pl) {
           console.log("playvoice for cordova platform");
+          var rate=1;
+          if (questo.platform.is("ios")) rate=1.5;
           var parms = {
             text: text.replace("-", " a "),
-            locale: 'it-IT'
+            locale: 'it-IT',
+            rate: rate
           }
-          this.tts.speak(parms)
+          questo.tts.speak(parms)
             .then(() => console.log('Success speaking ' + text))
             .catch((reason: any) => console.log("TTS Error", reason));
         } else {
 
           if (window.speechSynthesis) {
+            console.log("non cordova app, speechsythesis found !")
             var msg = new SpeechSynthesisUtterance();
             //var msg = new SpeechSynthesisUtterance(data.text);
             msg.lang = 'it-IT';
             //msg.voice = voices[1];
-            msg.text = text;
+            msg.text = text.replace("-"," a ");
             window.speechSynthesis.speak(msg);
           } else console.log("speec synthesis not found on this browser");
 
@@ -181,6 +202,28 @@ conslog() {
 
 getRandomNumber(n) {
   return Math.floor((Math.random() * n) + 1);
+}
+
+
+getDerbyText(id){ 
+  var questo=this;
+  var retvalue=""; 
+  var m=questo.getMatchById(id);
+  //console.log("M",m);
+  if (m){
+    if (m.hasOwnProperty("rows")){
+      if (m.rows[0].hasOwnProperty("doc")){
+        var atl=questo.getAtletaById(m.rows[0].doc.atletaid);
+        retvalue="derby con "+atl.cognome+" "+atl.nome+" !!";
+        retvalue=retvalue.toUpperCase();
+
+      }
+    }
+  }
+
+  if (!id) retvalue="";
+  return retvalue;
+
 }
 
 getAllNews(callback) {
@@ -444,7 +487,11 @@ getGare(callback) {
 }
 
 
+
+
+
 getGara(id, callback) {
+  console.log("getGara",id);
   var questo = this;
   var url = this.rooturl + "/gare/fullgarabyid/" + id + "?societaid=20160217220400";
   this.fetchData(url, function (data) {
@@ -458,6 +505,27 @@ getGara(id, callback) {
   })
 
 }
+
+
+getCurrentGara(callback) {
+  var questo = this;
+  var id=questo.activegara.gara.rows[0].doc.id;
+  console.log("getCurrentGara",id);
+
+  var url = this.rooturl + "/gare/fullgarabyid/" + id + "?societaid=20160217220400";
+  this.fetchData(url, function (data) {
+    console.log("fetched getCurrentGara in backend.ts", data);
+    questo.rtmatches = data.realtime;
+    //let activegara= Object.assign({}, data);
+    questo.activegara = data;
+
+    /*questo.events.publish('updatertmatches', data, Date.now());*/
+    if (callback) callback(data);
+  })
+
+}
+
+
 getSocieta(callback) {
   var url = this.rooturl + "/societa/findall?societaid=20160217220400";
   this.fetchData(url, function (data) {
@@ -1314,7 +1382,7 @@ getTkdtTabulatiCategoria(cateta, catcintura, catpeso, sesso) {
 
 getTabulatoImg(h, callback) {
   //window.open(h);
-  //return;
+  //return;d
   var arr = h.split("id=");
   var tabid = arr[1];
   var url = this.rooturl + "/tkdt/tabulatoimage/" + tabid;
@@ -1326,6 +1394,7 @@ getTabulatoImg(h, callback) {
 
   }
 
+  console.log("getting tabulato at",url); 
   this.http.get(url).map(res => res.text()).subscribe(
     (data) => {
       console.log("data", data)

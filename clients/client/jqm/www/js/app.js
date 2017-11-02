@@ -17,7 +17,7 @@ var consoles = [];
 
 var page_popup = true;
 
-var appversion = "1.4.6";
+var appversion = "1.4.7";
 
 var crnonletti = 0;
 var garanotifyid = "";
@@ -10896,7 +10896,7 @@ function bindGaraPage() {
 
 }
 
-function setFilters(){
+function setFilters2(){
 	console.log("clicked filters");
 	conslog("clicked on filters");
 	var lv = $("#gara ul#ulcategorie");
