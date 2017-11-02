@@ -3,7 +3,9 @@ colog("data",data);
  var tatleta=data.tkdtatleta;
  var avversari=data.avversari;
  var tabulato;
+ var tabulatoimg;
  if (data.tabulato) tabulato=data.tabulato;
+  if (data.tabulatoimg) tabulatoimg=data.tabulatoimg;
  var medagliere="fungia";
  
 
@@ -111,16 +113,18 @@ if (tabulato) {
   <div data-role="collapsible" class="collaps" data-theme="a">
    	<h5>Tabulato</h5>
      <% if (tabulato.sesso!="--") { %>
-     <a data-role="button" style="font-size: 11px" href="<%=tabulato.href%>"><%=tabulato.tabname%></a>
+     <a data-role="button" style="font-size: 11px" href="<%=tabulatoimg%>" target="_system"><%=tabulato.tabname%></a>
+     <div><i>Clicca il tabulato per ingrandirlo</i></div>
+     <div width="100%"><a href="<%=tabulatoimg%>" target="_system"><img style="width: 100%; object-fit: cover;" src="<%=tabulatoimg%>" /></a></div>
     <%
        colog(tabulato);
        var oldhref="";
        if (tabulato.oldhref) {
          oldhref=tabulato.oldhref;
-         loadInlineTabulato(tabulato.oldhref);
+         //loadInlineTabulato(tabulato.oldhref);
        }  
      %>
-     <input type="hidden" id="tabhref" value="<%=oldhref%>" />
+     <input type="hidden" id="tabhref" value="<%=data.tabulato.oldhref%>" />
      <div id="inlinetabulato"></div>
       <% } else { %>
       <p class="pad3">Tabulato non trovato per questo atleta</p> 

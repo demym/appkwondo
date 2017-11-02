@@ -1,0 +1,143 @@
+
+	<% 
+	
+	var dl=data.rows.length;
+	console.log("formebyatleta.ejs",data,dl)
+	
+	//alert(dl)
+	//console.log("data: ",data)
+	if (dl>0) {
+	
+	for(var i=0; i<data.rows.length; i++) { 
+	    var doc=data.rows[i];
+		var st="";
+		//console.log("doc",doc)
+
+		var garaid=jGara.gara.rows[0].doc.id;
+		var atlid=doc.id;
+		var nkey=garaid+"_"+atlid;
+        var med="matchnoplay";
+		
+		var notif_image="";
+
+		var notif_found=false;
+		for (var x=0; x<notifiche_temporeale.length; x++){
+			var ntr=notifiche_temporeale[x];
+			//console.log("ntr",ntr,"nkey",nkey);
+			if (ntr==nkey) notif_found=true;
+
+		}
+		if (notif_found) {
+			notif_image="<img src='img/notify2.png' width='25' height='25' />";
+			//console.log("trovata notifica");
+
+		} 
+
+		var medimage="images/taekwondoka.png";
+		if (doc.esecuzioni.length>0){
+			doc.esecuzioni.forEach(function(item,idx){
+				 	
+					var esdoc=item.doc;
+					if (esdoc.medagliamatch=="bronzo") medimage="images/medaglia_bronzo.png";
+					if (esdoc.medagliamatch=="argento") medimage="images/medaglia_argento.png";
+					if (esdoc.medagliamatch=="oro") medimage="images/medaglia_oro.png";
+			});
+
+		}
+
+		
+	
+	%>
+	
+	<li data-icon="false" class="ui-li-has-thumb ui-first-child">
+	<a id="atleta<%= doc.id %>" onclick="showMatchesForAtletaForme('<%= doc.atleta.id %>','<%= doc.atleta.nome %>','<%= doc.atleta.datanascita %>');  $.mobile.changePage('#matchesatleta');" href="#" data-rel="popup" shref="#matchesatleta" data-ajax="false" class="fastClick ui-btn" style="padding: 2px 2px 2px 2px;">
+	
+	  <table width="100%">
+<tr>
+<td width="60px" valign="top" style="padding: 5px">
+<div>
+	<img class="cardnomargin simgicon sui-li-icon sui-corner-none" src="<%=medimage%>" style="width: 45px; height: 45px">
+	</div>
+	</td>
+	<td>
+	<span class="categoria"><%= getCategoria(doc.atleta.datanascita).toUpperCase() %></span><br>
+	<span class="atleta"><%= doc.atleta.cognome %> <%=doc.atleta.nome %></span><br>
+	
+	<%
+
+	if (doc.esecuzioni.length>0){
+
+		%>
+		<span class="esecuzioni">Forme (<%= doc.esecuzioni.length%>): &nbsp;
+		<%
+
+	  	doc.esecuzioni.forEach(function(item,idx){
+
+
+	  
+
+	%>
+    <br><span class="esecuzione"><%=item.doc.forma%> - <%=item.doc.votazione%>&nbsp;&nbsp;</span>
+	<%
+		})
+
+	} else {
+		%>
+		<span class="esecuzioni">Nessuna votazione
+		<%
+
+	}
+	%>
+	</span><br>
+	<span class="match">
+	
+	
+
+	
+	
+	</span>
+	</td>
+	<td width="23px" valign="top">
+<div class="corazza" style="sfloat: right; right: 12px; width: 20px; height: 20px; "><%=notif_image%></div>
+</td>
+	</tr>
+	</table>
+	</a>
+	</li>
+  
+   <% 
+    }
+ 
+  
+  
+   } else {    //else del dl=0
+   
+   var filttext="";
+   if (isFiltered) filttext=" (filtro applicato)"
+   %>
+  
+   <div class="card nomatch"  style="text-align: center">
+	<div class="card-image" style="text-align: center; stop: 15px; height: 105px; ">
+		<img alt="home" src="images/fight.png" style="width: 100px; height: 100px;"/>
+		<!--<h2>Card Title</h2>-->
+	</div>
+	<!--<h1>Pools non disponibili</h1>-->
+	<p style="background: lightblue">Nessun incontro trovato <%=filttext%></p>
+</div>
+
+
+<div class="card nomatch">
+ <div >
+	<p style="background: lightblue" class="iscrittilength"></p>
+ </div>
+ <div>
+	<ul data-role="listview" class="ui-group-theme-a ui-listview iscritti_nomatches">
+	</ul>
+ <div>
+</div>
+   
+   <%
+   
+   }
+   
+   %>

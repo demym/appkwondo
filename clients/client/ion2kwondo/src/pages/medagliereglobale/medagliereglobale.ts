@@ -236,6 +236,11 @@ export class MedagliereglobalePage {
     questo.viewsocietaiscritte = !questo.viewsocietaiscritte;
   }
 
+  viewTabulato(hr){
+    var newhr=hr.replace("vedi","show");
+    window.open(newhr,"_system");
+  }
+
 
 
   toggleMedagliere(){

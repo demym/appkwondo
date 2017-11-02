@@ -23,12 +23,13 @@ colog("data",data);
     <h2>TABULATI</h2>
     
    
-    <!-- <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
+   <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
       <% for (var i=0; i<data.tabulati.rows.length; i++) {
        var tabrow=data.tabulati.rows[i];
+       var newhref=tabrow.oldhref.replace("vedi","show");
     %>
       <li>
-      <table width="100%" border="1">
+      <table width="100%" border="0">
       <tr>
       <td><%=tabrow.sesso%></td>
       <td><%=tabrow.categoria_eta%></td>
@@ -37,14 +38,14 @@ colog("data",data);
       <tr>
       <td><%=tabrow.cintura_da%></td>
       <td><%=tabrow.cintura_a%></td>
-      <td><a data-role="button" href="<%=tabrow.href%>">VEDI</a></td>
+      <td><a data-role="button" href="<%=newhref%>" target="_system">VEDI</a></td>
       </tr>
       </table>
       
       
       </li>
     <% } %> 
-    </ul>-->
+    </ul>
  <div id="tabulati" style="border: 1px solid silver; width: 100%; max-height: 400px; overflow: auto;" >
     <%=data.tabulati.html%>
     </div>
@@ -53,6 +54,21 @@ colog("data",data);
     <h2>ELENCO SOCIETA</h2>
      <div id="elencosociet" style="border: 1px solid silver; width: 100%; max-height: 400px; overflow: auto;" >
     <%=data.elenco_societa.html%>
+
+    <%
+     data.elenco_societa.rows.forEach(function(item,idx){
+
+    %>
+    <div style="word-wrap: break-word; white-space: normal" class="societa">
+     <%=item.societaname%> (<%=item.atleti.length%>)
+    </div>   
+
+
+  <%
+     })
+
+
+    %>
     </div>
   </li>
   </ul>
