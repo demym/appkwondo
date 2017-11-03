@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { ChatPage } from '../pages/chat/chat';
+import { ChatlistPage } from '../pages/chatlist/chatlist';
 import { ChatfotoPage } from '../pages/chatfoto/chatfoto';
 import { HomePage } from '../pages/home/home';
 import { TwitterPage } from '../pages/twitter/twitter';
@@ -78,6 +79,7 @@ export function myCustomAudioProviderFactory() {
     LinkedinPage,
     ContactsPage,
     ChatPage,
+    ChatlistPage,
     ChatfotoPage,
     LoginPage,
     TabsPage,
@@ -123,6 +125,7 @@ export function myCustomAudioProviderFactory() {
     AboutPage,
     ContactPage,
     ChatPage,
+    ChatlistPage,
     ChatfotoPage,
     HomePage,
     PartnerworldPage,

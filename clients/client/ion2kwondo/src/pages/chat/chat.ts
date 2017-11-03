@@ -6,6 +6,7 @@ import { BackendProvider } from '../../providers/backend/backend';
 import * as moment from 'moment';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { ChatfotoPage } from '../../pages/chatfoto/chatfoto';
+import { ChatlistPage } from '../../pages/chatlist/chatlist';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Entry } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -245,6 +246,69 @@ export class ChatPage implements OnInit {
     this.nav.setRoot(TabsPage, { tab: 2 });
   }
 
+  resetChat(){
+    var questo=this;
+    let alrt = questo.alertCtrl.create({
+      title: 'Conferma archiviazione chat',
+      message: "Vuoi davvero archiviare la chat attiva ?",
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Conferma',
+          handler: () => {
+
+            var url=questo.backend.rooturl+ "/chat/archive/";
+            questo.backend.fetchData(url,function(data){
+              questo.refresh(function(){
+                alert("Chat resettata");
+              })
+
+            })
+          
+
+          }
+        }
+      ]
+    });
+    alrt.present();
+
+  }
+
+  selectChat(){
+    var questo=this;
+    var url=questo.backend.rooturl+ "/chat/list";
+    questo.backend.fetchData(url,function(data){
+      console.log("chats list",data);
+      data.rows.sort(function(a,b){
+        var a1=a.filename;
+        var b1=b.filename;
+        if (a1>b1) return -1;
+        if (a1<b1) return 1;
+        return 0;
+      })
+      let profileModal = questo.modal.create(ChatlistPage, { data: data });
+      profileModal.onDidDismiss(data => {
+        console.log("chatlistdismissed",data);
+        if (data) {
+          var filename=data.filename;
+          questo.backend.activechatfilename=filename;
+          questo.refresh(function(){
+            console.log("caricata chat dal file "+filename);
+          })
+
+        }
+      });
+      profileModal.present();
+    })
+
+  }
+
   initView(){
     var questo = this;
     questo.backend.setBackButtonAction(questo.navBar, questo.nav);
@@ -410,6 +474,10 @@ export class ChatPage implements OnInit {
     return mom;
   }
 
+
+  openAudioUrl(url){
+    this.backend.openUrl(url);
+  }
 
 
   mailTo(email) {

@@ -6,6 +6,8 @@
        <ion-buttons end>
           <button ion-button style="font-size: 18px" (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
     <button ion-button style="font-size: 18px" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
+    <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
+    <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
     </ion-buttons>
         <!--<ion-grid class="no-padding">
           <ion-row>
@@ -97,6 +99,7 @@
       <audio   style="width: 100%" *ngIf="m.audio && !isCordova()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
     Your browser does not support the audio element.
      </audio><br>
+     <button ion-button *ngIf="m.audiourl && !isCordova()" (tap)="openAudioUrl(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
      <button *ngIf="isCordova() || isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
     </div><br *ngIf="m.audio"> 
 

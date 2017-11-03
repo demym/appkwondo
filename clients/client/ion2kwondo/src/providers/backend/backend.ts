@@ -100,6 +100,8 @@ export class BackendProvider {
     mysocietaname: "ASD Taekwondo Rozzano"
   }
 
+  activechatfilename="chatno64.json";
+
 
   constructor(private tts: TextToSpeech, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public badge: Badge, private nativePageTransitions: NativePageTransitions, public feedback: DeviceFeedback, private storage: Storage, public events: Events, public platform: Platform, public http: Http, private utils: UtilsProvider) {
     console.log('Hello BackendProvider Provider');
@@ -841,10 +843,11 @@ getAtletaById(id) {
 
 getActiveChat(callback) {
   var questo = this;
-  var url = this.rooturl + "/chat/getno64";
+  var url = questo.rooturl + "/chat/getno64";
+  if (questo.activechatfilename!="chatno64.json") url=questo.rooturl + "/chat/getfile/"+questo.activechatfilename;
   this.fetchData(url, function (data) {
     questo.chatmessages = data.rows;
-    console.log("got active chatmessages", questo.chatmessages);
+    console.log("got active chatmessages from file "+questo.activechatfilename, questo.chatmessages);
     if (callback) callback(data);
 
   })
