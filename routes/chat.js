@@ -184,6 +184,14 @@ router.get('/getno64', function (req, res) {
 
 			})
 
+			data.rows.sort(function(a,b){
+				var a1=a.time;
+				var b1=b.time;
+				if (a1>b1) return 1;
+				if (a1<b1) return -1;
+				return 0;
+			})
+
 			console.log("got file " + mfname + " from mongo");
 			res.send(data);
 		});

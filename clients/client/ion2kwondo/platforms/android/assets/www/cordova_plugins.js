@@ -506,7 +506,8 @@ module.exports.metadata =
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
     "ionic-plugin-keyboard": "2.2.1",
-    "phonegap-plugin-push": "2.0.0"
+    "phonegap-plugin-push": "2.0.0",
+    "cordova-plugin-crosswalk-webview": "2.3.0"
 };
 // BOTTOM OF METADATA
 });

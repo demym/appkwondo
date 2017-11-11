@@ -1,12 +1,12 @@
-<ion-tabs #mytabs  >
+<ion-tabs #mytabs   (tap)="tappedTab()"  tabsPlacement="bottom"   >
   <ion-tab [root]="homepage" tabTitle="Feeds" tabIcon="home"></ion-tab>
   <!--<ion-tab [root]="partnerworld" tabTitle="PartnerWorld" tabIcon="md-globe" ></ion-tab>
   <ion-tab [root]="linkedin" tabTitle="LinkedIn" tabIcon="logo-linkedin" ></ion-tab>-->
+  <ion-tab tabBadge="{{backend.unread>0 ? backend.unread : ''}}" tabBadgeStyle="{{backend.unread>0 ? 'danger' : ''}}"  [root]="chatpage" tabTitle="ChatKwonDo" tabIcon="md-chatboxes" ></ion-tab>
+<!-- <ion-tab [root]="bppage" tabTitle="BP" tabIcon="md-contacts"></ion-tab>
+
   <ion-tab [root]="twitter" tabTitle="Twitter" tabIcon="logo-twitter" ></ion-tab>
- <ion-tab [root]="bppage" tabTitle="BP" tabIcon="md-contacts"></ion-tab>
-<!--
-  <ion-tab [root]="twitter" tabTitle="Twitter" tabIcon="logo-twitter" ></ion-tab>-->
-  <ion-tab tabBadge="{{unread>0 ? unread : ''}}" tabBadgeStyle="{{unread>0 ? 'danger' : ''}}" [root]="contacts" tabTitle="Contacts" tabIcon="md-chatboxes" ></ion-tab>
+  <ion-tab [root]="contacts" tabTitle="Contacts" tabIcon="md-chatboxes" ></ion-tab>
  <!-- <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Logout" tabIcon="ios-exit-outline"></ion-tab>-->

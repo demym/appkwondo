@@ -63,7 +63,7 @@ export class MyApp {
     var questo = this;
 
 
-    var IS_PRODUCTION = false;
+    var IS_PRODUCTION = true;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");
@@ -153,9 +153,11 @@ export class MyApp {
 
     this.onResumeSubscription = platform.resume.subscribe(() => {
       if (questo.backend.isChatView){
-        console.log("resuming app");
+        console.log("resuming app, app was on chatview");
         questo.backend.resetChatUnread();
         //questo.backend.localNotify(data.message);
+      } else {
+        questo.backend.computeUnreadChats();
       }
    }); 
 
@@ -304,10 +306,14 @@ export class MyApp {
           if (isforeground){
             if (!questo.backend.isChatView){
               console.log("local notification emitted");
-              questo.backend.localNotify(data.message);
+              //questo.backend.localNotify(data.message);
+            } else {
+
+              questo.backend.resetChatUnread();
             }
 
           } else {
+            //questo.backend.computeUnreadChats();
             //questo.backend.addChatUnread();
 
 

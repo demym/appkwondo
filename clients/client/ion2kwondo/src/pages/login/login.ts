@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { BackendProvider } from '../../providers/backend/backend';
 import { UtilsProvider } from '../../providers/utils/utils';
-//import { TabsPage } from '../../pages/tabs/tabs';
+import { TabsPage } from '../../pages/tabs/tabs';
 import { HomePage } from '../../pages/home/home';
 import { RegisterPage } from '../../pages/register/register';
 
@@ -47,6 +47,7 @@ export class LoginPage {
           console.log("navigating to homepage");
            questo.backend.getActiveChat(function(data){
               console.log("chatmessages have been loaded");
+              questo.backend.computeUnreadChats();
             });
 
             questo.backend.getGare(function(data){
@@ -57,15 +58,15 @@ export class LoginPage {
               console.log("atleti caricati");
             })
 
-            var unread=window.localStorage.getItem("ion2kwondo_chatunread");
+            /*var unread=window.localStorage.getItem("ion2kwondo_chatunread");
             if (unread==null){
               questo.backend.resetChatUnread();
             } else {
               questo.backend.setChatUnread(parseInt(unread,10));
             }
             console.log("chatunread set to "+questo.backend.unread+" by localstorage");
-            questo.backend.setBackgroundMode(true);
-            questo.nav.setRoot(HomePage);
+            questo.backend.setBackgroundMode(true);*/
+            questo.nav.setRoot(TabsPage);
            
           
 
@@ -99,12 +100,14 @@ export class LoginPage {
    
     //this.loading.dismiss();
 
-    let alert = this.alertCtrl.create({
+    /*
+    let alrt = this.alertCtrl.create({
       title: 'Login fallito',
       subTitle: text,
       buttons: ['OK']
     });
-    alert.present(prompt);
+    alrt.present(prompt);
+    */
     
   }
 

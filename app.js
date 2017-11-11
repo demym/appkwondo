@@ -932,6 +932,7 @@ app.use(function(req, res, next) {
 app.get("/gcm/resetcount/:token",function(req,res){
 	var token=req.params.token;
 	gcm.resetTokenCount(token);
+	res.send({error: false});
 })
 
 app.get("/gcm/setenabled/:value", function (req, res) {

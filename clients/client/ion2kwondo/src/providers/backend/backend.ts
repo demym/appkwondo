@@ -24,11 +24,12 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class BackendProvider {
   @ViewChild('content') nav: NavController
 
-  //public rooturl = "http://tkdr.herokuapp.com";
+  public rooturl = "http://tkdr.herokuapp.com";
   //public rooturl = "http://localhost:3000";
+  //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
   //public rooturl="http://9.71.212.38:3000";
-  public rooturl = "http://192.168.1.106:3000";
+  //public rooturl = "http://192.168.1.106:3000";
   token = "eyJhbGciOiJIUzI1NiJ9.ZGVteW1vcnRlbGxpdGlAaXQuaWJtLmNvbQ.mA3t-fOoUDsugN-kWblqO0ueVFSXya2W6hs5fa5sddQ";
   user: any = {
     token: "",
@@ -110,7 +111,7 @@ export class BackendProvider {
       var ja = JSON.parse(a);
 
       this.appSettings = ja;
-      this.rooturl = this.appSettings.server;
+      //this.rooturl = this.appSettings.server;
       console.log("found settings cookie, using it", ja);
     }
     //this.browser=
@@ -1707,13 +1708,40 @@ export class BackendProvider {
 
   }
 
+  computeUnreadChats(){
+    var questo=this;
+    var last=window.localStorage.getItem("ion2kwondo_lastchatread");
+    console.log("last chat unread",last);
+    var unread=0;
+    if (!last) last="00000000000000";
+    
+      console.log("counting unread messages, starting from last ",last,questo.chatmessages);
+      questo.chatmessages.forEach(function(item,idx){
+      
+        if (item.time>last) {
+          //console.log("questo è non letto",item.time);
+          unread++;
+        }
+      })
+    
+    
+    questo.unread=unread;
+    console.log("setted backend.unread to "+unread);
+    questo.badge.set(questo.unread);  
+  }
+
   resetChatUnread() {
     var questo = this;
     this.unread = 0;
     window.localStorage.setItem('ion2kwondo_chatunread', String(questo.unread));
+    if (questo.chatmessages.length>0){
+      window.localStorage.setItem("ion2kwondo_lastchatread",questo.chatmessages[questo.chatmessages.length-1].time)
+    }
+   
     questo.badge.set(questo.unread);
     if (questo.user.gcmtoken != "") {
       var url = questo.rooturl + "/gcm/resetcount/" + questo.user.gcmtoken;
+      console.log("sending gcm reset");
       questo.fetchData(url, function (data) {
         console.log("resetted count on gcm")
       })

@@ -37,12 +37,13 @@ export class HomePage {
   filter = "All";
   unreadposts=0;
   menu=[
+    /*
     {
       name: "ChatKwonDo",
       icon: "md-chatbubbles",
       page: ChatPage,
       authrequired: false
-    },{
+    },*/{
       name:"Gare",
       icon: "md-trophy",
       page: GarePage,

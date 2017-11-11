@@ -70,6 +70,7 @@ export class ChatPage implements OnInit {
 
     var questo = this;
     this.me = this.backend.user;
+
     /*this.myTracks = [{
       src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
       artist: 'John Mayer',
@@ -540,6 +541,8 @@ export class ChatPage implements OnInit {
         console.log("questo.content not found")
       }
     })
+
+   
     this.e.subscribe("realtimematches", function (rtmatches, time) {
       console.log("realtimematches in chat.ts !!", rtmatches);
       questo.rtmatches = rtmatches.matches;
@@ -550,6 +553,12 @@ export class ChatPage implements OnInit {
       //questo.rtmatches = rtmatches.matches;
       //console.log("rtmatches", questo.rtmatches);
     })
+
+
+    questo.initView();
+    
+
+    if (questo.content) questo.gotoBottom();
   }
 
   ionViewDidLeave() {

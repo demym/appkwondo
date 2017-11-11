@@ -148,10 +148,12 @@ export class SocketService {
        if (sockid!=questo.backend.user.sockid) addit=true;
        if (addit){
         questo.backend.chatmessages.push(msg);
-        questo.backend.addChatUnread();
+       
+        //questo.backend.addChatUnread();
         questo.events.publish('chatmsg', msg);
         console.log("isChatView",questo.backend.isChatView);
         if (!questo.backend.isChatView){
+          questo.backend.computeUnreadChats();
           console.log("local notification emitted");
           //questo.backend.localNotify(msg.nickname+" - "+msg.text);
         }

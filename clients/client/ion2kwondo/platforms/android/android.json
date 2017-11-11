@@ -103,6 +103,34 @@
                         {
                             "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"webView\" value=\"org.crosswalk.engine.XWalkWebViewEngine\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"xwalkVersion\" value=\"23+\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"xwalkLiteVersion\" value=\"xwalk_core_library_canary:17+\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"xwalkCommandLine\" value=\"--disable-pull-to-refresh-effect\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"xwalkMode\" value=\"embedded\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"xwalkMultipleApk\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"android-minSdkVersion\" value=\"16\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -233,6 +261,14 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
                         }
                     ],
                     "application": [
@@ -338,6 +374,14 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "phonegap-plugin-push": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "23+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "embedded",
+            "XWALK_MULTIPLEAPK": "true",
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
@@ -847,6 +891,7 @@
         "cordova-sqlite-storage": "2.0.4",
         "de.appplant.cordova.plugin.local-notification": "0.8.5",
         "ionic-plugin-keyboard": "2.2.1",
-        "phonegap-plugin-push": "2.0.0"
+        "phonegap-plugin-push": "2.0.0",
+        "cordova-plugin-crosswalk-webview": "2.3.0"
     }
 }
