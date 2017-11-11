@@ -1,14 +1,42 @@
+<!--<ion-menu [content]="content" menuToggle="right" side="right">
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Menuright</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu" style="overflow-y: hidden">
+  </ion-content>
+</ion-menu>-->
+
+
+
 <ion-header>
   <ion-navbar>
   
 
        <ion-title>ChatKwonDo</ion-title>
        <ion-buttons end>
-          <button ion-button style="font-size: 18px" (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
-    <button ion-button style="font-size: 18px" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
-    <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
-    <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
+          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
+    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
+    <!--<button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
+    <button ion-button menuToggle="right">
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <button ion-button icon-only (click)="showPop($event)">
+      <ion-icon name="md-more"></ion-icon>
+    </button>
     </ion-buttons>
+     <!--  <ion-buttons end>
+          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
+    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
+    <button ion-button menuToggle="right">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>-->
         <!--<ion-grid class="no-padding">
           <ion-row>
             <ion-col width-20>
@@ -140,8 +168,9 @@
     <ion-grid >
       <ion-row >
         <ion-col >
-          <ion-icon class="cameraicon" (tap)="takeFoto()" name="md-camera"></ion-icon>
-          <ion-input  (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>
+          <ion-icon *ngIf="showCameraIcon" class="cameraicon" (tap)="takeFoto()" name="md-camera"></ion-icon>
+          <!--<ion-textarea (ionFocus)="focus()" (ionBlur)="blur($event)" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)" style="height: 40px; font-size: 16px; margin: 0px 0px;" > </ion-textarea>-->
+          <ion-input (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>
         </ion-col>
         <ion-col col-2 *ngIf="chatButton=='audio'">
           <button style="height: 40px" block [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> 

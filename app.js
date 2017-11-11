@@ -14,6 +14,7 @@ var request = require('request');
 var jwt = require('jsonwebtoken');
 var uuid = require('node-uuid');
 var fs = require('fs');
+var gcm = require('./routes/gcm');
 //var mongo = require('mongodb');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
@@ -118,6 +119,7 @@ app.use(allowCrossDomain);
 app.use(function (req, res, next) {
 
 	var whitelist = [
+		"/gcm",
 		"/atleti/login",
 		"/users/login",
 		"/users/register",
@@ -509,7 +511,9 @@ app.get("/socketusers", function (req, res) {
 		for (var i = 0; i < clients.length; i++) {
 			var e = clients[i];
 			var appv = "";
+			var gcmtoken="";
 			if (e.appversion) appv = e.appversion;
+			if (e.gcmtoken) gcmtoken=e.gcmtoken;
 			if (e.hasOwnProperty("id")){
 			var cl = {
 				id: e.id,
@@ -519,7 +523,8 @@ app.get("/socketusers", function (req, res) {
 				customer: e.customer,
 				ipaddress: e.ipaddress,
 				device: e.device,
-				appversion: appv
+				appversion: appv,
+				gcmtoken: gcmtoken
 			}
 			out.push(cl)
 		}
@@ -924,6 +929,120 @@ app.use(function(req, res, next) {
 
 
 
+app.get("/gcm/resetcount/:token",function(req,res){
+	var token=req.params.token;
+	gcm.resetTokenCount(token);
+})
+
+app.get("/gcm/setenabled/:value", function (req, res) {
+	var value = req.params.value;
+	if (String(value) == "yes") {
+		gcm.setGcmEnabled(true);
+	}
+	if (String(value) == "no") {
+		gcm.setGcmEnabled(false);
+	}
+	res.send("gcm setted enable to " + value);
+})
+
+app.get("/gcm/getmemorytokens",function(req,res){
+	res.send(gcm.viewTokens());
+})
+
+app.get("/gcm/gettokens", function (req, res) {
+
+	gcm.getTokens(function (data) {
+		res.send(data);
+	})
+
+
+})
+
+
+
+
+app.get("/gcm/send", function (req, res) {
+
+	var text = "Notification text";
+	var title = "Notification title";
+	var icon = "ic_launcher";
+	var color = "#000000";
+	var tag = "bpecosystemitaly";
+	var badge = "1";
+	var topic = tag;
+	var token = "";
+
+
+
+
+
+	if (req.query.text) text = req.query.text;
+	if (req.query.title) title = req.query.title;
+	if (req.query.icon) icon = req.query.icon;
+	if (req.query.color) color = req.query.color;
+	if (req.query.tag) tag = req.query.tag;
+	if (req.query.badge) badge = req.query.badge;
+	if (req.query.topic) topic = req.query.topic;
+	if (req.query.token) token = req.query.token;
+
+
+	var obj = {
+		text: text,
+		title: title,
+		icon: icon,
+		color: color,
+		tag: tag,
+		badge: badge,
+		topic: topic,
+		token: token
+	}
+
+	if (token.trim() != "") {
+
+		console.log("TOKEN",obj.token);
+
+		gcm.sendToToken(obj, function (data) {
+			console.log(data);
+			console.log("sending gcm to token ", obj.token)
+			res.send(data);
+		})
+
+	} else {
+
+		gcm.sendToAll(obj, function (data) {
+			console.log("sending gcm to all tokens", data);
+			res.send(data);
+		})
+
+
+	}
+
+
+
+})
+
+
+
+app.get("/gcm/test", function (req, res) {
+	
+		var msg = {
+			title: "titolo notifica",
+			text: "testo notifica"
+		}
+	
+		/*
+			gcm.sendHttps(msg, function (data) {
+				console.log(data);
+				res.send(data);
+			})*/
+	
+		gcm.sendToEmail("demym@yahoo.it", msg, function (data) {
+			res.send(data);
+		})
+	})
+
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 	var err = new Error('Not Found');
@@ -1060,8 +1179,10 @@ io.sockets.on('connection', function (socket) {
 			socket.device = msg.device;
 			socket.nickname = nick;
 			socket.email=email;
+			if (msg.gcmtoken) socket.gcmtoken=msg.gcmtoken;
 			if (msg.appversion) socket.appversion = msg.appversion;
 			io.emit('auserhasconnected');
+
 			//socket.broadcast.emit("auserhasconnected", socket);
 
 		}
@@ -1175,6 +1296,11 @@ io.sockets.on('connection', function (socket) {
 		//socket.emit("refreshsockets",{text: txt});
 	});
 
+/*
+	socket.on("error",function(err){
+		console.log("error",err)
+	})
+*/
 
 	//res.send(sock) ;
 

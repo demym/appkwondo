@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Nav, NavController, Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
 import { AboutPage } from '../pages/about/about';
 import { ChatPage } from '../pages/chat/chat';
-//import { Push } from 'ionic-native';
+import { Push } from 'ionic-native';
 import { BackendProvider } from '../providers/backend/backend';
 
 
@@ -50,6 +51,7 @@ export class MyApp {
   realtimeEvents = false;
   showrtbutton = false;
   chatunread = 0;
+  private onResumeSubscription: Subscription;
 
 
   //rootPage = TabsPage;
@@ -149,7 +151,23 @@ export class MyApp {
     });
 
 
+    this.onResumeSubscription = platform.resume.subscribe(() => {
+      if (questo.backend.isChatView){
+        console.log("resuming app");
+        questo.backend.resetChatUnread();
+        //questo.backend.localNotify(data.message);
+      }
+   }); 
+
+
   }
+
+  ngOnDestroy() {
+    // always unsubscribe your subscriptions to prevent leaks
+    this.onResumeSubscription.unsubscribe();
+  }
+
+
   openPage(page) {
     var questo = this;
     questo.backend.playFeedback();
@@ -260,9 +278,9 @@ export class MyApp {
       //Splashscreen.hide();
 
       if (this.platform.is('cordova')) {
-        /*var push = Push.init({
+        var push = Push.init({
           android: {
-            senderID: "403763864066"
+            senderID: "1034396645917"
           },
           ios: {
             alert: "true",
@@ -282,10 +300,22 @@ export class MyApp {
         push.on('notification', (data) => {
           console.log("push notification!", data);
           //alert("Hi, Am a push notification");
-        });
+          var isforeground=data.additionalData.foreground;
+          if (isforeground){
+            if (!questo.backend.isChatView){
+              console.log("local notification emitted");
+              questo.backend.localNotify(data.message);
+            }
+
+          } else {
+            //questo.backend.addChatUnread();
+
+
+          }
+        }); 
         push.on('error', (e) => {
           console.log(e.message);
-        });*/
+        });
 
 
         //questo.deviceFeedback.acoustic();

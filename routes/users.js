@@ -4,6 +4,7 @@ var request = require('request');
 var mongo = require('../routes/mongo');
 var utils = require("../routes/utils");
 var mail=require("../routes/mail");
+var gcm=require("../routes/gcm");
 var moment = require("moment");
 var uuid = require('node-uuid');
 var jwt = require('jsonwebtoken');
@@ -302,7 +303,10 @@ router.post('/login', function (req, res) {
 	var adminpsw = "Ser07glr,Taeguk,Masterkwondo";
 
 
-	var auth = req.body.authorization;
+    var auth = req.body.authorization;
+    var gcmtoken="";
+    if (req.body.gcmtoken) gcmtoken=req.body.gcmtoken;
+    console.log("Loggin in, gcmtoken",gcmtoken);
 	//console.log("auth: "+auth);
 
 	var tmp = auth.split(' '); // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
@@ -324,10 +328,27 @@ router.post('/login', function (req, res) {
     var user={};
 
     mongo.getfile("users.json",function(data){
+        console.log("got users",data.rows.length)
         data.rows.forEach(function(item,idx){
                if ((item.doc.email==em)  && (item.doc.password==pw)) {
                    loggedin=true;
                    user=item.doc;
+                   item.doc.gcmtoken=gcmtoken;
+                   var gcmtokens=[];
+                   if (item.doc.hasOwnProperty("gcmtokens")) gcmtokens=item.doc.gcmtokens;
+
+                   if (gcmtoken!="") {
+                    gcm.addToken(gcmtoken); 
+                       if (gcmtokens.indexOf(gcmtoken)==-1) {
+                           gcmtokens.push(gcmtoken);
+                         
+                           //tokens.push(gcmtoken);
+
+                       }
+                   }
+                   item.doc.gcmtokens=gcmtokens;
+                   console.log("item.doc.gcmtoken",item.doc.gcmtoken);
+                   console.log("item.doc.gcmtokens",item.doc.gcmtokens);
                }
         })
 
@@ -340,8 +361,16 @@ router.post('/login', function (req, res) {
                        }*/
             );
             user.token = token;
+         
+            //save users with updated gcmtoken;
             delete user.password;
             res.send(user);
+           /* mongo.updatefile("users.json",data.rows,function(mdata){
+                console.log("updated users with gcmtokens",mdata);
+               
+            })*/
+
+            
         } else {
             user.loggedin=false;
             res.send(user);

@@ -25,6 +25,7 @@ router.get("/tabulatoimage/:tabulatoid", function (req, res) {
     var url = "https://www.tkdtechnology.it/index.php/welcome/"+tabulato_word+"_tabulato?id=" + tabulatoid;
     //url=pageurl;
     request(url, function (error, response, html) {
+        console.log("response code",response.statusCode);
         if (!error && response.statusCode == 200) {
 
             var $ = cheerio.load(html);
@@ -35,7 +36,10 @@ router.get("/tabulatoimage/:tabulatoid", function (req, res) {
 
 
 
+        } else {
+            res.send("Something happened with tkdt")
         }
+      
 
     });
 

@@ -11,7 +11,6 @@
         </activity>
         <activity android:configChanges="orientation|screenSize" android:label="Simple Audio Stream" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream" />
         <activity android:configChanges="orientation|screenSize" android:label="Simple Video Stream" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream" />
-        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
         <provider android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
         </provider>
@@ -29,6 +28,19 @@
             </intent-filter>
         </receiver>
         <activity android:exported="false" android:launchMode="singleInstance" android:name="de.appplant.cordova.plugin.notification.ClickActivity" android:theme="@android:style/Theme.NoDisplay" />
+        <activity android:exported="true" android:name="com.adobe.phonegap.push.PushHandlerActivity" android:permission="${applicationId}.permission.PushHandlerActivity" />
+        <receiver android:name="com.adobe.phonegap.push.BackgroundActionButtonHandler" />
+        <receiver android:name="com.adobe.phonegap.push.PushDismissedHandler" />
+        <service android:name="com.adobe.phonegap.push.FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.adobe.phonegap.push.PushInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
     </application>
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -40,5 +52,5 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>

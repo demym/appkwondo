@@ -20,10 +20,17 @@ export class GarePage {
   @ViewChild(Navbar) navBar: Navbar;
   gare = [];
   loading = false;
+  totali={
+    ori: 0,
+    argenti: 0,
+    bronzi: 0,
+    punti: 0
+  }
 
   constructor(private nativePageTransitions: NativePageTransitions, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
 
-  ionViewWillLoad(){
+  ionViewWillEnter(){
+    this.calcolaTotali();
    
   }
   ionViewWillLeave() {
@@ -36,6 +43,7 @@ export class GarePage {
     console.log('ionViewDidLoad GarePagePage');
     this.gare = this.backend.gare;
     this.backend.setBackButtonAction(this.navBar,this.navCtrl);
+
     /*this.refresh(function(data){
      
     }) */
@@ -45,9 +53,44 @@ export class GarePage {
     var questo = this;
     this.backend.getGare(function (data) {
       questo.gare = data.rows;
+     
       console.log("gare", questo.gare);
       if (callback) callback(data);
     })
+  }
+
+
+  calcolaTotali(){
+    var questo=this;
+    var totori=0;
+    var totargenti=0;
+    var totbronzi=0;
+    var totpunti=0;
+    questo.backend.gare.forEach(function(item,idx){
+     // console.log(item);
+      
+      if (item.hasOwnProperty("doc")){
+        if (item.doc.hasOwnProperty("ori")){
+          totori+=parseInt(item.doc.ori,10);
+          
+
+        }
+        if (item.doc.hasOwnProperty("argenti")){
+          totargenti+=parseInt(item.doc.argenti,10);
+          
+        }
+        if (item.doc.hasOwnProperty("bronzi")){
+          totbronzi+=parseInt(item.doc.bronzi);
+          
+        }
+      }
+
+    })
+    totpunti=totori*7+totargenti*3+totbronzi;
+    questo.totali.ori=totori;
+    questo.totali.argenti=totargenti;
+    questo.totali.bronzi=totbronzi;
+    questo.totali.punti=totpunti;
   }
 
   doRefresh(refresher) {

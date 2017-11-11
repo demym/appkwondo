@@ -16030,7 +16030,7 @@ ion-list[inset] {
 }
 
 .list-md ion-item-options .button {
-  margin: 1px 0;
+  margin: 0;
   border-radius: 0;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -16040,7 +16040,7 @@ ion-list[inset] {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: calc(100% - 2px);
+  height: 100%;
   border: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -30303,6 +30303,14 @@ img.avatarbig {
   float: right;
 }
 
+.chat .moreprev {
+  width: 100%;
+  background: cyan;
+  margin: 5px;
+  max-width: 98%;
+  border-radius: 9x;
+}
+
 .chat .messages {
   width: 100%;
   position: absolute;
@@ -30312,7 +30320,8 @@ img.avatarbig {
   font-size: 12px;
   -webkit-box-shadow: 1px 1px 1px silver;
   box-shadow: 1px 1px 1px silver;
-  max-width: 75%;
+  /*max-width: 75%;*/
+  max-width: 98%;
   /*padding: 6px 6px;*/
   /*background: #387ef5;*/
   /*background: #007acc;*/
@@ -30339,6 +30348,10 @@ img.avatarbig {
   float: left;
   margin-right: 5px;
   margin-left: -5px;
+}
+
+.chat .messages .message100 {
+  width: 100%;
 }
 
 .chat .messages .message.me {
@@ -30498,6 +30511,10 @@ ion-col, ion-row, ion-grid {
   color: gray;
 }
 
+.menubutton {
+  font-size: 22px;
+}
+
 page-chatfoto .container {
   width: 100%;
   min-height: 500px;
@@ -30513,6 +30530,30 @@ page-chatfoto .title {
 
 page-chatfoto .data {
   font-size: 12px;
+}
+
+page-chatlist .filename {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+page-chatlist .selected {
+  background-color: lightblue;
+  padding: 3px !important;
+}
+
+page-chatlist .selected input-wrapper {
+  background-color: lightblue;
+  padding: 3px !important;
+}
+
+page-chatlist .filesize {
+  font-size: 12px;
+}
+
+page-chatlist .archiviata {
+  font-size: 13px;
+  color: gray;
 }
 
 .offline {
@@ -30793,6 +30834,10 @@ page-gare .medals {
 page-gare .iscritti {
   font-size: 12px;
   font-style: normal;
+}
+
+page-gare .headpoints {
+  font-size: 12px;
 }
 
 page-home .server {

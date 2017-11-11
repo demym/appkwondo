@@ -68,9 +68,10 @@ export class SocketService {
       };
       var m = {
         device: "browser",
-        type: "clientspecs",
+        type: "clientspecs", 
         nickname: questo.backend.user.nickname,
         email: questo.backend.user.email,
+        gcmtoken: questo.backend.user.gcmtoken,
         appversion: "2.0.0"
   
       }
@@ -152,7 +153,7 @@ export class SocketService {
         console.log("isChatView",questo.backend.isChatView);
         if (!questo.backend.isChatView){
           console.log("local notification emitted");
-          questo.backend.localNotify(msg.nickname+" - "+msg.text);
+          //questo.backend.localNotify(msg.nickname+" - "+msg.text);
         }
         if (msg.hasOwnProperty("nickname")){
           if (msg.nickname.toLowerCase()=="system"){

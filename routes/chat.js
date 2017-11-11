@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var gcm = require('node-gcm');
+var gcm2=require('../routes/gcm');
 //var io = require('socket.io');
 var request = require('request');
 var mongo = require('../routes/mongo');
@@ -397,12 +398,40 @@ router.post("/put", function (req, res) {
 				console.log("storing image on altervista")
 				utils.sendChatMediaToAltervista(fotofname, chatobjfoto, function (cmdata) {
 
-
+					var obj={
+						text: chatobj.nickname+" ha postato un'immagine",
+						title: "ChatKwonDo",
+						icon: "ic_launcher",
+						color: "#000000",
+						tag: "appkwondov2",
+						badge: "1",
+						topic: tag,
+						token: ""
+					
+					}
+					gcm2.sendToAll(obj,function(data){
+						console.log("gcmsendtoall done",data);
+					})
 					socketio.emit('chatmsg', chatobj);
 					res.send(data);
 
 				});
 			} else {
+				var obj={
+					text: chatobj.nickname+" - "+chatobj.text,
+					title: "ChatKwonDo",
+					icon: "ic_launcher",
+					color: "#000000",
+					tag: "appkwondov2",
+					badge: "1",
+					topic: "appkwondov2",
+					token: "",
+					sound: "default"
+				
+				}
+				gcm2.sendToAll(obj,function(data){
+					console.log("gcmsendtoall done",data);
+				})
 				socketio.emit('chatmsg', chatobj);
 				res.send(data);
 			}

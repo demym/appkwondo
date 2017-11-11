@@ -5,6 +5,8 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { ChatPage } from '../pages/chat/chat';
 import { ChatlistPage } from '../pages/chatlist/chatlist';
+import { ChatpopoverPage } from '../pages/chatpopover/chatpopover';
+import { PopoverPage } from '../pages/popover/popover';
 import { ChatfotoPage } from '../pages/chatfoto/chatfoto';
 import { HomePage } from '../pages/home/home';
 import { TwitterPage } from '../pages/twitter/twitter';
@@ -61,6 +63,9 @@ import { MediaPlugin, MediaObject } from '@ionic-native/media';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
+
+import { ElasticModule } from 'ng-elastic';
+import { FormsModule }   from '@angular/forms';
 //import { IonicAudioModule, WebAudioProvider, CordovaMediaProvider, defaultAudioProviderFactory } from 'ionic-audio';
 
 /*
@@ -81,6 +86,7 @@ export function myCustomAudioProviderFactory() {
     ChatPage,
     ChatlistPage,
     ChatfotoPage,
+    ChatpopoverPage,
     LoginPage,
     TabsPage,
     SettingsPage,
@@ -105,7 +111,8 @@ export function myCustomAudioProviderFactory() {
     MedagliereglobalePage,
     RegisterPage,
     UsersPage,
-    ConnectionsPage
+    ConnectionsPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -116,7 +123,9 @@ export function myCustomAudioProviderFactory() {
       backButtonIcon: 'ios-arrow-back',
       animate: true}),
     IonicStorageModule.forRoot(),
-    IonicImageLoader.forRoot()
+    IonicImageLoader.forRoot(),
+    ElasticModule,
+    FormsModule
     //IonicAudioModule.forRoot(defaultAudioProviderFactory)
   ],
   bootstrap: [IonicApp],
@@ -127,6 +136,7 @@ export function myCustomAudioProviderFactory() {
     ChatPage,
     ChatlistPage,
     ChatfotoPage,
+    ChatpopoverPage,
     HomePage,
     PartnerworldPage,
     LinkedinPage,
@@ -153,7 +163,8 @@ export function myCustomAudioProviderFactory() {
     MedagliereglobalePage,
     RegisterPage,
     UsersPage,
-    ConnectionsPage
+    ConnectionsPage,
+    PopoverPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     SocketService,

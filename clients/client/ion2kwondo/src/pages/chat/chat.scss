@@ -99,13 +99,21 @@ img.avatar {
     }
   }
 
+  .moreprev {
+    width: 100%;
+    background: cyan;
+    margin: 5px;
+    max-width: 98%;
+    border-radius: 9x;
+  }
   .messages {
     width: 100%;
     position: absolute; 
     .message {
       font-size: 12px;
       box-shadow: 1px 1px 1px silver;
-      max-width: 75%;
+      /*max-width: 75%;*/
+      max-width: 98%;
       /*padding: 6px 6px;*/
       /*background: #387ef5;*/
       /*background: #007acc;*/
@@ -131,6 +139,10 @@ img.avatar {
         margin-left: -5px;
       }
       
+    }
+   
+    .message100 {
+      width:100%;
     }
     .message.me {
       float: right;
@@ -285,4 +297,8 @@ ion-col,ion-row,ion-grid {
   z-index: 8000;
   font-size: 28px;
   color: gray;
+}
+
+.menubutton {
+  font-size: 22px;
 }

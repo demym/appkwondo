@@ -3264,27 +3264,43 @@ function setResultOk(match, atl, mfa, callback) {
 					time: tempo
 				}
 
+				var cron={
+					text: cronacatxt,
+					time: tempo
+				}
+				var cronfname="cronaca_"+match.garaid+".json";
+				mongo.addRecord(cronfname,"",cron,function(crdata){
+					console.log("cronaca record inserted in "+cronfname,crdata);
 
 
-				var mfname = "chatno64.json";
-				mongo.addRecord(mfname, "", chat, function (cdata) {
-					console.log("chat record inserted",cdata);
-					if (io) {
-						io.emit("updategara", {
-							garaid: match.garaid
-						});
-						if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
+					//and finally add chat
 
-					}
-					else {
-						console.log("socket not connected")
-					}
-						if (callback) callback(ret);
+					var mfname = "chatno64.json";
+					mongo.addRecord(mfname, "", chat, function (cdata) {
+						console.log("chat record inserted",cdata);
+						if (io) {
+							io.emit("updategara", {
+								garaid: match.garaid
+							});
+							if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
+	
+						}
+						else {
+							console.log("socket not connected")
+						}
+							if (callback) callback(ret);
+	
+	
+	
+	
+					});
 
 
 
+				})
 
-				});
+
+			
 
 			
 

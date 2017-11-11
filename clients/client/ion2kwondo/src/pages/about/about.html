@@ -6,13 +6,17 @@
     <ion-title>
       About
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="gotoBottom()">GIU</button>
+      <button ion-button (tap)="gotoTop()">SU</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <p>
+ <!-- <p>
     This is a combination of Ionic 2 Tabs and Sidemenu. For more info, see related <a href="https://blog.khophi.co/ionic-2-side-menu-tabs/">Ionic 2 Sidemenu and Tabs</a> article by <a href="https://blog.khophi.co">Khophi's Dev</a>
   </p>
-  <button ion-button block (tap)="goFB()">GO FB</button>
+  <button ion-button block (tap)="goFB()">GO FB</button>-->
 
   <!--<ion-segment #ionSeg [scrollable-segments]="ionSeg" >
     <ion-segment-button value="urzu">Urzu</ion-segment-button>
@@ -21,7 +25,7 @@
   </ion-segment>-->
 
 
-  <ion-scroll scrollX="true" style="width:100vw;height:350px" >
+ <!-- <ion-scroll scrollX="true" style="width:100vw;height:350px" >
       <ion-segment [(ngModel)]="relationship" color="primary">
       
       
@@ -57,7 +61,7 @@
             </ion-segment-button>
       
           </ion-segment>
-            </ion-scroll>
+            </ion-scroll>-->
 
 
 <!--
@@ -75,4 +79,16 @@
   </ion-tabs>
   
 -->
+
+
+<ion-list [virtualScroll]="users">
+  
+    <ion-item *virtualItem="let item">
+      <div>{{ item.email }} </div>
+      <div>{{item.name.first}} {{item.name.last}}</div>
+      <!--<img [src]="item.picture.medium"/>-->
+      
+    </ion-item>
+  
+  </ion-list>
 </ion-content>

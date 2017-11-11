@@ -1,5 +1,5 @@
 import { ModalController, AlertController, IonicApp, Events, Content } from 'ionic-angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Nav, NavController, NavParams, Platform, Navbar } from 'ionic-angular';
 import { SocketService } from '../../providers/socket-service/socket-service';
 import { BackendProvider } from '../../providers/backend/backend';
@@ -7,17 +7,20 @@ import * as moment from 'moment';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { ChatfotoPage } from '../../pages/chatfoto/chatfoto';
 import { ChatlistPage } from '../../pages/chatlist/chatlist';
+//import { ChatpopoverPage } from '../../pages/chatpopover/chatpopover';
+import { PopoverPage } from '../../pages/popover/popover';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Entry } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Transfer} from '@ionic-native/transfer';
+import { Transfer } from '@ionic-native/transfer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { PopoverController } from 'ionic-angular';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { MediaPlugin, MediaObject, MediaError } from '@ionic-native/media';
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions} from '@ionic-native/streaming-media';
-
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
+import { MenuController } from 'ionic-angular';
 
 //import { AudioProvider } from 'ionic-audio';
 
@@ -25,7 +28,7 @@ import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions} from '@io
 @Component({
   templateUrl: 'chat.html'
 })
-
+ 
 export class ChatPage implements OnInit {
   @ViewChild(Navbar) navBar: Navbar;
   msg: any = "";
@@ -35,6 +38,7 @@ export class ChatPage implements OnInit {
   app: IonicApp;
   el: any;
   @ViewChild(Content) content: Content;
+  @ViewChild('content') private chatcontent: Content;
   popped = false;
   overlay = false;
   chatButton: any = "audio";
@@ -44,10 +48,14 @@ export class ChatPage implements OnInit {
   myTracks: any;
   allTracks: any;
   selectedTrack: any;
+  showCameraIcon = true;
+  page=1;
+  recordsforpage=20;
+  chatmessages:any=[];
 
 
 
-  constructor(/*private _audioProvider: AudioProvider,*/ public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: FileTransfer,private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
+  constructor(/*private _audioProvider: AudioProvider,*/ public popoverCtrl: PopoverController, public menuCtrl: MenuController, public alertCtrl: AlertController, private socialSharing: SocialSharing, private transfer: FileTransfer, private camera: Camera, private file: File, private domSanitizer: DomSanitizer, public platform: Platform, public nv: Nav, public navparams: NavParams,
     public nav: NavController,
     public modal: ModalController,
     public iapp: IonicApp,
@@ -148,6 +156,85 @@ export class ChatPage implements OnInit {
 
 
 
+  showPop(myEvent) {
+    var questo = this;
+    var popdata = [
+      {
+        cmd: "refresh",
+        text: "Aggiorna",
+        icon: "md-refresh"
+      },
+      {
+        cmd: "list",
+        text: "Lista chat",
+        icon: "ios-list-box-outline"
+      },
+      {
+        cmd: "reset",
+        text: "Reset chat",
+        icon: "ios-filing"
+      }
+    ]
+
+    let popover = questo.popoverCtrl.create(PopoverPage, popdata);
+    popover.onDidDismiss(function (data, role) {
+      console.log("data", data, "role", role);
+      if (data == "list") {
+        questo.selectChat();
+        return;
+      }
+      if (data == "reset") {
+        questo.resetChat();
+        return;
+      }
+      if (data == "refresh") {
+        questo.loading = true;
+        questo.refresh(function () {
+          questo.loading = false;
+          if (questo.content) questo.content.resize();
+        })
+        return;
+      }
+    })
+
+
+    popover.present({
+      ev: myEvent
+    });
+
+  }
+
+  /*
+    showPop2(myEvent){
+        var questo=this;
+        let popover = questo.popoverCtrl.create(ChatpopoverPage);
+        popover.onDidDismiss(function(data,role){
+          console.log("data",data,"role",role);
+          if (data=="chatlist") {
+            questo.selectChat();
+            return;
+          }
+          if (data=="chatreset") {
+            questo.resetChat();
+            return;
+          }
+          if (data=="chatrefresh") {
+            questo.loading=true;
+            questo.refresh(function(){
+              questo.loading=false;
+            })
+            return;
+          }
+        })
+        popover.present({
+          ev: myEvent
+        });
+      
+    }*/
+
+  openMenu() {
+
+  }
 
 
   ngOnInit(): void {
@@ -177,15 +264,23 @@ export class ChatPage implements OnInit {
     this.backend.getActiveChat(function (data) {
 
       console.log("got chat", data);
-      questo.msgs = questo.backend.chatmessages;
+      console.log("questo.backend.activechatfilename",questo.backend.activechatfilename);
+      questo.msgs=[];
+      //questo.msgs = questo.backend.chatmessages;
 
       //questo.loading=false;
 
       setTimeout(() => {
-        if (questo.content) questo.content.scrollToBottom();
+        questo.initScroll();
+        /*
+        if (questo.content) {
+          console.log("scrollingtobottom")
+          questo.content.scrollToBottom();
+        }
+        */
         if (callback) callback(data);
 
-      }, 500);
+      }, 700);
 
     })
 
@@ -246,8 +341,8 @@ export class ChatPage implements OnInit {
     this.nav.setRoot(TabsPage, { tab: 2 });
   }
 
-  resetChat(){
-    var questo=this;
+  resetChat() {
+    var questo = this;
     let alrt = questo.alertCtrl.create({
       title: 'Conferma archiviazione chat',
       message: "Vuoi davvero archiviare la chat attiva ?",
@@ -263,14 +358,14 @@ export class ChatPage implements OnInit {
           text: 'Conferma',
           handler: () => {
 
-            var url=questo.backend.rooturl+ "/chat/archive/";
-            questo.backend.fetchData(url,function(data){
-              questo.refresh(function(){
+            var url = questo.backend.rooturl + "/chat/archive/";
+            questo.backend.fetchData(url, function (data) {
+              questo.refresh(function () {
                 alert("Chat resettata");
               })
 
             })
-          
+
 
           }
         }
@@ -280,26 +375,44 @@ export class ChatPage implements OnInit {
 
   }
 
-  selectChat(){
-    var questo=this;
-    var url=questo.backend.rooturl+ "/chat/list";
-    questo.backend.fetchData(url,function(data){
-      console.log("chats list",data);
-      data.rows.sort(function(a,b){
-        var a1=a.filename;
-        var b1=b.filename;
-        if (a1>b1) return -1;
-        if (a1<b1) return 1;
+  selectChat() {
+    var questo = this;
+    var url = questo.backend.rooturl + "/chat/list";
+    questo.backend.fetchData(url, function (data) {
+      console.log("chats list", data);
+      data.rows.sort(function (a, b) {
+        var a1 = a.filename;
+        var b1 = b.filename;
+        if (a1 > b1) return -1;
+        if (a1 < b1) return 1;
         return 0;
       })
       let profileModal = questo.modal.create(ChatlistPage, { data: data });
       profileModal.onDidDismiss(data => {
-        console.log("chatlistdismissed",data);
+        console.log("chatlistdismissed", data);
         if (data) {
-          var filename=data.filename;
-          questo.backend.activechatfilename=filename;
-          questo.refresh(function(){
-            console.log("caricata chat dal file "+filename);
+          var filename = data.filename;
+          questo.backend.activechatfilename = filename;
+          questo.refresh(function () {
+            console.log("caricata chat dal file " + filename);
+
+          
+           /* setTimeout(() => {
+              
+                questo.initScroll();
+                /*questo.gotoTop();
+                 questo.gotoBottom();*/
+        
+              //if (questo.content) questo.content.scrollToBottom();
+             /* if (questo.content) {
+                console.log("scrolling to bottom");
+                questo.content.resize();
+                questo.content.scrollToBottom();
+                questo.content.resize();
+              }*/
+        
+           // }, 700);*/
+            
           })
 
         }
@@ -309,12 +422,32 @@ export class ChatPage implements OnInit {
 
   }
 
-  initView(){
+  initView() {
     var questo = this;
     questo.backend.setBackButtonAction(questo.navBar, questo.nav);
     console.log("ionviewdidload chat.ts");
     questo.backend.resetChatUnread();
     questo.backend.isChatView = true;
+    console.log("backend chat messages:",questo.backend.chatmessages);
+
+    var bcmlast=questo.backend.chatmessages.length-1;
+    var bcmfirst=bcmlast-questo.recordsforpage;
+
+    var count=-1;
+    questo.chatmessages=[];
+    var postdata = {
+      garaid: "",
+      nickname: "more_prev",
+      sockid: questo.backend.user.sockid,
+      text: ""
+    }
+    questo.chatmessages.push(postdata);
+    for (var i=bcmfirst; i<bcmlast; i++){
+      count++;
+      questo.chatmessages.push(questo.backend.chatmessages[i]);
+
+    }
+
     /*this.msgs=this.backend.chatmessages;
      setTimeout(() => {
         if (questo.content) {
@@ -335,18 +468,28 @@ export class ChatPage implements OnInit {
       console.log("rtmatches", questo.rtmatches);
     })
 
-
-    questo.msgs = questo.backend.chatmessages;
+    //questo.msgs=[];
+   // questo.msgs = questo.backend.chatmessages;
     setTimeout(() => {
-      if (questo.content) questo.content.scrollToBottom();
+      questo.gotoBottom()
+      //questo.initScroll();
+      /*
+      questo.gotoTop();
+      questo.gotoBottom();
+      */
+      /*questo.content.resize();
 
-    }, 500);
+      //if (questo.content) questo.content.scrollToBottom();
+      if (questo.content) questo.content.scrollToBottom();*/
+
+    }, 700);
   }
 
 
   ionViewDidLoad() {
-  
-    var questo=this;
+
+    var questo = this;
+    this.initView();
     if (1 == 1) return;
 
 
@@ -377,7 +520,7 @@ export class ChatPage implements OnInit {
 
     var questo = this;
 
-    this.initView();
+    // this.initView();
     /////////////////
 
 
@@ -425,6 +568,7 @@ export class ChatPage implements OnInit {
 
     /*this.content=this.app.getgetComponent("chat");
     this.el = this.content.elementRef.nativeElement;*/
+
   }
 
 
@@ -434,7 +578,7 @@ export class ChatPage implements OnInit {
     var text = questo.msg;
     questo.msg = "";
 
-    var m={
+    var m = {
       garaid: "",
       nickname: questo.backend.user.nickname,
       sockid: questo.backend.user.sockid,
@@ -475,7 +619,7 @@ export class ChatPage implements OnInit {
   }
 
 
-  openAudioUrl(url){
+  openAudioUrl(url) {
     this.backend.openUrl(url);
   }
 
@@ -491,12 +635,14 @@ export class ChatPage implements OnInit {
   focus() {
     console.log("focus");
     this.chatButton = "text";
+    this.showCameraIcon = false;
   }
 
 
   blur(e) {
     var questo = this;
     console.log("blur", e);
+    this.showCameraIcon = true;
     setTimeout(function () {
       questo.chatButton = "audio";
       console.log("timeout passed");
@@ -575,7 +721,7 @@ export class ChatPage implements OnInit {
                       //console.log(dataURL);
                       var sounddata = dataURL;
                       console.log("sounddata", sounddata);
-                      var msg={
+                      var msg = {
                         nickname: questo.backend.user.nickname,
                         sockid: questo.backend.user.sockid,
                         audio: sounddata,
@@ -661,7 +807,7 @@ export class ChatPage implements OnInit {
 
         if (data == "cancel") return;
 
-        
+
 
         var sourcetype = questo.camera.PictureSourceType.CAMERA;
 
@@ -773,8 +919,8 @@ export class ChatPage implements OnInit {
 
   }
 
-  shareItem(m){
-    console.log("shareItem",m);
+  shareItem(m) {
+    console.log("shareItem", m);
     if (m.audiourl) {
       this.shareAudio(m);
       return;
@@ -875,16 +1021,112 @@ export class ChatPage implements OnInit {
 
   gotoTop() {
     var questo = this;
-    if (questo.content) questo.content.scrollToTop();
+    if (questo.content) {
+      //questo.content.resize();
+      console.log("questo.content ce sta");
+     
+      setTimeout(() => {
+        questo.content.scrollToTop(600);
+        questo.content.resize();
+       // questo.content.scrollToBottom();
+        //questo.content.scrollTo(0, 400, 0); 
 
+      }, 700);
+
+    }
+
+
+  }
+
+  initScroll(){
+    var questo=this;
+    questo.content.resize();
+    if (2==2) return;
+  
+    if (questo.content) {
+      console.log("questo.content ce sta");
+      questo.content.resize();
+      questo.content.scrollToBottom().then(function(){
+        console.log("scrolled to bottom")
+        questo.content.resize();
+      },function(reason){
+        console.log("error scrolling to bottom",reason);
+      });
+      if (1==1) return;
+      questo.content.scrollToTop().then(function(data){
+        console.log("scrolled to top")
+        questo.content.resize();
+        questo.content.scrollToBottom().then(function(){
+          console.log("scrolled to bottom")
+          questo.content.resize();
+        },function(reason){
+          console.log("error scrolling to bottom",reason);
+        });
+
+      },function(reason){
+        console.log("error scrolling to top",reason)
+
+      });
+      //questo.content.resize();
+
+      
+     
+        
+       /* setTimeout(()=>{
+         
+          
+        },700);*/
+     
+        //questo.content.scrollTo(0, 400, 0); 
+
+   
+    }
 
   }
 
   gotoBottom() {
     var questo = this;
 
-    if (questo.content) questo.content.scrollToBottom();
+    if (questo.content) {
+      console.log("gotobottom questo.content ce sta");
 
+      //questo.content.resize();
+      setTimeout(() => {
+        questo.content.scrollToBottom(600);
+        
+        var bottom=(questo.backend.chatmessages.length-1)*230;
+        console.log("bottom",bottom);
+        //questo.content.scrollTo(0,bottom, 300); 
+        questo.content.resize();
+
+      }, 700);
+
+
+      //questo.content.scrollTo(0, 400, 0);   // questo è lo scroll originale
+
+
+      /*var element = document.querySelector('#content');
+      console.log(element);
+      element.scrollIntoView();*/
+
+
+      //questo.content.scrollTo(0, 100*questo.backend.chatmessages.length)
+      // questo.content.scrollTo(0, (questo.backend.chatmessages.length-1) * 100, 0);
+      //questo.content.scrollToBottom();
+
+
+      /*let dimensions = questo.content.getContentDimensions();
+      console.log("dimensions",dimensions);
+      questo.content.scrollTo(0, dimensions.scrollHeight + 100, 0);
+      questo.content.resize();*/
+      /*var myElement = document.getElementById('content');  // Container which has scrollable vertical contents
+      console.log("scrolltop",myElement.scrollTop);  // Gives scrolled poins from top
+      console.log("scrollheight",myElement.scrollHeight);  // Gives maximum scrollable vertical space
+  
+      myElement.scrollTop = myElement.scrollHeight;*/
+
+      // questo.myScrollContainer.nativeElement.scrollTop = questo.myScrollContainer.nativeElement.scrollHeight;
+    } else console.log("questo.content NON ce sta")
   }
 
 
@@ -926,63 +1168,63 @@ export class ChatPage implements OnInit {
   }
 
 
-  isCordova(){
-    var isCordova=this.platform.is("cordova");
+  isCordova() {
+    var isCordova = this.platform.is("cordova");
     return isCordova;
 
   }
 
-  isCordovaIOS(){
-    var questo=this;
-    var retvalue=false;
+  isCordovaIOS() {
+    var questo = this;
+    var retvalue = false;
 
-    var isCordova=questo.platform.is("cordova");
-    var isIOS=questo.platform.is("ios");
+    var isCordova = questo.platform.is("cordova");
+    var isIOS = questo.platform.is("ios");
     //console.log("iscordova",isCordova,"isIOS",isIOS);
 
-    if (isCordova && isIOS) retvalue=true;
-    
-   // console.log("retvalue",retvalue);
-    
+    if (isCordova && isIOS) retvalue = true;
+
+    // console.log("retvalue",retvalue);
+
     return retvalue;
   }
 
 
-  playAudioIos(m){
+  playAudioIos(m) {
     console.log(m);
     if (m.hasOwnProperty("audiourl")) window.open(m.audiourl);
-   
+
   }
 
 
-  downloadFileAndPlay(url){
+  downloadFileAndPlay(url) {
 
-    console.log("dowloadandplay",url);
-    
+    console.log("dowloadandplay", url);
+
     let options: StreamingAudioOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: (e) => { console.log('Error streaming') },
       initFullscreen: false
     };
-    
+
     this.streamingMedia.playAudio(url, options);
-    if (2==2) return;
-    
-   
+    if (2 == 2) return;
+
+
   }
 
-  postLocalChat(msg){
-    var questo=this;
-    var tim=moment().format("YYYYMMDDHHmmSS");
-    var sockid=questo.backend.user.sockid;
+  postLocalChat(msg) {
+    var questo = this;
+    var tim = moment().format("YYYYMMDDHHmmSS");
+    var sockid = questo.backend.user.sockid;
     var localmsg = Object.assign({}, msg);
-    localmsg.time=tim;
-    localmsg.sockid=sockid;
+    localmsg.time = tim;
+    localmsg.sockid = sockid;
     questo.backend.chatmessages.push(localmsg);
-    setTimeout(function(){
+    setTimeout(function () {
       questo.gotoBottom();
-    },300)
-   
+    }, 300)
+
   }
 
 

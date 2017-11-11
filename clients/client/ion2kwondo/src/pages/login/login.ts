@@ -18,7 +18,7 @@ export class LoginPage {
   
   //loading: Loading;
   //registerCredentials= { email: 'demymortelliti@it.ibm.com', password: 'ser56glr' };
-  registerCredentials = { email: 'youremail@it.ibm.com', password: '' };
+  registerCredentials = { email: 'youremail@it.ibm.com', password: '', gcmtoken: '' };
   constructor(private utils: UtilsProvider, private nav: NavController, private backend: BackendProvider, private alertCtrl: AlertController/*, private loadingCtrl: LoadingController*/) {
 
 
@@ -120,8 +120,10 @@ export class LoginPage {
       } else {
         var em=window.atob(json).split(":")[0];
         var pw=window.atob(json).split(":")[1];
+        questo.registerCredentials.gcmtoken=questo.backend.user.gcmtoken;
         questo.registerCredentials.email = em;
         questo.registerCredentials.password = pw;
+
         console.log("regcreds", questo.registerCredentials);
         //questo.login();
       }

@@ -15,6 +15,7 @@
       <ion-select  [(ngModel)]="backend.appSettings.server" (ionChange)="onServerChange($event)">
         <ion-option value="http://tkdr.herokuapp.com">Heroku</ion-option>
         <ion-option value="http://appkwondo.mybluemix.net">Bluemix</ion-option>
+        <ion-option value="http://192.168.1.106:3000">Local</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>

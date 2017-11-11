@@ -117,8 +117,15 @@ gotoPage(p){
     console.log("isCordova");
     this.navCtrl.push(p,{},{animate: false});
   } else */
+
+  /*if (p==ChatPage) {
+    console.log("setting ChatPage as root")
+    this.navCtrl.setRoot(ChatPage);
+  } else {*/
+    this.navCtrl.push(p,{},questo.backend.navOptions);
+  //}
    
-  this.navCtrl.push(p,{},questo.backend.navOptions);
+
 
   //this.navCtrl.push(p,{});
 }

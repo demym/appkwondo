@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController,Content } from 'ionic-angular';
 import {HomePage} from '../../pages/home/home'
 
 import { FacebookProvider } from '../../providers/facebook/facebook';
+import { BackendProvider } from '../../providers/backend/backend';
 import { Observable } from 'rxjs/Rx';  
 import 'rxjs/add/operator/map';
 
@@ -35,8 +36,27 @@ export class AboutPage {
 
   tabToShow: Array<boolean> = [true, true, true, true, true, true, true, true, true];
   scrollableTabsopts: any = {};
+  items:any=[];
+  users:any=[];
+  @ViewChild(Content) content: Content;
 
-  constructor(private fb: FacebookProvider, public navCtrl: NavController) {
+  constructor(public backend: BackendProvider, private fb: FacebookProvider, public navCtrl: NavController) {
+    var questo=this;
+    
+    questo.users=[];
+    questo.backend.getRandomUsers(function(data){
+        console.log("users",data);
+        questo.users=data;
+        questo.content.resize();
+    })
+    for (var i=0; i<1000; i++){
+      var newitem={
+        nome: i
+
+      }
+      this.items.push(newitem);
+
+    }
 
   }
 
@@ -74,5 +94,12 @@ export class AboutPage {
     return attachments.data
       .filter(x => x.type == "photo")
       .map(x => x.media.image);
+  }
+
+  gotoBottom(){
+    if (this.content) this.content.scrollToBottom()
+  }
+  gotoTop(){
+    if (this.content) this.content.scrollToTop()
   }
 }

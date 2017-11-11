@@ -29,14 +29,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
                             "count": 1
                         },
@@ -109,31 +101,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<preference name=\"webView\" value=\"org.crosswalk.engine.XWalkWebViewEngine\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"xwalkVersion\" value=\"23+\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"xwalkLiteVersion\" value=\"xwalk_core_library_canary:17+\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"xwalkCommandLine\" value=\"--disable-pull-to-refresh-effect\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"xwalkMode\" value=\"embedded\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"xwalkMultipleApk\" value=\"true\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"android-minSdkVersion\" value=\"16\" />",
+                            "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -144,7 +112,7 @@
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
@@ -169,6 +137,14 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
                         }
                     ],
                     "/manifest/application": [
@@ -178,10 +154,6 @@
                         },
                         {
                             "xml": "<activity android:configChanges=\"orientation|screenSize\" android:label=\"Simple Video Stream\" android:name=\"com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
                             "count": 1
                         },
                         {
@@ -215,6 +187,26 @@
                         {
                             "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.notification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" android:permission=\"${applicationId}.permission.PushHandlerActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.adobe.phonegap.push.BackgroundActionButtonHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.adobe.phonegap.push.PushDismissedHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.adobe.phonegap.push.FCMService\"><intent-filter><action android:name=\"com.google.firebase.MESSAGING_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.adobe.phonegap.push.PushInstanceIDListenerService\"><intent-filter><action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" /></intent-filter></service>",
+                            "count": 1
                         }
                     ],
                     "/*": [
@@ -240,14 +232,6 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
                             "count": 1
                         }
                     ],
@@ -288,9 +272,6 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-badge": {
@@ -356,12 +337,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-crosswalk-webview": {
-            "XWALK_VERSION": "23+",
-            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-            "XWALK_MODE": "embedded",
-            "XWALK_MULTIPLEAPK": "true",
+        "phonegap-plugin-push": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
@@ -405,15 +381,6 @@
             "pluginId": "cordova-plugin-device",
             "clobbers": [
                 "device"
-            ]
-        },
-        {
-            "id": "cordova-plugin-background-mode.BackgroundMode",
-            "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
-            "pluginId": "cordova-plugin-background-mode",
-            "clobbers": [
-                "cordova.plugins.backgroundMode",
-                "plugin.backgroundMode"
             ]
         },
         {
@@ -842,6 +809,14 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "id": "phonegap-plugin-push.PushNotification",
+            "file": "plugins/phonegap-plugin-push/www/push.js",
+            "pluginId": "phonegap-plugin-push",
+            "clobbers": [
+                "PushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -851,7 +826,6 @@
         "cordova-plugin-appavailability": "0.4.2",
         "cordova-plugin-audio-recorder-api": "0.0.1",
         "cordova-plugin-device": "1.1.4",
-        "cordova-plugin-background-mode": "0.7.2",
         "cordova-plugin-badge": "0.8.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-camera": "2.4.1",
@@ -873,6 +847,6 @@
         "cordova-sqlite-storage": "2.0.4",
         "de.appplant.cordova.plugin.local-notification": "0.8.5",
         "ionic-plugin-keyboard": "2.2.1",
-        "cordova-plugin-crosswalk-webview": "2.3.0"
+        "phonegap-plugin-push": "2.0.0"
     }
 }

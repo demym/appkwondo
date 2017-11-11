@@ -17,13 +17,13 @@ var consoles = [];
 
 var page_popup = true;
 
-var appversion = "1.4.7";
+var appversion = "1.4.8";
 
 var crnonletti = 0;
 var garanotifyid = "";
 
 var facebookcheck = true;
-var debugActive = false;
+var debugActive = true;
 var notifyeventdays = 2;
 var nexteventscount = 0;
 
@@ -3670,8 +3670,7 @@ push.on('error', function(e) {
 
 
 	$.ajaxSetup({
-		cache: false
-		,
+		cache: false,
 		beforeSend: function (xhr) {
 			colog("beforesend", user.token);
 			//xhr.setRequestHeader('x-auth-token', getCookie("token"));
@@ -7970,6 +7969,15 @@ function doLogin(auto) {
 
 			if (String(data.loggedin) == "true") {
 				user = data;
+				$.ajaxSetup({
+					cache: false,
+					beforeSend: function (xhr) {
+						colog("beforesend", user.token);
+						//xhr.setRequestHeader('x-auth-token', getCookie("token"));
+						xhr.setRequestHeader('x-auth-token', user.token);
+					}
+			
+				});
 				colog("server returns user", user);
 				role = user.role;
 				//if (data.role=="admin")
@@ -15746,6 +15754,7 @@ function doLogout() {
 		$("#index .loginspan").html("");
 		$(".showadmin").hide();
 		deleteCookie("autologin");
+		deleteCookie("appkwondo_user");
 		$.mobile.changePage("#index_fb");
 		/*fb_logout(function(){
 		   //fb_revoke(); 

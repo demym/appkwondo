@@ -19,9 +19,6 @@
         "cordova-plugin-audio-recorder-api": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-background-mode": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
         "cordova-plugin-badge": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -82,12 +79,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-crosswalk-webview": {
-            "XWALK_VERSION": "23+",
-            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-            "XWALK_MODE": "embedded",
-            "XWALK_MULTIPLEAPK": "true",
+        "phonegap-plugin-push": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
