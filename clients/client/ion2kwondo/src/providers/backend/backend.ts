@@ -25,11 +25,11 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 export class BackendProvider {
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
-  //public rooturl = "http://tkdr.herokuapp.com";
+  public rooturl = "http://tkdr.herokuapp.com";
   //public rooturl = "http://localhost:3000";
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
-  public rooturl="http://10.113.32.153:3000"
+  //public rooturl="http://10.113.32.153:3000"
   //public rooturl = "http://9.71.213.40:3000";
   //public rooturl = "http://192.168.1.106:3000";
   token = "eyJhbGciOiJIUzI1NiJ9.ZGVteW1vcnRlbGxpdGlAaXQuaWJtLmNvbQ.mA3t-fOoUDsugN-kWblqO0ueVFSXya2W6hs5fa5sddQ";
@@ -107,6 +107,12 @@ export class BackendProvider {
   chatpageaccessed = false;
 
   activechatfilename = "chatno64.json";
+  appVersion:any={
+    name: "appkwondov2",
+    version: "2.0.0",
+    releasedate: "17/11/2017"
+  }
+
 
 
   constructor(private uniqueDeviceID: UniqueDeviceID, private tts: TextToSpeech, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public badge: Badge, public feedback: DeviceFeedback, private storage: Storage, public events: Events, public platform: Platform, public http: Http, private utils: UtilsProvider) {

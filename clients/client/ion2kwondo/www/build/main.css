@@ -30911,6 +30911,11 @@ ion-segment ion-segment-button.segment-button {
   /*opacity: .3;*/
 }
 
+.appversion {
+  font-size: 12px;
+  color: lightblue;
+}
+
 page-matchconsole .tab {
   font-size: 10px;
 }

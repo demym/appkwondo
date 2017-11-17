@@ -79,8 +79,7 @@ export class SocketService {
           email: questo.backend.user.email,
           gcmtoken: questo.backend.user.gcmtoken,
           deviceid: questo.backend.user.uniquedeviceid,
-          appversion: "2.0.0"
-    
+          appversion: questo.backend.appVersion.version
         }
   
         if (questo.platform.is("cordova")) m.device = "mobile";
