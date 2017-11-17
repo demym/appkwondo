@@ -37,7 +37,7 @@ export class MyApp {
     userphoto: ""
   }
   icons = [
-    "md-home",
+   
     "md-settings",
     "md-person",
     
@@ -77,7 +77,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Homepage', component: HomePage },
+      /*{ title: 'Homepage', component: HomePage },*/
       { title: 'Impostazioni', component: SettingsPage },
       { title: 'Account', component: AccountPage },
       

@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { Nav, Platform, AlertController, Events, Tabs, Navbar } from 'ionic-angular';
+import { Nav, Platform, AlertController, Events, Tabs, Navbar, NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ChatPage } from '../chat/chat';
 /*import { ContactPage } from '../contact/contact';
@@ -18,6 +18,7 @@ import { BackendProvider } from '../../providers/backend/backend';
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
+
   @ViewChild(Navbar) navBar: Navbar;
   homepage: any = HomePage;
   chatpage: any = ChatPage;
@@ -25,9 +26,12 @@ export class TabsPage {
   unread = this.socket.totalunreadcount;
   activeTab=0;
   @ViewChild("mytabs") mytabs: Tabs;
+  realtimeEvents=false;
+  showrtbutton=false;
 
-  constructor(public backend: BackendProvider, public socket: SocketService, public events: Events, public nav: Nav, public platform: Platform) {
+  constructor(public navCtrl: NavController, public backend: BackendProvider, public socket: SocketService, public events: Events, public nav: Nav, public platform: Platform) {
     var questo = this;
+
     //this.socket.socketService.subscribe(event => {
     events.subscribe("switchtocontacts",function(t){
       questo.activeTab=2;
@@ -43,6 +47,44 @@ export class TabsPage {
       //this.unread
 
     });
+
+    events.subscribe('realtimematches', function (rtmatches) {
+      console.log("realtimematches event", rtmatches);
+      if (rtmatches.matches.length > 0) {
+        questo.realtimeEvents = true;
+        questo.showrtbutton = true;
+      } else {
+        questo.realtimeEvents = false;
+        questo.showrtbutton = false;
+      }
+
+      //this.isChatPage = false;
+    })
+
+    events.subscribe("updategara", function (msg, time) {
+      console.log("refreshgara in tabs.ts !!");
+      questo.backend.getRtMatches(function (data) {
+        if (data.length > 0) {
+          questo.realtimeEvents = true
+          questo.showrtbutton = true;
+        } else {
+          questo.realtimeEvents = false;
+          questo.showrtbutton = false;
+        }
+      })
+
+    })
+
+
+
+    questo.backend.getRtMatches(function (data) {
+      console.log("got rtmatches in tabs.ts", data);
+      if (data.length > 0) {
+        questo.realtimeEvents = true
+      } else {
+        questo.realtimeEvents = false;
+      }
+    })
   }
 
   setUnread(n) {
@@ -60,5 +102,13 @@ export class TabsPage {
   tappedTab(){
     console.log("tappedTab");
     this.backend.playFeedback();
+  }
+
+
+  gotoChat(){
+    console.log("gotochat");
+    var questo=this;
+    questo.mytabs.select(1);
+
   }
 }

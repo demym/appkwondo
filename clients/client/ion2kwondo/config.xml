@@ -3,7 +3,7 @@
     <name>AppkwondoV2</name>
     <description>AppkwondoV2</description>
     <author email="demym13@gmail.com" href="http://tkdr.herokuapp.com/">TowerApps</author>
-    <content original-src="index.html" src="http://10.113.32.153:8101" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -103,10 +103,10 @@
     </plugin>
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="^2.3.0">
+        <variable name="XWALK_MODE" value="lite" />
         <variable name="XWALK_VERSION" value="23+" />
         <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
         <variable name="XWALK_COMMANDLINE" value="--disable-pull-to-refresh-effect" />
-        <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
     <plugin name="cordova-plugin-device" spec="^1.1.4" />

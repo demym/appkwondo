@@ -158,6 +158,15 @@ export class ChatPage implements OnInit {
   }
 
 
+  goRefresh() {
+    var questo = this;
+    questo.loading = true;
+    questo.refresh(function () {
+      questo.loading = false;
+    })
+  }
+
+
   tapChip() {
     console.log("chip tapped");
     if (this.content) this.gotoBottom();
@@ -568,6 +577,10 @@ export class ChatPage implements OnInit {
     console.log("ionviewwillenter chat.ts")
 
     var questo = this;
+    if (!questo.isCordova()) {
+      questo.chatButton = "text";
+      this.showCameraIcon = false;
+    }
 
     // this.initView();
     /////////////////
@@ -708,11 +721,13 @@ export class ChatPage implements OnInit {
   blur(e) {
     var questo = this;
     console.log("blur", e);
-    this.showCameraIcon = true;
-    setTimeout(function () {
-      questo.chatButton = "audio";
-      console.log("timeout passed");
-    }, 1000);
+    if (questo.isCordova()) {
+      this.showCameraIcon = true;
+      setTimeout(function () {
+        questo.chatButton = "audio";
+        console.log("timeout passed");
+      }, 1000);
+    }
 
   }
 

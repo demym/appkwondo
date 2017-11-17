@@ -140,16 +140,16 @@
             "cordova-plugin-media": {
                 "MICROPHONE_USAGE_DESCRIPTION": " "
             },
+            "cordova-plugin-uniquedeviceid": {},
+            "com.hutchind.cordova.plugins.streamingmedia": {},
+            "phonegap-plugin-push": {},
             "cordova-plugin-crosswalk-webview": {
+                "XWALK_MODE": "lite",
                 "XWALK_VERSION": "23+",
                 "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
                 "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-                "XWALK_MODE": "embedded",
                 "XWALK_MULTIPLEAPK": "true"
-            },
-            "cordova-plugin-uniquedeviceid": {},
-            "com.hutchind.cordova.plugins.streamingmedia": {},
-            "phonegap-plugin-push": {}
+            }
         },
         "platforms": [
             "android",

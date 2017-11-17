@@ -23,12 +23,13 @@
        <ion-buttons end>
           <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
     <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
+    <button *ngIf="backend.user.role!='tkdradmin'" ion-button class="menubutton" (click)="goRefresh(); backend.playFeedback();"><ion-icon name="md-refresh"></ion-icon></button>
     <!--<button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
     <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
     <button ion-button menuToggle="right">
       <ion-icon name="menu"></ion-icon>
     </button>-->
-    <button ion-button icon-only (click)="showPop($event)">
+    <button *ngIf="backend.user.role=='tkdradmin'" ion-button icon-only (click)="showPop($event)">
       <ion-icon name="md-more"></ion-icon>
     </button>
     </ion-buttons>
@@ -192,5 +193,8 @@
           </ion-col>
       </ion-row>
     </ion-grid>
+
+
+    <div *ngIf="recording" class="audiorecording">Registrazione in corso... premi il microfono per interrompere</div>
   <!--</div>-->
 </ion-footer>

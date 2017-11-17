@@ -175,7 +175,8 @@
 
     </div>
 
-    <ion-item no-lines class="iscrittiitem" *ngFor="let atl of atletiiscritti">
+    <ion-list *ngFor="let atl of atletiiscritti">
+    <ion-item no-lines class="iscrittiitem" >
       <button ion-item (tap)="showMatchesForAtleta(atl.id)">
 
 
@@ -188,6 +189,7 @@
       </button>
 
     </ion-item>
+  </ion-list>
 
     <!--<ion-item-divider color="light"></ion-item-divider>-->
 

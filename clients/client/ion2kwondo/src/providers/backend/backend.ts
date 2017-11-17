@@ -45,6 +45,7 @@ export class BackendProvider {
     sockid: "unknown",
     uniquedeviceid: ""
   };
+  activesocieta="ASD TAEKWONDO ROZZANO";
   browser;
   debugActive = true;
   private oldConsoleLog = null;
@@ -112,6 +113,7 @@ export class BackendProvider {
     version: "2.0.0",
     releasedate: "17/11/2017"
   }
+  nextevents:any=[];
 
 
 
@@ -693,6 +695,7 @@ export class BackendProvider {
 
         questo.utils.setJsonStorage("ion2kwondo_creds", creds);
         questo.getAtleti(function () { });
+        questo.getNextEvents(function(){});
 
         if (callback) callback(data);
 
@@ -1980,6 +1983,7 @@ export class BackendProvider {
         } else {
           //$("#index #lista #nexteventsbubble").hide();
         }
+        questo.nextevents=nextevents;
         if (callback) callback(nextevents);
 
 

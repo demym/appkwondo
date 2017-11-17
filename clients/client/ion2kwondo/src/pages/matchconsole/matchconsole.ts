@@ -141,7 +141,7 @@ export class MatchconsolePage {
       let toast = questo.toastCtrl.create({
         message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
         duration: 3000,
-        position: 'bottom'
+        position: 'top'
       });
 
       toast.onDidDismiss(() => {
@@ -177,7 +177,7 @@ export class MatchconsolePage {
     let toast = this.toastCtrl.create({
       message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.onDidDismiss(() => {

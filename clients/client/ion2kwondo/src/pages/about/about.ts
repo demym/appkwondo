@@ -1,6 +1,6 @@
 import { Component, ViewChild} from '@angular/core';
 
-import { NavController,Content } from 'ionic-angular';
+import { NavController,Content,Events } from 'ionic-angular';
 import {HomePage} from '../../pages/home/home'
 
 import { FacebookProvider } from '../../providers/facebook/facebook';
@@ -40,7 +40,7 @@ export class AboutPage {
   users:any=[];
   @ViewChild(Content) content: Content;
 
-  constructor(public backend: BackendProvider, private fb: FacebookProvider, public navCtrl: NavController) {
+  constructor(public events: Events, public backend: BackendProvider, private fb: FacebookProvider, public navCtrl: NavController) {
     var questo=this;
     
     questo.users=[];
@@ -102,4 +102,19 @@ export class AboutPage {
   gotoTop(){
     if (this.content) this.content.scrollToTop()
   }
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
 }

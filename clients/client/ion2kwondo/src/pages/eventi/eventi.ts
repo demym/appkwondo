@@ -14,33 +14,35 @@ import { BackendProvider } from '../../providers/backend/backend';
 })
 export class EventiPage {
   @ViewChild(Navbar) navBar: Navbar;
-  gare=[];
-  nextevents:any=[];
-  view="nextevents";
+  gare = [];
+  nextevents: any = [];
+  view = "nextevents";
 
-  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
-   
+
     console.log('ionViewDidLoad EventiPage');
-    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
-    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
-    this.refresh(function(data){
-     
-    })  
+    this.backend.setBackButtonAction(this.navBar, this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar, this.navCtrl);
+    this.refresh(function (data) {
+
+    })
   }
 
-  refresh(callback){
-    var questo=this;
-    this.backend.getEventi(function(data){
-       questo.gare=data.rows;
-       console.log("gare",questo.gare);
-      if (callback) callback(data);
+  refresh(callback) {
+    var questo = this;
+    questo.backend.getNextEvents(function () {
+      questo.backend.getEventi(function (data) {
+        questo.gare = data.rows;
+        console.log("gare", questo.gare);
+        if (callback) callback(data);
+      })
     })
   }
 
   doRefresh(refresher) {
-    
+
 
     console.log('Begin async operation', refresher);
     var questo = this;
@@ -49,34 +51,36 @@ export class EventiPage {
 
       refresher.complete();
     })
-   
+
 
 
   }
 
 
-  ionViewWillEnter(){
-    var questo=this;
-    this.events.subscribe("hwbackbutton",function(data){
+  ionViewWillEnter() {
+    var questo = this;
+    this.events.subscribe("hwbackbutton", function (data) {
       console.log("hwbackbutton in gare.ts");
       questo.navCtrl.pop();
     })
 
+    /*
     questo.backend.getNextEvents(function(data){
       console.log("fatto nextevents");
       questo.nextevents=data;
-    });
+    });*/
+
   }
 
   ionViewWillLeave() {
     this.events.unsubscribe("hwbackbutton");
-    
-    
-    }
 
-    getAbs(n){
-      return Math.abs(n);
-    }
+
+  }
+
+  getAbs(n) {
+    return Math.abs(n);
+  }
 
 
 }

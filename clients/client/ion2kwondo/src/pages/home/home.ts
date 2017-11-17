@@ -12,6 +12,7 @@ import { EventiPage } from '../../pages/eventi/eventi';
 import { SocietaPage } from '../../pages/societa/societa';
 import { StatsPage } from '../../pages/stats/stats';
 import { AccountPage } from '../../pages/account/account';
+import { AboutPage } from '../../pages/about/about';
 
 //import { DeviceFeedback } from '@ionic-native/device-feedback';
 
@@ -104,6 +105,11 @@ export class HomePage {
       loader.dismiss();
     })
     */
+  }
+
+
+  showAbout(){
+    this.navCtrl.push(AboutPage);
   }
 
 

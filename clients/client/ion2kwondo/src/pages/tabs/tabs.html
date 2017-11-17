@@ -1,4 +1,4 @@
-<ion-tabs #mytabs   (tap)="tappedTab()"  tabsPlacement="bottom"   >
+<ion-tabs #mytabs   (tap)="tappedTab()" [selectedIndex]="activeTab" tabsPlacement="bottom"   >
   <ion-tab [root]="homepage" tabTitle="AppKwonDo" tabIcon="home"></ion-tab>
   <!--<ion-tab [root]="partnerworld" tabTitle="PartnerWorld" tabIcon="md-globe" ></ion-tab>
   <ion-tab [root]="linkedin" tabTitle="LinkedIn" tabIcon="logo-linkedin" ></ion-tab>-->
@@ -11,3 +11,11 @@
   <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Logout" tabIcon="ios-exit-outline"></ion-tab>-->
 </ion-tabs>
+
+<!--
+<ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">
+    <button color="primary" ion-fab style="font-size: 11px; background: transparent;"><img src="assets/img/greenblink.gif"/></button>
+  </ion-fab>
+-->
+
+  <img *ngIf="realtimeEvents"  (tap)="gotoChat()" class="realtimeimg" src="assets/img/greenblink.gif"/>

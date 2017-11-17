@@ -504,10 +504,10 @@ module.exports.metadata =
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-crosswalk-webview": "2.3.0",
     "cordova-plugin-uniquedeviceid": "1.3.2",
     "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
-    "phonegap-plugin-push": "2.0.0"
+    "phonegap-plugin-push": "2.0.0",
+    "cordova-plugin-crosswalk-webview": "2.3.0"
 };
 // BOTTOM OF METADATA
 });

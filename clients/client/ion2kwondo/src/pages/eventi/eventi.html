@@ -10,7 +10,7 @@
     <ion-title>Eventi</ion-title>
   </ion-navbar>
 
-  <ion-segment class="segment" [(ngModel)]="view">
+  <ion-segment *ngIf="backend.user.role=='tkdradmin'" class="segment" [(ngModel)]="view">
     <ion-segment-button value="nextevents">
       <!-- <ion-icon name="camera"></ion-icon>-->Prossimi
     </ion-segment-button>
@@ -31,15 +31,15 @@
 
   <section *ngIf="view=='nextevents'">
 
-  <ion-card *ngFor="let g of nextevents">
+  <ion-card *ngFor="let g of backend.nextevents">
 
     <ion-card-content>
-    
-    <ion-chip color="danger">
-      <ion-label><b>Tra {{getAbs(g.diff)}} giorni</b></ion-label>
-    </ion-chip><br>
+ 
     <b>{{g.gara.location}} - {{g.gara.data}}</b><br>
-        {{g.gara.title}}
+        {{g.gara.title}}<br>
+        <ion-chip color="primary">
+            <ion-label><b>Tra {{getAbs(g.diff)}} giorni</b></ion-label>
+          </ion-chip>
       
    
    

@@ -9,10 +9,15 @@
       </button>-->
     <ion-buttons end>
 
+      <button (tap)="showAbout()" ion-button icon-only>
+        <ion-icon name="ios-information-circle"></ion-icon>
+      </button>
+
 
 <button (tap)="broadcast()" ion-button icon-only>
   <ion-icon *ngIf="isIbmAdmin" name="ios-radio-outline"></ion-icon>
 </button>
+
 
 </ion-buttons>
   </ion-navbar>
@@ -49,9 +54,17 @@
     <ion-icon style="font-size: 22px !important" name="{{m.icon}}"></ion-icon>
       </ion-col>
       <ion-col style="font-size: 20px" >{{m.name}}</ion-col>
-      <ion-col col-1><ion-badge *ngIf="(backend.unread>0) && (m.name=='ChatKwonDo')" color="danger">{{backend.unread}}</ion-badge></ion-col>
+      <ion-col col-1>
+        <ion-badge *ngIf="(backend.unread>0) && (m.name=='ChatKwonDo')" color="danger">{{backend.unread}}</ion-badge>
+        <ion-badge *ngIf="(backend.nextevents.length>0) && (m.name=='Eventi')" >{{backend.nextevents.length}}</ion-badge>
+      </ion-col>
       </ion-row>
   </ion-item>
   </ion-list>
+  <!--<ion-card>
+    <ion-card-content>
+        <img *ngIf="backend.activesocieta=='ASD TAEKWONDO ROZZANO'" src="assets/img/logotkdrozzano_icon.png" style="height: 32px" />
+    </ion-card-content>
+  </ion-card>-->
  
 </ion-content>
