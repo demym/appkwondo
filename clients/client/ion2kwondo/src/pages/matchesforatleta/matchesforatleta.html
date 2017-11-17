@@ -9,9 +9,9 @@
   <ion-navbar>
     <ion-title>Match atleta</ion-title>
     <ion-buttons end>
-    <button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>
+    <!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>
       
-      </button>
+      </button>-->
       <button *ngIf="backend.user.role=='tkdradmin'" ion-button style="font-size: 18px" (click)="addMatches()"><ion-icon name="md-add-circle"></ion-icon>
         
         </button>

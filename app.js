@@ -932,8 +932,16 @@ app.use(function(req, res, next) {
 app.get("/gcm/resetcount/:token",function(req,res){
 	var token=req.params.token;
 	gcm.resetTokenCount(token);
-	res.send({error: false});
+	res.send({error: false, tokens: gcm.viewTokens()});
 })
+
+app.get("/gcm/setcount/:token/:n",function(req,res){
+	var token=req.params.token;
+	var n=req.params.n;
+	gcm.setTokenCount(token,n);
+	res.send({error: false,tokens: gcm.viewTokens()});
+})
+
 
 app.get("/gcm/setenabled/:value", function (req, res) {
 	var value = req.params.value;
@@ -944,6 +952,11 @@ app.get("/gcm/setenabled/:value", function (req, res) {
 		gcm.setGcmEnabled(false);
 	}
 	res.send("gcm setted enable to " + value);
+})
+
+
+app.get("/gcm/viewtokens", function (req, res) {
+	res.send(gcm.viewTokens());
 })
 
 app.get("/gcm/getmemorytokens",function(req,res){
@@ -958,6 +971,17 @@ app.get("/gcm/gettokens", function (req, res) {
 
 
 })
+
+
+app.get("/gcm/reset",function(req,res){
+	res.send(gcm.resetTokens());
+})
+
+app.get("/gcm/deletetoken/:token",function(req,res){
+	var token=req.params.token;
+	res.send(gcm.deleteToken(token));
+})
+
 
 
 
@@ -1176,11 +1200,14 @@ io.sockets.on('connection', function (socket) {
 
 		if (tipo == "clientspecs") {
 			console.log("received clientspecs from " + socket.id + ":",msg);
+
+			if (msg.hasOwnProperty("gcmtoken")) gcm.addToken(msg.deviceid,msg.gcmtoken);
 			
 			socket.device = msg.device;
 			socket.nickname = nick;
 			socket.email=email;
 			if (msg.gcmtoken) socket.gcmtoken=msg.gcmtoken;
+			if (msg.deviceid) socket.deviceid=msg.deviceid;
 			if (msg.appversion) socket.appversion = msg.appversion;
 			io.emit('auserhasconnected');
 

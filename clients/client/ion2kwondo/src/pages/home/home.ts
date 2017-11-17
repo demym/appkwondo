@@ -13,7 +13,7 @@ import { SocietaPage } from '../../pages/societa/societa';
 import { StatsPage } from '../../pages/stats/stats';
 import { AccountPage } from '../../pages/account/account';
 
-import { DeviceFeedback } from '@ionic-native/device-feedback';
+//import { DeviceFeedback } from '@ionic-native/device-feedback';
 
 
 
@@ -78,7 +78,7 @@ export class HomePage {
 
   
 
-  constructor(public deviceFeedback: DeviceFeedback, public toastCtrl: ToastController, public loadingCtrl: LoadingController, public alert: AlertController, private appAvailability: AppAvailability, private platform: Platform, public navCtrl: NavController, public socket: SocketService, public backend: BackendProvider) {
+  constructor(public toastCtrl: ToastController, public loadingCtrl: LoadingController, public alert: AlertController, private appAvailability: AppAvailability, private platform: Platform, public navCtrl: NavController, public socket: SocketService, public backend: BackendProvider) {
     var questo = this;
 
     this.socket.socketService.subscribe(event => {

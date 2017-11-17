@@ -63,7 +63,7 @@ export class MyApp {
     var questo = this;
 
 
-    var IS_PRODUCTION = true;
+    var IS_PRODUCTION = false;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");
@@ -280,6 +280,10 @@ export class MyApp {
       //Splashscreen.hide();
 
       if (this.platform.is('cordova')) {
+
+        questo.backend.getUniqueDeviceID();
+
+
         var push = Push.init({
           android: {
             senderID: "1034396645917"
@@ -287,10 +291,12 @@ export class MyApp {
           ios: {
             alert: "true",
             badge: true,
-            sound: 'false'
+            sound: 'true'
           },
           windows: {}
         });
+
+       
 
         push.on('registration', (data) => {
           console.log("registration!!!")
@@ -320,11 +326,12 @@ export class MyApp {
           }
         }); 
         push.on('error', (e) => {
-          console.log(e.message);
+          console.log("PUSH ERROR",e.message);
         });
 
 
         //questo.deviceFeedback.acoustic();
+        /*
         questo.deviceFeedback.isFeedbackEnabled()
           .then((feedback) => {
             console.log("deviceFeedback", feedback);
@@ -336,6 +343,7 @@ export class MyApp {
 
             //this.deviceFeedback.haptic(0);
           });
+          */
 
 
 
@@ -357,6 +365,8 @@ export class MyApp {
         } else {
           console.log("nav cannot go back");
         }
+
+        questo.events.publish("hwbackbutton",{});
 
       });
 

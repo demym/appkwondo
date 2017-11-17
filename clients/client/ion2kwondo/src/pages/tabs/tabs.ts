@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { Nav, Platform, AlertController, Events, Tabs } from 'ionic-angular';
+import { Nav, Platform, AlertController, Events, Tabs, Navbar } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ChatPage } from '../chat/chat';
 /*import { ContactPage } from '../contact/contact';
@@ -18,6 +18,7 @@ import { BackendProvider } from '../../providers/backend/backend';
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
+  @ViewChild(Navbar) navBar: Navbar;
   homepage: any = HomePage;
   chatpage: any = ChatPage;
  
@@ -49,13 +50,15 @@ export class TabsPage {
   }
 
   ionViewWillEnter() {
-
+    var questo=this;
     console.log("entering tabs.ts")
+    //questo.backend.setBackButtonAction(questo.navBar, questo.nav);
 
 
   }
 
   tappedTab(){
     console.log("tappedTab");
+    this.backend.playFeedback();
   }
 }

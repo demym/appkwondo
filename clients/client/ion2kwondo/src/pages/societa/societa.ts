@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 
 /*
@@ -15,7 +15,7 @@ import { BackendProvider } from '../../providers/backend/backend';
 export class SocietaPage {
   societa=[];
 
-  constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
    
@@ -48,6 +48,24 @@ export class SocietaPage {
 
 
   }
+
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+
+    
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
 
 
 }

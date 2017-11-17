@@ -52,15 +52,10 @@ export class MatchesforatletaPage {
       console.log("questo.mfa",questo.mfa);
       
     })
-    /*
-    questo.events.subscribe("updatematchesforatleta",function(m){
-      console.log("updatematchesforatleta in matchesforatleta.ts !!");
-      questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
-      console.log("questo.mfa",questo.mfa);
-      
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
     })
-    questo.mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: questo.atletaid}).rows;
-    */
   }
 
   initView(){
@@ -74,11 +69,14 @@ export class MatchesforatletaPage {
     var questo=this;
     console.log("ionviewwillleave in matchesforatleta.ts");
     questo.events.unsubscribe("updatematchesforatleta");
+    questo.events.unsubscribe("hwbackbutton");
+    
   }
 
   ionViewDidLoad() {
     var questo=this;
     questo.backend.setBackButtonAction(questo.navBar,questo.navCtrl);
+    questo.backend.setupNavbarBack(this.navBar,this.navCtrl);
     console.log('ionViewDidLoad MatchesforatletaPagePage');
     this.atletaid=this.navParams.get("atletaid"); 
     this.gara=this.navParams.get("gara");

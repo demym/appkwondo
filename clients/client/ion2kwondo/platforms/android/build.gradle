@@ -89,8 +89,8 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "cordova-plugin-badge/appkwondov2-badge.gradle"
-apply from: "phonegap-plugin-push/appkwondov2-push.gradle"
 apply from: "cordova-plugin-crosswalk-webview/appkwondov2-xwalk.gradle"
+apply from: "phonegap-plugin-push/appkwondov2-push.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()

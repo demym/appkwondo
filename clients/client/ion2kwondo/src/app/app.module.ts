@@ -54,7 +54,7 @@ import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/trans
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { IonicImageLoader } from 'ionic-image-loader';
 
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+//import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { BackgroundMode } from '@ionic-native/background-mode';
@@ -66,6 +66,7 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 
 import { ElasticModule } from 'ng-elastic';
 import { FormsModule }   from '@angular/forms';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 //import { IonicAudioModule, WebAudioProvider, CordovaMediaProvider, defaultAudioProviderFactory } from 'ionic-audio';
 
 /*
@@ -178,7 +179,6 @@ export function myCustomAudioProviderFactory() {
     Camera,
     Transfer,
     SocialSharing,
-    NativePageTransitions,
     LocalNotifications,
     BackgroundMode,
     TextToSpeech,
@@ -186,6 +186,7 @@ export function myCustomAudioProviderFactory() {
     StreamingMedia,
     FileTransfer,
     Badge,
+    UniqueDeviceID,
     FacebookProvider]
 })
 export class AppModule {}

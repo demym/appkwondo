@@ -9,11 +9,12 @@ import { Storage } from '@ionic/storage';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
 import * as moment from 'moment';
 import * as xml2js from "xml2js";
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+//import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { Badge } from '@ionic-native/badge';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 /*
   Generated class for the BackendProvider provider.
 
@@ -22,13 +23,13 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 */
 @Injectable()
 export class BackendProvider {
-  @ViewChild('content') nav: NavController
-
+  @ViewChild('content') nav: NavController;
+  //@ViewChild(Navbar) navBar: Navbar;
   public rooturl = "http://tkdr.herokuapp.com";
   //public rooturl = "http://localhost:3000";
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
-  //public rooturl="http://9.71.212.38:3000";
+  //public rooturl = "http://9.71.213.40:3000";
   //public rooturl = "http://192.168.1.106:3000";
   token = "eyJhbGciOiJIUzI1NiJ9.ZGVteW1vcnRlbGxpdGlAaXQuaWJtLmNvbQ.mA3t-fOoUDsugN-kWblqO0ueVFSXya2W6hs5fa5sddQ";
   user: any = {
@@ -40,7 +41,8 @@ export class BackendProvider {
       oauth_verifier: ""
     },
     role: "BP_GUEST",
-    sockid: "unknown"
+    sockid: "unknown",
+    uniquedeviceid: ""
   };
   browser;
   debugActive = true;
@@ -101,10 +103,12 @@ export class BackendProvider {
     mysocietaname: "ASD Taekwondo Rozzano"
   }
 
+  chatpageaccessed = false;
+
   activechatfilename = "chatno64.json";
+ 
 
-
-  constructor(private tts: TextToSpeech, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public badge: Badge, private nativePageTransitions: NativePageTransitions, public feedback: DeviceFeedback, private storage: Storage, public events: Events, public platform: Platform, public http: Http, private utils: UtilsProvider) {
+  constructor(private uniqueDeviceID: UniqueDeviceID, private tts: TextToSpeech, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public badge: Badge, public feedback: DeviceFeedback, private storage: Storage, public events: Events, public platform: Platform, public http: Http, private utils: UtilsProvider) {
     console.log('Hello BackendProvider Provider');
     var a = window.localStorage.getItem("ion2kwondo_settings");
     if (a) {
@@ -123,6 +127,17 @@ export class BackendProvider {
 
 
 
+  setupNavbarBack(nb, nc) {
+    if (1 == 1) return;
+    var questo = this;
+
+    nb.backButtonClick = (e: UIEvent) => {
+      // todo something
+      console.log("navbar back clicked");
+      //questo.playFeedback();
+      //if (nc.canGoBack()) nc.pop();
+    }
+  }
 
   enableLogger() {
 
@@ -140,7 +155,7 @@ export class BackendProvider {
     var questo = this;
     if (questo.platform.is("cordova")) {
       if (!questo.platform.is("ios")) {
-        if (this.appSettings.feedback) questo.feedback.acoustic();
+        //if (questo.appSettings.feedback) questo.feedback.acoustic();
       }
     }
 
@@ -632,51 +647,58 @@ export class BackendProvider {
     var authorization = "Basic " + window.btoa(email + ":" + psw);
     console.log("authorization", authorization);
     var gcmtoken = this.user.gcmtoken;
-    var data = {
-      authorization: authorization,
-      gcmtoken: gcmtoken
-    }
-    if (user.gcmtoken) {
+  
 
-      console.log("this user has gcmtoken", user.gcmtoken);
-      data["gcmtoken"] = user.gcmtoken;
+      var logindata = {
+        authorization: authorization,
+        gcmtoken: gcmtoken,
+        deviceid: questo.user.uniquedeviceid
 
+      }
+      if (user.gcmtoken) {
 
-    }
-
-    console.log("trying to login at", url);
-    this.postData(url, data, function (data) {
-      console.log("data", data);
-      if (String(data.loggedin) == "true") {
-        console.log("login successfull");
-        questo.user = data;
-        if (!data.email) questo.user.email = email;
-        if (!data.nickname) questo.user.nickname = email;
-
-        console.log("USER", questo.user);
-
-        //questo.events.publish('username:changed', questo.user);
-        console.log("user token", questo.user.token);
-
-        if (questo.user.role == "IBM_ADMIN") questo.isIbmAdmin = true;
-
-        var creds = window.btoa(user.email + ":" + user.password);
-
-        questo.utils.setJsonStorage("ion2kwondo_creds", creds);
-        questo.getAtleti(function () { });
-
-        if (callback) callback(data);
+        console.log("this user has gcmtoken", user.gcmtoken);
+        logindata["gcmtoken"] = user.gcmtoken;
 
 
-
-
-
-      } else {
-        console.log("login was not successfull");
-        if (callback) callback(data);
       }
 
-    });
+      console.log("trying to login at", url);
+      questo.postData(url, logindata, function (data) {
+
+        console.log("data", data);
+        var uniquedeviceid = questo.user.uniquedeviceid;
+        if (String(data.loggedin) == "true") {
+          console.log("login successfull");
+          questo.user = data;
+          if (!data.email) questo.user.email = email;
+          if (!data.nickname) questo.user.nickname = email;
+          questo.user.uniquedeviceid = uniquedeviceid;
+
+          console.log("USER", questo.user);
+
+          //questo.events.publish('username:changed', questo.user);
+          console.log("user token", questo.user.token);
+
+          if (questo.user.role == "IBM_ADMIN") questo.isIbmAdmin = true;
+
+          var creds = window.btoa(user.email + ":" + user.password);
+
+          questo.utils.setJsonStorage("ion2kwondo_creds", creds);
+          questo.getAtleti(function () { });
+
+          if (callback) callback(data);
+
+
+
+
+
+        } else {
+          console.log("login was not successfull");
+          if (callback) callback(data);
+        }
+
+      });
 
 
 
@@ -685,7 +707,7 @@ export class BackendProvider {
 
 
 
-
+ 
 
   }
 
@@ -1628,6 +1650,7 @@ export class BackendProvider {
   }
 
   setBackButtonAction(nb, nc) {
+    if (1==1) return;
     var questo = this;
     nb.backButtonClick = () => {
       //Write here wherever you wanna do
@@ -1636,9 +1659,12 @@ export class BackendProvider {
       x.direction = "back";
       console.log(x);
       nc.pop(x);
+      questo.events.publish("hwbackbutton",{});
     }
+   
   }
 
+/*
   setPushNativeTransition() {
     var questo = this;
 
@@ -1646,12 +1672,10 @@ export class BackendProvider {
     let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 100,
-      /*slowdownfactor: 3,
-      slidePixels: 20,*/
+    
       iosdelay: 100,
       androiddelay: 150,
-      /*fixedPixelsTop: 0,
-      fixedPixelsBottom: 60*/
+
     };
 
     this.nativePageTransitions.slide(options)
@@ -1664,19 +1688,19 @@ export class BackendProvider {
 
 
   }
+  */
 
+  /*
   setPopNativeTransition() {
     var questo = this;
 
     let options: NativeTransitionOptions = {
       direction: 'right',
       duration: 300,
-      /*slowdownfactor: 3,
-      slidePixels: 20,*/
+    
       iosdelay: 100,
       androiddelay: 150,
-      /*fixedPixelsTop: 0,
-      fixedPixelsBottom: 60*/
+  
     };
 
     this.nativePageTransitions.slide(options)
@@ -1689,7 +1713,7 @@ export class BackendProvider {
 
 
   }
-
+*/
 
   isCordova() {
     var retvalue = true;
@@ -1708,36 +1732,36 @@ export class BackendProvider {
 
   }
 
-  computeUnreadChats(){
-    var questo=this;
-    var last=window.localStorage.getItem("ion2kwondo_lastchatread");
-    console.log("last chat unread",last);
-    var unread=0;
-    if (!last) last="00000000000000";
-    
-      console.log("counting unread messages, starting from last ",last,questo.chatmessages);
-      questo.chatmessages.forEach(function(item,idx){
-      
-        if (item.time>last) {
-          //console.log("questo è non letto",item.time);
-          unread++;
-        }
-      })
-    
-    
-    questo.unread=unread;
-    console.log("setted backend.unread to "+unread);
-    questo.badge.set(questo.unread);  
+  computeUnreadChats() {
+    var questo = this;
+    var last = window.localStorage.getItem("ion2kwondo_lastchatread");
+    console.log("last chat unread", last);
+    var unread = 0;
+    if (!last) last = "00000000000000";
+
+    console.log("counting unread messages, starting from last ", last, questo.chatmessages);
+    questo.chatmessages.forEach(function (item, idx) {
+
+      if (item.time > last) {
+        //console.log("questo è non letto",item.time);
+        unread++;
+      }
+    })
+
+
+    questo.unread = unread;
+    console.log("setted backend.unread to " + unread);
+    questo.badge.set(questo.unread);
   }
 
   resetChatUnread() {
     var questo = this;
     this.unread = 0;
     window.localStorage.setItem('ion2kwondo_chatunread', String(questo.unread));
-    if (questo.chatmessages.length>0){
-      window.localStorage.setItem("ion2kwondo_lastchatread",questo.chatmessages[questo.chatmessages.length-1].time)
+    if (questo.chatmessages.length > 0) {
+      window.localStorage.setItem("ion2kwondo_lastchatread", questo.chatmessages[questo.chatmessages.length - 1].time)
     }
-   
+
     questo.badge.set(questo.unread);
     if (questo.user.gcmtoken != "") {
       var url = questo.rooturl + "/gcm/resetcount/" + questo.user.gcmtoken;
@@ -1811,6 +1835,127 @@ export class BackendProvider {
       if (callback) callback(data.results);
     })
 
+  }
+
+
+  getUniqueDeviceID(callback?: any) {
+    var questo = this;
+    if (questo.platform.is("cordova")) {
+      questo.uniqueDeviceID.get()
+        .then((uuid: any) => {
+          console.log("uniquedeviceID", uuid);
+          questo.user.uniquedeviceid = uuid;
+          if (callback) callback();
+        })
+        .catch((error: any) => {
+          console.log("error retrieving uniquedeviceid", error);
+          if (callback) callback();
+        });
+
+    } else {
+      if (callback) callback();
+    }
+
+  }
+
+  getEvents(callback){
+    var questo=this;
+    var url=questo.rooturl+"/eventi/findall";
+    questo.fetchData(url,function(data){
+      if (callback) callback(data);
+    })
+  }
+
+
+  getNextEvents(callback) {
+    var questo=this;
+    var dataoggi: any = new Date();
+    questo.getGare(function(data) {
+    //app.loadAllGare(function (data) {
+      questo.getEvents(function(edata) {
+      //refreshEventiServer(function (edata) {
+        var events = {
+          rows: []
+        };
+  
+        data.rows.forEach(function (item, idx) {
+          events.rows.push(item);
+        })
+        edata.rows.forEach(function (item, idx) {
+          events.rows.push(item);
+        })
+  
+        var nextevents = [];
+  
+        events.rows.forEach(function (item, idx) {
+          var gara = item.doc;
+  
+          //console.log("evento",gara);
+  
+          var doIt = false;
+          if (gara.stato) {
+            if (gara.stato == "nondisputata") doIt = true;
+          }
+  
+          if (doIt) {
+  
+            var data = gara.data;
+  
+            var parts = data.split('/');
+            var datagara: any = new Date(parts[2], parseInt(parts[1], 10) - 1, parts[0]);
+  
+  
+            var datediff = dataoggi - datagara;
+  
+            var datediffgg = Math.round((dataoggi - datagara) / (1000 * 60 * 60 * 24)) - 1;
+  
+            //console.log(datediffgg);
+  
+            if (datediffgg < 0) {
+  
+              //conslog("gara ", data, datagara, datediffgg);
+              nextevents.push({
+                gara: gara,
+                diff: datediffgg
+              })
+            }
+          }
+  
+  
+        })
+  
+        console.log("nextevents", nextevents);
+  
+        nextevents.sort(function (a, b) {
+          var a1 = a.gara.data;
+          var b1 = b.gara.data;
+  
+          var a2 = a1.substring(6, 10) + a1.substring(3, 5) + a1.substring(0, 2);
+          var b2 = b1.substring(6, 10) + b1.substring(3, 5) + b1.substring(0, 2);
+          //conslog(a2,b2);
+          if (a2 > b2) return 1;
+          if (a2 < b2) return -1;
+          return 0;
+        })
+  
+        console.log(nextevents);
+        var nexteventscount = nextevents.length;
+        //nexteventscount=0;
+        //$("#index #nexteventsbubble").html(nexteventscount);
+        if (nexteventscount > 0) {
+          //$("#index #nexteventsbubble").show();
+  
+  
+  
+        } else {
+          //$("#index #lista #nexteventsbubble").hide();
+        }
+        if (callback) callback(nextevents);
+  
+  
+      })
+  
+    });
   }
 
 }

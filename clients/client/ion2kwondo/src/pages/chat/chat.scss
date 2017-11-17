@@ -27,7 +27,7 @@
   font-size: 18px;
 }
 .msgemail {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   padding: 5px;
 }
@@ -36,7 +36,7 @@
 }
 
 .msgtext {
-  font-size: 14px;
+  font-size: 13px;
   padding: 10px;
   white-space: normal;
 }
@@ -68,6 +68,19 @@ img.avatar {
         
 
 
+      }
+
+      .datachange {
+        background: lightblue;
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+        border-radius: 3px;
+        box-shadow: 1px 1px 1px silver;
+        font-size: 12px;
+        font-style: italic;
+        text-align: center;
+  
       }
 
 
@@ -112,8 +125,9 @@ img.avatar {
     .message {
       font-size: 12px;
       box-shadow: 1px 1px 1px silver;
-      /*max-width: 75%;*/
-      max-width: 98%;
+      max-width: 65%;
+      width: auto;
+      /*max-width: 98%;*/
       /*padding: 6px 6px;*/
       /*background: #387ef5;*/
       /*background: #007acc;*/
@@ -123,6 +137,10 @@ img.avatar {
       border-radius: 9px;
       margin: 5px;
       float: left;
+      clear: both;
+      line-height: 100%;
+      display: block;
+      position: relative;
       .date {
         /*display: block;*/
         font-size: 12px;
@@ -155,6 +173,7 @@ img.avatar {
         display: none;
       }
     }
+  
     .message.system {
 
       background: yellow;

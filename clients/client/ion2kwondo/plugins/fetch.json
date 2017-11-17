@@ -159,14 +159,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "com.telerik.plugins.nativepagetransitions": {
-        "source": {
-            "type": "registry",
-            "id": "com.telerik.plugins.nativepagetransitions"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "de.appplant.cordova.plugin.local-notification": {
         "source": {
             "type": "registry",
@@ -207,10 +199,34 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-webserver": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-webserver"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-crosswalk-webview": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-crosswalk-webview@2.3.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-uniquedeviceid": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-uniquedeviceid"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "com.hutchind.cordova.plugins.streamingmedia": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-streaming-media"
+            "id": "cordova-plugin-streaming-media@^1.0.2"
         },
         "is_top_level": true,
         "variables": {}
@@ -219,14 +235,6 @@
         "source": {
             "type": "registry",
             "id": "phonegap-plugin-push@2.0.0"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-crosswalk-webview": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-crosswalk-webview@2.3.0"
         },
         "is_top_level": true,
         "variables": {}

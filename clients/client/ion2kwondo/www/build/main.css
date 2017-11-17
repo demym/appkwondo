@@ -16030,7 +16030,7 @@ ion-list[inset] {
 }
 
 .list-md ion-item-options .button {
-  margin: 0;
+  margin: 1px 0;
   border-radius: 0;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -16040,7 +16040,7 @@ ion-list[inset] {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 100%;
+  height: calc(100% - 2px);
   border: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -30233,7 +30233,7 @@ page-atleta ion-fab[bottom] {
 }
 
 .msgemail {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   padding: 5px;
 }
@@ -30243,7 +30243,7 @@ page-atleta ion-fab[bottom] {
 }
 
 .msgtext {
-  font-size: 14px;
+  font-size: 13px;
   padding: 10px;
   white-space: normal;
 }
@@ -30271,6 +30271,19 @@ img.avatarbig {
   float: left;
   margin-right: 5px;
   margin-left: -5px;
+}
+
+.datachange {
+  background: lightblue;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 1px silver;
+  box-shadow: 1px 1px 1px silver;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
 }
 
 .chat {
@@ -30320,8 +30333,9 @@ img.avatarbig {
   font-size: 12px;
   -webkit-box-shadow: 1px 1px 1px silver;
   box-shadow: 1px 1px 1px silver;
-  /*max-width: 75%;*/
-  max-width: 98%;
+  max-width: 65%;
+  width: auto;
+  /*max-width: 98%;*/
   /*padding: 6px 6px;*/
   /*background: #387ef5;*/
   /*background: #007acc;*/
@@ -30331,6 +30345,10 @@ img.avatarbig {
   border-radius: 9px;
   margin: 5px;
   float: left;
+  clear: both;
+  line-height: 100%;
+  display: block;
+  position: relative;
 }
 
 .chat .messages .message .date {

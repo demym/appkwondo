@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Events, NavController, NavParams, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { AtletaPage } from '../../pages/atleta/atleta';
 
@@ -14,14 +14,31 @@ import { AtletaPage } from '../../pages/atleta/atleta';
   templateUrl: 'atleti.html'
 })
 export class AtletiPage {
+  @ViewChild(Navbar) navBar: Navbar;
   atleti=[];
 
-  constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
+  ionViewDidLoad() { 
    
     console.log('ionViewDidLoad AtletiPage');
     this.atleti=this.backend.atleti;
+    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
     /*this.refresh(function(data){
      
     })  */

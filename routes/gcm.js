@@ -21,34 +21,69 @@ var gcm_enabled = true;
 var tokens = [];
 
 
+function deleteToken(deviceid) {
+	var newtokens = [];
+	tokens.forEach(function (item, idx) {
+		var tok = item.token;
+		var uid = item.deviceid
+		if (uid != deviceid) newtokens.push(item);
+	})
+	tokens = newtoken;
+	return tokens;
+}
+
+
+
 function viewTokens() {
 	console.log("viewTokens", tokens);
 	return tokens;
 }
-
-function addToken(token) {
+function addToken(deviceid, token) {
 	var found = false;
 	tokens.forEach(function (item, idx) {
 		var tok = item.token;
-		if (tok == token) found = true;
+		var uid = item.deviceid;
+		if (uid == deviceid) {
+			found = true;
+			item.token = token;
+
+		}
 	})
 	if (!found) {
 		var newtoken = {
 			token: token,
+			deviceid: deviceid,
 			count: 0
 		}
-		console.log("adding new token", newtoken);
+		console.log("adding new gcmtoken", newtoken);
 		tokens.push(newtoken);
 	}
 }
 
-function resetTokenCount(token) {
+
+function resetTokens() {
+	tokens = [];
+	return tokens;
+}
+
+function resetTokenCount(deviceid) {
 	tokens.forEach(function (item, idx) {
-		if (token == item.token) {
+		if (deviceid == item.deviceid) {
 			item.count = 0;
 		}
 	})
 }
+
+
+function setTokenCount(deviceid, n) {
+	tokens.forEach(function (item, idx) {
+		if (deviceid == item.deviceid) {
+			item.count = n;
+		}
+	})
+}
+
+
 
 function getTokens(callback) {
 	mongo.getfile("users.json", function (data) {
@@ -128,6 +163,8 @@ function testGCM(callback) {
 
 function sendToAll(obj, callback) {
 
+	var resp=[];
+
 	var text = "Notification text";
 	var title = "Notification title";
 	var icon = "ic_launcher";
@@ -145,7 +182,7 @@ function sendToAll(obj, callback) {
 	if (obj.topic) topic = obj.topic;
 
 
-	
+
 
 
 	var msg = {
@@ -172,46 +209,48 @@ function sendToAll(obj, callback) {
 				"content-available": '1'
 			}
 		});
-	
+
+
+		//this is for IOS
+		message.addNotification({
+			title: title,
+			body: text,
+			icon: icon,
+			tag: tag,
+			to: topic,
+			notId: 10,
+			badge: item.count /*,
+		contentAvailable: 1*/
+
+
+		});
+
+
 		//console.log("message", message);
 
 		//message.data.msgcount = item.count;
+		console.log("sending gcm message to ",item.token);
 		gcmsender.send(message, {
 			registrationTokens: [item.token]
 		}, function (err, response) {
 			if (err) {
-				console.error("error sending gcm", 400);
-				if (callback) callback(err);
+				//console.error("error sending gcm", 400);
+				console.log("error in gcm response",err);
+				//if (callback) callback(err);
+				resp.push(err);
 			} else {
-				console.log(response);
-				if (callback) callback(response);
+				console.log("gcm response",response);
+				//if (callback) callback(response);
+				resp.push(response);
 			}
 		});
 
 	})
 
 
-	/*
-	getTokens(function (regTokens) {
-	
-		console.log("registrationTokens",regTokens);
-	
-		// Actually send the message 
-		gcmsender.send(message, {
-			registrationTokens: regTokens
-		}, function (err, response) {
-			if (err) {
-				console.error("error sending gcm", 400);
-				if (callback) callback(err);
-			} else {
-				console.log(response);
-				if (callback) callback(response);
-			}
-		});
-	
-	});
+	if (callback) callback(resp);
 
-	*/
+
 
 
 
@@ -487,7 +526,9 @@ function sendToToken(obj, callback) {
 
 }
 
-exports.resetTokenCount=resetTokenCount;
+exports.deleteToken = deleteToken;
+exports.resetTokens = resetTokens;
+exports.resetTokenCount = resetTokenCount;
 exports.addToken = addToken;
 exports.viewTokens = viewTokens;
 exports.getTokens = getTokens;

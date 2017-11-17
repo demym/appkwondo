@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, App, AlertController, Navbar } from 'ionic-angular';
+import { Events, NavController, NavParams, App, AlertController, Navbar } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { GaraPage } from '../../pages/gara/gara';
 import { EditgaraPage } from '../../pages/editgara/editgara';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+//import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 /*
   Generated class for the GarePage page.
@@ -27,13 +27,19 @@ export class GarePage {
     punti: 0
   }
 
-  constructor(private nativePageTransitions: NativePageTransitions, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(public events: Events, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewWillEnter(){
+    var questo=this;
     this.calcolaTotali();
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
    
   }
   ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
     
     
     }
@@ -43,6 +49,7 @@ export class GarePage {
     console.log('ionViewDidLoad GarePagePage');
     this.gare = this.backend.gare;
     this.backend.setBackButtonAction(this.navBar,this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
 
     /*this.refresh(function(data){
      
@@ -111,7 +118,8 @@ export class GarePage {
   gotoGara(id) {
     var questo = this;
     console.log("gotoGara", id);
-    this.deviceFeedback.acoustic();
+    this.backend.playFeedback();
+    //this.deviceFeedback.acoustic();
     //ios-transition
 
     this.navCtrl.push(GaraPage, {

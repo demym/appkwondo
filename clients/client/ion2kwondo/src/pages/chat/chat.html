@@ -12,9 +12,13 @@
 
 
 <ion-header>
+   
   <ion-navbar>
+     
   
-
+      <button ion-button menuToggle="left" start>
+          <ion-icon name="menu"></ion-icon>
+        </button>
        <ion-title>ChatKwonDo</ion-title>
        <ion-buttons end>
           <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
@@ -89,24 +93,32 @@
   
     </section>  
   
-    
+    <div style="text-align: center; z-index: 9000">
+      <ion-chip  (tap)="tapChip()" *ngIf="false" color="secondary">
+        <ion-label color="dark">Nuovi messaggi non letti</ion-label>
+      </ion-chip>
+    </div>
 
 </ion-header>
 
 
 <ion-content id="chat" class="chat">
-   <ion-refresher (ionRefresh)="doRefresh($event)">
+   <!--<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content refreshingSpinner="ios">
         </ion-refresher-content>
-  </ion-refresher>  
+  </ion-refresher>  -->
   
   <!--<div [ngClass]="friend.connected ? '' : 'overlay'"></div>-->
   <div *ngIf="loading" style="text-align:center"><ion-spinner  text-center name="ios" *ngIf="loading"></ion-spinner></div>
+  
   <div class="messages"> 
     <!-- *ngFor="let m of msgs" -->
-  
-    <ion-list  *ngFor="let m of backend.chatmessages" > <!--*ngFor="let m of msgs"-->
 
+  
+    <ion-list  *ngFor="let m of backend.chatmessages; let i=index;" > <!--*ngFor="let m of msgs"-->
+      <ion-item *ngIf="dateChanged(m,i)" class="datachange">{{getOnlyDate(m.time)}}</ion-item>
+
+      <!-- ex ion-item -->
       <ion-item (press)="shareItem(m)" class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
        
           <div class="msgemail">{{m.nickname}}    <span class="date">{{ getNormalDate(m.time) }}</span></div> 
@@ -140,7 +152,7 @@
       
       <span  (press)="shareText(m.text)" *ngIf="m.text.trim()!=''" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=''" >
      
-      </ion-item>
+  </ion-item>  <!-- ex ion-item -->
     </ion-list>
     <!--<audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
       <ion-item>  

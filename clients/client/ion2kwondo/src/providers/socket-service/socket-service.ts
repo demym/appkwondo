@@ -5,7 +5,7 @@ import * as io from 'socket.io-client';
 import { BackendProvider } from '../backend/backend';
 import { Badge } from '@ionic-native/badge';
 import { Platform } from 'ionic-angular';
-import { Events } from 'ionic-angular';
+import { Events } from 'ionic-angular';  
 declare var navigator: any;
 
 
@@ -52,11 +52,16 @@ export class SocketService {
     });
 
     this.socket.on("getclientspecs", (msg) => {
+      var questo=this;
       console.log('socket getclientspecs received', msg);
+      questo.backend.getUniqueDeviceID(function(){
       var connsock = {
-        useremail: this.backend.user.email
+        useremail: questo.backend.user.email,
+        gcmtoken: questo.backend.user.gcmtoken,
+        deviceid: questo.backend.user.uniquedeviceid
       };
-      this.socket.emit('connected', connsock);
+      questo.socket.emit('connected', connsock);
+    });
 
     });
 
@@ -66,24 +71,29 @@ export class SocketService {
       var connsock = {
         useremail: this.backend.user.email
       };
-      var m = {
-        device: "browser",
-        type: "clientspecs", 
-        nickname: questo.backend.user.nickname,
-        email: questo.backend.user.email,
-        gcmtoken: questo.backend.user.gcmtoken,
-        appversion: "2.0.0"
+      questo.backend.getUniqueDeviceID(function(){
+        var m = {
+          device: "browser",
+          type: "clientspecs", 
+          nickname: questo.backend.user.nickname,
+          email: questo.backend.user.email,
+          gcmtoken: questo.backend.user.gcmtoken,
+          deviceid: questo.backend.user.uniquedeviceid,
+          appversion: "2.0.0"
+    
+        }
   
-      }
+        if (questo.platform.is("cordova")) m.device = "mobile";
+    
+        //if (message) msg=message;
+    
+        //questo.socket.send(msg);
+    
+        questo.socket.emit('message', m);
+  
 
-      if (questo.platform.is("cordova")) m.device = "mobile";
-  
-      //if (message) msg=message;
-  
-      //questo.socket.send(msg);
-  
-      questo.socket.emit('message', m);
-
+      })
+     
     });
 
     this.socket.on("realtime",function(data){

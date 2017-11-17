@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, NavParams, Events } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 
 /**
@@ -19,7 +19,7 @@ export class StatsPage {
   loading=false;
   tipostat="ranking";
 
-  constructor(public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public events: Events, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   getPos(i) {
@@ -132,6 +132,19 @@ export class StatsPage {
   }
 
 
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
 
 
 }

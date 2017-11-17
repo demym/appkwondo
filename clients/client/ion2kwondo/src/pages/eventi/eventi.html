@@ -10,6 +10,15 @@
     <ion-title>Eventi</ion-title>
   </ion-navbar>
 
+  <ion-segment class="segment" [(ngModel)]="view">
+    <ion-segment-button value="nextevents">
+      <!-- <ion-icon name="camera"></ion-icon>-->Prossimi
+    </ion-segment-button>
+    <ion-segment-button value="allevents">
+      <!-- <ion-icon name="camera"></ion-icon>-->Tutti
+    </ion-segment-button>
+  </ion-segment>
+
 </ion-header>
 
 
@@ -20,14 +29,34 @@
         </ion-refresher-content>
   </ion-refresher>  
 
-  <ion-card *ngFor="let g of gare">
+  <section *ngIf="view=='nextevents'">
+
+  <ion-card *ngFor="let g of nextevents">
 
     <ion-card-content>
     
-    <b>{{g.doc.title}}</b><br>
-    {{g.doc.location}} - {{g.doc.data}}<br>
-    ORI: {{g.doc.ori}} - ARG: {{g.doc.argenti}} BRO: {{g.doc.bronzi}}
+    <b>{{g.diff}}</b><br>
+    {{g.gara.location}} - {{g.gara.data}}<br>
+    {{g.gara.title}}
+   
     </ion-card-content>
     </ion-card>
+
+  </section>
+
+  <section *ngIf="view=='allevents'">
+      <ion-card *ngFor="let g of gare">
+      <ion-card-content>
+          
+          <b>{{g.doc.title}}</b><br>
+          {{g.doc.location}} - {{g.doc.data}}<br>
+          
+          </ion-card-content>
+          </ion-card>
+      
+       
+  </section>
+
+
 
 </ion-content>

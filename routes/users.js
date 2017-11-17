@@ -305,8 +305,10 @@ router.post('/login', function (req, res) {
 
     var auth = req.body.authorization;
     var gcmtoken="";
+    var deviceid="";
     if (req.body.gcmtoken) gcmtoken=req.body.gcmtoken;
-    console.log("Loggin in, gcmtoken",gcmtoken);
+    if (req.body.uniquedeviceid) deviceid=req.body.uniquedeviceid;
+    console.log("Loggin in, gcmtoken",gcmtoken,"deviceid",deviceid);
 	//console.log("auth: "+auth);
 
 	var tmp = auth.split(' '); // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
@@ -338,7 +340,7 @@ router.post('/login', function (req, res) {
                    if (item.doc.hasOwnProperty("gcmtokens")) gcmtokens=item.doc.gcmtokens;
 
                    if (gcmtoken!="") {
-                    gcm.addToken(gcmtoken); 
+                    gcm.addToken(deviceid,gcmtoken); 
                        if (gcmtokens.indexOf(gcmtoken)==-1) {
                            gcmtokens.push(gcmtoken);
                          

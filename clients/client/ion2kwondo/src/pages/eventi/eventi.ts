@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Navbar, Events } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 
 /*
@@ -13,13 +13,18 @@ import { BackendProvider } from '../../providers/backend/backend';
   templateUrl: 'eventi.html'
 })
 export class EventiPage {
+  @ViewChild(Navbar) navBar: Navbar;
   gare=[];
+  nextevents:any=[];
+  view="nextevents";
 
-  constructor(public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
    
     console.log('ionViewDidLoad EventiPage');
+    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
     this.refresh(function(data){
      
     })  
@@ -48,6 +53,26 @@ export class EventiPage {
 
 
   }
+
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+
+    questo.backend.getNextEvents(function(data){
+      console.log("fatto nextevents");
+      questo.nextevents=data;
+    });
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
 
 
 }

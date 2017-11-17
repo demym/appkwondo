@@ -1,22 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
-        "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
-        "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
-        "clobbers": [
-            "streamingMedia"
-        ]
-    },
-    {
-        "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
-        "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
-        "pluginId": "com.telerik.plugins.nativepagetransitions",
-        "clobbers": [
-            "window.plugins.nativepagetransitions"
-        ]
-    },
-    {
         "id": "cordova-plugin-appavailability.AppAvailability",
         "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
         "pluginId": "cordova-plugin-appavailability",
@@ -30,14 +14,6 @@ module.exports = [
         "pluginId": "cordova-plugin-audio-recorder-api",
         "clobbers": [
             "window.plugins.audioRecorderAPI"
-        ]
-    },
-    {
-        "id": "cordova-plugin-device.device",
-        "file": "plugins/cordova-plugin-device/www/device.js",
-        "pluginId": "cordova-plugin-device",
-        "clobbers": [
-            "device"
         ]
     },
     {
@@ -78,6 +54,14 @@ module.exports = [
         "pluginId": "cordova-plugin-camera",
         "clobbers": [
             "CameraPopoverHandle"
+        ]
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
         ]
     },
     {
@@ -468,6 +452,22 @@ module.exports = [
         "runs": true
     },
     {
+        "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+        "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+        "pluginId": "cordova-plugin-uniquedeviceid",
+        "merges": [
+            "window.plugins.uniqueDeviceID"
+        ]
+    },
+    {
+        "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
+        "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
+        "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
+        "clobbers": [
+            "streamingMedia"
+        ]
+    },
+    {
         "id": "phonegap-plugin-push.PushNotification",
         "file": "plugins/phonegap-plugin-push/www/push.js",
         "pluginId": "phonegap-plugin-push",
@@ -479,16 +479,14 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
-    "com.telerik.plugins.nativepagetransitions": "0.6.5",
     "cordova-plugin-app-event": "1.2.1",
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.1",
-    "cordova-plugin-device": "1.1.4",
     "cordova-plugin-badge": "0.8.0",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-console": "1.0.5",
+    "cordova-plugin-device": "1.1.4",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
     "cordova-plugin-fileopener": "1.0.5",
@@ -506,8 +504,10 @@ module.exports.metadata =
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
     "ionic-plugin-keyboard": "2.2.1",
-    "phonegap-plugin-push": "2.0.0",
-    "cordova-plugin-crosswalk-webview": "2.3.0"
+    "cordova-plugin-crosswalk-webview": "2.3.0",
+    "cordova-plugin-uniquedeviceid": "1.3.2",
+    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
+    "phonegap-plugin-push": "2.0.0"
 };
 // BOTTOM OF METADATA
 });

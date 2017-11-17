@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, Events, AlertController, ToastController } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { NavController, Navbar, NavParams, Events, AlertController, ToastController } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { SocketService } from '../../providers/socket-service/socket-service';
 import { ChatPage } from '../../pages/chat/chat';
@@ -15,6 +15,7 @@ import { ChatPage } from '../../pages/chat/chat';
   templateUrl: 'matchconsole.html',
 })
 export class MatchconsolePage {
+  @ViewChild(Navbar) navBar: Navbar;
   consoles: any = [];
   selectedMatchId = "";
   selectedMatch: any = {};
@@ -27,6 +28,11 @@ export class MatchconsolePage {
 
    
 
+  }
+
+  ionViewDidLoad(){
+    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
   }
 
   ionViewWillLoad() {
@@ -77,7 +83,17 @@ export class MatchconsolePage {
   ionViewWillLeave() {
     console.log("Looks like I'm about to leave :(");
     //this.events.unsubscribe("updategara");
+    this.events.unsubscribe("hwbackbutton");
     
+    
+  }
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
   }
 
   isRealTime(c) {
