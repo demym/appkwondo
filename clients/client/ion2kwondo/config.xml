@@ -3,7 +3,7 @@
     <name>AppkwondoV2</name>
     <description>AppkwondoV2</description>
     <author email="demym13@gmail.com" href="http://tkdr.herokuapp.com/">TowerApps</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://10.113.32.153:8101" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -90,6 +90,7 @@
     <allow-navigation href="http://192.168.1.106:8101" />
     <allow-navigation href="http://9.71.213.40:8101" />
     <allow-navigation href="http://192.168.1.106:8100" />
+    <allow-navigation href="http://10.113.32.153:8101" />
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="com.hutchind.cordova.plugins.streamingmedia" spec="~0.1.4" />

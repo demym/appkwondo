@@ -157,6 +157,7 @@ export class MyApp {
         questo.backend.resetChatUnread();
         //questo.backend.localNotify(data.message);
       } else {
+        console.log("resuming app, app was NOT on chatview");
         questo.backend.computeUnreadChats();
       }
    }); 

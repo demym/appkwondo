@@ -529,6 +529,7 @@ function sendToToken(obj, callback) {
 exports.deleteToken = deleteToken;
 exports.resetTokens = resetTokens;
 exports.resetTokenCount = resetTokenCount;
+exports.setTokenCount = setTokenCount;
 exports.addToken = addToken;
 exports.viewTokens = viewTokens;
 exports.getTokens = getTokens;

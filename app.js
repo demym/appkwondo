@@ -123,6 +123,7 @@ app.use(function (req, res, next) {
 		"/atleti/login",
 		"/users/login",
 		"/users/register",
+		"/users/retrievepsw",
 		"/data/chatmedia",
 		"/token/true",
 		"/token/false",
@@ -1201,7 +1202,10 @@ io.sockets.on('connection', function (socket) {
 		if (tipo == "clientspecs") {
 			console.log("received clientspecs from " + socket.id + ":",msg);
 
-			if (msg.hasOwnProperty("gcmtoken")) gcm.addToken(msg.deviceid,msg.gcmtoken);
+			if (msg.hasOwnProperty("gcmtoken") && msg.hasOwnProperty("deviceid")) {
+				if ((msg.gcmtoken!="") && (msg.deviced!="")) gcm.addToken(msg.deviceid,msg.gcmtoken);
+				
+			}
 			
 			socket.device = msg.device;
 			socket.nickname = nick;

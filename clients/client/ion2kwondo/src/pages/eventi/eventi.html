@@ -35,9 +35,13 @@
 
     <ion-card-content>
     
-    <b>{{g.diff}}</b><br>
-    {{g.gara.location}} - {{g.gara.data}}<br>
-    {{g.gara.title}}
+    <ion-chip color="danger">
+      <ion-label><b>Tra {{getAbs(g.diff)}} giorni</b></ion-label>
+    </ion-chip><br>
+    <b>{{g.gara.location}} - {{g.gara.data}}</b><br>
+        {{g.gara.title}}
+      
+   
    
     </ion-card-content>
     </ion-card>

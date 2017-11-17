@@ -133,4 +133,49 @@ export class LoginPage {
     
 
   }
+
+  retrievePassword(){
+    var questo=this;
+    let alrt = questo.alertCtrl.create({
+      title: 'Recupera password',
+      subTitle: "Inserisci l'email per il recupero",
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'La tua e-mail',
+          value: questo.registerCredentials.email,
+          
+        }
+      ],
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Ok, inviami la password',
+          handler: data => {
+           var email=data.email;
+           console.log("OK, invio password a "+email);
+           questo.backend.retrieveUserPassword(email,function(rdata){
+             console.log("retrievepsw response",rdata);
+             var error=false;
+             if (rdata.error){
+               if (String(rdata.error)=="true") error=true;
+             }
+             if (error){
+              alert("Error, e-mail "+email+" non riconosciuta");
+             } else alert("Dati utente inviati all'email "+email);
+           })
+           
+          }
+        }
+      ]
+    });
+    alrt.present();
+
+  }
 }

@@ -74,5 +74,9 @@ export class EventiPage {
     
     }
 
+    getAbs(n){
+      return Math.abs(n);
+    }
+
 
 }
