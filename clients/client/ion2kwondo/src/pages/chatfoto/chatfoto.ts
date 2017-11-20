@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, Platform} from 'ionic-angular';
+import { NavController, NavParams, ViewController, Platform, Events} from 'ionic-angular';
 import * as moment from 'moment';
 
 /**
@@ -19,7 +19,7 @@ export class ChatfotoPage {
   data="";
   url="";
 
-  constructor(public platform: Platform, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public events: Events, public platform: Platform, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     
   }
 
@@ -85,5 +85,20 @@ export class ChatfotoPage {
 
 
   }
+
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
 
 }

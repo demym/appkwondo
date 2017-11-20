@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController,Events } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 
 /**
@@ -48,7 +48,7 @@ export class MedagliereglobalePage {
   table;
   societaiscritte=[];
 
-  constructor(public backend: BackendProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public events: Events, public backend: BackendProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     //this.html=navParams.get('html');
     this.gara = navParams.get("gara");
   }
@@ -476,6 +476,22 @@ export class MedagliereglobalePage {
       console.log(socs)
       return socs;
   }
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      //questo.navCtrl.pop();
+      questo.viewCtrl.dismiss();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
 
 
 }

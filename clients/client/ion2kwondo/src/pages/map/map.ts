@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'; 
 
 /*
@@ -15,12 +15,28 @@ import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
 export class MapPage {
   mapsrc:SafeResourceUrl;
 
-  constructor(public sanitizer: DomSanitizer, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public events: Events, public sanitizer: DomSanitizer, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPagePage');
     var mapsrc=this.navParams.get("mapsrc");
     this.mapsrc=this.sanitizer.bypassSecurityTrustResourceUrl(mapsrc);
   }
+
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
 
 }
