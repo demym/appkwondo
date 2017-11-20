@@ -110,10 +110,11 @@ export class BackendProvider {
   activechatfilename = "chatno64.json";
   appVersion:any={
     name: "appkwondov2",
-    version: "2.0.0",
-    releasedate: "17/11/2017"
+    version: "2.0.1",
+    releasedate: "20/11/2017"
   }
   nextevents:any=[];
+  isIosWeb=false;
 
 
 
@@ -680,6 +681,12 @@ export class BackendProvider {
       if (String(data.loggedin) == "true") {
         console.log("login successfull");
         questo.user = data;
+        if (questo.isIosWeb){
+          var url=questo.rooturl+"/users/registerios/"+email;
+          questo.fetchData(url,function(data){
+            console.log("censored up "+email+" as potential ios user");
+          })
+        }
         if (!data.email) questo.user.email = email;
         if (!data.nickname) questo.user.nickname = email;
         questo.user.uniquedeviceid = uniquedeviceid;

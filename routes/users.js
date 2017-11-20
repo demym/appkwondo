@@ -192,8 +192,8 @@ router.get("/retrievepsw/:email", function (req, res) {
             }
 
             mail.sendMail(mailobj, function (mdata) {
-                retvalue.error=false;
-                retvalue.mailresponse=mdata;
+                retvalue.error = false;
+                retvalue.mailresponse = mdata;
                 res.send(retvalue);
 
             })
@@ -209,6 +209,50 @@ router.get("/retrievepsw/:email", function (req, res) {
 
 
 
+})
+
+
+router.get("/potentialios",function(req,res){
+    mongo.getfile("iosusers.json", function (data) {
+        var ddata=data;
+        ddata.potentialcount=data.rows.length;
+        res.send(ddata);
+    })
+})
+
+
+router.get("/registerios/:email", function (req, res) {
+    var email = req.params.email;
+    mongo.getfile("iosusers.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email == email) found = true;
+
+        });
+
+        if (!found) {
+            var doc = {
+                doc: {
+
+                    email: email
+
+                }
+
+            }
+            mongo.addRecord("iosusers.json", "", doc, function (ddata) {
+
+                res.send(ddata);
+            })
+
+        } else {
+            var retvalue={
+                error: true,
+                msg: "user "+email+" already censored up as ios potential user"
+            }
+            res.send(retvalue)
+        }
+
+    })
 })
 
 router.post("/register", function (req, res) {

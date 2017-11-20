@@ -70,7 +70,7 @@
         <button ion-button block (tap)="toggleSocieta()">Società</button>
             <div *ngIf="activegiornata.hasOwnProperty('elenco_societa') && viewsocieta">
         <ion-item *ngFor="let s of activegiornata.elenco_societa.rows; let p=index;" (tap)="toggleAtletiSocieta(s)">
-          {{s.societaname}} ({{s.atleti.length}})
+          <span style="word-wrap: break-word; white-space: normal;">{{s.societaname}} ({{s.atleti.length}})</span>
           <div style="margin-top: 7px; border: 1px solid silver" *ngIf="viewatletisocieta && (activesocieta==s.societaname)">
             <ion-item *ngFor="let a of sorted(s.atleti,'nome')">
               <span style="font-size: 14px;">{{a.nome}}</span><br>
@@ -83,8 +83,8 @@
       <button ion-button block (tap)="toggleMedagliere()">Medagliere</button>
       <div *ngIf="viewmedagliere">
       <div *ngIf="activegiornata.hasOwnProperty('elenco_societa')">
-        <ion-item *ngFor="let s of activegiornata.elenco_societa.rows; let p=index;" (tap)="toggleAtletiSocieta(s)">
-          {{s.societaname}} ({{s.atleti.length}})
+        <ion-item *ngFor="let s of activegiornata.elenco_societa.rows; let p=index;" (tap)="toggleAtletiSocieta(s)" >
+          <span style="word-wrap: break-word; white-space: normal;">{{s.societaname}} ({{s.atleti.length}})</span>
           <div style="margin-top: 7px; border: 1px solid silver" *ngIf="viewatletisocieta && (activesocieta==s.societaname)">
             <ion-item *ngFor="let a of sorted(s.atleti,'nome')">
               <span style="font-size: 14px;">{{a.nome}}</span><br>
