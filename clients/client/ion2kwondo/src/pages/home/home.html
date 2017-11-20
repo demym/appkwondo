@@ -50,7 +50,7 @@
 <ion-list >
   <ion-item  *ngFor="let m of displayedmenu" (tap)="gotoPage(m.page)">
     <ion-row style="font-size: 16px" >
-      <ion-col col-2>
+      <ion-col col-2 class="fixedicon">
     <ion-icon style="font-size: 22px !important" name="{{m.icon}}"></ion-icon>
       </ion-col>
       <ion-col style="font-size: 20px" >{{m.name}}</ion-col>

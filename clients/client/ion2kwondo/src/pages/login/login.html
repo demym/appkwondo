@@ -1,18 +1,18 @@
-<ion-content class="login-content" padding>
+<ion-content class="login-content" padding text-center>
   <ion-row class="logo-row" sstyle="height: 200px;">
     <ion-col></ion-col>
-    <ion-col style="padding: 4px !important; justify-content: center;" >
+    <ion-col style="padding: 4px !important; justify-content: center; text-align: center" >
      <!--<img  src="assets/img/logotkdrozzano.png"/>-->
-     <img  src="assets/img/iconlogo3.png"/>
+     <img  class="loginlogo" src="assets/img/iconlogo3.png"/>
     </ion-col>
     <ion-col></ion-col>
   </ion-row>
   
   <div class="login-box">
     <p style="text-align:center; font-size: 14px; color: white;">Benvenuto in Appkwondo<br><span class="appversion">v.{{backend.appVersion.version}} - {{backend.appVersion.releasedate}}</span><br><br> Già registrato ? Inserisci user e password per accedere</p>
-    <form (ngSubmit)="login()" #registerForm="ngForm">
-      <ion-row> 
-        <ion-col>
+    <form (ngSubmit)="login()" #registerForm="ngForm" >
+      <ion-row text-center> 
+        <ion-col col-md-6 col-lg-4 col-xl-3 >
           <ion-list inset>
             
             <ion-item>
@@ -28,7 +28,7 @@
       </ion-row>
       
       <ion-row>
-        <ion-col class="signup-col">
+        <ion-col class="signup-col" col-md-6 col-lg-4 col-xl-3>
           <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" icon-left style="height: 40px"><ion-icon name="md-key"></ion-icon>Accedi</button>
           
          
@@ -37,14 +37,14 @@
       
     </form>
     <ion-row>
-      <ion-col>
+      <ion-col col-md-6 col-lg-4 col-xl-3>
           <p style="text-align:center; font-size: 14px; color: white;">Non ancora registrato ? Registrati</p>
           <button ion-button class="register-btn" block  (click)="createAccount()">Registrati</button>
 
       </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col>
+        <ion-col col-md-6 col-lg-4 col-xl-3>
             <p style="text-align:center; font-size: 14px; color: white;">Password dimenticata ?</p>
             <button ion-button small class="register-btn" block  (click)="retrievePassword()">Recupera password</button>
   
