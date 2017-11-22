@@ -65,7 +65,7 @@ export class MyApp {
     questo.detectEnvironment();
 
 
-    var IS_PRODUCTION = true;
+    var IS_PRODUCTION = questo.backend.isProduction;
 
     if (IS_PRODUCTION) {
       console.log("LOGGER IS DISABBLED!!!");

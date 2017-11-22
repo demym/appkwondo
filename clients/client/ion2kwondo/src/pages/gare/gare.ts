@@ -256,5 +256,28 @@ export class GarePage {
     }
   }
 
+  addGara(){
+    var questo=this;
+    console.log('add Gara');
+    var newgara={
+      location: "",
+      title: "",
+      data: "",
+      stato: "nondisputata",
+      iscritti: "",
+      myiscritti: "",
+      maplocation: "",
+      ori: 0,
+      argenti: 0,
+      bronzi: 0,
+      ngiorni: "1"
+
+    }
+    questo.navCtrl.push(EditgaraPage, {
+      gara: newgara
+    }, questo.backend.navOptions)
+
+  }
+
 
 }

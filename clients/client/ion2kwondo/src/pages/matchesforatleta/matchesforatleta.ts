@@ -501,7 +501,14 @@ export class MatchesforatletaPage {
           text: 'Si, elimina',
           handler: () => {
             console.log('OK clicked');
-            alert("elimina ok");
+            console.log("attempting delete of match",m.matchid);
+            var url=questo.backend.rooturl+"/matches/deletenew/"+m.garaid+"/"+m.id+"/"+m.atletaid;
+            console.log("will call "+url);
+            questo.backend.fetchData(url,function(data){
+              console.log("resulting matches",data);
+              questo.mfa=data;
+            })
+            
           
           }
         }

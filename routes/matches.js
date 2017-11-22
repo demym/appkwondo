@@ -1156,6 +1156,8 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 });
 
 
+
+
 router.post('/delete/:garaid/:matchid', function (req, res) {
 	var garaid = req.params.garaid;
 	var matchid = req.params.matchid;
@@ -3264,35 +3266,35 @@ function setResultOk(match, atl, mfa, callback) {
 					time: tempo
 				}
 
-				var cron={
+				var cron = {
 					text: cronacatxt,
 					time: tempo
 				}
-				var cronfname="cronaca_"+match.garaid+".json";
-				mongo.addRecord(cronfname,"",cron,function(crdata){
-					console.log("cronaca record inserted in "+cronfname,crdata);
+				var cronfname = "cronaca_" + match.garaid + ".json";
+				mongo.addRecord(cronfname, "", cron, function (crdata) {
+					console.log("cronaca record inserted in " + cronfname, crdata);
 
 
 					//and finally add chat
 
 					var mfname = "chatno64.json";
 					mongo.addRecord(mfname, "", chat, function (cdata) {
-						console.log("chat record inserted",cdata);
+						console.log("chat record inserted", cdata);
 						if (io) {
 							io.emit("updategara", {
 								garaid: match.garaid
 							});
 							if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
-	
+
 						}
 						else {
 							console.log("socket not connected")
 						}
-							if (callback) callback(ret);
-	
-	
-	
-	
+						if (callback) callback(ret);
+
+
+
+
 					});
 
 
@@ -3300,34 +3302,34 @@ function setResultOk(match, atl, mfa, callback) {
 				})
 
 
-			
 
-			
 
+
+
+
+
+			})
+			/*
+			massUpdate(retmatches,function(err,data){
+				console.log
+				var ret={
+					updatedmatches: data,
+					matches: retmatches,
+					cronacatxt: cronacatxt
+				}
+				if (callback) callback(ret);
+			
+			})
 			
 			
-		})
-		/*
-		massUpdate(retmatches,function(err,data){
-			console.log
-			var ret={
-				updatedmatches: data,
+			/*
+			if (callback) callback({
 				matches: retmatches,
 				cronacatxt: cronacatxt
-			}
-			if (callback) callback(ret);
-		
+			})
+			*/
 		})
-		
-		
-		/*
-		if (callback) callback({
-			matches: retmatches,
-			cronacatxt: cronacatxt
-		})
-		*/
 	})
-})
 
 }
 
@@ -3890,6 +3892,152 @@ function getDerby(match, allmatches, atleti) {
 
 	console.log("Derby trovati per match id " + id + ": " + retvalue.rows.length)
 	return retvalue;
+
+}
+
+
+
+
+
+
+router.get("/deletenew/:garaid/:matchid/:atletaid", function (req, res) {
+	var garaid = req.params.garaid;
+	var matchid = req.params.matchid;
+	var atletaid=req.params.atletaid;
+	delMatch(matchid, garaid,atletaid,function(data){
+		res.send(data);
+	});
+
+})
+
+
+
+function delMatch(matchid, garaid,atletaid,callback) {
+
+	var id = matchid;
+
+	mongo.getfile("matches_" + garaid + ".json", function (allmatches) {
+
+		utils.colog("got matches fro garaid", garaid, allmatches.rows.length);
+		//sort matches
+		allmatches.rows.sort(function (a, b) {
+			var a1 = a.doc.progid;
+			var b1 = b.doc.progid;
+			if (a1 > b1) return 1;
+			if (a1 < b1) return -1;
+			return 0;
+
+		})
+
+
+
+
+
+		console.log("trying to delete matchid " + id+" for atletaid "+atletaid);
+
+
+		//find and reset its derby counterpart, if there is one
+		utils.colog("finding derbies");
+
+		var alreadyfound=false;
+
+		allmatches.rows.forEach(function (item, i) {
+			var meid = item.doc.id;
+			var matchnum=item.doc.matchid;
+			
+			var doc = item.doc;
+			var atlid=doc.atletaid;
+			utils.colog("examining match "+matchnum,"atletaid",atlid);
+
+			if (alreadyfound){
+				if (atlid==atletaid){  //this match is posterior to the deleted one, reset its data
+					console.log("resetting match "+matchnum);
+					doc.disputato="no";
+					doc.dadisputare="yes";
+					doc.risultato="0-0";
+					doc.vinto="no";
+					doc.medagliamatch="none";
+					doc.realtime="false";
+				}
+
+			}
+
+
+
+			if (doc.hasOwnProperty("derby")) {
+
+				if (doc.derby.trim() != "") {
+					var did = doc.derby;
+
+					if (did==id) {   //this match was a derby with the deleting match
+						utils.colog("found match that had a derby with the deleting one !!", matchnum);
+						
+						doc.derby="";
+						console.log("resetted derby flag on matchnum " + matchnum);
+					}
+			
+
+
+				}
+
+
+			}
+
+
+			if (meid==id) {
+				utils.colog("WILLDELETE match "+matchnum+" !!!!");
+				//allmatches.rows.splice(i,1);  //DELETES THE MATCH !!!
+				alreadyfound=true;
+			}
+
+
+		})
+
+
+		//DERBIES and POST matches updated, now finally DELETE the passed match
+		allmatches.rows.forEach(function(item,idx){
+			if (item.doc.id==matchid) {
+				console.log("finally deleted match ",item.doc.matchid)
+				allmatches.rows.splice(idx,1);
+				
+			}
+
+		})
+
+
+		var newmatchesforatleta={
+			rows:[]
+		}
+		allmatches.rows.forEach(function(item,idx){
+			var doc=item.doc;
+			if (doc.atletaid==atletaid) {
+				newmatchesforatleta.rows.push(item);
+			}
+
+		})
+
+		if (usemongo) {
+			mongo.updatefile("matches_" + garaid + ".json", allmatches.rows, function (data) {
+				//console.log("match " + matchid + " updated on mongo");
+				//ressent=true;
+				//console.log(data);
+				//res.send(data);
+				if (io) {
+					io.emit("updategara", {
+						garaid: garaid
+					});
+				}
+				if (callback) callback(newmatchesforatleta.rows);
+			});
+		}
+
+		
+
+		
+
+	})
+
+
 
 }
 

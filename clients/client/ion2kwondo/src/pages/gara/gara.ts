@@ -204,6 +204,12 @@ export class GaraPage {
 
 
       console.log("atletiiscritti", questo.atletiiscritti);
+      questo.atletiiscritti.forEach(function(item,idx){
+        var nmatches=questo.getMatches(item);
+        item.nmatches=nmatches;
+
+
+      })
       questo.loading = false;
       questo.info.dadisputare = questo.backend.filterRows(questo.gara.matchesbyprog, { dadisputare: "yes" });
       questo.info.disputati = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes" });
@@ -509,6 +515,13 @@ export class GaraPage {
     var m = moment(t, "YYYYMMDDHHmmSS").format("DD/MM/YYYY HH:mm:SS");
     return m;
 
+  }
+
+  getMatches(atl){
+    var questo=this;
+    var arr=this.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id},true);
+    //console.log("getmatches",arr);
+    return arr.rows.length;
   }
 
   getDerbyText(id) {

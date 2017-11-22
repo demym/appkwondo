@@ -41,6 +41,17 @@
 
   </ion-item>
   <ion-item>
+    <ion-label>Giorni di gara</ion-label>
+    <ion-select [(ngModel)]="gara.ngiorni">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+
+    </ion-select>
+  </ion-item>
+  <ion-item>
       <ion-label >Stato</ion-label>
       
       <ion-select [(ngModel)]="gara.stato">
@@ -122,6 +133,10 @@
 
           <div *ngIf="tkdtjsonview" class="tkdt">{{getTkdtGara()}}</div>
           <button ion-button block (tap)="matchTkdtIscritti()">Integra iscritti TKDT</button>
+          <ion-item>
+            <ion-label>Salva TKDT</ion-label>
+            <ion-checkbox [(ngModel)]="tkdtSave"></ion-checkbox>
+          </ion-item>
       </ion-card-content>
     </ion-card>
    
