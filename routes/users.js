@@ -212,12 +212,102 @@ router.get("/retrievepsw/:email", function (req, res) {
 })
 
 
-router.get("/potentialios",function(req,res){
+router.get("/potentialios", function (req, res) {
     mongo.getfile("iosusers.json", function (data) {
-        var ddata=data;
-        ddata.potentialcount=data.rows.length;
+        var ddata = data;
+        ddata.potentialcount = data.rows.length;
         res.send(ddata);
     })
+})
+
+
+router.post("/changepsw", function (req, res) {
+
+    var body = req.body;
+    var retvalue = {
+        error: false,
+        msg: ""
+    }
+    utils.colog(body);
+
+    var currentpsw = body.currentpsw;
+    var newpsw = body.newpsw;
+    var verifynewpsw = body.verifynewpsw;
+    var email = body.email;
+
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            var doc = item.doc;
+            if (doc.email == email) {
+                found = true;
+                if (doc.password != currentpsw) {
+                    retvalue.error = true;
+                    retvalue.msg = "La password inserita non corrisponde alla tua password corrente";
+                } else {
+                    if (verifynewpsw != newpsw) {
+                        retvalue.error = true;
+                        retvalue.msg = "La nuova password e la password di verifica non coincidono";
+                    } else {   //OK can change password
+                        doc.password = newpsw;
+                        retvalue.error = false;
+                        retvalue.msg = "Password modificata con successo !";
+
+
+
+                    }
+                }
+            }
+
+        })
+
+
+        if (!found) {
+            retvalue.error = true;
+            retvalue.msg = "Utente con email " + email + " non trovato";
+            res.send(retvalue);
+
+        } else {
+
+            if (retvalue.error) {
+                res.send(retvalue);
+            } else {
+
+                mongo.updatefile("users.json", data.rows, function (udata) {
+
+                    var html = "La tua userid su Appkwondo è stata modificata, i tuoi nuovi dati:<br><br>";
+
+                    html += "E-mail: <b>" + email + "</b><br>";
+                    html += "Password: <b>" + newpsw + "</b>";
+
+                    var mailobj = {
+                        from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+                        to: email, // list of receivers
+                        subject: "La tua userid Appkwondo è stata aggiornata con successo ",
+                        text: html, // plaintext body
+                        html: html // html body
+                    }
+
+
+
+                    mail.sendMail(mailobj, function (mdata) {
+                        res.send(retvalue);
+
+                    })
+
+
+
+                })
+
+
+
+            }
+
+        }
+
+    })
+
+    //res.send(retvalue);
 })
 
 
@@ -245,9 +335,9 @@ router.get("/registerios/:email", function (req, res) {
             })
 
         } else {
-            var retvalue={
+            var retvalue = {
                 error: true,
-                msg: "user "+email+" already censored up as ios potential user"
+                msg: "user " + email + " already censored up as ios potential user"
             }
             res.send(retvalue)
         }

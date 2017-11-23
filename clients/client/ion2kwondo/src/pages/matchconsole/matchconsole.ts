@@ -358,12 +358,22 @@ export class MatchconsolePage {
   }
 
   setResult() {
+
     this.backend.playFeedback();
     console.log("setResult");
     var questo = this;
+
+    var ris=questo.selectedConsole.result;
+    var msg="Vuoi davvero convalidare il risultato di questo incontro ("+ris+") ?";
+    var title="Conferma risultato "+ris;
+    if ((ris.trim()=="0-0") || (ris.trim()=="")){
+      msg="Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
+      title="Conferma reset match"
+    }
+
     let alert = questo.alertCtrl.create({
-      title: 'Conferma validazione risultato',
-      message: 'Vuoi davvero convalidare il risultato di questo incontro ?',
+      title: title,
+      message: msg,
       buttons: [
         {
           text: 'Annulla',

@@ -23,11 +23,11 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 */
 @Injectable()
 export class BackendProvider {
-  isProduction=false;
+  isProduction=true;
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
-//public rooturl = "http://tkdr.herokuapp.com";
-  public rooturl = "http://localhost:3000";
+  //public rooturl = "http://tkdr.herokuapp.com";
+  //public rooturl = "http://localhost:3000"; 
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
   //public rooturl="http://10.113.32.153:3000"
