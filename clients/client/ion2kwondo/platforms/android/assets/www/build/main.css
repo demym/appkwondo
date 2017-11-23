@@ -31075,3 +31075,15 @@ page-stats .top3 {
   height: 26px;
   width: 26px;
 }
+
+page-users .useremail {
+  font-size: 14px;
+  font-style: italic;
+  color: black;
+}
+
+page-users .usernick {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+}

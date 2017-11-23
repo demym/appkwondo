@@ -1293,6 +1293,11 @@ router.post('/add/:garaid', function (req, res) {
 
 		mongo.addRecords("matches_" + garaid + ".json", sdoc.id, added.rows, function (data) {
 			console.log("added matches rows: " + JSON.stringify(added.rows));
+			if (io) {
+				io.emit("updategara", {
+					garaid: garaid
+				});
+			}
 		});
 
 

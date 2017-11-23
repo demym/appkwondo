@@ -26,7 +26,7 @@ export class BackendProvider {
   isProduction=true;
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
-  //public rooturl = "http://tkdr.herokuapp.com";
+  public rooturl = "http://tkdr.herokuapp.com";
   //public rooturl = "http://localhost:3000"; 
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
