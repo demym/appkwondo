@@ -368,8 +368,9 @@ export class MatchesforatletaPage {
           const toast = questo.toastCtrl.create({
             message: 'Match aggiunti',
             duration: 3000,
-            position: 'middle'
+            position: 'top'
           });
+          questo.events.publish("updategara",[]);
         
           toast.onDidDismiss(() => {
             console.log('Dismissed toast');

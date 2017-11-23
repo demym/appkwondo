@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Events, ToastController } from 'ionic-angular';
+import { NavController, NavParams, Events, ToastController,ViewController} from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import * as moment from 'moment';
 
@@ -27,7 +27,7 @@ export class EditgaraPage {
   tkdtSave=false;
 
 
-  constructor(public toastCtrl: ToastController, public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public toastCtrl: ToastController, public events: Events, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -148,6 +148,10 @@ export class EditgaraPage {
             questo.backend.fetchData(turl,function(tkdata){
               console.log("saved tkdt gara "+questo.gara.tkdt_id+" !!");
               questo.showToast("Gara e TKDT "+questo.gara.tkdt_id+" "+txt+" !!");
+
+              setTimeout(function(){
+                questo.viewCtrl.dismiss("saved");
+              },3000)
             })
 
           }
@@ -158,6 +162,9 @@ export class EditgaraPage {
       } else {
        
         questo.showToast("Gara "+txt+" !!");
+        setTimeout(function(){
+          questo.viewCtrl.dismiss("saved");
+        },3000)
       }
     })
 
@@ -181,7 +188,8 @@ export class EditgaraPage {
   }
 
   cancelGara() {
-    this.navCtrl.pop();
+    this.viewCtrl.dismiss();
+    //this.navCtrl.pop();
   }
 
 
@@ -275,7 +283,7 @@ export class EditgaraPage {
     var questo = this;
     this.events.subscribe("hwbackbutton", function (data) {
       console.log("hwbackbutton in gare.ts");
-      questo.navCtrl.pop();
+      questo.viewCtrl.dismiss();
     })
   }
 

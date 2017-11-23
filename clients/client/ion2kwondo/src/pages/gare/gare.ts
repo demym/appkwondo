@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Events, NavController, NavParams, App, AlertController, Navbar } from 'ionic-angular';
+import { Events, NavController, NavParams, App, AlertController, Navbar,ModalController } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { GaraPage } from '../../pages/gara/gara';
 import { EditgaraPage } from '../../pages/editgara/editgara';
@@ -27,7 +27,7 @@ export class GarePage {
     punti: 0
   }
 
-  constructor(public events: Events, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(public modalCtrl:ModalController, public events: Events, public alertCtrl: AlertController, public deviceFeedback: DeviceFeedback, public app: App, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewWillEnter(){
     var questo=this;
@@ -99,6 +99,24 @@ export class GarePage {
     questo.totali.bronzi=totbronzi;
     questo.totali.punti=totpunti;
   }
+
+
+  doRefresh2() {
+    
+    
+  
+        var questo = this;
+        questo.loading=true;
+        questo.refresh(function (data) {
+          //console.log("allnews", data);
+    
+         questo.loading=false;
+        })
+    
+    
+    
+      }
+    
 
   doRefresh(refresher) {
 
@@ -202,9 +220,21 @@ export class GarePage {
           text: 'MODIFICA',
           handler: () => {
             console.log('Buy clicked');
+
+            let profileModal = this.modalCtrl.create(EditgaraPage, {
+              gara: g.doc
+            });
+            profileModal.onDidDismiss(data => {
+              console.log(data);
+              if (data=="saved") {
+                questo.doRefresh2();
+              }
+            });
+            profileModal.present();
+            /*
             questo.navCtrl.push(EditgaraPage, {
               gara: g.doc
-            }, questo.backend.navOptions)
+            }, questo.backend.navOptions)*/
           }
         },
         {

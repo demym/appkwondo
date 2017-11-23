@@ -385,7 +385,13 @@ export class MatchconsolePage {
             var atl=questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
             var mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id});
             questo.backend.setResult(match,atl,mfa,function(data){
+              
               console.log("setted result !!",data);
+              
+              setTimeout(function(){
+             
+                questo.navCtrl.pop();
+              },2000)
             })
             console.log('Buy clicked');
           }

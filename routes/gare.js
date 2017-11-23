@@ -770,10 +770,10 @@ router.get("/fullgarabyid/:id", function (req, res) {
 
 						if (hastkdt) {
 							mongo.getfile("tkdt_" + tkdt_id + ".json", function (tkdata) {
-								console.log("tkdata",tkdata);
+								utils.colog("tkdata",tkdata);
 								ret.gara.rows[0].doc.tkdt = tkdata.rows[0];
-								console.log("tkdata0",tkdata.rows[0])
-								console.log("ret",ret.giorni);
+								utils.colog("tkdata0",tkdata.rows[0])
+								utils.colog("ret",ret.giorni);
 								res.send(ret);
 
 							})

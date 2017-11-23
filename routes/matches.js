@@ -2910,8 +2910,8 @@ function setResultOk(match, atl, mfa, callback) {
 
 
 
-			console.log("atleta: ", atl);
-			console.log("mfa", mfa);
+			utils.colog("atleta: ", atl);
+			utils.colog("mfa", mfa);
 			//return;
 
 
@@ -2955,7 +2955,7 @@ function setResultOk(match, atl, mfa, callback) {
 
 			})
 
-			console.log("ord1", ordidx);
+			utils.colog("ord1", ordidx);
 			//var ord = $("#matchesatleta ul#listampa li#match_" + id).index();
 			ord = ordidx;
 			ln = mfa.length;
@@ -3005,7 +3005,7 @@ function setResultOk(match, atl, mfa, callback) {
 
 				var thisincontro = "";
 				if (ordbin < 4) thisincontro = ", " + ordbinarr[ordbin];
-				console.log("ordarr", ordarr[ord], ord);
+				utils.colog("ordarr", ordarr[ord], ord);
 				cronacatxt += selectedatletaname + " " + vintotxt + " il suo " + ordarr[ord] + " " + eunico + "incontro (n." + nincontro + thisincontro + ") ";
 				if (result.trim() != "") cronacatxt += " per " + result;
 
@@ -3015,7 +3015,7 @@ function setResultOk(match, atl, mfa, callback) {
 				doc.dadisputare = dd;
 				doc.realtime = false;
 
-				console.log("docvintoperso", doc);
+				utils.colog("docvintoperso", doc);
 
 				doc.goldenpoint = goldenpoint;
 				if (goldenpoint) {
@@ -3050,8 +3050,8 @@ function setResultOk(match, atl, mfa, callback) {
 
 
 
-			console.log("ln: " + ln);
-			console.log("ord: " + ord);
+			utils.colog("ln: " + ln);
+			utils.colog("ord: " + ord);
 
 			if (parseInt(ord, 10) == (parseInt(ln, 10) - 1)) {
 				if (d == "yes") {
@@ -3073,8 +3073,8 @@ function setResultOk(match, atl, mfa, callback) {
 			url += "&medagliamatch=" + med;
 			doc.medagliamatch = med;
 
-			console.log(doc);
-			console.log(cronacatxt);
+			utils.colog(doc);
+			utils.colog(cronacatxt);
 
 			retmatches.push(doc);
 			//update match successivi e precedenti
@@ -3091,7 +3091,7 @@ function setResultOk(match, atl, mfa, callback) {
 
 
 				if (i < ord) {
-					console.log("gara precedente " + i);
+					utils.colog("gara precedente " + i);
 					if (d == "yes") {
 						urlx += "&disputato=yes&vinto=yes&dadisputare=yes&medagliamatch=none";
 						pdoc.disputato = "yes";
@@ -3120,19 +3120,19 @@ function setResultOk(match, atl, mfa, callback) {
 				}
 
 				if (i > ord) {
-					console.log("gara successiva " + i);
+					utils.colog("gara successiva " + i);
 					nextgarecount++;
 					if (nextgarecount == 1) {
 
 						// alert("prossima gara: "+id);
 
 						var derbies = getDerby(rowdoc, allmatches, atleti);
-						console.log("derbies !!", derbies);
+						utils.colog("derbies !!", derbies);
 
 
 
 						derbies.rows.forEach(function (ditem, i) {
-							console.log("derby con " + derbies.rows[i].doc.atletaname);
+							utils.colog("derby con " + derbies.rows[i].doc.atletaname);
 							derbytext = " Sarà derby con " + derbies.rows[i].doc.atletaname + " al " + derbies.rows[i].doc.matchid + " ! "
 							var did = derbies.rows[i].doc.id;
 							//var urld = "/matches/update/" + jcurrentgara.id + "/" + did;
@@ -3248,7 +3248,7 @@ function setResultOk(match, atl, mfa, callback) {
 
 			var fname = "matches_" + match.garaid + ".json";
 			mongo.updateRecords(fname, retmatches, function (data) {
-				console.log(data);
+				utils.colog(data);
 				var ret = {
 					updatedmatches: data,
 					matches: retmatches,
@@ -3270,36 +3270,56 @@ function setResultOk(match, atl, mfa, callback) {
 					text: cronacatxt,
 					time: tempo
 				}
-				var cronfname = "cronaca_" + match.garaid + ".json";
-				mongo.addRecord(cronfname, "", cron, function (crdata) {
-					console.log("cronaca record inserted in " + cronfname, crdata);
 
 
-					//and finally add chat
-
-					var mfname = "chatno64.json";
-					mongo.addRecord(mfname, "", chat, function (cdata) {
-						console.log("chat record inserted", cdata);
-						if (io) {
-							io.emit("updategara", {
-								garaid: match.garaid
-							});
-							if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
-
-						}
-						else {
-							console.log("socket not connected")
-						}
-						if (callback) callback(ret);
+				if ((result.trim() == "0-0") || (result.trim() = "")) { //If result=0-0 no chat msg !!!
+					if (io) {
+						io.emit("updategara", {
+							garaid: match.garaid
+						});
 
 
+					}
+					else {
+						console.log("socket not connected")
+					}
+					if (callback) callback(ret);
+
+				} else {
 
 
-					});
+					var cronfname = "cronaca_" + match.garaid + ".json";
+					mongo.addRecord(cronfname, "", cron, function (crdata) {
+						utils.colog("cronaca record inserted in " + cronfname, crdata);
+
+
+						//and finally add chat
+
+						var mfname = "chatno64.json";
+						mongo.addRecord(mfname, "", chat, function (cdata) {
+							utils.colog("chat record inserted", cdata);
+							if (io) {
+								io.emit("updategara", {
+									garaid: match.garaid
+								});
+								if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
+
+							}
+							else {
+								console.log("socket not connected")
+							}
+							if (callback) callback(ret);
 
 
 
-				})
+
+						});
+
+
+
+					})
+
+				}
 
 
 
@@ -3788,7 +3808,7 @@ function getDerby(match, allmatches, atleti) {
 	var garaid = match.garaid;
 	var id = match.id;
 	var atl = utils.getAtletaById(match.atletaid, atleti);
-	console.log("getderby, atl", atl);
+	utils.colog("getderby, atl", atl);
 	var category = utils.getCategoria(atl.doc.datanascita);
 
 
@@ -3827,7 +3847,7 @@ function getDerby(match, allmatches, atleti) {
 			var doIt = true;
 			if (cat.trim().toLowerCase() != category.trim().toLowerCase()) {
 				doIt = false;
-				console.log("match " + mid + " in category " + cat + " ignored, searching for category " + category);
+				utils.colog("match " + mid + " in category " + cat + " ignored, searching for category " + category);
 			}
 			if (doIt) samemid.rows.push(row);
 			//retvalue.rows.push(row);
@@ -3860,7 +3880,7 @@ function getDerby(match, allmatches, atleti) {
 			return 0;
 		})
 		var iord = 0;
-		console.log("analisi incontri di " + aname);
+		utils.colog("analisi incontri di " + aname);
 		$ia.rows.forEach(function (jitem, j) {
 			var row = $ia.rows[j];
 			var mmid = row.doc.matchid;
@@ -3877,10 +3897,10 @@ function getDerby(match, allmatches, atleti) {
 				iord++;
 				eligible = true;
 			}
-			console.log("matchid " + mmid + " - eligible: " + eligible)
+			util.colog("matchid " + mmid + " - eligible: " + eligible)
 			if ((mmid == mid) && (iord == 1)) {
 				retvalue.rows.push(row);
-				console.log("è il primo prossimo incontro, DERBY OK")
+				utils.colog("è il primo prossimo incontro, DERBY OK")
 
 			}
 		})
@@ -3903,8 +3923,8 @@ function getDerby(match, allmatches, atleti) {
 router.get("/deletenew/:garaid/:matchid/:atletaid", function (req, res) {
 	var garaid = req.params.garaid;
 	var matchid = req.params.matchid;
-	var atletaid=req.params.atletaid;
-	delMatch(matchid, garaid,atletaid,function(data){
+	var atletaid = req.params.atletaid;
+	delMatch(matchid, garaid, atletaid, function (data) {
 		res.send(data);
 	});
 
@@ -3912,7 +3932,7 @@ router.get("/deletenew/:garaid/:matchid/:atletaid", function (req, res) {
 
 
 
-function delMatch(matchid, garaid,atletaid,callback) {
+function delMatch(matchid, garaid, atletaid, callback) {
 
 	var id = matchid;
 
@@ -3933,31 +3953,31 @@ function delMatch(matchid, garaid,atletaid,callback) {
 
 
 
-		console.log("trying to delete matchid " + id+" for atletaid "+atletaid);
+		console.log("trying to delete matchid " + id + " for atletaid " + atletaid);
 
 
 		//find and reset its derby counterpart, if there is one
 		utils.colog("finding derbies");
 
-		var alreadyfound=false;
+		var alreadyfound = false;
 
 		allmatches.rows.forEach(function (item, i) {
 			var meid = item.doc.id;
-			var matchnum=item.doc.matchid;
-			
-			var doc = item.doc;
-			var atlid=doc.atletaid;
-			utils.colog("examining match "+matchnum,"atletaid",atlid);
+			var matchnum = item.doc.matchid;
 
-			if (alreadyfound){
-				if (atlid==atletaid){  //this match is posterior to the deleted one, reset its data
-					console.log("resetting match "+matchnum);
-					doc.disputato="no";
-					doc.dadisputare="yes";
-					doc.risultato="0-0";
-					doc.vinto="no";
-					doc.medagliamatch="none";
-					doc.realtime="false";
+			var doc = item.doc;
+			var atlid = doc.atletaid;
+			utils.colog("examining match " + matchnum, "atletaid", atlid);
+
+			if (alreadyfound) {
+				if (atlid == atletaid) {  //this match is posterior to the deleted one, reset its data
+					console.log("resetting match " + matchnum);
+					doc.disputato = "no";
+					doc.dadisputare = "yes";
+					doc.risultato = "0-0";
+					doc.vinto = "no";
+					doc.medagliamatch = "none";
+					doc.realtime = "false";
 				}
 
 			}
@@ -3969,13 +3989,13 @@ function delMatch(matchid, garaid,atletaid,callback) {
 				if (doc.derby.trim() != "") {
 					var did = doc.derby;
 
-					if (did==id) {   //this match was a derby with the deleting match
+					if (did == id) {   //this match was a derby with the deleting match
 						utils.colog("found match that had a derby with the deleting one !!", matchnum);
-						
-						doc.derby="";
+
+						doc.derby = "";
 						console.log("resetted derby flag on matchnum " + matchnum);
 					}
-			
+
 
 
 				}
@@ -3984,10 +4004,10 @@ function delMatch(matchid, garaid,atletaid,callback) {
 			}
 
 
-			if (meid==id) {
-				utils.colog("WILLDELETE match "+matchnum+" !!!!");
+			if (meid == id) {
+				utils.colog("WILLDELETE match " + matchnum + " !!!!");
 				//allmatches.rows.splice(i,1);  //DELETES THE MATCH !!!
-				alreadyfound=true;
+				alreadyfound = true;
 			}
 
 
@@ -3995,22 +4015,22 @@ function delMatch(matchid, garaid,atletaid,callback) {
 
 
 		//DERBIES and POST matches updated, now finally DELETE the passed match
-		allmatches.rows.forEach(function(item,idx){
-			if (item.doc.id==matchid) {
-				console.log("finally deleted match ",item.doc.matchid)
-				allmatches.rows.splice(idx,1);
-				
+		allmatches.rows.forEach(function (item, idx) {
+			if (item.doc.id == matchid) {
+				console.log("finally deleted match ", item.doc.matchid)
+				allmatches.rows.splice(idx, 1);
+
 			}
 
 		})
 
 
-		var newmatchesforatleta={
-			rows:[]
+		var newmatchesforatleta = {
+			rows: []
 		}
-		allmatches.rows.forEach(function(item,idx){
-			var doc=item.doc;
-			if (doc.atletaid==atletaid) {
+		allmatches.rows.forEach(function (item, idx) {
+			var doc = item.doc;
+			if (doc.atletaid == atletaid) {
 				newmatchesforatleta.rows.push(item);
 			}
 
@@ -4031,9 +4051,9 @@ function delMatch(matchid, garaid,atletaid,callback) {
 			});
 		}
 
-		
 
-		
+
+
 
 	})
 
