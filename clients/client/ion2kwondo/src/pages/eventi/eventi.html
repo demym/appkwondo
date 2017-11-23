@@ -8,6 +8,9 @@
 
   <ion-navbar>
     <ion-title>Eventi</ion-title>
+    <ion-buttons end>
+      <button style="font-size: 18px" ion-button clear (tap)="doRefresh2()"><ion-icon name="md-refresh"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
   <ion-segment *ngIf="backend.user.role=='tkdradmin'" class="segment" [(ngModel)]="view">
@@ -27,19 +30,54 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content refreshingSpinner="ios">
         </ion-refresher-content>
-  </ion-refresher>  
+  </ion-refresher>
+  <div *ngIf="loading" style="width: 100%; text-align: center">
+      <ion-spinner name="ios"></ion-spinner>
+    </div>  
 
   <section *ngIf="view=='nextevents'">
 
   <ion-card *ngFor="let g of backend.nextevents">
 
     <ion-card-content>
- 
-    <b>{{g.gara.location}} - {{g.gara.data}}</b><br>
-        {{g.gara.title}}<br>
-        <ion-chip color="primary">
-            <ion-label><b>Tra {{getAbs(g.diff)}} giorni</b></ion-label>
-          </ion-chip>
+        <span class="tipoevento">{{g.tipo.toUpperCase()}}</span><br>
+        <span class="title">{{g.gara.title}}</span><br>
+    <span class="locationdata">{{g.gara.location}} - {{g.gara.data}}</span><br>
+    <hr>
+      
+    <ion-row>
+      <ion-col>
+          <ion-chip color="primary">
+              <ion-label><b>Tra {{getAbs(g.diff)}} giorni</b></ion-label>
+            </ion-chip>
+
+      </ion-col>
+      <ion-col col-2>
+        <button (tap)="showDetails(g)" ion-button clear small icon-only><ion-icon *ngIf="detailview!=g.gara.id" name="ios-arrow-down-outline"></ion-icon><ion-icon *ngIf="detailview==g.gara.id" name="ios-arrow-up-outline"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+    <section *ngIf="detailview==g.gara.id">
+      <div *ngIf="g.tipo=='gara'">
+        <ion-row>
+          <ion-col>
+
+          </ion-col>
+          <ion-col col-5>
+              <button small block ion-button (tap)="openGara(g)">Apri Gara</button>
+          </ion-col>
+        </ion-row>
+       
+      </div>
+
+      <div *ngIf="g.tipo=='evento'">
+      <hr>
+      <div class="descr" [innerHtml]="getDescr(g)">
+       
+      </div>
+    </div>
+
+    </section>
+       
       
    
    
@@ -51,6 +89,7 @@
   <section *ngIf="view=='allevents'">
       <ion-card *ngFor="let g of gare">
       <ion-card-content>
+          <span class="tipoevento">{{g.tipo}}</span><br>
           
           <b>{{g.doc.title}}</b><br>
           {{g.doc.location}} - {{g.doc.data}}<br>

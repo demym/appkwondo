@@ -8,7 +8,7 @@ import { Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
 import * as moment from 'moment';
-import * as xml2js from "xml2js";
+//import * as xml2js from "xml2js";
 //import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { Badge } from '@ionic-native/badge';
 import { LocalNotifications } from '@ionic-native/local-notifications';
@@ -1921,9 +1921,11 @@ export class BackendProvider {
         };
 
         data.rows.forEach(function (item, idx) {
+          item.tipo="gara";
           events.rows.push(item);
         })
         edata.rows.forEach(function (item, idx) {
+          item.tipo="evento";
           events.rows.push(item);
         })
 
@@ -1931,6 +1933,7 @@ export class BackendProvider {
 
         events.rows.forEach(function (item, idx) {
           var gara = item.doc;
+          var tipo=item.tipo;
 
           //console.log("evento",gara);
 
@@ -1957,6 +1960,7 @@ export class BackendProvider {
 
               //conslog("gara ", data, datagara, datediffgg);
               nextevents.push({
+                tipo: tipo,
                 gara: gara,
                 diff: datediffgg
               })

@@ -136,7 +136,8 @@ export class GaraPage {
   refresh(callback) {
     var questo = this;
     questo.loading = true;
-    questo.atletiiscritti = [];
+    //questo.atletiiscritti = [];
+    var atletiiscritti=[];
     questo.backend.getGara(questo.garaid, function (data) {
       //let data= Object.assign({}, d);
       console.log("got gara", data, data.matchesbyatleta.rows.length);
@@ -183,10 +184,10 @@ export class GaraPage {
       questo.iscritti.forEach(function (item, idx) {
         var atl = questo.getAtletaIscritto(item);
         //atl.tkdtcategoria=questo.backend.getTkdtCategoria(atl.id);
-        questo.atletiiscritti.push(atl);
+        atletiiscritti.push(atl);
 
       })
-      questo.atletiiscritti.sort(function (a, b) {
+      atletiiscritti.sort(function (a, b) {
         var a1 = a.cognome + a.nome;
         var b1 = b.cognome + b.nome;
         if (a1 > b1) return 1;
@@ -203,13 +204,14 @@ export class GaraPage {
       console.log("displayedgara", questo.displayedgara);
 
 
-      console.log("atletiiscritti", questo.atletiiscritti);
-      questo.atletiiscritti.forEach(function(item,idx){
+      console.log("atletiiscritti", atletiiscritti);
+      atletiiscritti.forEach(function(item,idx){
         var nmatches=questo.getMatches(item);
         item.nmatches=nmatches;
 
 
       })
+      questo.atletiiscritti=atletiiscritti;
       questo.loading = false;
       questo.info.dadisputare = questo.backend.filterRows(questo.gara.matchesbyprog, { dadisputare: "yes" });
       questo.info.disputati = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes" });
@@ -228,7 +230,7 @@ export class GaraPage {
   refreshCurrentGara(callback) {
     var questo = this;
     questo.loading = true;
-    questo.atletiiscritti = [];
+    var atletiiscritti = [];
 
     questo.backend.getCurrentGara(function (data) {
       //let data= Object.assign({}, d);
@@ -276,10 +278,10 @@ export class GaraPage {
       questo.iscritti.forEach(function (item, idx) {
         var atl = questo.getAtletaIscritto(item);
         //atl.tkdtcategoria=questo.backend.getTkdtCategoria(atl.id);
-        questo.atletiiscritti.push(atl);
+        atletiiscritti.push(atl);
 
       })
-      questo.atletiiscritti.sort(function (a, b) {
+      atletiiscritti.sort(function (a, b) {
         var a1 = a.cognome + a.nome;
         var b1 = b.cognome + b.nome;
         if (a1 > b1) return 1;
@@ -296,7 +298,16 @@ export class GaraPage {
       console.log("displayedgara", questo.displayedgara);
 
 
-      console.log("atletiiscritti", questo.atletiiscritti);
+
+      console.log("atletiiscritti", atletiiscritti);
+      atletiiscritti.forEach(function(item,idx){
+        var nmatches=questo.getMatches(item);
+        item.nmatches=nmatches;
+
+
+      })
+      
+      questo.atletiiscritti=atletiiscritti;
       questo.loading = false;
       questo.info.dadisputare = questo.backend.filterRows(questo.gara.matchesbyprog, { dadisputare: "yes" });
       questo.info.disputati = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes" });
