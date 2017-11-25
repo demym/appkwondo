@@ -20,6 +20,7 @@ import { AboutPage } from '../pages/about/about';
 import { ChatPage } from '../pages/chat/chat';
 import { Push } from 'ionic-native';
 import { BackendProvider } from '../providers/backend/backend';
+import { RtcPage } from '../pages/rtc/rtc';
 
 
 @Component({
@@ -92,6 +93,7 @@ export class MyApp {
       { title: 'Informazioni', component: AboutPage },
       { title: 'Users', component: UsersPage },
       { title: 'Connessioni', component: ConnectionsPage },
+      { title: 'RTC', component: RtcPage },
       { title: 'Logout', component: LoginPage },
       { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
@@ -476,7 +478,7 @@ export class MyApp {
     var retvalue=true;
     var t=text.toLowerCase();
 
-    var adminpages=["users","connessioni"];
+    var adminpages=["users","connessioni","rtc"];
 
     if (adminpages.indexOf(t)>-1) {
       //console.log("this is an admin page !",questo.backend.user.role);

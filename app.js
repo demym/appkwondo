@@ -19,6 +19,7 @@ var gcm = require('./routes/gcm');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
+var moment=require("moment");
 var syncavfiles = false;
 
 var zip = new EasyZip();
@@ -54,7 +55,8 @@ var atleti = require('./routes/atleti'),
 	utils = require("./routes/utils"),
 	realtime = require("./routes/realtime"),
 	users = require("./routes/users"),
-	eventi = require("./routes/eventi");
+	eventi = require("./routes/eventi"),
+	minimarket = require("./routes/minimarket");
 //mysql = require('./routes/mysql');;
 //contacts = require('./routes/contacts'),
 //index = require('./routes/index'),
@@ -119,6 +121,7 @@ app.use(allowCrossDomain);
 app.use(function (req, res, next) {
 
 	var whitelist = [
+		"/importcsv",
 		"/gcm",
 		"/atleti/login",
 		"/users/login",
@@ -394,6 +397,7 @@ app.use("/chat", chat)
 app.use("/tkdt", tkdt)
 app.use("/eventi", eventi)
 app.use("/users", users)
+app.use("/minimarket", minimarket)
 
 
 
@@ -930,6 +934,89 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });*/
+
+
+
+app.get("/importcsv", function (req, res) {
+	var fields = [];
+	var inserted = 0;
+	var linesread = 0;
+	var output = {
+		rows: []
+	}
+
+	var fs = require('fs'),
+		readline = require('readline');
+
+	var rd = readline.createInterface({
+		input: fs.createReadStream('data/minimarket.csv'),
+		output: process.stdout,
+		terminal: false
+	});
+
+	rd.on('line', function (line) {
+
+		linesread++;
+		if (linesread == 1) {
+			console.log(line);
+			fields = line.split(";");
+
+			console.log(fields.length + " fields found");
+
+
+
+		} else {
+
+			var values = line.split(";");
+
+			var docjson = {};
+			var foundnonblank = false;
+
+			var d=new Date();
+			var mom=moment(d).format("YYYYMMDDHHmmss")+utils.Right("000"+inserted,3);
+			docjson.id=mom;
+			docjson.imgurl="";
+
+			values.forEach(function (item, idx) {
+				var campo = fields[idx];
+				//console.log(campo);
+				var sitem = item;
+				if (campo == "type") {
+					//console.log("item",item);
+
+					sitem = sitem.replace('\"', '');
+					sitem = sitem.replace('\"', '');
+				}
+				docjson[campo] = sitem;
+
+				if (item.trim() != "") foundnonblank = true;
+
+			})
+			if (foundnonblank) {
+				inserted++;
+				//console.log("values",values.length);
+				//if (inserted < 50) output.rows.push(docjson);
+				output.rows.push(docjson)
+
+			}
+
+
+		}
+
+	});
+
+	rd.on("close", function () {
+		console.log("firnuto, documents n.", inserted);
+		fs.writeFile('data/minimarket.json', JSON.stringify(output, null, ' '));
+		/*dbs.insert_bulk("customeranag", output.rows, function (data) {
+			console.log("bulk insert completed");
+			res.send("done");
+		})*/
+
+	})
+});
+
+
 
 
 
