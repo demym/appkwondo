@@ -1120,6 +1120,8 @@ app.set('socketio', io);
 //var io = require('socket.io').listen(app.listen(port));
 
 
+
+
 if (syncavfiles) {
 	sync.downloadAvFiles();
 	sync.downloadChatAvFiles();
@@ -1459,3 +1461,27 @@ function padZeros(theNumber, max) {
 
 	return numStr;
 }
+
+
+
+
+
+
+
+//PEER SERVER
+
+var ip = require('ip');
+var peerserverport = 9000;
+
+var PeerServer = require('peer').PeerServer;
+var peerserver = new PeerServer({port: peerserverport, allow_discovery: true});
+
+peerserver.on('connection', function (id) {
+  console.log('new connection with id ' + id);
+});
+
+peerserver.on('disconnect', function (id) {
+  console.log('disconnect with id ' + id);
+});
+
+console.log('peer server running on ' + ip.address() + ':' + peerserverport);

@@ -35,6 +35,9 @@ import { MapPage } from '../pages/map/map';
 import { RegisterPage } from '../pages/register/register';
 import { UsersPage } from '../pages/users/users';
 import { ConnectionsPage } from '../pages/connections/connections';
+import { ServizisocietaPage } from '../pages/servizisocieta/servizisocieta';
+import { ProductsPage } from '../pages/products/products';
+import { CartPage } from '../pages/cart/cart';
 
 import { SocketService } from '../providers/socket-service/socket-service';
 import { BackendProvider } from '../providers/backend/backend';
@@ -62,6 +65,7 @@ import { FacebookProvider } from '../providers/facebook/facebook';
 import { MediaPlugin, MediaObject } from '@ionic-native/media';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+
 
 
 import { ElasticModule } from 'ng-elastic';
@@ -113,7 +117,10 @@ export function myCustomAudioProviderFactory() {
     RegisterPage,
     UsersPage,
     ConnectionsPage,
-    PopoverPage
+    PopoverPage,
+    ServizisocietaPage,
+    ProductsPage,
+    CartPage
   ],
   imports: [
     BrowserModule,
@@ -127,6 +134,7 @@ export function myCustomAudioProviderFactory() {
     IonicImageLoader.forRoot(),
     ElasticModule,
     FormsModule
+    
     //IonicAudioModule.forRoot(defaultAudioProviderFactory)
   ],
   bootstrap: [IonicApp],
@@ -165,7 +173,10 @@ export function myCustomAudioProviderFactory() {
     RegisterPage,
     UsersPage,
     ConnectionsPage,
-    PopoverPage
+    PopoverPage,
+    ServizisocietaPage,
+    ProductsPage,
+    CartPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     SocketService,

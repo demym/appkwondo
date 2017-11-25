@@ -66,5 +66,22 @@
         <img *ngIf="backend.activesocieta=='ASD TAEKWONDO ROZZANO'" src="assets/img/logotkdrozzano_icon.png" style="height: 32px" />
     </ion-card-content>
   </ion-card>-->
+  <div class="servizi">
+  <ion-card (tap)="gotoServiziSocieta()">
+    <ion-card-content>
+      <ion-row>
+          <ion-col col-3>
+              <img [src]="backend.settings.logourl" class="societalogosmall" />
+            </ion-col>
+        <ion-col>
+            Servizi {{backend.settings.mysocietaname}}
+        </ion-col>
+        
+      </ion-row>
+     
+    </ion-card-content>
+  </ion-card>
+</div>
  
 </ion-content>
+

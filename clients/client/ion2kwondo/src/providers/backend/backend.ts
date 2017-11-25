@@ -23,7 +23,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 */
 @Injectable()
 export class BackendProvider {
-  isProduction=true;
+  isProduction=false;
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
   public rooturl = "http://tkdr.herokuapp.com";
@@ -102,9 +102,12 @@ export class BackendProvider {
   soundtimer;
   soundtime = 1000;
 
+  cart: any=[];
+
   settings: any = {
     mysocieta: "20160217220400",
-    mysocietaname: "ASD Taekwondo Rozzano"
+    mysocietaname: "ASD Taekwondo Rozzano",
+    logourl: "http://www.taekwondorozzano.it/wp-content/themes/Taekwondo/images/logo-tae-kwan-do-rozzano.png"
   }
 
   chatpageaccessed = false;
@@ -112,8 +115,8 @@ export class BackendProvider {
   activechatfilename = "chatno64.json";
   appVersion:any={
     name: "appkwondov2",
-    version: "2.0.1",
-    releasedate: "20/11/2017"
+    version: "2.0.2",
+    releasedate: "24/11/2017"
   }
   nextevents:any=[];
   isIosWeb=false;

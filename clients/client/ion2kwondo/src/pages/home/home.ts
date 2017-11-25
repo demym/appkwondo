@@ -14,6 +14,8 @@ import { StatsPage } from '../../pages/stats/stats';
 import { AccountPage } from '../../pages/account/account';
 import { AboutPage } from '../../pages/about/about';
 
+import { ServizisocietaPage } from '../../pages/servizisocieta/servizisocieta';
+
 //import { DeviceFeedback } from '@ionic-native/device-feedback';
 
 
@@ -355,6 +357,13 @@ gotoPage(p){
   myAccount(){
     var questo=this;
     this.navCtrl.push(AccountPage,{},questo.backend.navOptions);
+
+  }
+
+  gotoServiziSocieta(){
+    var questo=this;
+    this.navCtrl.push(ServizisocietaPage,{},questo.backend.navOptions);
+
 
   }
 }

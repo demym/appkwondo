@@ -100,7 +100,7 @@ export class TabsPage {
   }
 
   tappedTab(){
-    console.log("tappedTab");
+    //console.log("tappedTab");
     this.backend.playFeedback();
   }
 
