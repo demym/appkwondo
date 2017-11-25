@@ -22,6 +22,14 @@ function colog(txt) {
 
 router.get("/list",function(req,res){
     mongo.getfile("minim.json",function(data){
+        data.rows.sort(function(a,b){
+            var a1=a.nome.toLowerCase();
+            var b1=b.nome.toLowerCase();
+            if (a1>b1) return 1;
+            if (a1<b1) return -1;
+            return 0;
+            
+        });
         res.send(data);
     })
 })
