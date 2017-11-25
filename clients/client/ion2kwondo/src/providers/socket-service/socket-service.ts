@@ -220,6 +220,14 @@ export class SocketService {
     }); //end of socket.on('message')
 
 
+    this.socket.on("rtcpeerconnected",function(id){
+      console.log("rtcpeerconnected in socket.ts",id);
+    })
+
+    this.socket.on("rtcpeerdisconnected",function(id){
+      console.log("rtcpeerdisconnected in socket.ts",id);
+    })
+
     questo.syncChatMessages(function(data){
       console.log("chatmessages synced in socket.ts");
     })

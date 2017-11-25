@@ -19,7 +19,7 @@ var gcm = require('./routes/gcm');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
-var syncavfiles = true;
+var syncavfiles = false;
 
 var zip = new EasyZip();
 var clients = [];
@@ -30,8 +30,8 @@ var tokenExpireMinutes = 60;
 var usewhitelist = true; //true=token is used     false=token is not used
 
 process.on('uncaughtException', function (err) {
-  console.error(err);
-  console.log("Server NOT Exiting...");
+	console.error(err);
+	console.log("Server NOT Exiting...");
 });
 
 //var cookie=require('cookie');
@@ -127,6 +127,7 @@ app.use(function (req, res, next) {
 		"/users/retrievepsw",
 		"/users/potentialios",
 		"/data/chatmedia",
+		"/peerjs",
 		"/token/true",
 		"/token/false",
 		"/listusers?token=nonsientramai",
@@ -413,17 +414,17 @@ app.get("/zipdata", function (req, res) {
 
 })
 
-app.get("/token/:enabled",function(req,res){
-	var enabled=req.params.enabled;
+app.get("/token/:enabled", function (req, res) {
+	var enabled = req.params.enabled;
 
-	var text=""
+	var text = ""
 
-	if (String(enabled)=="true"){
-	   text="tokens enabled, app is now protected";
-	   usewhitelist=true;
+	if (String(enabled) == "true") {
+		text = "tokens enabled, app is now protected";
+		usewhitelist = true;
 	} else {
-		text="tokens disabled, app is now unprotected";
-		usewhitelist=false;
+		text = "tokens disabled, app is now unprotected";
+		usewhitelist = false;
 	}
 
 	res.send(text);
@@ -431,12 +432,12 @@ app.get("/token/:enabled",function(req,res){
 
 })
 
-app.get("/mongoprova",function(req,res){
-	mongo.prova(function(err,data){
-		console.log("firnuto",err,data);
+app.get("/mongoprova", function (req, res) {
+	mongo.prova(function (err, data) {
+		console.log("firnuto", err, data);
 		res.send(data);
 	});
-	
+
 })
 
 app.post("/crossd", function (req, res) {
@@ -514,23 +515,23 @@ app.get("/socketusers", function (req, res) {
 		for (var i = 0; i < clients.length; i++) {
 			var e = clients[i];
 			var appv = "";
-			var gcmtoken="";
+			var gcmtoken = "";
 			if (e.appversion) appv = e.appversion;
-			if (e.gcmtoken) gcmtoken=e.gcmtoken;
-			if (e.hasOwnProperty("id")){
-			var cl = {
-				id: e.id,
-				email: e.email,
-				role: e.role,
-				nickname: e.nickname,
-				customer: e.customer,
-				ipaddress: e.ipaddress,
-				device: e.device,
-				appversion: appv,
-				gcmtoken: gcmtoken
+			if (e.gcmtoken) gcmtoken = e.gcmtoken;
+			if (e.hasOwnProperty("id")) {
+				var cl = {
+					id: e.id,
+					email: e.email,
+					role: e.role,
+					nickname: e.nickname,
+					customer: e.customer,
+					ipaddress: e.ipaddress,
+					device: e.device,
+					appversion: appv,
+					gcmtoken: gcmtoken
+				}
+				out.push(cl)
 			}
-			out.push(cl)
-		}
 
 		}
 
@@ -873,12 +874,12 @@ app.get("/realtime", function (req, res) {
 })
 
 app.get("/realtime/reset", function (req, res) {
-    realtime.clearRealtime();
-	realtime.initRealtime(function(){
+	realtime.clearRealtime();
+	realtime.initRealtime(function () {
 		res.send(realtime.getRealtimeMatches());
 
 	});
-	
+
 })
 
 app.get("/realtime/html", function (req, res) {
@@ -932,17 +933,17 @@ app.use(function(req, res, next) {
 
 
 
-app.get("/gcm/resetcount/:token",function(req,res){
-	var token=req.params.token;
+app.get("/gcm/resetcount/:token", function (req, res) {
+	var token = req.params.token;
 	gcm.resetTokenCount(token);
-	res.send({error: false, tokens: gcm.viewTokens()});
+	res.send({ error: false, tokens: gcm.viewTokens() });
 })
 
-app.get("/gcm/setcount/:token/:n",function(req,res){
-	var token=req.params.token;
-	var n=req.params.n;
-	gcm.setTokenCount(token,n);
-	res.send({error: false,tokens: gcm.viewTokens()});
+app.get("/gcm/setcount/:token/:n", function (req, res) {
+	var token = req.params.token;
+	var n = req.params.n;
+	gcm.setTokenCount(token, n);
+	res.send({ error: false, tokens: gcm.viewTokens() });
 })
 
 
@@ -962,7 +963,7 @@ app.get("/gcm/viewtokens", function (req, res) {
 	res.send(gcm.viewTokens());
 })
 
-app.get("/gcm/getmemorytokens",function(req,res){
+app.get("/gcm/getmemorytokens", function (req, res) {
 	res.send(gcm.viewTokens());
 })
 
@@ -976,12 +977,12 @@ app.get("/gcm/gettokens", function (req, res) {
 })
 
 
-app.get("/gcm/reset",function(req,res){
+app.get("/gcm/reset", function (req, res) {
 	res.send(gcm.resetTokens());
 })
 
-app.get("/gcm/deletetoken/:token",function(req,res){
-	var token=req.params.token;
+app.get("/gcm/deletetoken/:token", function (req, res) {
+	var token = req.params.token;
 	res.send(gcm.deleteToken(token));
 })
 
@@ -1027,7 +1028,7 @@ app.get("/gcm/send", function (req, res) {
 
 	if (token.trim() != "") {
 
-		console.log("TOKEN",obj.token);
+		console.log("TOKEN", obj.token);
 
 		gcm.sendToToken(obj, function (data) {
 			console.log(data);
@@ -1052,31 +1053,25 @@ app.get("/gcm/send", function (req, res) {
 
 
 app.get("/gcm/test", function (req, res) {
-	
-		var msg = {
-			title: "titolo notifica",
-			text: "testo notifica"
-		}
-	
-		/*
-			gcm.sendHttps(msg, function (data) {
-				console.log(data);
-				res.send(data);
-			})*/
-	
-		gcm.sendToEmail("demym@yahoo.it", msg, function (data) {
+
+	var msg = {
+		title: "titolo notifica",
+		text: "testo notifica"
+	}
+
+	/*
+		gcm.sendHttps(msg, function (data) {
+			console.log(data);
 			res.send(data);
-		})
+		})*/
+
+	gcm.sendToEmail("demym@yahoo.it", msg, function (data) {
+		res.send(data);
 	})
+})
 
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
-});
 /**
  * Error handlers
  */
@@ -1112,10 +1107,46 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+var ExpressPeerServer = require('peer').ExpressPeerServer;
+//var peerserver = require('peer').ExpressPeerServer;
+
+
 var server = app.listen(port)
 
-//server.listen(port);
+var q = ExpressPeerServer(server, { debug: true, allow_discovery: true });
+
+app.use('/peerjs', q);
+
 var io = require('socket.io').listen(server);
+
+
+q.on('connection', function (id) {
+	console.log('new connection with id ', id);
+	if (io){
+		io.emit("rtcpeerconnected",id);
+	}
+});
+
+q.on('disconnect', function (id) {
+	console.log('disconnect with id ', id);
+	if (io){
+		io.emit("rtcpeerdisconnected",id);
+	}
+
+});
+
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+	var err = new Error('Not Found');
+	err.status = 404;
+	next(err);
+});
+
+
+
+//server.listen(port);
+
 app.set('socketio', io);
 //var io = require('socket.io').listen(app.listen(port));
 
@@ -1128,11 +1159,11 @@ if (syncavfiles) {
 }
 //SOCKET.IO definitions
 
-global.io=io;
+global.io = io;
 
 io.sockets.on('connection', function (socket) {
 	var address = socket.handshake.address;
-	global.socket=socket;
+	global.socket = socket;
 	socket.ipaddress = address;
 	console.log("socket id " + socket.id + " connected from ip " + address);
 	//socket.broadcast.emit("refreshsockets", {text: "Socket "+socket.id+" connected"});
@@ -1182,16 +1213,16 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('message', function (msg) {
 
-	
+
 
 
 		colog('received message from socketid ' + socket.id + ":" + JSON.stringify(msg));
 		var toid = "";
 		var tipo = msg.type;
 		var nick = "";
-		var email="";
+		var email = "";
 		if (msg.nickname) nick = msg.nickname;
-		if (msg.hasOwnProperty("email")) email=msg.email;
+		if (msg.hasOwnProperty("email")) email = msg.email;
 		if (msg.to) toid = msg.to;
 		if (toid.toLowerCase().trim() == "all") toid = "";
 
@@ -1204,18 +1235,18 @@ io.sockets.on('connection', function (socket) {
 		}
 
 		if (tipo == "clientspecs") {
-			console.log("received clientspecs from " + socket.id + ":",msg);
+			console.log("received clientspecs from " + socket.id + ":", msg);
 
 			if (msg.hasOwnProperty("gcmtoken") && msg.hasOwnProperty("deviceid")) {
-				if ((msg.gcmtoken!="") && (msg.deviced!="")) gcm.addToken(msg.deviceid,msg.gcmtoken);
-				
+				if ((msg.gcmtoken != "") && (msg.deviced != "")) gcm.addToken(msg.deviceid, msg.gcmtoken);
+
 			}
-			
+
 			socket.device = msg.device;
 			socket.nickname = nick;
-			socket.email=email;
-			if (msg.gcmtoken) socket.gcmtoken=msg.gcmtoken;
-			if (msg.deviceid) socket.deviceid=msg.deviceid;
+			socket.email = email;
+			if (msg.gcmtoken) socket.gcmtoken = msg.gcmtoken;
+			if (msg.deviceid) socket.deviceid = msg.deviceid;
 			if (msg.appversion) socket.appversion = msg.appversion;
 			io.emit('auserhasconnected');
 
@@ -1225,27 +1256,27 @@ io.sockets.on('connection', function (socket) {
 
 
 		if (tipo == "realtime") {
-			console.log("socket message->realtime received",new Date());
-		
-			colog("broadcasting "+tipo+" to all")
+			console.log("socket message->realtime received", new Date());
 
-		
+			colog("broadcasting " + tipo + " to all")
+
+
 
 			socket.broadcast.emit(tipo, msg);
-			
 
-			
-			if (msg.deleterealtime){
-				if (String(msg.deleterealtime)=="true") return;
-					
-				
+
+
+			if (msg.deleterealtime) {
+				if (String(msg.deleterealtime) == "true") return;
+
+
 			}
-			
 
-			
-			console.log("syncing rt",msg);
+
+
+			console.log("syncing rt", msg);
 			realtime.updateRealtimeMatches(msg);
-			socket.broadcast.emit("realtimematches",{ matches: realtime.getRealtimeMatches()});
+			socket.broadcast.emit("realtimematches", { matches: realtime.getRealtimeMatches() });
 
 
 		}
@@ -1254,10 +1285,10 @@ io.sockets.on('connection', function (socket) {
 
 			//socket.emit(tipo, msg);
 			if (toid == "") {
-				colog("broadcasting "+tipo+" to all")
+				colog("broadcasting " + tipo + " to all")
 				socket.broadcast.emit(tipo, msg);
 			} else {
-				colog("broadcasting "+tipo+" to " + toid)
+				colog("broadcasting " + tipo + " to " + toid)
 				//io.to(toid).emit(tipo,'ciao sono '+socket.id)
 				var data = {
 					type: "notification",
@@ -1295,8 +1326,8 @@ io.sockets.on('connection', function (socket) {
 	   */
 	});
 
-	socket.on("getrealtimematches",function(){
-		io.to(socket.id).emit("realtimematches",{ matches: realtime.getRealtimeMatches()});
+	socket.on("getrealtimematches", function () {
+		io.to(socket.id).emit("realtimematches", { matches: realtime.getRealtimeMatches() });
 	})
 
 
@@ -1317,7 +1348,7 @@ io.sockets.on('connection', function (socket) {
 
 
 	socket.on('connected', function (msg) {
-		console.log("socket connected",msg);
+		console.log("socket connected", msg);
 		//io.to(socket.id).emit("getclientspecs", msg);
 		io.to(socket.id).emit("getnickname", {
 			sockid: socket.id
@@ -1332,11 +1363,11 @@ io.sockets.on('connection', function (socket) {
 		//socket.emit("refreshsockets",{text: txt});
 	});
 
-/*
-	socket.on("error",function(err){
-		console.log("error",err)
-	})
-*/
+	/*
+		socket.on("error",function(err){
+			console.log("error",err)
+		})
+	*/
 
 	//res.send(sock) ;
 
@@ -1357,7 +1388,7 @@ server.on('listening', onListening);
  * Event listener for HTTP server "error" event.
  */
 function onError(error) {
-	console.log("SERVER ONERROR !!",error);
+	console.log("SERVER ONERROR !!", error);
 	if (error.syscall !== 'listen') {
 		throw error;
 	}
@@ -1473,15 +1504,9 @@ function padZeros(theNumber, max) {
 var ip = require('ip');
 var peerserverport = 9000;
 
-var PeerServer = require('peer').PeerServer;
-var peerserver = new PeerServer({port: peerserverport, allow_discovery: true});
+//var PeerServer = require('peer').PeerServer;
+//var peerserver = new PeerServer({port: peerserverport, allow_discovery: true});
 
-peerserver.on('connection', function (id) {
-  console.log('new connection with id ' + id);
-});
+//app.use('/peerjs', peerserver(server, {debug: true, allow_discovery: true}));
 
-peerserver.on('disconnect', function (id) {
-  console.log('disconnect with id ' + id);
-});
 
-console.log('peer server running on ' + ip.address() + ':' + peerserverport);
