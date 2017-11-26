@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="004" id="com.tkdr.appkwondov2" version="2.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="StreamingMedia">
+        <param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
+    </feature>
     <feature name="AppAvailability">
         <param name="android-package" value="com.ohh2ahh.appavailability.AppAvailability" />
     </feature>
@@ -46,6 +49,9 @@
     <feature name="ThemeableBrowser">
         <param name="android-package" value="com.initialxy.cordova.themeablebrowser.ThemeableBrowser" />
     </feature>
+    <feature name="UniqueDeviceID">
+        <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID" />
+    </feature>
     <feature name="DeviceFeedback">
         <param name="android-package" value="cz.Velda.cordova.plugin.devicefeedback.DeviceFeedback" />
         <param name="onload" value="true" />
@@ -66,12 +72,6 @@
     <feature name="Keyboard">
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="UniqueDeviceID">
-        <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID" />
-    </feature>
-    <feature name="StreamingMedia">
-        <param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
     </feature>
     <feature name="PushNotification">
         <param name="android-package" value="com.adobe.phonegap.push.PushPlugin" />

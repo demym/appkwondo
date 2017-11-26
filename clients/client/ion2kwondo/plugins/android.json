@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-appavailability": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -20,6 +23,14 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "23+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "lite",
+            "XWALK_MULTIPLEAPK": "true",
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-device": {
@@ -55,6 +66,9 @@
         "cordova-plugin-tts": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
+        "cordova-plugin-uniquedeviceid": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-velda-devicefeedback": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
@@ -73,21 +87,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
-        "cordova-plugin-uniquedeviceid": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "com.hutchind.cordova.plugins.streamingmedia": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
         "phonegap-plugin-push": {
-            "PACKAGE_NAME": "com.tkdr.appkwondov2"
-        },
-        "cordova-plugin-crosswalk-webview": {
-            "XWALK_VERSION": "23+",
-            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-            "XWALK_MODE": "lite",
-            "XWALK_MULTIPLEAPK": "true",
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         }
     },
@@ -96,6 +96,9 @@
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
+        "cordova-plugin-webserver": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
         "es6-promise-plugin": {

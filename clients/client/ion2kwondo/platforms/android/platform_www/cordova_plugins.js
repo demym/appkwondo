@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
+        "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
+        "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
+        "clobbers": [
+            "streamingMedia"
+        ]
+    },
+    {
         "id": "cordova-plugin-appavailability.AppAvailability",
         "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
         "pluginId": "cordova-plugin-appavailability",
@@ -386,6 +394,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+        "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+        "pluginId": "cordova-plugin-uniquedeviceid",
+        "merges": [
+            "window.plugins.uniqueDeviceID"
+        ]
+    },
+    {
         "id": "cordova-plugin-velda-devicefeedback.DeviceFeedback",
         "file": "plugins/cordova-plugin-velda-devicefeedback/DeviceFeedback.js",
         "pluginId": "cordova-plugin-velda-devicefeedback",
@@ -452,22 +468,6 @@ module.exports = [
         "runs": true
     },
     {
-        "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
-        "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
-        "pluginId": "cordova-plugin-uniquedeviceid",
-        "merges": [
-            "window.plugins.uniqueDeviceID"
-        ]
-    },
-    {
-        "id": "com.hutchind.cordova.plugins.streamingmedia.StreamingMedia",
-        "file": "plugins/com.hutchind.cordova.plugins.streamingmedia/www/StreamingMedia.js",
-        "pluginId": "com.hutchind.cordova.plugins.streamingmedia",
-        "clobbers": [
-            "streamingMedia"
-        ]
-    },
-    {
         "id": "phonegap-plugin-push.PushNotification",
         "file": "plugins/phonegap-plugin-push/www/push.js",
         "pluginId": "phonegap-plugin-push",
@@ -479,6 +479,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
     "cordova-plugin-app-event": "1.2.1",
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.1",
@@ -486,6 +487,7 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-console": "1.0.5",
+    "cordova-plugin-crosswalk-webview": "2.3.0",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
@@ -497,17 +499,16 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-themeablebrowser": "0.2.17",
     "cordova-plugin-tts": "0.2.3",
+    "cordova-plugin-uniquedeviceid": "1.3.2",
     "cordova-plugin-velda-devicefeedback": "0.0.2",
+    "cordova-plugin-webserver": "1.0.3",
     "cordova-plugin-whitelist": "1.3.1",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-uniquedeviceid": "1.3.2",
-    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
-    "phonegap-plugin-push": "2.0.0",
-    "cordova-plugin-crosswalk-webview": "2.3.0"
+    "phonegap-plugin-push": "2.0.0"
 };
 // BOTTOM OF METADATA
 });
