@@ -20,7 +20,7 @@ var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
 var moment=require("moment");
-var syncavfiles = false;
+var syncavfiles = true;
 
 var zip = new EasyZip();
 var clients = [];

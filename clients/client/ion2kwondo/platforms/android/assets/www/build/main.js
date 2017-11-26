@@ -8446,8 +8446,8 @@ var BackendProvider = (function () {
         this.utils = utils;
         this.isProduction = false;
         //@ViewChild(Navbar) navBar: Navbar;
-        //public rooturl = "http://tkdr.herokuapp.com";
-        this.rooturl = "http://localhost:3000";
+        this.rooturl = "http://tkdr.herokuapp.com";
+        //public rooturl = "http://localhost:3000"; 
         //public rooturl="http://appkwondo.mybluemix.net"; 
         //9.71.212.38
         //public rooturl="http://10.113.32.153:3000"

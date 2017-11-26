@@ -9,6 +9,7 @@ var fs = require('fs');
 
 var mongo = require('../routes/mongo');
 var matches = require('../routes/matches');
+var mail = require("../routes/mail");
 var debug = false;
 
 
@@ -69,6 +70,65 @@ router.post("/editproduct",function(req,res){
     })
 })
 
+
+router.post("/addorder",function(req,res){
+    var cart=req.body;
+
+    console.log("cart",cart);
+    mongo.getfile("minimord.json",function(data){
+        data.rows.push(cart);
+        mongo.updatefile("minimord.json",data.rows,function(udata){
+            res.send(udata);
+        })
+    })
+})
+
+router.post("/order",function(req,res){
+    var body=req.body;
+    var cart=body;
+
+    console.log("cart",cart);
+
+    var minimarketmail="marika.montemurro@live.it";
+
+    var html = "Hai ricevuto la seguente prenotazione da "+cart.email+" ("+cart.nick+") <br><br>";
+    
+    html+="<table width='100%' border='1'>";
+    html+="<tr><th>codice</th><th>categoria</th><th>prodotto</th><th>qta</th><th>prezzo unitario</th><th>totale prodotto</th></tr>";
+    cart.cart.forEach(function(item,idx){
+
+
+    })
+                html += "E-mail: <b>" + user.email + "</b><br>";
+                html += "Password: <b>" + user.password + "</b>";
+
+    var mailobj = {
+        from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+        to: minimarketmail, // list of receivers
+        subject: "Hai ricevuto un nuovo ordine prenotazioni da "+cart.email +" ("+cart.nick+")", // Subject line
+        text: html, // plaintext body
+        html: html // html body
+    }
+
+    mail.sendMail(mailobj, function (mdata) {
+        retvalue.error = false;
+        retvalue.mailresponse = mdata;
+        res.send(retvalue);
+
+    })
+
+})
+
+router.get("/updcat",function(req,res){
+    mongo.getfile("minim.json",function(data){
+        data.rows.forEach(function(item,idx){
+            data.rows[idx].categoria="minimarket";
+        })
+        mongo.updatefile("minim.json",data.rows,function(udata){
+            res.send(udata);
+        })
+    })
+})
 
 router.post("/deleteproduct",function(req,res){
     var body=req.body;

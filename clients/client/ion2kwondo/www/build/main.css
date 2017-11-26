@@ -31603,6 +31603,16 @@ page-products .price {
   font-size: 15px;
 }
 
+page-products .nome {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+page-products .descr {
+  font-size: 13px;
+  font-style: italic;
+}
+
 page-rtc {
   /*
  * Licensed to the Apache Software Foundation (ASF) under one
