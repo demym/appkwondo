@@ -31582,6 +31582,19 @@ page-medagliereglobale .table-striped thead {
   /* background: lightblue;*/
 }
 
+page-orders .orderid {
+  font-size: 13px;
+}
+
+page-orders .totalprice {
+  font-weight: bold;
+}
+
+page-orders .status {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 page-products .productimage {
   height: 70px;
 }

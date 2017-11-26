@@ -36,6 +36,23 @@ router.get("/list",function(req,res){
 })
 
 
+
+router.get("/listorders",function(req,res){
+    mongo.getfile("minimord.json",function(data){
+        data.rows.sort(function(a,b){
+            var a1=a.id.toLowerCase();
+            var b1=b.id.toLowerCase();
+            if (a1>b1) return -1;
+            if (a1<b1) return 1;
+            return 0;
+            
+        });
+        res.send(data);
+    })
+})
+
+
+
 router.post("/addproduct",function(req,res){
     var body=req.body;
     var product=body.product;
