@@ -381,9 +381,12 @@ app.post('/login', passport.authenticate('local-signin', {
 //app.use("/schede",schede)
 
 app.get('/', function (req, res) {
+
+
 	res.sendfile('index.html', {
 		root: path.join(__dirname, 'public')
 	});
+	
 });
 
 
