@@ -116,8 +116,8 @@ export class BackendProvider {
   activechatfilename = "chatno64.json";
   appVersion:any={
     name: "appkwondov2",
-    version: "2.0.2",
-    releasedate: "24/11/2017"
+    version: "2.0.3",
+    releasedate: "28/11/2017"
   }
   nextevents:any=[];
   isIosWeb=false;

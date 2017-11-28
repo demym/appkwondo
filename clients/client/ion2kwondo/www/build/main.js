@@ -8949,8 +8949,8 @@ var BackendProvider = (function () {
         this.activechatfilename = "chatno64.json";
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.0.2",
-            releasedate: "24/11/2017"
+            version: "2.0.3",
+            releasedate: "28/11/2017"
         };
         this.nextevents = [];
         this.isIosWeb = false;
