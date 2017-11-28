@@ -31595,6 +31595,16 @@ page-orders .status {
   text-transform: uppercase;
 }
 
+page-orders .id {
+  font-size: 11px;
+  color: #333;
+}
+
+page-orders .frm {
+  font-size: 12px;
+  color: #333;
+}
+
 page-products .productimage {
   height: 70px;
 }
@@ -31647,6 +31657,15 @@ page-rtc {
  */
   /* Portrait layout (default) */
   /* Landscape layout (with min-width) */
+}
+
+page-rtc .remotevideo {
+  width: 100%;
+}
+
+page-rtc .localvideo {
+  width: 200px;
+  height: 200px;
 }
 
 page-rtc * {

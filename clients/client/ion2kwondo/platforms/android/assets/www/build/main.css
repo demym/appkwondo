@@ -31582,6 +31582,29 @@ page-medagliereglobale .table-striped thead {
   /* background: lightblue;*/
 }
 
+page-orders .orderid {
+  font-size: 13px;
+}
+
+page-orders .totalprice {
+  font-weight: bold;
+}
+
+page-orders .status {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+page-orders .id {
+  font-size: 11px;
+  color: #333;
+}
+
+page-orders .frm {
+  font-size: 12px;
+  color: #333;
+}
+
 page-products .productimage {
   height: 70px;
 }
@@ -31601,6 +31624,16 @@ page-products .bariconbig {
 
 page-products .price {
   font-size: 15px;
+}
+
+page-products .nome {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+page-products .descr {
+  font-size: 13px;
+  font-style: italic;
 }
 
 page-rtc {
@@ -31624,6 +31657,15 @@ page-rtc {
  */
   /* Portrait layout (default) */
   /* Landscape layout (with min-width) */
+}
+
+page-rtc .remotevideo {
+  width: 100%;
+}
+
+page-rtc .localvideo {
+  width: 200px;
+  height: 200px;
 }
 
 page-rtc * {

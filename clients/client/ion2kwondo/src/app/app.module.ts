@@ -68,6 +68,7 @@ import { FacebookProvider } from '../providers/facebook/facebook';
 import { MediaPlugin, MediaObject } from '@ionic-native/media';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 
 
@@ -207,6 +208,7 @@ export function myCustomAudioProviderFactory() {
     FileTransfer,
     Badge,
     UniqueDeviceID,
+    AndroidPermissions,
     FacebookProvider]
 })
 export class AppModule {}

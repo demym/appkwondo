@@ -9,6 +9,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-android-permissions.Permissions",
+        "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+        "pluginId": "cordova-plugin-android-permissions",
+        "clobbers": [
+            "cordova.plugins.permissions"
+        ]
+    },
+    {
         "id": "cordova-plugin-appavailability.AppAvailability",
         "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
         "pluginId": "cordova-plugin-appavailability",
@@ -480,6 +488,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
+    "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-app-event": "1.2.1",
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.1",

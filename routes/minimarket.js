@@ -36,6 +36,58 @@ router.get("/list",function(req,res){
 })
 
 
+router.get("/changeorderstatus/:id/:newstatus",function(req,res){
+    var id=req.params.id;
+    var newstatus=req.params.newstatus;
+    mongo.getfile("minimord.json",function(data){
+        data.rows.forEach(function(item,idx){
+            if (item.id==id){
+                data.rows[idx].stato=newstatus;
+            }
+
+        });
+        mongo.updatefile("minimord.json",data.rows,function(udata){
+            res.send(udata);
+        })
+    })
+})
+
+router.get("/deleteorders/:stato",function(req,res){
+    
+    var stato=req.params.stato;
+    mongo.getfile("minimord.json",function(data){
+        data.rows.forEach(function(item,idx){
+            if (item.stato==stato){
+                data.rows.splice(idx,1);
+            }
+
+        });
+        mongo.updatefile("minimord.json",data.rows,function(udata){
+            res.send(udata);
+        })
+    })
+
+
+})
+
+
+router.get("/deleteorder/:id",function(req,res){
+    var id=req.params.id;
+    var newstatus=req.params.newstatus;
+    mongo.getfile("minimord.json",function(data){
+        data.rows.forEach(function(item,idx){
+            if (item.id==id){
+                data.rows.splice(idx,1);
+            }
+
+        });
+        mongo.updatefile("minimord.json",data.rows,function(udata){
+            res.send(udata);
+        })
+    })
+})
+
+
 
 router.get("/listorders",function(req,res){
     mongo.getfile("minimord.json",function(data){

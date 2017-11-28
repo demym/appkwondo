@@ -12,6 +12,7 @@ import { ConnectionsPage } from '../pages/connections/connections';
 import { Events } from 'ionic-angular';
 import { App, Tabs, ToastController } from 'ionic-angular';
 import { DeviceFeedback } from '@ionic-native/device-feedback';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 
 import { SettingsPage } from '../pages/settings/settings';
@@ -21,6 +22,7 @@ import { ChatPage } from '../pages/chat/chat';
 import { Push } from 'ionic-native';
 import { BackendProvider } from '../providers/backend/backend';
 import { RtcPage } from '../pages/rtc/rtc';
+import { ServizisocietaPage } from '../pages/servizisocieta/servizisocieta';
 
 
 @Component({
@@ -45,6 +47,8 @@ export class MyApp {
     "md-information-circle",
     "ios-people",
     "md-wifi",
+    "md-videocam",
+    "md-git-network",
     "md-exit",
     "md-close-circle"
   ]
@@ -60,7 +64,7 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public toastCtrl: ToastController, private deviceFeedback: DeviceFeedback, private app: App, private _SplashScreen: SplashScreen, public events: Events, private alertCtrl: AlertController, public platform: Platform, public backend: BackendProvider) {
+  constructor(private androidPermissions: AndroidPermissions, public toastCtrl: ToastController, private deviceFeedback: DeviceFeedback, private app: App, private _SplashScreen: SplashScreen, public events: Events, private alertCtrl: AlertController, public platform: Platform, public backend: BackendProvider) {
     var questo = this;
 
     questo.detectEnvironment();
@@ -94,6 +98,7 @@ export class MyApp {
       { title: 'Users', component: UsersPage },
       { title: 'Connessioni', component: ConnectionsPage },
       { title: 'RTC', component: RtcPage },
+      { title: 'Servizi soci', component: ServizisocietaPage},
       { title: 'Logout', component: LoginPage },
       { title: 'Chiudi Appkwondo', component: LoginPage }
     ];
@@ -255,7 +260,8 @@ export class MyApp {
         alert.present();
 
       } else {
-        var pushpages = ["Impostazioni", "Users", "Connessioni", "Informazioni", "Account"];
+        
+        var pushpages = ["Impostazioni", "Users", "Connessioni", "Informazioni", "Account","RTC","Servizi soci"];
         if (pushpages.indexOf(page.title) > -1) {
           this.nav.push(page.component)
 
@@ -305,6 +311,9 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
+
+
+
       StatusBar.styleDefault();
       setTimeout(() => {
         this._SplashScreen.hide();
@@ -312,6 +321,17 @@ export class MyApp {
       //Splashscreen.hide();
 
       if (this.platform.is('cordova')) {
+
+
+        questo.androidPermissions.checkPermission(questo.androidPermissions.PERMISSION.CAMERA).then(
+          success => console.log('Android Camera Permission granted'),
+          err => {
+            console.log("Android Camera permissions not found !, requesting");
+            questo.androidPermissions.requestPermission(questo.androidPermissions.PERMISSION.CAMERA)
+          }
+        );
+        
+       // questo.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
 
         questo.backend.getUniqueDeviceID();
 

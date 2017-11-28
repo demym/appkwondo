@@ -23,11 +23,11 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 */
 @Injectable()
 export class BackendProvider {
-  isProduction=false;
+  isProduction=true;
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
-  //public rooturl = "http://tkdr.herokuapp.com";
- public rooturl = "http://localhost:3000"; 
+  public rooturl = "http://tkdr.herokuapp.com";
+  //public rooturl = "http://localhost:3000"; 
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
   //public rooturl="http://10.113.32.153:3000"
@@ -45,7 +45,8 @@ export class BackendProvider {
     role: "BP_GUEST",
     sockid: "unknown",
     uniquedeviceid: "",
-    societaid: "20160217220400"
+    societaid: "20160217220400",
+    id: ""
   };
   activesocieta="ASD TAEKWONDO ROZZANO";
   browser;
@@ -120,6 +121,9 @@ export class BackendProvider {
   }
   nextevents:any=[];
   isIosWeb=false;
+  rtcpeers:any=[];
+  myPeerId="";
+  myPeerConnected=false;
 
 
 
@@ -706,6 +710,12 @@ export class BackendProvider {
         var creds = window.btoa(user.email + ":" + user.password);
 
         questo.utils.setJsonStorage("ion2kwondo_creds", creds);
+        var json=questo.utils.getJsonStorage("ion2kwondo_"+questo.user.id+"_mcrt");
+        if (!json){
+          console.log("mcrt is null for "+user.email);
+        } else {
+          questo.cart=json;
+        }
         questo.getAtleti(function () { });
         questo.getNextEvents(function(){});
 
@@ -2043,7 +2053,18 @@ export class BackendProvider {
   }
 
 
-
+  getPeers(){
+    var questo=this;
+    var url=questo.rooturl+"/peerjs/peerjs/peers";
+    questo.fetchData(url,function(data){
+      var arr=[];
+      data.forEach(function(item,idx){
+        if (item!=questo.myPeerId) arr.push(item);
+      })
+      console.log("peers",arr);
+      questo.rtcpeers=arr;
+    })
+  }
 
 
 }

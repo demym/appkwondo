@@ -222,16 +222,22 @@ export class SocketService {
 
     this.socket.on("rtcpeerconnected",function(id){
       console.log("rtcpeerconnected in socket.ts",id);
+      if (id==questo.backend.myPeerId) questo.backend.myPeerConnected=true;
+      questo.backend.getPeers();
     })
 
     this.socket.on("rtcpeerdisconnected",function(id){
       console.log("rtcpeerdisconnected in socket.ts",id);
+      if (id==questo.backend.myPeerId) questo.backend.myPeerConnected=false;
+      questo.backend.getPeers();
     })
 
     questo.syncChatMessages(function(data){
       console.log("chatmessages synced in socket.ts");
     })
   }
+
+  
 
 
   renderVoice(data){

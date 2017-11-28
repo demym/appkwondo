@@ -19,6 +19,7 @@
         "@angular/platform-browser": "^4.4.3",
         "@angular/platform-browser-dynamic": "^4.4.3",
         "@angular/platform-server": "2.2.1",
+        "@ionic-native/android-permissions": "^4.4.2",
         "@ionic-native/app-availability": "^3.12.1",
         "@ionic-native/background-mode": "^4.3.1",
         "@ionic-native/badge": "^3.14.0",
@@ -45,9 +46,11 @@
         "@ionic-native/unique-device-id": "^4.4.2",
         "@ionic/storage": "2.0.1",
         "angular-peer": "^1.0.0",
+        "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4",
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.4.0",
+        "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-appavailability": "^0.4.2",
         "cordova-plugin-audio-recorder-api": "0.0.6",
         "cordova-plugin-badge": "^0.8.0",
@@ -92,8 +95,7 @@
         "rxjs": "5.4.3",
         "socket.io-client": "^2.0.2",
         "sw-toolbox": "3.6.0",
-        "zone.js": "0.8.17",
-        "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4"
+        "zone.js": "0.8.17"
     },
     "devDependencies": {
         "@ionic/app-scripts": "3.1.2",
@@ -145,12 +147,9 @@
             "cordova-plugin-uniquedeviceid": {},
             "com.hutchind.cordova.plugins.streamingmedia": {},
             "phonegap-plugin-push": {},
+            "cordova-plugin-android-permissions": {},
             "cordova-plugin-crosswalk-webview": {
-                "XWALK_MODE": "lite",
-                "XWALK_VERSION": "23+",
-                "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-                "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-                "XWALK_MULTIPLEAPK": "true"
+                "XWALK_MODE": "lite"
             }
         },
         "platforms": [

@@ -18,7 +18,7 @@ export class LoginPage {
   
   //loading: Loading;
   //registerCredentials= { email: 'demymortelliti@it.ibm.com', password: 'ser56glr' };
-  registerCredentials = { email: 'youremail@it.ibm.com', password: '', gcmtoken: '' };
+  registerCredentials = { email: '', password: '', gcmtoken: '' };
   constructor(private utils: UtilsProvider, private nav: NavController, private backend: BackendProvider, private alertCtrl: AlertController/*, private loadingCtrl: LoadingController*/) {
 
 

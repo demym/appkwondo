@@ -10,6 +10,9 @@
         "com.hutchind.cordova.plugins.streamingmedia": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.tkdr.appkwondov2"
+        },
         "cordova-plugin-appavailability": {
             "PACKAGE_NAME": "com.tkdr.appkwondov2"
         },
