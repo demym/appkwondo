@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1034396645917",
+    "firebase_url": "https://appkwondo.firebaseio.com",
+    "project_id": "appkwondo",
+    "storage_bucket": "appkwondo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034396645917:android:21772aea99389f3a",
+        "android_client_info": {
+          "package_name": "com.tkdr.appkwondov2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034396645917-t6o7d0tv5qst5gt5o9vhm8mu7a3nrot5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5syXxcwvwUKsXHF-brWscfVCRX5AXYxU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

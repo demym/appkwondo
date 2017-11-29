@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Il mio account</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-item>
+  <b>{{backend.user.nickname}}</b><br>
+  {{backend.user.email}}<br>
+  {{backend.user.appversion}}<br>
+  <button ion-button (tap)="changePsw()">Modifica password</button>
+</ion-item>
+<section *ngIf="view=='changepsw'">
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating color="primary">Password corrente</ion-label>
+      <ion-input [(ngModel)]="pswchange.currentpsw" type="password"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating color="primary">Nuova password</ion-label>
+      <ion-input [(ngModel)]="pswchange.newpsw" type="password" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Verifica nuova password</ion-label>
+      <ion-input [(ngModel)]="pswchange.verifynewpsw" type="password" ></ion-input>
+    </ion-item>
+
+      <br>
+    <button [disabled]="!isSubmitEnabled()" block ion-button (tap)="doChangePsw()">Modifica password</button>
+  
+    </ion-list>
+
+
+
+</section>
+</ion-content>

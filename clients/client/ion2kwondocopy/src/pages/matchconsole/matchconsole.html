@@ -1,0 +1,69 @@
+<!--
+  Generated template for the MatchconsolePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Match console</ion-title>
+     <ion-buttons end>
+     
+<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>
+
+</button>-->
+</ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedMatchId" >
+      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? 'ssecondary': 'sdark'">
+        <span [ngClass]="(c.match.realtime=='false') || (c.match.realtime==false) ? 'tabnorealtime': ''">{{c.match.matchid}} {{c.match.atletaname}}</span>
+      </ion-segment-button>
+      
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> 
+ 
+ <ion-row>
+   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime=='true') || (selectedConsole.match.realtime==true) ? 'realtimebut' : 'norealtimebut'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>
+   </ion-col>
+ </ion-row>
+  <br>
+  <div *ngIf="(selectedConsole.match.realtime=='true') || (selectedConsole.match.realtime==true) ">
+  <ion-row>
+    <ion-col col-6>
+      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? 'incorso' : ''">{{getPauseText()}}</button>
+    </ion-col>
+    <ion-col col-6>
+      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? 'roundactive' : ''">FINEROUND</button>
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('1')" color="light" [ngClass]="(selectedConsole.round=='1') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='1' ? 'roundactive' : ''">1</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('2')" color="light" [ngClass]="(selectedConsole.round=='2') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='2' ? 'roundactive' : ''">2</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('3')" color="light" [ngClass]="(selectedConsole.round=='3') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='3' ? 'roundactive' : ''">3</button></ion-col>
+    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound('GP')" color="light" [ngClass]="(selectedConsole.round=='GP') && (selectedConsole.fineround) ? 'roundactive fineround' : selectedConsole.round=='GP' ? 'roundactive' : ''">GP</button></ion-col>
+  </ion-row>
+  </div>
+  <br>
+  <ion-row>
+    
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_1')">+</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_1')">-</button></ion-col>
+    <ion-col col-1></ion-col>
+    <ion-col col-2><ion-input [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>
+    <ion-col col-1></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_2')">+</button></ion-col>
+    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_2')">-</button></ion-col>
+  </ion-row>
+  <br>
+  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  
+
+</ion-content>

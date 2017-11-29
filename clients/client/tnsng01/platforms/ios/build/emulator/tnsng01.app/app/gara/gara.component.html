@@ -1,0 +1,142 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+    -->
+    <ActionItem ios.position="right" android.position="actionBar">
+
+        <StackLayout orientation="horizontal">
+
+            <!--<Label text="&#xf0e6;" *ngIf="selectedtab==2" class="baricon" sstyle="font-family: FontAwesome; margin: 10; font-size: 24"></Label>-->
+            <Label text="&#xf0e6;" (tap)="gotoChat()" class="baricon" sstyle="font-family: FontAwesome; margin: 10; font-size: 24"></Label>
+            <Label text="&#xf021;" (tap)="pullRefresh()" class="baricon" sstyle="font-family: FontAwesome; margin: 10; font-size: 24"></Label>
+        </StackLayout>
+
+    </ActionItem>
+    <!--
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <ActionItem android.position="right" (tap)="gotoChat()" style="color: white" text="Chat" >
+
+</ActionItem>
+-->
+    <Label class="action-bar-title" text="Gara"></Label>
+</ActionBar>
+
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+The RadSideDrawer component is designed to be used as a root element and
+it shouldn't have any other siblings other than the <ActionBar> component.
+-->
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Gare'"></MyDrawer>
+    </StackLayout>
+
+    <!--
+    Use the tkMainContent directive to display the content of the page when you have an app drawer.
+    -->
+    <StackLayout class="page page-content" tkMainContent>
+
+        <GridLayout rows="auto" columns="*,60" style="background-color: #eee;">
+            <StackLayout col="0">
+                <Label class="atleta" style="margin-left: 10" [text]="jgara.title"></Label>
+                <Label style="margin-left: 10" [text]="jgara.data+' - '+jgara.location"></Label>
+            </StackLayout>
+            <StackLayout col="1">
+                    <ActivityIndicator style="margin: 5" width="20" height="20" borderColor="red"  [busy]="loading" *ngIf="loading" ></ActivityIndicator>
+            </StackLayout>
+        </GridLayout>
+
+        <!-- <SegmentedBar [items]="mysegments" selectedIndex="0" (selectedIndexChange)="onSelectedSegmentChange($event)" class="m-5"></SegmentedBar>-->
+        <TabView androidOffscreenTabLimit="5">
+            <StackLayout *tabItem="{title: 'Per Match', iconSource: '~/icon.png'}">
+                <ListView id="lvprog" [items]="displayedmbp">
+                    <ng-template let-item="item">
+                        <GridLayout columns="40,*" (tap)="showMatchesForAtleta(jgara.id,item.doc.atletaid)">
+                            <Image col="0" style="margin-left: 5; margin-right: 5" [src]="getImg(item)"></Image>
+                            <StackLayout col="1" class="padding8" orientation="vertical">
+                                <Label [class]="getVintoPersoClass(item)" [text]="item.doc.matchid"></Label>
+                                <Label class="atleta" [text]="item.doc.atletaname"></Label>
+                                <Label class="categoria" [text]="backend.getCategoria(item.doc.datanascita).toUpperCase()"></Label>
+
+                                <Label [class]="getRisultatoClass(item)" [text]="getRisultatoText(item)"></Label>
+
+                            </StackLayout>
+                        </GridLayout>
+                    </ng-template>
+
+                </ListView>
+
+            </StackLayout>
+            <StackLayout *tabItem="{title: 'Per Atleta'}">
+                <ListView id="lvbyatleta" (itemTap)="matchTap" [items]="gara.matchesbyatleta.rows">
+                    <ng-template let-item="item">
+                        <GridLayout class="padding8" columns="40,*" (tap)="showMatchesForAtleta(jgara.id,item.id)">
+                            <Image col="0" style="margin-left: 5; margin-right: 5" [src]="getImgPerAtleta(item)"></Image>
+                            <StackLayout class="padding8" col="1" orientation="vertical">
+                                <Label class="atleta" [text]="item.nome"></Label>
+                                <Label class="categoria" [text]="backend.getCategoria(item.datanascita).toUpperCase()"></Label>
+                                <StackLayout orientation="horizontal">
+                                    <StackLayout orientation="horizontal" *ngFor="let m of item.matchesarray">
+                                        <Label [class]="getVintoPersoClass(m)" [text]="m.matchid"></Label>
+                                        <Label text="  "></Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </GridLayout>
+                    </ng-template>
+
+                </ListView>
+
+
+            </StackLayout>
+            <StackLayout *tabItem="{title: 'Cronaca'}">
+                <ListView id="lvcronaca" (itemTap)="matchTap" [items]="gara.cronaca.rows">
+                    <ng-template let-item="item">
+
+                        <StackLayout class="padding8" orientation="vertical">
+                            <Label class="timestamp" [text]="item.time"></Label>
+                            <Label style="font-size: 13; color: black; word-wrap: break-word; white-space: normal;" [text]="item.text"></Label>
+
+                        </StackLayout>
+
+                    </ng-template>
+
+                </ListView>
+
+            </StackLayout>
+            <StackLayout *tabItem="{title: 'Iscritti'}">
+                <ListView id="lviscritti" (itemTap)="matchTap" [items]="atletiiscritti">
+                    <ng-template let-item="item">
+
+                        <StackLayout class="padding8" orientation="vertical">
+                            <Label [text]="item.cognome +' '+item.nome" class="atleta"></Label>
+                            <Label [text]="item.categoria.toUpperCase()" class="categoria"></Label>
+
+
+                        </StackLayout>
+
+                    </ng-template>
+
+                </ListView>
+
+            </StackLayout>
+            <StackLayout *tabItem="{title: 'Dettagli'}">
+                <Label text="Dettagli gara"></Label>
+            </StackLayout>
+        </TabView>
+
+
+    </StackLayout>
+</RadSideDrawer>

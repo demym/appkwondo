@@ -1,0 +1,152 @@
+<!--
+  Generated template for the ProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Prenota {{categoria}}</ion-title>
+    <ion-buttons end>
+        <button *ngIf="isMarketAdmin()" (tap)="addProduct()" ion-button icon-only>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </button>
+      <button ion-button (tap)="viewCart()" clear><ion-icon name="md-cart" class="baricon"></ion-icon><ion-badge *ngIf="getCartTotal()>0" color="danger">{{getCartTotal()}}</ion-badge></button>
+    </ion-buttons>
+  </ion-navbar>
+ <ion-searchbar
+  placeholder="Filtra prodotti"
+  [(ngModel)]="filter"
+  [showCancelButton]="true"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding class="ion-content">
+    <div *ngIf="loading" style="width: 100%; text-align: center">
+        <ion-spinner name="ios"></ion-spinner>
+      </div>
+      <ion-card *ngIf="displayedproducts.length==0">
+        <ion-card-content>
+          Non sono stati trovati prodotti per la categoria {{getUpperCase(categoria)}}
+        </ion-card-content>
+      </ion-card>
+ <div style="height:100%;">
+  <ion-list [virtualScroll]="displayedproducts" approxItemHeight="50px">
+    <ion-item *virtualItem="let item" (press)="editProduct(item)" >
+        <ion-row>
+            <!--<ion-col col-3>
+           <img class="productimage" [src]="p.imgurl" />
+            </ion-col>
+            <ion-col>
+  
+            </ion-col>-->
+            <ion-col >
+              <ion-row>
+                <ion-col align-self-start>
+                    <span class="nome">{{item.nome}}</span>
+  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col align-self-start>
+                     <span class="descr">{{item.descr}}</span>
+    
+                  </ion-col>
+                </ion-row>
+             
+            </ion-col>
+          </ion-row>
+       
+       <hr>
+          <ion-row>
+            <ion-col col-5>
+              <span class="price">{{item.price}}€</span>
+  
+            </ion-col>
+            
+            <ion-col col-1>
+             
+              <ion-icon class="bariconbig" (tap)="qtyMinus(item)" small name="md-arrow-dropleft"></ion-icon>
+              </ion-col>
+              <ion-col col-2>
+                <input type="number" class="inp" size="3" readonly [id]="item.id+'_qty'"  value="1"/>
+               
+              <!--<ion-input readonly (ionChange)='changeQty($event)' [id]="item.id+'_qty'" type="number" min="1" max="100" step="1" value="1"></ion-input>-->
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon class="bariconbig" (tap)="qtyPlus(item)" small name="md-arrow-dropright"></ion-icon>
+  
+            </ion-col>
+            <ion-col col-3>
+              <button (tap)="addToCart(item)" ion-button small>Prenota</button>
+            </ion-col>
+          </ion-row>
+        
+    </ion-item>
+  </ion-list>
+</div>
+
+<!--
+  <ion-list *ngFor="let p of displayedproducts"> 
+
+    <ion-card >
+      <ion-card-content>
+        <ion-row>
+        <ion-col col-3>
+            <img class="productimage" [src]="p.imageurl" />
+          </ion-col>-->
+          <!--<ion-col>
+
+          </ion-col>
+          <ion-col  >
+            <ion-row>
+              <ion-col align-self-start>
+                  <b>{{p.nome}}</b>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col align-self-start>
+                    {{p.descr}}
+  
+                </ion-col>
+              </ion-row>
+           
+          </ion-col>
+        </ion-row>
+     
+     <hr>
+        <ion-row>
+          <ion-col>
+            <span class="price">{{p.price}}€</span>
+
+          </ion-col>
+          
+          <ion-col col-1>
+           
+            <ion-icon class="bariconbig" (tap)="qtyMinus(p)" small name="md-arrow-dropleft"></ion-icon>
+            </ion-col>
+            <ion-col col-2>
+            <ion-input readonly (ionChange)='changeQty($event)' [id]="p.id+'_qty'" type="number" min="1" max="100" step="1" value="1"></ion-input>
+          </ion-col>
+          <ion-col col-1>
+            <ion-icon class="bariconbig" (tap)="qtyPlus(p)" small name="md-arrow-dropright"></ion-icon>
+
+          </ion-col>
+          <ion-col col-3>
+            <button (tap)="addToCart(p)" ion-button small>Prenota</button>
+          </ion-col>
+        </ion-row>
+      
+    </ion-card-content>
+    </ion-card>
+
+
+  </ion-list>-->
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+    -->
+    <Button text="Go Back" (tap)="goBack()"></Button>
+
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Chat"></Label>
+</ActionBar>
+
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+The RadSideDrawer component is designed to be used as a root element and
+it shouldn't have any other siblings other than the <ActionBar> component.
+-->
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Atleti'"></MyDrawer>
+    </StackLayout>
+
+    <!--
+    Use the tkMainContent directive to display the content of the page when you have an app drawer.
+    -->
+    <StackLayout class="page page-content " tkMainContent>
+        <StackLayout  >
+            <ListView #chatview [items]="backend.chat" >
+                <ng-template  let-item="item">
+                    <StackLayout class="chatview" sstyle="background-color: #ffe;">
+                        
+                                <!--<StackLayout  [visibility]="'visible'" >-->
+                                    <GridLayout width="100%" columns="*" rows="auto, auto" [class]="item.nickname=='demy' ? 'me msg_text' : 'them msg_text'" >  <!--  class="msg  them " -->
+                                    <StackLayout [class]="item.nickname=='demy' ? ' me msg_text' : ' them msg_text'">
+                                        <Label class="msg_timestamp" [text]="item.nickname+' '+item.time" verticalAlignment="top" row="1"></Label>
+                                        <Label [text]="item.text" textWrap="true" verticalAlignment="top" class="msg_testo"></Label>
+                                        <Image [src]="item.fotourl" *ngIf="item.hasOwnProperty('fotourl')"></Image>
+                        
+                                       
+                                        
+                                     
+                                    </StackLayout>
+                                    </GridLayout>
+                               <!-- </StackLayout>-->
+                        
+                        
+                            </StackLayout>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</RadSideDrawer>

@@ -1,0 +1,78 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Browse"></Label>
+</ActionBar>
+
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+The RadSideDrawer component is designed to be used as a root element and
+it shouldn't have any other siblings other than the <ActionBar> component.
+-->
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Browse'"></MyDrawer>
+    </StackLayout>
+    
+    <!--
+    Use the tkMainContent directive to display the content of the page when you have an app drawer.
+    -->
+   
+     
+    <StackLayout class="page page-content" tkMainContent>
+        <SegmentedBar [items]="segments" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)" ></SegmentedBar>
+        <ActivityIndicator *ngIf="loading" #activityIndicator [busy]="loading"  width="40" height="40" class="activity-indicator"></ActivityIndicator>
+
+ <ListView [items]="galli" (itemTap)="onItemTap($event)" visibility="{{ activetab==0 ? 'visible' : 'collapsed' }}">
+                            <ng-template let-item="item" let-i="index" >
+                                <!--<GridLayout rows="*" columns="50,*">
+                                        <Image *ngIf="item.imgurl" col="0" [src]="item.imgurl" ssrc="~/images/globe.png"></Image>
+                                        <Image *ngIf="!item.imgurl" col="0" src="~/images/globe.png"></Image>
+                                        <StackLayout col="1" class="manzo" >
+                                                
+                                                <Label class="small wordwrap" [text]='item.title'></Label>
+                                                <Label style="font-size: 12; color: gray;" [text]='item.infosource'></Label>
+                                            </StackLayout>
+
+                                </GridLayout>-->
+                                <!--<ScrollView orientation="vertical" visibility="{{ activetab==0 ? 'visible' : 'collapsed' }}">-->
+                                <StackLayout  >
+                                <CardView *ngFor="let item of galli" class="cardStyle" margin="10" elevation="40" radius="1" >
+                                        <GridLayout rows="10,30,30,250, auto, auto,10" columns="10,40, *, 30,10">
+                                            <Image src="~/images/globe.png" sstretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>
+                                            <Label class="createdBy text-left" horizontalAlignment="left" [text]="item.title" row="1" col="2" textWrap="true"></Label>
+                                            <Label class="createdOn text-left" horizontalAlignment="left" [text]="item.description" row="2" col="2"></Label>
+                                            <Image [src]="item.imgurl" sstretch="aspectFit" colSpan="3" col="1" row="3"></Image>
+                                            <Label horizontalAlignment="left" [text]="item.title" colSpan="3" row="4" textWrap="true" col="1"></Label>
+                                            <Label  horizontalAlignment="left" [text]="item.description" textWrap="true" col="1" row="5" colSpan="3"></Label>
+                                            <Label  horizontalAlignment="left" [text]="item.imgurl" textWrap="true" col="1" row="5" colSpan="3"></Label>
+                                        </GridLayout>
+                                    </CardView>
+                                </StackLayout><!--
+                            </ScrollView>-->
+                                
+                      </ng-template>
+                        </ListView>
+                   
+                
+    
+               
+        <!--<Label class="page-icon fa" text="&#xf1ea;"></Label>
+        <Label class="page-placeholder" text="<!-- Page content goes here"></Label>-->
+
+
+    </StackLayout>
+</RadSideDrawer>

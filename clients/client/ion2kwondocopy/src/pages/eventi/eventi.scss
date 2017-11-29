@@ -1,0 +1,27 @@
+page-eventi {
+    .tipoevento {
+        font-size: 13px;
+        font-weight: bold;
+        color: #444;
+        text-transform: capitalize;
+    }
+
+    .locationdata {
+        font-weight: normal;
+        font-size: 14px;
+        color: black;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 14px;
+        color: black;
+    }
+
+    .descr {
+        font-size: 15px;
+        padding: 6px;
+
+    }
+
+}

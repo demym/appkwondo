@@ -1,0 +1,185 @@
+
+
+	
+	<div class="bubble">
+	   <span class="nick">Elena</span>
+		Quanto manca al match di Antonio ?
+	</div>
+	
+	<div class="bubble bubble--alt">
+	<span class="nick">Admin</span>
+		Sta iniziando, atleti al centro
+	</div>
+	
+	<div class="bubble">
+	<span class="nick">Paolo</span>
+		Forza Antonio !!!
+	</div>
+	
+	<div class="bubble bubble--alt">
+	<span class="nick">Admin</span>
+		Atleti pronti
+		<!--<img src="http://placekitten.com/800/600" alt="" />-->
+	</div>
+	
+	<div class="bubble">
+	<span class="nick">Enzo</span>
+		Vai !!!
+	</div>
+	
+	<div class="bubble bubble--alt">
+	<span class="nick">Admin</span>
+	  1-0
+	</div>
+	
+	<div class="bubble bubble--alt">
+		<span class="nick">Admin</span>
+	  2-0
+	</div>
+	
+		<div class="bubble bubble--alt">
+		<span class="nick">Admin</span>
+	  3-0
+	</div>
+	
+		<div class="bubble">
+		<span class="nick">Gabriella</span>
+	  Siiiiiii !
+	</div>
+	
+		<div class="bubble bubble--alt">
+		<span class="nick">Admin</span>
+	  3-1
+	</div>
+	
+		<div class="bubble bubble--alt">
+		<span class="nick">Admin</span>
+	  4-1
+	</div>
+	
+</div>
+
+<style type="text/css">
+/* Bit of normalisation */
+
+/*
+body {
+	background-color: #eee;
+	color: #222;
+	font: 0.8125em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+*/
+
+.nick {
+ font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	border: 1px solid silver;
+	background: lightblue;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.container {
+	padding: 40px 20px;
+	margin: 0 auto;
+	background: url('img/chatback.jpg');
+	overflow: auto;
+	/*width: 400px;*/
+	font: 0.8125em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* .bubble */
+
+.bubble {
+	background-image: linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+background-image: -o-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(210,244,254)),
+	color-stop(1, rgb(149,194,253))
+);
+	/*border: solid 1px rgba(0, 0, 0, 0.5);*/
+	/* vendor rules */
+	border-radius: 9px;
+	/* vendor rules */
+	box-shadow: inset 0 5px 5px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+	/* vendor rules */
+	box-sizing: border-box;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+	padding: 8px 7px;
+	position: relative;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+	width: auto;
+	max-width: 100%;
+	word-wrap: break-word;
+}
+
+.bubble:before, .bubble:after {
+	border-radius: 20px / 10px;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+.bubble:before {
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	left: -7px;
+	z-index: -2;
+}
+
+.bubble:after {
+	border: 8px solid transparent;
+	border-bottom-color: #d2f4fe;
+	bottom: 1px;
+	left: -5px;
+}
+
+.bubble--alt {
+	background-image: linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: -o-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(172,228,75)),
+	color-stop(1, rgb(122,205,71))
+);
+	float: right;
+}
+
+.bubble--alt:before {
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -7px;
+}
+
+.bubble--alt:after {
+	border-bottom-color: #ace44b;
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -5px;
+}
+
+</style>

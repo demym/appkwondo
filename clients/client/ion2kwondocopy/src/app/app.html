@@ -1,0 +1,65 @@
+<ion-menu [content]="content" side="left">
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu" style="overflow-y: hidden">
+    <ion-grid style="sbackground: #049a55; background: blue; color: white; padding: 4px !important;">
+    <ion-row>
+      <ion-col col-3 style="padding: 5px !important;">
+       
+        <img src="{{getUserImage()}}" class="roundimg"/>
+        
+      </ion-col>
+      
+      <ion-col style="padding: 8px !important;">
+        <span class="username">{{backend.user.nickname}}</span><br>
+        <span class="email">{{backend.user.email}}</span><br>
+      <!--<span class="useremail">{{user.email}}</span><br>-->
+      <span class="userrole">{{backend.user.role}}</span>
+    
+      </ion-col>
+    </ion-row>  
+    </ion-grid>    
+    <ion-list>
+      
+          
+      
+     <section *ngFor="let p of pages; let i=index;">
+      <button menuClose ion-item  (click)="openPage(p)" icon-left *ngIf="isVisibleMenu(p.title)">
+        <ion-icon name="{{icons[i]}}"></ion-icon>{{p.title}}
+      </button>
+      </section>
+      
+       
+    </ion-list>
+
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!--
+<ion-menu [content]="content" side="right">
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Menuright</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu" style="overflow-y: hidden">
+  </ion-content>
+</ion-menu>
+-->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+<!--
+  <ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">
+   <button color="primary" ion-fab style="font-size: 11px"><img src="assets/img/greenblink.gif"></button>
+ </ion-fab>-->

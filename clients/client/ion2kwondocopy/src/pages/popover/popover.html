@@ -1,0 +1,3 @@
+<ion-list *ngFor="let p of popdata">
+  <button ion-item (tap)="doAction(p.cmd)"><ion-icon [name]="p.icon"></ion-icon> {{p.text}}</button>
+</ion-list>

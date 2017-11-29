@@ -1,0 +1,71 @@
+<style>
+.top3 {
+  color: blue;
+}
+</style>
+<ul id="ulranking" role="listview">
+<% for (var i=0; i<data.length; i++) {
+
+   var atl=data[i].doc;
+   var x=parseInt(i,10)+1;
+   
+   var ori=data[i].doc.ori;
+   var argenti=data[i].doc.argenti;
+   var bronzi=data[i].doc.bronzi;
+   var ngare=data[i].doc.garedisputate;
+   var nmatch=data[i].doc.matchdisputati;
+
+   var segnochar="=";
+   if (data[i].doc.segno){
+       if (data[i].doc.segno=="minus"){
+           segnochar='<i class="fa fa-arrow-up"></i>';
+       } 
+       if (data[i].doc.segno=="plus") {
+            segnochar='<i class="fa fa-arrow-down"></i>';
+           segnochar=String.fromCharCode(24);
+       }
+   }
+
+   var cl="";
+   if (x<4) cl="top3";
+   
+%>
+
+<li data-icon="false">
+<a href="javascript:clickAtletaRanking('<%=atl.id%>')">
+<table width="100%">
+<tr>
+<td width="10%">
+<b><%=x%></b>
+</td>
+<!--<td width="1%">
+<%=segnochar%>
+</td>-->
+<td class="<%=cl%>">
+<b><%=atl.cognome%> <%=atl.nome%></b>
+</td>
+<td width="10%" style="text-align: right">
+<b><%=atl.ranking_tkdr%></b>
+</td>
+</tr>
+<tr>
+<td width="10%">
+</td>
+<td colspan="2" style="font-size: 12px; color: gray;">ORI: <%=ori%> ARG: <%=argenti%> BRO: <%bronzi%>  &nbsp;&nbsp;gare: <%=ngare%> match: <%=nmatch%>
+</td>
+</tr>
+</table>
+</a>
+
+</li>
+
+<!--
+<tr><td width="20px" align="center"><%=segnochar%><%=x%></td><td width="150px"><%= atl.cognome + "  " + atl.nome %></td><td width="20px" align="right"><%=ori%></td><td width="20px" align="right"><%=argenti%></td><td width="20px" align="right"><%=bronzi%></td><td align="right"><%= atl.ranking_tkdr %></td><td align="right"><%= atl.percentgare %></td><td align="right"><%= atl.percentmatch %></td><td align="right"><%= atl.percentmedaglie %></td><td width="2%" align="right"><%=ngare %></td><td width="2%" align="right"><%=nmatch %></td></tr>-->
+
+<%
+
+}
+
+
+%>
+</ul>

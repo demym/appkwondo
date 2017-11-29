@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { ChatpopoverPage } from './chatpopover';
+
+@NgModule({
+  declarations: [
+    ChatpopoverPage,
+  ],
+  imports: [
+    IonicPageModule.forChild(ChatpopoverPage),
+  ],
+  exports: [
+    ChatpopoverPage
+  ]
+})
+export class ChatpopoverPageModule {}

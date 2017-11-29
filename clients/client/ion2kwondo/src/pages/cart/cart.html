@@ -1,0 +1,78 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Prenotazioni</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content spadding class="ion-content">
+  <section *ngIf="backend.cart.length>0">
+  <ion-card>
+    <ion-card-content>
+      Il contenuto del tuo carrello prenotazioni. Per inoltrare la prenotazione premi il tasto <b>Inoltra prenotazione</b>.<br>
+      Potrai pagare comodamente in società.
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list *ngFor="let c of backend.cart" style="margin: 2px">
+   <ion-item>
+          <ion-row>
+           <!-- <ion-col col-3>
+              <img class="productimage" [src]="c.product.imageurl" />
+            </ion-col>-->
+            <ion-col align-self-start>
+              <ion-row>
+                <ion-col align-self-start>
+                    <b>{{c.product.nome}}</b>
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin: 7px">
+                <ion-col>
+                  {{c.product.price}}€ - Qtà: {{c.qty}}
+                </ion-col>
+                <ion-col col-3>
+                  <b>{{getTotaleRiga(c)}}€</b>
+                </ion-col>
+              </ion-row>
+               
+  
+            </ion-col>
+          
+              
+          </ion-row>
+       
+        </ion-item>
+    </ion-list>
+    <hr>
+   <ion-item>
+        <ion-row>
+          <ion-col col-3></ion-col>
+          <ion-col>
+              <span class="totale">Totale prenotazione:    </span>
+          </ion-col>
+          <ion-col col-3>
+            <span class="totale"><b>{{getTotalPrice()}}€</b></span>
+          </ion-col>
+        </ion-row>
+   </ion-item>
+   <hr>
+    <button ion-button block (tap)="confirmOrder()">Inoltra prenotazione</button>
+  </section>
+  <section *ngIf="backend.cart.length==0">
+    <ion-card>
+      <ion-card-content>
+        Il tuo carrello prenotazioni è vuoto
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>

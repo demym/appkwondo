@@ -1,0 +1,11 @@
+{
+     "android": {
+         "release": {
+             "keystore": "ion2kwondo.keystore",
+             "storePassword": "stevevai",
+             "alias": "ion2kwondo",
+             "password" : "stevevai",
+             "keystoreType": ""
+         }
+     }
+ }

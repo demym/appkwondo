@@ -39,7 +39,7 @@ jspm_packages
 
 
 
-clients
+
 public/data/media/*.*
 public/data/chatmedia/*.*
 

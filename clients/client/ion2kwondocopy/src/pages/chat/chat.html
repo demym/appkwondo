@@ -1,0 +1,200 @@
+<!--<ion-menu [content]="content" menuToggle="right" side="right">
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Menuright</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu" style="overflow-y: hidden">
+  </ion-content>
+</ion-menu>-->
+
+
+
+<ion-header>
+   
+  <ion-navbar>
+     
+  
+      <button ion-button menuToggle="left" start>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+       <ion-title>ChatKwonDo</ion-title>
+       <ion-buttons end>
+          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-dropup-circle"></ion-icon></button>
+    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-dropdown-circle"></ion-icon></button>
+    <button *ngIf="backend.user.role!='tkdradmin'" ion-button class="menubutton" (click)="goRefresh(); backend.playFeedback();"><ion-icon name="md-refresh"></ion-icon></button>
+    <!--<button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
+    <button ion-button menuToggle="right">
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <button *ngIf="backend.user.role=='tkdradmin'" ion-button icon-only (click)="showPop($event)">
+      <ion-icon name="md-more"></ion-icon>
+    </button>
+    </ion-buttons>
+     <!--  <ion-buttons end>
+          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>
+    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>
+    <button class="menubutton" *ngIf="backend.user.role=='tkdradmin'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>
+    <button ion-button menuToggle="right">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>-->
+        <!--<ion-grid class="no-padding">
+          <ion-row>
+            <ion-col width-20>
+             
+            </ion-col>
+            <ion-col>
+
+              <ion-row>
+                <ion-col>
+                  <span class="friendnick">{{friend.doc.firstname}} {{friend.doc.lastname}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+
+                <ion-col>
+                  <span class="friendmail">{{friend.doc.email}}</span>
+                </ion-col>
+              </ion-row>
+
+
+            </ion-col>
+            <ion-col width-20>
+              <span class="status" [ngClass]="friend.connected ? 'onlinechat' : 'offlinechat'">{{friend.connected ? 'ONLINE' : 'OFFLINE'}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>-->
+        <!--</ion-title>-->
+      </ion-navbar>
+
+   <!-- <ion-card>-->
+
+      
+
+
+
+
+    <!--</ion-card>-->
+    <section sstyle="position: fixed; top: 65px; width: 100%; height: 40px; z-index: 9000;" id="realtime" *ngIf="rtmatches.length>0">
+      
+        <ion-item class="rtmatches" *ngFor="let rt of rtmatches">
+          <ion-row>
+            <ion-col col-2><img src="assets/img/greenblink.gif" /></ion-col>
+            <ion-col>
+            <ion-row><ion-col><div class="match">{{rt.match.matchid}} - {{rt.match.atletaname}}</div></ion-col></ion-row>
+            <ion-row><ion-col><div class="match" [innerHTML]="rt.text"></div></ion-col></ion-row>
+            </ion-col>
+          </ion-row>
+          </ion-item>
+      
+  
+    </section>  
+  
+    <div style="text-align: center; z-index: 9000">
+      <ion-chip  (tap)="tapChip()" *ngIf="false" color="secondary">
+        <ion-label color="dark">Nuovi messaggi non letti</ion-label>
+      </ion-chip>
+    </div>
+
+</ion-header>
+
+
+<ion-content id="chat" class="chat">
+   <!--<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="ios">
+        </ion-refresher-content>
+  </ion-refresher>  -->
+  
+  <!--<div [ngClass]="friend.connected ? '' : 'overlay'"></div>-->
+  <div *ngIf="loading" style="text-align:center"><ion-spinner  text-center name="ios" *ngIf="loading"></ion-spinner></div>
+  
+  <div class="messages"> 
+    <!-- *ngFor="let m of msgs" -->
+
+  
+    <ion-list  *ngFor="let m of backend.chatmessages; let i=index;" > <!--*ngFor="let m of msgs"-->
+      <ion-item *ngIf="dateChanged(m,i)" class="datachange">{{getOnlyDate(m.time)}}</ion-item>
+
+      <!-- ex ion-item -->
+      <ion-item (press)="shareItem(m)" class="message"  [ngClass]="(m.nickname===me.nickname) ? 'message me': (m.color=='yellow') ? 'message system' : 'message'">
+       
+          <div class="msgemail">{{m.nickname}}    <span class="date">{{ getNormalDate(m.time) }}</span></div> 
+       
+         <div  *ngIf="m.foto" class="divcont">  
+      <img class="ionimg" (press)="shareFoto(m.foto)" (tap)="openFoto(m.foto,m)" [src]="getBase64(m.foto)" />
+      </div><br *ngIf="m.foto">
+      <div  *ngIf="m.fotourl && !m.foto" class="divcont">  <!-- (press)="shareFoto(m.fotourl)" -->
+      <img class="ionimg"  (tap)="openFoto(m.fotourl,m)" [src]="m.fotourl" />
+      </div><br *ngIf="m.fotourl && !m.foto">
+
+      <!--<img-loader *ngIf="m.fotourl" [src]="m.fotourl"></img-loader>-->
+        <div  *ngIf="m.audio" class="divcont">  <!--(press)="shareAudio(m)"-->
+            <!--<audio-track #audio   [track]="getTrack(m)" (onFinish)="onTrackFinished($event)">
+            <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+            <audio-track-progress-bar dark duration progress [audioTrack]="audio" ></audio-track-progress-bar>
+            </audio-track>-->
+      <audio   style="width: 100%" *ngIf="m.audio && !isCordova()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>
+    Your browser does not support the audio element.
+     </audio><br>
+     <button ion-button *ngIf="m.audiourl && !isCordova()" (tap)="openAudioUrl(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
+     <button *ngIf="isCordova() || isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>
+    </div><br *ngIf="m.audio"> 
+
+
+     
+
+    
+    
+
+      
+      <span  (press)="shareText(m.text)" *ngIf="m.text.trim()!=''" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=''" >
+     
+  </ion-item>  <!-- ex ion-item -->
+    </ion-list>
+    <!--<audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
+      <ion-item>  
+        <ion-thumbnail item-left>
+          <img src="{{audio.art}}">
+          <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+        </ion-thumbnail>
+        <div item-content style="width:100%">
+          <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>
+          <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? 'visible' : 'hidden'}"></audio-track-progress-bar>
+        </div>
+      </ion-item>    
+    </audio-track>-->
+    </div>
+   
+ 
+
+
+
+
+</ion-content>
+<ion-footer>
+  <!--<div class="bottom_bar">-->
+ 
+    <ion-grid >
+      <ion-row >
+        <ion-col >
+          <ion-icon *ngIf="showCameraIcon" class="cameraicon" (tap)="takeFoto()" name="md-camera"></ion-icon>
+          <!--<ion-textarea (ionFocus)="focus()" (ionBlur)="blur($event)" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)" style="height: 40px; font-size: 16px; margin: 0px 0px;" > </ion-textarea>-->
+          <ion-input (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>
+        </ion-col>
+        <ion-col col-2 *ngIf="chatButton=='audio'">
+          <button style="height: 40px" block [ngClass]="recording ? 'chatbutton recording' : 'chatbutton'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> 
+          </ion-col>
+               <ion-col *ngIf="chatButton=='text'" col-2>
+          <button  class="chatbutton" ion-button (click)="sendMessage()"><ion-icon name="md-send"></ion-icon></button> 
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <div *ngIf="recording" class="audiorecording">Registrazione in corso... premi il microfono per interrompere</div>
+  <!--</div>-->
+</ion-footer>

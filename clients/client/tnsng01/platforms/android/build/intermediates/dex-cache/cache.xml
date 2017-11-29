@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-recyclerview-v7-26.0.0-alpha1_907317c08a6fd53abda2858fc8ca6ded43ce5934.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-appcompat-v7-26.0.0-alpha1_a40cc47e8eb0cad9a4007089913bf55d89d16b05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-core-utils-26.0.0-alpha1_405669934163aca9ed733525d84fbd326d047f31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/List-2017.1.1003-dev-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ccf00b7aa2472bfe1e92931c49e46d9103742149">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/intermediates-exploded-aar-List-2017.1.1003-dev-release_e51ca643d596b57a4d4763abc4de05c1118c23b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/Common-2017.1.1003-dev-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="29bb374c9fd569ea5fad2e6729c255c3717382c9">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/intermediates-exploded-aar-Common-2017.1.1003-dev-release_25bdf438c4536b0388a80f1be8e50a0a5fa5b897.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/transition/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-transition-26.0.0-alpha1_c45bf63a393afcec5792c67265944c27ce432424.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/Data-2017.1.1003-dev-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a690a9ad791e20a8e6bfa1f39c4df912499d2472">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/intermediates-exploded-aar-Data-2017.1.1003-dev-release_fffa6ea3d3511c2b7408739fd87a3be1a778fc17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/design/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-design-26.0.0-alpha1_01c8224f9ae343fe4db28bd0749d69b15bdd4a98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-media-compat-26.0.0-alpha1_eac80e73970cab4cba846f1644ce81be70c6d2a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/Primitives-2017.1.1003-dev-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dea5032193895bd143e997736b2842b1dffd1dcf">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/intermediates-exploded-aar-Primitives-2017.1.1003-dev-release_9ebf74693794c77e8f0a717a835dfe8a2166fd5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-animated-vector-drawable-26.0.0-alpha1_4602c6314d37f48a5cec3cba7d8fc1ea3db17104.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-core-ui-26.0.0-alpha1_cdf460954b564c7227d55838970b58621ddbd80a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-compat-26.0.0-alpha1_b82e24d6cdaf4c3891d66b1645c41dbeded10d1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-fragment-26.0.0-alpha1_0399505817fef1fc4ce608710eb080f4cc803417.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/tnsng01/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a3e74f5f1ebe12c7cfa6591158ef298c95a5275f">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/binding-generator_86b2ce85656be8bad6a9eca5a72cb489bc723756.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/support-annotations-26.0.0-alpha1_f919c5a3be9d49bbc798a10ffed37b2bfb7b9b95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-v4-26.0.0-alpha1_74ad311f22795138b009745148d81b59f0aae8de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/tnsng01/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="eb6078500d1af5e7b663871706674405c57292a3">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/tnsng01-runtime-unspecified_3283b283023ae5edd3ef7c03a5df8fd750106a63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/intermediates-exploded-aar-widgets-release_e17577db3cbc364fd62fb0bbf978590d65e73961.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-support-vector-drawable-26.0.0-alpha1_d79458f3df71e58ff7319f88a5bd3427648fe077.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/tnsng01/platforms/android/build/intermediates/pre-dexed/F0F1F2F3F4/debug/com.android.support-cardview-v7-26.0.0-alpha1_9efe81cdfa5942d68abe445ca73f27054b323ec6.jar" />
+    </item>
+
+</items>

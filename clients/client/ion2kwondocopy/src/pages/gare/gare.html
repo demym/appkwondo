@@ -1,0 +1,51 @@
+<!--
+  Generated template for the GarePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gare</ion-title>
+    <ion-buttons end>
+      
+            <button *ngIf="backend.user.role=='tkdradmin'" (tap)="addGara()" ion-button icon-only>
+              <ion-icon name="ios-add-circle-outline"></ion-icon>
+            </button>
+            </ion-buttons>
+
+  </ion-navbar>
+  <ion-item>
+    <span class="headpoints">Gare: <b>{{gare.length}}</b> - ORI: <b>{{totali.ori}}</b> - ARG: <b>{{totali.argenti}}</b> - BRO: <b>{{totali.bronzi}}</b> (P:<b>{{totali.punti}})</b></span>
+  </ion-item>
+
+</ion-header>
+
+
+<ion-content spadding style="background: #eee;">
+  <div *ngIf="backend.gare.length==0" style="text-align: center; width: 100%"><ion-spinner center name="ios" ></ion-spinner></div>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="ios">
+        </ion-refresher-content>
+  </ion-refresher>  
+  <div *ngIf="loading" style="width: 100%; text-align: center">
+    <ion-spinner name="ios"></ion-spinner>
+  </div>
+
+<ion-list *ngIf="backend.gare.length>0">
+  <ion-item *ngFor="let g of backend.gare" (press)="pressGara(g)" (tap)="gotoGara(g.doc.id)" [ngClass]="g.doc.stato.toLowerCase()">
+
+    
+    <span class="gara"><b>{{g.doc.title}}</b></span><br>
+    <span class="location">{{g.doc.location}} - {{g.doc.data}}</span><br>
+    <span class="medals">ORI: <b>{{g.doc.ori}}</b> - ARG: <b>{{g.doc.argenti}}</b> BRO: <b>{{g.doc.bronzi}}</b></span><br>
+    <span class="iscritti">ISCRITTI: {{getLen(g.doc.iscritti)}}</span><br>
+    
+    <span [ngClass]="'span'+g.doc.stato.toLowerCase()" style="font-size: 12px; font-weight: bold;">{{g.doc.stato.toUpperCase()}}</span> 
+    <!--<span  *ngIf="g.doc.stato.toUpperCase()=='INCORSO'" style="margin-left: 5px"><img style="height: 16px; width: 16px;" src="assets/img/greenblink.gif" /></span>-->  
+
+    </ion-item>
+</ion-list>
+
+</ion-content>
