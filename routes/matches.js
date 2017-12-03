@@ -3902,7 +3902,7 @@ function getDerby(match, allmatches, atleti) {
 				iord++;
 				eligible = true;
 			}
-			util.colog("matchid " + mmid + " - eligible: " + eligible)
+			utils.colog("matchid " + mmid + " - eligible: " + eligible)
 			if ((mmid == mid) && (iord == 1)) {
 				retvalue.rows.push(row);
 				utils.colog("è il primo prossimo incontro, DERBY OK")
