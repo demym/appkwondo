@@ -3277,7 +3277,11 @@ function setResultOk(match, atl, mfa, callback) {
 				}
 
 
+<<<<<<< HEAD
 				if ((result.trim() == "0-0") || (result.trim() == "")) { //If result=0-0 no chat msg !!!
+=======
+				if ((result.trim() == "0-0") || (result.trim() =="")) { //If result=0-0 no chat msg !!!
+>>>>>>> 7e8d8d311aac5cb33c4d8f285c3888fc9e4842f3
 					if (io) {
 						io.emit("updategara", {
 							garaid: match.garaid
