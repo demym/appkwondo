@@ -64,6 +64,10 @@
     <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_2')">-</button></ion-col>
   </ion-row>
   <br>
+  <ion-item>
+      <ion-label>GoldenPoint</ion-label>
+      <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>
+    </ion-item>
   <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  
 
 </ion-content>

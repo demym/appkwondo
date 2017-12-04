@@ -1207,7 +1207,8 @@ export class BackendProvider {
         result: "0-0",
         round: "0",
         paused: true,
-        running: false
+        running: false,
+        goldenpoint: false
       }
 
       this.matchconsoles.push(newrta);

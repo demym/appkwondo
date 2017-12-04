@@ -318,6 +318,8 @@ export class MatchconsolePage {
     this.selectedConsole.paused = false;
     this.selectedConsole.running = true;
     this.selectedConsole.fineround = false;
+    this.selectedConsole.goldenpoint=false;
+    if (this.selectedConsole.round=="GP") this.selectedConsole.goldenpoint=true;
     this.sendRealtime();
      this.backend.playFeedback();
   }
