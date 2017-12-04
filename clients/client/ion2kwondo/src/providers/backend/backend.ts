@@ -23,7 +23,12 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 */
 @Injectable()
 export class BackendProvider {
-  isProduction=true;
+  isProduction=true; 
+  appVersion:any={
+    name: "appkwondov2",
+    version: "2.0.4",
+    releasedate: "01/12/2017"
+  }
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
   public rooturl = "http://tkdr.herokuapp.com";
@@ -114,11 +119,7 @@ export class BackendProvider {
   chatpageaccessed = false;
 
   activechatfilename = "chatno64.json";
-  appVersion:any={
-    name: "appkwondov2",
-    version: "2.0.3",
-    releasedate: "28/11/2017"
-  }
+
   nextevents:any=[];
   isIosWeb=false;
   rtcpeers:any=[];

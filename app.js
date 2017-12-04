@@ -1201,13 +1201,15 @@ var ExpressPeerServer = require('peer').ExpressPeerServer;
 //var peerserver = require('peer').ExpressPeerServer;
 
 
-var server = app.listen(port)
+var server = app.listen(port);
+var io = require('socket.io').listen(server);
 
+/*
 var q = ExpressPeerServer(server, { debug: true, allow_discovery: true });
 
 app.use('/peerjs', q);
 
-var io = require('socket.io').listen(server);
+
 
 
 q.on('connection', function (id) {
@@ -1224,6 +1226,7 @@ q.on('disconnect', function (id) {
 	}
 
 });
+*/
 
 
 // catch 404 and forward to error handler

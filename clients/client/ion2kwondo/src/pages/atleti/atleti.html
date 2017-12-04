@@ -8,7 +8,17 @@
 
   <ion-navbar>
     <ion-title>Atleti</ion-title>
+    <ion-buttons end>
+      <button *ngIf="backend.user.role=='tkdradmin'" ion-button class="menubutton"  (tap)="addAtleta()"><ion-icon name="ios-add-circle-outline"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
+  <ion-searchbar placeholder="Filtra atleti"
+  [(ngModel)]="filter"
+  [showCancelButton]="true"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+<div class="reccount">{{displayedatleti.length}} atleti</div>
 
 </ion-header>
 
@@ -19,12 +29,17 @@
     <ion-refresher-content refreshingSpinner="ios">
         </ion-refresher-content>
   </ion-refresher>  
+  <div *ngIf="loading" style="width: 100%; text-align: center">
+    <ion-spinner name="ios"></ion-spinner>
+  </div>
 
-  <ion-item *ngFor="let a of atleti" (tap)="gotoAtleta(a)">
+  <ion-list [virtualScroll]="displayedatleti" approxItemHeight="40px">
+  <ion-item *virtualItem="let a"  (press)="pressAtleta(a)" (tap)="gotoAtleta(a)">  <!-- *ngFor="let a of atleti"  -->
     
     <span class="atleta">{{a.doc.cognome}} {{a.doc.nome}}</span><br>
     <span class="categoria">{{getCategoria(a).toUpperCase()}}</span>
    
     </ion-item>
+  </ion-list>
 
 </ion-content>

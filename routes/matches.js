@@ -3277,7 +3277,7 @@ function setResultOk(match, atl, mfa, callback) {
 				}
 
 
-				if ((result.trim() == "0-0") || (result.trim() = "")) { //If result=0-0 no chat msg !!!
+				if ((result.trim() == "0-0") || (result.trim() == "")) { //If result=0-0 no chat msg !!!
 					if (io) {
 						io.emit("updategara", {
 							garaid: match.garaid
@@ -3902,7 +3902,7 @@ function getDerby(match, allmatches, atleti) {
 				iord++;
 				eligible = true;
 			}
-			util.colog("matchid " + mmid + " - eligible: " + eligible)
+			utils.colog("matchid " + mmid + " - eligible: " + eligible)
 			if ((mmid == mid) && (iord == 1)) {
 				retvalue.rows.push(row);
 				utils.colog("è il primo prossimo incontro, DERBY OK")

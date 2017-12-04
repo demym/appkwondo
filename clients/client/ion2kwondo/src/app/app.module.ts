@@ -40,6 +40,7 @@ import { ProductsPage } from '../pages/products/products';
 import { CartPage } from '../pages/cart/cart';
 import { RtcPage } from '../pages/rtc/rtc';
 import { EditproductPage } from '../pages/editproduct/editproduct';
+import { EditatletaPage } from '../pages/editatleta/editatleta';
 import { OrdersPage } from '../pages/orders/orders';
 
 import { SocketService } from '../providers/socket-service/socket-service';
@@ -127,7 +128,8 @@ export function myCustomAudioProviderFactory() {
     CartPage,
     RtcPage,
     EditproductPage,
-    OrdersPage
+    OrdersPage,
+    EditatletaPage
   ],
   imports: [
     BrowserModule,
@@ -186,7 +188,8 @@ export function myCustomAudioProviderFactory() {
     CartPage,
     RtcPage,
     EditproductPage,
-    OrdersPage
+    OrdersPage,
+    EditatletaPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     SocketService,

@@ -434,6 +434,8 @@ router.post('/delete', function (req, res) {
 	var id = body.id;
 	var rev = body.id;
 
+	console.log("trying to delete atletaid ",id);
+
 
 	if (usemongo) {
 		mongo.deleteRecord("atleti.json", id, function (data) {
