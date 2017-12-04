@@ -49,6 +49,7 @@ export class MatchconsolePage {
     })*/
 
     var match = this.navParams.get("match");
+   
     var id = match.id;
     this.selectedMatchId = id;
     this.selectedMatch = match;
@@ -110,6 +111,7 @@ export class MatchconsolePage {
     
     var questo = this;
     questo.backend.playFeedback();
+    //alert(this.selectedConsole.match.matchord);
     var active = true;
     var url = this.backend.rooturl +"/matches/update/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
     var newvalue = "true";
@@ -134,6 +136,7 @@ export class MatchconsolePage {
     var doc = {
       realtime: active,
       admin_action: action
+      
     }
     //sendRealtime(true);
     questo.disabledcontrols=true;
@@ -373,7 +376,7 @@ export class MatchconsolePage {
       title="Conferma reset match"
     }
 
-    let alert = questo.alertCtrl.create({
+    let alrt = questo.alertCtrl.create({
       title: title,
       message: msg,
       buttons: [
@@ -392,8 +395,11 @@ export class MatchconsolePage {
             var match=questo.selectedConsole.match;
             var goldenpoint=false;
             if (questo.selectedConsole.round.toLowerCase()=="gp") goldenpoint=true;
+            if (questo.selectedConsole.goldenpoint) goldenpoint=true;
             match.goldenpoint=goldenpoint;
             match.risultato=questo.selectedConsole.result;
+            alert(questo.selectedConsole.squalifica);
+            match.squalifica=questo.selectedConsole.squalifica;
             var atl=questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
             var mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id});
             questo.backend.setResult(match,atl,mfa,function(data){
@@ -410,7 +416,7 @@ export class MatchconsolePage {
         }
       ]
     });
-    alert.present();
+    alrt.present();
 
   }
 

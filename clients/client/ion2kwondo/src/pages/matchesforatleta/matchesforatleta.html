@@ -53,9 +53,11 @@
           <ion-col col-2><img width="32" height="32" src="{{getImg(m)}}" /></ion-col>
           <ion-col>
             <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>
+            <div class="matchord">{{getMatchOrd(m)}}</div>
             <div class="atleta">{{m.doc.atletaname}}</div>
             <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>
             <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>
+       
             <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>
           </ion-col>
         </ion-row>
@@ -81,7 +83,7 @@
     <ion-list *ngIf="viewAvversari">
       <ion-item  style="font-size:12px" *ngFor="let avv of avversari"> 
         <ion-row>
-          <ion-col col-5 class="atleta wrap">
+          <ion-col col-12 class="atleta wrap">
 
         {{avv.nome}}</ion-col>
         </ion-row>

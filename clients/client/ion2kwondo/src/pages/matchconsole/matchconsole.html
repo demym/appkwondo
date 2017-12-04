@@ -68,6 +68,10 @@
       <ion-label>GoldenPoint</ion-label>
       <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>
     </ion-item>
+    <ion-item>
+        <ion-label>Squalificato</ion-label>
+        <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>
+      </ion-item>
   <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  
 
 </ion-content>

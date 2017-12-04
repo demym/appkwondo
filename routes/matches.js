@@ -2936,6 +2936,13 @@ function setResultOk(match, atl, mfa, callback) {
 
 			if (r1 > r2) valore = "vinto";
 			if (r2 > r1) valore = "perso";
+			var isSqualifica=false;
+			if (match.hasOwnProperty("squalifica")){
+				if (String(match.squalifica)=="true") {
+					valore="perso";
+					isSqualifica=true;
+				}
+			}
 			if (result == "0-0") valore = "nondisputato";
 			//alert(valore);
 
@@ -3012,7 +3019,12 @@ function setResultOk(match, atl, mfa, callback) {
 				if (ordbin < 4) thisincontro = ", " + ordbinarr[ordbin];
 				utils.colog("ordarr", ordarr[ord], ord);
 				cronacatxt += selectedatletaname + " " + vintotxt + " il suo " + ordarr[ord] + " " + eunico + "incontro (n." + nincontro + thisincontro + ") ";
-				if (result.trim() != "") cronacatxt += " per " + result;
+				if (isSqualifica){
+					if (result.trim() != "") cronacatxt += " per squalifica, sul punteggio di " + result;
+				} else {
+					if (result.trim() != "") cronacatxt += " per " + result;
+				}
+				
 
 
 				doc.vinto = v;

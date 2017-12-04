@@ -30780,6 +30780,7 @@ page-cart .bariconbig {
   font-size: 13px;
   padding: 10px;
   white-space: normal;
+  line-height: 15px;
 }
 
 .date {
@@ -31046,7 +31047,8 @@ ion-col, ion-row, ion-grid {
   font-size: 20px;
   margin: 0px;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
+  height: 40px;
 }
 
 .recording {
@@ -31573,6 +31575,11 @@ page-matchesforatleta .history {
 page-matchesforatleta .wrap {
   word-wrap: break-word;
   white-space: normal;
+}
+
+page-matchesforatleta .matchord {
+  font-size: 12px;
+  font-style: italic;
 }
 
 page-matchesforatleta .derby {
