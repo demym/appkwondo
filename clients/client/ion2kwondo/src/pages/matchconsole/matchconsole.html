@@ -58,20 +58,29 @@
     <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_1')">+</button></ion-col>
     <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_1')">-</button></ion-col>
     <ion-col col-1></ion-col>
-    <ion-col col-2><ion-input [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>
+    <ion-col col-2><ion-input readonly [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>
     <ion-col col-1></ion-col>
     <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('plus_2')">+</button></ion-col>
     <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus('minus_2')">-</button></ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col col-12>
+      <div style="font-size: 12px; padding: 4px; text-align: center">
+      <i>Il punteggio di <b>sinistra</b> indica il <b>nostro</b> atleta, quello di <b>destra</b> il suo <b>avversario</b></i>
+    </div>
+    </ion-col>
+  </ion-row>
   <br>
+  <div class="checkboxes">
   <ion-item>
-      <ion-label>GoldenPoint</ion-label>
+      <ion-label>GoldenPoint (il punteggio indica il vincitore)</ion-label>
       <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>
     </ion-item>
     <ion-item>
-        <ion-label>Squalificato</ion-label>
+        <ion-label>Sconfitta per squalifica</ion-label>
         <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>
       </ion-item>
+    </div>
   <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  
 
 </ion-content>

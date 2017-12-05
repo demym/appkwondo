@@ -145,9 +145,9 @@ TabsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_gare_gare__ = __webpack_require__(481);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_atleti_atleti__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_servizisocieta_servizisocieta__ = __webpack_require__(130);
@@ -1335,7 +1335,7 @@ AccountPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(502);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
@@ -1459,8 +1459,8 @@ AboutPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServizisocietaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(506);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1524,7 +1524,7 @@ var ServizisocietaPage = (function () {
 }());
 ServizisocietaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-servizisocieta',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/servizisocieta/servizisocieta.html"*/'<!--\n  Generated template for the ServizisocietaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Servizi per i soci</ion-title>\n    <ion-buttons end>\n        \n              <button (tap)="viewOrders()" *ngIf="isMarketAdmin()" ion-button icon-only>\n                <ion-icon name="md-list-box"></ion-icon>\n              </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n\n  <ion-card>\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-2>\n          <img class="maximage" src="http://www.taekwondorozzano.it/wp-content/themes/Taekwondo/images/logo-tae-kwan-do-rozzano.png"/>\n        </ion-col>\n        <ion-col col-1></ion-col>\n        <ion-col>\n          I qui presenti servizi sono offerti in forma esclusiva ai soci di ASD Taekwondo Rozzano\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n  <hr>\n\n  <ion-card (tap)="gotoProducts(\'tkdgear\')">\n\n\n          <ion-card-content>\n            <ion-row>\n              <ion-col col-3 align-self-start>\n                  <img class="sgear maximage" src="assets/img/taekwondogear.jpg" />\n              </ion-col>\n              <ion-col>\n    \n              </ion-col>\n              <ion-col  col-8 align-self-start>\n                <ion-row>\n                  <ion-col align-self-start>\n                      <b>Prenota equipaggiamento</b>\n    \n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                    <ion-col align-self-start>\n                        Ti serve un accessorio da taekwondo per il tuo atleta ? Prenotalo qui\n      \n                    </ion-col>\n                  </ion-row>\n               \n              </ion-col>\n            </ion-row>\n         \n        \n          \n        </ion-card-content>\n        </ion-card>\n    \n   \n\n  <ion-card (tap)="gotoProducts(\'minimarket\')">\n                <ion-card-content>\n                  <ion-row align-items-start>\n                    <ion-col col-3 align-self-start>\n                        <img class="sgear maximage" src="assets/img/minimarket.jpg" />\n                    </ion-col>\n                    <ion-col>\n          \n                    </ion-col>\n                    <ion-col  col-8 align-self-start>\n                      <ion-row align-items-start>\n                        <ion-col align-self-start>\n                            <b>Prenotazione minimarket</b>\n          \n                        </ion-col>\n                      </ion-row>\n                      <ion-row align-items-start>\n                          <ion-col align-self-start>\n                              Puoi prenotare qui dal minimarket Sapori Del Sud\n            \n                          </ion-col>\n                        </ion-row>\n                     \n                    </ion-col>\n                  </ion-row>\n               \n              \n                \n              </ion-card-content>\n              </ion-card>\n\n              <!--\n\n              <ion-card (tap)="gotoProducts(\'gear\')">\n                  \n               \n                            <ion-card-content>\n                              <ion-row align-items-start>\n                                <ion-col col-3 align-self-start>\n                                    <img class="sgear" src="http://mammaoggi.it/wp-content/uploads/2013/09/mercatino_54_370.jpg" />\n                                </ion-col>\n                                <ion-col>\n                      \n                                </ion-col>\n                                <ion-col  col-8 align-self-start>\n                                  <ion-row align-items-start>\n                                    <ion-col align-self-start>\n                                        <b>Mercatino e scambio usato</b>\n                      \n                                    </ion-col>\n                                  </ion-row>\n                                  <ion-row>\n                                      <ion-col align-self-start>\n                                          Mercatino e scambio di accessori usati per taekwondo\n                        \n                                      </ion-col>\n                                    </ion-row>\n                                 \n                                </ion-col>\n                              </ion-row>\n                          </ion-card-content>\n              </ion-card>\n\n            -->\n\n\n      <!--<section *ngIf="isMarketAdmin()">\n        <ion-item (tap)="viewOrders()">\n          Visualizza ordini\n        </ion-item>\n      </section>-->\n         \n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/servizisocieta/servizisocieta.html"*/,
+        selector: 'page-servizisocieta',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/servizisocieta/servizisocieta.html"*/'<!--\n  Generated template for the ServizisocietaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Servizi per i soci</ion-title>\n    <ion-buttons end>\n        \n              <button (tap)="viewOrders()" *ngIf="isMarketAdmin()" ion-button icon-only>\n                <ion-icon name="md-list-box"></ion-icon>\n              </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n\n  <ion-card>\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-2>\n          <img class="maximage" src="http://www.taekwondorozzano.it/wp-content/themes/Taekwondo/images/logo-tae-kwan-do-rozzano.png"/>\n        </ion-col>\n        <ion-col col-1></ion-col>\n        <ion-col>\n          I qui presenti servizi sono offerti in forma esclusiva ai soci di ASD Taekwondo Rozzano\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n  <hr>\n\n  <ion-card (tap)="gotoProducts(\'tkdgear\')">\n\n\n          <ion-card-content>\n            <ion-row>\n              <ion-col col-3 align-self-start>\n                  <img class="sgear maximage" src="assets/img/taekwondogear.jpg" />\n              </ion-col>\n              <ion-col>\n    \n              </ion-col>\n              <ion-col  col-8 align-self-start>\n                <ion-row>\n                  <ion-col align-self-start>\n                      <b>Prenota equipaggiamento</b>\n    \n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                    <ion-col align-self-start>\n                        Ti serve un accessorio da taekwondo per il tuo atleta ? Prenotalo qui\n      \n                    </ion-col>\n                  </ion-row>\n               \n              </ion-col>\n            </ion-row>\n         \n        \n          \n        </ion-card-content>\n        </ion-card>\n    \n   \n\n  <ion-card (tap)="gotoProducts(\'minimarket\')">\n                <ion-card-content>\n                  <ion-row align-items-start>\n                    <ion-col col-3 align-self-start>\n                        <img class="sgear maximage" src="assets/img/minimarket.jpg" />\n                    </ion-col>\n                    <ion-col>\n          \n                    </ion-col>\n                    <ion-col  col-8 align-self-start>\n                      <ion-row align-items-start>\n                        <ion-col align-self-start>\n                            <b>Prenotazione minimarket</b>\n          \n                        </ion-col>\n                      </ion-row>\n                      <ion-row align-items-start>\n                          <ion-col align-self-start>\n                              Puoi prenotare qui dal minimarket Sapori Del Sud\n             \n                          </ion-col>\n                        </ion-row>\n                     \n                    </ion-col>\n                  </ion-row>\n               \n              \n                \n              </ion-card-content>\n              </ion-card>\n\n              <!--\n\n              <ion-card (tap)="gotoProducts(\'gear\')">\n                  \n               \n                            <ion-card-content>\n                              <ion-row align-items-start>\n                                <ion-col col-3 align-self-start>\n                                    <img class="sgear" src="http://mammaoggi.it/wp-content/uploads/2013/09/mercatino_54_370.jpg" />\n                                </ion-col>\n                                <ion-col>\n                      \n                                </ion-col>\n                                <ion-col  col-8 align-self-start>\n                                  <ion-row align-items-start>\n                                    <ion-col align-self-start>\n                                        <b>Mercatino e scambio usato</b>\n                      \n                                    </ion-col>\n                                  </ion-row>\n                                  <ion-row>\n                                      <ion-col align-self-start>\n                                          Mercatino e scambio di accessori usati per taekwondo\n                        \n                                      </ion-col>\n                                    </ion-row>\n                                 \n                                </ion-col>\n                              </ion-row>\n                          </ion-card-content>\n              </ion-card>\n\n            -->\n\n\n      <!--<section *ngIf="isMarketAdmin()">\n        <ion-item (tap)="viewOrders()">\n          Visualizza ordini\n        </ion-item>\n      </section>-->\n         \n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/servizisocieta/servizisocieta.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], ServizisocietaPage);
@@ -1577,7 +1577,7 @@ webpackEmptyAsyncContext.id = 182;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(587);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(588);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__ = __webpack_require__(120);
@@ -1989,7 +1989,7 @@ SocketService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_tabs_tabs__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(507);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3701,8 +3701,26 @@ var MatchesforatletaPage = (function () {
         this.tabulatoimg = "assets/img/boxbianco.jpg";
         this.activetab = "matches";
         this.loading = false;
+        this.ordbinarr = new Array("finale", "semifinale", "quarto di finale", "ottavo di finale", "sedicesimo di finale", "trentaduesimo di finale");
         var questo = this;
     }
+    MatchesforatletaPage.prototype.getMatchOrd = function (m) {
+        var questo = this;
+        var order = "";
+        //console.log("mfa", questo.mfa);
+        var l = questo.mfa.length;
+        questo.mfa.forEach(function (item, idx) {
+            if (m.doc.id == item.doc.id) {
+                var ordidx = l - idx - 1;
+                if (ordidx < questo.ordbinarr.length) {
+                    if (ordidx < 2) {
+                        order = questo.ordbinarr[ordidx].toUpperCase();
+                    }
+                }
+            }
+        });
+        return order;
+    };
     MatchesforatletaPage.prototype.ionViewWillEnter = function () {
         var questo = this;
         questo.initView();
@@ -3872,6 +3890,7 @@ var MatchesforatletaPage = (function () {
         return ret;
     };
     MatchesforatletaPage.prototype.showMatchconsole = function (m) {
+        var questo = this;
         //this.backend.matchconsoles.push(m);
         if (this.backend.user.role.toLowerCase() != "tkdradmin")
             return;
@@ -3879,6 +3898,7 @@ var MatchesforatletaPage = (function () {
         console.log(this.backend.activegara);
         if (this.backend.activegara.gara.rows[0].doc.stato != "incorso")
             return;
+        //m.matchord=questo.getMatchOrd({doc: m});
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__["a" /* MatchconsolePage */], {
             match: m
         });
@@ -4204,7 +4224,7 @@ __decorate([
 ], MatchesforatletaPage.prototype, "navBar", void 0);
 MatchesforatletaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-matchesforatleta',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchesforatleta/matchesforatleta.html"*/'<!--\n  Generated template for the MatchesforatletaPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match atleta</ion-title>\n    <ion-buttons end>\n    <!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>\n      \n      </button>-->\n      <button *ngIf="backend.user.role==\'tkdradmin\'" ion-button style="font-size: 18px" (click)="addMatches()"><ion-icon name="md-add-circle"></ion-icon>\n        \n        </button>\n        <button (tap)="initView(); backend.playFeedback();" ion-button style="font-size: 18px"><ion-icon name="md-refresh"></ion-icon></button>\n      </ion-buttons>\n  </ion-navbar>\n  <ion-segment (tap)="tapSegment()" [(ngModel)]="activetab">\n      <ion-segment-button  value="matches">\n       <!-- <ion-icon name="camera"></ion-icon>-->Match\n      </ion-segment-button>\n      <ion-segment-button  value="details">\n          <!-- <ion-icon name="camera"></ion-icon>-->Dettagli atleta\n         </ion-segment-button>\n  </ion-segment>\n\n</ion-header>\n\n\n<ion-content spadding>\n\n  <div *ngIf="loading" style="text-align:center">\n    <ion-spinner name="ios"></ion-spinner>\n  </div>\n\n  <section *ngIf="activetab==\'matches\'">\n\n  <section *ngIf="mfa.length==0">\n    <ion-card>\n      <ion-card-content>\n      Nessun match per {{atleta.cognome}} {{atleta.nome}}\n    </ion-card-content>\n    </ion-card>\n  </section>\n\n   <ion-list>\n      <ng-container *ngFor="let m of mfa">\n      <ion-item  (press)="deleteMatch(m.doc)" (tap)="showMatchconsole(m.doc)">\n        <ion-row >\n          <ion-col col-2><img width="32" height="32" src="{{getImg(m)}}" /></ion-col>\n          <ion-col>\n            <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n            <div class="atleta">{{m.doc.atletaname}}</div>\n            <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n            <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n            <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n      </ng-container>\n    </ion-list>\n\n  </section>\n  <section *ngIf="activetab==\'details\'">\n      <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTkdtCategoria=!viewTkdtCategoria; backend.playFeedback();">Dati ufficiali categoria</button>\n    <ion-list *ngIf="viewTkdtCategoria">\n      <ion-item  style="font-size:12px" *ngFor="let a of tkdtatletaarr"> \n        <ion-row>\n          <ion-col col-5>\n\n        {{a.name}}</ion-col><ion-col>{{a.value}}</ion-col>\n        </ion-row>\n      </ion-item>\n      </ion-list>\n\n\n     <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewAvversari=!viewAvversari; backend.playFeedback();">Avversari in categoria ({{avversari.length}})</button>\n    <ion-list *ngIf="viewAvversari">\n      <ion-item  style="font-size:12px" *ngFor="let avv of avversari"> \n        <ion-row>\n          <ion-col col-5 class="atleta wrap">\n\n        {{avv.nome}}</ion-col>\n        </ion-row>\n        <ion-row>\n        <ion-col class="wrap">{{avv.societa}}</ion-col>\n        </ion-row>\n      </ion-item>\n      </ion-list>\n       <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTabulato=!viewTabulato; backend.playFeedback();">Tabulato</button>\n    <ion-item *ngIf="viewTabulato">\n     \n      {{tabulato.tabname}}<br>\n      <p>\n          <i>Clicca sul tabulato per ingrandirlo</i>\n        </p><br>\n      <img (tap)="openTabulato(tabulatoimg)" [src]="tabulatoimg" />\n     <!-- <div (tap)="backend.getTabulatoImg(tabulato.oldhref)" >Tabulato</div>--> \n    </ion-item>\n    <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewHistory=!viewHistory; backend.playFeedback();">Storico Atleta</button>\n    <ion-list *ngIf="viewHistory">\n      <ion-item> \n          <ion-row style="padding: 2px !important; font-size: 12px; background: #eee;">\n         <ion-col col-8>Gara</ion-col>\n         <ion-col col-2>MED</ion-col>\n         <ion-col col-1>M</ion-col>\n         <ion-col col-1>MD</ion-col>\n         </ion-row>\n        </ion-item>\n     <ion-item *ngFor="let h of history" >\n       <ion-row style="padding: 2px !important; font-size: 12px;">\n         <ion-col col-8 style="white-space: normal">{{h.data}} {{h.location}}</ion-col>\n         <ion-col col-2><span [ngClass]="getMedagliaHistory(h).color"> {{getMedagliaHistory(h).medaglia}}</span></ion-col>\n         <ion-col col-1>{{h.matches}}</ion-col>\n         <ion-col col-1>{{h.matchesdisputati}}</ion-col>\n         </ion-row>\n        </ion-item>\n    </ion-list>  \n\n  </section>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchesforatleta/matchesforatleta.html"*/
+        selector: 'page-matchesforatleta',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchesforatleta/matchesforatleta.html"*/'<!--\n  Generated template for the MatchesforatletaPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match atleta</ion-title>\n    <ion-buttons end>\n    <!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"><ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge></ion-icon>\n      \n      </button>-->\n      <button *ngIf="backend.user.role==\'tkdradmin\'" ion-button style="font-size: 18px" (click)="addMatches()"><ion-icon name="md-add-circle"></ion-icon>\n        \n        </button>\n        <button (tap)="initView(); backend.playFeedback();" ion-button style="font-size: 18px"><ion-icon name="md-refresh"></ion-icon></button>\n      </ion-buttons>\n  </ion-navbar>\n  <ion-segment (tap)="tapSegment()" [(ngModel)]="activetab">\n      <ion-segment-button  value="matches">\n       <!-- <ion-icon name="camera"></ion-icon>-->Match\n      </ion-segment-button>\n      <ion-segment-button  value="details">\n          <!-- <ion-icon name="camera"></ion-icon>-->Dettagli atleta\n         </ion-segment-button>\n  </ion-segment>\n\n</ion-header>\n\n\n<ion-content spadding>\n\n  <div *ngIf="loading" style="text-align:center">\n    <ion-spinner name="ios"></ion-spinner>\n  </div>\n\n  <section *ngIf="activetab==\'matches\'">\n\n  <section *ngIf="mfa.length==0">\n    <ion-card>\n      <ion-card-content>\n      Nessun match per {{atleta.cognome}} {{atleta.nome}}\n    </ion-card-content>\n    </ion-card>\n  </section>\n\n   <ion-list>\n      <ng-container *ngFor="let m of mfa">\n      <ion-item  (press)="deleteMatch(m.doc)" (tap)="showMatchconsole(m.doc)">\n        <ion-row >\n          <ion-col col-2><img width="32" height="32" src="{{getImg(m)}}" /></ion-col>\n          <ion-col>\n            <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n            <div class="matchord">{{getMatchOrd(m)}}</div>\n            <div class="atleta">{{m.doc.atletaname}}</div>\n            <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n            <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n       \n            <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n      </ng-container>\n    </ion-list>\n\n  </section>\n  <section *ngIf="activetab==\'details\'">\n      <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTkdtCategoria=!viewTkdtCategoria; backend.playFeedback();">Dati ufficiali categoria</button>\n    <ion-list *ngIf="viewTkdtCategoria">\n      <ion-item  style="font-size:12px" *ngFor="let a of tkdtatletaarr"> \n        <ion-row>\n          <ion-col col-5>\n\n        {{a.name}}</ion-col><ion-col>{{a.value}}</ion-col>\n        </ion-row>\n      </ion-item>\n      </ion-list>\n\n\n     <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewAvversari=!viewAvversari; backend.playFeedback();">Avversari in categoria ({{avversari.length}})</button>\n    <ion-list *ngIf="viewAvversari">\n      <ion-item  style="font-size:12px" *ngFor="let avv of avversari"> \n        <ion-row>\n          <ion-col col-12 class="atleta wrap">\n\n        {{avv.nome}}</ion-col>\n        </ion-row>\n        <ion-row>\n        <ion-col class="wrap">{{avv.societa}}</ion-col>\n        </ion-row>\n      </ion-item>\n      </ion-list>\n       <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewTabulato=!viewTabulato; backend.playFeedback();">Tabulato</button>\n    <ion-item *ngIf="viewTabulato">\n     \n      {{tabulato.tabname}}<br>\n      <p>\n          <i>Clicca sul tabulato per ingrandirlo</i>\n        </p><br>\n      <img (tap)="openTabulato(tabulatoimg)" [src]="tabulatoimg" />\n     <!-- <div (tap)="backend.getTabulatoImg(tabulato.oldhref)" >Tabulato</div>--> \n    </ion-item>\n    <button full ion-button sstyle="width: 100%; background: blue; color: white; font-size: 16px;" (tap)="viewHistory=!viewHistory; backend.playFeedback();">Storico Atleta</button>\n    <ion-list *ngIf="viewHistory">\n      <ion-item> \n          <ion-row style="padding: 2px !important; font-size: 12px; background: #eee;">\n         <ion-col col-8>Gara</ion-col>\n         <ion-col col-2>MED</ion-col>\n         <ion-col col-1>M</ion-col>\n         <ion-col col-1>MD</ion-col>\n         </ion-row>\n        </ion-item>\n     <ion-item *ngFor="let h of history" >\n       <ion-row style="padding: 2px !important; font-size: 12px;">\n         <ion-col col-8 style="white-space: normal">{{h.data}} {{h.location}}</ion-col>\n         <ion-col col-2><span [ngClass]="getMedagliaHistory(h).color"> {{getMedagliaHistory(h).medaglia}}</span></ion-col>\n         <ion-col col-1>{{h.matches}}</ion-col>\n         <ion-col col-1>{{h.matchesdisputati}}</ion-col>\n         </ion-row>\n        </ion-item>\n    </ion-list>  \n\n  </section>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchesforatleta/matchesforatleta.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], MatchesforatletaPage);
@@ -4322,6 +4342,7 @@ var MatchconsolePage = (function () {
     MatchconsolePage.prototype.toggleTempoReale = function () {
         var questo = this;
         questo.backend.playFeedback();
+        //alert(this.selectedConsole.match.matchord);
         var active = true;
         var url = this.backend.rooturl + "/matches/update/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
         var newvalue = "true";
@@ -4480,6 +4501,9 @@ var MatchconsolePage = (function () {
         this.selectedConsole.paused = false;
         this.selectedConsole.running = true;
         this.selectedConsole.fineround = false;
+        this.selectedConsole.goldenpoint = false;
+        if (this.selectedConsole.round == "GP")
+            this.selectedConsole.goldenpoint = true;
         this.sendRealtime();
         this.backend.playFeedback();
     };
@@ -4519,13 +4543,31 @@ var MatchconsolePage = (function () {
         console.log("setResult");
         var questo = this;
         var ris = questo.selectedConsole.result;
+        var risarr = ris.split("-");
+        if (ris.trim() != "0-0") {
+            if (risarr[0] == risarr[1]) {
+                var alrtx = questo.alertCtrl.create({
+                    title: 'ATTENZIONE',
+                    subTitle: 'Il risultato indicato indica un pareggio, incrementa uno dei due punteggi per indicare una vittoria o una sconfitta',
+                    buttons: ['Chiudi']
+                });
+                alrtx.present();
+                return;
+            }
+        }
         var msg = "Vuoi davvero convalidare il risultato di questo incontro (" + ris + ") ?";
+        var gsmsg = "";
+        if (questo.selectedConsole.goldenpoint)
+            gsmsg = "(risultato conseguito dopo GoldenPoint)";
+        if (questo.selectedConsole.squalifica)
+            gsmsg = "(verrà registrata la sconfitta per squalifica)";
+        msg += gsmsg;
         var title = "Conferma risultato " + ris;
         if ((ris.trim() == "0-0") || (ris.trim() == "")) {
-            msg = "Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
+            msg = "ATTENZIONE ! Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
             title = "Conferma reset match";
         }
-        var alert = questo.alertCtrl.create({
+        var alrt = questo.alertCtrl.create({
             title: title,
             message: msg,
             buttons: [
@@ -4545,8 +4587,12 @@ var MatchconsolePage = (function () {
                         var goldenpoint = false;
                         if (questo.selectedConsole.round.toLowerCase() == "gp")
                             goldenpoint = true;
+                        if (questo.selectedConsole.goldenpoint)
+                            goldenpoint = true;
                         match.goldenpoint = goldenpoint;
                         match.risultato = questo.selectedConsole.result;
+                        //alert(questo.selectedConsole.squalifica);
+                        match.squalifica = questo.selectedConsole.squalifica;
                         var atl = questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
                         var mfa = questo.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id });
                         questo.backend.setResult(match, atl, mfa, function (data) {
@@ -4560,7 +4606,7 @@ var MatchconsolePage = (function () {
                 }
             ]
         });
-        alert.present();
+        alrt.present();
     };
     MatchconsolePage.prototype.gotoChat = function () {
         this.backend.playFeedback();
@@ -4574,7 +4620,7 @@ __decorate([
 ], MatchconsolePage.prototype, "navBar", void 0);
 MatchconsolePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-matchconsole',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchconsole/matchconsole.html"*/'<!--\n  Generated template for the MatchconsolePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match console</ion-title>\n     <ion-buttons end>\n     \n<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>\n\n</button>-->\n</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="selectedMatchId" >\n      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? \'ssecondary\': \'sdark\'">\n        <span [ngClass]="(c.match.realtime==\'false\') || (c.match.realtime==false) ? \'tabnorealtime\': \'\'">{{c.match.matchid}} {{c.match.atletaname}}</span>\n      </ion-segment-button>\n      \n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> \n \n <ion-row>\n   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ? \'realtimebut\' : \'norealtimebut\'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>\n   </ion-col>\n </ion-row>\n  <br>\n  <div *ngIf="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ">\n  <ion-row>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? \'incorso\' : \'\'">{{getPauseText()}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? \'roundactive\' : \'\'">FINEROUND</button>\n    </ion-col>\n\n  </ion-row>\n  <ion-row>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'1\')" color="light" [ngClass]="(selectedConsole.round==\'1\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'1\' ? \'roundactive\' : \'\'">1</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'2\')" color="light" [ngClass]="(selectedConsole.round==\'2\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'2\' ? \'roundactive\' : \'\'">2</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'3\')" color="light" [ngClass]="(selectedConsole.round==\'3\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'3\' ? \'roundactive\' : \'\'">3</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'GP\')" color="light" [ngClass]="(selectedConsole.round==\'GP\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'GP\' ? \'roundactive\' : \'\'">GP</button></ion-col>\n  </ion-row>\n  </div>\n  <br>\n  <ion-row>\n    \n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_1\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_1\')">-</button></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><ion-input [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_2\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_2\')">-</button></ion-col>\n  </ion-row>\n  <br>\n  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  \n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchconsole/matchconsole.html"*/,
+        selector: 'page-matchconsole',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchconsole/matchconsole.html"*/'<!--\n  Generated template for the MatchconsolePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match console</ion-title>\n     <ion-buttons end>\n     \n<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>\n\n</button>-->\n</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="selectedMatchId" >\n      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? \'ssecondary\': \'sdark\'">\n        <span [ngClass]="(c.match.realtime==\'false\') || (c.match.realtime==false) ? \'tabnorealtime\': \'\'">{{c.match.matchid}} {{c.match.atletaname}}</span>\n      </ion-segment-button>\n      \n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> \n \n <ion-row>\n   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ? \'realtimebut\' : \'norealtimebut\'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>\n   </ion-col>\n </ion-row>\n  <br>\n  <div *ngIf="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ">\n  <ion-row>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? \'incorso\' : \'\'">{{getPauseText()}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? \'roundactive\' : \'\'">FINEROUND</button>\n    </ion-col>\n\n  </ion-row>\n  <ion-row>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'1\')" color="light" [ngClass]="(selectedConsole.round==\'1\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'1\' ? \'roundactive\' : \'\'">1</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'2\')" color="light" [ngClass]="(selectedConsole.round==\'2\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'2\' ? \'roundactive\' : \'\'">2</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'3\')" color="light" [ngClass]="(selectedConsole.round==\'3\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'3\' ? \'roundactive\' : \'\'">3</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'GP\')" color="light" [ngClass]="(selectedConsole.round==\'GP\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'GP\' ? \'roundactive\' : \'\'">GP</button></ion-col>\n  </ion-row>\n  </div>\n  <br>\n  <ion-row>\n    \n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_1\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_1\')">-</button></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><ion-input readonly [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_2\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_2\')">-</button></ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col col-12>\n      <div style="font-size: 12px; padding: 4px; text-align: center">\n      <i>Il punteggio di <b>sinistra</b> indica il <b>nostro</b> atleta, quello di <b>destra</b> il suo <b>avversario</b></i>\n    </div>\n    </ion-col>\n  </ion-row>\n  <br>\n  <div class="checkboxes">\n  <ion-item>\n      <ion-label>GoldenPoint (il punteggio indica il vincitore)</ion-label>\n      <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n        <ion-label>Sconfitta per squalifica</ion-label>\n        <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>\n      </ion-item>\n    </div>\n  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  \n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/matchconsole/matchconsole.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], MatchconsolePage);
@@ -5756,6 +5802,7 @@ EditgaraPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__ = __webpack_require__(498);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5769,6 +5816,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /*
   Generated class for the GarePage page.
 
@@ -5776,12 +5824,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   Ionic pages and navigation.
 */
 var AtletiPage = (function () {
-    function AtletiPage(events, backend, navCtrl, navParams) {
+    function AtletiPage(alertCtrl, toastCtrl, modalCtrl, events, backend, navCtrl, navParams) {
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
         this.events = events;
         this.backend = backend;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.atleti = [];
+        this.newAtleta = {
+            cognome: "",
+            nome: "",
+            datanascita: "01.01.2005",
+            sesso: "M",
+            squadra: "",
+            categoriapeso: "",
+            palestra: "",
+            cintura: "",
+            punticlass: "",
+            societaid: "20160217220400"
+        };
+        this.displayedatleti = [];
+        this.filter = "";
+        this.loading = false;
     }
     AtletiPage.prototype.ionViewWillEnter = function () {
         var questo = this;
@@ -5789,6 +5855,7 @@ var AtletiPage = (function () {
             console.log("hwbackbutton in gare.ts");
             questo.navCtrl.pop();
         });
+        questo.refresh(function (data) { });
     };
     AtletiPage.prototype.ionViewWillLeave = function () {
         this.events.unsubscribe("hwbackbutton");
@@ -5804,12 +5871,34 @@ var AtletiPage = (function () {
     };
     AtletiPage.prototype.refresh = function (callback) {
         var questo = this;
-        this.backend.getAtleti(function (data) {
+        questo.loading = true;
+        questo.backend.getAtleti(function (data) {
             questo.atleti = data.rows;
-            console.log("atleti", questo.atleti);
+            questo.filterAtleti();
+            console.log("atleti", questo.displayedatleti);
+            questo.loading = false;
             if (callback)
                 callback(data);
         });
+    };
+    AtletiPage.prototype.filterAtleti = function () {
+        var questo = this;
+        var atleti = [];
+        if (questo.filter.trim() == "") {
+            atleti = questo.atleti;
+        }
+        else {
+            questo.atleti.forEach(function (item, idx) {
+                var doIt = false;
+                if (item.doc.cognome.toLowerCase().indexOf(questo.filter.toLowerCase()) > -1)
+                    doIt = true;
+                if (item.doc.nome.toLowerCase().indexOf(questo.filter.toLowerCase()) > -1)
+                    doIt = true;
+                if (doIt)
+                    atleti.push(item);
+            });
+        }
+        questo.displayedatleti = atleti;
     };
     AtletiPage.prototype.doRefresh = function (refresher) {
         console.log('Begin async operation', refresher);
@@ -5825,6 +5914,141 @@ var AtletiPage = (function () {
     AtletiPage.prototype.gotoAtleta = function (atl) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__["a" /* AtletaPage */], { atleta: atl });
     };
+    AtletiPage.prototype.editAtleta = function (a) {
+        console.log("editatleta", a);
+        var questo = this;
+        var profileModal = questo.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__["a" /* EditatletaPage */], { atleta: a.doc });
+        profileModal.onDidDismiss(function (data) {
+            console.log(data);
+            if (data) {
+                if (data.hasOwnProperty("action")) {
+                    var text = data.text;
+                    questo.refresh(function () {
+                        var toast = questo.toastCtrl.create({
+                            message: 'Atleta ' + a.doc.cognome + " " + a.doc.nome + " " + text,
+                            duration: 3000,
+                            position: 'top'
+                        });
+                        toast.onDidDismiss(function () {
+                            console.log('Dismissed toast');
+                        });
+                        toast.present();
+                    });
+                }
+            }
+        });
+        profileModal.present();
+    };
+    AtletiPage.prototype.addAtleta = function () {
+        var questo = this;
+        var profileModal = questo.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__["a" /* EditatletaPage */], { atleta: questo.newAtleta });
+        profileModal.onDidDismiss(function (data) {
+            console.log(data);
+            if (data.hasOwnProperty("action")) {
+                var text = data.text;
+                questo.refresh(function () {
+                    var toast = questo.toastCtrl.create({
+                        message: 'Atleta ' + data.atleta.cognome + " " + data.atleta.nome + " " + text,
+                        duration: 3000,
+                        position: 'top'
+                    });
+                    toast.onDidDismiss(function () {
+                        console.log('Dismissed toast');
+                    });
+                    toast.present();
+                });
+            }
+        });
+        profileModal.present();
+        //this.navCtrl.push(EditatletaPage,{atleta: questo.newAtleta}, questo.backend.navOptions)
+    };
+    AtletiPage.prototype.deleteAtleta = function (a) {
+        var questo = this;
+        var url = questo.backend.rooturl + "/atleti/delete";
+        var postdata = {
+            id: a.doc.id,
+            rev: a.doc.id
+        };
+        questo.backend.postData(url, postdata, function (data) {
+            console.log("atleta deleted", data);
+            questo.refresh(function () {
+                var toast = questo.toastCtrl.create({
+                    message: 'Atleta ' + a.doc.cognome + " " + a.doc.nome + " eliminato",
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.onDidDismiss(function () {
+                    console.log('Dismissed toast');
+                });
+                toast.present();
+            });
+        });
+    };
+    AtletiPage.prototype.pressAtleta = function (a) {
+        var questo = this;
+        if (questo.backend.user.role != "tkdradmin")
+            return;
+        var alrt = questo.alertCtrl.create({
+            title: 'Seleziona una scelta',
+            message: 'Esegui una tra le azioni elencate',
+            buttons: [
+                {
+                    text: 'ANNULLA',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Modifica atleta',
+                    handler: function () {
+                        questo.editAtleta(a);
+                    }
+                },
+                {
+                    text: 'Elimina atleta',
+                    handler: function () {
+                        console.log('Buy clicked');
+                        var alert2 = questo.alertCtrl.create({
+                            title: 'Elimina atleta',
+                            message: 'Vuoi realmente eliminare ' + a.doc.cognome + ' ' + a.doc.nome + ' ?',
+                            buttons: [
+                                {
+                                    text: 'ANNULLA',
+                                    role: 'cancel',
+                                    handler: function () {
+                                        console.log('Cancel clicked');
+                                    }
+                                },
+                                {
+                                    text: 'SI, ELIMINA ' + a.doc.cognome + ' ' + a.doc.nome,
+                                    handler: function () {
+                                        questo.deleteAtleta(a);
+                                        console.log('eliminaatleta confirmed clicked');
+                                        //delete code
+                                    }
+                                }
+                            ]
+                        });
+                        alert2.present();
+                    }
+                }
+            ]
+        });
+        alrt.present();
+    };
+    AtletiPage.prototype.onInput = function (ev) {
+        var questo = this;
+        console.log("onInput", ev);
+        console.log("filter", questo.filter);
+        //questo.filter=ev.data;
+        questo.filterAtleti();
+    };
+    AtletiPage.prototype.onCancel = function (ev) {
+        var questo = this;
+        console.log("onCancel", ev);
+        //questo.filter="";
+    };
     return AtletiPage;
 }());
 __decorate([
@@ -5833,9 +6057,9 @@ __decorate([
 ], AtletiPage.prototype, "navBar", void 0);
 AtletiPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-atleti',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/atleti/atleti.html"*/'<!--\n  Generated template for the GarePage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Atleti</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content spadding style="background: #eee;">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n        </ion-refresher-content>\n  </ion-refresher>  \n\n  <ion-item *ngFor="let a of atleti" (tap)="gotoAtleta(a)">\n    \n    <span class="atleta">{{a.doc.cognome}} {{a.doc.nome}}</span><br>\n    <span class="categoria">{{getCategoria(a).toUpperCase()}}</span>\n   \n    </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/atleti/atleti.html"*/
+        selector: 'page-atleti',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/atleti/atleti.html"*/'<!--\n  Generated template for the GarePage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Atleti</ion-title>\n    <ion-buttons end>\n      <button *ngIf="backend.user.role==\'tkdradmin\'" ion-button class="menubutton"  (tap)="addAtleta()"><ion-icon name="ios-add-circle-outline"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-searchbar placeholder="Filtra atleti"\n  [(ngModel)]="filter"\n  [showCancelButton]="true"\n  (ionInput)="onInput($event)"\n  (ionCancel)="onCancel($event)">\n</ion-searchbar>\n<div class="reccount">{{displayedatleti.length}} atleti</div>\n\n</ion-header>\n\n\n<ion-content spadding style="background: #eee;">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n        </ion-refresher-content>\n  </ion-refresher>  \n  <div *ngIf="loading" style="width: 100%; text-align: center">\n    <ion-spinner name="ios"></ion-spinner>\n  </div>\n\n  <ion-list [virtualScroll]="displayedatleti" approxItemHeight="40px">\n  <ion-item *virtualItem="let a"  (press)="pressAtleta(a)" (tap)="gotoAtleta(a)">  <!-- *ngFor="let a of atleti"  -->\n    \n    <span class="atleta">{{a.doc.cognome}} {{a.doc.nome}}</span><br>\n    <span class="categoria">{{getCategoria(a).toUpperCase()}}</span>\n   \n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/atleti/atleti.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], AtletiPage);
 
 //# sourceMappingURL=atleti.js.map
@@ -5909,6 +6133,98 @@ AtletaPage = __decorate([
 /***/ }),
 
 /***/ 498:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditatletaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the EditatletaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EditatletaPage = (function () {
+    function EditatletaPage(viewCtrl, backend, events, navCtrl, navParams) {
+        this.viewCtrl = viewCtrl;
+        this.backend = backend;
+        this.events = events;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.mode = "edit";
+        this.atleta = {};
+        this.title = "";
+        this.societa = [];
+    }
+    EditatletaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EditatletaPage');
+    };
+    EditatletaPage.prototype.ionViewWillEnter = function () {
+        var questo = this;
+        questo.atleta = questo.navParams.get("atleta");
+        questo.title = "Modifica";
+        if (!questo.atleta.hasOwnProperty("id")) {
+            questo.mode = "insert";
+            questo.mode = "Aggiungi";
+        }
+        questo.backend.getSocieta(function (data) {
+            questo.societa = data.rows;
+            console.log("loaded societa in editatleta.ts", questo.societa);
+        });
+        questo.events.subscribe("hwbackbutton", function (data) {
+            console.log("hwbackbutton in gare.ts");
+            questo.navCtrl.pop();
+        });
+    };
+    EditatletaPage.prototype.ionViewWillLeave = function () {
+        this.events.unsubscribe("hwbackbutton");
+    };
+    EditatletaPage.prototype.saveAtleta = function () {
+        var questo = this;
+        var url = questo.backend.rooturl + "/atleti/add";
+        var text = "aggiunto";
+        if (questo.mode == "edit") {
+            url = questo.backend.rooturl + "/atleti/update/" + questo.atleta.id;
+            text = "salvato";
+        }
+        questo.atleta.atletaid = questo.atleta.id;
+        var postdata = questo.atleta;
+        questo.backend.postData(url, postdata, function (data) {
+            console.log("done " + url, data);
+            questo.viewCtrl.dismiss({ text: text, action: "saved", atleta: questo.atleta });
+        });
+    };
+    EditatletaPage.prototype.cancelAtleta = function () {
+        this.viewCtrl.dismiss();
+    };
+    return EditatletaPage;
+}());
+EditatletaPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-editatleta',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/editatleta/editatleta.html"*/'<!--\n  Generated template for the EditatletaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{title}}&nbsp;atleta</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n    <ion-item *ngIf="mode==\'edit\'">\n        <ion-label floating>ID</ion-label>\n        <ion-input readonly [(ngModel)]="atleta.id"></ion-input>\n       \n    </ion-item>\n    <ion-item *ngIf="mode==\'edit\'">\n        <ion-label floating>AtletaID</ion-label>\n        <ion-input readonly [(ngModel)]="atleta.atletaid"></ion-input>\n       \n    </ion-item>\n\n    <ion-item>\n       <ion-label floating>Cognome</ion-label>\n       <ion-input [(ngModel)]="atleta.cognome"></ion-input>\n      \n   </ion-item>\n   <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [(ngModel)]="atleta.nome"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Data di nascita</ion-label>\n      <ion-input [(ngModel)]="atleta.datanascita"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Sesso</ion-label>\n      <ion-select [(ngModel)]="atleta.sesso">\n          <ion-option value="F">F</ion-option>\n          <ion-option value="M">M</ion-option>\n        </ion-select>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Squadra</ion-label>\n      <ion-input [(ngModel)]="atleta.squadra"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Categoria peso</ion-label>\n      <ion-input [(ngModel)]="atleta.categoriapeso"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Cintura</ion-label>\n\n      <!--<ion-input [(ngModel)]="atleta.cintura"></ion-input>-->\n      <ion-select [(ngModel)]="atleta.cintura">\n          <ion-option value="bianca">bianca</ion-option>\n          <ion-option value="bianca-gialla">bianca-gialla</ion-option>\n          <ion-option value="gialla">gialla</ion-option>\n          <ion-option value="gialla-verde">gialla-verde</ion-option>\n          <ion-option value="verde">verde</ion-option>\n          <ion-option value="verde-blu">verde-blu</ion-option>\n          <ion-option value="blu">blu</ion-option>\n          <ion-option value="blu-rossa">blu-rossa</ion-option>\n          <ion-option value="rossa">rossa</ion-option>\n          <ion-option value="rossa-nera">rossa-nera</ion-option>\n          <ion-option value="nera">nera</ion-option>\n        </ion-select>\n\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Palestra</ion-label>\n      <ion-input [(ngModel)]="atleta.palestra"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Punti classifica</ion-label>\n      <ion-input [(ngModel)]="atleta.punticlass"></ion-input>\n     \n  </ion-item>\n  <ion-item>\n      <ion-label floating>Societa</ion-label>\n      <ion-select [(ngModel)]="atleta.societaid">\n          <ion-option *ngFor="let s of societa" [value]="s.doc.id">{{s.doc.nome}}</ion-option>\n          \n        </ion-select>\n      <!--<ion-input [(ngModel)]="atleta.societaid"></ion-input>-->\n     \n  </ion-item>\n  <ion-item>\n        <ion-label floating>Dismissed</ion-label>\n        <ion-select [(ngModel)]="atleta.dismissed">\n            <ion-option value="false">false</ion-option>\n            <ion-option value="true">true</ion-option>\n          </ion-select>\n       \n    </ion-item>\n\n</ion-content>\n<ion-footer>\n    <ion-row class="footerrow">\n      <ion-col col-6><button color="secondary" ion-button full (tap)="saveAtleta()" >Salva</button></ion-col>\n      <ion-col col-6><button ion-button full (tap)="cancelAtleta()">Annulla</button></ion-col>\n    </ion-row>\n  </ion-footer>\n\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/editatleta/editatleta.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+], EditatletaPage);
+
+//# sourceMappingURL=editatleta.js.map
+
+/***/ }),
+
+/***/ 499:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6040,7 +6356,7 @@ EventiPage = __decorate([
 
 /***/ }),
 
-/***/ 499:
+/***/ 500:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6119,7 +6435,7 @@ SocietaPage = __decorate([
 
 /***/ }),
 
-/***/ 500:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6156,16 +6472,30 @@ var StatsPage = (function () {
         this.ranking = [];
         this.loading = false;
         this.tipostat = "ranking";
+        this.displayedranking = [];
+        this.filter = "";
     }
+    StatsPage.prototype.getCategoria = function (a) {
+        var atl = this.backend.getAtletaById(a.doc.id);
+        var cat = this.backend.getCategoria(atl.datanascita);
+        return cat.toUpperCase();
+    };
     StatsPage.prototype.getPos = function (i) {
         var x = parseInt(i, 10) + 1;
         return x;
+    };
+    StatsPage.prototype.changeFilter = function (ev) {
+        var questo = this;
+        questo.loading = true;
+        questo.refresh(function () {
+            questo.loading = false;
+        });
     };
     StatsPage.prototype.refresh = function (callback) {
         var questo = this;
         this.backend.getRanking(function (data) {
             console.log("got ranking", data);
-            data.rows.sort(function (a, b) {
+            data.sort(function (a, b) {
                 var a1 = a.doc[questo.sortranking];
                 var b1 = b.doc[questo.sortranking];
                 if (a1 > b1)
@@ -6174,7 +6504,23 @@ var StatsPage = (function () {
                     return 1;
                 return 0;
             });
-            questo.ranking = data.rows;
+            data.forEach(function (item, idx) {
+                var atl = questo.backend.getAtletaById(item.doc.id);
+                var cat = questo.backend.getCategoria(atl.datanascita);
+                item.doc.categoria = cat;
+            });
+            questo.ranking = data;
+            var rank = [];
+            if (questo.filter.trim() == "") {
+                rank = data;
+            }
+            else {
+                data.forEach(function (item, idx) {
+                    if (item.doc.categoria.toLowerCase() == questo.filter.toLowerCase())
+                        rank.push(item);
+                });
+            }
+            questo.displayedranking = rank;
             if (callback)
                 callback(data);
         });
@@ -6268,7 +6614,7 @@ var StatsPage = (function () {
 }());
 StatsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-stats',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/stats/stats.html"*/'<!--\n  Generated template for the StatsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Statistiche</ion-title>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="tipostat">\n      <ion-segment-button value="ranking">\n        Ranking\n      </ion-segment-button>\n      <ion-segment-button value="altro">\n        Altro\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content nopadding>\n   <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n        </ion-refresher-content>\n  </ion-refresher>  \n      <div *ngIf="loading" style="text-align: center"><ion-spinner name="ios"></ion-spinner></div>\n\n\n  <section *ngIf="tipostat==\'ranking\'">    \n  <div style="text-align: center; font-style: italic" >Ordinamento: {{sortranking.toUpperCase()}}</div>\n  <ion-item *ngFor="let r of ranking; let i=index;">\n<ion-row [ngClass]="i<3 ? \'top3\' : \'\'">\n  <ion-col col-2>\n    {{getPos(i)}}\n    </ion-col>\n    <ion-col>\n      {{r.doc.cognome}} {{r.doc.nome}}\n    </ion-col>\n    <ion-col col-2>\n      {{r.doc.ranking_tkdr}}\n      </ion-col>\n      </ion-row>\n    <ion-row>\n      <ion-col col-2></ion-col>\n      <ion-col class="subriga" col-10>ORI: {{r.doc.ori}} ARG: {{r.doc.argenti}} BRO: {{r.doc.bronzi}}  &nbsp;&nbsp;gare: {{r.doc.garedisputate}} match: {{r.doc.matchdisputati}}</ion-col>\n    </ion-row>\n    </ion-item>\n  </section>\n\n</ion-content>\n  <ion-footer>\n    <button ion-button full icon-start (tap)="sortStats()"><ion-icon name="md-funnel"></ion-icon>Ordina</button>\n\n\n\n  </ion-footer>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/stats/stats.html"*/,
+        selector: 'page-stats',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/stats/stats.html"*/'<!--\n  Generated template for the StatsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Statistiche</ion-title>\n   \n  </ion-navbar>\n  <!--<ion-toolbar>\n    <ion-segment [(ngModel)]="tipostat">\n      <ion-segment-button value="ranking">\n        Ranking\n      </ion-segment-button>\n      <ion-segment-button value="altro">\n        Altro\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>-->\n  <ion-item>\n      <ion-label>Categoria</ion-label>\n      <ion-select (ionChange)="changeFilter($event)" [(ngModel)]="filter">\n        <ion-option value="">Tutte</ion-option>\n        <ion-option value="esordienti">Esordienti</ion-option>\n        <ion-option value="cadetti b">Cadetti B</ion-option>\n        <ion-option value="cadetti a">Cadetti A</ion-option>\n        <ion-option value="junior">Junior</ion-option>\n        <ion-option value="senior">Senior</ion-option>\n      </ion-select>\n    </ion-item>\n\n</ion-header>\n\n\n<ion-content nopadding>\n   <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n        </ion-refresher-content>\n  </ion-refresher>  \n      <div *ngIf="loading" style="text-align: center"><ion-spinner name="ios"></ion-spinner></div>\n\n\n  <section *ngIf="tipostat==\'ranking\'">    \n  <div style="text-align: center; font-style: italic" >Ordinamento: {{sortranking.toUpperCase()}}</div>\n  <ion-item *ngFor="let r of displayedranking; let i=index;">\n<ion-row [ngClass]="i<3 ? \'top3\' : \'\'">\n  <ion-col col-2>\n    {{getPos(i)}}\n    </ion-col>\n    <ion-col>\n      {{r.doc.cognome}} {{r.doc.nome}}\n    </ion-col>\n    <ion-col col-2>\n      {{r.doc.ranking_tkdr}}\n      </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-2></ion-col>\n        <ion-col col-10>\n          <span class="categoria">{{getCategoria(r)}}</span>\n        </ion-col>\n      </ion-row>\n    <ion-row>\n      <ion-col col-2></ion-col>\n      <ion-col class="subriga" col-10>ORI: {{r.doc.ori}} ARG: {{r.doc.argenti}} BRO: {{r.doc.bronzi}}  &nbsp;&nbsp;gare: {{r.doc.garedisputate}} match: {{r.doc.matchdisputati}}</ion-col>\n    </ion-row>\n    </ion-item>\n  </section>\n\n</ion-content>\n  <ion-footer>\n    <button ion-button full icon-start (tap)="sortStats()"><ion-icon name="md-funnel"></ion-icon>Ordina</button>\n\n\n\n  </ion-footer>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/stats/stats.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], StatsPage);
@@ -6277,7 +6623,7 @@ StatsPage = __decorate([
 
 /***/ }),
 
-/***/ 501:
+/***/ 502:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6331,7 +6677,7 @@ FacebookProvider = __decorate([
 
 /***/ }),
 
-/***/ 502:
+/***/ 503:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6340,8 +6686,8 @@ FacebookProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(505);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6620,7 +6966,7 @@ ProductsPage = __decorate([
 
 /***/ }),
 
-/***/ 503:
+/***/ 504:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6736,11 +7082,62 @@ var CartPage = (function () {
         var ttot = tot.toFixed(2);
         return ttot;
     };
+    CartPage.prototype.qtyMinus = function (p) {
+        var questo = this;
+        var qty = p.qty;
+        qty--;
+        if (qty < 0)
+            qty = 0;
+        p.qty = qty;
+        if (qty == 0) {
+            var alrt = questo.alertCtrl.create({
+                title: 'Conferma eliminazione prodotto',
+                message: "Impostando una quantità uguale a 0 eliminerà il prodotto dal tuo carrello. E' questo quello che realmente vuoi fare ?",
+                buttons: [
+                    {
+                        text: 'Annulla',
+                        role: 'cancel',
+                        handler: function () {
+                            console.log('Cancel clicked');
+                            p.qty = 1;
+                        }
+                    },
+                    {
+                        text: 'Si, elimina il prodotto',
+                        handler: function () {
+                            console.log('Buy clicked');
+                            p.qty = 0;
+                            questo.backend.cart.forEach(function (item, idx) {
+                                console.log(item);
+                                if (item.qty == 0)
+                                    questo.backend.cart.splice(idx, 1);
+                            });
+                            questo.utils.setJsonStorage("ion2kwondo_" + questo.backend.user.id + "_mcrt", questo.backend.cart);
+                        }
+                    }
+                ]
+            });
+            alrt.present();
+        }
+        else {
+            p.qty = qty;
+            questo.utils.setJsonStorage("ion2kwondo_" + questo.backend.user.id + "_mcrt", questo.backend.cart);
+        }
+        //document.getElementById(elid).getElementsByTagName('input')[0].value=String(qty);
+    };
+    CartPage.prototype.qtyPlus = function (p) {
+        var questo = this;
+        var qty = p.qty;
+        qty++;
+        //document.getElementById(elid).getElementsByTagName('input')[0].value=String(qty);
+        p.qty = qty;
+        questo.utils.setJsonStorage("ion2kwondo_" + questo.backend.user.id + "_mcrt", questo.backend.cart);
+    };
     return CartPage;
 }());
 CartPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-cart',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/cart/cart.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Prenotazioni</ion-title>\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n  <section *ngIf="backend.cart.length>0">\n  <ion-card>\n    <ion-card-content>\n      Il contenuto del tuo carrello prenotazioni. Per inoltrare la prenotazione premi il tasto <b>Inoltra prenotazione</b>.<br>\n      Potrai pagare comodamente in società.\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-list *ngFor="let c of backend.cart" style="margin: 2px">\n   <ion-item>\n          <ion-row>\n           <!-- <ion-col col-3>\n              <img class="productimage" [src]="c.product.imageurl" />\n            </ion-col>-->\n            <ion-col align-self-start>\n              <ion-row>\n                <ion-col align-self-start>\n                    <b>{{c.product.nome}}</b>\n                </ion-col>\n              </ion-row>\n              <ion-row style="margin: 7px">\n                <ion-col>\n                  {{c.product.price}}€ - Qtà: {{c.qty}}\n                </ion-col>\n                <ion-col col-3>\n                  <b>{{getTotaleRiga(c)}}€</b>\n                </ion-col>\n              </ion-row>\n               \n  \n            </ion-col>\n          \n              \n          </ion-row>\n       \n        </ion-item>\n    </ion-list>\n    <hr>\n   <ion-item>\n        <ion-row>\n          <ion-col col-3></ion-col>\n          <ion-col>\n              <span class="totale">Totale prenotazione:    </span>\n          </ion-col>\n          <ion-col col-3>\n            <span class="totale"><b>{{getTotalPrice()}}€</b></span>\n          </ion-col>\n        </ion-row>\n   </ion-item>\n   <hr>\n    <button ion-button block (tap)="confirmOrder()">Inoltra prenotazione</button>\n  </section>\n  <section *ngIf="backend.cart.length==0">\n    <ion-card>\n      <ion-card-content>\n        Il tuo carrello prenotazioni è vuoto\n      </ion-card-content>\n    </ion-card>\n  </section>\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/cart/cart.html"*/,
+        selector: 'page-cart',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/cart/cart2.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Prenotazioni</ion-title>\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n  <section *ngIf="backend.cart.length>0">\n  <ion-card>\n    <ion-card-content>\n      Il contenuto del tuo carrello prenotazioni. Per inoltrare la prenotazione premi il tasto <b>Inoltra prenotazione</b>.<br>\n      Potrai pagare comodamente in società.\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-list *ngFor="let c of backend.cart" style="margin: 2px">\n   <ion-item>\n          <ion-row>\n           <!-- <ion-col col-3>\n              <img class="productimage" [src]="c.product.imageurl" />\n            </ion-col>-->\n            <ion-col align-self-start>\n              <ion-row>\n                <ion-col align-self-start>\n                    <b>{{c.product.nome}}</b>\n                </ion-col>\n              </ion-row>\n              <ion-row style="margin: 7px">\n                <ion-col col-2>\n                  {{c.product.price}}€\n                  </ion-col>\n                  <ion-col col-7>\n                  <ion-row>\n                  <ion-col col-1>\n                    \n                     <ion-icon class="bariconbig" (tap)="qtyMinus(c)" small name="md-arrow-dropleft"></ion-icon>\n                     </ion-col>\n                     <ion-col col-2>\n                       <input type="number" [(ngModel)]="c.qty" class="inp" size="3" readonly [id]="c.product.id+\'_qty\'"  value="1"/>\n                      \n                     <!--<ion-input readonly (ionChange)=\'changeQty($event)\' [id]="item.id+\'_qty\'" type="number" min="1" max="100" step="1" value="1"></ion-input>-->\n                   </ion-col>\n                   <ion-col col-1>\n                     <ion-icon class="bariconbig" (tap)="qtyPlus(c)" small name="md-arrow-dropright"></ion-icon>\n         \n                   </ion-col>\n                   <ion-col col-8></ion-col>\n                  </ion-row>\n                </ion-col>\n                <ion-col col-3>\n                  <b>{{getTotaleRiga(c)}}€</b>\n                </ion-col>\n              </ion-row>\n               \n  \n            </ion-col>\n          \n              \n          </ion-row>\n       \n        </ion-item>\n    </ion-list>\n    <hr>\n   <ion-item>\n        <ion-row>\n          <ion-col col-3></ion-col>\n          <ion-col>\n              <span class="totale">Totale prenotazione:    </span>\n          </ion-col>\n          <ion-col col-3>\n            <span class="totale"><b>{{getTotalPrice()}}€</b></span>\n          </ion-col>\n        </ion-row>\n   </ion-item>\n   <hr>\n    <button ion-button block (tap)="confirmOrder()">Inoltra prenotazione</button>\n  </section>\n  <section *ngIf="backend.cart.length==0">\n    <ion-card>\n      <ion-card-content>\n        Il tuo carrello prenotazioni è vuoto\n      </ion-card-content>\n    </ion-card>\n  </section>\n</ion-content>\n'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/client/ion2kwondo/src/pages/cart/cart2.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__["a" /* UtilsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], CartPage);
@@ -6749,7 +7146,7 @@ CartPage = __decorate([
 
 /***/ }),
 
-/***/ 504:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6883,7 +7280,7 @@ EditproductPage = __decorate([
 
 /***/ }),
 
-/***/ 505:
+/***/ 506:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7077,7 +7474,7 @@ OrdersPage = __decorate([
 
 /***/ }),
 
-/***/ 506:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7152,7 +7549,7 @@ RegisterPage = __decorate([
 
 /***/ }),
 
-/***/ 507:
+/***/ 508:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7400,7 +7797,7 @@ UsersPage = __decorate([
 
 /***/ }),
 
-/***/ 508:
+/***/ 509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7468,7 +7865,7 @@ ConnectionsPage = __decorate([
 
 /***/ }),
 
-/***/ 510:
+/***/ 511:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7525,7 +7922,7 @@ SettingsPage = __decorate([
 
 /***/ }),
 
-/***/ 511:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7771,13 +8168,13 @@ RtcPage = __decorate([
 
 /***/ }),
 
-/***/ 514:
+/***/ 515:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(534);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 
 
@@ -7789,89 +8186,91 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 533:
+/***/ 534:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(574);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(608);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(609);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatlist_chatlist__ = __webpack_require__(485);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatpopover_chatpopover__ = __webpack_require__(609);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatpopover_chatpopover__ = __webpack_require__(610);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(486);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chatfoto_chatfoto__ = __webpack_require__(484);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_twitter_twitter__ = __webpack_require__(610);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_partnerworld_partnerworld__ = __webpack_require__(611);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_linkedin_linkedin__ = __webpack_require__(612);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_contacts_contacts__ = __webpack_require__(613);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_twitter_twitter__ = __webpack_require__(611);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_partnerworld_partnerworld__ = __webpack_require__(612);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_linkedin_linkedin__ = __webpack_require__(613);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_contacts_contacts__ = __webpack_require__(614);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_browser_browser__ = __webpack_require__(614);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_browser_browser__ = __webpack_require__(615);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabs_tabs__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_settings_settings__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_settings_settings__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_account_account__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_bp_bp__ = __webpack_require__(615);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_bp_bp__ = __webpack_require__(616);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_gare_gare__ = __webpack_require__(481);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_gara_gara__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_editgara_editgara__ = __webpack_require__(495);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_atleti_atleti__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_atleta_atleta__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_matchconsole_matchconsole__ = __webpack_require__(483);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_eventi_eventi__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_societa_societa__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_stats_stats__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_eventi_eventi__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_societa_societa__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_stats_stats__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_filters_filters__ = __webpack_require__(493);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(482);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(494);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_map_map__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_register_register__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_users_users__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_connections_connections__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_register_register__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_users_users__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_connections_connections__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_servizisocieta_servizisocieta__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_products_products__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_orders_orders__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__providers_socket_service_socket_service__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(616);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_scrollable_segments_scrollable_segments__ = __webpack_require__(617);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_utils_utils__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__ionic_native_badge__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_storage__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__ionic_native_app_availability__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_splash_screen__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_device_feedback__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__angular_http__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__ionic_native_file__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_camera__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_transfer__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_social_sharing__ = __webpack_require__(488);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59_ionic_image_loader__ = __webpack_require__(618);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__ionic_native_local_notifications__ = __webpack_require__(465);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__ionic_native_text_to_speech__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_background_mode__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__providers_facebook_facebook__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_media__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_file_transfer__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_streaming_media__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__ionic_native_android_permissions__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68_ng_elastic__ = __webpack_require__(621);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_68_ng_elastic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__ionic_native_unique_device_id__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_products_products__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_editatleta_editatleta__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_orders_orders__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(617);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_scrollable_segments_scrollable_segments__ = __webpack_require__(618);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__providers_utils_utils__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_badge__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__ionic_storage__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_app_availability__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_splash_screen__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_device_feedback__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__angular_http__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_file__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_camera__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_transfer__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_social_sharing__ = __webpack_require__(488);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60_ionic_image_loader__ = __webpack_require__(619);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__ionic_native_local_notifications__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_text_to_speech__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_background_mode__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__providers_facebook_facebook__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_media__ = __webpack_require__(490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_file_transfer__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__ionic_native_streaming_media__ = __webpack_require__(491);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_android_permissions__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69_ng_elastic__ = __webpack_require__(622);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_69_ng_elastic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__ionic_native_unique_device_id__ = __webpack_require__(468);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -7988,8 +8387,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__pages_map_map__["a" /* MapPage */],
             __WEBPACK_IMPORTED_MODULE_29__pages_stats_stats__["a" /* StatsPage */],
             __WEBPACK_IMPORTED_MODULE_30__pages_filters_filters__["a" /* FiltersPage */],
-            __WEBPACK_IMPORTED_MODULE_45__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
-            __WEBPACK_IMPORTED_MODULE_46__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
+            __WEBPACK_IMPORTED_MODULE_46__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
+            __WEBPACK_IMPORTED_MODULE_47__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
             __WEBPACK_IMPORTED_MODULE_32__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
             __WEBPACK_IMPORTED_MODULE_34__pages_register_register__["a" /* RegisterPage */],
             __WEBPACK_IMPORTED_MODULE_35__pages_users_users__["a" /* UsersPage */],
@@ -8000,11 +8399,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__["a" /* CartPage */],
             __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__["a" /* RtcPage */],
             __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__["a" /* EditproductPage */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_orders_orders__["a" /* OrdersPage */]
+            __WEBPACK_IMPORTED_MODULE_43__pages_orders_orders__["a" /* OrdersPage */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_editatleta_editatleta__["a" /* EditatletaPage */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_53__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_54__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_54__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_55__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */], {
                 backButtonText: '',
                 activator: 'ripple',
@@ -8013,10 +8413,10 @@ AppModule = __decorate([
             }, {
                 links: []
             }),
-            __WEBPACK_IMPORTED_MODULE_49__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_59_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_68_ng_elastic__["ElasticModule"],
-            __WEBPACK_IMPORTED_MODULE_69__angular_forms__["FormsModule"]
+            __WEBPACK_IMPORTED_MODULE_50__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_60_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_69_ng_elastic__["ElasticModule"],
+            __WEBPACK_IMPORTED_MODULE_70__angular_forms__["FormsModule"]
             //IonicAudioModule.forRoot(defaultAudioProviderFactory)
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicApp */]],
@@ -8061,30 +8461,31 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__["a" /* CartPage */],
             __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__["a" /* RtcPage */],
             __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__["a" /* EditproductPage */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_orders_orders__["a" /* OrdersPage */]
+            __WEBPACK_IMPORTED_MODULE_43__pages_orders_orders__["a" /* OrdersPage */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_editatleta_editatleta__["a" /* EditatletaPage */]
         ],
         providers: [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_43__providers_socket_service_socket_service__["a" /* SocketService */],
-            __WEBPACK_IMPORTED_MODULE_44__providers_backend_backend__["a" /* BackendProvider */],
-            __WEBPACK_IMPORTED_MODULE_47__providers_utils_utils__["a" /* UtilsProvider */],
+            __WEBPACK_IMPORTED_MODULE_44__providers_socket_service_socket_service__["a" /* SocketService */],
+            __WEBPACK_IMPORTED_MODULE_45__providers_backend_backend__["a" /* BackendProvider */],
+            __WEBPACK_IMPORTED_MODULE_48__providers_utils_utils__["a" /* UtilsProvider */],
             /* Storage,*/
-            __WEBPACK_IMPORTED_MODULE_51__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_50__ionic_native_app_availability__["a" /* AppAvailability */],
-            __WEBPACK_IMPORTED_MODULE_52__ionic_native_device_feedback__["a" /* DeviceFeedback */],
-            __WEBPACK_IMPORTED_MODULE_55__ionic_native_file__["a" /* File */],
-            __WEBPACK_IMPORTED_MODULE_56__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_57__ionic_native_transfer__["a" /* Transfer */],
-            __WEBPACK_IMPORTED_MODULE_58__ionic_native_social_sharing__["a" /* SocialSharing */],
-            __WEBPACK_IMPORTED_MODULE_60__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_62__ionic_native_background_mode__["a" /* BackgroundMode */],
-            __WEBPACK_IMPORTED_MODULE_61__ionic_native_text_to_speech__["a" /* TextToSpeech */],
-            __WEBPACK_IMPORTED_MODULE_64__ionic_native_media__["a" /* MediaPlugin */],
-            __WEBPACK_IMPORTED_MODULE_66__ionic_native_streaming_media__["a" /* StreamingMedia */],
-            __WEBPACK_IMPORTED_MODULE_65__ionic_native_file_transfer__["a" /* FileTransfer */],
-            __WEBPACK_IMPORTED_MODULE_48__ionic_native_badge__["a" /* Badge */],
-            __WEBPACK_IMPORTED_MODULE_70__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
-            __WEBPACK_IMPORTED_MODULE_67__ionic_native_android_permissions__["a" /* AndroidPermissions */],
-            __WEBPACK_IMPORTED_MODULE_63__providers_facebook_facebook__["a" /* FacebookProvider */]]
+            __WEBPACK_IMPORTED_MODULE_52__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_51__ionic_native_app_availability__["a" /* AppAvailability */],
+            __WEBPACK_IMPORTED_MODULE_53__ionic_native_device_feedback__["a" /* DeviceFeedback */],
+            __WEBPACK_IMPORTED_MODULE_56__ionic_native_file__["a" /* File */],
+            __WEBPACK_IMPORTED_MODULE_57__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_58__ionic_native_transfer__["a" /* Transfer */],
+            __WEBPACK_IMPORTED_MODULE_59__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_61__ionic_native_local_notifications__["a" /* LocalNotifications */],
+            __WEBPACK_IMPORTED_MODULE_63__ionic_native_background_mode__["a" /* BackgroundMode */],
+            __WEBPACK_IMPORTED_MODULE_62__ionic_native_text_to_speech__["a" /* TextToSpeech */],
+            __WEBPACK_IMPORTED_MODULE_65__ionic_native_media__["a" /* MediaPlugin */],
+            __WEBPACK_IMPORTED_MODULE_67__ionic_native_streaming_media__["a" /* StreamingMedia */],
+            __WEBPACK_IMPORTED_MODULE_66__ionic_native_file_transfer__["a" /* FileTransfer */],
+            __WEBPACK_IMPORTED_MODULE_49__ionic_native_badge__["a" /* Badge */],
+            __WEBPACK_IMPORTED_MODULE_71__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
+            __WEBPACK_IMPORTED_MODULE_68__ionic_native_android_permissions__["a" /* AndroidPermissions */],
+            __WEBPACK_IMPORTED_MODULE_64__providers_facebook_facebook__["a" /* FacebookProvider */]]
     })
 ], AppModule);
 
@@ -8092,7 +8493,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 573:
+/***/ 574:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8102,16 +8503,16 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__ = __webpack_require__(512);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8546,7 +8947,7 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 586:
+/***/ 587:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -8801,7 +9202,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 586;
+webpackContext.id = 587;
 
 /***/ }),
 
@@ -8872,6 +9273,11 @@ var BackendProvider = (function () {
         this.http = http;
         this.utils = utils;
         this.isProduction = true;
+        this.appVersion = {
+            name: "appkwondov2",
+            version: "2.0.4",
+            releasedate: "01/12/2017"
+        };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
         //public rooturl = "http://localhost:3000"; 
@@ -8947,11 +9353,6 @@ var BackendProvider = (function () {
         };
         this.chatpageaccessed = false;
         this.activechatfilename = "chatno64.json";
-        this.appVersion = {
-            name: "appkwondov2",
-            version: "2.0.3",
-            releasedate: "28/11/2017"
-        };
         this.nextevents = [];
         this.isIosWeb = false;
         this.rtcpeers = [];
@@ -9412,8 +9813,18 @@ var BackendProvider = (function () {
         var questo = this;
         var url = this.rooturl + "/atleti/ranking/save?societa=20160217220400";
         this.fetchData(url, function (data) {
+            var rank = [];
+            data.rows.forEach(function (item, idx) {
+                var doIt = true;
+                if (item.doc.hasOwnProperty("dismissed")) {
+                    if (String(item.doc.dismissed) == "true")
+                        doIt = false;
+                }
+                if (doIt)
+                    rank.push(item);
+            });
             if (callback)
-                callback(data);
+                callback(rank);
         });
     };
     BackendProvider.prototype.getEventi = function (callback) {
@@ -9847,7 +10258,9 @@ var BackendProvider = (function () {
                 result: "0-0",
                 round: "0",
                 paused: true,
-                running: false
+                running: false,
+                goldenpoint: false,
+                squalifica: false
             };
             this.matchconsoles.push(newrta);
             console.log("console was not found for match, added it", this.matchconsoles);
@@ -10543,14 +10956,14 @@ BackendProvider = __decorate([
 
 /***/ }),
 
-/***/ 605:
+/***/ 606:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 608:
+/***/ 609:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10585,7 +10998,7 @@ ContactPage = __decorate([
 
 /***/ }),
 
-/***/ 609:
+/***/ 610:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10640,7 +11053,7 @@ ChatpopoverPage = __decorate([
 
 /***/ }),
 
-/***/ 610:
+/***/ 611:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10971,7 +11384,7 @@ TwitterPage = __decorate([
 
 /***/ }),
 
-/***/ 611:
+/***/ 612:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11051,7 +11464,7 @@ PartnerworldPage = __decorate([
 
 /***/ }),
 
-/***/ 612:
+/***/ 613:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11127,7 +11540,7 @@ LinkedinPage = __decorate([
 
 /***/ }),
 
-/***/ 613:
+/***/ 614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11309,7 +11722,7 @@ ContactsPage = __decorate([
 
 /***/ }),
 
-/***/ 614:
+/***/ 615:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11354,7 +11767,7 @@ BrowserPage = __decorate([
 
 /***/ }),
 
-/***/ 615:
+/***/ 616:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11561,7 +11974,7 @@ BpPage = __decorate([
 
 /***/ }),
 
-/***/ 616:
+/***/ 617:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11753,7 +12166,7 @@ ScrollableTabs = __decorate([
 
 /***/ }),
 
-/***/ 617:
+/***/ 618:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11951,5 +12364,5 @@ ScrollableSegments = __decorate([
 
 /***/ })
 
-},[514]);
+},[515]);
 //# sourceMappingURL=main.js.map

@@ -23,7 +23,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 */
 @Injectable()
 export class BackendProvider {
-  isProduction=false; 
+  isProduction=true; 
   appVersion:any={
     name: "appkwondov2",
     version: "2.0.4",
@@ -31,8 +31,8 @@ export class BackendProvider {
   }
   @ViewChild('content') nav: NavController;
   //@ViewChild(Navbar) navBar: Navbar;
-  //public rooturl = "http://tkdr.herokuapp.com";
-  public rooturl = "http://localhost:3000"; 
+  public rooturl = "http://tkdr.herokuapp.com";
+  //public rooturl = "http://localhost:3000"; 
   //public rooturl="http://appkwondo.mybluemix.net"; 
   //9.71.212.38
   //public rooturl="http://10.113.32.153:3000"
@@ -593,7 +593,16 @@ export class BackendProvider {
     var url = this.rooturl + "/atleti/ranking/save?societa=20160217220400";
     this.fetchData(url, function (data) {
 
-      if (callback) callback(data);
+      var rank=[];
+      data.rows.forEach(function(item,idx){
+        var doIt=true;
+        if (item.doc.hasOwnProperty("dismissed")){
+          if (String(item.doc.dismissed)=="true") doIt=false;
+        }
+        if (doIt) rank.push(item);
+      })
+
+      if (callback) callback(rank);
     })
   }
 
@@ -854,7 +863,7 @@ export class BackendProvider {
   }
 
 
-  getCategoria(dn, referralDate) {
+  getCategoria(dn, referralDate?: any) {
 
     var cat = "senior a";
     var curyear: any = new Date().getFullYear();

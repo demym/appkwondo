@@ -31527,6 +31527,15 @@ page-matchconsole .segment-md .segment-button .dark {
   color: blue;
 }
 
+page-matchconsole .checkboxes ion-label {
+  font-size: 12px;
+}
+
+page-matchconsole ion-item.item-checkbox .input-wrapper ion-label {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 page-matchconsole .realtimebut {
   background: green;
   color: white;
@@ -31838,6 +31847,11 @@ page-stats .subriga {
   color: gray;
   font-size: 14px;
   font-style: italic;
+}
+
+page-stats .categoria {
+  font-size: 13px;
+  color: #222;
 }
 
 page-stats .top3 {

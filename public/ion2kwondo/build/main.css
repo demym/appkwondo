@@ -30703,6 +30703,11 @@ page-atleta ion-fab[bottom] {
   bottom: 50px;
 }
 
+page-atleti .reccount {
+  padding: 2px;
+  margin-left: 7px;
+}
+
 page-cart .productimage {
   height: 40px;
   width: 40px;
@@ -30711,6 +30716,16 @@ page-cart .productimage {
 page-cart .totale {
   font-size: 16px;
   margin: 10px;
+}
+
+page-cart .inp {
+  width: 40px;
+  text-align: center;
+  border: 0px;
+}
+
+page-cart .bariconbig {
+  font-size: 30px;
 }
 
 .inputtext {
@@ -30765,6 +30780,7 @@ page-cart .totale {
   font-size: 13px;
   padding: 10px;
   white-space: normal;
+  line-height: 15px;
 }
 
 .date {
@@ -31031,7 +31047,8 @@ ion-col, ion-row, ion-grid {
   font-size: 20px;
   margin: 0px;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
+  height: 40px;
 }
 
 .recording {
@@ -31510,6 +31527,15 @@ page-matchconsole .segment-md .segment-button .dark {
   color: blue;
 }
 
+page-matchconsole .checkboxes ion-label {
+  font-size: 12px;
+}
+
+page-matchconsole ion-item.item-checkbox .input-wrapper ion-label {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 page-matchconsole .realtimebut {
   background: green;
   color: white;
@@ -31558,6 +31584,11 @@ page-matchesforatleta .history {
 page-matchesforatleta .wrap {
   word-wrap: break-word;
   white-space: normal;
+}
+
+page-matchesforatleta .matchord {
+  font-size: 12px;
+  font-style: italic;
 }
 
 page-matchesforatleta .derby {
@@ -31816,6 +31847,11 @@ page-stats .subriga {
   color: gray;
   font-size: 14px;
   font-style: italic;
+}
+
+page-stats .categoria {
+  font-size: 13px;
+  color: #222;
 }
 
 page-stats .top3 {

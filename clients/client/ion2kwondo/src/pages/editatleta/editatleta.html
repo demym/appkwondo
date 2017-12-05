@@ -96,6 +96,14 @@
       <!--<ion-input [(ngModel)]="atleta.societaid"></ion-input>-->
      
   </ion-item>
+  <ion-item>
+        <ion-label floating>Dismissed</ion-label>
+        <ion-select [(ngModel)]="atleta.dismissed">
+            <ion-option value="false">false</ion-option>
+            <ion-option value="true">true</ion-option>
+          </ion-select>
+       
+    </ion-item>
 
 </ion-content>
 <ion-footer>

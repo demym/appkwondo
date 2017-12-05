@@ -3022,6 +3022,7 @@ function setResultOk(match, atl, mfa, callback) {
 				if (isSqualifica){
 					if (result.trim() != "") cronacatxt += " per squalifica, sul punteggio di " + result;
 				} else {
+					
 					if (result.trim() != "") cronacatxt += " per " + result;
 				}
 				

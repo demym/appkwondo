@@ -18,8 +18,16 @@ export class StatsPage {
   ranking = [];
   loading=false;
   tipostat="ranking";
+  displayedranking:any=[];
+  filter="";
 
   constructor(public events: Events, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  getCategoria(a){
+    var atl=this.backend.getAtletaById(a.doc.id);
+    var cat=this.backend.getCategoria(atl.datanascita);
+    return cat.toUpperCase();
   }
 
   getPos(i) {
@@ -27,18 +35,43 @@ export class StatsPage {
     return x;
   }
 
+  changeFilter(ev){
+    var questo=this;
+    questo.loading=true;
+    questo.refresh(function(){
+      questo.loading=false;
+    })
+  }
+
   refresh(callback) {
     var questo = this;
     this.backend.getRanking(function (data) {
       console.log("got ranking", data);
-      data.rows.sort(function(a,b){
+
+      data.sort(function(a,b){
         var a1=a.doc[questo.sortranking];
         var b1=b.doc[questo.sortranking];
         if (a1>b1) return -1;
         if (a1<b1) return 1;
         return 0;
       })
-      questo.ranking = data.rows;
+
+      data.forEach(function(item,idx){
+        var atl=questo.backend.getAtletaById(item.doc.id);
+        var cat=questo.backend.getCategoria(atl.datanascita);
+        item.doc.categoria=cat;
+      })
+      
+      questo.ranking = data;
+      var rank=[];
+      if (questo.filter.trim()==""){
+        rank=data;
+      } else {
+        data.forEach(function(item,idx){
+          if (item.doc.categoria.toLowerCase()==questo.filter.toLowerCase()) rank.push(item);
+        })
+      }
+      questo.displayedranking=rank;
 
       if (callback) callback(data);
     })

@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, Navbar, NavParams, Events, AlertController, ToastController } from 'ionic-angular';
 import { BackendProvider } from '../../providers/backend/backend';
 import { SocketService } from '../../providers/socket-service/socket-service';
@@ -21,18 +21,18 @@ export class MatchconsolePage {
   selectedMatch: any = {};
   selectedConsole: any = {};
   selConsoleIndex = -1;
-  disabledcontrols=false;
+  disabledcontrols = false;
 
-  constructor(public socket: SocketService, public events: Events,public toastCtrl: ToastController, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
-    var questo=this;
+  constructor(public socket: SocketService, public events: Events, public toastCtrl: ToastController, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+    var questo = this;
 
-   
+
 
   }
 
-  ionViewDidLoad(){
-    this.backend.setBackButtonAction(this.navBar,this.navCtrl);
-    this.backend.setupNavbarBack(this.navBar,this.navCtrl);
+  ionViewDidLoad() {
+    this.backend.setBackButtonAction(this.navBar, this.navCtrl);
+    this.backend.setupNavbarBack(this.navBar, this.navCtrl);
   }
 
   ionViewWillLoad() {
@@ -49,7 +49,7 @@ export class MatchconsolePage {
     })*/
 
     var match = this.navParams.get("match");
-   
+
     var id = match.id;
     this.selectedMatchId = id;
     this.selectedMatch = match;
@@ -66,11 +66,11 @@ export class MatchconsolePage {
     //this.selectedMatchId=this.selectedMatch.id;
     console.log('ionViewDidLoad MatchconsolePage, selectedconsole', questo.selectedConsole);
 
-   
+
   }
 
   tapSegment(c, i) {
- 
+
     this.selectedMatchId = c.match.id;
     this.selectedMatch = c.match;
     this.selectedConsole = c;
@@ -85,13 +85,13 @@ export class MatchconsolePage {
     console.log("Looks like I'm about to leave :(");
     //this.events.unsubscribe("updategara");
     this.events.unsubscribe("hwbackbutton");
-    
-    
+
+
   }
 
-  ionViewWillEnter(){
-    var questo=this;
-    this.events.subscribe("hwbackbutton",function(data){
+  ionViewWillEnter() {
+    var questo = this;
+    this.events.subscribe("hwbackbutton", function (data) {
       console.log("hwbackbutton in gare.ts");
       questo.navCtrl.pop();
     })
@@ -108,12 +108,12 @@ export class MatchconsolePage {
   }
 
   toggleTempoReale() {
-    
+
     var questo = this;
     questo.backend.playFeedback();
     //alert(this.selectedConsole.match.matchord);
     var active = true;
-    var url = this.backend.rooturl +"/matches/update/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
+    var url = this.backend.rooturl + "/matches/update/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
     var newvalue = "true";
     var newtesto = "attivato";
     if (String(this.selectedConsole.match.realtime) == "true") {
@@ -136,10 +136,10 @@ export class MatchconsolePage {
     var doc = {
       realtime: active,
       admin_action: action
-      
+
     }
     //sendRealtime(true);
-    questo.disabledcontrols=true;
+    questo.disabledcontrols = true;
     questo.backend.postData(url, doc, function (data) {
       let toast = questo.toastCtrl.create({
         message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
@@ -149,11 +149,11 @@ export class MatchconsolePage {
 
       toast.onDidDismiss(() => {
         console.log('Dismissed toast');
-        questo.disabledcontrols=false;
+        questo.disabledcontrols = false;
       });
 
       toast.present();
-     
+
 
 
 
@@ -192,7 +192,7 @@ export class MatchconsolePage {
 
 
   tapPlus(t) {
-    var questo=this;
+    var questo = this;
     var result = this.selectedConsole.result;
     var p1 = parseInt(result.split("-")[0]);
     var p2 = parseInt(result.split("-")[1]);
@@ -235,38 +235,38 @@ export class MatchconsolePage {
     questo.sendRealtime();
     questo.backend.playFeedback();
     //prepare text
-    
-    
-    
+
+
+
 
   }
 
-  sendRealtime(){
-    var questo=this;
+  sendRealtime() {
+    var questo = this;
     var text = "TEMPO REALE !<br> ";
 
 
 
-		var color = "black";
-		var mtext = "in pausa";
-		if (questo.selectedConsole.running) {
-			mtext = "IN CORSO";
-			color = "blue";
-		}
+    var color = "black";
+    var mtext = "in pausa";
+    if (questo.selectedConsole.running) {
+      mtext = "IN CORSO";
+      color = "blue";
+    }
 
-		if (questo.selectedConsole.fineround) {
-			mtext = "FINE ROUND " + questo.selectedConsole.round;
-			color = "black";
-		}
+    if (questo.selectedConsole.fineround) {
+      mtext = "FINE ROUND " + questo.selectedConsole.round;
+      color = "black";
+    }
 
-		var rtext = "<font color='" + color + "'>Round " + questo.selectedConsole.round;
-		if (questo.selectedConsole.round == "GP") rtext = "<font color='" + color + "'>GoldenPoint"
+    var rtext = "<font color='" + color + "'>Round " + questo.selectedConsole.round;
+    if (questo.selectedConsole.round == "GP") rtext = "<font color='" + color + "'>GoldenPoint"
 
-		text += " " + rtext;
+    text += " " + rtext;
 
-		text += ", " + mtext;
+    text += ", " + mtext;
 
-		text += ", " + questo.selectedConsole.result + "</font>";
+    text += ", " + questo.selectedConsole.result + "</font>";
 
 		/*
 
@@ -278,42 +278,42 @@ export class MatchconsolePage {
 			}
     }
     */
-		//addMatchToRealtime(selectedid);
+    //addMatchToRealtime(selectedid);
 
-		color = "black";
+    color = "black";
 
-		if (questo.selectedConsole.active) color = "blue";
+    if (questo.selectedConsole.active) color = "blue";
 
-		var htext = "<span style='color: " + color + "'>" + text + "</span>";
+    var htext = "<span style='color: " + color + "'>" + text + "</span>";
     //
 
     var rdata = {
-			type: "realtime",
-			to: "all",
-			garaid: questo.selectedConsole.match.garaid,
-			//matchid: selectedid,
-			matchid: questo.selectedConsole.match.id,
-			//matchnumber: selectedmatchid,
-			matchnumber: questo.selectedConsole.match.matchid,
-			result: questo.selectedConsole.result,
-			round: questo.selectedConsole.round,
-			fineround: questo.selectedConsole.fineround,
-			running: questo.selectedConsole.running,
-			paused: questo.selectedConsole.paused,
-			ammoniz1: 0,
-			ammoniz2: 0,
-			event: "realtime",
-			text: text,
-			//match: getMatchById(selectedid),
-			match: questo.selectedConsole.match,
-			active: true //questo.selectedConsole.active
+      type: "realtime",
+      to: "all",
+      garaid: questo.selectedConsole.match.garaid,
+      //matchid: selectedid,
+      matchid: questo.selectedConsole.match.id,
+      //matchnumber: selectedmatchid,
+      matchnumber: questo.selectedConsole.match.matchid,
+      result: questo.selectedConsole.result,
+      round: questo.selectedConsole.round,
+      fineround: questo.selectedConsole.fineround,
+      running: questo.selectedConsole.running,
+      paused: questo.selectedConsole.paused,
+      ammoniz1: 0,
+      ammoniz2: 0,
+      event: "realtime",
+      text: text,
+      //match: getMatchById(selectedid),
+      match: questo.selectedConsole.match,
+      active: true //questo.selectedConsole.active
 
     }
 
-    if (questo.selectedConsole.match.realtime){
-      if (String(questo.selectedConsole.match.realtime)=="true") questo.socket.sendMessage(rdata);
+    if (questo.selectedConsole.match.realtime) {
+      if (String(questo.selectedConsole.match.realtime) == "true") questo.socket.sendMessage(rdata);
     }
-    
+
   }
 
   tapRound(n) {
@@ -321,18 +321,18 @@ export class MatchconsolePage {
     this.selectedConsole.paused = false;
     this.selectedConsole.running = true;
     this.selectedConsole.fineround = false;
-    this.selectedConsole.goldenpoint=false;
-    if (this.selectedConsole.round=="GP") this.selectedConsole.goldenpoint=true;
+    this.selectedConsole.goldenpoint = false;
+    if (this.selectedConsole.round == "GP") this.selectedConsole.goldenpoint = true;
     this.sendRealtime();
-     this.backend.playFeedback();
+    this.backend.playFeedback();
   }
 
   tapFineround() {
     this.selectedConsole.fineround = true;
     this.selectedConsole.paused = true;
     this.selectedConsole.running = false;
-     this.sendRealtime();
-     this.backend.playFeedback();
+    this.sendRealtime();
+    this.backend.playFeedback();
   }
 
   getPauseText() {
@@ -348,8 +348,8 @@ export class MatchconsolePage {
       this.selectedConsole.paused = !this.selectedConsole.paused;
       this.selectedConsole.running = !this.selectedConsole.running;
     }
-     this.sendRealtime();
-     this.backend.playFeedback();
+    this.sendRealtime();
+    this.backend.playFeedback();
   }
 
   getTemporealeText() {
@@ -368,12 +368,35 @@ export class MatchconsolePage {
     console.log("setResult");
     var questo = this;
 
-    var ris=questo.selectedConsole.result;
-    var msg="Vuoi davvero convalidare il risultato di questo incontro ("+ris+") ?";
-    var title="Conferma risultato "+ris;
-    if ((ris.trim()=="0-0") || (ris.trim()=="")){
-      msg="Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
-      title="Conferma reset match"
+    var ris = questo.selectedConsole.result;
+
+
+    var risarr = ris.split("-");
+    if (ris.trim() != "0-0") {
+      if (risarr[0] == risarr[1]) {
+        let alrtx = questo.alertCtrl.create({
+          title: 'ATTENZIONE',
+          subTitle: 'Il risultato indicato indica un pareggio, incrementa uno dei due punteggi per indicare una vittoria o una sconfitta',
+          buttons: ['Chiudi']
+        });
+        alrtx.present();
+        return;
+      }
+    }
+
+
+
+    var msg = "Vuoi davvero convalidare il risultato di questo incontro (" + ris + ") ?";
+
+    var gsmsg="";
+    if (questo.selectedConsole.goldenpoint) gsmsg= "(risultato conseguito dopo GoldenPoint)";
+    if (questo.selectedConsole.squalifica) gsmsg= "(verrà registrata la sconfitta per squalifica)";
+    msg+=gsmsg;
+    
+    var title = "Conferma risultato " + ris;
+    if ((ris.trim() == "0-0") || (ris.trim() == "")) {
+      msg = "ATTENZIONE ! Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
+      title = "Conferma reset match"
     }
 
     let alrt = questo.alertCtrl.create({
@@ -391,25 +414,25 @@ export class MatchconsolePage {
         {
           text: 'OK',
           handler: () => {
-             questo.backend.playFeedback();
-            var match=questo.selectedConsole.match;
-            var goldenpoint=false;
-            if (questo.selectedConsole.round.toLowerCase()=="gp") goldenpoint=true;
-            if (questo.selectedConsole.goldenpoint) goldenpoint=true;
-            match.goldenpoint=goldenpoint;
-            match.risultato=questo.selectedConsole.result;
-            alert(questo.selectedConsole.squalifica);
-            match.squalifica=questo.selectedConsole.squalifica;
-            var atl=questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
-            var mfa=questo.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id});
-            questo.backend.setResult(match,atl,mfa,function(data){
-              
-              console.log("setted result !!",data);
-              
-              setTimeout(function(){
-             
+            questo.backend.playFeedback();
+            var match = questo.selectedConsole.match;
+            var goldenpoint = false;
+            if (questo.selectedConsole.round.toLowerCase() == "gp") goldenpoint = true;
+            if (questo.selectedConsole.goldenpoint) goldenpoint = true;
+            match.goldenpoint = goldenpoint;
+            match.risultato = questo.selectedConsole.result;
+            //alert(questo.selectedConsole.squalifica);
+            match.squalifica = questo.selectedConsole.squalifica;
+            var atl = questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
+            var mfa = questo.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id });
+            questo.backend.setResult(match, atl, mfa, function (data) {
+
+              console.log("setted result !!", data);
+
+              setTimeout(function () {
+
                 questo.navCtrl.pop();
-              },2000)
+              }, 2000)
             })
             console.log('Buy clicked');
           }
@@ -420,7 +443,7 @@ export class MatchconsolePage {
 
   }
 
-  gotoChat(){
+  gotoChat() {
     this.backend.playFeedback();
     this.navCtrl.push(ChatPage);
   }

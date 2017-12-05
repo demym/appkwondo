@@ -8,8 +8,9 @@
 
   <ion-navbar>
     <ion-title>Statistiche</ion-title>
+   
   </ion-navbar>
-  <ion-toolbar>
+  <!--<ion-toolbar>
     <ion-segment [(ngModel)]="tipostat">
       <ion-segment-button value="ranking">
         Ranking
@@ -18,7 +19,18 @@
         Altro
       </ion-segment-button>
     </ion-segment>
-  </ion-toolbar>
+  </ion-toolbar>-->
+  <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select (ionChange)="changeFilter($event)" [(ngModel)]="filter">
+        <ion-option value="">Tutte</ion-option>
+        <ion-option value="esordienti">Esordienti</ion-option>
+        <ion-option value="cadetti b">Cadetti B</ion-option>
+        <ion-option value="cadetti a">Cadetti A</ion-option>
+        <ion-option value="junior">Junior</ion-option>
+        <ion-option value="senior">Senior</ion-option>
+      </ion-select>
+    </ion-item>
 
 </ion-header>
 
@@ -33,7 +45,7 @@
 
   <section *ngIf="tipostat=='ranking'">    
   <div style="text-align: center; font-style: italic" >Ordinamento: {{sortranking.toUpperCase()}}</div>
-  <ion-item *ngFor="let r of ranking; let i=index;">
+  <ion-item *ngFor="let r of displayedranking; let i=index;">
 <ion-row [ngClass]="i<3 ? 'top3' : ''">
   <ion-col col-2>
     {{getPos(i)}}
@@ -44,6 +56,12 @@
     <ion-col col-2>
       {{r.doc.ranking_tkdr}}
       </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-10>
+          <span class="categoria">{{getCategoria(r)}}</span>
+        </ion-col>
       </ion-row>
     <ion-row>
       <ion-col col-2></ion-col>

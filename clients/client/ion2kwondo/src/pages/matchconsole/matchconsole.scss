@@ -10,6 +10,15 @@ page-matchconsole {
         color: blue;
     }
 
+    .checkboxes ion-label {
+        font-size: 12px;
+    }
+
+    ion-item.item-checkbox .input-wrapper ion-label  {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
     .realtimebut {
         background: green;
         color: white;
