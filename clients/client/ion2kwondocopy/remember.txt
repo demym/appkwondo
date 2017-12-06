@@ -1,1 +1,0 @@
-removed plugin phonegap-plugin-push 1.10.4 "PushPlugin"

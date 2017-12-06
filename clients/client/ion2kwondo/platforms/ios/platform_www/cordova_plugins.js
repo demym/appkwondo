@@ -9,6 +9,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-android-permissions.Permissions",
+        "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+        "pluginId": "cordova-plugin-android-permissions",
+        "clobbers": [
+            "cordova.plugins.permissions"
+        ]
+    },
+    {
         "id": "cordova-plugin-appavailability.AppAvailability",
         "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
         "pluginId": "cordova-plugin-appavailability",
@@ -484,20 +492,13 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
-    },
-    {
-        "id": "cordova-plugin-android-permissions.Permissions",
-        "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
-        "pluginId": "cordova-plugin-android-permissions",
-        "clobbers": [
-            "cordova.plugins.permissions"
-        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
+    "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-app-event": "1.2.1",
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-audio-recorder-api": "0.0.1",
@@ -505,6 +506,7 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-console": "1.0.5",
+    "cordova-plugin-crosswalk-webview": "2.3.0",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
@@ -525,9 +527,7 @@ module.exports.metadata =
     "cordova-sqlite-storage": "2.0.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.5",
     "ionic-plugin-keyboard": "2.2.1",
-    "phonegap-plugin-push": "2.0.0",
-    "cordova-plugin-android-permissions": "1.0.0",
-    "cordova-plugin-crosswalk-webview": "2.3.0"
+    "phonegap-plugin-push": "2.0.0"
 };
 // BOTTOM OF METADATA
 });
