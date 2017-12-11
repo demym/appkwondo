@@ -1,4 +1,0 @@
-<Repeater id="rep">
-<Label id="label" text="cucuz"/>
-<Button id="button" text="zucchins"/>
-</Repeater>

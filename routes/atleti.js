@@ -434,7 +434,7 @@ router.post('/delete', function (req, res) {
 	var id = body.id;
 	var rev = body.id;
 
-	console.log("trying to delete atletaid ",id);
+	console.log("trying to delete atletaid ", id);
 
 
 	if (usemongo) {
@@ -495,10 +495,10 @@ router.get("/history/:atletaid", function (req, res) {
 
 
 //get plain ranking
-router.get("/ranking",function(req,res){
-		getRanking(function (data) {
-			res.send(data)
-		});
+router.get("/ranking", function (req, res) {
+	getRanking(function (data) {
+		res.send(data)
+	});
 
 })
 
@@ -524,39 +524,39 @@ router.get("/ranking/save", function (req, res) {
 			var today = new Date();
 			var id = today.julian();
 
-			var lastrows=[];
+			var lastrows = [];
 
 			if (rdata.rows.length > 0) { //aggiunge ranking
-				lastrows=rdata.rows[0].ranking.rows;
+				lastrows = rdata.rows[0].ranking.rows;
 
-				
+
 				var rankconfr = rdata.rows[0].ranking.rows;
 
-				console.log("rankconfr",rankconfr.length);
-				console.log("data",data.rows.length);
-			
+				console.log("rankconfr", rankconfr.length);
+				console.log("data", data.rows.length);
 
-				var rkchanged=false;
-				data.rows.forEach(function(item,idx){
-					var rtkdr=parseInt(item.doc.ranking_tkdr,10);
-					var aid=item.doc.id;
-					rankconfr.forEach(function(ritem,ridx){
-						var raid=ritem.doc.id;
-						var atletachanged=false;
-						if (raid==aid){
-							var rrtkdr=parseInt(ritem.doc.ranking_tkdr,10);
-							item.doc.segno="equal";
-							if (rrtkdr<rtkdr) {
-								item.doc.segno="plus";
-								rkchanged=true;
-								atletachanged=true;
+
+				var rkchanged = false;
+				data.rows.forEach(function (item, idx) {
+					var rtkdr = parseInt(item.doc.ranking_tkdr, 10);
+					var aid = item.doc.id;
+					rankconfr.forEach(function (ritem, ridx) {
+						var raid = ritem.doc.id;
+						var atletachanged = false;
+						if (raid == aid) {
+							var rrtkdr = parseInt(ritem.doc.ranking_tkdr, 10);
+							item.doc.segno = "equal";
+							if (rrtkdr < rtkdr) {
+								item.doc.segno = "plus";
+								rkchanged = true;
+								atletachanged = true;
 							}
-							if (rrtkdr>rtkdr) {
-								item.doc.segno="minus";
-								rkchanged=true;
-								atletachanged=true;
+							if (rrtkdr > rtkdr) {
+								item.doc.segno = "minus";
+								rkchanged = true;
+								atletachanged = true;
 							}
-							if (atletachanged) console.log("rankchange for atleta !",item.doc.nome,item.doc.cognome,item.doc.ranking_tkdr,rrtkdr,item.doc.segno);
+							if (atletachanged) console.log("rankchange for atleta !", item.doc.nome, item.doc.cognome, item.doc.ranking_tkdr, rrtkdr, item.doc.segno);
 
 						}
 
@@ -578,14 +578,14 @@ router.get("/ranking/save", function (req, res) {
 						console.log("new ranking added to ranking.json ")
 						res.send(data);
 					})
-					
-					
+
+
 				} else {
 					console.log("no changes found with last ranking ")
-					
+
 					res.send(data);
 				}
-				
+
 				//data.lastrows=lastrows;
 				//res.send(data);
 
@@ -595,7 +595,7 @@ router.get("/ranking/save", function (req, res) {
 
 
 				console.log("no rankings found, adding last one");
-				
+
 
 				var newranking = {
 					date: id,
@@ -638,7 +638,7 @@ router.get("/ranking/html", function (req, res) {
 
 })
 
-router.post("/login",function(req,res){
+router.post("/login", function (req, res) {
 	var ret = {
 		"loggedin": "false"
 	};
@@ -1204,8 +1204,12 @@ function getRanking(callback) {
 										if (match.disputato) {
 											if (match.disputato == "yes") {
 												atleti_json.rows[i].doc.matchdisputati++;
+												atleti_json.rows[i].doc.ranking_tkdr += 1;
 												if (match.vinto) {
-													if (match.vinto == "yes") atleti_json.rows[i].doc.matchvinti++;
+													if (match.vinto == "yes") {
+														atleti_json.rows[i].doc.ranking_tkdr += 1;
+														atleti_json.rows[i].doc.matchvinti++;
+													}
 												}
 											}
 										}
@@ -1270,8 +1274,8 @@ function getRanking(callback) {
 
 		})
 
-		atleti_json.rows.forEach(function(item,idx){
-			item.doc.segno="equal";
+		atleti_json.rows.forEach(function (item, idx) {
+			item.doc.segno = "equal";
 		})
 
 		//callback(atleti_json)
@@ -1307,35 +1311,35 @@ function renderRanking(json) {
 
 }
 
-Object.prototype.equals = function(b) {
-    var a = this;
-    for(i in a) {
-        if(typeof b[i] == 'undefined') {
-            return false;
-        }
-        if(typeof b[i] == 'object') {
-            if(!b[i].equals(a[i])) {
-                return false;
-            }
-        }
-        if(b[i] != a[i]) {
-            return false;
-        }
-    }
-    for(i in b) {
-        if(typeof a[i] == 'undefined') {
-            return false;
-        }
-        if(typeof a[i] == 'object') {
-            if(!a[i].equals(b[i])) {
-                return false;
-            }
-        }
-        if(a[i] != b[i]) {
-            return false;
-        }
-    }
-    return true;
+Object.prototype.equals = function (b) {
+	var a = this;
+	for (i in a) {
+		if (typeof b[i] == 'undefined') {
+			return false;
+		}
+		if (typeof b[i] == 'object') {
+			if (!b[i].equals(a[i])) {
+				return false;
+			}
+		}
+		if (b[i] != a[i]) {
+			return false;
+		}
+	}
+	for (i in b) {
+		if (typeof a[i] == 'undefined') {
+			return false;
+		}
+		if (typeof a[i] == 'object') {
+			if (!a[i].equals(b[i])) {
+				return false;
+			}
+		}
+		if (a[i] != b[i]) {
+			return false;
+		}
+	}
+	return true;
 }
 
 
