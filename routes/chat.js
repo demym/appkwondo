@@ -413,7 +413,7 @@ router.post("/put", function (req, res) {
 						color: "#000000",
 						tag: "appkwondov2",
 						badge: "1",
-						topic: tag,
+						topic: "appkwondov2",
 						token: ""
 					
 					}
