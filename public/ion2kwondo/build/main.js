@@ -2914,8 +2914,10 @@ var ChatPage = (function () {
             if (questo.content) {
                 console.log("content ce sta");
                 setTimeout(function () {
-                    questo.content.scrollToBottom();
+                    //questo.content.scrollToBottom();
+                    questo.gotoBottom();
                 });
+                //questo.getLast(questo.recordsforpage);
             }
             else {
                 console.log("questo.content not found");
