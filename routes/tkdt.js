@@ -5,16 +5,23 @@ var syncrequest = require('sync-request');
 var cheerio = require('cheerio');
 var mongo = require('../routes/mongo');
 var utils = require("../routes/utils");
+var cloudscraper = require('cloudscraper');
+var fs = require("fs");
+
+var sync = require('synchronize');
+var fiber = sync.fiber;
+var await = sync.await;
+var defer = sync.defer;
 
 
 var tkdt_rooturl = "https://www.tkdtechnology.it/index.php/welcome/";
 
-var tabulato_word="show";
+var tabulato_word = "show";
 
-router.get("/tabulatoimage/use/:word",function(req,res){
-    var word=req.params.word;
-    tabulato_word=word;
-    res.send("Tabulato word setted to "+word);
+router.get("/tabulatoimage/use/:word", function (req, res) {
+    var word = req.params.word;
+    tabulato_word = word;
+    res.send("Tabulato word setted to " + word);
 })
 
 
@@ -22,11 +29,13 @@ router.get("/tabulatoimage/:tabulatoid", function (req, res) {
 
     var tabulatoid = req.params.tabulatoid;
 
-    var url = "https://www.tkdtechnology.it/index.php/welcome/"+tabulato_word+"_tabulato?id=" + tabulatoid;
+    var url = "https://www.tkdtechnology.it/index.php/welcome/" + tabulato_word + "_tabulato?id=" + tabulatoid;
     //url=pageurl;
-    request(url, function (error, response, html) {
-        console.log("response code",response.statusCode);
-        if (!error && response.statusCode == 200) {
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        console.log("response code", response.statusCode);
+        //if (!error && response.statusCode == 200) {
+        if (!error) {
 
             var $ = cheerio.load(html);
             var banner = $("#banner");
@@ -39,7 +48,7 @@ router.get("/tabulatoimage/:tabulatoid", function (req, res) {
         } else {
             res.send("Something happened with tkdt")
         }
-      
+
 
     });
 
@@ -97,7 +106,7 @@ router.get("/exporttkdt", function (req, res) {
 })
 
 
-router.get("/get/:garaid", function (req, res) {
+router.get("/getold/:garaid", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;
     utils.colog("get TKDT gara " + tkdt_garaid);
@@ -110,40 +119,47 @@ router.get("/get/:garaid", function (req, res) {
 router.get("/retrieve/:garaid", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;
-   
-    getTkdtGara(tkdt_garaid, function (data) {
-        console.log("retrieved gara "+tkdt_garaid+" !");
+
+    getGaraDays(tkdt_garaid, function (data) {
+
+        getTkdtGara(tkdt_garaid, function (data) {
+            console.log("retrieved gara " + tkdt_garaid + " !");
 
 
-        var rows = [];
-        rows.push(data);
-        var newfname = "tkdt_" + tkdt_garaid + ".json";
-        
-        mongo.updatefile(newfname, rows, function (mdata) {
-            console.log(newfname+" updated on mongo !!");
-            //console.log(mdata);
-            res.send(data);
+            var rows = [];
+            rows.push(data);
+            var newfname = "tkdt_" + tkdt_garaid + ".json";
 
-        });
-       
-        //res.send(data);
+            mongo.updatefile(newfname, rows, function (mdata) {
+                console.log(newfname + " updated on mongo !!");
+                //console.log(mdata);
+                res.send(data);
 
-    })
+            });
+
+            //res.send(data);
+
+        })
+    });
 
 })
 
 router.get("/retrieve/:garaid/nosave", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;
-   
-    getTkdtGara(tkdt_garaid, function (data) {
-        console.log("retrieved gara "+tkdt_garaid+" !");
 
-        res.send(data);
-       
-        //res.send(data);
+    getGaraDays(tkdt_garaid, function (data) {
 
-    })
+        getTkdtGara(tkdt_garaid, function (data) {
+            console.log("retrieved gara " + tkdt_garaid + " !");
+
+            res.send(data);
+
+            //res.send(data);
+
+        })
+
+    });
 
 })
 
@@ -192,6 +208,109 @@ router.get("/getfromfile/:garaid", function (req, res) {
 })
 
 
+router.get("/get/:tkdtid", function (req, res) {
+    var tkdtid = req.params.tkdtid;
+    getGaraDays(tkdtid, function (data) {
+        getTkdtGara(tkdtid, function (garadata) {
+            res.send(garadata);
+        })
+
+    })
+})
+
+
+function getCloudflareDayAsync(dayid, callback) {
+    var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + dayid;
+    console.log("leggo " + url);
+    cloudscraper.get(url, function (err, response, html) {
+        if (!err) {
+            fs.writeFileSync("data/tkdtdata/dettaglio_tabulati_" + dayid + ".html", html);
+            console.log("giorno " + dayid + " salvato !!!");
+            callback();
+        } else callback()
+    });
+}
+
+
+function getGaraDays(tkdt_garaid, callback) {
+    var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + tkdt_garaid;
+    cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
+        if (!error) {
+
+
+            var $ = cheerio.load(html);
+            var banner = $("#banner");
+            var bscomponent = banner.find(".bs-component");
+
+            console.log("bscomponent", bscomponent.length);
+            var htm = "";
+            var saveddays = [];
+            var giornate = [];
+
+            bscomponent.each(function (i, element) {
+                //console.log("bscomponent "+i+": ",element);
+                var giorno = {
+                    titolo: "",
+                    tabulati: [],
+                    medagliere: [],
+                    atleti: [],
+                    enabled: false,
+                    hasContent: false
+                }
+                //var a_arr = $(this).find($("a"));
+                var a_arr = $(element).find("a");
+                //console.log("a_arr",a_arr.length);
+                var a = a_arr;
+                var txt = a.attr("href");
+
+                //var txt = a.attributes.href;
+                //console.log("a attr href",txt);
+                var giornatagara = getQsFromUrl(txt, "id_giornata");
+                giornate.push(giornatagara);
+
+
+
+
+
+
+
+
+
+            });
+
+
+
+            try {
+                fiber(function () {
+                    giornate.forEach(function (item, idx) {
+                        console.log("fibering " + item);
+                        if (item) {
+                            var obj1 = await (getCloudflareDayAsync(item, defer()));
+                        }
+
+                        saveddays.push(item);
+
+                    })
+                    callback({
+                        error: false,
+                        giornisalvati: saveddays
+                    })
+
+                });
+            } catch (err) {
+                //TODO Handle error
+
+            }
+
+
+
+        } else callback(error);
+
+    });
+
+
+}
+
 
 function getTkdtGara(tkdt_garaid, callback) {
 
@@ -208,15 +327,28 @@ function getTkdtGara(tkdt_garaid, callback) {
 
     }
 
-    console.log("reading iscritti_url",iscritti_url);    
-    request.get(iscritti_url, function (e, r, h) {
+    console.log("reading iscritti_url", iscritti_url);
+    cloudscraper.get(iscritti_url, function (e, r, h) {
+        //request.get(iscritti_url, function (e, r, h) {
 
         tkdtnew.atleti_iscritti = getIscritti(h);
         //console.log("tkdtnew.atleti_iscritti",tkdtnew.atleti_iscritti);
 
-        console.log("reading tabulatigiorni_url",tabulatigiorni_url);
-        request(tabulatigiorni_url, function (error, response, html) {
-            if (!error && response.statusCode == 200) {
+        console.log("reading tabulatigiorni_url", tabulatigiorni_url);
+        cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
+
+            /*var fs=require("fs");
+            fs.readFile("./data/tabulati_giorni_"+tkdt_garaid+".html", function (error, html) 
+            {
+               var response={
+                   statusCode:200
+               }*/
+
+            //request(tabulatigiorni_url, function (error, response, html) {
+            //console.log("response for garaid "+tkdt_garaid,error,response);
+            if (!error) {
+
+                console.log("letti tabulati per garaid " + tkdt_garaid);
 
                 var $ = cheerio.load(html);
 
@@ -238,12 +370,12 @@ function getTkdtGara(tkdt_garaid, callback) {
                     }
                     //var a_arr = $(this).find($("a"));
                     var a_arr = $(element).find("a");
-                    console.log("a_arr",a_arr.length);
-                    var a=a_arr;
+                    console.log("a_arr", a_arr.length);
+                    var a = a_arr;
                     var txt = a.attr("href");
                     //var txt = a.attributes.href;
-                    console.log("a attr href",txt);
-                    console.log("a attr disabled",a.attr("disabled"));
+                    console.log("a attr href", txt);
+                    console.log("a attr disabled", a.attr("disabled"));
                     if (a.attr("disabled") == "disabled") {
                         txt = a.text();
                         txt = txt.replace("I tabulati per questa giornata non sono ancora stati pubblicati", "");
@@ -271,25 +403,30 @@ function getTkdtGara(tkdt_garaid, callback) {
                     console.log("retrieving giorno " + giorno.id_giornata);
 
 
-                    var data=getTkdtGiorno(giorno.id_giornata, giorno.titolo);
+
+
+
+                    var data = getTkdtGiornoNew(giorno.id_giornata, giorno.titolo);
+
+
                     //console.log("giorno",data);
 
                     //getTkdtGiorno(giorno.id_giornata, giorno.titolo, function (data) {
 
-                        //utils.colog(data);
+                    //utils.colog(data);
 
-                        tkdtnew.giorni[i] = data;
-                        tkdtnew.giorni[i].enabled = ena;
+                    tkdtnew.giorni[i] = data;
+                    tkdtnew.giorni[i].enabled = ena;
 
-                        console.log("got giorno " + giorno.id_giornata, "enabled", ena);
+                    console.log("got giorno " + giorno.id_giornata, "enabled", ena);
 
-                        /*tkdtnew.giorni[i].elenco_societa= data.elenco_societa;
-                        tkdtnew.giorni[i].medagliere= data.medagliere;
-                        tkdtnew.giorni[i].tabulati= data.tabulati;*/
+                    /*tkdtnew.giorni[i].elenco_societa= data.elenco_societa;
+                    tkdtnew.giorni[i].medagliere= data.medagliere;
+                    tkdtnew.giorni[i].tabulati= data.tabulati;*/
 
 
-                        //tkdtnew.giorni[i].body = data;
-                   // });
+                    //tkdtnew.giorni[i].body = data;
+                    // });
 
 
 
@@ -339,6 +476,10 @@ function getTkdtGara(tkdt_garaid, callback) {
                 //res.send(tkdtnew);
                 callback(tkdtnew);
             }
+
+            if (error) {
+                console.log("errore", error);
+            }
         });
 
     })
@@ -364,7 +505,7 @@ function getTkdtGaraForme(tkdt_garaid, callback) {
 
     }
 
-    request.get(iscritti_url, function (e, r, h) {
+    cloudscraper.get(iscritti_url, function (e, r, h) {
 
         tkdtnew.atleti_iscritti = getIscrittiForme(h);
         callback(tkdtnew);
@@ -502,10 +643,21 @@ router.get("/getgiorno/:giornoid", function (req, res) {
 
 })
 
+function getAsyncUrl(url, callback) {
+    cloudscraper.get(url, function (error, response, html) {
+        if (!error) {
+            callback(html);
+        } else callback(error);
 
-function getTkdtGiorno(giornataid, titolo, callback) {
 
-    console.log("gettkdtgiorno ", giornataid);
+    });
+}
+
+
+
+function getTkdtGiornoNew(giornataid, titolo, callback) {
+
+    console.log("gettkdtgiornonew ", giornataid);
     var giornata = {
         id: giornataid,
         titolo: titolo,
@@ -527,9 +679,16 @@ function getTkdtGiorno(giornataid, titolo, callback) {
     var giornodata = "03-12-2016";
 
     var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornataid;
-    console.log("calling in sync mode url ",url);
-    var res = syncrequest('GET', url);
-    var body = res.getBody("utf-8");
+    console.log("calling in sync mode url ", url);
+
+    /****** modifica locale */
+    //var res = syncrequest('GET', url);
+    //var body = res.getBody("utf-8");
+    /******************* */
+
+
+
+    var body = fs.readFileSync('./data/tkdtdata/dettaglio_tabulati_' + giornataid + '.html');
     //console.log(res.getBody());
     //callback(body);
     var $ = cheerio.load(body);
@@ -540,7 +699,7 @@ function getTkdtGiorno(giornataid, titolo, callback) {
     for (var i = 0; i < divs.length; i++) {
         var divname = divs[i];
         var divcontent = $("#" + divs[i]);
-        console.log("divname",divname);
+        console.log("divname", divname);
 
         if (divname == "tabulati") {
 
@@ -601,15 +760,15 @@ function getTkdtGiorno(giornataid, titolo, callback) {
                 }
                 //console.log("newtabulato "+x,newtabulato);
                 //$(this).find("td:eq(3)").remove();
-                
+
                 giornata.tabulati.rows.push(newtabulato);
 
             });
 
 
-            
-           // giornata.tabulati.html = divcontent.html({ decodeEntities: false });
-           giornata.tabulati.html = "";
+
+            // giornata.tabulati.html = divcontent.html({ decodeEntities: false });
+            giornata.tabulati.html = "";
 
             console.log("sono qui 2 !!");
 
@@ -715,7 +874,243 @@ function getTkdtGiorno(giornataid, titolo, callback) {
     }
 
 
- 
+
+
+    giornata.elenco_societa.rows.sort(function (a, b) {
+        var a1 = a.societaname;
+        var b1 = b.societaname;
+        if (a1 > b1) return 1;
+        if (a1 < b1) return -1;
+        return 0;
+
+    })
+
+    //console.dir(giornata);
+    if (callback) callback(giornata);
+    return giornata;
+
+}
+
+function getTkdtGiorno(giornataid, titolo, callback) {
+
+    console.log("gettkdtgiorno ", giornataid);
+    var giornata = {
+        id: giornataid,
+        titolo: titolo,
+        enabled: false,
+        tabulati: {
+            html: "",
+            rows: []
+        },
+        medagliere: {
+            rows: [],
+            html: ""
+        },
+        elenco_societa: {
+            rows: [],
+            html: ""
+        }
+    }
+
+    var giornodata = "03-12-2016";
+
+    var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornataid;
+    console.log("calling in sync mode url ", url);
+
+    /****** modifica locale */
+    //var res = syncrequest('GET', url);
+    //var body = res.getBody("utf-8");
+    /******************* */
+
+
+
+    var body = fs.readFileSync('./data/dettaglio_tabulati_' + giornataid + '.html');
+    //console.log(res.getBody());
+    //callback(body);
+    var $ = cheerio.load(body);
+
+
+    var divs = ["tabulati", giornodata, "elenco_societa"];
+    var html = "";
+    for (var i = 0; i < divs.length; i++) {
+        var divname = divs[i];
+        var divcontent = $("#" + divs[i]);
+        console.log("divname", divname);
+
+        if (divname == "tabulati") {
+
+            var tr = divcontent.find("table").find("tbody").find("tr");
+            //var th = divcontent.find("table").find("thead").find("tr").find("th:eq(3)");
+            //th.remove();
+            //console.log("tr inside div tabulati", tr.length);
+            tr.each(function (x) {
+                //var td = $(this).find("td:eq(5)");
+                //var td0 = $(this).find("td:eq(0)");
+
+                //td0.attr("onclick", "greenifyMe(this,false)");
+
+                //td.html(td.html().replace("Vedi", ""));
+                //td.find("span").remove();
+                //td.find("a").addClass("ui-btn");
+                //td.find("a").attr("onclick", "greenifyMe(this,true)");
+
+                var td;
+                var sesso = "";
+                var categoria_eta = "";
+                var cintura_da = "";
+                var cintura_a = "";
+                var categoria_peso = "";
+                $(this).find("td").each(function (j) {
+                    if (j == 0) sesso = $(this).text();
+                    if (j == 1) categoria_eta = $(this).text();
+                    if (j == 2) cintura_da = $(this).text();
+                    if (j == 3) cintura_a = $(this).text();
+                    if (j == 4) categoria_peso = $(this).text();
+                    if (j == 5) td = $(this);
+                })
+
+                /*var sesso = $(this).find("td:eq(0)").text();
+                var categoria_eta = $(this).find("td:eq(1)").text();
+                var cintura_da = $(this).find("td:eq(2)").text();
+                var cintura_a = $(this).find("td:eq(3)").text();
+                var categoria_peso = $(this).find("td:eq(4)").text();*/
+
+                //$(this).find("td:eq(2)").html(cintura_da + "<br>" + cintura_a);
+
+                //console.log(td.html());
+                var a = td.find("a");
+                //a.removeAttr("target");
+                var hr = a.attr("href");
+                //console.log("HR", hr);
+                var newhref = "javascript:openTabulatoPageNew('" + hr + "')";
+                a.attr("href", newhref);
+                var newtabulato = {
+                    href: newhref,
+                    oldhref: hr,
+                    sesso: sesso,
+                    categoria_eta: categoria_eta,
+                    cintura_da: cintura_da,
+                    cintura_a: cintura_a,
+                    categoria_peso: categoria_peso
+
+                }
+                //console.log("newtabulato "+x,newtabulato);
+                //$(this).find("td:eq(3)").remove();
+
+                giornata.tabulati.rows.push(newtabulato);
+
+            });
+
+
+
+            // giornata.tabulati.html = divcontent.html({ decodeEntities: false });
+            giornata.tabulati.html = "";
+
+            console.log("sono qui 2 !!");
+
+        }
+
+        if (divname == "elenco_societa") {
+
+            //rdivs.each(function () {
+            var rdivs = divcontent.find("div[style='border:solid; border-radius:40px; text-align: center']");
+            //var rdivs = divcontent.find("div");
+            rdivs.each(function () {
+                var rdiv = $(this);
+                //rdiv.attr("style", "width: 100%; font-size: 12px;");
+                var societa = rdiv.find("h3").text();
+                console.log("societa", societa);
+
+
+
+
+                //check if societa already there
+
+                var found = false;
+                for (var j = 0; j < giornata[divname].rows.length; j++) {
+                    //$(giornata[divname].rows).each(function (j) {
+                    var socrow = giornata[divname].rows[j];
+
+                    var socname = socrow.societaname;
+
+                    if (socname.trim().toLowerCase() == societa.trim().toLowerCase()) found = true;
+
+                    // })
+                }
+
+
+
+                if (!found) { //add societa
+                    var newsoc = {
+                        societaname: societa,
+                        atleti: []
+                    }
+
+
+                    var atletidiv = rdiv.find("div");
+                    //console.log("atletidic length:", atletidiv.length);
+                    //for (var x=0; x<atletidiv.length; x++){
+                    atletidiv.each(function (x) {
+                        var adiv = $(this);
+                        var rigaatleta = adiv.find("a").text().trim();
+                        var propatleta = adiv.text();
+                        //console.log("propatleta",propatleta);
+                        propatleta = propatleta.replace("kg", "").trim();
+                        //console.log(rigaatleta);
+                        var arr = propatleta.split(" - ");
+
+
+                        var sesso = arr[1];
+                        var cateta = arr[2];
+                        var peso = arr[3];
+
+                        var arr2 = peso.split(" ");
+                        var catpeso = arr2[arr2.length - 1].trim();
+                        var catcint = peso.replace(catpeso, "").trim();
+
+
+
+
+                        var newatl = {
+                            nome: rigaatleta,
+                            sesso: sesso,
+                            cateta: cateta,
+                            catpeso: catpeso,
+                            catcintura: catcint,
+                            societa: societa
+                        }
+                        //console.log(rigaatleta);
+                        newsoc.atleti.push(newatl);
+                    })
+                    // }
+
+                    giornata[divname].rows.push(newsoc);
+
+
+
+
+                }
+
+                //giornata.elenco_societa.html = divcontent.html({ decodeEntities: true });
+                giornata.elenco_societa.html = "";
+
+
+
+
+
+            });
+            st = " style='display: none;' ";
+
+        }
+
+
+
+
+        //html += divcontent.html({ decodeEntities: true });
+    }
+
+
+
 
     giornata.elenco_societa.rows.sort(function (a, b) {
         var a1 = a.societaname;
@@ -1006,8 +1401,9 @@ function getDataGiornata(titolo) {
 function getMedagliere(giornoid, callback) {
     var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
     console.log("requesting tkdt url", url);
-    request(url, function (error, response, html) {
-        if (!error && response.statusCode == 200) {
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        if (!error) {
             var $ = cheerio.load(html);
 
             var banner = $("#banner");
@@ -1021,11 +1417,11 @@ function getMedagliere(giornoid, callback) {
             console.log(datagiornata);
 
 
-            var pos0 = html.indexOf('<div class="tab-pane fade" id="'+datagiornata+'">');
+            var pos0 = html.indexOf('<div class="tab-pane fade" id="' + datagiornata + '">');
             var htm = html.substring(pos0);
 
             var pos1 = htm.indexOf("</table>");
-            htm = htm.substring(0, pos1)+"</table></div>";
+            htm = htm.substring(0, pos1) + "</table></div>";
             htm = "<h1>" + titolo + "</h1><br>" + htm;
             callback(htm);
             return;
@@ -1158,8 +1554,10 @@ function getMedagliereGlobale_Old(giornoid, callback) {
 function getMedagliereGlobale(giornoid, callback) {
     var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
     console.log("requesting tkdt url ", url);
-    request(url, function (error, response, html) {
-        if (!error && response.statusCode == 200) {
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        //if (!error && response.statusCode == 200) {
+        if (!error) {
             var $ = cheerio.load(html, {
                 normalizeWhitespace: true,
                 xmlMode: false

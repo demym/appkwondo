@@ -30740,6 +30740,11 @@ page-cart .bariconbig {
   border: 0px solid black;
 }
 
+.sthumb {
+  height: 50px;
+  width: 50px;
+}
+
 .divcont {
   text-align: center;
 }
@@ -30862,6 +30867,20 @@ img.avatarbig {
 .chat .messages {
   width: 100%;
   position: absolute;
+}
+
+.chat .messages ion-item ion-label {
+  margin: 0px !important;
+  padding: 0px !important;
+  white-space: normal;
+}
+
+.chat .messages ion-item ion-label .message {
+  padding: 5px;
+}
+
+.chat .messages ion-item.message .item-inner {
+  padding: 4px;
 }
 
 .chat .messages .message {
@@ -31195,6 +31214,12 @@ page-gara .iscrittonome {
   font-weight: bold;
   color: black;
   font-size: 15px;
+}
+
+page-gara .tkdtiscritti {
+  color: #222;
+  font-size: 11px;
+  font-style: italic;
 }
 
 page-gara .iscritti {

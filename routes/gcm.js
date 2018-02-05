@@ -15,7 +15,7 @@ var mongo = require('../routes/mongo');
 var gcmsender = new gcm.Sender('AAAA8NbYOh0:APA91bHMyE-jTX-SX1kROJ-W-t-GSn9wIpyXqGPQOO8LHsLAp-EtO_CXgxGIT_8ic1ccRWDJ8VEiISLmHkayvDLtncd4nebcUh7jDkVUYT9G3IF4etaNvfj1uwBBdRPFT5NgYMZhr-qB');
 console.log("GCMSENDER", gcmsender);
 
-var gcm_enabled = true;
+var gcm_enabled = false;
 
 
 var tokens = [];
@@ -162,6 +162,11 @@ function testGCM(callback) {
 
 
 function sendToAll(obj, callback) {
+
+	if (!gcm_enabled) {
+		callback({ error: true, errmsg: "GCM not enabled"});
+		return;
+	};
 
 	var resp=[];
 

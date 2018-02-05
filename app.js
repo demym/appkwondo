@@ -19,7 +19,7 @@ var gcm = require('./routes/gcm');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
-var moment=require("moment");
+var moment = require("moment");
 var syncavfiles = true;
 
 var zip = new EasyZip();
@@ -28,7 +28,7 @@ var logActive = true;
 
 var superSecret = "inespugnabile"
 var tokenExpireMinutes = 60;
-var usewhitelist = true; //true=token is used     false=token is not used
+var usewhitelist = false; //true=token is used     false=token is not used
 
 process.on('uncaughtException', function (err) {
 	console.error(err);
@@ -137,6 +137,7 @@ app.use(function (req, res, next) {
 		"/clearlog?token=nonsientramai",
 		"/cordova.js",
 		"/img/favicon.ico",
+		"/tpss/",
 		"/favicon.ico"
 	]; //only these paths are allowed to proceed without providing a valid token
 
@@ -386,7 +387,7 @@ app.get('/', function (req, res) {
 	res.sendfile('index.html', {
 		root: path.join(__dirname, 'public')
 	});
-	
+
 });
 
 
@@ -402,6 +403,23 @@ app.use("/eventi", eventi)
 app.use("/users", users)
 app.use("/minimarket", minimarket)
 
+
+app.get("/prova", function (req, res) {
+	var cloudscraper = require('cloudscraper');
+
+	cloudscraper.get('https://www.tkdtechnology.it/index.php/welcome/tabulati_giorni?id=87', function (error, response, body) {
+		if (error) {
+			res.send({error: error});
+		} else {
+			//console.log(body, response);
+			var json={
+				body: body
+			}
+			res.send(json);
+		}
+	});
+	
+})
 
 
 app.get("/zipdata", function (req, res) {
@@ -445,6 +463,29 @@ app.get("/mongoprova", function (req, res) {
 		res.send(data);
 	});
 
+})
+
+
+app.post("/tpss/save/:filename", function (req, res) {
+	var fname = req.params.filename;
+	var body = req.body;
+	var json = body.json;
+
+	if (fname.toLowerCase().indexOf(".json") == -1) fname += ".json";
+	console.log("filename", fname);
+	console.log("saving following json", json.atleti_iscritti.length);
+
+
+
+	if (!json.hasOwnProperty("atleti")) json.atleti = [];
+	if (!json.hasOwnProperty("tabulati")) json.tabulati = [];
+	if (!json.hasOwnProperty("giorni")) json.giorni = [];
+
+	var rows = [json];
+
+	mongo.updatefile(fname, rows, function (data) {
+		res.send(data);
+	})
 })
 
 app.post("/crossd", function (req, res) {
@@ -975,10 +1016,10 @@ app.get("/importcsv", function (req, res) {
 			var docjson = {};
 			var foundnonblank = false;
 
-			var d=new Date();
-			var mom=moment(d).format("YYYYMMDDHHmmss")+utils.Right("000"+inserted,3);
-			docjson.id=mom;
-			docjson.imgurl="";
+			var d = new Date();
+			var mom = moment(d).format("YYYYMMDDHHmmss") + utils.Right("000" + inserted, 3);
+			docjson.id = mom;
+			docjson.imgurl = "";
 
 			values.forEach(function (item, idx) {
 				var campo = fields[idx];
@@ -1026,14 +1067,20 @@ app.get("/importcsv", function (req, res) {
 app.get("/gcm/resetcount/:token", function (req, res) {
 	var token = req.params.token;
 	gcm.resetTokenCount(token);
-	res.send({ error: false, tokens: gcm.viewTokens() });
+	res.send({
+		error: false,
+		tokens: gcm.viewTokens()
+	});
 })
 
 app.get("/gcm/setcount/:token/:n", function (req, res) {
 	var token = req.params.token;
 	var n = req.params.n;
 	gcm.setTokenCount(token, n);
-	res.send({ error: false, tokens: gcm.viewTokens() });
+	res.send({
+		error: false,
+		tokens: gcm.viewTokens()
+	});
 })
 
 
@@ -1369,7 +1416,9 @@ io.sockets.on('connection', function (socket) {
 
 			console.log("syncing rt", msg);
 			realtime.updateRealtimeMatches(msg);
-			socket.broadcast.emit("realtimematches", { matches: realtime.getRealtimeMatches() });
+			socket.broadcast.emit("realtimematches", {
+				matches: realtime.getRealtimeMatches()
+			});
 
 
 		}
@@ -1420,7 +1469,9 @@ io.sockets.on('connection', function (socket) {
 	});
 
 	socket.on("getrealtimematches", function () {
-		io.to(socket.id).emit("realtimematches", { matches: realtime.getRealtimeMatches() });
+		io.to(socket.id).emit("realtimematches", {
+			matches: realtime.getRealtimeMatches()
+		});
 	})
 
 
@@ -1601,5 +1652,3 @@ var peerserverport = 9000;
 //var peerserver = new PeerServer({port: peerserverport, allow_discovery: true});
 
 //app.use('/peerjs', peerserver(server, {debug: true, allow_discovery: true}));
-
-

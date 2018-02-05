@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <style type="text/css">
+  html *
+  {
+     font-size: 1em !important;
+     color: #000 !important;
+     font-family: Arial !important;
+  }
+
+  button {
+      padding: 5px;
+      background: silver;
+      
+      font-weight: bold;
+
+  }
+    .header {
+        background: cyan;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        border: 1px solid silver;
+    }
+    .content {
+        padding: 8px;
+    }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+                $(".content").hide();
+
+        })
+        function getTpss(html) {
+
+            var atls = [];
+
+            var html = $("textarea#html").val();
+            //console.log(html);
+            $("#content").html(html);
+
+            //return;
+
+            atls = [];
+            var table = $(document).find("table#Table1");
+            table.attr("border", "1");
+            console.log("table", table.length);
+            var totcat = "";
+            var catpeso = "";
+            var sesso = ""
+            table.find("tr").each(function () {
+
+                var tr = $(this);
+                tr.css("background", "#eee");
+                var cname = tr.get(0).className;
+                console.log(cname);
+                if (tr.hasClass("TableCaptionMonth")) {
+                    //if (tr.get(0).className=="TableCaptionMonth") {
+                    console.log("eccola");
+                    totcat = tr.find("td").text();
+                    console.log("CAT " + totcat);
+                    var cat = totcat.split(",")[0];
+
+                    var arr = cat.split(" ");
+                    catpeso = arr[1];
+                    sesso = "M";
+                    if (totcat.toLowerCase().indexOf("female") > -1) sesso = "F";
+                    console.log(catpeso);
+
+                }
+                if (!tr.hasClass("TableCaption") && !tr.hasClass("TableCaptionMonth")) {
+                    //if (tr.hasClass("TableText")) {
+                    //    if (tr.get(0).className=="TableText") {
+
+                    var nome = tr.find("td:eq(2)").text().trim() + " " + tr.find("td:eq(3)").text().trim();
+
+                    var squadra = tr.find("td:eq(6)").text().replace("ITA - ", "");
+
+                    console.log(nome);
+
+                    var atl = {
+                        sesso: sesso,
+                        cateta: "Cadetti A",
+                        cintura_da: "",
+                        cintura_a: "",
+                        catcintura: "Rossa (2° Kup) -> Nera 9° Dan",
+                        catpeso: catpeso,
+                        nome: nome,
+                        societa: squadra
+                    }
+                    atls.push(atl);
+                }
+
+
+            })
+            console.log(atls);
+
+            var json = {
+                atleti_iscritti: atls,
+                atleti: [],
+                tabulati: [],
+                giorni: []
+            }
+
+            $("textarea#tpss").val(JSON.stringify(json));
+
+            return json;
+
+        }
+
+
+        function saveTpss() {
+            var filename = $("input#filename").val();
+           
+            if (confirm("You are going to save JSON to file "+filename+". Are you sure ?")){
+           
+            var tjson=$("textarea#tpss").val();
+            var json=JSON.parse(tjson);
+            
+            console.log("filename",filename);
+            console.log("json",json)
+            var url="/tpss/save/"+filename;
+            var postdata={
+                json: json
+            }
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: postdata,
+                success: function(data){
+                    console.log("JSON saved into mongo file "+filename);
+                    console.log("response:",data);
+                    alert(JSON.stringify(data));
+                }
+            });
+        }
+        }
+
+
+        function toggleSection(obj){
+            $(obj).next(".content").toggle();
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <div class="header" onclick="toggleSection(this)">SOURCE HTML</div>
+       <div class="content">
+        <textarea id="html" cols="70" rows="10"></textarea>
+        </div>
+    </div>
+
+    <div>
+            <div class="header" onclick="toggleSection(this)">OUTPUT JSON</div>
+           <div class="content">
+   
+    <textarea id="tpss" cols="70" rows="10"></textarea>
+    </div>
+    </div>
+
+   <div>
+
+
+                <div class="header" onclick="toggleSection(this)">HTML TO JSON</div>
+                <div class="content">
+    <button onclick="getTpss()">CONVERT TPSSHTML TO JSON !</button>
+</div>
+</div>
+
+<div>
+    <div class="header" onclick="toggleSection(this)">SHOW HTML</div>
+    <div class="content">
+            <div id="content"></div>
+    </div>
+</div>
+
+
+<div>
+    <div class="header" onclick="toggleSection(this)">SAVE TO TKDT_TPSS FILENAME </div>
+    <div class="content">
+        <input type="text" id="filename" value="tkdt_" />
+        <button onclick="saveTpss()">SAVE TO TKDT_TPSS FILENAME</button>
+    </div>
+   
+</div>
+
+
+   
+</body>
+
+</html>
