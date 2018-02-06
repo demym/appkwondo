@@ -1084,6 +1084,21 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 				console.log("data", data);
 
 				realtime.syncRealtimeMatches(newrt);
+
+				/*var obj={
+					text: chatobj.nickname+" ha postato un'immagine",
+					title: "ChatKwonDo",
+					icon: "ic_launcher",
+					color: "#000000",
+					tag: "appkwondov2",
+					badge: "1",
+					topic: "appkwondov2",
+					token: ""
+				
+				}
+				gcm2.sendToAll(obj,function(data){
+					console.log("gcmsendtoall done",data);
+				})*/
 				/*	console.log("sending realtimematches");
 					io.emit("realtimematches", {
 						matches: realtime.getRealtimeMatches()

@@ -1,3 +1,5 @@
+//import { callbackPromise } from '../../../../../Library/Caches/typescript/2.6/node_modules/@types/nodemailer/lib/shared';
+
 var express = require('express');
 var router = express.Router();
 var request = require('request');
@@ -12,6 +14,10 @@ var sync = require('synchronize');
 var fiber = sync.fiber;
 var await = sync.await;
 var defer = sync.defer;
+
+var medagliere={
+
+}
 
 
 var tkdt_rooturl = "https://www.tkdtechnology.it/index.php/welcome/";
@@ -55,6 +61,81 @@ router.get("/tabulatoimage/:tabulatoid", function (req, res) {
 
 })
 
+router.get("/medaglieri/:garaid", function (req, res) {
+    var garaid = req.params.garaid;
+    var retvalue = {
+        error: false
+    }
+    getDaysForGara(garaid, function (data) {
+        //res.send(data);
+        if (!data.error) {
+            var giornate = data.giornate;
+            try {
+                fiber(function () {
+                    giornate.forEach(function (item, idx) {
+                        console.log("fibering " + item);
+                        if (item) {
+                           // var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + item;
+                            var obj = await (getMedaglieresave(item, defer(data)));
+                        }
+
+                        
+                    })
+
+
+                    var campo="medagliere"+giornate[0];
+                    var globale=extractMedagliereGlobale(medagliere[campo]);
+                    //var globale="";
+                    var finalhtm="";
+                    giornate.forEach(function(item,idx){
+                        campo="medagliere"+item;
+                        finalhtm+=medagliere[campo];
+                    })
+                    finalhtm+=globale;
+
+
+                    
+                    res.send(finalhtm)
+
+                });
+            } catch (err) {
+                //TODO Handle error
+                res.send(medagliere)
+            }
+        } else {
+            ret.error = true;
+            ret.err = err
+            res.send(ret)
+        }
+
+    })
+    /* getMedaglieriGara(giornoid, function (data) {
+         res.send(data);
+
+     })*/
+
+})
+
+function extractMedagliereGlobale(html){
+    var $ = cheerio.load(html, {
+        normalizeWhitespace: true,
+        xmlMode: false
+    });
+    var banner = $("#banner");
+    var titoloh3 = banner.find("h3");
+    //console.log(titoloh3[0]);
+
+    var titolo = titoloh3[0].children[0].data.trim();
+
+    var pos0 = html.indexOf('<div class="tab-pane fade" id="medagliere_globale">');
+    var htm = html.substring(pos0);
+
+    var pos1 = htm.indexOf("</table>");
+    htm = htm.substring(0, pos1) + "</div>";
+    htm = "<h1>" + titolo + "</h1><br>" + htm;
+    return htm;
+}
+
 router.get("/medagliere/:giornoid", function (req, res) {
     var giornoid = req.params.giornoid;
     getMedagliere(giornoid, function (data) {
@@ -64,6 +145,8 @@ router.get("/medagliere/:giornoid", function (req, res) {
     //var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + garaid;
 
 })
+
+
 
 router.get("/medagliereglobale/:giornoid", function (req, res) {
     var giornoid = req.params.giornoid;
@@ -120,7 +203,7 @@ router.get("/retrieve/:garaid", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;
 
-    getGaraDays(tkdt_garaid, function (data) {
+    getGaraDays(tkdt_garaid, function (ddata) {
 
         getTkdtGara(tkdt_garaid, function (data) {
             console.log("retrieved gara " + tkdt_garaid + " !");
@@ -232,6 +315,176 @@ function getCloudflareDayAsync(dayid, callback) {
 }
 
 
+
+function getMedaglieriGara(tkdt_garaid, callback) {
+    getGaraDays(tkdt_garaid, function (data) {
+        callback(data);
+    })
+}
+
+function getMedaglieriGaraOld(tkdt_garaid, callback) {
+
+
+    var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + tkdt_garaid;
+    console.log("requesting medaglierigara for " + tkdt_garaid + " at " + tabulatigiorni_url);
+    cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
+        if (!error) {
+
+
+            var $ = cheerio.load(html);
+            var banner = $("#banner");
+            var bscomponent = banner.find(".bs-component");
+
+            //console.log("bscomponent", bscomponent.length);
+            var htm = "";
+            var saveddays = [];
+            var giornate = [];
+
+            bscomponent.each(function (i, element) {
+                //console.log("bscomponent "+i+": ",element);
+                var giorno = {
+                    titolo: "",
+                    tabulati: [],
+                    medagliere: [],
+                    atleti: [],
+                    enabled: false,
+                    hasContent: false
+                }
+                //var a_arr = $(this).find($("a"));
+                var a_arr = $(element).find("a");
+                //console.log("a_arr",a_arr.length);
+                var a = a_arr;
+                var txt = a.attr("href");
+
+                //var txt = a.attributes.href;
+                //console.log("a attr href",txt);
+                var giornatagara = getQsFromUrl(txt, "id_giornata");
+                giornate.push(giornatagara);
+
+
+
+
+
+
+
+
+
+            });
+
+
+            var med = {
+                giorni: []
+            };
+
+            console.log("giornate", giornate);
+            try {
+                fiber(function () {
+                    giornate.forEach(function (item, idx) {
+                        console.log("fibering medagliere for " + item);
+                        if (item) {
+                            //var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + item;
+                            var obj1 = await (getGaraDays(item, defer()));
+                            console.log("preso " + item + " !!");
+
+
+                            med.giorni.push({
+                                dayid: item,
+                                html: obj1
+                            })
+                            //console.log("OBJ1",obj1);
+                        }
+
+                        saveddays.push(item);
+
+                    })
+                    callback({
+                        error: false,
+                        giornisalvati: saveddays,
+                        //med: med
+                    })
+
+                });
+            } catch (err) {
+                //TODO Handle error
+                callback({
+                    error: true
+                })
+
+            }
+
+
+
+        } else callback(error);
+
+    });
+
+
+}
+
+function getDaysForGara(tkdt_garaid, callback) {
+    var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + tkdt_garaid;
+    var retvalue = {
+        error: false
+    }
+    cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
+        if (!error) {
+
+
+            var $ = cheerio.load(html);
+            var banner = $("#banner");
+            var bscomponent = banner.find(".bs-component");
+
+            console.log("bscomponent", bscomponent.length);
+            var htm = "";
+            var saveddays = [];
+            var giornate = [];
+
+            bscomponent.each(function (i, element) {
+                //console.log("bscomponent "+i+": ",element);
+                var giorno = {
+                    titolo: "",
+                    tabulati: [],
+                    medagliere: [],
+                    atleti: [],
+                    enabled: false,
+                    hasContent: false
+                }
+                //var a_arr = $(this).find($("a"));
+                var a_arr = $(element).find("a");
+                //console.log("a_arr",a_arr.length);
+                var a = a_arr;
+                var txt = a.attr("href");
+
+                //var txt = a.attributes.href;
+                //console.log("a attr href",txt);
+                var giornatagara = getQsFromUrl(txt, "id_giornata");
+                giornate.push(giornatagara);
+
+
+
+
+
+
+
+
+
+            });
+            retvalue.giornate = giornate;
+            retvalue.error = false;
+        } else {
+            retvalue.error = true;
+            retvalue.err = error;
+
+
+        }
+
+        callback(retvalue);
+
+    });
+
+}
+
+
 function getGaraDays(tkdt_garaid, callback) {
     var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + tkdt_garaid;
     cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
@@ -285,6 +538,7 @@ function getGaraDays(tkdt_garaid, callback) {
                     giornate.forEach(function (item, idx) {
                         console.log("fibering " + item);
                         if (item) {
+                            //var url="http://tkdr.herokuapp.com/tkdt/medagliere/137?token=eyJhbGciOiJIUzI1NiJ9.ZGVteW1AeWFob28uaXQ.oTBSwtNyFE4OLWby0ATY4g-WUBd7OUPp-EaIv_r_2vQ"
                             var obj1 = await (getCloudflareDayAsync(item, defer()));
                         }
 
@@ -644,13 +898,39 @@ router.get("/getgiorno/:giornoid", function (req, res) {
 })
 
 function getAsyncUrl(url, callback) {
+    var retvalue={
+        error: false,
+        html: ""
+    }
     cloudscraper.get(url, function (error, response, html) {
         if (!error) {
-            callback(html);
-        } else callback(error);
+            //callback(html);
+            retvalue.html=html;
+           
+        } else {
+            
+            retvalue.error=true;
+            retvalue.err=error;
+        }
+        callback(retvalue)
 
 
     });
+}
+
+
+function getAsyncUrlSave(url, callback) {
+    cloudscraper.get(url, function (error, response, html) {
+        if (!error) {
+            fs.writeFileSync("data/tkdtdata/dettaglio_tabulati_" + dayid + ".html", html);
+            console.log("giorno " + dayid + " salvato !!!");
+            callback();
+        } else callback("<p>errore in getasyncurl, url: " + url + "</p>");
+
+
+    });
+
+
 }
 
 
@@ -1377,6 +1657,9 @@ String.prototype.replAll = function (search, replacement) {
 
 
 
+
+
+
 function getDataGiornata(titolo) {
     //utils.colog("getDataGiornata",titolo);
     var arr = titolo.trim().split(" ");
@@ -1425,16 +1708,26 @@ function getMedagliere(giornoid, callback) {
             htm = "<h1>" + titolo + "</h1><br>" + htm;
             callback(htm);
             return;
+        } else {
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+
+            callback(ehtm);
         }
     });
 }
 
 
-function getMedagliere_old(giornoid, callback) {
+function getMedaglieresave(giornoid, callback) {
     var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
     console.log("requesting tkdt url", url);
-    request(url, function (error, response, html) {
-        if (!error && response.statusCode == 200) {
+    var retvalue={
+        error:false,
+        html: ""
+    }
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        if (!error) {
             var $ = cheerio.load(html);
 
             var banner = $("#banner");
@@ -1447,109 +1740,34 @@ function getMedagliere_old(giornoid, callback) {
             var datagiornata = getDataGiornata(titolo);
             console.log(datagiornata);
 
-            var divcontent = $("#" + datagiornata);
 
-            var htm = divcontent.html();
+            var pos0 = html.indexOf('<div class="tab-pane fade" id="' + datagiornata + '">');
+            var htm = html.substring(pos0);
 
-            /*
+            var pos1 = htm.indexOf("</table>");
+            htm = htm.substring(0, pos1) + "</table></div>";
+            htm = "<h1>" + titolo + "</h1><br>" + htm;
+           /* fs.writeFileSync("data/tkdtdata/medagliere" + giornoid + ".html", html);*/
+            medagliere["medagliere"+giornoid]=htm;
+            console.log("giorno " + giornoid + " salvato in memoria !!!");
+            callback();
+        } else {
+            var err = JSON.stringify(error);
+            retvalue.error=true;
+            retvalue.err=err;
 
-            var tbody=divcontent.find("tbody");
-
-            var tr=tbody.find("tr");
-            console.log("tr",tr.length);
-
-            for (var i=0; i<tr.length; i++){
-
-                var td=$(tr[i]).find("td");
-                console.log("tdlength",td.length)
-                for (var j=0; j<td.length; j++){
-                    console.log(td[j].children[0].data.trim());
-
-
-                }
-
-
-
-
-            }*/
-
-            callback(htm);
+            console.log("ERRORE in getmedaglieresave "+giornoid);
+            
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+            retvalue.html=ehtm;
+            callback();
         }
     });
-
-
-
 }
 
 
-function getMedagliereGlobale_Old(giornoid, callback) {
-    var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
-    console.log("requesting tkdt url ", url);
-    request(url, function (error, response, html) {
-        if (!error && response.statusCode == 200) {
-            var $ = cheerio.load(html);
 
 
-            var banner = $("#banner");
-            var titoloh3 = banner.find("h3");
-            //console.log(titoloh3[0]);
-
-            var titolo = titoloh3[0].children[0].data.trim();
-
-            //console.log(titolo);
-            //var datagiornata=getDataGiornata(titolo);
-            // console.log(datagiornata);
-            var htm = "<p>Medagliere globale non disponibile</p>"
-            var divcontent = $("#medagliere_globale");
-
-            callback(htm);
-            return;
-
-            //console.log("medagliereglobale divcontent",divcontent);
-
-
-
-            try {
-                htm = divcontent.html();
-                console.log("medagliereglobale html", htm);
-            } catch (e) {
-                console.log("error!", e);
-
-            }
-            callback(htm);
-
-
-
-
-            /*
-
-            var tbody=divcontent.find("tbody");
-
-            var tr=tbody.find("tr");
-            console.log("tr",tr.length);
-
-            for (var i=0; i<tr.length; i++){
-
-                var td=$(tr[i]).find("td");
-                console.log("tdlength",td.length)
-                for (var j=0; j<td.length; j++){
-                    console.log(td[j].children[0].data.trim());
-
-
-                }
-
-
-
-
-            }*/
-
-
-        }
-    });
-
-
-
-}
 
 function getMedagliereGlobale(giornoid, callback) {
     var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
@@ -1577,7 +1795,50 @@ function getMedagliereGlobale(giornoid, callback) {
             callback(htm);
             return;
         } else {
-            callback("<p>Error in connection</p>");
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+
+            callback(ehtm);
+        }
+    });
+
+
+
+}
+
+
+function getMedagliereGlobaleSave(giornoid, callback) {
+    var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
+    console.log("requesting tkdt url ", url);
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        //if (!error && response.statusCode == 200) {
+        if (!error) {
+            var $ = cheerio.load(html, {
+                normalizeWhitespace: true,
+                xmlMode: false
+            });
+            var banner = $("#banner");
+            var titoloh3 = banner.find("h3");
+            //console.log(titoloh3[0]);
+
+            var titolo = titoloh3[0].children[0].data.trim();
+
+            var pos0 = html.indexOf('<div class="tab-pane fade" id="medagliere_globale">');
+            var htm = html.substring(pos0);
+
+            var pos1 = htm.indexOf("</table>");
+            htm = htm.substring(0, pos1) + "</div>";
+            htm = "<h1>" + titolo + "</h1><br>" + htm;
+            medagliere["medagliere"+giornoid+"_globale"]=htm;
+            console.log("medagliere globale per "+giornoid+" salvato in memoria !!")
+            callback();
+            return;
+        } else {
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+            console.log("errore in getmedagliereglobalesave "+giornoid,err);
+            callback();
         }
     });
 
