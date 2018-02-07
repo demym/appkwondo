@@ -1,15 +1,15 @@
 webpackJsonp([0],{
 
-/***/ 122:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -133,24 +133,24 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_gare_gare__ = __webpack_require__(481);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_atleti_atleti__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_servizisocieta_servizisocieta__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_gare_gare__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_atleti_atleti__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(539);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_servizisocieta_servizisocieta__ = __webpack_require__(151);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -466,7 +466,7 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -474,14 +474,16 @@ HomePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_map_map__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_filters_filters__ = __webpack_require__(493);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_map_map__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_filters_filters__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_lodash_cloneDeep__ = __webpack_require__(647);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_lodash_cloneDeep___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_lodash_cloneDeep__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -491,6 +493,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -600,10 +603,11 @@ var GaraPage = (function () {
         questo.loading = true;
         //questo.atletiiscritti = [];
         var atletiiscritti = [];
-        questo.backend.getGara(questo.garaid, function (data) {
-            //let data= Object.assign({}, d);
-            console.log("got gara", data, data.matchesbyatleta.rows.length);
-            questo.gara = data;
+        questo.backend.getGara(questo.garaid, function (d) {
+            var data = Object.assign({}, d);
+            console.log("got gara in getgara", data, data.matchesbyprog.rows.length);
+            // questo.gara = data;
+            questo.gara = Object.assign({}, data);
             console.log("sono qui");
             questo.jgara = data.gara.rows[0].doc;
             console.log("e poi qui");
@@ -653,16 +657,26 @@ var GaraPage = (function () {
                     return -1;
                 return 0;
             });
+            if (true) {
+                console.log("testpoint1, questo.gara", questo.gara.matchesbyprog.rows.length, questo.gara);
+                //callback();
+                //return;
+            }
             if (questo.filtersApplied) {
                 questo.displayedgara = questo.filterGara(questo.gara);
             }
-            else
-                questo.displayedgara = questo.gara;
+            else {
+                //questo.displayedgara = Object.assign({},questo.gara);
+                questo.displayedgara = __WEBPACK_IMPORTED_MODULE_10_lodash_cloneDeep__(questo.gara);
+                console.log("no filters to apply", questo.displayedgara, questo.gara);
+            }
+            console.log("questo.displayedgara", questo.displayedgara.matchesbyprog.rows.length, questo.displayedgara);
             var mbp = [];
             questo.displayedgara.matchesbyprog.rows.forEach(function (item, idx) {
                 if (item.doc.dadisputare == "yes")
                     mbp.push(item);
             });
+            console.log("mbp", mbp.length, mbp);
             questo.displayedgara.matchesbyprog.rows = mbp;
             console.log("displayedgara", questo.displayedgara);
             console.log("atletiiscritti", atletiiscritti);
@@ -672,7 +686,7 @@ var GaraPage = (function () {
             });
             questo.atletiiscritti = atletiiscritti;
             questo.loading = false;
-            questo.info.dadisputare = questo.backend.filterRows(questo.gara.matchesbyprog, { dadisputare: "yes" });
+            questo.info.dadisputare = questo.gara.matchesbyprog;
             questo.info.disputati = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes" });
             questo.info.vinti = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes", vinto: "yes" });
             questo.info.persi = questo.backend.filterRows(questo.gara.matchesbyprog, { disputato: "yes", vinto: "no" });
@@ -690,7 +704,7 @@ var GaraPage = (function () {
         var atletiiscritti = [];
         questo.backend.getCurrentGara(function (data) {
             //let data= Object.assign({}, d);
-            console.log("got gara", data, data.matchesbyatleta.rows.length);
+            console.log("got gara", data, data.matchesbyprog.rows.length);
             questo.gara = data;
             console.log("sono qui");
             questo.jgara = data.gara.rows[0].doc;
@@ -849,7 +863,7 @@ var GaraPage = (function () {
             if (item.doc.atletaid == aid)
                 mfa.push(item);
         });
-        console.log(mfa);
+        console.log("mfa", mfa);
         var questo = this;
         questo.backend.playFeedback();
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__["a" /* MatchesforatletaPage */], {
@@ -931,7 +945,8 @@ var GaraPage = (function () {
     };
     GaraPage.prototype.getMatches = function (atl) {
         var questo = this;
-        var arr = this.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id }, true);
+        // var arr=this.backend.filterRows(questo.backend.activegara.matchesbyprog,{atletaid: atl.id},true);
+        var arr = this.backend.filterRows(questo.gara.matchesbyprog, { atletaid: atl.id }, true);
         //console.log("getmatches",arr);
         return arr.rows.length;
     };
@@ -1214,25 +1229,24 @@ var GaraPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Navbar */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Navbar */])
 ], GaraPage.prototype, "navBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]) === "function" && _b || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
 ], GaraPage.prototype, "content", void 0);
 GaraPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-gara',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/'<!--\n  Generated template for the GaraPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n      <button *ngIf="hasMap()" ion-button style="font-size: 18px" (tap)="showMap()">\n        <ion-icon name="md-locate"></ion-icon>\n\n      </button>\n      <!--<button ion-button style="font-size: 18px" (tap)="gotoChat()">\n        <ion-icon name="md-chatbubbles">\n          <ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge>\n        </ion-icon>\n\n      </button>-->\n      <button ion-button style="font-size: 18px" (tap)="doRefreshStandAlone()">\n        <ion-icon name="md-refresh"></ion-icon>\n      </button>\n\n    </ion-buttons>\n  </ion-navbar>\n\n  <ion-toolbar class="stoolbar">\n    <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasMap()">\n            <ion-col>\n              <button ion-button small (tap)="showMap()">Visualizza mappa</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>&nbsp;</ion-col>\n            <ion-col>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Iscritti</ion-col>\n            <ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,\'iscritti\').femmine}}, M: {{getMaschiFemmine(iscritti,\'iscritti\').maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match disputati</ion-col>\n            <ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match vinti</ion-col>\n            <ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match persi</ion-col>\n            <ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{categoriecoperte.text}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">Punteggio totale medaglie: {{totalepunti}}</ion-col>\n          </ion-row>\n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </ion-item>\n      <!--<ion-item style="background: #eee; height: 10px !important; margin: 0px !important; padding: 0px !important;">-->\n      <ion-row style="background: #333">\n        <ion-col col-3>\n          <button (tap)="setFilters()" [ngClass]="getFiltersClass()" ion-button dark small>{{getFiltersText()}}</button>\n        </ion-col>\n        <ion-col col-9 style="text-align: right;">\n          <button ion-button (tap)="getMedagliereGlobale()" small class="filt medals" style="height: 20px; font-size: 14px; margin-right: 7px; justify-content: center;">\n            <span class="ori">ORI: {{getMedals().ori}}</span>\n            <span class="argenti">ARG: {{getMedals().arg}}</span>\n            <span class="bronzi">BRO: {{getMedals().bro}}</span>\n          </button>\n        </ion-col>\n      </ion-row>\n      <!--</ion-item>-->\n      <!--<ion-item *ngIf="gara.gara.rows.length>0" >{{gara.gara.rows[0].doc.title}}</ion-item>-->\n      <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n        <ion-segment-button value="matchesbyprog">\n          <!-- <ion-icon name="camera"></ion-icon>-->Per match\n        </ion-segment-button>\n        <ion-segment-button value="matchesbyatleta">\n          Per atleta\n        </ion-segment-button>\n        <ion-segment-button value="cronaca">\n          Cronaca\n        </ion-segment-button>\n        <ion-segment-button value="iscritti">\n          Iscritti\n        </ion-segment-button>\n        <!-- <ion-segment-button value="infogara">\n            Gara\n          </ion-segment-button>-->\n      </ion-segment>\n    </div>\n  </ion-toolbar>\n\n</ion-header>\n<!--\n<ion-tabs>\n  <ion-tab [root]="tab1Root"></ion-tab>\n  <ion-tab [root]="tab2Root"></ion-tab>\n  <ion-tab [root]="tab3Root"></ion-tab>\n</ion-tabs>\n-->\n\n<ion-content padding>\n\n  <!--<ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n    </ion-refresher-content>\n  </ion-refresher>-->\n\n  <ion-card *ngIf="showIscritti">\n    <ion-card-content style="text-align: center">\n      <span style="color: red">Nessun incontro trovato</span><br>\n      <div style="height: 105px; text-align: center">\n      <img style="width: 100px; height: 100px; margin: auto; " src="assets/img/fight.png" />\n    </div>\n    </ion-card-content>\n\n  </ion-card>\n  <section id="iscritti" *ngIf="showIscritti || (view==\'iscritti\')">\n    <div style="background: lightblue; padding: 8px;">\n\n      {{iscritti.length}} iscritti a questa gara\n\n    </div>\n\n    <ion-list *ngFor="let atl of atletiiscritti">\n    <ion-item no-lines class="iscrittiitem" >\n      <button ion-item (tap)="showMatchesForAtleta(atl.id)">\n\n      <ion-row>\n        <ion-col>\n            <div class="iscrittonome">{{atl.cognome}} {{atl.nome}}</div>\n            <div class="iscritti">{{atl.sesso}} - {{atl.categoria.toUpperCase()}} </div>\n            <div class="tkdtiscritti">{{atl.tkdtcat}}</div>\n\n        </ion-col>\n        <ion-col col-1>\n            <ion-badge>{{atl.nmatches}}</ion-badge>\n        </ion-col>\n      </ion-row>\n\n      \n  \n        <!--<div class="iscritti">{{atl.tkdtcategoria}}</div>-->\n\n\n      </button>\n\n    </ion-item>\n  </ion-list>\n\n    <!--<ion-item-divider color="light"></ion-item-divider>-->\n\n\n  </section>\n\n\n  <section id="matchesbyprog" [hidden]="view!=\'matchesbyprog\'" sngIf="view==\'matchesbyprog\'">\n\n    <ion-list>\n      <div *ngFor="let m of displayedgara.matchesbyprog.rows">\n        <ion-item *ngIf="m.doc.dadisputare==\'yes\'" (tap)="showMatchesForAtleta(m.doc.atletaid)">\n          <ion-row>\n            <ion-col col-2>\n              <img width="32" height="32" src="{{getImg(m)}}" />\n            </ion-col>\n            <ion-col>\n              <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n              <div class="atleta">{{m.doc.atletaname}}</div>\n              <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n              <!--<div class="tkdtiscritti">{{getTkdtAtleta(getAtletaIscritto(m.doc.atletaid))}}</div>-->\n              <!--<div class="iscritti">{{m.doc.tkdtcategoria}}</div>-->\n              <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n            </ion-col>\n          </ion-row>\n        </ion-item>\n      </div>\n    </ion-list>\n\n\n\n\n  </section>\n  <section id="matchesbyatleta" [hidden]="view!=\'matchesbyatleta\'" sngIf="view==\'matchesbyatleta\'">\n    <ion-list>\n      <ion-item *ngFor="let m of displayedgara.matchesbyatleta.rows" (tap)="showMatchesForAtleta(m.id)">\n        <ion-row>\n          <ion-col col-2>\n            <img width="32" height="32" src="{{getImgPerAtleta(m)}}" />\n          </ion-col>\n          <ion-col>\n\n            <div class="atleta">{{m.nome}}</div>\n            <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>\n            <!--<div class="iscritti">{{m.tkdtcategoria}}</div>-->\n            <div class="matches">\n              <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">\n                {{x.matchid}}\n              </span>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n\n\n  <section id="cronaca" [hidden]="view!=\'cronaca\'" sngIf="view==\'cronaca\'">\n    <ion-list>\n      <ion-item *ngFor="let m of gara.cronaca.rows">\n        <ion-row>\n\n          <ion-col>\n\n            <div class="time">{{getCronacaTime(m.time)}}</div>\n            <div class="text">{{m.text}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n  <section id="infogara" [hidden]="view!=\'infogara\'" sngIf="view==\'infogara\'">\n    <ion-list style="font-size: 14px">\n\n      <div>Gara: {{jgara.title}}</div>\n      <div>Location: {{jgara.location}}</div>\n      <div>Data: {{jgara.data}}</div>\n      <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>\n      <br>\n      <div>{{categoriecoperte.text}}</div>\n\n    </ion-list>\n\n  </section>\n\n  <!--<ion-fab right bottom *ngIf="realtimecount>0">\n       <button ion-fab style="font-size: 11px">LIVE!</button>\n     </ion-fab>-->\n\n</ion-content>'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/
+        selector: 'page-gara',template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/'<!--\n  Generated template for the GaraPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n      <button *ngIf="hasMap()" ion-button style="font-size: 18px" (tap)="showMap()">\n        <ion-icon name="md-locate"></ion-icon>\n\n      </button>\n      <!--<button ion-button style="font-size: 18px" (tap)="gotoChat()">\n        <ion-icon name="md-chatbubbles">\n          <ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge>\n        </ion-icon>\n\n      </button>-->\n      <button ion-button style="font-size: 18px" (tap)="doRefreshStandAlone()">\n        <ion-icon name="md-refresh"></ion-icon>\n      </button>\n\n    </ion-buttons>\n  </ion-navbar>\n\n  <ion-toolbar class="stoolbar">\n    <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasMap()">\n            <ion-col>\n              <button ion-button small (tap)="showMap()">Visualizza mappa</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>&nbsp;</ion-col>\n            <ion-col>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Iscritti</ion-col>\n            <ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,\'iscritti\').femmine}}, M: {{getMaschiFemmine(iscritti,\'iscritti\').maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match da disputare</ion-col>\n            <ion-col class="infobold">{{info.dadisputare.rows.length}} (F: {{getMaschiFemmine(info.dadisputare).femmine}}, M: {{getMaschiFemmine(info.dadisputare).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match disputati</ion-col>\n            <ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match vinti</ion-col>\n            <ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match persi</ion-col>\n            <ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{categoriecoperte.text}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">Punteggio totale medaglie: {{totalepunti}}</ion-col>\n          </ion-row>\n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </ion-item>\n      <!--<ion-item style="background: #eee; height: 10px !important; margin: 0px !important; padding: 0px !important;">-->\n      <ion-row style="background: #333">\n        <ion-col col-3>\n          <button (tap)="setFilters()" [ngClass]="getFiltersClass()" ion-button dark small>{{getFiltersText()}}</button>\n        </ion-col>\n        <ion-col col-9 style="text-align: right;">\n          <button ion-button (tap)="getMedagliereGlobale()" small class="filt medals" style="height: 20px; font-size: 14px; margin-right: 7px; justify-content: center;">\n            <span class="ori">ORI: {{getMedals().ori}}</span>\n            <span class="argenti">ARG: {{getMedals().arg}}</span>\n            <span class="bronzi">BRO: {{getMedals().bro}}</span>\n          </button>\n        </ion-col>\n      </ion-row>\n      <!--</ion-item>-->\n      <!--<ion-item *ngIf="gara.gara.rows.length>0" >{{gara.gara.rows[0].doc.title}}</ion-item>-->\n      <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n        <ion-segment-button value="matchesbyprog">\n          <!-- <ion-icon name="camera"></ion-icon>-->Per match\n        </ion-segment-button>\n        <ion-segment-button value="matchesbyatleta">\n          Per atleta\n        </ion-segment-button>\n        <ion-segment-button value="cronaca">\n          Cronaca\n        </ion-segment-button>\n        <ion-segment-button value="iscritti">\n          Iscritti\n        </ion-segment-button>\n        <!-- <ion-segment-button value="infogara">\n            Gara\n          </ion-segment-button>-->\n      </ion-segment>\n    </div>\n  </ion-toolbar>\n\n</ion-header>\n<!--\n<ion-tabs>\n  <ion-tab [root]="tab1Root"></ion-tab>\n  <ion-tab [root]="tab2Root"></ion-tab>\n  <ion-tab [root]="tab3Root"></ion-tab>\n</ion-tabs>\n-->\n\n<ion-content padding>\n\n  <!--<ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n    </ion-refresher-content>\n  </ion-refresher>-->\n\n  <ion-card *ngIf="showIscritti">\n    <ion-card-content style="text-align: center">\n      <span style="color: red">Nessun incontro trovato</span><br>\n      <div style="height: 105px; text-align: center">\n      <img style="width: 100px; height: 100px; margin: auto; " src="assets/img/fight.png" />\n    </div>\n    </ion-card-content>\n\n  </ion-card>\n  <section id="iscritti" *ngIf="showIscritti || (view==\'iscritti\')">\n    <div style="background: lightblue; padding: 8px;">\n\n      {{iscritti.length}} iscritti a questa gara\n\n    </div>\n\n    <ion-list *ngFor="let atl of atletiiscritti">\n    <ion-item no-lines class="iscrittiitem" >\n      <button ion-item (tap)="showMatchesForAtleta(atl.id)">\n\n      <ion-row>\n        <ion-col>\n            <div class="iscrittonome">{{atl.cognome}} {{atl.nome}}</div>\n            <div class="iscritti">{{atl.sesso}} - {{atl.categoria.toUpperCase()}} </div>\n            <div class="tkdtiscritti">{{atl.tkdtcat}}</div>\n\n        </ion-col>\n        <ion-col col-1>\n            <ion-badge>{{atl.nmatches}}</ion-badge>\n        </ion-col>\n      </ion-row>\n\n      \n  \n        <!--<div class="iscritti">{{atl.tkdtcategoria}}</div>-->\n\n\n      </button>\n\n    </ion-item>\n  </ion-list>\n\n    <!--<ion-item-divider color="light"></ion-item-divider>-->\n\n\n  </section>\n\n\n  <section id="matchesbyprog" [hidden]="view!=\'matchesbyprog\'" sngIf="view==\'matchesbyprog\'">\n\n    <ion-list>\n      <div *ngFor="let m of displayedgara.matchesbyprog.rows">\n        <ion-item *ngIf="m.doc.dadisputare==\'yes\'" (tap)="showMatchesForAtleta(m.doc.atletaid)">\n          <ion-row>\n            <ion-col col-2>\n              <img width="32" height="32" src="{{getImg(m)}}" />\n            </ion-col>\n            <ion-col>\n              <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n              <div class="atleta">{{m.doc.atletaname}}</div>\n              <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n              <!--<div class="tkdtiscritti">{{getTkdtAtleta(getAtletaIscritto(m.doc.atletaid))}}</div>-->\n              <!--<div class="iscritti">{{m.doc.tkdtcategoria}}</div>-->\n              <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n            </ion-col>\n          </ion-row>\n        </ion-item>\n      </div>\n    </ion-list>\n\n\n\n\n  </section>\n  <section id="matchesbyatleta" [hidden]="view!=\'matchesbyatleta\'" sngIf="view==\'matchesbyatleta\'">\n    <ion-list>\n      <ion-item *ngFor="let m of displayedgara.matchesbyatleta.rows" (tap)="showMatchesForAtleta(m.id)">\n        <ion-row>\n          <ion-col col-2>\n            <img width="32" height="32" src="{{getImgPerAtleta(m)}}" />\n          </ion-col>\n          <ion-col>\n\n            <div class="atleta">{{m.nome}}</div>\n            <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>\n            <!--<div class="iscritti">{{m.tkdtcategoria}}</div>-->\n            <div class="matches">\n              <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">\n                {{x.matchid}}\n              </span>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n\n\n  <section id="cronaca" [hidden]="view!=\'cronaca\'" sngIf="view==\'cronaca\'">\n    <ion-list>\n      <ion-item *ngFor="let m of gara.cronaca.rows">\n        <ion-row>\n\n          <ion-col>\n\n            <div class="time">{{getCronacaTime(m.time)}}</div>\n            <div class="text">{{m.text}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n  <section id="infogara" [hidden]="view!=\'infogara\'" sngIf="view==\'infogara\'">\n    <ion-list style="font-size: 14px">\n\n      <div>Gara: {{jgara.title}}</div>\n      <div>Location: {{jgara.location}}</div>\n      <div>Data: {{jgara.data}}</div>\n      <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>\n      <br>\n      <div>{{categoriecoperte.text}}</div>\n\n    </ion-list>\n\n  </section>\n\n  <!--<ion-fab right bottom *ngIf="realtimecount>0">\n       <button ion-fab style="font-size: 11px">LIVE!</button>\n     </ion-fab>-->\n\n</ion-content>'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], GaraPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=gara.js.map
 
 /***/ }),
 
-/***/ 129:
+/***/ 149:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1240,7 +1254,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1350,17 +1364,17 @@ AccountPage = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 150:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(540);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1475,15 +1489,15 @@ AboutPage = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 151:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServizisocietaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1556,7 +1570,7 @@ ServizisocietaPage = __decorate([
 
 /***/ }),
 
-/***/ 141:
+/***/ 161:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1569,11 +1583,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 141;
+webpackEmptyAsyncContext.id = 161;
 
 /***/ }),
 
-/***/ 183:
+/***/ 203:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1586,11 +1600,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 183;
+webpackEmptyAsyncContext.id = 203;
 
 /***/ }),
 
-/***/ 32:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1598,12 +1612,12 @@ webpackEmptyAsyncContext.id = 183;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(589);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(626);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2003,16 +2017,16 @@ SocketService = __decorate([
 
 /***/ }),
 
-/***/ 347:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_tabs_tabs__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_tabs_tabs__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2190,28 +2204,28 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 38:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatfoto_chatfoto__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(485);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__ = __webpack_require__(488);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__ = __webpack_require__(491);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatfoto_chatfoto__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__ = __webpack_require__(511);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3515,39 +3529,46 @@ var ChatPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Navbar */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Navbar */])
 ], ChatPage.prototype, "navBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('virtualScroll', { read: __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["u" /* VirtualScroll */] }),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["u" /* VirtualScroll */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["u" /* VirtualScroll */]) === "function" && _b || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["u" /* VirtualScroll */])
 ], ChatPage.prototype, "virtualScroll", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */]),
-    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */]) === "function" && _c || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */])
 ], ChatPage.prototype, "content", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('content'),
-    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */]) === "function" && _d || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Content */])
 ], ChatPage.prototype, "chatcontent", void 0);
 ChatPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/chat/chat_infinity.html"*/'<!--<ion-menu [content]="content" menuToggle="right" side="right">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menuright</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n  </ion-content>\n</ion-menu>-->\n\n\n\n<ion-header>\n   \n  <ion-navbar>\n     \n  \n      <button ion-button menuToggle="left" start>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n       <ion-title>ChatKwonDo</ion-title>\n       <ion-buttons end>\n          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-dropup-circle"></ion-icon></button>\n    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-dropdown-circle"></ion-icon></button>\n    <button *ngIf="backend.user.role!=\'tkdradmin\'" ion-button class="menubutton" (click)="goRefresh(); backend.playFeedback();"><ion-icon name="md-refresh"></ion-icon></button>\n    <!--<button class="menubutton" *ngIf="backend.user.role==\'tkdradmin\'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>\n    <button class="menubutton" *ngIf="backend.user.role==\'tkdradmin\'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>\n    <button ion-button menuToggle="right">\n      <ion-icon name="menu"></ion-icon>\n    </button>-->\n    <button *ngIf="backend.user.role==\'tkdradmin\'" ion-button icon-only (click)="showPop($event)">\n      <ion-icon name="md-more"></ion-icon>\n    </button>\n    </ion-buttons>\n     <!--  <ion-buttons end>\n          <button ion-button class="menubutton"  (tap)="gotoTop(); backend.playFeedback();"><ion-icon name="md-arrow-up"></ion-icon></button>\n    <button ion-button class="menubutton" (click)="gotoBottom(); backend.playFeedback();"><ion-icon name="md-arrow-down"></ion-icon></button>\n    <button class="menubutton" *ngIf="backend.user.role==\'tkdradmin\'" ion-button  (click)="resetChat(); backend.playFeedback();"><ion-icon name="ios-filing"></ion-icon></button>\n    <button class="menubutton" *ngIf="backend.user.role==\'tkdradmin\'" ion-button  (click)="selectChat(); backend.playFeedback();"><ion-icon name="ios-list-box-outline"></ion-icon></button>\n    <button ion-button menuToggle="right">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    </ion-buttons>-->\n        <!--<ion-grid class="no-padding">\n          <ion-row>\n            <ion-col width-20>\n             \n            </ion-col>\n            <ion-col>\n\n              <ion-row>\n                <ion-col>\n                  <span class="friendnick">{{friend.doc.firstname}} {{friend.doc.lastname}}</span>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n\n                <ion-col>\n                  <span class="friendmail">{{friend.doc.email}}</span>\n                </ion-col>\n              </ion-row>\n\n\n            </ion-col>\n            <ion-col width-20>\n              <span class="status" [ngClass]="friend.connected ? \'onlinechat\' : \'offlinechat\'">{{friend.connected ? \'ONLINE\' : \'OFFLINE\'}}</span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>-->\n        <!--</ion-title>-->\n      </ion-navbar>\n\n   <!-- <ion-card>-->\n\n      \n\n\n\n\n    <!--</ion-card>-->\n    <section sstyle="position: fixed; top: 65px; width: 100%; height: 40px; z-index: 9000;" id="realtime" *ngIf="rtmatches.length>0">\n      \n        <ion-item class="rtmatches" *ngFor="let rt of rtmatches">\n          <ion-row>\n            <ion-col col-2><img src="assets/img/greenblink.gif" /></ion-col>\n            <ion-col>\n            <ion-row><ion-col><div class="match">{{rt.match.matchid}} - {{rt.match.atletaname}}</div></ion-col></ion-row>\n            <ion-row><ion-col><div class="match" [innerHTML]="rt.text"></div></ion-col></ion-row>\n            </ion-col>\n          </ion-row>\n          </ion-item>\n      \n  \n    </section>  \n  \n    <div style="text-align: center; z-index: 9000">\n      <ion-chip  (tap)="tapChip()" *ngIf="false" color="secondary">\n        <ion-label color="dark">Nuovi messaggi non letti</ion-label>\n      </ion-chip>\n    </div>\n\n</ion-header>\n\n\n<ion-content id="chat" class="chat" (ionScroll)="onScroll($event)">\n    <ion-fab right>\n        <button color="light" (tap)="toggleVoice()" ion-fab><ion-icon [name]="getVoiceIcon()"></ion-icon></button>\n      </ion-fab>\n   <!--<ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n        </ion-refresher-content>\n  </ion-refresher>  -->\n  \n  <!--<div [ngClass]="friend.connected ? \'\' : \'overlay\'"></div>-->\n  <div *ngIf="loading" style="text-align:center"><ion-spinner  text-center name="ios" *ngIf="loading"></ion-spinner></div>\n  \n  <div class="messages"> \n      <!--<ion-infinite-scroll position="top" (ionInfinite)="doPrevInfinite($event)" >\n          <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>\n        </ion-infinite-scroll>-->\n    <button class="prevnext" (tap)="prevPage(buffer)" ion-button block color="light" *ngIf="showprev">Messaggi precedenti</button>\n    <!-- *ngFor="let m of msgs" -->\n\n  \n    <ion-list  *ngFor="let m of pageframe; let i=index;" > <!--*ngFor="let m of msgs"-->\n      <!--<ion-item *ngIf="dateChanged(m,i)" class="datachange">{{getOnlyDate(m.time)}}</ion-item>-->\n\n      <!-- ex ion-item -->\n      <ion-item (press)="shareItem(m)" class="message"  [ngClass]="(m.nickname===me.nickname) ? \'message me\': (m.color==\'yellow\') ? \'message system\' : \'message\'">\n       \n          <div class="msgemail">{{m.nickname}}    <span class="date">{{ getNormalDate(m.time) }}</span></div> \n       \n         <div  *ngIf="m.foto" class="divcont">  \n      <img class="ionimg" (press)="shareFoto(m.foto)" (tap)="openFoto(m.foto,m)" [src]="getBase64(m.foto)" />\n      </div><br *ngIf="m.foto">\n      <div  *ngIf="m.fotourl && !m.foto" class="divcont">  <!-- (press)="shareFoto(m.fotourl)" -->\n      <img class="ionimg"  (tap)="openFoto(m.fotourl,m)" [src]="m.fotourl" />\n      </div><br *ngIf="m.fotourl && !m.foto">\n\n      <!--<img-loader *ngIf="m.fotourl" [src]="m.fotourl"></img-loader>-->\n        <div  *ngIf="m.audio" class="divcont">  <!--(press)="shareAudio(m)"-->\n            <!--<audio-track #audio   [track]="getTrack(m)" (onFinish)="onTrackFinished($event)">\n            <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  \n            <audio-track-progress-bar dark duration progress [audioTrack]="audio" ></audio-track-progress-bar>\n            </audio-track>-->\n      <audio   style="width: 100%" *ngIf="m.audio && !isCordova()" [src]="domSanitizer.bypassSecurityTrustUrl(m.audio)" controls>\n    Your browser does not support the audio element.\n     </audio><br>\n     <button ion-button *ngIf="m.audiourl && !isCordova()" (tap)="openAudioUrl(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>\n     <button *ngIf="isCordova() || isCordovaIOS()" ion-button style="height: 40px;" (tap)="downloadFileAndPlay(m.audiourl)"><ion-icon name="md-play"></ion-icon>&nbsp;Messaggio vocale</button>\n    </div><br *ngIf="m.audio"> \n\n\n     \n\n    \n    \n\n      \n      <span  (press)="shareText(m.text)" *ngIf="m.text.trim()!=\'\'" class="msgtext">{{ m.text }}</span><br *ngIf="m.text.trim()!=\'\'" >\n     \n  </ion-item>  <!-- ex ion-item -->\n    </ion-list>\n    <button class="prevnext" (tap)="nextPage(buffer)" ion-button block color="light" *ngIf="shownext">Messaggi successivi</button>\n    <!--<ion-infinite-scroll position="bottom" (ionInfinite)="doNextInfinite($event)" >\n        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>\n      </ion-infinite-scroll>-->\n    \n    <!--<audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">\n      <ion-item>  \n        <ion-thumbnail item-left>\n          <img src="{{audio.art}}">\n          <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  \n        </ion-thumbnail>\n        <div item-content style="width:100%">\n          <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>\n          <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? \'visible\' : \'hidden\'}"></audio-track-progress-bar>\n        </div>\n      </ion-item>    \n    </audio-track>-->\n    </div>\n  \n   \n \n\n\n\n\n</ion-content>\n<ion-footer>\n  <!--<div class="bottom_bar">-->\n \n    <ion-grid >\n      <ion-row >\n        <ion-col >\n          <ion-icon *ngIf="showCameraIcon" class="cameraicon" (tap)="takeFoto()" name="md-camera"></ion-icon>\n          <!--<ion-textarea (ionFocus)="focus()" (ionBlur)="blur($event)" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)" style="height: 40px; font-size: 16px; margin: 0px 0px;" > </ion-textarea>-->\n          <ion-input (ionFocus)="focus()" (ionBlur)="blur($event)" type="text" class="inputtext" placeholder="Digita qui il tuo messaggio" [(ngModel)]="msg" (keypress)="keyPress($event)"></ion-input>\n        </ion-col>\n        <ion-col col-2 *ngIf="chatButton==\'audio\'">\n          <button style="height: 40px" block [ngClass]="recording ? \'chatbutton recording\' : \'chatbutton\'" ion-button (tap)="toggleRecording()"> <i style="font-size: 24px;" class="fa fa-microphone faBlue"></i><!-- <ion-icon name="md-microphone"></ion-icon>--></button> \n          </ion-col>\n               <ion-col *ngIf="chatButton==\'text\'" col-2>\n          <button  class="chatbutton" ion-button (click)="sendMessage()"><ion-icon name="md-send"></ion-icon></button> \n          </ion-col>\n      </ion-row>\n    </ion-grid>\n\n\n    <div *ngIf="recording" class="audiorecording">Registrazione in corso... premi il microfono per interrompere</div>\n  <!--</div>-->\n</ion-footer>'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/chat/chat_infinity.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* PopoverController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* MenuController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* AlertController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__["a" /* SocialSharing */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__["a" /* SocialSharing */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__["a" /* FileTransfer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__["a" /* FileTransfer */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__["a" /* Camera */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__["a" /* File */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__["a" /* File */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* Platform */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* Nav */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */]) === "function" && _t || Object, typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicApp */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicApp */]) === "function" && _u || Object, typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* Events */]) === "function" && _v || Object, typeof (_w = typeof __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _w || Object, typeof (_x = typeof __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__["a" /* MediaPlugin */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__["a" /* MediaPlugin */]) === "function" && _x || Object, typeof (_y = typeof __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__["a" /* StreamingMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__["a" /* StreamingMedia */]) === "function" && _y || Object, typeof (_z = typeof __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _z || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* PopoverController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__["a" /* SocialSharing */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__["a" /* FileTransfer */], __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__["a" /* Camera */], __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__["a" /* File */], __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* Nav */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicApp */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* Events */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__["a" /* SocketService */],
+        __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__["a" /* MediaPlugin */],
+        __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__["a" /* StreamingMedia */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__["a" /* BackendProvider */]])
 ], ChatPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
 //# sourceMappingURL=chat.js.map
 
 /***/ }),
 
-/***/ 42:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtilsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3623,7 +3644,7 @@ UtilsProvider = __decorate([
 
 /***/ }),
 
-/***/ 481:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3631,9 +3652,9 @@ UtilsProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_gara_gara__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editgara_editgara__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_gara_gara__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editgara_editgara__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3924,7 +3945,7 @@ GarePage = __decorate([
 
 /***/ }),
 
-/***/ 482:
+/***/ 502:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3932,8 +3953,8 @@ GarePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__ = __webpack_require__(483);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4517,7 +4538,7 @@ MatchesforatletaPage = __decorate([
 
 /***/ }),
 
-/***/ 483:
+/***/ 503:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4525,8 +4546,8 @@ MatchesforatletaPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4913,7 +4934,7 @@ MatchconsolePage = __decorate([
 
 /***/ }),
 
-/***/ 484:
+/***/ 504:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5028,7 +5049,7 @@ ChatfotoPage = __decorate([
 
 /***/ }),
 
-/***/ 485:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5111,7 +5132,7 @@ ChatlistPage = __decorate([
 
 /***/ }),
 
-/***/ 486:
+/***/ 506:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5167,14 +5188,14 @@ PopoverPage = __decorate([
 
 /***/ }),
 
-/***/ 492:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5228,7 +5249,7 @@ MapPage = __decorate([
 
 /***/ }),
 
-/***/ 493:
+/***/ 513:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5305,7 +5326,7 @@ FiltersPage = __decorate([
 
 /***/ }),
 
-/***/ 494:
+/***/ 514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5763,7 +5784,7 @@ MedagliereglobalePage = __decorate([
 
 /***/ }),
 
-/***/ 495:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6188,7 +6209,7 @@ EditgaraPage = __decorate([
 
 /***/ }),
 
-/***/ 496:
+/***/ 533:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6196,8 +6217,8 @@ EditgaraPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__ = __webpack_require__(534);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__ = __webpack_require__(536);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6461,7 +6482,7 @@ AtletiPage = __decorate([
 
 /***/ }),
 
-/***/ 497:
+/***/ 534:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6469,7 +6490,7 @@ AtletiPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_google_google__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_google_google__ = __webpack_require__(535);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6535,14 +6556,14 @@ AtletaPage = __decorate([
 
 /***/ }),
 
-/***/ 498:
+/***/ 535:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleDriveProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6612,7 +6633,7 @@ GoogleDriveProvider = __decorate([
 
 /***/ }),
 
-/***/ 499:
+/***/ 536:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6704,7 +6725,7 @@ EditatletaPage = __decorate([
 
 /***/ }),
 
-/***/ 500:
+/***/ 537:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6712,7 +6733,7 @@ EditatletaPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_gara_gara__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_gara_gara__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6836,7 +6857,7 @@ EventiPage = __decorate([
 
 /***/ }),
 
-/***/ 501:
+/***/ 538:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6915,7 +6936,7 @@ SocietaPage = __decorate([
 
 /***/ }),
 
-/***/ 502:
+/***/ 539:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7103,14 +7124,14 @@ StatsPage = __decorate([
 
 /***/ }),
 
-/***/ 503:
+/***/ 540:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7157,7 +7178,7 @@ FacebookProvider = __decorate([
 
 /***/ }),
 
-/***/ 504:
+/***/ 541:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7165,9 +7186,9 @@ FacebookProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(543);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7446,7 +7467,7 @@ ProductsPage = __decorate([
 
 /***/ }),
 
-/***/ 505:
+/***/ 542:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7454,7 +7475,7 @@ ProductsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7626,7 +7647,7 @@ CartPage = __decorate([
 
 /***/ }),
 
-/***/ 506:
+/***/ 543:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7760,7 +7781,7 @@ EditproductPage = __decorate([
 
 /***/ }),
 
-/***/ 507:
+/***/ 544:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7954,7 +7975,7 @@ OrdersPage = __decorate([
 
 /***/ }),
 
-/***/ 508:
+/***/ 545:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8029,7 +8050,7 @@ RegisterPage = __decorate([
 
 /***/ }),
 
-/***/ 509:
+/***/ 546:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8277,7 +8298,7 @@ UsersPage = __decorate([
 
 /***/ }),
 
-/***/ 510:
+/***/ 547:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8345,7 +8366,7 @@ ConnectionsPage = __decorate([
 
 /***/ }),
 
-/***/ 512:
+/***/ 549:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8402,7 +8423,7 @@ SettingsPage = __decorate([
 
 /***/ }),
 
-/***/ 513:
+/***/ 550:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8648,13 +8669,13 @@ RtcPage = __decorate([
 
 /***/ }),
 
-/***/ 516:
+/***/ 553:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(572);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 
 
@@ -8666,85 +8687,85 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 535:
+/***/ 572:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(575);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(610);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatlist_chatlist__ = __webpack_require__(485);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatpopover_chatpopover__ = __webpack_require__(611);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chatfoto_chatfoto__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_twitter_twitter__ = __webpack_require__(612);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_partnerworld_partnerworld__ = __webpack_require__(613);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_linkedin_linkedin__ = __webpack_require__(614);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_contacts_contacts__ = __webpack_require__(615);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_browser_browser__ = __webpack_require__(616);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabs_tabs__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_settings_settings__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_account_account__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_bp_bp__ = __webpack_require__(617);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_gare_gare__ = __webpack_require__(481);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_gara_gara__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_editgara_editgara__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_atleti_atleti__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_atleta_atleta__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_matchconsole_matchconsole__ = __webpack_require__(483);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_eventi_eventi__ = __webpack_require__(500);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_societa_societa__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_stats_stats__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_filters_filters__ = __webpack_require__(493);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_map_map__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_register_register__ = __webpack_require__(508);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_users_users__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_connections_connections__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_servizisocieta_servizisocieta__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_products_products__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_editatleta_editatleta__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_orders_orders__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(612);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatlist_chatlist__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatpopover_chatpopover__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chatfoto_chatfoto__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_twitter_twitter__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_partnerworld_partnerworld__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_linkedin_linkedin__ = __webpack_require__(722);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_contacts_contacts__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_browser_browser__ = __webpack_require__(724);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabs_tabs__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_settings_settings__ = __webpack_require__(549);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_account_account__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_bp_bp__ = __webpack_require__(725);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_gare_gare__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_gara_gara__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_editgara_editgara__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_atleti_atleti__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_atleta_atleta__ = __webpack_require__(534);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_matchconsole_matchconsole__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_eventi_eventi__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_societa_societa__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_stats_stats__ = __webpack_require__(539);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_filters_filters__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_map_map__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_register_register__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_users_users__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_connections_connections__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_servizisocieta_servizisocieta__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_products_products__ = __webpack_require__(541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cart_cart__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_rtc_rtc__ = __webpack_require__(550);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_editproduct_editproduct__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_editatleta_editatleta__ = __webpack_require__(536);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_orders_orders__ = __webpack_require__(544);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_google_google__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(618);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_scrollable_segments_scrollable_segments__ = __webpack_require__(619);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_utils_utils__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__ionic_native_badge__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_storage__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_app_availability__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_splash_screen__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_device_feedback__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_file__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_camera__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_transfer__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__ionic_native_social_sharing__ = __webpack_require__(488);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61_ionic_image_loader__ = __webpack_require__(620);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_local_notifications__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_text_to_speech__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_background_mode__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__providers_facebook_facebook__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_media__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__ionic_native_file_transfer__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_streaming_media__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__ionic_native_android_permissions__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70_ng_elastic__ = __webpack_require__(623);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_google_google__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_scrollable_segments_scrollable_segments__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_utils_utils__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__ionic_native_badge__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_storage__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_app_availability__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_splash_screen__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_device_feedback__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__angular_http__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_file__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_camera__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_transfer__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__ionic_native_social_sharing__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61_ionic_image_loader__ = __webpack_require__(728);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_local_notifications__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_text_to_speech__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_background_mode__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__providers_facebook_facebook__ = __webpack_require__(540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_media__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__ionic_native_file_transfer__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_streaming_media__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__ionic_native_android_permissions__ = __webpack_require__(548);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70_ng_elastic__ = __webpack_require__(731);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_70_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_70_ng_elastic__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__ionic_native_unique_device_id__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__ionic_native_unique_device_id__ = __webpack_require__(488);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8976,758 +8997,27 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 575:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__ = __webpack_require__(121);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var MyApp = (function () {
-    function MyApp(backgroundMode, androidPermissions, toastCtrl, deviceFeedback, app, _SplashScreen, events, alertCtrl, platform, backend) {
-        var _this = this;
-        this.backgroundMode = backgroundMode;
-        this.androidPermissions = androidPermissions;
-        this.toastCtrl = toastCtrl;
-        this.deviceFeedback = deviceFeedback;
-        this.app = app;
-        this._SplashScreen = _SplashScreen;
-        this.events = events;
-        this.alertCtrl = alertCtrl;
-        this.platform = platform;
-        this.backend = backend;
-        this.user = {
-            firstname: "Demosio",
-            lastname: "Cioc",
-            email: "demymortelliti@it.ibm.com",
-            role: "IBM BP",
-            userphoto: ""
-        };
-        this.icons = [
-            "md-settings",
-            "md-person",
-            "md-information-circle",
-            "ios-people",
-            "md-wifi",
-            "md-videocam",
-            "md-git-network",
-            "md-exit",
-            "md-close-circle"
-        ];
-        this.isChatPage = false;
-        this.realtimeEvents = false;
-        this.showrtbutton = false;
-        this.chatunread = 0;
-        //rootPage = TabsPage;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
-        var questo = this;
-        questo.detectEnvironment();
-        var IS_PRODUCTION = questo.backend.isProduction;
-        if (IS_PRODUCTION) {
-            console.log("LOGGER IS DISABBLED!!!");
-            backend.disableLogger();
-        }
-        if (!platform.is("cordova")) {
-            console.log("NOT cordova !");
-            if (platform.is("ios"))
-                console.log("IOS in webbrowser !!");
-        }
-        this.initializeApp();
-        // used for an example of ngFor and navigation
-        this.pages = [
-            /*{ title: 'Homepage', component: HomePage },*/
-            { title: 'Impostazioni', component: __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__["a" /* SettingsPage */] },
-            { title: 'Account', component: __WEBPACK_IMPORTED_MODULE_10__pages_account_account__["a" /* AccountPage */] },
-            { title: 'Informazioni', component: __WEBPACK_IMPORTED_MODULE_11__pages_about_about__["a" /* AboutPage */] },
-            { title: 'Users', component: __WEBPACK_IMPORTED_MODULE_5__pages_users_users__["a" /* UsersPage */] },
-            { title: 'Connessioni', component: __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__["a" /* ConnectionsPage */] },
-            { title: 'RTC', component: __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__["a" /* RtcPage */] },
-            { title: 'Servizi soci', component: __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */] },
-            { title: 'Logout', component: __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */] },
-            { title: 'Chiudi Appkwondo', component: __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */] }
-        ];
-        events.subscribe('username:changed', function (user) {
-            console.log("user changed !!!", user);
-            _this.user = user;
-        });
-        events.subscribe('enteredchat', function (user) {
-            console.log("enteredchat !!!", user);
-            _this.isChatPage = true;
-        });
-        events.subscribe('exitedchat', function (user) {
-            console.log("exitedchat !!!", user);
-            _this.isChatPage = false;
-        });
-        events.subscribe('realtimematches', function (rtmatches) {
-            console.log("realtimematches event", rtmatches);
-            if (rtmatches.matches.length > 0) {
-                questo.realtimeEvents = true;
-                questo.showrtbutton = true;
-            }
-            else {
-                questo.realtimeEvents = false;
-                questo.showrtbutton = false;
-            }
-            //this.isChatPage = false;
-        });
-        events.subscribe("updategara", function (msg, time) {
-            console.log("refreshgara in app.component.ts !!");
-            questo.backend.getRtMatches(function (data) {
-                if (data.length > 0) {
-                    questo.realtimeEvents = true;
-                    questo.showrtbutton = true;
-                }
-                else {
-                    questo.realtimeEvents = false;
-                    questo.showrtbutton = false;
-                }
-            });
-        });
-        events.subscribe("chatmsg", function (msg) {
-            console.log("chatmsg in app.component.ts!", msg);
-            /*
-            let toast = questo.toastCtrl.create({
-              message: msg.nickname + " - " + msg.text,
-              duration: 2000,
-              position: "top"
-            });
-            toast.present();
-            questo.chatunread++;
-            */
-        });
-        this.onResumeSubscription = platform.resume.subscribe(function () {
-            if (questo.backend.isChatView) {
-                console.log("resuming app, app was on chatview");
-                questo.backend.resetChatUnread();
-                //questo.backend.localNotify(data.message);
-            }
-            else {
-                console.log("resuming app, app was NOT on chatview");
-                questo.backend.computeUnreadChats();
-            }
-        });
-    }
-    MyApp.prototype.detectEnvironment = function () {
-        var questo = this;
-        var OSName = "Unknown OS";
-        if (navigator.userAgent.indexOf("Win") != -1)
-            OSName = "Windows";
-        if (navigator.userAgent.indexOf("Mac") != -1)
-            OSName = "Macintosh";
-        if (navigator.userAgent.indexOf("Linux") != -1)
-            OSName = "Linux";
-        if (navigator.userAgent.indexOf("Android") != -1)
-            OSName = "Android";
-        if (navigator.userAgent.indexOf("like Mac") != -1)
-            OSName = "iOS";
-        console.log('Your OS: ' + OSName);
-        var isIosWeb = false;
-        if (!questo.platform.is("cordova")) {
-            if (OSName == "iOS") {
-                console.log("running on IOS web browser !!!!");
-                questo.backend.isIosWeb = true;
-            }
-        }
-    };
-    MyApp.prototype.ngOnDestroy = function () {
-        // always unsubscribe your subscriptions to prevent leaks
-        this.onResumeSubscription.unsubscribe();
-    };
-    MyApp.prototype.openPage = function (page) {
-        var _this = this;
-        var questo = this;
-        questo.backend.playFeedback();
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        if (page.title == "Logout") {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Confirm',
-                subTitle: 'Do you really want to logout',
-                buttons: [
-                    {
-                        text: 'Cancel',
-                        role: 'cancel',
-                        handler: function () {
-                            console.log('Cancel clicked');
-                        }
-                    },
-                    {
-                        text: 'OK',
-                        handler: function () {
-                            console.log('OK clicked');
-                            _this.nav.setRoot(page.component);
-                        }
-                    }
-                ]
-            });
-            alert_1.present();
-        }
-        else {
-            if (page.title == "Chiudi Appkwondo") {
-                var alert_2 = questo.alertCtrl.create({
-                    title: 'Chiudi Appkwondo',
-                    message: 'Vuoi veramente chiudere Appkwondo V2 ?',
-                    buttons: [
-                        {
-                            text: 'Annulla',
-                            role: 'cancel',
-                            handler: function () {
-                                console.log('Cancel clicked');
-                            }
-                        },
-                        {
-                            text: 'OK',
-                            handler: function () {
-                                console.log('OK clicked');
-                                questo.platform.exitApp();
-                            }
-                        }
-                    ]
-                });
-                alert_2.present();
-            }
-            else {
-                var pushpages = ["Impostazioni", "Users", "Connessioni", "Informazioni", "Account", "RTC", "Servizi soci"];
-                if (pushpages.indexOf(page.title) > -1) {
-                    this.nav.push(page.component);
-                }
-                else
-                    this.nav.setRoot(page.component);
-            }
-        }
-    };
-    MyApp.prototype.openPageWithParams = function (page, params) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.backend.playFeedback();
-        this.nav.setRoot(page.component, params);
-    };
-    MyApp.prototype.ionViewDidLoad = function () {
-        console.log("ROLE", this.backend.user.role);
-        this.user = this.backend.user;
-        console.log("USER", this.user);
-    };
-    MyApp.prototype.setUser = function (user) {
-        this.user = user;
-    };
-    MyApp.prototype.getUserImage = function () {
-        var img = "assets/img/person-icon.png";
-        if (this.user.userphoto) {
-            if (this.user.userphoto.trim() != "") {
-                //console.log("user has userphoto");
-                img = "data:image/jpeg;base64," + this.user.userphoto;
-            }
-        }
-        return img;
-    };
-    MyApp.prototype.initializeApp = function () {
-        var _this = this;
-        var questo = this;
-        this.platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            __WEBPACK_IMPORTED_MODULE_2_ionic_native__["c" /* StatusBar */].styleDefault();
-            setTimeout(function () {
-                questo._SplashScreen.hide();
-            }, 0);
-            //Splashscreen.hide();
-            if (questo.platform.is('cordova')) {
-                if (questo.backend.isCordovaAndroid()) {
-                    questo.backgroundMode.setDefaults({
-                        title: "AppkwondoV2",
-                        text: "Tocca per passare ad Appkwondo"
-                    });
-                    questo.backgroundMode.enable();
-                }
-                window["plugins"].audioRecorderAPI.dopermissions(function (msg) {
-                    // success
-                    console.log('Audio Recorder API permissions ok: ', msg);
-                }, function (msg) {
-                    // failed
-                    console.error("audioRecorderAPI: permission not granted", msg);
-                    console.log("The app needs access to your microphone to function.");
-                });
-                questo.androidPermissions.checkPermission(questo.androidPermissions.PERMISSION.CAMERA).then(function (success) { return console.log('Android Camera Permission granted'); }, function (err) {
-                    console.log("Android Camera permissions not found !, requesting");
-                    questo.androidPermissions.requestPermission(questo.androidPermissions.PERMISSION.CAMERA);
-                });
-                // questo.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
-                questo.backend.getUniqueDeviceID();
-                var push = __WEBPACK_IMPORTED_MODULE_2_ionic_native__["b" /* Push */].init({
-                    android: {
-                        senderID: "1034396645917"
-                    },
-                    ios: {
-                        alert: "true",
-                        badge: true,
-                        sound: 'true'
-                    },
-                    windows: {}
-                });
-                push.on('registration', function (data) {
-                    console.log("registration!!!");
-                    console.log("push notification registrationId !!", data.registrationId);
-                    //alert(data.registrationId.toString());
-                    _this.backend.user.gcmtoken = data.registrationId.toString();
-                });
-                push.on('notification', function (data) {
-                    console.log("push notification!", data);
-                    //alert("Hi, Am a push notification");
-                    var isforeground = data.additionalData.foreground;
-                    if (isforeground) {
-                        if (!questo.backend.isChatView) {
-                            console.log("local notification emitted");
-                            //questo.backend.localNotify(data.message);
-                        }
-                        else {
-                            questo.backend.resetChatUnread();
-                        }
-                    }
-                    else {
-                        //questo.backend.computeUnreadChats();
-                        //questo.backend.addChatUnread();
-                    }
-                });
-                push.on('error', function (e) {
-                    console.log("PUSH ERROR", e.message);
-                });
-                //questo.deviceFeedback.acoustic();
-                /*
-                questo.deviceFeedback.isFeedbackEnabled()
-                  .then((feedback) => {
-                    console.log("deviceFeedback", feedback);
-                    // {
-                    //   acoustic: true,
-                    //   haptic: true
-                    // }
-                    // questo.deviceFeedback.acoustic();
-        
-                    //this.deviceFeedback.haptic(0);
-                  });
-                  */
-            }
-            questo.platform.registerBackButtonAction(function () {
-                if (questo.nav.canGoBack()) {
-                    console.log("hw back nutton pressed, going back");
-                    questo.backend.playFeedback();
-                    var x = Object.assign({}, questo.backend.navOptions);
-                    x.direction = "back";
-                    questo.nav.pop(x);
-                }
-                else {
-                    console.log("nav cannot go back");
-                }
-                questo.events.publish("hwbackbutton", {});
-            });
-            /*
-                  this.platform.registerBackButtonAction(() => {
-                   
-                    console.log("hardwarebackbutton pressed, page", questo.isChatPage);
-            
-                    if (questo.isChatPage) this.events.publish('goback', "hwbackbutton");
-               
-                  });
-                  */
-            if (questo.platform.is('cordova')) {
-                questo.deviceFeedback.isFeedbackEnabled()
-                    .then(function (feedback) {
-                    console.log("feedback", feedback);
-                    // {
-                    //   acoustic: true,
-                    //   haptic: true
-                    // }
-                });
-            }
-            if (questo.platform.is('ios')) {
-                questo.backend.navOptions = {
-                    animate: true,
-                    animation: 'ios-transition'
-                };
-            }
-        });
-        /*
-        questo.backend.getRtMatches(function (data) {
-          console.log("got rtmatches in app.component.ts", data);
-          if (data.length > 0) {
-            questo.realtimeEvents = true
-          } else {
-            questo.realtimeEvents = false;
-          }
-        })
-        */
-    };
-    MyApp.prototype.gotoChat = function () {
-        console.log("app this", this);
-        this.nav.push(__WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__["a" /* ChatPage */]);
-    };
-    /*
-    setRtbutton(value){
-  
-      var page=this.app.getActiveNav().getActive().instance;
-      console.log("page",page);
-      var isvalid=true;
-      if (page==ChatPage) isvalid=false;
-      if (page==LoginPage) isvalid=false;
-      return isvalid;
-      
-    }*/
-    MyApp.prototype.isVisibleMenu = function (text) {
-        var questo = this;
-        var retvalue = true;
-        var t = text.toLowerCase();
-        var adminpages = ["users", "connessioni", "rtc"];
-        if (adminpages.indexOf(t) > -1) {
-            //console.log("this is an admin page !",questo.backend.user.role);
-            if (questo.backend.user.role != 'tkdradmin')
-                retvalue = false;
-        }
-        // console.log("isVisibleMenu",text,retvalue);
-        return retvalue;
-    };
-    return MyApp;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
-], MyApp.prototype, "nav", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mytabs"),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* Tabs */])
-], MyApp.prototype, "mytabs", void 0);
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/'<ion-menu [content]="content" side="left">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n    <ion-grid style="sbackground: #049a55; background: blue; color: white; padding: 4px !important;">\n    <ion-row>\n      <ion-col col-3 style="padding: 5px !important;">\n       \n        <img src="{{getUserImage()}}" class="roundimg"/>\n        \n      </ion-col>\n      \n      <ion-col style="padding: 8px !important;">\n        <span class="username">{{backend.user.nickname}}</span><br>\n        <span class="email">{{backend.user.email}}</span><br>\n      <!--<span class="useremail">{{user.email}}</span><br>-->\n      <span class="userrole">{{backend.user.role}}</span>\n    \n      </ion-col>\n    </ion-row>  \n    </ion-grid>    \n    <ion-list>\n      \n          \n      \n     <section *ngFor="let p of pages; let i=index;">\n      <button menuClose ion-item  (click)="openPage(p)" icon-left *ngIf="isVisibleMenu(p.title)">\n        <ion-icon name="{{icons[i]}}"></ion-icon>{{p.title}}\n      </button>\n      </section>\n      \n       \n    </ion-list>\n\n\n  </ion-content>\n\n</ion-menu>\n\n\n<!--\n<ion-menu [content]="content" side="right">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menuright</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n  </ion-content>\n</ion-menu>\n-->\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n\n<!--\n  <ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">\n   <button color="primary" ion-fab style="font-size: 11px"><img src="assets/img/greenblink.gif"></button>\n </ion-fab>-->'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__["a" /* BackgroundMode */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__["a" /* AndroidPermissions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_13__providers_backend_backend__["a" /* BackendProvider */]])
-], MyApp);
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 588:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 348,
-	"./af.js": 348,
-	"./ar": 349,
-	"./ar-dz": 350,
-	"./ar-dz.js": 350,
-	"./ar-kw": 351,
-	"./ar-kw.js": 351,
-	"./ar-ly": 352,
-	"./ar-ly.js": 352,
-	"./ar-ma": 353,
-	"./ar-ma.js": 353,
-	"./ar-sa": 354,
-	"./ar-sa.js": 354,
-	"./ar-tn": 355,
-	"./ar-tn.js": 355,
-	"./ar.js": 349,
-	"./az": 356,
-	"./az.js": 356,
-	"./be": 357,
-	"./be.js": 357,
-	"./bg": 358,
-	"./bg.js": 358,
-	"./bm": 359,
-	"./bm.js": 359,
-	"./bn": 360,
-	"./bn.js": 360,
-	"./bo": 361,
-	"./bo.js": 361,
-	"./br": 362,
-	"./br.js": 362,
-	"./bs": 363,
-	"./bs.js": 363,
-	"./ca": 364,
-	"./ca.js": 364,
-	"./cs": 365,
-	"./cs.js": 365,
-	"./cv": 366,
-	"./cv.js": 366,
-	"./cy": 367,
-	"./cy.js": 367,
-	"./da": 368,
-	"./da.js": 368,
-	"./de": 369,
-	"./de-at": 370,
-	"./de-at.js": 370,
-	"./de-ch": 371,
-	"./de-ch.js": 371,
-	"./de.js": 369,
-	"./dv": 372,
-	"./dv.js": 372,
-	"./el": 373,
-	"./el.js": 373,
-	"./en-au": 374,
-	"./en-au.js": 374,
-	"./en-ca": 375,
-	"./en-ca.js": 375,
-	"./en-gb": 376,
-	"./en-gb.js": 376,
-	"./en-ie": 377,
-	"./en-ie.js": 377,
-	"./en-nz": 378,
-	"./en-nz.js": 378,
-	"./eo": 379,
-	"./eo.js": 379,
-	"./es": 380,
-	"./es-do": 381,
-	"./es-do.js": 381,
-	"./es-us": 382,
-	"./es-us.js": 382,
-	"./es.js": 380,
-	"./et": 383,
-	"./et.js": 383,
-	"./eu": 384,
-	"./eu.js": 384,
-	"./fa": 385,
-	"./fa.js": 385,
-	"./fi": 386,
-	"./fi.js": 386,
-	"./fo": 387,
-	"./fo.js": 387,
-	"./fr": 388,
-	"./fr-ca": 389,
-	"./fr-ca.js": 389,
-	"./fr-ch": 390,
-	"./fr-ch.js": 390,
-	"./fr.js": 388,
-	"./fy": 391,
-	"./fy.js": 391,
-	"./gd": 392,
-	"./gd.js": 392,
-	"./gl": 393,
-	"./gl.js": 393,
-	"./gom-latn": 394,
-	"./gom-latn.js": 394,
-	"./gu": 395,
-	"./gu.js": 395,
-	"./he": 396,
-	"./he.js": 396,
-	"./hi": 397,
-	"./hi.js": 397,
-	"./hr": 398,
-	"./hr.js": 398,
-	"./hu": 399,
-	"./hu.js": 399,
-	"./hy-am": 400,
-	"./hy-am.js": 400,
-	"./id": 401,
-	"./id.js": 401,
-	"./is": 402,
-	"./is.js": 402,
-	"./it": 403,
-	"./it.js": 403,
-	"./ja": 404,
-	"./ja.js": 404,
-	"./jv": 405,
-	"./jv.js": 405,
-	"./ka": 406,
-	"./ka.js": 406,
-	"./kk": 407,
-	"./kk.js": 407,
-	"./km": 408,
-	"./km.js": 408,
-	"./kn": 409,
-	"./kn.js": 409,
-	"./ko": 410,
-	"./ko.js": 410,
-	"./ky": 411,
-	"./ky.js": 411,
-	"./lb": 412,
-	"./lb.js": 412,
-	"./lo": 413,
-	"./lo.js": 413,
-	"./lt": 414,
-	"./lt.js": 414,
-	"./lv": 415,
-	"./lv.js": 415,
-	"./me": 416,
-	"./me.js": 416,
-	"./mi": 417,
-	"./mi.js": 417,
-	"./mk": 418,
-	"./mk.js": 418,
-	"./ml": 419,
-	"./ml.js": 419,
-	"./mr": 420,
-	"./mr.js": 420,
-	"./ms": 421,
-	"./ms-my": 422,
-	"./ms-my.js": 422,
-	"./ms.js": 421,
-	"./my": 423,
-	"./my.js": 423,
-	"./nb": 424,
-	"./nb.js": 424,
-	"./ne": 425,
-	"./ne.js": 425,
-	"./nl": 426,
-	"./nl-be": 427,
-	"./nl-be.js": 427,
-	"./nl.js": 426,
-	"./nn": 428,
-	"./nn.js": 428,
-	"./pa-in": 429,
-	"./pa-in.js": 429,
-	"./pl": 430,
-	"./pl.js": 430,
-	"./pt": 431,
-	"./pt-br": 432,
-	"./pt-br.js": 432,
-	"./pt.js": 431,
-	"./ro": 433,
-	"./ro.js": 433,
-	"./ru": 434,
-	"./ru.js": 434,
-	"./sd": 435,
-	"./sd.js": 435,
-	"./se": 436,
-	"./se.js": 436,
-	"./si": 437,
-	"./si.js": 437,
-	"./sk": 438,
-	"./sk.js": 438,
-	"./sl": 439,
-	"./sl.js": 439,
-	"./sq": 440,
-	"./sq.js": 440,
-	"./sr": 441,
-	"./sr-cyrl": 442,
-	"./sr-cyrl.js": 442,
-	"./sr.js": 441,
-	"./ss": 443,
-	"./ss.js": 443,
-	"./sv": 444,
-	"./sv.js": 444,
-	"./sw": 445,
-	"./sw.js": 445,
-	"./ta": 446,
-	"./ta.js": 446,
-	"./te": 447,
-	"./te.js": 447,
-	"./tet": 448,
-	"./tet.js": 448,
-	"./th": 449,
-	"./th.js": 449,
-	"./tl-ph": 450,
-	"./tl-ph.js": 450,
-	"./tlh": 451,
-	"./tlh.js": 451,
-	"./tr": 452,
-	"./tr.js": 452,
-	"./tzl": 453,
-	"./tzl.js": 453,
-	"./tzm": 454,
-	"./tzm-latn": 455,
-	"./tzm-latn.js": 455,
-	"./tzm.js": 454,
-	"./uk": 456,
-	"./uk.js": 456,
-	"./ur": 457,
-	"./ur.js": 457,
-	"./uz": 458,
-	"./uz-latn": 459,
-	"./uz-latn.js": 459,
-	"./uz.js": 458,
-	"./vi": 460,
-	"./vi.js": 460,
-	"./x-pseudo": 461,
-	"./x-pseudo.js": 461,
-	"./yo": 462,
-	"./yo.js": 462,
-	"./zh-cn": 463,
-	"./zh-cn.js": 463,
-	"./zh-hk": 464,
-	"./zh-hk.js": 464,
-	"./zh-tw": 465,
-	"./zh-tw.js": 465
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 588;
-
-/***/ }),
-
 /***/ 6:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BackendProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_native__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_native__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_badge__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_local_notifications__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_background_mode__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_text_to_speech__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_unique_device_id__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_badge__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_local_notifications__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_background_mode__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_text_to_speech__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_unique_device_id__ = __webpack_require__(488);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9777,8 +9067,8 @@ var BackendProvider = (function () {
         this.isProduction = true;
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.0.9",
-            releasedate: "11/12/2017"
+            version: "2.1.0",
+            releasedate: "07/02/2018"
         };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
@@ -10270,14 +9560,16 @@ var BackendProvider = (function () {
         console.log("getGara", id);
         var questo = this;
         var url = this.rooturl + "/gare/fullgarabyid/" + id + "?societaid=20160217220400";
-        this.fetchData(url, function (data) {
-            console.log("fetched getGara in backend.ts", data);
-            questo.rtmatches = data.realtime;
-            //let activegara= Object.assign({}, data);
-            questo.activegara = data;
+        this.fetchData(url, function (d) {
+            console.log("fetched getGara in backend.ts", d);
+            questo.rtmatches = d.realtime;
+            //let activegara= Object.assign({}, d);
+            questo.activegara = d;
+            //questo.activegara = activegara;
+            console.log("activegara mbp", questo.activegara.matchesbyprog.rows.length, questo.activegara);
             /*questo.events.publish('updatertmatches', data, Date.now());*/
             if (callback)
-                callback(data);
+                callback(d);
         });
     };
     BackendProvider.prototype.getCurrentGara = function (callback) {
@@ -11467,26 +10759,756 @@ var BackendProvider = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('content'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */])
 ], BackendProvider.prototype, "nav", void 0);
 BackendProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_native_unique_device_id__["a" /* UniqueDeviceID */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_native_unique_device_id__["a" /* UniqueDeviceID */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_12__ionic_native_text_to_speech__["a" /* TextToSpeech */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12__ionic_native_text_to_speech__["a" /* TextToSpeech */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_background_mode__["a" /* BackgroundMode */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_background_mode__["a" /* BackgroundMode */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_10__ionic_native_local_notifications__["a" /* LocalNotifications */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__ionic_native_local_notifications__["a" /* LocalNotifications */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_native_badge__["a" /* Badge */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_native_badge__["a" /* Badge */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* Events */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* Platform */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_3__utils_utils__["a" /* UtilsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__utils_utils__["a" /* UtilsProvider */]) === "function" && _o || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_13__ionic_native_unique_device_id__["a" /* UniqueDeviceID */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_text_to_speech__["a" /* TextToSpeech */], __WEBPACK_IMPORTED_MODULE_11__ionic_native_background_mode__["a" /* BackgroundMode */], __WEBPACK_IMPORTED_MODULE_10__ionic_native_local_notifications__["a" /* LocalNotifications */], __WEBPACK_IMPORTED_MODULE_9__ionic_native_badge__["a" /* Badge */], __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__utils_utils__["a" /* UtilsProvider */]])
 ], BackendProvider);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=backend.js.map
 
 /***/ }),
 
-/***/ 607:
+/***/ 612:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__ = __webpack_require__(548);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(549);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__ = __webpack_require__(550);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__ = __webpack_require__(131);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(backgroundMode, androidPermissions, toastCtrl, deviceFeedback, app, _SplashScreen, events, alertCtrl, platform, backend) {
+        var _this = this;
+        this.backgroundMode = backgroundMode;
+        this.androidPermissions = androidPermissions;
+        this.toastCtrl = toastCtrl;
+        this.deviceFeedback = deviceFeedback;
+        this.app = app;
+        this._SplashScreen = _SplashScreen;
+        this.events = events;
+        this.alertCtrl = alertCtrl;
+        this.platform = platform;
+        this.backend = backend;
+        this.user = {
+            firstname: "Demosio",
+            lastname: "Cioc",
+            email: "demymortelliti@it.ibm.com",
+            role: "IBM BP",
+            userphoto: ""
+        };
+        this.icons = [
+            "md-settings",
+            "md-person",
+            "md-information-circle",
+            "ios-people",
+            "md-wifi",
+            "md-videocam",
+            "md-git-network",
+            "md-exit",
+            "md-close-circle"
+        ];
+        this.isChatPage = false;
+        this.realtimeEvents = false;
+        this.showrtbutton = false;
+        this.chatunread = 0;
+        //rootPage = TabsPage;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+        var questo = this;
+        questo.detectEnvironment();
+        var IS_PRODUCTION = questo.backend.isProduction;
+        if (IS_PRODUCTION) {
+            console.log("LOGGER IS DISABBLED!!!");
+            backend.disableLogger();
+        }
+        if (!platform.is("cordova")) {
+            console.log("NOT cordova !");
+            if (platform.is("ios"))
+                console.log("IOS in webbrowser !!");
+        }
+        this.initializeApp();
+        // used for an example of ngFor and navigation
+        this.pages = [
+            /*{ title: 'Homepage', component: HomePage },*/
+            { title: 'Impostazioni', component: __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__["a" /* SettingsPage */] },
+            { title: 'Account', component: __WEBPACK_IMPORTED_MODULE_10__pages_account_account__["a" /* AccountPage */] },
+            { title: 'Informazioni', component: __WEBPACK_IMPORTED_MODULE_11__pages_about_about__["a" /* AboutPage */] },
+            { title: 'Users', component: __WEBPACK_IMPORTED_MODULE_5__pages_users_users__["a" /* UsersPage */] },
+            { title: 'Connessioni', component: __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__["a" /* ConnectionsPage */] },
+            { title: 'RTC', component: __WEBPACK_IMPORTED_MODULE_14__pages_rtc_rtc__["a" /* RtcPage */] },
+            { title: 'Servizi soci', component: __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */] },
+            { title: 'Logout', component: __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */] },
+            { title: 'Chiudi Appkwondo', component: __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */] }
+        ];
+        events.subscribe('username:changed', function (user) {
+            console.log("user changed !!!", user);
+            _this.user = user;
+        });
+        events.subscribe('enteredchat', function (user) {
+            console.log("enteredchat !!!", user);
+            _this.isChatPage = true;
+        });
+        events.subscribe('exitedchat', function (user) {
+            console.log("exitedchat !!!", user);
+            _this.isChatPage = false;
+        });
+        events.subscribe('realtimematches', function (rtmatches) {
+            console.log("realtimematches event", rtmatches);
+            if (rtmatches.matches.length > 0) {
+                questo.realtimeEvents = true;
+                questo.showrtbutton = true;
+            }
+            else {
+                questo.realtimeEvents = false;
+                questo.showrtbutton = false;
+            }
+            //this.isChatPage = false;
+        });
+        events.subscribe("updategara", function (msg, time) {
+            console.log("refreshgara in app.component.ts !!");
+            questo.backend.getRtMatches(function (data) {
+                if (data.length > 0) {
+                    questo.realtimeEvents = true;
+                    questo.showrtbutton = true;
+                }
+                else {
+                    questo.realtimeEvents = false;
+                    questo.showrtbutton = false;
+                }
+            });
+        });
+        events.subscribe("chatmsg", function (msg) {
+            console.log("chatmsg in app.component.ts!", msg);
+            /*
+            let toast = questo.toastCtrl.create({
+              message: msg.nickname + " - " + msg.text,
+              duration: 2000,
+              position: "top"
+            });
+            toast.present();
+            questo.chatunread++;
+            */
+        });
+        this.onResumeSubscription = platform.resume.subscribe(function () {
+            if (questo.backend.isChatView) {
+                console.log("resuming app, app was on chatview");
+                questo.backend.resetChatUnread();
+                //questo.backend.localNotify(data.message);
+            }
+            else {
+                console.log("resuming app, app was NOT on chatview");
+                questo.backend.computeUnreadChats();
+            }
+        });
+    }
+    MyApp.prototype.detectEnvironment = function () {
+        var questo = this;
+        var OSName = "Unknown OS";
+        if (navigator.userAgent.indexOf("Win") != -1)
+            OSName = "Windows";
+        if (navigator.userAgent.indexOf("Mac") != -1)
+            OSName = "Macintosh";
+        if (navigator.userAgent.indexOf("Linux") != -1)
+            OSName = "Linux";
+        if (navigator.userAgent.indexOf("Android") != -1)
+            OSName = "Android";
+        if (navigator.userAgent.indexOf("like Mac") != -1)
+            OSName = "iOS";
+        console.log('Your OS: ' + OSName);
+        var isIosWeb = false;
+        if (!questo.platform.is("cordova")) {
+            if (OSName == "iOS") {
+                console.log("running on IOS web browser !!!!");
+                questo.backend.isIosWeb = true;
+            }
+        }
+    };
+    MyApp.prototype.ngOnDestroy = function () {
+        // always unsubscribe your subscriptions to prevent leaks
+        this.onResumeSubscription.unsubscribe();
+    };
+    MyApp.prototype.openPage = function (page) {
+        var _this = this;
+        var questo = this;
+        questo.backend.playFeedback();
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        if (page.title == "Logout") {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Confirm',
+                subTitle: 'Do you really want to logout',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        handler: function () {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'OK',
+                        handler: function () {
+                            console.log('OK clicked');
+                            _this.nav.setRoot(page.component);
+                        }
+                    }
+                ]
+            });
+            alert_1.present();
+        }
+        else {
+            if (page.title == "Chiudi Appkwondo") {
+                var alert_2 = questo.alertCtrl.create({
+                    title: 'Chiudi Appkwondo',
+                    message: 'Vuoi veramente chiudere Appkwondo V2 ?',
+                    buttons: [
+                        {
+                            text: 'Annulla',
+                            role: 'cancel',
+                            handler: function () {
+                                console.log('Cancel clicked');
+                            }
+                        },
+                        {
+                            text: 'OK',
+                            handler: function () {
+                                console.log('OK clicked');
+                                questo.platform.exitApp();
+                            }
+                        }
+                    ]
+                });
+                alert_2.present();
+            }
+            else {
+                var pushpages = ["Impostazioni", "Users", "Connessioni", "Informazioni", "Account", "RTC", "Servizi soci"];
+                if (pushpages.indexOf(page.title) > -1) {
+                    this.nav.push(page.component);
+                }
+                else
+                    this.nav.setRoot(page.component);
+            }
+        }
+    };
+    MyApp.prototype.openPageWithParams = function (page, params) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.backend.playFeedback();
+        this.nav.setRoot(page.component, params);
+    };
+    MyApp.prototype.ionViewDidLoad = function () {
+        console.log("ROLE", this.backend.user.role);
+        this.user = this.backend.user;
+        console.log("USER", this.user);
+    };
+    MyApp.prototype.setUser = function (user) {
+        this.user = user;
+    };
+    MyApp.prototype.getUserImage = function () {
+        var img = "assets/img/person-icon.png";
+        if (this.user.userphoto) {
+            if (this.user.userphoto.trim() != "") {
+                //console.log("user has userphoto");
+                img = "data:image/jpeg;base64," + this.user.userphoto;
+            }
+        }
+        return img;
+    };
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        var questo = this;
+        this.platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            __WEBPACK_IMPORTED_MODULE_2_ionic_native__["c" /* StatusBar */].styleDefault();
+            setTimeout(function () {
+                questo._SplashScreen.hide();
+            }, 0);
+            //Splashscreen.hide();
+            if (questo.platform.is('cordova')) {
+                if (questo.backend.isCordovaAndroid()) {
+                    questo.backgroundMode.setDefaults({
+                        title: "AppkwondoV2",
+                        text: "Tocca per passare ad Appkwondo"
+                    });
+                    questo.backgroundMode.enable();
+                }
+                window["plugins"].audioRecorderAPI.dopermissions(function (msg) {
+                    // success
+                    console.log('Audio Recorder API permissions ok: ', msg);
+                }, function (msg) {
+                    // failed
+                    console.error("audioRecorderAPI: permission not granted", msg);
+                    console.log("The app needs access to your microphone to function.");
+                });
+                questo.androidPermissions.checkPermission(questo.androidPermissions.PERMISSION.CAMERA).then(function (success) { return console.log('Android Camera Permission granted'); }, function (err) {
+                    console.log("Android Camera permissions not found !, requesting");
+                    questo.androidPermissions.requestPermission(questo.androidPermissions.PERMISSION.CAMERA);
+                });
+                // questo.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+                questo.backend.getUniqueDeviceID();
+                var push = __WEBPACK_IMPORTED_MODULE_2_ionic_native__["b" /* Push */].init({
+                    android: {
+                        senderID: "1034396645917"
+                    },
+                    ios: {
+                        alert: "true",
+                        badge: true,
+                        sound: 'true'
+                    },
+                    windows: {}
+                });
+                push.on('registration', function (data) {
+                    console.log("registration!!!");
+                    console.log("push notification registrationId !!", data.registrationId);
+                    //alert(data.registrationId.toString());
+                    _this.backend.user.gcmtoken = data.registrationId.toString();
+                });
+                push.on('notification', function (data) {
+                    console.log("push notification!", data);
+                    //alert("Hi, Am a push notification");
+                    var isforeground = data.additionalData.foreground;
+                    if (isforeground) {
+                        if (!questo.backend.isChatView) {
+                            console.log("local notification emitted");
+                            //questo.backend.localNotify(data.message);
+                        }
+                        else {
+                            questo.backend.resetChatUnread();
+                        }
+                    }
+                    else {
+                        //questo.backend.computeUnreadChats();
+                        //questo.backend.addChatUnread();
+                    }
+                });
+                push.on('error', function (e) {
+                    console.log("PUSH ERROR", e.message);
+                });
+                //questo.deviceFeedback.acoustic();
+                /*
+                questo.deviceFeedback.isFeedbackEnabled()
+                  .then((feedback) => {
+                    console.log("deviceFeedback", feedback);
+                    // {
+                    //   acoustic: true,
+                    //   haptic: true
+                    // }
+                    // questo.deviceFeedback.acoustic();
+        
+                    //this.deviceFeedback.haptic(0);
+                  });
+                  */
+            }
+            questo.platform.registerBackButtonAction(function () {
+                if (questo.nav.canGoBack()) {
+                    console.log("hw back nutton pressed, going back");
+                    questo.backend.playFeedback();
+                    var x = Object.assign({}, questo.backend.navOptions);
+                    x.direction = "back";
+                    questo.nav.pop(x);
+                }
+                else {
+                    console.log("nav cannot go back");
+                }
+                questo.events.publish("hwbackbutton", {});
+            });
+            /*
+                  this.platform.registerBackButtonAction(() => {
+                   
+                    console.log("hardwarebackbutton pressed, page", questo.isChatPage);
+            
+                    if (questo.isChatPage) this.events.publish('goback', "hwbackbutton");
+               
+                  });
+                  */
+            if (questo.platform.is('cordova')) {
+                questo.deviceFeedback.isFeedbackEnabled()
+                    .then(function (feedback) {
+                    console.log("feedback", feedback);
+                    // {
+                    //   acoustic: true,
+                    //   haptic: true
+                    // }
+                });
+            }
+            if (questo.platform.is('ios')) {
+                questo.backend.navOptions = {
+                    animate: true,
+                    animation: 'ios-transition'
+                };
+            }
+        });
+        /*
+        questo.backend.getRtMatches(function (data) {
+          console.log("got rtmatches in app.component.ts", data);
+          if (data.length > 0) {
+            questo.realtimeEvents = true
+          } else {
+            questo.realtimeEvents = false;
+          }
+        })
+        */
+    };
+    MyApp.prototype.gotoChat = function () {
+        console.log("app this", this);
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__["a" /* ChatPage */]);
+    };
+    /*
+    setRtbutton(value){
+  
+      var page=this.app.getActiveNav().getActive().instance;
+      console.log("page",page);
+      var isvalid=true;
+      if (page==ChatPage) isvalid=false;
+      if (page==LoginPage) isvalid=false;
+      return isvalid;
+      
+    }*/
+    MyApp.prototype.isVisibleMenu = function (text) {
+        var questo = this;
+        var retvalue = true;
+        var t = text.toLowerCase();
+        var adminpages = ["users", "connessioni", "rtc"];
+        if (adminpages.indexOf(t) > -1) {
+            //console.log("this is an admin page !",questo.backend.user.role);
+            if (questo.backend.user.role != 'tkdradmin')
+                retvalue = false;
+        }
+        // console.log("isVisibleMenu",text,retvalue);
+        return retvalue;
+    };
+    return MyApp;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
+], MyApp.prototype, "nav", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mytabs"),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* Tabs */])
+], MyApp.prototype, "mytabs", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/'<ion-menu [content]="content" side="left">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n    <ion-grid style="sbackground: #049a55; background: blue; color: white; padding: 4px !important;">\n    <ion-row>\n      <ion-col col-3 style="padding: 5px !important;">\n       \n        <img src="{{getUserImage()}}" class="roundimg"/>\n        \n      </ion-col>\n      \n      <ion-col style="padding: 8px !important;">\n        <span class="username">{{backend.user.nickname}}</span><br>\n        <span class="email">{{backend.user.email}}</span><br>\n      <!--<span class="useremail">{{user.email}}</span><br>-->\n      <span class="userrole">{{backend.user.role}}</span>\n    \n      </ion-col>\n    </ion-row>  \n    </ion-grid>    \n    <ion-list>\n      \n          \n      \n     <section *ngFor="let p of pages; let i=index;">\n      <button menuClose ion-item  (click)="openPage(p)" icon-left *ngIf="isVisibleMenu(p.title)">\n        <ion-icon name="{{icons[i]}}"></ion-icon>{{p.title}}\n      </button>\n      </section>\n      \n       \n    </ion-list>\n\n\n  </ion-content>\n\n</ion-menu>\n\n\n<!--\n<ion-menu [content]="content" side="right">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menuright</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n  </ion-content>\n</ion-menu>\n-->\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n\n<!--\n  <ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">\n   <button color="primary" ion-fab style="font-size: 11px"><img src="assets/img/greenblink.gif"></button>\n </ion-fab>-->'/*ion-inline-end:"/Users/pietroturati/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__["a" /* BackgroundMode */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__["a" /* AndroidPermissions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* ToastController */], __WEBPACK_IMPORTED_MODULE_7__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_13__providers_backend_backend__["a" /* BackendProvider */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 625:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 368,
+	"./af.js": 368,
+	"./ar": 369,
+	"./ar-dz": 370,
+	"./ar-dz.js": 370,
+	"./ar-kw": 371,
+	"./ar-kw.js": 371,
+	"./ar-ly": 372,
+	"./ar-ly.js": 372,
+	"./ar-ma": 373,
+	"./ar-ma.js": 373,
+	"./ar-sa": 374,
+	"./ar-sa.js": 374,
+	"./ar-tn": 375,
+	"./ar-tn.js": 375,
+	"./ar.js": 369,
+	"./az": 376,
+	"./az.js": 376,
+	"./be": 377,
+	"./be.js": 377,
+	"./bg": 378,
+	"./bg.js": 378,
+	"./bm": 379,
+	"./bm.js": 379,
+	"./bn": 380,
+	"./bn.js": 380,
+	"./bo": 381,
+	"./bo.js": 381,
+	"./br": 382,
+	"./br.js": 382,
+	"./bs": 383,
+	"./bs.js": 383,
+	"./ca": 384,
+	"./ca.js": 384,
+	"./cs": 385,
+	"./cs.js": 385,
+	"./cv": 386,
+	"./cv.js": 386,
+	"./cy": 387,
+	"./cy.js": 387,
+	"./da": 388,
+	"./da.js": 388,
+	"./de": 389,
+	"./de-at": 390,
+	"./de-at.js": 390,
+	"./de-ch": 391,
+	"./de-ch.js": 391,
+	"./de.js": 389,
+	"./dv": 392,
+	"./dv.js": 392,
+	"./el": 393,
+	"./el.js": 393,
+	"./en-au": 394,
+	"./en-au.js": 394,
+	"./en-ca": 395,
+	"./en-ca.js": 395,
+	"./en-gb": 396,
+	"./en-gb.js": 396,
+	"./en-ie": 397,
+	"./en-ie.js": 397,
+	"./en-nz": 398,
+	"./en-nz.js": 398,
+	"./eo": 399,
+	"./eo.js": 399,
+	"./es": 400,
+	"./es-do": 401,
+	"./es-do.js": 401,
+	"./es-us": 402,
+	"./es-us.js": 402,
+	"./es.js": 400,
+	"./et": 403,
+	"./et.js": 403,
+	"./eu": 404,
+	"./eu.js": 404,
+	"./fa": 405,
+	"./fa.js": 405,
+	"./fi": 406,
+	"./fi.js": 406,
+	"./fo": 407,
+	"./fo.js": 407,
+	"./fr": 408,
+	"./fr-ca": 409,
+	"./fr-ca.js": 409,
+	"./fr-ch": 410,
+	"./fr-ch.js": 410,
+	"./fr.js": 408,
+	"./fy": 411,
+	"./fy.js": 411,
+	"./gd": 412,
+	"./gd.js": 412,
+	"./gl": 413,
+	"./gl.js": 413,
+	"./gom-latn": 414,
+	"./gom-latn.js": 414,
+	"./gu": 415,
+	"./gu.js": 415,
+	"./he": 416,
+	"./he.js": 416,
+	"./hi": 417,
+	"./hi.js": 417,
+	"./hr": 418,
+	"./hr.js": 418,
+	"./hu": 419,
+	"./hu.js": 419,
+	"./hy-am": 420,
+	"./hy-am.js": 420,
+	"./id": 421,
+	"./id.js": 421,
+	"./is": 422,
+	"./is.js": 422,
+	"./it": 423,
+	"./it.js": 423,
+	"./ja": 424,
+	"./ja.js": 424,
+	"./jv": 425,
+	"./jv.js": 425,
+	"./ka": 426,
+	"./ka.js": 426,
+	"./kk": 427,
+	"./kk.js": 427,
+	"./km": 428,
+	"./km.js": 428,
+	"./kn": 429,
+	"./kn.js": 429,
+	"./ko": 430,
+	"./ko.js": 430,
+	"./ky": 431,
+	"./ky.js": 431,
+	"./lb": 432,
+	"./lb.js": 432,
+	"./lo": 433,
+	"./lo.js": 433,
+	"./lt": 434,
+	"./lt.js": 434,
+	"./lv": 435,
+	"./lv.js": 435,
+	"./me": 436,
+	"./me.js": 436,
+	"./mi": 437,
+	"./mi.js": 437,
+	"./mk": 438,
+	"./mk.js": 438,
+	"./ml": 439,
+	"./ml.js": 439,
+	"./mr": 440,
+	"./mr.js": 440,
+	"./ms": 441,
+	"./ms-my": 442,
+	"./ms-my.js": 442,
+	"./ms.js": 441,
+	"./my": 443,
+	"./my.js": 443,
+	"./nb": 444,
+	"./nb.js": 444,
+	"./ne": 445,
+	"./ne.js": 445,
+	"./nl": 446,
+	"./nl-be": 447,
+	"./nl-be.js": 447,
+	"./nl.js": 446,
+	"./nn": 448,
+	"./nn.js": 448,
+	"./pa-in": 449,
+	"./pa-in.js": 449,
+	"./pl": 450,
+	"./pl.js": 450,
+	"./pt": 451,
+	"./pt-br": 452,
+	"./pt-br.js": 452,
+	"./pt.js": 451,
+	"./ro": 453,
+	"./ro.js": 453,
+	"./ru": 454,
+	"./ru.js": 454,
+	"./sd": 455,
+	"./sd.js": 455,
+	"./se": 456,
+	"./se.js": 456,
+	"./si": 457,
+	"./si.js": 457,
+	"./sk": 458,
+	"./sk.js": 458,
+	"./sl": 459,
+	"./sl.js": 459,
+	"./sq": 460,
+	"./sq.js": 460,
+	"./sr": 461,
+	"./sr-cyrl": 462,
+	"./sr-cyrl.js": 462,
+	"./sr.js": 461,
+	"./ss": 463,
+	"./ss.js": 463,
+	"./sv": 464,
+	"./sv.js": 464,
+	"./sw": 465,
+	"./sw.js": 465,
+	"./ta": 466,
+	"./ta.js": 466,
+	"./te": 467,
+	"./te.js": 467,
+	"./tet": 468,
+	"./tet.js": 468,
+	"./th": 469,
+	"./th.js": 469,
+	"./tl-ph": 470,
+	"./tl-ph.js": 470,
+	"./tlh": 471,
+	"./tlh.js": 471,
+	"./tr": 472,
+	"./tr.js": 472,
+	"./tzl": 473,
+	"./tzl.js": 473,
+	"./tzm": 474,
+	"./tzm-latn": 475,
+	"./tzm-latn.js": 475,
+	"./tzm.js": 474,
+	"./uk": 476,
+	"./uk.js": 476,
+	"./ur": 477,
+	"./ur.js": 477,
+	"./uz": 478,
+	"./uz-latn": 479,
+	"./uz-latn.js": 479,
+	"./uz.js": 478,
+	"./vi": 480,
+	"./vi.js": 480,
+	"./x-pseudo": 481,
+	"./x-pseudo.js": 481,
+	"./yo": 482,
+	"./yo.js": 482,
+	"./zh-cn": 483,
+	"./zh-cn.js": 483,
+	"./zh-hk": 484,
+	"./zh-hk.js": 484,
+	"./zh-tw": 485,
+	"./zh-tw.js": 485
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 625;
+
+/***/ }),
+
+/***/ 644:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 610:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11521,7 +11543,7 @@ ContactPage = __decorate([
 
 /***/ }),
 
-/***/ 611:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11576,7 +11598,7 @@ ChatpopoverPage = __decorate([
 
 /***/ }),
 
-/***/ 612:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11584,8 +11606,8 @@ ChatpopoverPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_native__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_native__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11907,13 +11929,13 @@ TwitterPage = __decorate([
 
 /***/ }),
 
-/***/ 613:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartnerworldPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11987,13 +12009,13 @@ PartnerworldPage = __decorate([
 
 /***/ }),
 
-/***/ 614:
+/***/ 722:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkedinPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12063,15 +12085,15 @@ LinkedinPage = __decorate([
 
 /***/ }),
 
-/***/ 615:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_chat_chat__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_chat_chat__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12245,7 +12267,7 @@ ContactsPage = __decorate([
 
 /***/ }),
 
-/***/ 616:
+/***/ 724:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12290,7 +12312,7 @@ BrowserPage = __decorate([
 
 /***/ }),
 
-/***/ 617:
+/***/ 725:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12497,7 +12519,7 @@ BpPage = __decorate([
 
 /***/ }),
 
-/***/ 618:
+/***/ 726:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12689,7 +12711,7 @@ ScrollableTabs = __decorate([
 
 /***/ }),
 
-/***/ 619:
+/***/ 727:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12887,5 +12909,5 @@ ScrollableSegments = __decorate([
 
 /***/ })
 
-},[516]);
+},[553]);
 //# sourceMappingURL=main.js.map
