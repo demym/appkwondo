@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("../util/root");
+var Symbol = root_1.root.Symbol;
+exports.rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
+    Symbol.for('rxSubscriber') : '@@rxSubscriber';
+exports.$$rxSubscriber = exports.rxSubscriber;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicnhTdWJzY3JpYmVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicnhTdWJzY3JpYmVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEscUNBQW9DO0FBRXBDLElBQU0sTUFBTSxHQUFRLFdBQUksQ0FBQyxNQUFNLENBQUM7QUFFbkIsUUFBQSxZQUFZLEdBQUcsQ0FBQyxPQUFPLE1BQU0sS0FBSyxVQUFVLElBQUksT0FBTyxNQUFNLENBQUMsR0FBRyxLQUFLLFVBQVUsQ0FBQztJQUM1RixNQUFNLENBQUMsR0FBRyxDQUFDLGNBQWMsQ0FBQyxHQUFHLGdCQUFnQixDQUFDO0FBS25DLFFBQUEsY0FBYyxHQUFHLG9CQUFZLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyByb290IH0gZnJvbSAnLi4vdXRpbC9yb290JztcblxuY29uc3QgU3ltYm9sOiBhbnkgPSByb290LlN5bWJvbDtcblxuZXhwb3J0IGNvbnN0IHJ4U3Vic2NyaWJlciA9ICh0eXBlb2YgU3ltYm9sID09PSAnZnVuY3Rpb24nICYmIHR5cGVvZiBTeW1ib2wuZm9yID09PSAnZnVuY3Rpb24nKSA/XG4gIFN5bWJvbC5mb3IoJ3J4U3Vic2NyaWJlcicpIDogJ0BAcnhTdWJzY3JpYmVyJztcblxuLyoqXG4gKiBAZGVwcmVjYXRlZCB1c2UgcnhTdWJzY3JpYmVyIGluc3RlYWRcbiAqL1xuZXhwb3J0IGNvbnN0ICQkcnhTdWJzY3JpYmVyID0gcnhTdWJzY3JpYmVyO1xuIl19

@@ -1,0 +1,183 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, AlertController, NavParams, Events } from 'ionic-angular';
+import { BackendProvider } from '../../providers/backend/backend';
+
+/**
+ * Generated class for the StatsPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+
+@Component({
+  selector: 'page-stats',
+  templateUrl: 'stats.html',
+})
+export class StatsPage {
+  sortranking = "ranking_tkdr";
+  ranking = [];
+  loading=false;
+  tipostat="ranking";
+  displayedranking:any=[];
+  filter="";
+
+  constructor(public events: Events, public alertCtrl: AlertController, public backend: BackendProvider, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  getCategoria(a){
+    var atl=this.backend.getAtletaById(a.doc.id);
+    var cat=this.backend.getCategoria(atl.datanascita);
+    return cat.toUpperCase();
+  }
+
+  getPos(i) {
+    var x = parseInt(i, 10) + 1;
+    return x;
+  }
+
+  changeFilter(ev){
+    var questo=this;
+    questo.loading=true;
+    questo.refresh(function(){
+      questo.loading=false;
+    })
+  }
+
+  refresh(callback) {
+    var questo = this;
+    this.backend.getRanking(function (data) {
+      console.log("got ranking", data);
+
+      data.sort(function(a,b){
+        var a1=a.doc[questo.sortranking];
+        var b1=b.doc[questo.sortranking];
+        if (a1>b1) return -1;
+        if (a1<b1) return 1;
+        return 0;
+      })
+
+      data.forEach(function(item,idx){
+        var atl=questo.backend.getAtletaById(item.doc.id);
+        var cat=questo.backend.getCategoria(atl.datanascita);
+        item.doc.categoria=cat;
+      })
+      
+      questo.ranking = data;
+      var rank=[];
+      if (questo.filter.trim()==""){
+        rank=data;
+      } else {
+        data.forEach(function(item,idx){
+          if (item.doc.categoria.toLowerCase()==questo.filter.toLowerCase()) rank.push(item);
+        })
+      }
+      questo.displayedranking=rank;
+
+      if (callback) callback(data);
+    })
+  }
+
+  doRefresh(refresher) {
+
+
+    console.log('Begin async operation', refresher);
+    var questo = this;
+    questo.refresh(function (data) {
+      //console.log("allnews", data);
+
+      refresher.complete();
+    })
+
+
+
+  }
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad StatsPage');
+    var questo=this;
+    questo.loading=true;
+    this.refresh(function (data) {
+      questo.loading=false;
+    })
+  }
+
+  sortStats() {
+    var questo = this;
+    let prompt = this.alertCtrl.create({
+      title: 'Ordina per',
+      message: 'Scegli tipo di ordinamento',
+      inputs: [
+        {
+          type: 'radio',
+          label: 'Classifica generale',
+          value: 'ranking_tkdr'
+        },
+        {
+          type: 'radio',
+          label: 'ORI',
+          value: 'ori'
+        },
+        {
+          type: 'radio',
+          label: 'ARGENTI',
+          value: 'argenti'
+        },
+        {
+          type: 'radio',
+          label: 'BRONZI',
+          value: 'bronzi'
+        },
+        {
+          type: 'radio',
+          label: 'GARE DISPUTATE',
+          value: 'garedisputate'
+        },
+        {
+          type: 'radio',
+          label: 'MATCH DISPUTATI',
+          value: 'matchdisputati'
+        }
+
+      ],
+      buttons: [
+        {
+          text: "Annulla",
+          handler: data => {
+            console.log("cancel clicked");
+          }
+        },
+        {
+          text: "OK",
+          handler: data => {
+            console.log("search clicked", data);
+            questo.sortranking = data;
+            questo.loading=true;
+            questo.refresh(function(data){
+              questo.loading=false;
+            });
+
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
+
+  ionViewWillEnter(){
+    var questo=this;
+    this.events.subscribe("hwbackbutton",function(data){
+      console.log("hwbackbutton in gare.ts");
+      questo.navCtrl.pop();
+    })
+  }
+
+  ionViewWillLeave() {
+    this.events.unsubscribe("hwbackbutton");
+    
+    
+    }
+
+
+}

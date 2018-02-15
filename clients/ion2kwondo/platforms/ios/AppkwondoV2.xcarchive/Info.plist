@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/AppkwondoV2.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>com.tkdr.appkwondov2</string>
+		<key>CFBundleShortVersionString</key>
+		<string>2.0.7</string>
+		<key>CFBundleVersion</key>
+		<string>2.0.7</string>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: demy Mortelliti (G55GXS9KH7)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2018-02-02T10:29:13Z</date>
+	<key>Name</key>
+	<string>AppkwondoV2</string>
+	<key>SchemeName</key>
+	<string>AppkwondoV2</string>
+</dict>
+</plist>

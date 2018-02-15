@@ -1,0 +1,4 @@
+
+android {
+    flavorDimensions "nativescriptar", "nativescriptcardview", "nativescriptspeechrecognition", "nativescripttelerikui", "tnscoremoduleswidgets"
+}
