@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node app"
   },
+  "engines": {
+    "node": "6.9.2"
+  },
   "dependencies": {
     "Base64": "^0.3.0",
     "async": "^2.5.0",
