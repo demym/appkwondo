@@ -31222,6 +31222,22 @@ page-gara .iscrittonome {
   font-size: 15px;
 }
 
+page-gara .scroll-content {
+  padding: 3px !important;
+}
+
+page-gara .iscrittiitem ion-label {
+  margin: 0px !important;
+}
+
+page-gara .list-ios {
+  margin: 10px 0px 10px 0px !important;
+}
+
+page-gara .list-md {
+  margin: 10px 0px 10px 0px !important;
+}
+
 page-gara .tkdtiscritti {
   color: #222;
   font-size: 11px;

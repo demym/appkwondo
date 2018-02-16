@@ -30995,6 +30995,12 @@ ion-col, ion-row, ion-grid {
   font-weight: normal;
 }
 
+.matchord {
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+}
+
 .mailphone {
   background: #eee;
   width: 100%;
@@ -31214,6 +31220,22 @@ page-gara .iscrittonome {
   font-weight: bold;
   color: black;
   font-size: 15px;
+}
+
+page-gara .scroll-content {
+  padding: 3px !important;
+}
+
+page-gara .iscrittiitem ion-label {
+  margin: 0px !important;
+}
+
+page-gara .list-ios {
+  margin: 10px 0px 10px 0px !important;
+}
+
+page-gara .list-md {
+  margin: 10px 0px 10px 0px !important;
 }
 
 page-gara .tkdtiscritti {

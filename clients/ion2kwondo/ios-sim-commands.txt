@@ -1,0 +1,2 @@
+ios-sim showdevicetypes
+ionic cordova run ios --target="iPhone-5s, 10.2"

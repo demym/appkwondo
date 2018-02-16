@@ -26,11 +26,11 @@
 <ion-content spadding style="background: #eee;">
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content refreshingSpinner="ios">
+    <ion-refresher-content refreshingSpinner="dots">
         </ion-refresher-content>
   </ion-refresher>  
   <div *ngIf="loading" style="width: 100%; text-align: center">
-    <ion-spinner name="ios"></ion-spinner>
+    <ion-spinner name="dots"></ion-spinner>
   </div>
 
   <ion-list [virtualScroll]="displayedatleti" approxItemHeight="40px">

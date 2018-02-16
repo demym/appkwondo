@@ -466,6 +466,16 @@ export class ChatPage implements OnInit {
 
   selectChat() {
     var questo = this;
+    let cloading = questo.loadingCtrl.create({
+      spinner: 'dots',
+      content: "Caricamento lista chat in corso...."
+    });
+  
+    cloading.onDidDismiss(() => {
+      console.log('Dismissed loading');
+    });
+  
+    cloading.present();
     var url = questo.backend.rooturl + "/chat/list";
     questo.backend.fetchData(url, function (data) {
       console.log("chats list", data);
@@ -476,6 +486,7 @@ export class ChatPage implements OnInit {
         if (a1 < b1) return 1;
         return 0;
       })
+      cloading.dismiss();
       let profileModal = questo.modal.create(ChatlistPage, { data: data });
       profileModal.onDidDismiss(data => {
         console.log("chatlistdismissed", data);

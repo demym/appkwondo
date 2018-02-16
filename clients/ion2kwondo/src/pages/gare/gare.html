@@ -24,13 +24,13 @@
 
 
 <ion-content spadding style="background: #eee;">
-  <div *ngIf="backend.gare.length==0" style="text-align: center; width: 100%"><ion-spinner center name="ios" ></ion-spinner></div>
+  <div *ngIf="backend.gare.length==0" style="text-align: center; width: 100%"><ion-spinner center name="dots" ></ion-spinner></div>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content refreshingSpinner="ios">
+    <ion-refresher-content refreshingSpinner="dots">
         </ion-refresher-content>
   </ion-refresher>  
   <div *ngIf="loading" style="width: 100%; text-align: center">
-    <ion-spinner name="ios"></ion-spinner>
+    <ion-spinner name="dots"></ion-spinner>
   </div>
 
 <ion-list *ngIf="backend.gare.length>0">
