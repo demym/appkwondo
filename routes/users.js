@@ -311,6 +311,80 @@ router.post("/changepsw", function (req, res) {
 })
 
 
+
+
+router.post("/update", function (req, res) {
+
+    var body = req.body;
+    var retvalue = {
+        error: false,
+        msg: ""
+    }
+    utils.colog(body);
+
+    var currentpsw = body.currentpsw;
+    var newpsw = body.newpsw;
+    var verifynewpsw = body.verifynewpsw;
+    var email = body.email;
+
+    var userdoc=body;
+
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            var doc = item.doc;
+            if (doc.email == userdoc.email) {
+                found = true;
+                item.doc=userdoc;
+                mongo.updatefile("users.json", data.rows, function (udata) {
+
+                    /*
+                    var html = "La tua userid su Appkwondo è stata modificata, i tuoi nuovi dati:<br><br>";
+
+                    html += "E-mail: <b>" + email + "</b><br>";
+                    html += "Password: <b>" + newpsw + "</b>";
+
+                    var mailobj = {
+                        from: "AppKwonDo <appkwondo@tkdr.org>", // sender address
+                        to: email, // list of receivers
+                        subject: "La tua userid Appkwondo è stata aggiornata con successo ",
+                        text: html, // plaintext body
+                        html: html // html body
+                    }
+
+
+
+                    mail.sendMail(mailobj, function (mdata) {
+                        res.send(retvalue);
+
+                    })
+                    */
+
+                    res.send(udata);
+
+
+
+                })
+               
+            }
+
+        })
+
+
+        if (!found) {
+            retvalue.error = true;
+            retvalue.msg = "Utente con email " + email + " non trovato";
+            res.send(retvalue);
+
+        } 
+
+    })
+
+    
+})
+
+
+
 router.get("/registerios/:email", function (req, res) {
     var email = req.params.email;
     mongo.getfile("iosusers.json", function (data) {
