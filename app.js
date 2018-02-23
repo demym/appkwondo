@@ -808,9 +808,13 @@ app.post("/fblive",function(req,res){
 		if (req.query.url) url=req.query.url;
 	}
 	console.log("Received FBLIVE !!",url);
-	io.emit("fblive", {
-		id: url
-	});
+	if (io){
+		io.emit("fblive", {
+			id: url
+		});
+
+	} else console.log("io not found");
+	
 	res.send("ok");
 
 })
