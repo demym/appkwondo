@@ -798,6 +798,14 @@ app.get('/editfile/:filename', function(req, res){
 
 */
 
+
+app.post("/fblive",function(req,res){
+	var url=req.body.url;
+	console.log("Received FBLIVE !!",url);
+	res.send("ok");
+
+})
+
 app.get("/news", function (req, res) {
 	var sdata = {};
 	mongo.getfile("news.json", function (jdata) {
