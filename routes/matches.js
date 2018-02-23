@@ -3830,6 +3830,29 @@ function setResult(match) {
 
 }
 
+
+router.post("/fblive",function(req,res){
+	var url="";
+	if (req.body){
+		if (req.body.url) url=req.body.url;
+	}
+	if (req.query){
+		if (req.query.url) url=req.query.url;
+	}
+	console.log("Received FBLIVE !!",url);
+	if (io){
+		io.emit("fblive", {
+			id: url
+		});
+		console.log("emitted fblive event")
+
+	} else console.log("io not found");
+	
+	res.send("ok");
+
+})
+
+
 router.get("/derby", function (req, res) {
 	getDerby("20160610185130", "201606101852231000", "")
 })
