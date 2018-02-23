@@ -800,8 +800,17 @@ app.get('/editfile/:filename', function(req, res){
 
 
 app.post("/fblive",function(req,res){
-	var url=req.body.url;
+	var url="";
+	if (req.body){
+		if (req.body.url) url=req.body.url;
+	}
+	if (req.query){
+		if (req.query.url) url=req.query.url;
+	}
 	console.log("Received FBLIVE !!",url);
+	io.emit("fblive", {
+		id: url
+	});
 	res.send("ok");
 
 })
