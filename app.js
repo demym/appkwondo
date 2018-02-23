@@ -799,18 +799,47 @@ app.get('/editfile/:filename', function(req, res){
 */
 
 
-app.post("/fblive",function(req,res){
+
+app.get("/fblive",function(req,res){
 	var url="";
-	if (req.body){
-		if (req.body.url) url=req.body.url;
-	}
+	var status="on";
+
+	
+	
 	if (req.query){
 		if (req.query.url) url=req.query.url;
+		if (req.query.status) status=req.query.status;
 	}
 	console.log("Received FBLIVE !!",url);
 	if (io){
 		io.emit("fblive", {
-			id: url
+			url: url,
+			status: status
+		});
+		console.log("emitted fblive event")
+
+	} else console.log("io not found");
+	
+	res.send("ok");
+
+})
+
+app.post("/fblive",function(req,res){
+	var url="";
+	var status="on";
+	if (req.body){
+		if (req.body.url) url=req.body.url;
+		if (req.body.status) status=req.body.status;
+	}
+	if (req.query){
+		if (req.query.url) url=req.query.url;
+		if (req.query.status) status=req.query.status;
+	}
+	console.log("Received FBLIVE !!",url);
+	if (io){
+		io.emit("fblive", {
+			url: url,
+			status: status
 		});
 		console.log("emitted fblive event")
 

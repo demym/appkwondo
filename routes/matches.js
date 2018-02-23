@@ -3831,6 +3831,23 @@ function setResult(match) {
 }
 
 
+router.get("/fblive",function(req,res){
+	var url="nourlprovided";
+
+	if (req.query){
+		if (req.query.url) url=req.query.url;
+	}
+	console.log("Received FBLIVE !!",url);
+	if (io){
+		io.emit("fblive",{url:url});
+		console.log("emitted fblive event")
+
+	} else console.log("io not found");
+	
+	res.send("ok");
+
+})
+
 router.post("/fblive",function(req,res){
 	var url="";
 	if (req.body){
