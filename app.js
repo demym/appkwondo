@@ -812,6 +812,7 @@ app.post("/fblive",function(req,res){
 		io.emit("fblive", {
 			id: url
 		});
+		console.log("emitted fblive event")
 
 	} else console.log("io not found");
 	
@@ -1459,6 +1460,7 @@ io.sockets.on('connection', function (socket) {
 				}
 				io.to(toid).emit("notification", data);
 				//io.sockets.connected[toid].emit(tipo,data);
+				
 			}
 		}
 
