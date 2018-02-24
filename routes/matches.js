@@ -2913,8 +2913,12 @@ function setResultOk(match, atl, mfa, callback) {
 			var ordbinarr = new Array("finale", "semifinale", "quarto di finale", "ottavo di finale", "sedicesimo di finale", "trentaduesimo di finale");
 			var result = match.risultato;
 			var goldenpoint = false;
+			var avversario="";
 			if (match.hasOwnProperty("goldenpoint")) {
 				if (String(match.goldenpoint) == 'true') goldenpoint = true;
+			}
+			if (match.hasOwnProperty("avversario")){
+				if (match.avversario.trim()!="") avversario=match.avversario;
 			}
 			console.log("goldenpoint: " + goldenpoint);
 			//return;
@@ -3062,6 +3066,13 @@ function setResultOk(match, atl, mfa, callback) {
 
 
 				}
+
+				if (avversario.trim()!=""){
+					var avvnome=avversario.split("|")[0];
+					var avvsoc=avversario.split("|")[1];
+					cronacatxt+="contro "+avvnome+" di "+avvsoc;
+				}
+
 				var escl = "";
 				if (nextordbin < 2) escl = " !!";
 				if ((nextordbin > -1) && (v == "yes")) cronacatxt += " e va in " + ordbinarr[nextordbin] + escl + ". ";
