@@ -1081,6 +1081,9 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 				}
 
 				newrt.match = data;
+				if (newrt.match.hasOwnProperty("avversario")){
+					if (newrt.match.avversario.trim()!="") newrt.avversario=newrt.match.avversario;
+				}
 				console.log("data", data);
 
 				realtime.syncRealtimeMatches(newrt);
