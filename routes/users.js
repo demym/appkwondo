@@ -42,7 +42,7 @@ router.get("/add", function (req, res) {
     mongo.getfile("users.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == doc.doc.email) found = true;
+            if (item.doc.email.toLowerCase() == doc.doc.email.toLowerCase()) found = true;
         })
 
         if (!found) {
@@ -69,7 +69,7 @@ router.get("/delete", function (req, res) {
     var id = "";
     mongo.getfile("users.json", function (data) {
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == email) {
+            if (item.doc.email.toLowerCase() == email.toLowerCase()) {
                 if (item.doc.hasOwnProperty("id")) {
                     id = item.doc.id;
                 }
@@ -91,7 +91,7 @@ router.post("/delete", function (req, res) {
     var id = "";
     mongo.getfile("users.json", function (data) {
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == email) {
+            if (item.doc.email.toLowerCase() == email.toLowerCase()) {
                 if (item.doc.hasOwnProperty("id")) {
                     id = item.doc.id;
                 }
@@ -133,7 +133,7 @@ router.get("/register/:email/:nickname", function (req, res) {
     mongo.getfile("users.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == doc.doc.email) found = true;
+            if (item.doc.email.toLowerCase() == doc.doc.email.toLowerCase()) found = true;
         })
 
         if (!found) {
@@ -168,7 +168,7 @@ router.get("/retrievepsw/:email", function (req, res) {
     mongo.getfile("users.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == email) {
+            if (item.doc.email.toLowerCase() == email.toLowerCase()) {
                 id = item.doc.id;
                 user = item.doc;
                 found = true;
@@ -239,7 +239,7 @@ router.post("/changepsw", function (req, res) {
         var found = false;
         data.rows.forEach(function (item, idx) {
             var doc = item.doc;
-            if (doc.email == email) {
+            if (doc.email.toLowerCase() == email.toLowerCase()) {
                 found = true;
                 if (doc.password != currentpsw) {
                     retvalue.error = true;
@@ -333,7 +333,7 @@ router.post("/update", function (req, res) {
         var found = false;
         data.rows.forEach(function (item, idx) {
             var doc = item.doc;
-            if (doc.email == userdoc.email) {
+            if (doc.email.toLowerCase() == userdoc.email.toLowerCase()) {
                 found = true;
                 item.doc=userdoc;
                 mongo.updatefile("users.json", data.rows, function (udata) {
@@ -390,7 +390,7 @@ router.get("/registerios/:email", function (req, res) {
     mongo.getfile("iosusers.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == email) found = true;
+            if (item.doc.email.toLowerCase() == email.toLowerCase()) found = true;
 
         });
 
@@ -446,7 +446,7 @@ router.post("/register", function (req, res) {
     mongo.getfile("users.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == doc.doc.email) found = true;
+            if (item.doc.email.toLowerCase() == doc.doc.email.toLowerCase()) found = true;
         })
 
         if (!found) {
@@ -496,7 +496,7 @@ router.get("/approve/:email", function (req, res) {
     mongo.getfile("users.json", function (data) {
         var found = false;
         data.rows.forEach(function (item, idx) {
-            if (item.doc.email == email) {
+            if (item.doc.email.toLowerCase() == email.toLowerCase()) {
                 id = item.doc.id;
                 user = item.doc;
                 found = true;
@@ -594,7 +594,7 @@ router.post('/login', function (req, res) {
     mongo.getfile("users.json", function (data) {
         console.log("got users", data.rows.length)
         data.rows.forEach(function (item, idx) {
-            if ((item.doc.email == em) && (item.doc.password == pw)) {
+            if ((item.doc.email.toLowerCase() == em.toLowerCase()) && (item.doc.password == pw)) {
                 loggedin = true;
                 user = item.doc;
                 item.doc.gcmtoken = gcmtoken;
