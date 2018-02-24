@@ -3070,7 +3070,7 @@ function setResultOk(match, atl, mfa, callback) {
 				if (avversario.trim()!=""){
 					var avvnome=avversario.split("|")[0];
 					var avvsoc=avversario.split("|")[1];
-					cronacatxt+="contro "+avvnome+" di "+avvsoc;
+					cronacatxt+=" contro "+avvnome+" di "+avvsoc;
 				}
 
 				var escl = "";
