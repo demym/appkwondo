@@ -1081,7 +1081,7 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 				}
 
 				newrt.match = data;
-				
+
 				/*if (newrt.match.hasOwnProperty("avversario")){
 					if (newrt.match.avversario.trim()!="") newrt.avversario=newrt.match.avversario;
 				}*/
@@ -2900,7 +2900,105 @@ function setResultOk(match, atl, mfa, callback) {
 	}
 
 	if (!mfa) {
-		mfa = [{ "doc": { "societaid": "20160217220400", "societaname": "ASD TAEKWONDO ROZZANO", "garaid": "20160610185130", "atletaid": "20150211120920", "atletaname": "Agrillo Simone", "risultato": "11-7", "ordine": "1", "vinto": "yes", "disputato": "yes", "dadisputare": "yes", "color": "blue", "lastupdate": "never", "datanascita": "01.01.2005", "id": "201606101852231000", "matchid": "101", "progid": "01", "medagliamatch": "none", "realtime": false, "goldenpoint": "false", "admin_action": "", "imgsrc": "assets/img/matchok.png" } }, { "doc": { "societaid": "20160217220400", "societaname": "ASD TAEKWONDO ROZZANO", "garaid": "20160610185130", "atletaid": "20150211120920", "atletaname": "Agrillo Simone", "risultato": "5-0", "ordine": "1", "vinto": "no", "disputato": "no", "dadisputare": "yes", "color": "blue", "lastupdate": "never", "datanascita": "01.01.2005", "id": "201606101852231011", "matchid": "104", "progid": "04", "medagliamatch": "none", "realtime": "false", "goldenpoint": "false", "savedmatch": "true", "admin_action": "", "imgsrc": "assets/img/matchtoplay.png" } }, { "doc": { "societaid": "20160217220400", "societaname": "ASD TAEKWONDO ROZZANO", "garaid": "20160610185130", "atletaid": "20150211120920", "atletaname": "Agrillo Simone", "risultato": "3-0", "ordine": "1", "vinto": "no", "disputato": "no", "dadisputare": "yes", "color": "blue", "lastupdate": "never", "datanascita": "01.01.2005", "id": "201609151233125320", "matchid": "109", "progid": "09", "medagliamatch": "none", "realtime": "false", "goldenpoint": "false", "savedmatch": "true", "admin_action": "", "imgsrc": "assets/img/matchtoplay.png" } }, { "doc": { "societaid": "20160217220400", "societaname": "ASD TAEKWONDO ROZZANO", "garaid": "20160610185130", "atletaid": "20150211120920", "atletaname": "Agrillo Simone", "risultato": "", "ordine": "1", "vinto": "no", "disputato": "no", "dadisputare": "yes", "color": "blue", "lastupdate": "never", "datanascita": "01.01.2005", "id": "201705240731153460", "matchid": "125", "progid": "25", "medagliamatch": "none", "savedmatch": "true", "realtime": "false", "admin_action": "", "imgsrc": "assets/img/matchtoplay.png" } }]
+		mfa = [{
+			"doc": {
+				"societaid": "20160217220400",
+				"societaname": "ASD TAEKWONDO ROZZANO",
+				"garaid": "20160610185130",
+				"atletaid": "20150211120920",
+				"atletaname": "Agrillo Simone",
+				"risultato": "11-7",
+				"ordine": "1",
+				"vinto": "yes",
+				"disputato": "yes",
+				"dadisputare": "yes",
+				"color": "blue",
+				"lastupdate": "never",
+				"datanascita": "01.01.2005",
+				"id": "201606101852231000",
+				"matchid": "101",
+				"progid": "01",
+				"medagliamatch": "none",
+				"realtime": false,
+				"goldenpoint": "false",
+				"admin_action": "",
+				"imgsrc": "assets/img/matchok.png"
+			}
+		}, {
+			"doc": {
+				"societaid": "20160217220400",
+				"societaname": "ASD TAEKWONDO ROZZANO",
+				"garaid": "20160610185130",
+				"atletaid": "20150211120920",
+				"atletaname": "Agrillo Simone",
+				"risultato": "5-0",
+				"ordine": "1",
+				"vinto": "no",
+				"disputato": "no",
+				"dadisputare": "yes",
+				"color": "blue",
+				"lastupdate": "never",
+				"datanascita": "01.01.2005",
+				"id": "201606101852231011",
+				"matchid": "104",
+				"progid": "04",
+				"medagliamatch": "none",
+				"realtime": "false",
+				"goldenpoint": "false",
+				"savedmatch": "true",
+				"admin_action": "",
+				"imgsrc": "assets/img/matchtoplay.png"
+			}
+		}, {
+			"doc": {
+				"societaid": "20160217220400",
+				"societaname": "ASD TAEKWONDO ROZZANO",
+				"garaid": "20160610185130",
+				"atletaid": "20150211120920",
+				"atletaname": "Agrillo Simone",
+				"risultato": "3-0",
+				"ordine": "1",
+				"vinto": "no",
+				"disputato": "no",
+				"dadisputare": "yes",
+				"color": "blue",
+				"lastupdate": "never",
+				"datanascita": "01.01.2005",
+				"id": "201609151233125320",
+				"matchid": "109",
+				"progid": "09",
+				"medagliamatch": "none",
+				"realtime": "false",
+				"goldenpoint": "false",
+				"savedmatch": "true",
+				"admin_action": "",
+				"imgsrc": "assets/img/matchtoplay.png"
+			}
+		}, {
+			"doc": {
+				"societaid": "20160217220400",
+				"societaname": "ASD TAEKWONDO ROZZANO",
+				"garaid": "20160610185130",
+				"atletaid": "20150211120920",
+				"atletaname": "Agrillo Simone",
+				"risultato": "",
+				"ordine": "1",
+				"vinto": "no",
+				"disputato": "no",
+				"dadisputare": "yes",
+				"color": "blue",
+				"lastupdate": "never",
+				"datanascita": "01.01.2005",
+				"id": "201705240731153460",
+				"matchid": "125",
+				"progid": "25",
+				"medagliamatch": "none",
+				"savedmatch": "true",
+				"realtime": "false",
+				"admin_action": "",
+				"imgsrc": "assets/img/matchtoplay.png"
+			}
+		}]
 	}
 
 	mongo.getfile("matches_" + match.garaid + ".json", function (allmatches) {
@@ -2914,12 +3012,14 @@ function setResultOk(match, atl, mfa, callback) {
 			var ordbinarr = new Array("finale", "semifinale", "quarto di finale", "ottavo di finale", "sedicesimo di finale", "trentaduesimo di finale");
 			var result = match.risultato;
 			var goldenpoint = false;
-			var avversario="";
+			var avversario = "";
 			if (match.hasOwnProperty("goldenpoint")) {
 				if (String(match.goldenpoint) == 'true') goldenpoint = true;
 			}
-			if (match.hasOwnProperty("avversario")){
-				if (match.avversario.trim()!="") avversario=match.avversario;
+			if (match.hasOwnProperty("avversario")) {
+				if (match.avversario.trim() != "") {
+					avversario = match.avversario;
+				}
 			}
 			console.log("goldenpoint: " + goldenpoint);
 			//return;
@@ -2959,11 +3059,11 @@ function setResultOk(match, atl, mfa, callback) {
 
 			if (r1 > r2) valore = "vinto";
 			if (r2 > r1) valore = "perso";
-			var isSqualifica=false;
-			if (match.hasOwnProperty("squalifica")){
-				if (String(match.squalifica)=="true") {
-					valore="perso";
-					isSqualifica=true;
+			var isSqualifica = false;
+			if (match.hasOwnProperty("squalifica")) {
+				if (String(match.squalifica) == "true") {
+					valore = "perso";
+					isSqualifica = true;
 				}
 			}
 			if (result == "0-0") valore = "nondisputato";
@@ -3042,13 +3142,13 @@ function setResultOk(match, atl, mfa, callback) {
 				if (ordbin < 4) thisincontro = ", " + ordbinarr[ordbin];
 				utils.colog("ordarr", ordarr[ord], ord);
 				cronacatxt += selectedatletaname + " " + vintotxt + " il suo " + ordarr[ord] + " " + eunico + "incontro (n." + nincontro + thisincontro + ") ";
-				if (isSqualifica){
+				if (isSqualifica) {
 					if (result.trim() != "") cronacatxt += " per squalifica, sul punteggio di " + result;
 				} else {
-					
+
 					if (result.trim() != "") cronacatxt += " per " + result;
 				}
-				
+
 
 
 				doc.vinto = v;
@@ -3068,10 +3168,10 @@ function setResultOk(match, atl, mfa, callback) {
 
 				}
 
-				if (avversario.trim()!=""){
-					var avvnome=avversario.split("|")[0];
-					var avvsoc=avversario.split("|")[1];
-					cronacatxt+=" contro "+avvnome+" di "+avvsoc;
+				if (avversario.trim() != "") {
+					var avvnome = avversario.split("|")[0];
+					var avvsoc = avversario.split("|")[1];
+					cronacatxt += " contro " + avvnome + " di " + avvsoc;
 				}
 
 				var escl = "";
@@ -3328,8 +3428,7 @@ function setResultOk(match, atl, mfa, callback) {
 						});
 
 
-					}
-					else {
+					} else {
 						console.log("socket not connected")
 					}
 					if (callback) callback(ret);
@@ -3353,8 +3452,7 @@ function setResultOk(match, atl, mfa, callback) {
 								});
 								if (cronacatxt.trim() != "") io.emit("chatmsg", chat);
 
-							}
-							else {
+							} else {
 								console.log("socket not connected")
 							}
 							if (callback) callback(ret);
@@ -3846,40 +3944,42 @@ function setResult(match) {
 }
 
 
-router.get("/fblive",function(req,res){
-	var url="nourlprovided";
+router.get("/fblive", function (req, res) {
+	var url = "nourlprovided";
 
-	if (req.query){
-		if (req.query.url) url=req.query.url;
+	if (req.query) {
+		if (req.query.url) url = req.query.url;
 	}
-	console.log("Received FBLIVE !!",url);
-	if (io){
-		io.emit("fblive",{url:url});
+	console.log("Received FBLIVE !!", url);
+	if (io) {
+		io.emit("fblive", {
+			url: url
+		});
 		console.log("emitted fblive event")
 
 	} else console.log("io not found");
-	
+
 	res.send("ok");
 
 })
 
-router.post("/fblive",function(req,res){
-	var url="";
-	if (req.body){
-		if (req.body.url) url=req.body.url;
+router.post("/fblive", function (req, res) {
+	var url = "";
+	if (req.body) {
+		if (req.body.url) url = req.body.url;
 	}
-	if (req.query){
-		if (req.query.url) url=req.query.url;
+	if (req.query) {
+		if (req.query.url) url = req.query.url;
 	}
-	console.log("Received FBLIVE !!",url);
-	if (io){
+	console.log("Received FBLIVE !!", url);
+	if (io) {
 		io.emit("fblive", {
 			id: url
 		});
 		console.log("emitted fblive event")
 
 	} else console.log("io not found");
-	
+
 	res.send("ok");
 
 })
@@ -4059,7 +4159,7 @@ function delMatch(matchid, garaid, atletaid, callback) {
 			utils.colog("examining match " + matchnum, "atletaid", atlid);
 
 			if (alreadyfound) {
-				if (atlid == atletaid) {  //this match is posterior to the deleted one, reset its data
+				if (atlid == atletaid) { //this match is posterior to the deleted one, reset its data
 					console.log("resetting match " + matchnum);
 					doc.disputato = "no";
 					doc.dadisputare = "yes";
@@ -4074,19 +4174,21 @@ function delMatch(matchid, garaid, atletaid, callback) {
 
 
 			if (doc.hasOwnProperty("derby")) {
+				console.log("has derby !!", doc);
+				if (doc.derby) {
+					if (doc.derby.trim() != "") {
+						var did = doc.derby;
 
-				if (doc.derby.trim() != "") {
-					var did = doc.derby;
+						if (did == id) { //this match was a derby with the deleting match
+							utils.colog("found match that had a derby with the deleting one !!", matchnum);
 
-					if (did == id) {   //this match was a derby with the deleting match
-						utils.colog("found match that had a derby with the deleting one !!", matchnum);
+							doc.derby = "";
+							console.log("resetted derby flag on matchnum " + matchnum);
+						}
 
-						doc.derby = "";
-						console.log("resetted derby flag on matchnum " + matchnum);
+
+
 					}
-
-
-
 				}
 
 
