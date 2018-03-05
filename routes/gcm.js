@@ -51,13 +51,15 @@ var fcm = new FCM(serverKey);*/
 var tokens = [];
 
 function fcmSend(obj, callback) {
-	/*var payload = {
-		notification: {
-		  title: "NASDAQ News",
-		  body: "The NASDAQ climbs for the second day. Closes up 0.60%."
-		}
-	  };
-	  */
+	
+	if (!gcm_enabled) {
+		callback({
+			error: true,
+			errmsg: "GCM not enabled"
+		});
+		return;
+	};	
+
 	var payload = {
 		notification: {
 			title: "This is a Notification",

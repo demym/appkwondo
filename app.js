@@ -1418,6 +1418,37 @@ io.sockets.on('connection', function (socket) {
 		data.time = tempo;
 		socket.broadcast.emit('chatmsg', data);
 
+		var text="";
+		if (data.hasOwnProperty("text")){
+			if (data.text.trim()!="") {
+				text=data.text
+			} 
+		}
+
+		if (data.hasOwnProperty("fotourl")){
+			text="Immagine";
+		}
+
+		var hasAudio=false;
+		if (data.hasOwnProperty("audio")) hasAudio=true;
+		if (data.hasOwnProperty("audiourl")) hasAudio=true;
+		if (data.hasOwnProperty("audiofilename")) hasAudio=true;
+
+		if (hasAudio) text="Messaggio vocale";
+
+		var obj={
+			title: data.nickname,
+			body: text
+			
+		}
+
+		
+
+		gcm.fcmSend(obj,function(fcmdata){
+			console.log("fcm sent",fcmdata)
+		})
+
+
 	});
 
 
