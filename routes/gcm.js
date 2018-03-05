@@ -30,10 +30,10 @@ var serviceAccount = {
 
 //var serviceAccount = require("path/to/serviceAccountKey.json");
 
-/*admin.initializeApp({
+admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
 	databaseURL: "https://appkwondo.firebaseio.com"
-});*/
+});
 
 var gcmsender = new gcm.Sender('AAAA8NbYOh0:APA91bHMyE-jTX-SX1kROJ-W-t-GSn9wIpyXqGPQOO8LHsLAp-EtO_CXgxGIT_8ic1ccRWDJ8VEiISLmHkayvDLtncd4nebcUh7jDkVUYT9G3IF4etaNvfj1uwBBdRPFT5NgYMZhr-qB');
 console.log("GCMSENDER", gcmsender);
