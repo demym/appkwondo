@@ -25,6 +25,8 @@
     "ejs": "*",
     "express": "~4.10.6",
     "express-session": "latest",
+    "fcm-node": "^1.2.1",
+    "firebase-admin": "^5.9.1",
     "gcm-push": "^1.0.1",
     "imagemagick": "^0.1.3",
     "ip": "^1.1.5",

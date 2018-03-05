@@ -824,6 +824,19 @@ app.get("/fblive",function(req,res){
 
 })
 
+
+app.get("/fcm/send",function(req,res){
+	var obj={
+		title: "AppkwondoV2",
+		text: "prova messaggio push",
+		topic: "chatkwondo"
+	}
+	gcm.fcmSend(obj,function(data){
+		res.send(data);
+	})
+
+});
+
 app.post("/fblive",function(req,res){
 	var url="";
 	var status="on";

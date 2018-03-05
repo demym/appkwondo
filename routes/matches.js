@@ -1085,9 +1085,11 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 				/*if (newrt.match.hasOwnProperty("avversario")){
 					if (newrt.match.avversario.trim()!="") newrt.avversario=newrt.match.avversario;
 				}*/
-				console.log("data", data);
+				console.log("newrt data", data);
 
 				realtime.syncRealtimeMatches(newrt);
+
+				
 
 				/*var obj={
 					text: chatobj.nickname+" ha postato un'immagine",
@@ -1107,6 +1109,16 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 					io.emit("realtimematches", {
 						matches: realtime.getRealtimeMatches()
 					});*/
+
+					var obj={
+						title: "TEMP REALE !",
+						text: newrt.match.matchid,
+						topic: "chatkwondo"
+					}
+					gcm.fcmSend(obj,function(fcmdata){
+						console.log("fcm sent",fcmdata)
+					})
+				
 
 
 
