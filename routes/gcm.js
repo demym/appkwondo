@@ -60,6 +60,8 @@ var mytokens = [{
 	"count": "0"
 }]
 
+tokens = mytokens;
+
 function fcmSend(obj, callback) {
 
 	if (!gcm_enabled) {
@@ -91,7 +93,7 @@ function fcmSend(obj, callback) {
 	if (obj.hasOwnProperty("badge")) payload.notification.badge = obj.badge;
 
 	if (obj.hasOwnProperty("disablebadge")) {
-		if (String(obj.disablebadge)=="true") {
+		if (String(obj.disablebadge) == "true") {
 			usebadge = false;
 		}
 
@@ -176,6 +178,57 @@ function fcmSend(obj, callback) {
 			.catch((error) => {
 				console.log('Error sending FCM notification to token', tok, error);
 			});
+
+	})
+
+
+
+	callback({
+		completed: true
+	})
+
+
+
+
+
+}
+
+
+
+
+function fcmSendMsg(obj, callback) {
+
+
+
+	console.log("fcmSendMsg",obj);
+
+	tokens.forEach(function (item, idx) {
+		var tok = item.token;
+		item.count++;
+		var count = String(item.count);
+
+
+		var payload1 = {
+			data: {
+				
+
+				badge: count,
+				msgcnt: count,
+
+				"content-available": '1'
+			}
+		}
+
+		admin.messaging().sendToDevice(tok, payload1)
+			.then((response1) => {
+				// Response is a message ID string.
+				console.log('Successfully sent FCM data to token', tok);
+			})
+			.catch((error1) => {
+				console.log('Error sending FCM data to token', tok, error1);
+			});
+
+
 
 	})
 
@@ -731,3 +784,4 @@ exports.sendHttps = sendHttps;
 exports.testGCM = testGCM;
 exports.setGcmEnabled = setGcmEnabled;
 exports.fcmSend = fcmSend;
+exports.fcmSendMsg=fcmSendMsg;

@@ -1037,6 +1037,19 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 			if (action == "realtime_off") {
 				realtime.remove(garaid, matchid);
 				disputato = true;
+
+				var vmatch=data;
+
+				var obj={
+					title: "Fine TEMPO REALE",
+					body: vmatch.matchid+" - "+vmatch.atletaname,
+					disablebadge: true
+					
+				}
+				/*
+				fcm.fcmSend(obj,function(fcmdata){
+					console.log("fcm sent",fcmdata)
+				})*/
 				/*var sock = global.socket;
 				console.log("sending refreshrealtime");
 				sock.broadcast.emit("realtimematches", {
@@ -3471,6 +3484,22 @@ function setResultOk(match, atl, mfa, callback) {
 						var mfname = "chatno64.json";
 						mongo.addRecord(mfname, "", chat, function (cdata) {
 							utils.colog("chat record inserted", cdata);
+							var fcmobj = {
+								title: "Risultato match",
+								body: chat.text
+		
+							}
+		
+							var doPush = false;
+							if (chat.nickname.toLowerCase() == "system") doPush = true;
+		
+							if (doPush) {
+								fcm.fcmSend(fcmobj, function (fcmdata) {
+									console.log("fcm sent", fcmdata)
+								})
+							}
+		
+		
 							if (io) {
 								io.emit("updategara", {
 									garaid: match.garaid

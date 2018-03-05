@@ -442,11 +442,14 @@ router.post("/put", function (req, res) {
 
 					}
 
+					var doPush = false;
+					if (chatobj.nickname.toLowerCase() == "system") doPush = true;
 
-
-					gcm2.fcmSend(obj, function (fcmdata) {
-						console.log("fcm sent", fcmdata)
-					})
+					if (doPush) {
+						gcm2.fcmSend(obj, function (fcmdata) {
+							console.log("fcm sent", fcmdata)
+						})
+					}
 
 
 
@@ -477,34 +480,45 @@ router.post("/put", function (req, res) {
 
 
 				var text = "";
-					if (chatobj.hasOwnProperty("text")) {
-						if (chatobj.text.trim() != "") {
-							text = chatobj.text
-						}
+				if (chatobj.hasOwnProperty("text")) {
+					if (chatobj.text.trim() != "") {
+						text = chatobj.text
 					}
+				}
 
-					if (chatobj.hasOwnProperty("fotourl")) {
-						text = "Immagine";
-					}
+				if (chatobj.hasOwnProperty("fotourl")) {
+					text = "Immagine";
+				}
 
-					var hasAudio = false;
-					if (chatobj.hasOwnProperty("audio")) hasAudio = true;
-					if (chatobj.hasOwnProperty("audiourl")) hasAudio = true;
-					if (chatobj.hasOwnProperty("audiofilename")) hasAudio = true;
+				var hasAudio = false;
+				if (chatobj.hasOwnProperty("audio")) hasAudio = true;
+				if (chatobj.hasOwnProperty("audiourl")) hasAudio = true;
+				if (chatobj.hasOwnProperty("audiofilename")) hasAudio = true;
 
-					if (hasAudio) text = "Messaggio vocale";
+				if (hasAudio) text = "Messaggio vocale";
 
-					var obj = {
-						title: chatobj.nickname,
-						body: text
+				var obj = {
+					title: chatobj.nickname,
+					body: text
 
-					}
+				}
 
+				var doPush = false;
+				if (chatobj.nickname.toLowerCase() == "system") doPush = true;
 
+				console.log(chatobj.nickname,"doPush",doPush);
+				if (doPush) {
 
 					gcm2.fcmSend(obj, function (fcmdata) {
 						console.log("fcm sent", fcmdata)
 					})
+				} else {
+
+					gcm2.fcmSendMsg(obj, function (fcmdata) {
+						console.log("fcm sent", fcmdata)
+					})
+
+				}
 
 				socketio.emit('chatmsg', chatobj);
 				res.send(data);
