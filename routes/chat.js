@@ -458,7 +458,7 @@ router.post("/put", function (req, res) {
 
 				});
 			} else {
-				var obj = {
+				/*var obj = {
 					text: chatobj.nickname + " - " + chatobj.text,
 					title: "ChatKwonDo",
 					icon: "ic_launcher",
@@ -472,7 +472,40 @@ router.post("/put", function (req, res) {
 				}
 				gcm2.sendToAll(obj, function (data) {
 					console.log("gcmsendtoall done", data);
-				})
+				})*/
+
+
+
+				var text = "";
+					if (chatobj.hasOwnProperty("text")) {
+						if (chatobj.text.trim() != "") {
+							text = chatobj.text
+						}
+					}
+
+					if (chatobj.hasOwnProperty("fotourl")) {
+						text = "Immagine";
+					}
+
+					var hasAudio = false;
+					if (chatobj.hasOwnProperty("audio")) hasAudio = true;
+					if (chatobj.hasOwnProperty("audiourl")) hasAudio = true;
+					if (chatobj.hasOwnProperty("audiofilename")) hasAudio = true;
+
+					if (hasAudio) text = "Messaggio vocale";
+
+					var obj = {
+						title: chatobj.nickname,
+						body: text
+
+					}
+
+
+
+					gcm.fcmSend(obj, function (fcmdata) {
+						console.log("fcm sent", fcmdata)
+					})
+
 				socketio.emit('chatmsg', chatobj);
 				res.send(data);
 			}
