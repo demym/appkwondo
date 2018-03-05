@@ -1120,7 +1120,7 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 					var obj={
 						title: nottitle,
-						text: newrt.match.matchid+" - "+newrt.match.atletaname
+						body: newrt.match.matchid+" - "+newrt.match.atletaname
 						
 					}
 					fcm.fcmSend(obj,function(fcmdata){
