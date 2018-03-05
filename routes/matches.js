@@ -1120,12 +1120,16 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 					var obj={
 						title: nottitle,
-						body: newrt.match.matchid+" - "+newrt.match.atletaname,
-						topic: "chatkwondo"
+						text: newrt.match.matchid+" - "+newrt.match.atletaname
+						
 					}
-					fcm.fcmSend(obj,function(fcmdata){
+					/*fcm.send.fcmSend(obj,function(fcmdata){
 						console.log("fcm sent",fcmdata)
+					})*/
+					fcm.sendToAll(obj,function(data){
+						console.log("gcmsendtoall done",data);
 					})
+
 				
 
 

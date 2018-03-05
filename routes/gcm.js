@@ -13,7 +13,6 @@ var request = require('request');
 var mongo = require('../routes/mongo');
 var admin = require("firebase-admin");
 
-var admin = require("firebase-admin");
 
 
 var serviceAccount = {
@@ -31,15 +30,15 @@ var serviceAccount = {
 
 //var serviceAccount = require("path/to/serviceAccountKey.json");
 
-admin.initializeApp({
+/*admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
 	databaseURL: "https://appkwondo.firebaseio.com"
-});
+});*/
 
 var gcmsender = new gcm.Sender('AAAA8NbYOh0:APA91bHMyE-jTX-SX1kROJ-W-t-GSn9wIpyXqGPQOO8LHsLAp-EtO_CXgxGIT_8ic1ccRWDJ8VEiISLmHkayvDLtncd4nebcUh7jDkVUYT9G3IF4etaNvfj1uwBBdRPFT5NgYMZhr-qB');
 console.log("GCMSENDER", gcmsender);
 
-var gcm_enabled = false;
+var gcm_enabled = true;
 
 
 /*var FCM = require('fcm-node');
@@ -51,7 +50,7 @@ var fcm = new FCM(serverKey);*/
 
 var tokens = [];
 
-function fcmSend(obj,callback) {
+function fcmSend(obj, callback) {
 	/*var payload = {
 		notification: {
 		  title: "NASDAQ News",
@@ -60,9 +59,6 @@ function fcmSend(obj,callback) {
 	  };
 	  */
 	var payload = {
-		
-		
-		
 		notification: {
 			title: "This is a Notification",
 			body: "This is the body of the notification message.",
@@ -70,18 +66,15 @@ function fcmSend(obj,callback) {
 			badge: "6",
 			tag: "chatkwondo",
 			click_action: "FCM_PLUGIN_ACTIVITY"
-		}/*,
-		data: {
-			id: 1,
-			text: "new Symulti update !"
-		}*/
+		}
 	};
 
 	var topic = "chatkwondo";
 
-	if (obj.hasOwnProperty("title")) payload.notification.title=obj.title;
-	if (obj.hasOwnProperty("body")) payload.notification.body=obj.body;
-	if (obj.hasOwnProperty("topic")) topic=obj.topic;
+	if (obj.hasOwnProperty("title")) payload.notification.title = obj.title;
+	if (obj.hasOwnProperty("body")) payload.notification.body = obj.body;
+	if (obj.hasOwnProperty("topic")) topic = obj.topic;
+	if (obj.hasOwnProperty("badge")) payload.notification.badge = obj.badge;
 
 	var options = {
 		priority: "high",
@@ -92,11 +85,29 @@ function fcmSend(obj,callback) {
 
 	admin.messaging().sendToTopic(topic, payload)
 		.then(function (response) {
-			console.log("Successfully sent message:", response);
-			if (callback) callback(response);
+			console.log("Successfully sent notification message:", response);
+
+			//SEND SECOND PART FOR ANDROID
+			var payload1 = {
+				data: {
+					badge: payload.notification.badge,
+					msgcnt:"3",
+					"content-available": '1'
+				}
+			}
+			admin.messaging().sendToTopic(topic, payload1)
+				.then(function (response) {
+					console.log("Successfully sent data message:", response);
+					if (callback) callback(response);
+				})
+				.catch(function (error) {
+					console.log("Error sending data message:", error);
+					if (callback) callback(error);
+				});
+		   //if (callback) callback(response);
 		})
 		.catch(function (error) {
-			console.log("Error sending message:", error);
+			console.log("Error sending notification message:", error);
 			if (callback) callback(error);
 		});
 
@@ -286,6 +297,7 @@ function sendToAll(obj, callback) {
 	}
 
 
+	console.log("tokens",tokens);
 
 	tokens.forEach(function (item, idx) {
 		item.count++;
