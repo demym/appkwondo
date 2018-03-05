@@ -1123,12 +1123,12 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 						text: newrt.match.matchid+" - "+newrt.match.atletaname
 						
 					}
-					/*fcm.send.fcmSend(obj,function(fcmdata){
+					fcm.send.fcmSend(obj,function(fcmdata){
 						console.log("fcm sent",fcmdata)
-					})*/
-					fcm.sendToAll(obj,function(data){
-						console.log("gcmsendtoall done",data);
 					})
+					/*fcm.sendToAll(obj,function(data){
+						console.log("gcmsendtoall done",data);
+					})*/
 
 				
 
