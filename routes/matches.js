@@ -1110,9 +1110,16 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 					io.emit("realtimematches", {
 						matches: realtime.getRealtimeMatches()
 					});*/
+					var nottitle="TEMPO REALE !";
+
+					if (newrt.match.hasOwnProperty("matchord")){
+						if (newrt.match.matchord.trim()!=""){
+							nottitle+=" "+newrt.match.matchord;
+						}
+					}
 
 					var obj={
-						title: "TEMP REALE !",
+						title: nottitle,
 						body: newrt.match.matchid+" - "+newrt.match.atletaname,
 						topic: "chatkwondo"
 					}
