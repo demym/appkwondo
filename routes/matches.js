@@ -974,6 +974,42 @@ router.post('setrealtime/:realtime/:garaid/:matchid', function (req, res) {
 
 });
 
+
+router.get("/updateavversario/:garaid/:matchid/:avversario",function(req,res){
+	var garaid = req.params.garaid;
+	var matchid = req.params.matchid;
+	var avversario=req.params.avversario;
+	//var societa=req.params.societaavversario;
+	var matchesfname="matches_"+garaid+".json";
+	mongo.getfile(matchesfname,function(data){
+		data.rows.forEach(function(item,idx){
+			var doc=item.doc;
+			if (doc.id==matchid){
+				doc.avversario=avversario;
+				
+				console.log("updateavversario, found match ",doc.id,doc.avversario);
+				if (avversario=="0|0") {
+					console.log("avversario null, deleting");
+					delete doc.avversario;
+				}
+				mongo.updatefile(matchesfname,data.rows,function(udata){
+					console.log("updated "+matchesfname,udata);
+					var io=global.io;
+					if (io) {
+						io.emit("updategara", {
+							garaid: garaid
+						});
+	
+					} else {
+						console.log("socket not connected")
+					}
+				});
+			}
+		})
+		res.send(data);
+	})
+})
+
 router.post('/update/:garaid/:matchid', function (req, res) {
 	var body = req.body;
 	var garaid = req.params.garaid;
