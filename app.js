@@ -831,6 +831,11 @@ app.get("/fcm/send",function(req,res){
 		text: "prova messaggio push",
 		topic: "chatkwondo"
 	}
+
+
+	if (req.query.hasOwnProperty("badge")) obj.badge=req.query.badge;
+	if (req.query.hasOwnProperty("text")) obj.text=req.query.text;
+
 	gcm.fcmSend(obj,function(data){
 		res.send(data);
 	})
