@@ -6,6 +6,7 @@ var mongo = require('../routes/mongo');
 var base64 = require('node-base64-image');
 var utils = require("../routes/utils");
 var realtime = require("../routes/realtime");
+var fcm=require("../routes/gcm");
 
 var path = require('path');
 var util = require("util");
@@ -1115,7 +1116,7 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 						text: newrt.match.matchid,
 						topic: "chatkwondo"
 					}
-					gcm.fcmSend(obj,function(fcmdata){
+					fcm.fcmSend(obj,function(fcmdata){
 						console.log("fcm sent",fcmdata)
 					})
 				
