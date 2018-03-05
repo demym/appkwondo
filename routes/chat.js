@@ -444,7 +444,7 @@ router.post("/put", function (req, res) {
 
 
 
-					gcm.fcmSend(obj, function (fcmdata) {
+					gcm2.fcmSend(obj, function (fcmdata) {
 						console.log("fcm sent", fcmdata)
 					})
 
@@ -502,7 +502,7 @@ router.post("/put", function (req, res) {
 
 
 
-					gcm.fcmSend(obj, function (fcmdata) {
+					gcm2.fcmSend(obj, function (fcmdata) {
 						console.log("fcm sent", fcmdata)
 					})
 
