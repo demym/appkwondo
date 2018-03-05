@@ -828,13 +828,14 @@ app.get("/fblive",function(req,res){
 app.get("/fcm/send",function(req,res){
 	var obj={
 		title: "AppkwondoV2",
-		text: "prova messaggio push",
+		body: "prova messaggio push",
 		topic: "chatkwondo"
 	}
 
 
 	if (req.query.hasOwnProperty("badge")) obj.badge=req.query.badge;
 	if (req.query.hasOwnProperty("body")) obj.body=req.query.body;
+	if (req.query.hasOwnProperty("text")) obj.body=req.query.text;
 	if (req.query.hasOwnProperty("title")) obj.title=req.query.title;
 
 	gcm.fcmSend(obj,function(data){
@@ -1418,36 +1419,7 @@ io.sockets.on('connection', function (socket) {
 		data.time = tempo;
 		socket.broadcast.emit('chatmsg', data);
 
-		var text="";
-		if (data.hasOwnProperty("text")){
-			if (data.text.trim()!="") {
-				text=data.text
-			} 
-		}
-
-		if (data.hasOwnProperty("fotourl")){
-			text="Immagine";
-		}
-
-		var hasAudio=false;
-		if (data.hasOwnProperty("audio")) hasAudio=true;
-		if (data.hasOwnProperty("audiourl")) hasAudio=true;
-		if (data.hasOwnProperty("audiofilename")) hasAudio=true;
-
-		if (hasAudio) text="Messaggio vocale";
-
-		var obj={
-			title: data.nickname,
-			body: text
-			
-		}
-
 		
-
-		gcm.fcmSend(obj,function(fcmdata){
-			console.log("fcm sent",fcmdata)
-		})
-
 
 	});
 

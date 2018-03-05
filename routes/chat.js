@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var gcm = require('node-gcm');
-var gcm2=require('../routes/gcm');
+var gcm2 = require('../routes/gcm');
 //var io = require('socket.io');
 var request = require('request');
 var mongo = require('../routes/mongo');
@@ -176,7 +176,7 @@ router.get('/getno64', function (req, res) {
 	var mfname = "chatno64.json";
 	mongo.checkCreateFile(mfname, function (data) {
 		mongo.getfile(mfname, function (data) {
-			console.log("read "+data.rows.length+" records from "+mfname);
+			console.log("read " + data.rows.length + " records from " + mfname);
 			data.rows.forEach(function (item, idx) {
 				if (item.foto) {
 					delete item.foto;
@@ -184,11 +184,11 @@ router.get('/getno64', function (req, res) {
 
 			})
 
-			data.rows.sort(function(a,b){
-				var a1=a.time;
-				var b1=b.time;
-				if (a1>b1) return 1;
-				if (a1<b1) return -1;
+			data.rows.sort(function (a, b) {
+				var a1 = a.time;
+				var b1 = b.time;
+				if (a1 > b1) return 1;
+				if (a1 < b1) return -1;
 				return 0;
 			})
 
@@ -395,19 +395,19 @@ router.post("/put", function (req, res) {
 	delete chatno64.foto;
 	mongo.addRecord("chatno64.json", "", chatno64, function (no64data) {
 
-		console.log("record added to chatno64.json",no64data);
+		console.log("record added to chatno64.json", no64data);
 
 		var mfname = "chat.json";
 
 		mongo.addRecord(mfname, "", chatobj, function (data) {
-			console.log("chat record inserted to "+mfname);
+			console.log("chat record inserted to " + mfname);
 			if (hasfoto) {
 				var fotofname = chatobj.time + ".jpg";
 				console.log("storing image on altervista")
 				utils.sendChatMediaToAltervista(fotofname, chatobjfoto, function (cmdata) {
 
-					var obj={
-						text: chatobj.nickname+" ha postato un'immagine",
+					/*var obj = {
+						text: chatobj.nickname + " ha postato un'immagine",
 						title: "ChatKwonDo",
 						icon: "ic_launcher",
 						color: "#000000",
@@ -415,18 +415,51 @@ router.post("/put", function (req, res) {
 						badge: "1",
 						topic: "appkwondov2",
 						token: ""
-					
+
+					}*/
+
+					var text = "";
+					if (chatobj.hasOwnProperty("text")) {
+						if (chatobj.text.trim() != "") {
+							text = chatobj.text
+						}
 					}
-					gcm2.sendToAll(obj,function(data){
-						console.log("gcmsendtoall done",data);
+
+					if (chatobj.hasOwnProperty("fotourl")) {
+						text = "Immagine";
+					}
+
+					var hasAudio = false;
+					if (chatobj.hasOwnProperty("audio")) hasAudio = true;
+					if (chatobj.hasOwnProperty("audiourl")) hasAudio = true;
+					if (chatobj.hasOwnProperty("audiofilename")) hasAudio = true;
+
+					if (hasAudio) text = "Messaggio vocale";
+
+					var obj = {
+						title: chatobj.nickname,
+						body: text
+
+					}
+
+
+
+					gcm.fcmSend(obj, function (fcmdata) {
+						console.log("fcm sent", fcmdata)
 					})
+
+
+
+					/*gcm2.sendToAll(obj, function (data) {
+						console.log("gcmsendtoall done", data);
+					})*/
 					socketio.emit('chatmsg', chatobj);
 					res.send(data);
 
 				});
 			} else {
-				var obj={
-					text: chatobj.nickname+" - "+chatobj.text,
+				var obj = {
+					text: chatobj.nickname + " - " + chatobj.text,
 					title: "ChatKwonDo",
 					icon: "ic_launcher",
 					color: "#000000",
@@ -435,10 +468,10 @@ router.post("/put", function (req, res) {
 					topic: "appkwondov2",
 					token: "",
 					sound: "default"
-				
+
 				}
-				gcm2.sendToAll(obj,function(data){
-					console.log("gcmsendtoall done",data);
+				gcm2.sendToAll(obj, function (data) {
+					console.log("gcmsendtoall done", data);
 				})
 				socketio.emit('chatmsg', chatobj);
 				res.send(data);
