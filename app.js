@@ -834,7 +834,8 @@ app.get("/fcm/send",function(req,res){
 
 
 	if (req.query.hasOwnProperty("badge")) obj.badge=req.query.badge;
-	if (req.query.hasOwnProperty("text")) obj.text=req.query.text;
+	if (req.query.hasOwnProperty("body")) obj.body=req.query.body;
+	if (req.query.hasOwnProperty("title")) obj.title=req.query.title;
 
 	gcm.fcmSend(obj,function(data){
 		res.send(data);
