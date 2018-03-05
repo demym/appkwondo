@@ -48,17 +48,27 @@ var serverKey = 'AIzaSyDT30ffP_a3HjHTd0Fbk4hi4TvAhseEUwA';
 var fcm = new FCM(serverKey);*/
 
 
-var tokens = [];
+//var tokens = [];
+
+var tokens = [{
+	"token": "c3ox917Yeq8:APA91bFZV1lShlM3HPMlBIzd2FihRs7337qYnKl357CNinmmA-tkr9oqpz4ILxVk4DjSNaNTFVhYxG5z4qYLXMyxm9Km9MFM-jOaNlfv_rEu-hi_tvkri3KeHg4bXLb_GsMIZpc2ABJh",
+	"deviceid": "1767535d-04f5-1a05-3587-360648030808",
+	"count": "0"
+}, {
+	"token": "exczoFr02_I:APA91bF8SVMG5TOq-tWJXLbYueuhiiNyzmD1hE9R4-FjfjSz-RWwaQJ8N-udy6YBYrpHonBGmr9C8h5vlH1HH8TBNBrR3pdzawDgSNOCFGdBqoGjd0pEewjtz-Z47pCSHGRpvs_4FZaS",
+	"deviceid": "50138EE7-9B89-40AF-A057-521D0849828C",
+	"count": "0"
+}]
 
 function fcmSend(obj, callback) {
-	
+
 	if (!gcm_enabled) {
 		callback({
 			error: true,
 			errmsg: "GCM not enabled"
 		});
 		return;
-	};	
+	};
 
 	var payload = {
 		notification: {
@@ -67,51 +77,117 @@ function fcmSend(obj, callback) {
 			sound: "default",
 			badge: "6",
 			tag: "chatkwondo",
+			group: "chatkwondo",
 			click_action: "FCM_PLUGIN_ACTIVITY"
 		}
 	};
 
 	var topic = "chatkwondo";
+	var usebadge = true;
 
 	if (obj.hasOwnProperty("title")) payload.notification.title = obj.title;
 	if (obj.hasOwnProperty("body")) payload.notification.body = obj.body;
 	if (obj.hasOwnProperty("topic")) topic = obj.topic;
 	if (obj.hasOwnProperty("badge")) payload.notification.badge = obj.badge;
 
+	if (obj.hasOwnProperty("disablebadge")) {
+		if (String(obj.disablebadge)=="true") {
+			usebadge = false;
+		}
+
+	}
+
+
 	var options = {
 		priority: "high",
 		timeToLive: 60 * 60 * 24
 	};
 
+	/*
 
-
-	admin.messaging().sendToTopic(topic, payload)
-		.then(function (response) {
-			console.log("Successfully sent notification message:", response);
-
-			//SEND SECOND PART FOR ANDROID
-			var payload1 = {
-				data: {
-					badge: payload.notification.badge,
-					msgcnt:"3",
-					"content-available": '1'
-				}
-			}
-			admin.messaging().sendToTopic(topic, payload1)
+			admin.messaging().sendToTopic(topic, payload)
 				.then(function (response) {
-					console.log("Successfully sent data message:", response);
-					if (callback) callback(response);
+					console.log("Successfully sent notification message:", response);
+
+					//SEND SECOND PART FOR ANDROID
+					var payload1 = {
+						data: {
+							badge: payload.notification.badge,
+							msgcnt: "3",
+							"content-available": '1'
+						}
+					}
+					admin.messaging().sendToTopic(topic, payload1)
+						.then(function (response) {
+							console.log("Successfully sent data message:", response);
+							if (callback) callback(response);
+						})
+						.catch(function (error) {
+							console.log("Error sending data message:", error);
+							if (callback) callback(error);
+						});
+					//if (callback) callback(response);
 				})
 				.catch(function (error) {
-					console.log("Error sending data message:", error);
+					console.log("Error sending notification message:", error);
 					if (callback) callback(error);
 				});
-		   //if (callback) callback(response);
-		})
-		.catch(function (error) {
-			console.log("Error sending notification message:", error);
-			if (callback) callback(error);
-		});
+	*/
+
+
+
+	var success = [];
+	var fail = [];
+
+	tokens.forEach(function (item, idx) {
+		var tok = item.token;
+		if (usebadge) {
+			item.count++;
+			//payload.token = tok;
+			payload.notification.badge = String(item.count);
+		} else {
+			delete payload.notification.badge;
+		}
+
+
+
+		admin.messaging().sendToDevice(tok, payload)
+			.then((response) => {
+				// Response is a message ID string.
+				console.log('Successfully sent FCM notification to token', tok);
+				var payload1 = {
+					data: {
+						badge: payload.notification.badge,
+						msgcnt: payload.notification.badge,
+						"content-available": '1'
+					}
+				}
+				if (usebadge) {
+					admin.messaging().sendToDevice(tok, payload1)
+						.then((response1) => {
+							// Response is a message ID string.
+							console.log('Successfully sent FCM data to token', tok);
+						})
+						.catch((error1) => {
+							console.log('Error sending FCM data to token', tok, error1);
+						});
+				}
+			})
+			.catch((error) => {
+				console.log('Error sending FCM notification to token', tok, error);
+			});
+
+	})
+
+
+
+	callback({
+		completed: true
+	})
+
+
+
+
 
 }
 
@@ -299,7 +375,7 @@ function sendToAll(obj, callback) {
 	}
 
 
-	console.log("tokens",tokens);
+	console.log("tokens", tokens);
 
 	tokens.forEach(function (item, idx) {
 		item.count++;

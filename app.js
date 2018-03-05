@@ -830,6 +830,7 @@ app.get("/fcm/send",function(req,res){
 		title: "AppkwondoV2",
 		body: "prova messaggio push",
 		topic: "chatkwondo"
+		
 	}
 
 
@@ -837,6 +838,7 @@ app.get("/fcm/send",function(req,res){
 	if (req.query.hasOwnProperty("body")) obj.body=req.query.body;
 	if (req.query.hasOwnProperty("text")) obj.body=req.query.text;
 	if (req.query.hasOwnProperty("title")) obj.title=req.query.title;
+	if (req.query.hasOwnProperty("disablebadge")) obj.disablebadge=req.query.disablebadge;
 
 	gcm.fcmSend(obj,function(data){
 		res.send(data);
