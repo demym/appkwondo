@@ -1113,7 +1113,7 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 					var obj={
 						title: "TEMP REALE !",
-						text: newrt.match.matchid,
+						body: newrt.match.matchid+" - "+newrt.match.atletaname,
 						topic: "chatkwondo"
 					}
 					fcm.fcmSend(obj,function(fcmdata){
