@@ -38,7 +38,7 @@ jspm_packages
 
 
 
-
+.env
 clients 
 public/data/media/*.*
 public/data/chatmedia/*.*

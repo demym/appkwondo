@@ -15,13 +15,15 @@ var admin = require("firebase-admin");
 
 
 
+
+
 var serviceAccount = {
 	"type": "service_account",
 	"project_id": "appkwondo",
-	"private_key_id": "e4de75a1e74f1e10f494fa555b733de940947358",
-	"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpJ2t7qrCT9Lfa\nF/A5zGs5XKatDBZzN5VB0R6QqRVQVVamkMlB3k1/VM5yPuB8gqgsr9Kq4VzvMYGs\nKdkMcYFDjxX19u69SiezIva+MHJ1+B3eTDZxhDjZPI79TDrSkD3kxJx393EW6eu0\nFvojVSoUqhRm6C8sjoPs0F/fU7Xsg/OfdsoO5ODWDbEXQw1ufTwULTVFzfRuFh17\n0PT0Io/JZyExNv94z7Jd/kotP23Xq0fVrRqpSGYzBHz2sKEMhqObcuOyS+29yD4r\nXwUmbrIvhGmXV+R5K4IX0tM+mg1dD1jx0LPowPK7tCDSOqs5euJP1jSPNmVeZLpp\nfPneqCB1AgMBAAECggEAUPxHkIjTS7MhhvBpGjMNrwP15Onhob4d3soROS9KvhBt\nkQfG45tcPTdMNBR4hARGIkb3tMp7JSXtsJDEkxmQytipqf5UpRno0fJOchZd5q8p\nFbIlasnkMdW1m/4wN3nJuEqNoz47zb2nFKzfi6UNpaEcbXyCgXGmJe5JyHGaqyZm\nZtf+w7a57ey66DpbloDZbIgLO+YMElZiz3iRKCmOMp8Av4RzJ6DP5EoxGAPKnxW7\npbaZPMWRkmDr9P+gMjYoRYUyRP2iEg+XDpxIuRBlAma2+6H41CYDXH3EWfhIzz+y\n6CBb8Gg7TrnOwZsJUuHIt3X5bVV/3g+XlE9qKLIsrQKBgQDTizAIQaqJ2yPLVDMY\nS2Pjt/dHLicaFpLRf3tIxdSFBKhw43bIkPqhGKukWJO/w+GnPCPLrUoYdzZqks7b\nrNb57pplneZ1abpKc31h9LLBXMqsfOFoRNQ6rZ5Vs3lqVSYBBjXgV+CO9F1q1E8D\nXf43q9y0PbGutVL8uYBjnaORywKBgQDMs7aX7tBXzpj81eQKPsMXKOdvjJkrtwqB\nAtvQrXZ3WE/t7Fc+1/BreWAlxJL8c7+/yZDCCY4RW83TB3yGvVrfRfNgql99Nbbr\nsk5eHmFil3pwcr3rlG/j2TBQeeYjxekUwhcmfHQboV/rFhSfL2hvl83cSmFJQxip\noCquOUfOvwKBgQC4i8OCYG77Rq6qUjEk75gb78CMW0oHa0v38aPGr7cfuBmOKhHV\nFQ1gfpo2jIOQlr0D3OZJaEqsn0tcm+hUIiuE7E/LeH21TmATVT87tnI/V8kDwwoN\noYYYDqCDmUfBqLi3ygg0R9WCQNJCQScRA+2j+Y1XvD6G8G6ORPIpdTteEwKBgFN+\nPczMuKgH+XivGVtgbByHL5bdJyCggSVL8DK2feqB1+A4lQFp/IMpt6DQBA/6ekyU\nv3mVgh/sbRBVLmKa23TUSEe2Vkpw3VJXoQVcqOYY2PUCqBptqhGqZb19avROZhp0\nbBLjkkwuzzvI/tJK+PMDXREsOXAzcNzHGoGDlZlrAoGBALBtv8O55rQ7pgscO85m\nMCHf/IPLrsyK/1jlUPsgmVf0yFaqdYjXaYANeOoHUDe9vijnI2tOngkO4XzV/g4l\n0uQSrBGX7X8qAp7uCGIIYXJ+YjLaa3fzJ4C9rmOG/IRLAjERzWqbU0vLmuLE2A0R\n8IUvZ/G8kFcmV4WUh2MylztB\n-----END PRIVATE KEY-----\n",
-	"client_email": "firebase-adminsdk-cczfz@appkwondo.iam.gserviceaccount.com",
-	"client_id": "115771755796174052304",
+	"private_key_id": process.env.GCM_PRIVATE_KEY_ID,
+	"private_key": process.env.GCM_PRIVATE_KEY,
+	"client_email": process.env.GCM_CLIENT_EMAIL,
+	"client_id": process.env.GCM_CLIENT_ID,
 	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
 	"token_uri": "https://accounts.google.com/o/oauth2/token",
 	"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
@@ -40,12 +42,6 @@ console.log("GCMSENDER", gcmsender);
 
 var gcm_enabled = true;
 
-
-/*var FCM = require('fcm-node');
-
-
-var serverKey = 'AIzaSyDT30ffP_a3HjHTd0Fbk4hi4TvAhseEUwA';
-var fcm = new FCM(serverKey);*/
 
 
 var tokens = [];

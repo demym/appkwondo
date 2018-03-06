@@ -7,7 +7,8 @@ var debug = false;
 var async = require('async');
 
 
-var mongourl = "mongodb://demym:Ser07glr@ds045734.mongolab.com:45734/tkdr";
+
+var mongourl=process.env.MONGOURL
 
 
 var state = {
