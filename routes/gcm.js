@@ -14,31 +14,34 @@ var mongo = require('../routes/mongo');
 var admin = require("firebase-admin");
 
 
+var gcmsender;
 
-
-
-var serviceAccount = {
-	"type": "service_account",
-	"project_id": "appkwondo",
-	"private_key_id": process.env.GCM_PRIVATE_KEY_ID,
-	"private_key": JSON.parse(process.env.GCM_PRIVATE_KEY),
-	"client_email": process.env.GCM_CLIENT_EMAIL,
-	"client_id": process.env.GCM_CLIENT_ID,
-	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
-	"token_uri": "https://accounts.google.com/o/oauth2/token",
-	"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-	"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-cczfz%40appkwondo.iam.gserviceaccount.com"
-}
-
-//var serviceAccount = require("path/to/serviceAccountKey.json");
-
-admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount),
+mongo.getfile("config.json", function (data) {
+    console.log("got config",data);
+    var doc=data.rows[0].doc;
+    var gcmaccount=doc.gcmaccount;
+    admin.initializeApp({
+	credential: admin.credential.cert(gcmaccount),
 	databaseURL: "https://appkwondo.firebaseio.com"
 });
+    
+    gcmsender = new gcm.Sender(doc.gcmsender);
+    console.log("GCMSENDER", gcmsender);
+    console.log("GCM configured !");
+})
 
-var gcmsender = new gcm.Sender('AAAA8NbYOh0:APA91bHMyE-jTX-SX1kROJ-W-t-GSn9wIpyXqGPQOO8LHsLAp-EtO_CXgxGIT_8ic1ccRWDJ8VEiISLmHkayvDLtncd4nebcUh7jDkVUYT9G3IF4etaNvfj1uwBBdRPFT5NgYMZhr-qB');
-console.log("GCMSENDER", gcmsender);
+
+
+
+
+
+
+
+
+
+/*var gcms=process.env.GCM_SENDER;
+var gcmsender = new gcm.Sender(gcms);*/
+
 
 var gcm_enabled = true;
 

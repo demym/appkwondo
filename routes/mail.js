@@ -5,7 +5,7 @@ var smtpTransport;
 
 mongo.getfile("config.json", function (data) {
     console.log("got config",data);
-    var doc=data.rows[0].smtp;
+    var doc=data.rows[0].doc.smtp;
     
     var auth = {
         user: doc.email,

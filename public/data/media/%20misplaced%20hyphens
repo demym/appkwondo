@@ -1,104 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-ZZ" xml:lang="en-ZZ" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-	<title>Error 404 :(</title>
-	<style type="text/css">
-		body {
-		margin: 0;
-		padding: 0;
-		font-family: Arial, Helvetica, sans;
-		font-size: 12px;
-		color: #333;
-		}
+	<link href="http://1.w3.s81c.com/common/v17/css/w3.css" rel="stylesheet" title="w3" type="text/css"/>
+</head>
 
-		h1  {
-		font-size: 24px;
-		color: #555;
-		margin: 0 0 10px 0;
-		padding: 0;
-		text-align: left;
-		font-weight: normal;
-		}
-		
-		h2 {
-		font-size: 14px;
-		color: #555;
-		font-weight: normal;
-		margin: 0 0 30px 0;
-		padding: 0;
-		}
-			
-		ul {
-		list-style: disc;
-		margin: 0 0 20px 0;
-		}
-		
-		a {
-		font-size: 12px;
-		color: #F7931E;
-		text-decoration: none;	
-		}
-		
-		a:hover {
-		text-decoration: underline;
-		}
-		
-		p {
-		margin: 10px 0;
-		}
-		
-		#logo {
-		width: 540px;
-		margin: auto;
-		font-size: 48px;
-		color: #4C5CBD;
-		margin-top: 5%;
-		}
-		
-		#container {
-		width: 540px;
-		margin: auto;
-		border-top: 1px solid #d9d9d9;
-		border-bottom: 1px solid #d9d9d9;	
-		padding: 15px	0 5px 0;
-		margin-bottom: 10px;
-		}
-		
-		#footer {
-		color: #555;
-		width: 540px;
-		margin: auto;	
-		text-align: right;
-		}
-		
-		.orange {
-		color: #FECC04;	
-		}
-	</style>
-	</head>
-<body onload="start_counter()">
-	<div id="logo">
-	<span class="orange">a</span>lterVista
-	</div>
-	<div id="container">
-		<h1><b>Page not found</b> (error 404)</h1>
-		<h2>The page <b>http://demym.altervista.org/herokudata/cronacamedia/%20misplaced%20hyphens</b> was not found on this server.</h2>		
-		<p>This can be due to:</p>
+
+<body id="ibm-com">
+
+<div id="ibm-top" class="ibm-landing-page">
+
+<!-- MASTHEAD_BEGIN -->
+<div id="ibm-masthead">
+	<div id="ibm-mast-options">
 		<ul>
-			<li>The page no longer exists.</li>
-			<li>The link you have followed is not valid.</li>
-			<li>The page has been moved.</li>
+			<li id="ibm-home"><a href="http://w3.ibm.com/">w3</a></li>
 		</ul>
-		<p>
-			Pay attetion to <b>UPPER and LOWER cases</b><br/>
-			http://site.altervista.org/<b>P</b>age.html is different from http://site.altervista.org/<b>p</b>age.html
-		</p>
 	</div>
+	<div id="ibm-universal-nav">
+		<p id="ibm-site-title"><em>IBM CIO - Global Infrastructure - Network Security</em></p>
+	</div>
+</div>
+<!-- MASTHEAD_END -->
 
-	<div id="footer">
-	AlterVista - <a href="http://www.altervista.org">Free Web Hosting</a>
-	</div>
+<!-- LEADSPACE_BEGIN -->
+<div id="ibm-leadspace-head" style="background: url(http://w3.the.ibm.com/ecmweb/cybersecurity/980x300_a_image.png) no-repeat 100% 50%;">
+<div id="ibm-leadspace-body">
+	<h1></br></br>IBM Cybersecurity</h1>
+	<p class="ibm-item-note"><b>Internet Gateway - BlueICE Portsmouth - GBIBP9PH1--P9IS-CEN7M</b></p>
+</div>
+</div>
+<!-- LEADSPACE_END -->
+
+<!-- PAGE_REAL_BODY_BEGIN -->
+<div id="ibm-pcon">
+<div id="ibm-content">
+<div id="ibm-content-body">
+<div id="ibm-content-main">
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+	<h1>We’re sorry. Access to this web site is blocked.</h1>
+	<br/>
+	<p>The site you’re trying to reach at <b>demym.altervista.org</b> is categorized as <b>Suspicious</b> and blocked by IBM implemented policy.</p>
+	<br/>
+	<p><b>Suspicious</b> web sites may expose IBM to security risks that could compromise IBM systems or result in data loss. Visiting sites like these may also violate the IBM Business Conduct Guidelines.</p>
+	<br/>
+	<p><b>Here are some suggestions:</b></p>
+	<br/>
+	<ol>
+		<li>Make sure the URL is correct. Many blocked requests are due to typos, misplaced hyphens, or incorrect domain names (i.e. .com, .net, .org).</li>
+		<br/>
+		<li>If you suspect your system has been compromised and infected with malware, contact your local help desk immediately.
+			<center>
+			<p class="ibm-button-link-alternate">
+				<a href="https://w3.ibm.com/help/">Contact<br />Help@IBM</a>
+			</p>
+			</center>
+		</li>
+		<br/>
+		<li>If you have a valid business need and think the site’s been blocked in error. Review these instructions on blocked web sites on Help@IBM.
+			<center>
+			<p class="ibm-button-link-alternate">
+				<a href="https://w3.ibm.com/help/#/article/39523">Blocked<br />web site<br />instructions</a>
+			</p>
+			</center>
+		</li>
+	</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PAGE_REAL_BODY_END -->
+
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer-module"></div>
+<div id="ibm-footer">
+	<h2 class="ibm-access">Footer links</h2>
+	<ul>
+		<li><a href="http://w3.ibm.com/w3/info_terms_of_use.html">Terms of use</a></li>
+	</ul>
+</div>
+<!-- FOOTER_END -->
+
+</div>
+
 </body>
 </html>
+ 

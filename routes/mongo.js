@@ -5,10 +5,12 @@ var MongoClient = require('mongodb').MongoClient;
 var utils = require("../routes/utils");
 var debug = false;
 var async = require('async');
+require('dotenv').load();
 
 
 
-var mongourl=process.env.MONGOURL
+var mongourl=process.env.MONGOURL;
+console.log("read mongourl",mongourl);
 
 
 var state = {
