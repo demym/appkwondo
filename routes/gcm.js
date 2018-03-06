@@ -21,7 +21,7 @@ var serviceAccount = {
 	"type": "service_account",
 	"project_id": "appkwondo",
 	"private_key_id": process.env.GCM_PRIVATE_KEY_ID,
-	"private_key": process.env.GCM_PRIVATE_KEY,
+	"private_key": JSON.parse(process.env.GCM_PRIVATE_KEY),
 	"client_email": process.env.GCM_CLIENT_EMAIL,
 	"client_id": process.env.GCM_CLIENT_ID,
 	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
