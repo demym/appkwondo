@@ -29,7 +29,7 @@ var logActive = true;
 
 var superSecret = "inespugnabile"
 var tokenExpireMinutes = 60;
-var usewhitelist = false; //true=token is used     false=token is not used
+var usewhitelist = true; //true=token is used     false=token is not used
 
 process.on('uncaughtException', function (err) {
 	console.error(err);
