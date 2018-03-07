@@ -1,0 +1,34 @@
+<html>
+    <body>
+            <span data-testid="react-composer-live-video-selector-react" class="_sg1"><a class="_4-h7 fbReactComposerAttachmentSelector_LIVE_VIDEO" role="tab" aria-selected="false" data-tooltip-delay="500" data-tooltip-display="overflow" data-tooltip-content="Video in diretta" data-hover="tooltip" attachmentid="LIVE_VIDEO" label="Video in diretta" icon="[object Object]" loggingname="live_video_tab_selector" href="#"><span class="_4-fs"><i class="_5qto img sp_5_udgUJ2fc6 sx_4610dd" alt=""></i><span class="_5qtp">Video in diretta</span><span class="_4-h8"></span></span></a></span>
+
+
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdemym%2Fvideos%2F10216204089641683%2F&width=1280" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+
+
+            <button id="liveButton">Create Live Stream To Facebook</button>
+<script>
+document.getElementById('liveButton').onclick = function() {
+  FB.ui({
+    display: 'popup',
+    method: 'live_broadcast',
+    phase: 'create',
+}, function(response) {
+    if (!response.id) {
+      alert('dialog canceled');
+      return;
+    }
+    alert('stream url:' + response.secure_stream_url);
+    FB.ui({
+      display: 'popup',
+      method: 'live_broadcast',
+      phase: 'publish',
+      broadcast_data: response,
+    }, function(response) {
+    alert("video status: \n" + response.status);
+    });
+  });
+};
+</script>
+    </body>
+    </html>

@@ -1,4 +1,4 @@
-/*$toolbar-background:#4178be;
+/* cleaned by clean-ios-css hook *//*$toolbar-background:#4178be;
 $toolbar-background:                          #049a55 ;
 
 $tabs-md-tab-icon-color-active:                  #049a55 ;
@@ -5075,10 +5075,7 @@ template {
   top: 0;
 }
 
-:focus,
-:active {
-  outline: none;
-}
+
 
 .focus-outline :focus {
   outline: thin dotted;
@@ -30952,6 +30949,13 @@ img.avatarbig {
   display: none;
 }
 
+.chat .messages .message.htmldiv {
+  height: 200px;
+  background: pink;
+  width: 95%;
+  max-width: 100%;
+}
+
 .chat .msg {
   position: fixed;
   bottom: 0;
@@ -30999,6 +31003,13 @@ ion-col, ion-row, ion-grid {
   font-size: 13px;
   font-style: italic;
   font-weight: normal;
+}
+
+.avversario {
+  padding: 3px;
+  color: #222;
+  font-size: 12px;
+  font-style: italic;
 }
 
 .mailphone {
@@ -31135,6 +31146,39 @@ page-chatlist .archiviata {
   color: gray;
 }
 
+page-connections .riga {
+  font-size: 14px;
+  color: black;
+}
+
+page-connections .gcm {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+page-connections .nickname {
+  font-weight: bold;
+  color: black;
+}
+
+page-connections .email {
+  color: #222;
+}
+
+page-connections .sockid {
+  font-size: 13px;
+  font-style: italic;
+  color: gray;
+}
+
+page-connections .device {
+  font-size: 13px;
+}
+
+page-connections .appversion {
+  font-size: 13px;
+}
+
 .offline {
   font-size: 12px;
   color: silver;
@@ -31222,6 +31266,19 @@ page-gara .iscrittonome {
   font-size: 15px;
 }
 
+page-gara .avversario {
+  padding: 3px;
+  color: #222;
+  font-size: 12px;
+  font-style: italic;
+}
+
+page-gara .spinnerdots * {
+  font-size: 12px;
+  fill: white !important;
+  /*height: 20px;*/
+}
+
 page-gara .scroll-content {
   padding: 3px !important;
 }
@@ -31230,8 +31287,21 @@ page-gara .iscrittiitem ion-label {
   margin: 0px !important;
 }
 
+page-gara .list-iscritti {
+  border-bottom: 1px solid silver;
+  padding-bottom: 5px;
+}
+
 page-gara .list-ios {
   margin: 10px 0px 10px 0px !important;
+}
+
+page-gara ion-list.list-iscritti.list.list-ios {
+  border-bottom: 0px !important;
+}
+
+page-gara .list-ios > .item-block:last-child, page-gara .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: 0px !important;
 }
 
 page-gara .list-md {
@@ -31463,6 +31533,8 @@ page-gare .iscritti {
 
 page-gare .headpoints {
   font-size: 12px;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 page-home .server {
@@ -31524,6 +31596,16 @@ ion-segment ion-segment-button.segment-button {
   display: inline-block !important;
   /* min-width: 100px!important;*/
   width: auto !important;
+}
+
+page-iospaid p.testo {
+  text-align: center;
+  font-style: italic;
+  padding: 5px;
+}
+
+page-iospaid img.mela {
+  height: 150px;
 }
 
 .login-content {
@@ -31600,6 +31682,15 @@ page-matchconsole .consoleinfo {
   width: 100%;
 }
 
+page-matchconsole .avvinfo {
+  text-align: center;
+  width: 100%;
+  color: #222;
+  padding: 2px;
+  font-size: 12px;
+  font-style: italic;
+}
+
 page-matchconsole ion-input {
   border: 1px solid gray;
   text-align: center;
@@ -31631,6 +31722,29 @@ page-matchesforatleta .history {
 page-matchesforatleta .wrap {
   word-wrap: break-word;
   white-space: normal;
+}
+
+page-matchesforatleta .avversario {
+  padding: 3px;
+  color: #222;
+  font-size: 12px;
+  font-style: italic;
+}
+
+page-matchesforatleta .nomeatleta {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+page-matchesforatleta .griglia {
+  padding: 9px !important;
+}
+
+page-matchesforatleta .categoriaatleta {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
 }
 
 page-matchesforatleta .matchord {
@@ -31733,6 +31847,13 @@ page-products .nome {
 page-products .descr {
   font-size: 13px;
   font-style: italic;
+}
+
+page-register .testo {
+  font-style: italic;
+  font-size: 14px;
+  padding: 6px;
+  text-align: center;
 }
 
 page-rtc {
