@@ -1,11 +1,4 @@
-/*
 
-IBM Business Partner Ecosystem Italia
-Licensed Materials - Property of IBM
-© Copyright IBM Corporation 2017   
-All Rights Reserved
-
-*/
 
 var gcm = require('node-gcm');
 var dbs = require("../routes/dbs");
@@ -251,7 +244,7 @@ function deleteToken(deviceid) {
 		var uid = item.deviceid
 		if (uid != deviceid) newtokens.push(item);
 	})
-	tokens = newtoken;
+	tokens = newtokens;
 	return tokens;
 }
 

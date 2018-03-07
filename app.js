@@ -1201,6 +1201,31 @@ app.get("/gcm/deletetoken/:token", function (req, res) {
 
 
 
+
+app.get("/gcm/enablenotifications/:deviceid/:token",function(req,res){
+	var token=req.params.token;
+	var deviceid=req.params.deviceid;
+	gcm.addToken(deviceid,token);
+	var retvalue={
+		success: true,
+		text: "Notifications enabled for deviceid "+deviceid+" - token "+token
+	}
+	res.send(retvalue)
+
+})
+
+app.get("/gcm/disablenotifications/:deviceid/:token",function(req,res){
+	var token=req.params.token;
+	var deviceid=req.params.deviceid;
+	gcm.deleteToken(deviceid);
+	var retvalue={
+		success: true,
+		text: "Notifications disabled for deviceid "+deviceid+" - token "+token
+	}
+	res.send(retvalue)
+
+})
+
 app.get("/gcm/send", function (req, res) {
 
 	var text = "Notification text";

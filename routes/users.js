@@ -248,7 +248,7 @@ router.post("/changepsw", function (req, res) {
                     if (verifynewpsw != newpsw) {
                         retvalue.error = true;
                         retvalue.msg = "La nuova password e la password di verifica non coincidono";
-                    } else {   //OK can change password
+                    } else { //OK can change password
                         doc.password = newpsw;
                         retvalue.error = false;
                         retvalue.msg = "Password modificata con successo !";
@@ -327,7 +327,7 @@ router.post("/update", function (req, res) {
     var verifynewpsw = body.verifynewpsw;
     var email = body.email;
 
-    var userdoc=body;
+    var userdoc = body;
 
     mongo.getfile("users.json", function (data) {
         var found = false;
@@ -335,7 +335,7 @@ router.post("/update", function (req, res) {
             var doc = item.doc;
             if (doc.email.toLowerCase() == userdoc.email.toLowerCase()) {
                 found = true;
-                item.doc=userdoc;
+                item.doc = userdoc;
                 mongo.updatefile("users.json", data.rows, function (udata) {
 
                     /*
@@ -365,7 +365,7 @@ router.post("/update", function (req, res) {
 
 
                 })
-               
+
             }
 
         })
@@ -376,11 +376,11 @@ router.post("/update", function (req, res) {
             retvalue.msg = "Utente con email " + email + " non trovato";
             res.send(retvalue);
 
-        } 
+        }
 
     })
 
-    
+
 })
 
 
@@ -568,8 +568,10 @@ router.post('/login', function (req, res) {
     var auth = req.body.authorization;
     var gcmtoken = "";
     var deviceid = "";
+    var gcmenabled = false;
     if (req.body.gcmtoken) gcmtoken = req.body.gcmtoken;
     if (req.body.deviceid) deviceid = req.body.deviceid;
+    if (req.body.gcmenabled) gcmenabled = req.body.gcmenabled;
     console.log("Loggin in, gcmtoken", gcmtoken, "deviceid", deviceid);
     //console.log("auth: "+auth);
 
@@ -598,16 +600,19 @@ router.post('/login', function (req, res) {
                 loggedin = true;
                 user = item.doc;
                 item.doc.gcmtoken = gcmtoken;
+                item.doc.gcmenabled = gcmenabled;
                 var gcmtokens = [];
                 if (item.doc.hasOwnProperty("gcmtokens")) gcmtokens = item.doc.gcmtokens;
 
                 if ((deviceid != "") && (gcmtoken != "")) {
-                    gcm.addToken(deviceid, gcmtoken);
-                    if (gcmtokens.indexOf(gcmtoken) == -1) {
-                        gcmtokens.push(gcmtoken);
+                    if (gcmenabled) {
+                        gcm.addToken(deviceid, gcmtoken);
+                        if (gcmtokens.indexOf(gcmtoken) == -1) {
+                            gcmtokens.push(gcmtoken);
 
-                        //tokens.push(gcmtoken);
+                            //tokens.push(gcmtoken);
 
+                        }
                     }
                 }
                 item.doc.gcmtokens = gcmtokens;
