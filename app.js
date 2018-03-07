@@ -1214,6 +1214,13 @@ app.get("/gcm/enablenotifications/:deviceid/:token",function(req,res){
 
 })
 
+
+app.get("/gcm/savetokens",function(req,res){
+	gcm.saveTokens(function(data){
+		res.send(data);
+	})
+})
+
 app.get("/gcm/disablenotifications/:deviceid/:token",function(req,res){
 	var token=req.params.token;
 	var deviceid=req.params.deviceid;

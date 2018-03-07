@@ -605,7 +605,7 @@ router.post('/login', function (req, res) {
                 if (item.doc.hasOwnProperty("gcmtokens")) gcmtokens = item.doc.gcmtokens;
 
                 if ((deviceid != "") && (gcmtoken != "")) {
-                    if (gcmenabled) {
+                    
                         gcm.addToken(deviceid, gcmtoken);
                         if (gcmtokens.indexOf(gcmtoken) == -1) {
                             gcmtokens.push(gcmtoken);
@@ -613,7 +613,10 @@ router.post('/login', function (req, res) {
                             //tokens.push(gcmtoken);
 
                         }
-                    }
+                        gcm.saveTokens(function(data){
+                            console.log("tokens saved",data);
+                        })
+                   
                 }
                 item.doc.gcmtokens = gcmtokens;
                 console.log("item.doc.gcmtoken", item.doc.gcmtoken);

@@ -54,6 +54,14 @@ var mytokens = [{
 
 tokens = mytokens;
 
+
+mongo.getfile("gcmtokens.json",function(data){
+	tokens=data.rows;
+	console.log("Retrieved GCM tokens from mongo");
+})
+
+
+
 function fcmSend(obj, callback) {
 
 	if (!gcm_enabled) {
@@ -762,6 +770,15 @@ function sendToToken(obj, callback) {
 
 }
 
+
+function saveTokens(callback){
+
+	mongo.updatefile("gcmtokens.json",tokens,function(data){
+		if (callback) callback(data)
+
+	})
+}
+
 exports.deleteToken = deleteToken;
 exports.resetTokens = resetTokens;
 exports.resetTokenCount = resetTokenCount;
@@ -777,3 +794,4 @@ exports.testGCM = testGCM;
 exports.setGcmEnabled = setGcmEnabled;
 exports.fcmSend = fcmSend;
 exports.fcmSendMsg=fcmSendMsg;
+exports.saveTokens=saveTokens;
