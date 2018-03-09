@@ -1357,7 +1357,8 @@ var ExpressPeerServer = require('peer').ExpressPeerServer;
 var server = app.listen(port);
 var io = require('socket.io').listen(server);
 
-/*
+//ELIMINARE QUI PEERJS !!!
+
 var q = ExpressPeerServer(server, { debug: true, allow_discovery: true });
 
 app.use('/peerjs', q);
@@ -1379,7 +1380,9 @@ q.on('disconnect', function (id) {
 	}
 
 });
-*/
+
+//FINE BLOCCO  PEERJS !!!
+
 
 
 // catch 404 and forward to error handler
