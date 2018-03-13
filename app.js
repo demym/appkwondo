@@ -22,6 +22,7 @@ var syncrequest = require('sync-request');
 var cors = require('cors');
 var moment = require("moment");
 var syncavfiles = true;
+var broadcastes=[];
 
 var zip = new EasyZip();
 var clients = [];
@@ -131,6 +132,7 @@ app.use(function (req, res, next) {
 		"/users/retrievepsw",
 		"/users/potentialios",
 		"/data/chatmedia",
+		"/broadcast",
 		"/peerjs",
 		"/token/true",
 		"/token/false",
@@ -798,6 +800,61 @@ app.get('/editfile/:filename', function(req, res){
 });
 
 */
+
+app.get("/broadcast/reset",function(req,res){
+	broadcastes=[];
+	res.send(broadcastes);
+})
+
+app.get("/broadcast/list",function(req,res){
+	res.send(broadcastes);
+})
+
+
+app.post("/broadcast/add",function(req,res){
+
+	var body=req.body;
+	var bcast=body.broadcast;
+	console.log("BROADCAST ADD",bcast);
+	if (broadcastes.indexOf(bcast)==-1) broadcastes.push(bcast);
+	if (io){
+		io.emit("broadcast", {
+			action: "add",
+			broadcast: bcast,
+			broadcastes: broadcastes
+		});
+		console.log("emitted add broadcast event")
+
+	} else console.log("io not found");
+	res.send(bcast);
+
+})
+
+
+app.post("/broadcast/remove",function(req,res){
+
+	var body=req.body;
+	var bcast=body.broadcast;
+	console.log("BROADCAST REMOVE",bcast);
+	var bcastes=[];
+	broadcastes.forEach(function(item,idx){
+		if (item!=bcast) bcastes.push(bcast);
+
+	})
+	broadcastes=bcastes;
+	if (io){
+		io.emit("broadcast", {
+			action: "remove",
+			broadcast: bcast,
+			broadcastes: broadcastes
+		});
+		console.log("emitted remove broadcast event")
+
+	} else console.log("io not found");
+	res.send(bcast);
+
+})
+
 
 
 
