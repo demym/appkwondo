@@ -803,6 +803,15 @@ app.get('/editfile/:filename', function(req, res){
 
 app.get("/broadcast/reset",function(req,res){
 	broadcastes=[];
+	if (io){
+		io.emit("broadcast", {
+			action: "reset",
+			broadcast: "",
+			broadcastes: broadcastes
+		});
+		console.log("emitted reset broadcastes event")
+
+	} else console.log("io not found");
 	res.send(broadcastes);
 })
 
