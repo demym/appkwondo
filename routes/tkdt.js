@@ -159,6 +159,14 @@ router.get("/medagliereglobale/:giornoid", function (req, res) {
 })
 
 
+router.get("/live/:giornoid",function(req,res){
+    var giornoid = req.params.giornoid;
+    getLive(giornoid,function(data){
+        res.send(data);
+    })
+    //var url=" https://www.tkdtechnology.it/index.php/welcome/dettaglio_tabulati?id_giornata="+giornoid;
+})
+
 
 router.get("/exporttkdt", function (req, res) {
 
@@ -1791,9 +1799,79 @@ function getMedagliereGlobale(giornoid, callback) {
 
             var pos1 = htm.indexOf("</table>");
             htm = htm.substring(0, pos1) + "</div>";
+
             htm = "<h1>" + titolo + "</h1><br>" + htm;
             callback(htm);
             return;
+        } else {
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+
+            callback(ehtm);
+        }
+    });
+
+
+
+}
+
+
+function getLive(giornoid, callback) {
+    var url = tkdt_rooturl + "dettaglio_tabulati?id_giornata=" + giornoid;
+    console.log("requesting tkdt url ", url);
+    var postur="https://www.tkdtechnology.it/index.php?/welcome/update_times"
+    cloudscraper.post(postur,{
+        id_giornata: giornoid
+    },function(error,data){
+        //console.log("data",data);
+        var resp=data.body.toString("utf-8");
+        console.log(resp);
+        callback(JSON.parse(resp));
+    })
+    return;
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        //if (!error && response.statusCode == 200) {
+        if (!error) {
+            var $ = cheerio.load(html, {
+                normalizeWhitespace: true,
+                xmlMode: true
+            });
+            var banner = $("#banner");
+            var titoloh3 = banner.find("h3");
+            //console.log(titoloh3[0]);
+
+            var live=banner.find("#punteggi_live");
+
+            var pos0 = html.indexOf('<div id="punteggi_live"');
+            console.log(pos0);
+            var htm = html.substring(pos0);
+            //console.log("htm",htm);
+            var pos1 = htm.indexOf('<div class="tab-pane');
+
+            htm = htm.substring(0, pos1);
+         
+            console.log(htm);
+            callback(htm);
+
+            //var CircularJSON = require('circular-json');
+            //var str = JSON.parse(CircularJSON.stringify(live));
+
+
+            
+
+            /*
+            var titolo = titoloh3[0].children[0].data.trim();
+
+            var pos0 = html.indexOf('<div id="punteggi_live">');
+            var htm = html.substring(pos0);
+
+            var pos1 = htm.indexOf("</table>");
+            htm = htm.substring(0, pos1) + "</div>";
+            htm = "<h1>" + titolo + "</h1><br>" + htm;
+            callback(htm);
+            return;
+            */
         } else {
             var err = JSON.stringify(error);
             var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
