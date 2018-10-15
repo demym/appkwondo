@@ -512,6 +512,7 @@ router.get("/rankingnew/:stagione", function (req, res) {
 		data.rows.forEach(function (item, idx) {
 			var doc = item.doc;
 			var rs = doc.ranking[stagione];
+			
 			var newr = {
 				pos: idx+1,
 				atleta: doc.cognome + " " + doc.nome,
@@ -528,7 +529,9 @@ router.get("/rankingnew/:stagione", function (req, res) {
 				gare_nazionali: rs.gare_nazionali,
 				gare_internazionali: rs.gare_internazionali,
 				gare: rs.gare,
-				vinti: rs.vinti
+				vinti: rs.vinti,
+				bonusmalus: rs.bonusmalus,
+				ptb: rs.ptb
 			}
 			retarr.push(newr);
 
@@ -1427,6 +1430,8 @@ function getRankingNew(stagione, callback) {
 				atleti_json.rows[i].doc.matchdisputati = 0;
 				atleti_json.rows[i].doc.matchvinti = 0;
 				atleti_json.rows[i].doc.ranking = {};
+				var bonusmalus=0;
+				if (atleti_json.rows[i].doc.hasOwnProperty("bonusmalus")) bonusmalus=atleti_json.rows[i].doc.bonusmalus;
 				atleti_json.rows[i].doc.ranking[stagione] = {
 					pt: 0,
 					oro: 0,
@@ -1438,7 +1443,9 @@ function getRankingNew(stagione, callback) {
 					gare_interregionali: 0,
 					gare_nazionali: 0,
 					gare_internazionali: 0,
-					gare: []
+					gare: [],
+					bonusmalus:  bonusmalus,
+					ptb: 0
 
 				};
 
@@ -1557,6 +1564,7 @@ function getRankingNew(stagione, callback) {
 
 							if (found == true) {
 								atleti_json.rows[i].doc.garedisputate++;
+								atleti_json.rows[i].doc.ranking[stagione].ptb=atleti_json.rows[i].doc.ranking[stagione].pt+atleti_json.rows[i].doc.ranking[stagione].bonusmalus
 								var rgara = "regionale";
 								if (gare_json.rows[j].doc.regionalita) {
 									if (gare_json.rows[j].doc.regionalita == "regionale") atleti_json.rows[i].doc.ranking[stagione].gare_regionali++
