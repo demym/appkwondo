@@ -515,6 +515,9 @@ router.get("/rankingnew/:stagione", function (req, res) {
 			var newr = {
 				pos: idx+1,
 				atleta: doc.cognome + " " + doc.nome,
+				atletaid: doc.id,
+				cognome: doc.cognome,
+				nome: doc.nome,
 				pt: rs.pt,
 				oro: rs.oro,
 				arg: rs.arg,
