@@ -1,0 +1,33 @@
+<html>
+    <head>
+        
+
+    <script src="js/jqm/jquery-1.11.1.min.js"></script>
+    <script>
+
+        var $=jQuery;
+
+function go(){
+    
+    var url="http://tpss.eu/Overviewcategories.asp?Code=89766658";
+        $.post( url, { Action: "Full" })
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+
+}
+ 
+    
+    </script>
+    </head>
+</html><form name="frmDetail" action="/stocaz?token=nonentramaiquidentro" saction="https://tpss.eu/Overviewcategories.asp?Code=89766658" method="POST">   
+    <input type="HIDDEN" name="Action" value="Full">
+
+    <input type="SUBMIT" name="FormsButton7" value="Full competitor list" id="FormsButton3" sonclick="document.frmDetail.Action.value='Full'" class="Button" onmouseover="ShowTip(4)" onmouseout="HideTip(4)">
+
+    <input type="button" onclick="go()" value="go"/>
+    </form>
+
+   
+
+    <!-- https://tpss.eu/CheckTournament.asp?Code=89766658 -->

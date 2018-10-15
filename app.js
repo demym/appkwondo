@@ -21,8 +21,8 @@ var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
 var moment = require("moment");
-var syncavfiles = true;
-var broadcastes=[];
+var syncavfiles = false;
+var broadcastes = [];
 
 var zip = new EasyZip();
 var clients = [];
@@ -136,6 +136,7 @@ app.use(function (req, res, next) {
 		"/peerjs",
 		"/token/true",
 		"/token/false",
+		"/tpss_source",
 		"/listusers?token=nonsientramai",
 		"/clearlog?token=nonsientramai",
 		"/cordova.js",
@@ -412,16 +413,16 @@ app.get("/prova", function (req, res) {
 
 	cloudscraper.get('https://www.tkdtechnology.it/index.php/welcome/tabulati_giorni?id=87', function (error, response, body) {
 		if (error) {
-			res.send({error: error});
+			res.send({ error: error });
 		} else {
 			//console.log(body, response);
-			var json={
+			var json = {
 				body: body
 			}
 			res.send(json);
 		}
 	});
-	
+
 })
 
 
@@ -801,9 +802,9 @@ app.get('/editfile/:filename', function(req, res){
 
 */
 
-app.get("/broadcast/reset",function(req,res){
-	broadcastes=[];
-	if (io){
+app.get("/broadcast/reset", function (req, res) {
+	broadcastes = [];
+	if (io) {
 		io.emit("broadcast", {
 			action: "reset",
 			broadcast: "",
@@ -815,18 +816,18 @@ app.get("/broadcast/reset",function(req,res){
 	res.send(broadcastes);
 })
 
-app.get("/broadcast/list",function(req,res){
+app.get("/broadcast/list", function (req, res) {
 	res.send(broadcastes);
 })
 
 
-app.post("/broadcast/add",function(req,res){
+app.post("/broadcast/add", function (req, res) {
 
-	var body=req.body;
-	var bcast=body.broadcast;
-	console.log("BROADCAST ADD",bcast);
-	if (broadcastes.indexOf(bcast)==-1) broadcastes.push(bcast);
-	if (io){
+	var body = req.body;
+	var bcast = body.broadcast;
+	console.log("BROADCAST ADD", bcast);
+	if (broadcastes.indexOf(bcast) == -1) broadcastes.push(bcast);
+	if (io) {
 		io.emit("broadcast", {
 			action: "add",
 			broadcast: bcast,
@@ -840,18 +841,18 @@ app.post("/broadcast/add",function(req,res){
 })
 
 
-app.post("/broadcast/remove",function(req,res){
+app.post("/broadcast/remove", function (req, res) {
 
-	var body=req.body;
-	var bcast=body.broadcast;
-	console.log("BROADCAST REMOVE",bcast);
-	var bcastes=[];
-	broadcastes.forEach(function(item,idx){
-		if (item!=bcast) bcastes.push(bcast);
+	var body = req.body;
+	var bcast = body.broadcast;
+	console.log("BROADCAST REMOVE", bcast);
+	var bcastes = [];
+	broadcastes.forEach(function (item, idx) {
+		if (item != bcast) bcastes.push(bcast);
 
 	})
-	broadcastes=bcastes;
-	if (io){
+	broadcastes = bcastes;
+	if (io) {
 		io.emit("broadcast", {
 			action: "remove",
 			broadcast: bcast,
@@ -867,18 +868,18 @@ app.post("/broadcast/remove",function(req,res){
 
 
 
-app.get("/fblive",function(req,res){
-	var url="";
-	var status="on";
+app.get("/fblive", function (req, res) {
+	var url = "";
+	var status = "on";
 
-	
-	
-	if (req.query){
-		if (req.query.url) url=req.query.url;
-		if (req.query.status) status=req.query.status;
+
+
+	if (req.query) {
+		if (req.query.url) url = req.query.url;
+		if (req.query.status) status = req.query.status;
 	}
-	console.log("Received FBLIVE !!",url);
-	if (io){
+	console.log("Received FBLIVE !!", url);
+	if (io) {
 		io.emit("fblive", {
 			url: url,
 			status: status
@@ -886,46 +887,46 @@ app.get("/fblive",function(req,res){
 		console.log("emitted fblive event")
 
 	} else console.log("io not found");
-	
+
 	res.send("ok");
 
 })
 
 
-app.get("/fcm/send",function(req,res){
-	var obj={
+app.get("/fcm/send", function (req, res) {
+	var obj = {
 		title: "AppkwondoV2",
 		body: "prova messaggio push",
 		topic: "chatkwondo"
-		
+
 	}
 
 
-	if (req.query.hasOwnProperty("badge")) obj.badge=req.query.badge;
-	if (req.query.hasOwnProperty("body")) obj.body=req.query.body;
-	if (req.query.hasOwnProperty("text")) obj.body=req.query.text;
-	if (req.query.hasOwnProperty("title")) obj.title=req.query.title;
-	if (req.query.hasOwnProperty("disablebadge")) obj.disablebadge=req.query.disablebadge;
+	if (req.query.hasOwnProperty("badge")) obj.badge = req.query.badge;
+	if (req.query.hasOwnProperty("body")) obj.body = req.query.body;
+	if (req.query.hasOwnProperty("text")) obj.body = req.query.text;
+	if (req.query.hasOwnProperty("title")) obj.title = req.query.title;
+	if (req.query.hasOwnProperty("disablebadge")) obj.disablebadge = req.query.disablebadge;
 
-	gcm.fcmSend(obj,function(data){
+	gcm.fcmSend(obj, function (data) {
 		res.send(data);
 	})
 
 });
 
-app.post("/fblive",function(req,res){
-	var url="";
-	var status="on";
-	if (req.body){
-		if (req.body.url) url=req.body.url;
-		if (req.body.status) status=req.body.status;
+app.post("/fblive", function (req, res) {
+	var url = "";
+	var status = "on";
+	if (req.body) {
+		if (req.body.url) url = req.body.url;
+		if (req.body.status) status = req.body.status;
 	}
-	if (req.query){
-		if (req.query.url) url=req.query.url;
-		if (req.query.status) status=req.query.status;
+	if (req.query) {
+		if (req.query.url) url = req.query.url;
+		if (req.query.status) status = req.query.status;
 	}
-	console.log("Received FBLIVE !!",url);
-	if (io){
+	console.log("Received FBLIVE !!", url);
+	if (io) {
 		io.emit("fblive", {
 			url: url,
 			status: status
@@ -933,7 +934,7 @@ app.post("/fblive",function(req,res){
 		console.log("emitted fblive event")
 
 	} else console.log("io not found");
-	
+
 	res.send("ok");
 
 })
@@ -1201,7 +1202,125 @@ app.get("/importcsv", function (req, res) {
 });
 
 
+app.get("/tpsssource", function (req, res) {
+	var url = "https://tpss.eu/CheckTournament.asp?Code=27370418";
+	request.get(url, function (error, response, body) {
+		console.log("body", body)
+		var body2 = body.replace("window.location='./login.asp'", "");
+		res.send(body2);
+	})
+})
 
+
+var headers;
+
+app.post("/stocaz", function (req, res) {
+	var body = req.body;
+	header=req.headers;
+	console.log(req);
+})
+
+app.get("/tpss2", function (req, res) {
+
+	var url = 'http://tpss.eu/Overviewcategories.asp?Code=89766658';
+
+	url = "https://tpss.eu/Overviewcategories.asp?Code=89766658&Code=89766658&Code=89766658";
+	var request = require("request");
+	var form = {
+		Action: 'Full',
+		FormsButton7: 'Full+competitor+list'
+	};
+	var formData = JSON.stringify(form);
+	var contentLength = formData.length;
+	request({
+		url: url,
+		method: "POST",
+		headers: {
+			'content-type': 'application/x-www-form-urlencoded',
+			'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+			'content-length': '11',
+		
+			 'referer': 'https://tpss.eu',
+			'accept-encoding': 'gzip, deflate, br',
+			'accept-language': 'it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7',
+			'cookie': 'connect.sid=s%3A74O9Q6oAJxS3kd6KLNfqXtFckOzfIJyD.HK1PU0KMlnAao69wAHYhE%2BmC0dSBwGCnDaHe3uJI1TI',
+			'cache-control': 'max-age=0',
+			'origin': 'https://tpss.eu',
+			
+	},
+		form: form
+
+	}, function (error, response, body) {
+		console.log("error", error);
+
+		console.log(body);
+		res.send(body);
+	});
+})
+
+app.get("/tpss3", function (req, res) {
+
+	var url = "https://tpss.eu/Overviewcategories.asp?Code=89766658";
+	var FormData = require('form-data');
+	var request = require('request');
+
+	var form = new FormData();
+
+	form.append('Action', 'Full');
+	form.submit(url, function (err, response) {
+		// res – response object (http.IncomingMessage)  //
+		console.log("response", response.body)
+
+	});
+})
+
+
+app.get("/tpss4", function (req, res) {
+	var https = require('https');
+	var querystring = require('querystring');
+
+	// form data
+	var postData = querystring.stringify({
+		Action: "Full",
+		FormsButton7: "Full competitor list"
+	});
+
+	// request option
+	var options = {
+		host: 'tpss.eu',
+		port: 443,
+		method: 'POST',
+		path: '/Overviewcategories.asp?Code=89766658&Code=89766658',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Length': postData.length,
+			'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+		}
+	};
+
+	// request object
+	var req = https.request(options, function (res) {
+		var result = '';
+		res.on('data', function (chunk) {
+			result += chunk;
+		});
+		res.on('end', function () {
+			console.log(result);
+		});
+		res.on('error', function (err) {
+			console.log(err);
+		})
+	});
+
+	// req error
+	req.on('error', function (err) {
+		console.log(err);
+	});
+
+	//send request witht the postData form
+	req.write(postData);
+	req.end();
+})
 
 
 app.get("/gcm/resetcount/:token", function (req, res) {
@@ -1268,32 +1387,32 @@ app.get("/gcm/deletetoken/:token", function (req, res) {
 
 
 
-app.get("/gcm/enablenotifications/:deviceid/:token",function(req,res){
-	var token=req.params.token;
-	var deviceid=req.params.deviceid;
-	gcm.addToken(deviceid,token);
-	var retvalue={
+app.get("/gcm/enablenotifications/:deviceid/:token", function (req, res) {
+	var token = req.params.token;
+	var deviceid = req.params.deviceid;
+	gcm.addToken(deviceid, token);
+	var retvalue = {
 		success: true,
-		text: "Notifications enabled for deviceid "+deviceid+" - token "+token
+		text: "Notifications enabled for deviceid " + deviceid + " - token " + token
 	}
 	res.send(retvalue)
 
 })
 
 
-app.get("/gcm/savetokens",function(req,res){
-	gcm.saveTokens(function(data){
+app.get("/gcm/savetokens", function (req, res) {
+	gcm.saveTokens(function (data) {
 		res.send(data);
 	})
 })
 
-app.get("/gcm/disablenotifications/:deviceid/:token",function(req,res){
-	var token=req.params.token;
-	var deviceid=req.params.deviceid;
+app.get("/gcm/disablenotifications/:deviceid/:token", function (req, res) {
+	var token = req.params.token;
+	var deviceid = req.params.deviceid;
 	gcm.deleteToken(deviceid);
-	var retvalue={
+	var retvalue = {
 		success: true,
-		text: "Notifications disabled for deviceid "+deviceid+" - token "+token
+		text: "Notifications disabled for deviceid " + deviceid + " - token " + token
 	}
 	res.send(retvalue)
 
@@ -1434,15 +1553,15 @@ app.use('/peerjs', q);
 
 q.on('connection', function (id) {
 	console.log('new connection with id ', id);
-	if (io){
-		io.emit("rtcpeerconnected",id);
+	if (io) {
+		io.emit("rtcpeerconnected", id);
 	}
 });
 
 q.on('disconnect', function (id) {
 	console.log('disconnect with id ', id);
-	if (io){
-		io.emit("rtcpeerdisconnected",id);
+	if (io) {
+		io.emit("rtcpeerdisconnected", id);
 	}
 
 });
@@ -1523,7 +1642,7 @@ io.sockets.on('connection', function (socket) {
 		data.time = tempo;
 		socket.broadcast.emit('chatmsg', data);
 
-		
+
 
 	});
 
@@ -1615,7 +1734,7 @@ io.sockets.on('connection', function (socket) {
 				}
 				io.to(toid).emit("notification", data);
 				//io.sockets.connected[toid].emit(tipo,data);
-				
+
 			}
 		}
 
