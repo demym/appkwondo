@@ -1506,7 +1506,7 @@ function getRankingNew(stagione, callback) {
 
 													isInGara = true;
 													atleti_json.rows[i].doc.ranking[stagione].disputati++;
-													atleti_json.rows[i].doc.ranking[stagione].pt += 1;
+													//atleti_json.rows[i].doc.ranking[stagione].pt += 1;
 													if (match.vinto) {
 														if (match.vinto == "yes") {
 															atleti_json.rows[i].doc.ranking[stagione].pt += 1;
