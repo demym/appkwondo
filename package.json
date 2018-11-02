@@ -28,6 +28,7 @@
     "express": "~4.10.6",
     "express-session": "latest",
     "fcm-node": "^1.2.1",
+    "fibers": "^3.0.0",
     "firebase-admin": "^5.9.1",
     "form-data": "^2.3.2",
     "gcm-push": "^1.0.1",

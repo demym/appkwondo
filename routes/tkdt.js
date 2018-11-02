@@ -146,6 +146,17 @@ router.get("/medagliere/:giornoid", function (req, res) {
 
 })
 
+router.get("/medaglierenew/:tkdtgaraid", function (req, res) {
+    var giornoid = req.params.tkdtgara;
+    getMedagliereNew(giornoid, function (data) {
+        res.send(data);
+
+    })
+    //var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + garaid;
+
+})
+
+
 
 
 router.get("/medagliereglobale/:giornoid", function (req, res) {
@@ -240,6 +251,8 @@ router.get("/retrieve/:garaid/nosave", function (req, res) {
     var tkdt_garaid = req.params.garaid;
 
     getGaraDays(tkdt_garaid, function (data) {
+
+        console.log("getgaradays",data);
 
         getTkdtGara(tkdt_garaid, function (data) {
             console.log("retrieved gara " + tkdt_garaid + " !");
@@ -1724,6 +1737,43 @@ function getMedagliere(giornoid, callback) {
         }
     });
 }
+
+function getMedagliereNew(giornoid, callback) {
+    var url = tkdt_rooturl + "medagliere?id=" + giornoid;
+    console.log("requesting tkdt url", url);
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        if (!error) {
+            var $ = cheerio.load(html);
+
+            var banner = $("#banner");
+            var titoloh3 = banner.find("h3");
+            //console.log(titoloh3[0]);
+
+            var titolo = titoloh3[0].children[0].data.trim();
+
+            //console.log(titolo);
+            var datagiornata = getDataGiornata(titolo);
+            console.log(datagiornata);
+
+
+            var pos0 = html.indexOf('<div class="tab-pane fade" id="' + datagiornata + '">');
+            var htm = html.substring(pos0);
+
+            var pos1 = htm.indexOf("</table>");
+            htm = htm.substring(0, pos1) + "</table></div>";
+            htm = "<h1>" + titolo + "</h1><br>" + htm;
+            callback(htm);
+            return;
+        } else {
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+
+            callback(ehtm);
+        }
+    });
+}
+
 
 
 function getMedaglieresave(giornoid, callback) {
