@@ -593,10 +593,15 @@ router.post('/login', function (req, res) {
     var loggedin = false;
     var user = {};
 
+    console.log("loggin in with",em,pw)
+
     mongo.getfile("users.json", function (data) {
         console.log("got users", data.rows.length)
         data.rows.forEach(function (item, idx) {
-            if ((item.doc.email.toLowerCase() == em.toLowerCase()) && (item.doc.password == pw)) {
+            //console.log("email",item.doc.email,"ps",item.doc.password);
+
+            if ((item.doc.email.toLowerCase().trim() == em.toLowerCase().trim()) && (item.doc.password.trim() == pw.trim())) {
+                console.log("TROVATO !!!!")
                 loggedin = true;
                 user = item.doc;
                 item.doc.gcmtoken = gcmtoken;

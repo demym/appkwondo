@@ -147,8 +147,12 @@ router.get("/medagliere/:giornoid", function (req, res) {
 })
 
 router.get("/medaglierenew/:tkdtgaraid", function (req, res) {
-    var giornoid = req.params.tkdtgara;
-    getMedagliereNew(giornoid, function (data) {
+    var giornoid = req.params.tkdtgaraid;
+    /*getMedagliereNew(giornoid, function (data) {
+        res.send(data);
+
+    })*/
+    getMedagliereGlobaleByTkdtid(giornoid, function (data) {
         res.send(data);
 
     })
@@ -1841,6 +1845,61 @@ function getMedagliereGlobale(giornoid, callback) {
             var banner = $("#banner");
             var titoloh3 = banner.find("h3");
             //console.log(titoloh3[0]);
+
+            var titolo = titoloh3[0].children[0].data.trim();
+
+            var pos0 = html.indexOf('<div class="tab-pane fade" id="medagliere_globale">');
+            var htm = html.substring(pos0);
+
+            var pos1 = htm.indexOf("</table>");
+            htm = htm.substring(0, pos1) + "</div>";
+
+            htm = "<h1>" + titolo + "</h1><br>" + htm;
+            callback(htm);
+            return;
+        } else {
+            var err = JSON.stringify(error);
+            var ehtm = "<p>Errore nella richiesta tkdt</p><br><br><pre>" + err + "</pre>";
+
+            callback(ehtm);
+        }
+    });
+
+
+
+}
+
+
+function getMedagliereGlobaleByTkdtid(giornoid, callback) {
+    
+    var url = tkdt_rooturl + "medagliere?id=" + giornoid;
+    console.log("requesting tkdt url ", url);
+    cloudscraper.get(url, function (error, response, html) {
+        //request(url, function (error, response, html) {
+        //if (!error && response.statusCode == 200) {
+        if (!error) {
+
+           
+
+            var $ = cheerio.load(html, {
+                normalizeWhitespace: true,
+                xmlMode: false
+            });
+
+
+            callback(html);
+            return;
+
+           /* var table=$("table.table-stripped")
+            console.log(table.length);
+            callback("ok")
+            return;*/
+            var banner = $("#banner");
+            var titoloh3 = banner.find(".col-lg-8");
+            console.log(titoloh3.length, titoloh3[0]);
+            var titolo = titoloh3[0].children[0].data.trim();
+            callback(titoloh3[0]);
+            return;
 
             var titolo = titoloh3[0].children[0].data.trim();
 
