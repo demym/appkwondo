@@ -323,6 +323,11 @@ router.post("/put", function (req, res) {
 	var date = new Date();
 	//var garaid=req.params.garaid;
 
+	var notify=false;
+	if (chatobj.hasOwnProperty("notify")){
+		if (String(chatobj.notify)=="true") notify=true;
+	}
+
 
 
 	chatobj.time = date.juliandateshort();
@@ -444,6 +449,7 @@ router.post("/put", function (req, res) {
 
 					var doPush = false;
 					if (chatobj.nickname.toLowerCase() == "system") doPush = true;
+					if (notify) doPush=true;
 
 					if (doPush) {
 						gcm2.fcmSend(obj, function (fcmdata) {
