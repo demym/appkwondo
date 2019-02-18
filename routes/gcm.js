@@ -193,6 +193,79 @@ function fcmSend(obj, callback) {
 
 }
 
+function fcmSendToTopic(obj,callback){
+	if (!gcm_enabled) {
+		callback({
+			error: true,
+			errmsg: "GCM not enabled"
+		});
+		return;
+	};
+
+	var payload = {
+		notification: {
+			title: "Test notifiche push",
+			body: "This is the test of push notification messages.",
+			sound: "default",
+			badge: "6",
+			tag: "chatkwondo",
+			group: "chatkwondo",
+			click_action: "FCM_PLUGIN_ACTIVITY"
+		}
+	};
+
+	var topic = "chatkwondo";
+	var usebadge = true;
+
+	if (obj.hasOwnProperty("title")) payload.notification.title = obj.title;
+	if (obj.hasOwnProperty("body")) payload.notification.body = obj.body;
+	if (obj.hasOwnProperty("topic")) topic = obj.topic;
+	if (obj.hasOwnProperty("badge")) payload.notification.badge = obj.badge;
+
+	if (obj.hasOwnProperty("disablebadge")) {
+		if (String(obj.disablebadge) == "true") {
+			usebadge = false;
+		}
+
+	}
+
+
+	var options = {
+		priority: "high",
+		timeToLive: 60 * 60 * 24
+	};
+
+	admin.messaging().sendToTopic(topic, payload)
+				.then(function (response) {
+					console.log("Successfully sent notification message:", response);
+
+					//SEND SECOND PART FOR ANDROID
+					/*var payload1 = {
+						data: {
+							badge: payload.notification.badge,
+							msgcnt: "3",
+							"content-available": '1'
+						}
+					}
+					admin.messaging().sendToTopic(topic, payload1)
+						.then(function (response) {
+							console.log("Successfully sent data message:", response);
+							if (callback) callback(response);
+						})
+						.catch(function (error) {
+							console.log("Error sending data message:", error);
+							if (callback) callback(error);
+						});*/
+					//if (callback) callback(response);
+				})
+				.catch(function (error) {
+					console.log("Error sending notification message:", error);
+					if (callback) callback(error);
+				});
+}
+
+
+
 
 
 
@@ -794,4 +867,5 @@ exports.testGCM = testGCM;
 exports.setGcmEnabled = setGcmEnabled;
 exports.fcmSend = fcmSend;
 exports.fcmSendMsg=fcmSendMsg;
+exports.fcmSendToTopic=fcmSendToTopic;
 exports.saveTokens=saveTokens;

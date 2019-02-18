@@ -40,8 +40,8 @@ jspm_packages
 
 
 clients
-public/data/media/*.*
-public/data/chatmedia/*.*
+# public/data/media/*.*
+# public/data/chatmedia/*.*
 
 
 public.1.1.8
