@@ -256,7 +256,7 @@ function fcmSendToTopic(obj,callback){
 							console.log("Error sending data message:", error);
 							if (callback) callback(error);
 						});*/
-					//if (callback) callback(response);
+					if (callback) callback(response);
 				})
 				.catch(function (error) {
 					console.log("Error sending notification message:", error);

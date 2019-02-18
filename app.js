@@ -901,7 +901,7 @@ app.get("/fcm/test",function(req,res){
 	})
 })
 
-app.get("/fcm/send", function (req, res) {
+app.get("/fcm/sendtest", function (req, res) {
 	var obj = {
 		title: "AppkwondoV2",
 		body: "prova messaggio push",
@@ -1432,7 +1432,7 @@ app.get("/gcm/send", function (req, res) {
 	var title = "Notification title";
 	var icon = "ic_launcher";
 	var color = "#000000";
-	var tag = "bpecosystemitaly";
+	var tag = "appkwondov2";
 	var badge = "1";
 	var topic = tag;
 	var token = "";
@@ -1487,11 +1487,33 @@ app.get("/gcm/send", function (req, res) {
 })
 
 
+app.get("/fcm/send",function(req,res){
+
+	var title="Notifica di prova";
+	var text="Testo notifica di prova";
+
+
+	var obj={
+		title: title,
+		body: text,
+		disablebadge: true
+		
+	}
+	gcm.fcmSendToTopic(obj,function(fcmdata){
+		console.log("fcm sent",fcmdata)
+		res.send(fcmdata);
+	})
+})
+
+
 
 app.get("/gcm/test", function (req, res) {
 
+	var text = "Testo notifica di prova";
+	var title = "Notifica di prova";
+
 	var msg = {
-		title: "titolo notifica",
+		title: title,
 		text: "testo notifica"
 	}
 
