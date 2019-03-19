@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+<script src="/cdn-cgi/apps/head/dF3X6j7lZ-0lbrHLRsP3x7jogTM.js"></script><script type="text/javascript">
+	var _iub = _iub || [];
+	_iub.csConfiguration = {
+		cookiePolicyId: 904129,
+		siteId: 370961,
+		lang: "it",
+		priorConsent: false
+	};
+</script>
+<script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
+<script type="text/plain" <!--class="_iub_cs_activate" -->>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54595178-1', 'auto');
+    ga('set', 'anonymizeIP', true);
+    ga('send', 'pageview');
+
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Il portale italiano per la gestione delle competizioni di Taekwondo">
+<meta name="author" content="TKD TECHNOLOGY">
+<link href="https://www.tkdtechnology.it/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://www.tkdtechnology.it/jquery-1.11.3.min.js"></script>
+<script src="https://www.tkdtechnology.it/bootstrap/js/bootstrap.min.js"></script>
+<link href='https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css' rel='stylesheet'>
+<script src='https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js'></script>
+<link rel="stylesheet" href="https://www.tkdtechnology.it/fontawesome-pro-5.2.0-web/css/all.min.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8719136098130724",
+        enable_page_level_ads: true
+    });
+</script>
+<script>
+
+    $(function () {
+        $("#english").click(function () {
+            $.ajax({url: "https://www.tkdtechnology.it/index.php/language?lang=english", success: function (result) {
+                    location.reload(true);
+                }});
+        });
+
+        $("#italian").click(function () {
+            $.ajax({url: "https://www.tkdtechnology.it/index.php/language?lang=italian", success: function (result) {
+                    location.reload(true);
+                }});
+        });
+    });
+
+</script>
+<style>
+    body {
+        padding-top: 70px;
+    }
+</style>
+<meta property="og:image" content="https://www.tkdtechnology.it/taek.png" />
+<meta property="og:title" content="TKD TECHNOLOGY" />
+<meta property="og:description" content="Il portale italiano per la gestione delle competizioni di Taekwondo" />
+<script type="application/javascript">
+    function supportsCookies() {
+        try {
+            // Create cookie
+            document.cookie = 'cookietest=1';
+            var ret = document.cookie.indexOf('cookietest=') != -1;
+            // Delete cookie
+            document.cookie = 'cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT';
+            return ret;
+        }
+        catch (e) {
+            return false;
+        }
+    }
+    $( document ).ready(function() {
+        if(!supportsCookies()){
+            $('body').hide();
+            $('body').html("<div style=\"color: #ff0000; background-color: #ffff00;border:solid 3px black; text-align:center\"><strong>Your browser doesn't support cookies or cookies are disabled. Browser are strictly requested for this page to correctly work. Please change browser or enable cookies to continue using the website.<br>Here is a link with the guide for your browser: <a target=\"_blank\" href=\"https://www.whatismybrowser.com/guides/how-to-enable-cookies/auto\">Click here</a></strong></div>");
+            $('body').show();
+        }
+    });
+
+</script>
+
+<title>Tabulati</title>
+<script>
+            function updateData() {
+                $.ajax({
+                    type: "POST",
+                    url: "https://www.tkdtechnology.it/index.php?/welcome/update_accorpamenti",
+                    async: true,
+                    data: {
+                        'id_giornata': 236                    },
+                    success: function (html) {
+                        $("#elenco_categorie").html(html);
+                    }
+                });
+            }
+
+            function updatePoints(){
+                $.ajax({
+                    type: "POST",
+                    url: "https://www.tkdtechnology.it/index.php?/welcome/update_times",
+                    async: true,
+                    data: {
+                        'id_giornata': 236                    },
+                    success: function (data) {
+                        var json = JSON.parse(data);
+                        $.each(json, function(i, obj) {
+                            //use obj.id and obj.name here, for example:
+                            if(obj.nome_blu != null && obj.cognome_blu){
+                                $("#nome_blu" + obj.id).text(obj.cognome_blu + " " + obj.nome_blu);
+                                $("#punti_blu" + obj.id).text(obj.punti_chong);
+                                $("#amm_blu" + obj.id).text("");
+                                var amm_chong = parseInt(obj.amm_chong);
+                                for(var i=0; i<amm_chong; i++){
+                                    $("#amm_blu" + obj.id).append("&#128309;");
+                                }
+                            } else {
+                                $("#nome_blu" + obj.id).text(" ");
+                                $("#punti_blu" + obj.id).text(" ");
+                            }
+                            if(obj.nome_rosso != null && obj.cognome_rosso){
+                                $("#nome_rosso" + obj.id).text(obj.cognome_rosso + " " + obj.nome_rosso);
+                                $("#punti_rosso" + obj.id).text(obj.punti_hong);
+                                $("#amm_rosso" + obj.id).text("");
+                                var amm_hong = parseInt(obj.amm_hong);
+                                for(var i=0; i<amm_hong; i++){
+                                    $("#amm_rosso" + obj.id).append("&#128308;");
+                                }
+                            } else {
+                                $("#nome_rosso" + obj.id).text(" ");
+                                $("#punti_rosso" + obj.id).text(" ");
+                            }
+                            $("#tempo" + obj.id).text(obj.round + " - " + obj.time);
+                            $("#numero_incontro" + obj.id).text(obj.prefisso_quadrato + obj.numero_incontro);
+                        });
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                updateData();
+                updatePoints();
+                setInterval(updatePoints, 1000);
+            });
+        </script>
+<script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    title: "Dettagli gara",
+                    html: true,
+                    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+                });
+            });
+        </script>
+<style>
+            tooltip-arrow,
+            .link_w_tooltip_gold + .tooltip > .tooltip-inner {
+                background-color: #f5a623;
+                text-align: center;
+                color: white;
+                opacity: 1.0
+            }
+
+            tooltip-arrow,
+            .link_w_tooltip_silver + .tooltip > .tooltip-inner {
+                background-color: #b9b9b9;
+                text-align: center;
+                color: white;
+                opacity: 1.0
+            }
+
+            tooltip-arrow,
+            .link_w_tooltip_bronze + .tooltip > .tooltip-inner {
+                background-color: #d06a3d;
+                text-align: center;
+                color: white;
+                opacity: 1.0
+            }
+
+        </style>
+</head>
+<body>
+<div id='top-menu' class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://www.tkdtechnology.it/" style="vertical-align: middle; padding: 1px 1px 1px 1px">
+<img height="100%" src="https://www.tkdtechnology.it/taek.png" />
+</a>
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse" id="navbar-main">
+<ul class="nav navbar-nav">
+<li>
+<a href="https://www.tkdtechnology.it/index.php/welcome/homepage">Home</a>
+</li>
+<li>
+<a href="https://www.tkdtechnology.it/index.php/telegram">Telegram</a>
+</li>
+<li>
+<a href="https://www.tkdtechnology.it/index.php/auth/login">Login</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://www.tkdtechnology.it/index.php/archivio">Archivio</a></li>
+<li><a href="https://support.tkdtechnology.it" target="_blank">Supporto</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<a href="http://www.internationalgreciasalentina.com" target="_blank">
+<div id="top_banner" style='background-image: url("https://www.tkdtechnology.it/grecia-salentina-new-2300-300.jpg");
+                        width: 100%;
+                        height: 120px;
+                        background-size: 100% 100%;
+                        background-repeat: no-repeat'></div>
+</a>
+</div>
+</div>
+
+</div>
+<br>
+<div class="row">
+<div class="col-lg-2">
+</div>
+<div class="col-lg-2">
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+Click sulla bandiera per cambiare lingua<br>
+<a href="#top-menu"><img src="https://www.tkdtechnology.it/flags/Italy.png" alt="" id="italian" /></a>
+<a href="#top-menu"><img src="https://www.tkdtechnology.it/flags/United-kingdom.png" id="english" alt="" /></a>
+</div>
+</div>
+ <div class="container">
+<div class="page-header" id="banner">
+<h1>Tabulati CAMPIONATO INTERREGONALE PUGLIA - CADETTI A/JUNIOR/SENIOR 2019</h1>
+<h3>
+Sabato 09 Marzo 2019
+</h3>
+<p class="lead">
+In questa pagina puoi trovare tutte le informazioni relative alla giornata di gara scelta. Scorri tra i pannelli qui sotto per vedere tabulati, situazione live dei campi di gara (nelle gare dove questa funzione viene abilitata), classifica società ed elenchi iscritti divisi per società o categorie (dove puoi vedere eventuali accorpamenti effettuati) </p>
+<div class="row">
+<div class="bs-component">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tabulati" data-toggle="tab">Tabulati</a></li>
+<li style="background-color: yellow"><a href="#live" data-toggle="tab">Campi live&nbsp;<span class="badge">new</span></a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+Elenchi <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li><a href="#elenco_categorie" data-toggle="tab">Elenco categorie</a></li>
+<li class="divider"></li>
+<li><a href="#elenco_societa" data-toggle="tab">Elenco societa</a></li>
+</ul>
+</li>
+</ul>
+<div id="myTabContent" class="tab-content">
+<div class="tab-pane fade active in" id="tabulati">
+<table class="table table-striped table-hover ">
+<thead>
+<tr>
+<th>Sesso</th>
+<th>Categoria età</th>
+<th>Cintura DA</th>
+<th>Cintura A</th>
+<th>Categoria peso</th>
+<th>Vedi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-33 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21010" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21011" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21012" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-45 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21013" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-49 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21014" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-53 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21015" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-57 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21016" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-61 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21017" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>+65 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21019" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-33 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21030" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21031" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21032" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-45 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21033" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-49 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21034" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-53 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21035" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-57 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21036" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-61 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21037" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-65 kg</td>
+ <td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21038" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>+65 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21039" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-33 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21050" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21051" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21052" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-45 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21053" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-49 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21054" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-53 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21055" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-57 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21056" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-61 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21057" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-65 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21058" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>+65 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21059" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21022" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21023" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-44 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21024" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-51 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21026" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-55 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21027" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>-59 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21028" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Bianca (10° Kup)</td>
+<td>Gialla Sup. (7° Kup)</td>
+<td>+59 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21029" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+ </td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-33 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21041" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21042" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21043" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-44 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21044" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-47 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21045" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-51 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21046" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-55 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21047" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Verde (6° Kup)</td>
+<td>Blu Sup. (3° Kup)</td>
+<td>-59 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21048" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-29 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21060" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-33 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21061" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-37 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21062" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-41 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21063" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-44 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21064" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-47 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21065" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-51 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21066" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-55 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21067" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>-59 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21068" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>F</td>
+<td>[ITA] Cadetti A</td>
+<td>Rossa (2° Kup)</td>
+<td>Nera 9° Dan</td>
+<td>+59 kg</td>
+<td>
+<a href="https://www.tkdtechnology.it/index.php/welcome/show_tabulato?id=21069" target="_blank">
+<span class="fa fa-eye"> Vedi</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tab-pane fade" id="live">
+<div id="punteggi_live">
+ <div id="quadrato-1045">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 1 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1045">NUMERO INCONTRO</h2>
+<h3 id="tempo1045">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1045"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1045"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1045">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1045"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1045"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1045">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+<div id="quadrato-1046">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 2 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1046">NUMERO INCONTRO</h2>
+<h3 id="tempo1046">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1046"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1046"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1046">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1046"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1046"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1046">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+<div id="quadrato-1047">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 3 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1047">NUMERO INCONTRO</h2>
+<h3 id="tempo1047">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1047"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1047"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1047">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1047"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1047"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1047">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+<div id="quadrato-1048">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 4 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1048">NUMERO INCONTRO</h2>
+<h3 id="tempo1048">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1048"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1048"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1048">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1048"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1048"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1048">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+<div id="quadrato-1049">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 5 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1049">NUMERO INCONTRO</h2>
+<h3 id="tempo1049">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1049"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1049"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1049">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1049"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1049"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1049">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+<div id="quadrato-1050">
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2> Campo 6 </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="text-align: center">
+<h2 id="numero_incontro1050">NUMERO INCONTRO</h2>
+<h3 id="tempo1050">R1 - 00:00.000 </h3>
+</div>
+</div>
+<div class="row" style="color:blue; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_blu1050"><b>NOME BLU</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_blu1050"><b>PUNTI BLU</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_blu1050">AMMONIZIONI BLU</div>
+</div>
+<div class="row" style="color:red; font-size: 30px">
+<div class="col-lg-5" style="text-align: center;" id="nome_rosso1050"><b>NOME ROSSO</b></div>
+<div class="col-lg-2" style="text-align: center;" id="punti_rosso1050"><b>PUNTI ROSSO</b></div>
+<div class="col-lg-5" style="text-align: center; font-size: 20px" id="amm_rosso1050">AMMONIZIONI ROSSO</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="tab-pane fade" id="elenco_categorie">
+</div>
+<div class="tab-pane fade" id="elenco_societa">
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. TAEKWONDO ROZZANO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67153">
+Brando Radice </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67141">
+Valentina Lecce </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67142">
+Sergio Libutti </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD OLIMPIC TAEKWONDO VERONA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67978">
+Martina Dalla Vecchia </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>SSD CORPO LIBERO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69276">
+Alessio Francesco Sassanelli  </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>SCUOLA TAEKWONDO SIRIGNANO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70065">
+Lorenzo Esposito </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>G.S. FIAMME ORO NETTUNO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66073">
+Andrea Monticelli </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) +65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66449">
+Simone Iunco </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD CENTRO TKD OSTIA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70635">
+Giulia Di Lelio </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70640">
+Giulia Magri </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70636">
+Gianluca Di Lelio </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70639">
+Marco Loi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71255">
+Christian Malin </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70637">
+Jacub Kalka </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD SPORTESERCITO SEZIONI GIOVANILI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74441">
+Giuseppe Pagano </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD ACCADEMIA DEL TAEKWONDO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66564">
+Giuseppina Violetta Ciuci </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66565">
+Nikolas Guarnieri </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66562">
+Giorgia Casaburi </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74390">
+Gabriele Tramontozzi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>BLUE WORLD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63074">
+Giuseppe Caputo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD NO FEAR MARIO DE SIMONE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63159">
+Stefano Esposito </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63163">
+Andrea Perruso </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63165">
+Gaia Sorrentino </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -47 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. SCUOLA TAEKWONDO SALERNO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63267">
+Simone Luigi Caloiero </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>KIM YU SIN</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68598">
+De Santis Sabrina </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68581">
+Giovanni Marciano </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69060">
+Fabiana Cantalice </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -51 kg </div>
+ <div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68580">
+Giorgia Lorito </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68578">
+Maurizio Alberga </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68597">
+Roberta Pierro </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68593">
+Pasquale Sirago </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68594">
+Daniele Longo </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68583">
+Domisia Vero </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69062">
+Foglie Daniele Delle </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68590">
+Davide Ventrella </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68605">
+Giuseppe Diomede </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68589">
+Angelo Festoni Perillo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68582">
+Martina Morea </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68601">
+Luca Magaraggio </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73684">
+Paolo Gagliardi </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68600">
+Francesco Losito </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68595">
+Lascio Mattia Di </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68579">
+Federico Tricarico </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68596">
+Claudio Caforio </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69063">
+Cristian Zaccaria </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68599">
+Federica Cardinale </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -51 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68592">
+Ferdinando D'orio </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TAEKWONDO MONOPOLI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69488">
+Leonardo Diroma </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69487">
+Leonardo Corallo </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69484">
+Angelo Boccardi </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) +65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>BUTTERFLY TAEKWONDO TURI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71132">
+Pierfrancesco Giuliani </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71131">
+Rebecca Maria Carenza </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71133">
+Federico Rossi </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+ <h3><b>ASD DELLINO TEAM</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69813">
+Christian Santoro </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69791">
+Paolo Carone </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) +65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69795">
+Alberto Cena </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69798">
+Danilo Del Carmelo </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69803">
+Ginevra Facchini </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69809">
+Carlo Mongelli </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=75243">
+Sara Di Bari </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) +59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74011">
+Dennis Marzocca </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -61 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TURTURRO TEAM TAEKWONDO GIOVINAZZO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69873">
+Rosa Verolino </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69874">
+Luca Visentini </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69871">
+Michele Longo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.TAEKWONDO CLUB TERLIZZI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67536">
+Molfetta Annamaria Di </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67535">
+Angelis Lavinia De </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67531">
+Davide Barile </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67534">
+Mattia Clemente </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD BEK SAN TAEKWONDO BARI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68943">
+Fabiana Santeramo </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -51 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68938">
+Marvin Marangio </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68927">
+Jessica Attolico </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68929">
+Giuseppe Federico Clemente </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68937">
+Gabriele Lorusso </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68930">
+Mario Enrico Clemente </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68936">
+Rosita Lobascio </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. TREE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69842">
+Anthony Galiano </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69847">
+Ivan Pio Spilotro </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69844">
+Eligia Maci </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -44 kg </div>
+ <br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. TKD PENNETTA ROSA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70240">
+Agnese Maria Scalera </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -51 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70237">
+Elisa Maria Cassiano </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70236">
+Francesca Candito </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD NEW MARZIAL MESAGNE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71170">
+Teodoro Del Vecchio </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71193">
+Vito Nicola Sicilia </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71192">
+Matteo Scalera </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71179">
+Valeria Lamarmora </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -29 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71168">
+Dafne Cutugno </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71174">
+Hoara Franco </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71195">
+Michelle Spinosa </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71194">
+Celeste Sicilia </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71186">
+Eva Montanaro </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71184">
+Alessio Molfetta </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71177">
+Ludovico Iurlaro </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71189">
+Rexhep Rabija </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71187">
+Valentino Davide Neglia </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71163">
+Daniele Biscosi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71180">
+Daniele Lupo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71190">
+Valentina Radeglia </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71181">
+Davide Lupo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD POL. AMICIZIA TKD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65151">
+Christian Camporeale </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65156">
+Swamy Del Prete </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65158">
+Francesco Legrottaglie </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65170">
+Cosimo Ciciriello </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65169">
+Fausto Volgo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65165">
+Giulia Rongone </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65155">
+Federica De Luca </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65166">
+Rocco Semeraro </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65168">
+Alessia Urselli </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71564">
+Alberto Zito </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65152">
+Giada Coluccio </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TAE ACTION CENTER</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65249">
+Alessio Trastevere </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65243">
+Diego Flores </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65246">
+Thomas Mascia </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65252">
+Matteo Greco </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) +65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD CENTRO OLIMPICO TKD NUZZO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70674">
+Samuel De Nicola </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63453">
+Federico Martina </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63458">
+Gabriele Salve </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63456">
+Pierluigi Pezzuto </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63457">
+Andrea Renna </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TAEKWONDO GOLD TEAM</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66902">
+Lorenzo Landolfo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66909">
+Mattia Rollo </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66905">
+Davide Massaro </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66913">
+Marco Sirena </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66910">
+Elena Romanelli </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TKD DI LAURO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65488">
+Alexandra Boccadamo </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65490">
+Tommaso Destino </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70338">
+Ruggiero Agnese </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65491">
+Giada Antonietta Elia </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65493">
+Giorgia Maria Karol Farina </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65494">
+Alessia Magri ` </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<br>
+</div>
+ <div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TEAM BENATTI TKD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64011">
+Carlo Rosato </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64012">
+Denise Serinelli </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TKD FOGGIA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68471">
+Francesco Paciello </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67723">
+Andrea Curci </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67724">
+Ludovica Rita De Vito </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68482">
+Francesca Di Stefano </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67725">
+Leonardo Forte </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67719">
+Vito Battiante </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67728">
+Giuseppe Mendolicchio </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68472">
+Davide Buononato </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67729">
+Lucia Parlante </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68474">
+Francesco Carmine Chinni </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67727">
+Paolo Mele </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67730">
+Vincenzo Pio Simone </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67736">
+Valerio Pietradura </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>OLIMPIC STUDIO CERIGNOLA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65807">
+Antonio Imbrice </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65809">
+Vito Manduano </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65808">
+Pasquale Lanza </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -61 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TKD SPORT PROJECT</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64333">
+Lorenzo Longo </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TAEKWONDO OLYMPIC GIANNONE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66491">
+Stefano Maggiore </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66487">
+Greta Calvara </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66489">
+Vincent De Domenico </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66488">
+Alessandro D'oria </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66492">
+Alessio Rampino </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68124">
+Antonio Poci </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66490">
+Giulia Maggiore </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66494">
+Nicolo' Solazzo </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66495">
+Edoardo Spalluto </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68123">
+Andrea Panico </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66493">
+Ilaria Rimini </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74065">
+Francesca Martella </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -44 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TAEKWONDO SPORT CENTER</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69848">
+Eleonora Gesue' </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69850">
+Verginia Pagano </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73452">
+Giorgio De Franco </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69849">
+Maicol Martina </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69851">
+Samuele Giuseppe Epifani </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69854">
+Alessio Miccoli </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69763">
+Francesco Primaverile </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TAEKWONDO OLIMPICO CLUB LECCE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73337">
+Luigi Pio Arsieni </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63592">
+Samuele Della Torre </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73338">
+Christian Montinaro </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=63595">
+Noemi Malorgio </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -47 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TAEKWONDO ASCANIO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66328">
+Francesca Manzo </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66324">
+Giulio Giusi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66532">
+Serena Cosima Savina </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66323">
+Melissa D'agostino </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66329">
+Rebecca Notarnicola </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66326">
+Elisabetta Lezzi </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66531">
+Riccardo Marino </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66739">
+Samuele Perrone </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66330">
+Vanessa Panzanaro </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ACC. TAEKWONDO CHAMPIONS GALATINA ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68713">
+Maria Vittoria Palumbo </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>AS TAEKWONDO WHANG TEAM MANCARELLA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73576">
+Lorenzo Bruno </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73578">
+Sara Margiotta </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73579">
+Andrea Salomone </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73577">
+Mario Giorgino </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TAEKWONDO TEAM SICILIANO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=72988">
+Giorgi Jonathan Pietro De </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>NEW TAEKWONDO ONE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73953">
+Gaia Manca Mengoli </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD ACCADEMIA TAEKWONDO PERULLI</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70315">
+Flavio Gilenardi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69862">
+Kevin Pastillo </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69551">
+Federico Corrado </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TAEKWONDO TARANTO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66725">
+Daniele D'Aluisio </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70293">
+Giuseppe Demito </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -49 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TAEKWONDO MANSE'</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64490">
+Vitantonio Santoro </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>SCUOLA TAEKWONDO YOM CHI ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69959">
+Alessia Galiberti </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69957">
+Giuseppe D'auria </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69958">
+Domenico Farina </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69960">
+Ilaria Nigro </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>MARCONIA TAEKWONDO ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73514">
+Simone Penna </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) +65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73512">
+N'dah Yannick Appia </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=75306">
+Davide Picchione </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD CUS POTENZA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71713">
+Elio Laurino </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71714">
+Silvana Laurino </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) +59 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD FUN SPORT CENTER</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64298">
+Grazia Rosa </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65034">
+Pietro Folino </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TKD INVICTUS ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74023">
+Lorenzo Giannachi </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. TARAS TAEKWONDO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74166">
+Emanuela Lozupone </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74165">
+Anthony Lo Scialpo </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74167">
+Marco Reale </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TAEKWONDO ALL-IN</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73978">
+Simone José Pappalettera </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73980">
+Roberto Simone </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73977">
+Domenico Lovaglio </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -57 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. TAEKWONDO MATTEI ROMA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65303">
+Nicolas Bonde </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65302">
+Sofia Bonde </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>TEAM CHIRIATTI MARTANO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64830">
+Anna Lucia Adamuccio </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -55 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64833">
+Nocco Daniele </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64839">
+Andrea Sciurti </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64831">
+Noemi Caracuta </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64837">
+Benedetta Perrotta </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>FIGHT ACADEMY A.S. DILETTANTISTICA </b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=67109">
+Luigi Rolli </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -49 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>DRAGONS TAEKWONDO ACADEMY</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69214">
+Daniele Campolmi </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69218">
+Amalia Porzio </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -47 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69215">
+Riccardo Giordano </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69217">
+Cristina Pastena </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -51 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>SPORT & FITNESS ATENE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66730">
+Mattia Lucignano  </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66729">
+Luciano Di Roberto </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=66728">
+Emanuele Pio Costigliola </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>OLYMPIC TAEKWONDO FOGGIA</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69088">
+Elena Alessia Drimboceanu </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69092">
+Salvatore Stipulante </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69089">
+Silvio Lotito </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>NEW AGE ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71146">
+Gabriele Pantaleo Maci </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -45 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD PANTERE NERE</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69023">
+Giorgia Marolo </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69024">
+Teodoro Patera </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -33 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>NEW GYM ORIENS</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=62900">
+Fabrizio Ceccioli </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +65 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73652">
+Giudice Jonathan Lo </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD DYNAMIC TAEKWONDO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71393">
+Justin Zuffianò </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71392">
+Martina Melania Urso </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD AGAPE & SPORT</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65175">
+Celeste Buttazzo </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=65176">
+Stefano Buttazzo </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=70090">
+Pascali Monica De </a> - F - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -59 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>A.S.D. INTERNATIONAL TAEKWONDO CIRILLO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71409">
+Mattia Bruno </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71410">
+Gianfranco Capodiferro </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>PUMA ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74479">
+Alessio Tammaro </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -61 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74663">
+Brian Ruzzoli </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -33 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74662">
+Manuel Fruggiero </a> - M - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -65 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>CENTRO TAEKWONDO TEAM BELVISO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69704">
+Mario Intini </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=69696">
+Vito Belviso </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73286">
+Flavio Mancino </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>EVOLUTION CENTER CELLINO ASD</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71510">
+Raffaele Ferulli </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -53 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=71511">
+Kevin Pagliara </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -57 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>ASD TAEKWONDO CIVINO</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64087">
+Rinaldis Giuseppe De </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -49 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64080">
+Matteo Pedone </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -57 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64069">
+Claudio Boffa </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -37 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=73970">
+Francesca Maria Quarta </a> - F - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan +59 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64089">
+Jacopo Nicola Favale </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -45 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=64073">
+Tommaso Centonze </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -37 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>PST ACADEMY</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68326">
+Ilaria Abagnale </a> - F - [ITA] Cadetti A - Verde (6° Kup) -> Blu Sup. (3° Kup) -44 kg </div>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=68327">
+Eduardo D'amalia </a> - M - [ITA] Cadetti A - Rossa (2° Kup) -> Nera 9° Dan -41 kg </div>
+<br>
+</div>
+<div style="border:solid; border-radius:40px; text-align: center">
+<h3><b>FORTITUDO SPORT CENTER</b></h3>
+<div style="border:solid lightgrey 1px; border-radius:25px; text-align: center; width: 64%; margin: 0 auto">
+<a target="_blank" href="https://www.tkdtechnology.it/index.php/archivio/storico_atleta_da_iscrizione?id=74559">
+Davide Cammarota </a> - M - [ITA] Cadetti A - Bianca (10° Kup) -> Gialla Sup. (7° Kup) -49 kg </div>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12" style="display: inline-block">
+<div class="jumbotron" style="padding: 2em 2em 2em 2em;">
+<table cellpadding="0" cellspacing="0" style="margin: 0; width: 100%">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tr>
+<td align="center">
+<span style="font-size: 11px">Segui TKD TECHNOLOGY anche su Facebook per restare aggiornato sulle ultime notizie!</span>
+</td>
+<td align="center">
+<a href="//www.iubenda.com/privacy-policy/904129" class="iubenda-white no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w, d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener){w.addEventListener("load", loader, false); } else if (w.attachEvent){w.attachEvent("onload", loader); } else{w.onload = loader; }})(window, document);</script>
+<br>
+<span style="font-size: 11px">Copyright ©2013-2018 TKD TECHNOLOGY<br>All rights reserved.</span>
+
+</td>
+<td align="center">
+<span style="font-size: 11px">TKD TECHNOLOGY utilizza la tecnologia di crittografia standard per proteggere la riservatezza delle vostre informazioni personali.</span>
+</td>
+</tr>
+<tr>
+<td align="center">
+<a href="https://www.facebook.com/tkdtechnology"><img style="display:block;" width="80" height="80" src="https://www.tkdtechnology.it/fb.png" /></a>
+</td>
+<td align="center">
+<img style="display:block;" width="100px" height="100px" src="https://www.tkdtechnology.it/taek.png" />
+</td>
+<td align="center">
+<a href="https://www.positivessl.com" style="font-family: arial; font-size: 10px; color: #212121; text-decoration: none;"><img src="https://www.positivessl.com/images-new/PositiveSSL_tl_trans.png" alt="SSL Certificate" title="SSL Certificate" border="0" /></a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="row" style="">
+<div class="col-lg-12" style="height: 120px; width: 100%">
+</div>
+</div>
+webserver_1.tkdtechnology.it </div>
+</body>
+</html>
