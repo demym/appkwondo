@@ -4955,10 +4955,6 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea:-ms-input-placeholder {
-  padding-left: 2px;
-}
-
 textarea::-ms-input-placeholder {
   padding-left: 2px;
 }
@@ -9581,7 +9577,7 @@ ion-content {
   display: block;
   width: 100%;
   height: 100%;
-  contain: layout size style;
+  contain: size style;
 }
 
 .ion-page > ion-content {
@@ -20467,7 +20463,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-bullet-active {
-  background: #007aff;
+  background: #387ef5;
   opacity: 1;
 }
 
@@ -20508,7 +20504,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #007aff;
+  background: #387ef5;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
@@ -22409,6 +22405,7 @@ ion-toast {
 
 .toggle-ios {
   position: relative;
+  display: block;
   width: 51px;
   height: 32px;
   -webkit-box-sizing: content-box;
@@ -22537,6 +22534,7 @@ ion-toast {
 
 .toggle-md {
   position: relative;
+  display: block;
   width: 36px;
   height: 14px;
   -webkit-box-sizing: content-box;
@@ -22670,6 +22668,7 @@ ion-toast {
 
 .toggle-wp {
   position: relative;
+  display: block;
   width: 40px;
   height: 18px;
   -webkit-box-sizing: content-box;
@@ -30453,6 +30452,11 @@ ion-navbar.toolbar {
   min-height: calc(44px + env(safe-area-inset-bottom));
 }
 
+.ios .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 44px;
+}
+
 .md ion-nav > .ion-page > .toolbar.statusbar-padding:first-child,
 .md ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
 .md ion-tab > .ion-page > .toolbar.statusbar-padding:first-child,
@@ -30531,6 +30535,11 @@ ion-navbar.toolbar {
   padding-bottom: calc(env(safe-area-inset-bottom) + 4px);
   min-height: calc(56px + constant(safe-area-inset-bottom));
   min-height: calc(56px + env(safe-area-inset-bottom));
+}
+
+.md .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 56px;
 }
 
 .wp ion-nav > .ion-page > .toolbar.statusbar-padding:first-child,
@@ -30613,6 +30622,11 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.wp .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 46px;
+}
+
 .ion-content {
   background-color: #eee;
 }
@@ -30643,6 +30657,59 @@ ion-navbar.toolbar {
 
 ion-app.md [padding], ion-app.md [padding] .scroll-content {
   padding: 5px;
+}
+
+ibmsection .header {
+  width: 100%;
+  padding: 5px;
+  background-color: #4d4dff;
+  color: white;
+  border-bottom: 1px solid gray;
+  border-radius: 2px;
+  font-size: 16px;
+  /*height: 42px;*/
+}
+
+ibmsection .cucuzza {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+ibmsection .arrheader {
+  color: yellow;
+  font-size: .85em !important;
+  font-weight: bold;
+  /*background: #4783b8;*/
+}
+
+ibmsection .headertitle {
+  font-size: .85em !important;
+}
+
+ibmsection .content {
+  background: #eee;
+  border: 1px solid silver;
+  padding: 3px;
+  /*text-align: right;*/
+}
+
+ibmsection .itembut {
+  height: .9em;
+}
+
+ibmsection .section {
+  margin: auto auto;
+  width: 100%;
+}
+
+ibmsection .header .col {
+  height: 100% !important;
+  display: table;
+  vertical-align: middle !important;
 }
 
 page-about ion-segment {
@@ -32055,6 +32122,154 @@ page-rtc .blink {
   -webkit-animation: fade 3000ms infinite;
 }
 
+page-scorekeeper {
+  /*ion-col {
+        display: flex;
+        padding: 5px;
+    }
+
+   
+
+    .button-md {
+        height: auto;
+        margin: 20px;
+    }*/
+}
+
+page-scorekeeper .timerdiv {
+  height: 100px;
+}
+
+page-scorekeeper .timer {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+}
+
+page-scorekeeper .punt1 {
+  height: 200px;
+}
+
+page-scorekeeper .punt2 {
+  height: 200px;
+}
+
+page-scorekeeper .home-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+page-scorekeeper .home-container > .row {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0;
+}
+
+page-scorekeeper .first-row {
+  -webkit-box-flex: 0.4 !important;
+  -webkit-flex: 0.4 !important;
+  -ms-flex: 0.4 !important;
+  flex: 0.4 !important;
+  background-color: #aeeeee;
+}
+
+page-scorekeeper .second-row {
+  -webkit-box-flex: 0.8 !important;
+  -webkit-flex: 0.8 !important;
+  -ms-flex: 0.8 !important;
+  flex: 0.8 !important;
+  /*background-color: red;*/
+}
+
+page-scorekeeper .third-row {
+  -webkit-box-flex: 0.8 !important;
+  -webkit-flex: 0.8 !important;
+  -ms-flex: 0.8 !important;
+  flex: 0.8 !important;
+  /* background-color: blue;*/
+}
+
+page-scorekeeper .redbutton {
+  background-color: red;
+  color: white;
+  font-size: 30px;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+page-scorekeeper .buttr {
+  padding: 2px;
+  text-align: center;
+}
+
+page-scorekeeper .puntbut {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 98px;
+  line-height: 200%;
+  font-weight: normal;
+  text-align: center;
+}
+
+page-scorekeeper .blue {
+  background-color: blue;
+}
+
+page-scorekeeper .red {
+  background-color: red;
+}
+
+page-scorekeeper .bluebutton {
+  background-color: blue;
+  color: white;
+  font-size: 30px;
+  height: 100%;
+  margin: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+page-scorekeeper .colorgray {
+  color: gray;
+}
+
+page-scorekeeper .backgray {
+  background-color: gray;
+}
+
+page-scorekeeper .backorange {
+  background-color: orange;
+}
+
+page-scorekeeper .blink {
+  -webkit-animation: blinker 1s linear infinite;
+  animation: blinker 1s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 page-servizisocieta .gear {
   opacity: .5;
   max-height: 200px;
@@ -32136,6 +32351,47 @@ page-tkdtlive .lastupdate {
   padding: 3px;
   font-size: 12px;
   height: 20px;
+}
+
+page-tournament ibmsection {
+  font-size: 12px;
+}
+
+page-tournament .incontro {
+  font-size: 12px;
+}
+
+page-tournament .uc {
+  text-transform: uppercase;
+}
+
+page-tournament .pad5 {
+  padding: 5px;
+}
+
+page-tournament .classificaatleta {
+  font-size: 11px;
+}
+
+page-tournament .classificarow {
+  border-bottom: 1px solid black;
+}
+
+page-tournament .incontrirow {
+  border-bottom: 1px solid black;
+  margin: 4px;
+}
+
+page-tournament .small {
+  font-size: 11px;
+}
+
+page-tournament .input .text-input {
+  margin: 2px !important;
+}
+
+page-tournament .punteggio {
+  border: 1px solid silver;
 }
 
 page-users .useremail {
