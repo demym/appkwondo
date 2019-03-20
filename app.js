@@ -1492,6 +1492,8 @@ app.get("/fcm/send",function(req,res){
 	var title="Notifica di prova";
 	var text="Testo notifica di prova";
 
+	if (req.query.title) title=req.query.title;
+	if (req.query.text) text=req.query.text;
 
 	var obj={
 		title: title,
@@ -1499,6 +1501,7 @@ app.get("/fcm/send",function(req,res){
 		disablebadge: true
 		
 	}
+	
 	gcm.fcmSendToTopic(obj,function(fcmdata){
 		console.log("fcm sent",fcmdata)
 		res.send(fcmdata);
