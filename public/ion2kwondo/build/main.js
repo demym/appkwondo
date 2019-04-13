@@ -6,7 +6,7 @@ webpackJsonp([1],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(141);
@@ -344,7 +344,7 @@ HomePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_map_map__ = __webpack_require__(528);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_broadcast_broadcast__ = __webpack_require__(529);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_filters_filters__ = __webpack_require__(530);
@@ -1336,19 +1336,20 @@ var GaraPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]) === "function" && _a || Object)
 ], GaraPage.prototype, "navBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]) === "function" && _b || Object)
 ], GaraPage.prototype, "content", void 0);
 GaraPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-gara',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/'<!--\n  Generated template for the GaraPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n        <button *ngIf="hasTkdt()" ion-button style="font-size: 18px" (tap)="showTkdtLive()">\n            <ion-icon name="pulse"></ion-icon>\n    \n          </button>\n        <button *ngIf="hasLinks()" ion-button style="font-size: 18px" (tap)="showLinks()">\n            <ion-icon name="ios-link"></ion-icon>\n    \n          </button>\n      <button *ngIf="hasMap()" ion-button style="font-size: 18px" (tap)="showMap()">\n        <ion-icon name="md-locate"></ion-icon>\n\n      </button>\n\n      <!--<button ion-button style="font-size: 18px" (tap)="gotoChat()">\n        <ion-icon name="md-chatbubbles">\n          <ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge>\n        </ion-icon>\n\n      </button>-->\n      <button ion-button style="font-size: 18px" (tap)="doRefreshStandAlone()">\n        <ion-icon name="md-refresh"></ion-icon>\n      </button>\n\n    </ion-buttons>\n  </ion-navbar>\n\n  <ion-toolbar class="stoolbar">\n    <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <ion-spinner name="dots" class="spinnerdots" *ngIf="loading"></ion-spinner>\n            <!--<img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />-->\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasMap()">\n            <ion-col>\n              <button ion-button small (tap)="showMap()">Visualizza mappa</button>\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasTabulatoUrl()">\n              <ion-col>\n                <button ion-button small (tap)="showTabulatoUrl()">Visualizza tabulato</button>\n              </ion-col>\n            </ion-row>\n          <ion-row>\n            <ion-col col-5>&nbsp;</ion-col>\n            <ion-col>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Iscritti</ion-col>\n            <ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,\'iscritti\').femmine}}, M: {{getMaschiFemmine(iscritti,\'iscritti\').maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match da disputare</ion-col>\n            <ion-col class="infobold">{{info.dadisputare.rows.length}} (F: {{getMaschiFemmine(info.dadisputare).femmine}}, M: {{getMaschiFemmine(info.dadisputare).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match disputati</ion-col>\n            <ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match vinti</ion-col>\n            <ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match persi</ion-col>\n            <ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{categoriecoperte.text}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">Punteggio totale medaglie: {{totalepunti}}</ion-col>\n          </ion-row>\n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </ion-item>\n      <!--<ion-item style="background: #eee; height: 10px !important; margin: 0px !important; padding: 0px !important;">-->\n      <ion-row style="background: #333">\n        <ion-col col-3>\n          <button (tap)="setFilters()" [ngClass]="getFiltersClass()" ion-button dark small>{{getFiltersText()}}</button>\n        </ion-col>\n        <ion-col col-9 style="text-align: right;">\n          <button ion-button (tap)="getMedagliereGlobale()" small class="filt medals" style="height: 20px; font-size: 14px; margin-right: 7px; justify-content: center;">\n            <span class="ori">ORI: {{getMedals().ori}}</span>\n            <span class="argenti">ARG: {{getMedals().arg}}</span>\n            <span class="bronzi">BRO: {{getMedals().bro}}</span>\n          </button>\n        </ion-col>\n      </ion-row>\n      <!--</ion-item>-->\n      <!--<ion-item *ngIf="gara.gara.rows.length>0" >{{gara.gara.rows[0].doc.title}}</ion-item>-->\n      <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n        <ion-segment-button value="matchesbyprog">\n          <!-- <ion-icon name="camera"></ion-icon>-->Per match\n        </ion-segment-button>\n        <ion-segment-button value="matchesbyatleta">\n          Per atleta\n        </ion-segment-button>\n        <ion-segment-button value="cronaca">\n          Cronaca\n        </ion-segment-button>\n        <ion-segment-button value="iscritti">\n          Iscritti\n        </ion-segment-button>\n        <!-- <ion-segment-button value="infogara">\n            Gara\n          </ion-segment-button>-->\n      </ion-segment>\n    </div>\n  </ion-toolbar>\n\n</ion-header>\n<!--\n<ion-tabs>\n  <ion-tab [root]="tab1Root"></ion-tab>\n  <ion-tab [root]="tab2Root"></ion-tab>\n  <ion-tab [root]="tab3Root"></ion-tab>\n</ion-tabs>\n-->\n\n<ion-content padding>\n\n  <!--<ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n    </ion-refresher-content>\n  </ion-refresher>-->\n\n  <ion-card *ngIf="showIscritti">\n    <ion-card-content style="text-align: center">\n      <span style="color: red">Nessun incontro definito</span><br>\n      <div style="height: 105px; text-align: center">\n      <img style="width: 100px; height: 100px; margin: auto; " src="assets/img/fight.png" />\n    </div>\n    </ion-card-content>\n\n  </ion-card>\n  <section id="iscritti" *ngIf="showIscritti || (view==\'iscritti\')">\n    <div style="background: lightblue; padding: 8px;">\n\n      {{iscritti.length}} iscritti a questa gara\n \n    </div>\n    <button *ngIf="(backend.userIsAdmin()) && (gara.gara.rows[0].doc.stato!=\'disputata\') " ion-button block (tap)="selectIscritti()">Seleziona iscritti</button>\n\n    <ion-list *ngFor="let atl of atletiiscritti" class="list-iscritti" >\n    <ion-item class="iscrittiitem" >\n      <button ion-item (tap)="showMatchesForAtleta(atl.id)" detail-none >\n\n      <ion-row>\n        <ion-col>\n            <div class="iscrittonome">{{atl.cognome}} {{atl.nome}}</div>\n            <div class="iscritti">{{atl.sesso}} - {{atl.categoria.toUpperCase()}} </div>\n            <div class="tkdtiscritti">{{atl.tkdtcat}}</div>\n\n        </ion-col>\n        <ion-col col-1>\n            <ion-badge>{{atl.nmatches}}</ion-badge>\n        </ion-col>\n      </ion-row>\n\n      \n  \n        <!--<div class="iscritti">{{atl.tkdtcategoria}}</div>-->\n\n\n      </button>\n\n    </ion-item>\n  </ion-list>\n\n    <!--<ion-item-divider color="light"></ion-item-divider>-->\n\n\n  </section>\n\n\n  <section id="matchesbyprog" [hidden]="view!=\'matchesbyprog\'" sngIf="view==\'matchesbyprog\'">\n\n    <ion-list>\n      <div *ngFor="let m of displayedgara.matchesbyprog.rows">\n        <ion-item *ngIf="m.doc.dadisputare==\'yes\'"  (press)="broadcastMatch(m.doc)" (tap)="showMatchesForAtleta(m.doc.atletaid)">\n          <ion-row>\n            <ion-col col-2>\n              <img width="32" height="32" src="{{getImg(m)}}" />\n            </ion-col>\n            <ion-col>\n              <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n              <div class="atleta">{{m.doc.atletaname}}</div>\n              <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n              <!--<div class="tkdtiscritti">{{getTkdtAtleta(getAtletaIscritto(m.doc.atletaid))}}</div>-->\n              <!--<div class="iscritti">{{m.doc.tkdtcategoria}}</div>-->\n              <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n              <div *ngIf="hasAvversario(m.doc)" class="avversario">contro {{m.doc.avversario.split(\'|\')[0]}}<br>{{m.doc.avversario.split(\'|\')[1]}}</div>\n            </ion-col>\n          </ion-row>\n        </ion-item>\n      </div>\n    </ion-list>\n\n\n\n\n  </section>\n  <section id="matchesbyatleta" [hidden]="view!=\'matchesbyatleta\'" sngIf="view==\'matchesbyatleta\'">\n    <ion-list>\n      <ion-item *ngFor="let m of displayedgara.matchesbyatleta.rows" (tap)="showMatchesForAtleta(m.id)">\n        <ion-row>\n          <ion-col col-2>\n            <img width="32" height="32" src="{{getImgPerAtleta(m)}}" />\n          </ion-col>\n          <ion-col>\n\n            <div class="atleta">{{m.nome}}</div>\n            <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>\n            <!--<div class="iscritti">{{m.tkdtcategoria}}</div>-->\n            <div class="matches">\n              <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">\n                {{x.matchid}}\n              </span>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n\n\n  <section id="cronaca" [hidden]="view!=\'cronaca\'" sngIf="view==\'cronaca\'">\n    <ion-list>\n      <ion-item *ngFor="let m of gara.cronaca.rows">\n        <ion-row>\n\n          <ion-col>\n\n            <div class="time">{{getCronacaTime(m.time)}}</div>\n            <div class="text">{{m.text}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n  <section id="infogara" [hidden]="view!=\'infogara\'" sngIf="view==\'infogara\'">\n    <ion-list style="font-size: 14px">\n\n      <div>Gara: {{jgara.title}}</div>\n      <div>Location: {{jgara.location}}</div>\n      <div>Data: {{jgara.data}}</div>\n      <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>\n      <br>\n      <div>{{categoriecoperte.text}}</div>\n\n    </ion-list>\n\n  </section>\n\n  <!--<ion-fab right bottom *ngIf="realtimecount>0">\n       <button ion-fab style="font-size: 11px">LIVE!</button>\n     </ion-fab>-->\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */], __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _k || Object])
 ], GaraPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=gara.js.map
 
 /***/ }),
@@ -1361,8 +1362,9 @@ GaraPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__matchconsolerr_matchconsolerr__ = __webpack_require__(748);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1376,6 +1378,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the TournamentPage page.
  *
@@ -1383,7 +1386,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var TournamentPage = (function () {
-    function TournamentPage(alertCtrl, backend, navCtrl, navParams) {
+    function TournamentPage(events, alertCtrl, backend, navCtrl, navParams) {
+        this.events = events;
         this.alertCtrl = alertCtrl;
         this.backend = backend;
         this.navCtrl = navCtrl;
@@ -1463,70 +1467,91 @@ var TournamentPage = (function () {
             });
         });
     }
+    TournamentPage.prototype.ionViewWillLeave = function () {
+        this.events.unsubscribe("updategara");
+    };
     TournamentPage.prototype.ionViewDidLoad = function () {
         var questo = this;
         //questo.backend.setBackButtonAction(questo.navBar, questo.navCtrl);
         //questo.backend.setupNavbarBack(questo.navBar, questo.navCtrl);
         questo.garaid = questo.navParams.get("id");
         console.log('ionViewDidLoad GaraPage', this.garaid);
+        questo.events.subscribe("updategara", function (data) {
+            console.log("refreshgara in gara.ts !!");
+            if (data.garaid == questo.garaid) {
+                questo.refresh(function (data) {
+                });
+            }
+        });
         questo.refresh(function (data) {
             //questo.content.resize();
         });
     };
     TournamentPage.prototype.tapSegment = function (ev) {
     };
+    TournamentPage.prototype.resetIncontriGirone = function (t) {
+        var questo = this;
+        questo.backend.showConfirm("Sicuro di voler resettare gli incontri di questo girone ?", function (yes) {
+            if (yes) {
+                t.incontri = [];
+                questo.updateClassificaGirone(t);
+            }
+        });
+    };
     TournamentPage.prototype.createIncontri = function (t, ar, rnd) {
         var questo = this;
-        questo.backend.showConfirm("Sicuro di voler resettare gli incontri di questo girono ?", function (yes) {
-            t.incontri = [];
-            var result = [];
-            t.incontri = [];
-            var array = t.players;
-            var count = -1;
-            for (var i = 0; i < array.length - 1; i++) {
-                for (var j = i + 1; j < array.length; j++) {
-                    count++;
-                    var newincontro = {
-                        player1: Object.assign({}, array[i]),
-                        player2: Object.assign({}, array[j]),
-                        punteggio1: "",
-                        punteggio2: "",
-                        order: count,
-                        risultato: ""
-                    };
-                    //result.push(array[i].nome + " - " + array[j].nome);
-                    result.push(newincontro);
-                }
-            }
-            if (ar) {
+        questo.backend.showConfirm("Sicuro di voler resettare gli incontri di questo girone ?", function (yes) {
+            if (yes) {
+                t.incontri = [];
+                var result = [];
+                t.incontri = [];
+                var array = t.players;
+                var count = -1;
                 for (var i = 0; i < array.length - 1; i++) {
                     for (var j = i + 1; j < array.length; j++) {
                         count++;
                         var newincontro = {
-                            player2: Object.assign({}, array[i]),
-                            player1: Object.assign({}, array[j]),
+                            player1: Object.assign({}, array[i]),
+                            player2: Object.assign({}, array[j]),
                             punteggio1: "",
                             punteggio2: "",
                             order: count,
                             risultato: ""
                         };
-                        //result.push(array[j].nome + " - " + array[i].nome);
+                        //result.push(array[i].nome + " - " + array[j].nome);
                         result.push(newincontro);
                     }
                 }
+                if (ar) {
+                    for (var i = 0; i < array.length - 1; i++) {
+                        for (var j = i + 1; j < array.length; j++) {
+                            count++;
+                            var newincontro = {
+                                player2: Object.assign({}, array[i]),
+                                player1: Object.assign({}, array[j]),
+                                punteggio1: "",
+                                punteggio2: "",
+                                order: count,
+                                risultato: ""
+                            };
+                            //result.push(array[j].nome + " - " + array[i].nome);
+                            result.push(newincontro);
+                        }
+                    }
+                }
+                result.sort(function (a, b) {
+                    var a1 = a.player1.cognome.toLowerCase();
+                    var b1 = b.player1.cognome.toLowerCase();
+                    if (a1 > b1)
+                        return 1;
+                    if (a1 < b1)
+                        return -1;
+                    return 0;
+                });
+                t.incontri = result;
+                questo.updateClassificaGirone(t);
+                console.log(t);
             }
-            result.sort(function (a, b) {
-                var a1 = a.player1.cognome.toLowerCase();
-                var b1 = b.player1.cognome.toLowerCase();
-                if (a1 > b1)
-                    return 1;
-                if (a1 < b1)
-                    return -1;
-                return 0;
-            });
-            t.incontri = result;
-            questo.updateClassificaGirone(t);
-            console.log(t);
         });
     };
     TournamentPage.prototype.getGironePlayerById = function (g, id) {
@@ -1614,7 +1639,7 @@ var TournamentPage = (function () {
             cognome = opts.cognome;
         }
         var d = new Date();
-        var m = __WEBPACK_IMPORTED_MODULE_3_moment__(d).format("YYYYMMDDHHmmssSSS");
+        var m = __WEBPACK_IMPORTED_MODULE_4_moment__(d).format("YYYYMMDDHHmmssSSS");
         var newplayer = {
             cognome: cognome,
             nome: nome,
@@ -1813,7 +1838,10 @@ var TournamentPage = (function () {
                  });*/
                 questo.backend.postData(url, questo.torneo, function (data) {
                     console.log("Gara " + txt + " !", data);
-                    questo.backend.showToast("Torneo salvato !");
+                    var triggerurl = questo.backend.rooturl + "/triggerupdategara/" + questo.garaid;
+                    questo.backend.fetchData(triggerurl, function () {
+                        questo.backend.showToast("Torneo salvato !");
+                    });
                 });
             }
         });
@@ -1904,6 +1932,9 @@ var TournamentPage = (function () {
     };
     TournamentPage.prototype.inputResult = function (inc, girone) {
         var questo = this;
+        console.log("inputresult");
+        //questo.showMatchconsole(inc)
+        //if (1==1) return;
         if (!questo.isAdmin())
             return;
         var prompt = questo.alertCtrl.create({
@@ -1925,7 +1956,13 @@ var TournamentPage = (function () {
                 {
                     text: 'Save',
                     handler: function (data) {
-                        console.log("result", data.result);
+                        console.log("result", data, data.result);
+                        if (data.result.trim() == "") {
+                            inc.punteggio1 = "";
+                            inc.punteggio2 = "";
+                            questo.updateClassificaGirone(girone);
+                            return;
+                        }
                         console.log('Saved clicked');
                         var value = data.result;
                         console.log("result changed", value);
@@ -1942,12 +1979,97 @@ var TournamentPage = (function () {
                             inc.punteggio1 = p1;
                             inc.punteggio2 = p2;
                             questo.updateClassificaGirone(girone);
+                            questo.sendChatResult(inc, girone);
+                            questo.saveTorneo();
                         }
                     }
                 }
             ]
         });
         prompt.present();
+    };
+    TournamentPage.prototype.getPosizioneInClassificaGirone = function (girone, player) {
+        girone.players.sort(function (a, b) {
+            var p1 = a.punti;
+            var p2 = b.punti;
+            if (p1 > p2)
+                return -1;
+            if (p1 < p2)
+                return 1;
+            if (p1 == p2) {
+                var dr1 = a.gf - a.gs;
+                var dr2 = b.gf - b.gs;
+                if (dr1 > dr2)
+                    return -1;
+                if (dr1 < dr2)
+                    return 1;
+                return 0;
+            }
+            return 0;
+        });
+        console.log("classifica girone", girone.players);
+        var pos = -1;
+        girone.players.forEach(function (item, idx) {
+            if (item.id == player.id)
+                pos = idx;
+        });
+        console.log("posizione in classifca " + player.cognome, pos);
+        var arrord = ["primo", "secondo", "terzo", "quarto", "quinto", "sesto", "settimo", "ottavo", "nono", "decimo", "undicesimo", "dodicesimo", "tredicesimo", "quattordicesimo"];
+        var retvalue = {
+            pos: pos,
+            postext: arrord[pos]
+        };
+        return retvalue;
+    };
+    TournamentPage.prototype.sendChatResult = function (m, girone) {
+        var questo = this;
+        console.log("sendchatresult", m);
+        var p1 = parseInt(m.punteggio1, 10);
+        var p2 = parseInt(m.punteggio2, 10);
+        var text = "";
+        var societa = "ASD Taekwondo Rozzano";
+        if (p1 > p2) {
+            text = m.player1.cognome + " " + m.player1.nome + " (" + societa + ") vince contro " + m.player2.cognome + " " + m.player2.nome + " (" + societa + ") per " + m.punteggio1 + " a " + m.punteggio2;
+        }
+        if (p1 < p2) {
+            text = m.player2.cognome + " " + m.player2.nome + " (" + societa + ") vince contro " + m.player1.cognome + " " + m.player1.nome + " (" + societa + ") per " + m.punteggio2 + " a " + m.punteggio1;
+        }
+        if (p1 == p2) {
+            text = "L'incontro tra " + m.player1.cognome + " " + m.player1.nome + " (" + societa + ") e " + m.player2.cognome + " " + m.player2.nome + " (" + societa + ") finisce in parità con il risultato di  " + m.punteggio1 + " a " + m.punteggio2;
+        }
+        console.log("text", text);
+        console.log("girone", girone);
+        //var text = "Risultato incontro "+m.player1.cognome+" "+m.player1.nome+" contro ";
+        //questo.msg = "";
+        var classpos1 = questo.getPosizioneInClassificaGirone(girone, m.player1);
+        var classpos2 = questo.getPosizioneInClassificaGirone(girone, m.player2);
+        var classtext = ". La classifica del girone " + girone.title + " vede ora " + m.player1.cognome + " " + m.player1.nome + " al " + classpos1.postext + " posto in classifica, mentre " + m.player2.cognome + " " + m.player2.nome + " è ora al " + classpos2.postext + " posto";
+        text += classtext;
+        text = girone.title + ": " + text;
+        var mm = {
+            garaid: "",
+            nickname: "SYSTEM",
+            color: "yellow",
+            sockid: questo.backend.user.sockid,
+            //audio: data,
+            text: text
+        };
+        questo.postLocalChat(mm);
+        questo.backend.postChat(mm, function () {
+            //questo.gotoBottom();
+        });
+    };
+    TournamentPage.prototype.postLocalChat = function (msg) {
+        var questo = this;
+        var tim = __WEBPACK_IMPORTED_MODULE_4_moment__().format("YYYYMMDDHHmmSS");
+        var sockid = questo.backend.user.sockid;
+        var localmsg = Object.assign({}, msg);
+        localmsg.time = tim;
+        localmsg.sockid = sockid;
+        questo.backend.chatmessages.push(localmsg);
+        setTimeout(function () {
+            //questo.gotoBottom();
+        }, 300);
     };
     TournamentPage.prototype.deleteAtletaFromGirone = function (girone, playerid) {
         var questo = this;
@@ -1965,15 +2087,36 @@ var TournamentPage = (function () {
             }
         });
     };
+    TournamentPage.prototype.showMatchconsole = function (m) {
+        var questo = this;
+        //this.backend.matchconsoles.push(m);
+        if (!this.backend.userIsAdmin())
+            return;
+        //if (this.backend.user.role.toLowerCase() != "tkdradmin") return;
+        m.id = "RR123456";
+        m.garaid = questo.torneo.id;
+        this.backend.playFeedback();
+        console.log(this.backend.activegara);
+        //if (this.backend.activegara.gara.rows[0].doc.stato != "incorso") return;
+        //m.matchord=questo.getMatchOrd({doc: m});
+        var matchord = "";
+        console.log("matchord !", matchord);
+        m.matchord = matchord;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__matchconsolerr_matchconsolerr__["a" /* MatchconsolerrPage */], {
+            match: m,
+            avversari: []
+        });
+    };
     return TournamentPage;
 }());
 TournamentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{torneo.title}}</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon name="refresh"></ion-icon></button>\n      <button *ngIf="isAdmin()" ion-button (tap)="saveTorneo()"><ion-icon name="disc"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i">{{getUpperCaseGirone(g)}}</ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n    \n    </ion-segment>\n  \n</ion-header>\n\n<ion-content padding>\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>GF</ion-col>\n                <ion-col>GS</ion-col>\n                <ion-col>DR</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}</ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    <button ion-button (tap)="resetTorneo()">Reset Torneo</button>\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
+        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{torneo.title}}</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon class="baricon"  name="refresh"></ion-icon></button>\n      <button *ngIf="isAdmin()" ion-button (tap)="saveTorneo()"><ion-icon  class="baricon" name="disc"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i">{{getUpperCaseGirone(g)}}</ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n    \n    </ion-segment>\n  \n</ion-header>\n\n<ion-content padding>\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>GF</ion-col>\n                <ion-col>GS</ion-col>\n                <ion-col>DR</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}</ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n         <button small ion-button (tap)="resetIncontriGirone(torneo.gironi[activegironeindex])">Reset incontri girone</button>\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    <button ion-button (tap)="resetTorneo()">Reset Torneo</button>\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
 ], TournamentPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=tournament.js.map
 
 /***/ }),
@@ -2324,7 +2467,7 @@ webpackEmptyAsyncContext.id = 166;
 
 var map = {
 	"../pages/iscritti/iscritti.module": [
-		766,
+		767,
 		0
 	]
 };
@@ -2344,7 +2487,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 32:
+/***/ 27:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2794,14 +2937,14 @@ SocketService = __decorate([
 
 /***/ }),
 
-/***/ 39:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
@@ -4874,16 +5017,15 @@ var GarePage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
 ], GarePage.prototype, "navBar", void 0);
 GarePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-gare',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gare/gare.html"*/'<!--\n  Generated template for the GarePage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gare</ion-title>\n    <ion-buttons end>\n      \n            <button *ngIf="backend.userIsAdmin()" (tap)="addGara()" ion-button icon-only>\n              <ion-icon name="ios-add-circle-outline"></ion-icon>\n            </button>\n            <button  (tap)="doRefresh2()" ion-button icon-only>\n              <ion-icon name="ios-refresh"></ion-icon>\n            </button>\n            </ion-buttons>\n\n  </ion-navbar>\n  <ion-item>\n    <span class="headpoints">Gare: <b>{{gare.length}}</b> - ORI: <b>{{totali.ori}}</b> - ARG: <b>{{totali.argenti}}</b> - BRO: <b>{{totali.bronzi}}</b> (P:<b>{{totali.punti}})</b></span>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content spadding style="background: #eee;">\n  <div *ngIf="backend.gare.length==0" style="text-align: center; width: 100%"><ion-spinner center name="dots" ></ion-spinner></div>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="dots">\n        </ion-refresher-content>\n  </ion-refresher>  \n  <div *ngIf="loading" style="width: 100%; text-align: center">\n    <ion-spinner name="dots"></ion-spinner>\n  </div>\n\n<ion-list [virtualScroll]="backend.gare" [approxItemHeight]="\'80px\'" > <!--*ngIf="backend.gare.length>0"-->\n  \n  <ion-item  *virtualItem="let g" (press)="pressGara(g)" (tap)="gotoGara(g)" [ngClass]="g.doc.stato.toLowerCase()"> <!--*ngFor="let g of backend.gare" -->\n\n    \n    <span class="gara"><b>{{g.doc.title}}</b></span><br>\n    <span class="location">{{g.doc.location}} - {{g.doc.data}}</span><br>\n    <span class="medals">ORI: <b>{{g.doc.ori}}</b> - ARG: <b>{{g.doc.argenti}}</b> BRO: <b>{{g.doc.bronzi}}</b></span><br>\n    <span class="iscritti">ISCRITTI: {{getLen(g.doc.iscritti)}}</span><br>\n    \n    <span [ngClass]="\'span\'+g.doc.stato.toLowerCase()" style="font-size: 12px; font-weight: bold;">{{g.doc.stato.toUpperCase()}}</span> \n    <!--<span  *ngIf="g.doc.stato.toUpperCase()==\'INCORSO\'" style="margin-left: 5px"><img style="height: 16px; width: 16px;" src="assets/img/greenblink.gif" /></span>-->  \n\n    </ion-item>\n</ion-list>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gare/gare.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _j || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], GarePage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=gare.js.map
 
 /***/ }),
@@ -4897,7 +5039,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_addmatches_addmatches__ = __webpack_require__(527);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5546,8 +5688,8 @@ MatchesforatletaPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11663,7 +11805,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(643);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(740);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__ = __webpack_require__(567);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(522);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chatpopover_chatpopover__ = __webpack_require__(741);
@@ -11687,71 +11829,73 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_atleti_atleti__ = __webpack_require__(551);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_atleta_atleta__ = __webpack_require__(552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_matchconsole_matchconsole__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_eventi_eventi__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_societa_societa__ = __webpack_require__(556);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_stats_stats__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_iospaid_iospaid__ = __webpack_require__(748);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_filters_filters__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(532);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_map_map__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_register_register__ = __webpack_require__(563);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_users_users__ = __webpack_require__(564);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_connections_connections__ = __webpack_require__(566);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_products_products__ = __webpack_require__(559);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_cart_cart__ = __webpack_require__(560);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_rtc_rtc__ = __webpack_require__(749);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_editproduct_editproduct__ = __webpack_require__(561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_editatleta_editatleta__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_orders_orders__ = __webpack_require__(562);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_addmatches_addmatches__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_useredit_useredit__ = __webpack_require__(565);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_broadcast_broadcast__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_broadcastview_broadcastview__ = __webpack_require__(568);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_tkdtlive_tkdtlive__ = __webpack_require__(531);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_fblive_fblive__ = __webpack_require__(750);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_scorekeeper_scorekeeper__ = __webpack_require__(570);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_section_section__ = __webpack_require__(751);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__providers_socket_service_socket_service__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_google_google__ = __webpack_require__(553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(752);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_scrollable_segments_scrollable_segments__ = __webpack_require__(753);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__providers_utils_utils__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__ionic_native_badge__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_storage__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_app_availability__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_splash_screen__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_device_feedback__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__angular_platform_browser__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_file__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__ionic_native_camera__ = __webpack_require__(524);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__ionic_native_transfer__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__ionic_native_social_sharing__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72_ionic_image_loader__ = __webpack_require__(754);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__ionic_native_local_notifications__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__ionic_native_text_to_speech__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__ionic_native_background_mode__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__providers_facebook_facebook__ = __webpack_require__(558);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__ionic_native_media__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__ionic_native_file_transfer__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__ionic_native_streaming_media__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__ionic_native_android_permissions__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_in_app_browser__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__ionic_native_facebook__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83_ng_elastic__ = __webpack_require__(757);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_83_ng_elastic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__ionic_native_unique_device_id__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__ionic_native_fcm__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_matchconsolerr_matchconsolerr__ = __webpack_require__(748);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_eventi_eventi__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_societa_societa__ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_iospaid_iospaid__ = __webpack_require__(749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_map_map__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_register_register__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_users_users__ = __webpack_require__(564);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_connections_connections__ = __webpack_require__(566);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_products_products__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cart_cart__ = __webpack_require__(560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_rtc_rtc__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_editproduct_editproduct__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_editatleta_editatleta__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_orders_orders__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_addmatches_addmatches__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_useredit_useredit__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_broadcast_broadcast__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_broadcastview_broadcastview__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_fblive_fblive__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__ = __webpack_require__(570);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_section_section__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_google_google__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_scrollable_segments_scrollable_segments__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__providers_utils_utils__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_badge__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_storage__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_app_availability__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_splash_screen__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_device_feedback__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__ionic_native_file__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__ionic_native_camera__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__ionic_native_transfer__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__ionic_native_social_sharing__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73_ionic_image_loader__ = __webpack_require__(755);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__ionic_native_local_notifications__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__ionic_native_text_to_speech__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__ionic_native_background_mode__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__providers_facebook_facebook__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__ionic_native_media__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__ionic_native_file_transfer__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__ionic_native_streaming_media__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_android_permissions__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__ionic_native_in_app_browser__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__ionic_native_facebook__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84_ng_elastic__ = __webpack_require__(758);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_84_ng_elastic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__ionic_native_unique_device_id__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__ionic_native_fcm__ = __webpack_require__(343);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -11862,11 +12006,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_14__pages_linkedin_linkedin__["a" /* LinkedinPage */],
             __WEBPACK_IMPORTED_MODULE_15__pages_contacts_contacts__["a" /* ContactsPage */],
             __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__["a" /* ChatPage */],
-            __WEBPACK_IMPORTED_MODULE_52__pages_fblive_fblive__["a" /* FblivePage */],
+            __WEBPACK_IMPORTED_MODULE_53__pages_fblive_fblive__["a" /* FblivePage */],
             __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__["a" /* ChatlistPage */],
             __WEBPACK_IMPORTED_MODULE_10__pages_chatfoto_chatfoto__["a" /* ChatfotoPage */],
             __WEBPACK_IMPORTED_MODULE_8__pages_chatpopover_chatpopover__["a" /* ChatpopoverPage */],
-            __WEBPACK_IMPORTED_MODULE_47__pages_addmatches_addmatches__["a" /* AddmatchesPage */],
+            __WEBPACK_IMPORTED_MODULE_48__pages_addmatches_addmatches__["a" /* AddmatchesPage */],
             __WEBPACK_IMPORTED_MODULE_16__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_settings_settings__["a" /* SettingsPage */],
@@ -11877,42 +12021,43 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_23__pages_gare_gare__["a" /* GarePage */],
             __WEBPACK_IMPORTED_MODULE_26__pages_atleti_atleti__["a" /* AtletiPage */],
             __WEBPACK_IMPORTED_MODULE_27__pages_atleta_atleta__["a" /* AtletaPage */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_eventi_eventi__["a" /* EventiPage */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_eventi_eventi__["a" /* EventiPage */],
             __WEBPACK_IMPORTED_MODULE_24__pages_gara_gara__["a" /* GaraPage */],
             __WEBPACK_IMPORTED_MODULE_25__pages_editgara_editgara__["a" /* EditgaraPage */],
-            __WEBPACK_IMPORTED_MODULE_30__pages_societa_societa__["a" /* SocietaPage */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_matchesforatleta_matchesforatleta__["a" /* MatchesforatletaPage */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_societa_societa__["a" /* SocietaPage */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_matchesforatleta_matchesforatleta__["a" /* MatchesforatletaPage */],
             __WEBPACK_IMPORTED_MODULE_28__pages_matchconsole_matchconsole__["a" /* MatchconsolePage */],
-            __WEBPACK_IMPORTED_MODULE_36__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_31__pages_stats_stats__["a" /* StatsPage */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_filters_filters__["a" /* FiltersPage */],
-            __WEBPACK_IMPORTED_MODULE_58__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
-            __WEBPACK_IMPORTED_MODULE_59__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
-            __WEBPACK_IMPORTED_MODULE_37__pages_register_register__["a" /* RegisterPage */],
-            __WEBPACK_IMPORTED_MODULE_38__pages_users_users__["a" /* UsersPage */],
-            __WEBPACK_IMPORTED_MODULE_39__pages_connections_connections__["a" /* ConnectionsPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_matchconsolerr_matchconsolerr__["a" /* MatchconsolerrPage */],
+            __WEBPACK_IMPORTED_MODULE_37__pages_map_map__["a" /* MapPage */],
+            __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__["a" /* StatsPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__["a" /* FiltersPage */],
+            __WEBPACK_IMPORTED_MODULE_59__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
+            __WEBPACK_IMPORTED_MODULE_60__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
+            __WEBPACK_IMPORTED_MODULE_38__pages_register_register__["a" /* RegisterPage */],
+            __WEBPACK_IMPORTED_MODULE_39__pages_users_users__["a" /* UsersPage */],
+            __WEBPACK_IMPORTED_MODULE_40__pages_connections_connections__["a" /* ConnectionsPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_popover_popover__["a" /* PopoverPage */],
-            __WEBPACK_IMPORTED_MODULE_40__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */],
-            __WEBPACK_IMPORTED_MODULE_41__pages_products_products__["a" /* ProductsPage */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_cart_cart__["a" /* CartPage */],
-            __WEBPACK_IMPORTED_MODULE_43__pages_rtc_rtc__["a" /* RtcPage */],
-            __WEBPACK_IMPORTED_MODULE_44__pages_editproduct_editproduct__["a" /* EditproductPage */],
-            __WEBPACK_IMPORTED_MODULE_46__pages_orders_orders__["a" /* OrdersPage */],
-            __WEBPACK_IMPORTED_MODULE_45__pages_editatleta_editatleta__["a" /* EditatletaPage */],
-            __WEBPACK_IMPORTED_MODULE_32__pages_iospaid_iospaid__["a" /* IospaidPage */],
-            __WEBPACK_IMPORTED_MODULE_48__pages_useredit_useredit__["a" /* UsereditPage */],
-            __WEBPACK_IMPORTED_MODULE_49__pages_broadcast_broadcast__["a" /* BroadcastPage */],
-            __WEBPACK_IMPORTED_MODULE_50__pages_broadcastview_broadcastview__["a" /* BroadcastviewPage */],
-            __WEBPACK_IMPORTED_MODULE_51__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
+            __WEBPACK_IMPORTED_MODULE_41__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_products_products__["a" /* ProductsPage */],
+            __WEBPACK_IMPORTED_MODULE_43__pages_cart_cart__["a" /* CartPage */],
+            __WEBPACK_IMPORTED_MODULE_44__pages_rtc_rtc__["a" /* RtcPage */],
+            __WEBPACK_IMPORTED_MODULE_45__pages_editproduct_editproduct__["a" /* EditproductPage */],
+            __WEBPACK_IMPORTED_MODULE_47__pages_orders_orders__["a" /* OrdersPage */],
+            __WEBPACK_IMPORTED_MODULE_46__pages_editatleta_editatleta__["a" /* EditatletaPage */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_iospaid_iospaid__["a" /* IospaidPage */],
+            __WEBPACK_IMPORTED_MODULE_49__pages_useredit_useredit__["a" /* UsereditPage */],
+            __WEBPACK_IMPORTED_MODULE_50__pages_broadcast_broadcast__["a" /* BroadcastPage */],
+            __WEBPACK_IMPORTED_MODULE_51__pages_broadcastview_broadcastview__["a" /* BroadcastviewPage */],
+            __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__["a" /* SendpushPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_tournament_tournament__["a" /* TournamentPage */],
-            __WEBPACK_IMPORTED_MODULE_54__components_section_section__["a" /* SectionComponent */],
-            __WEBPACK_IMPORTED_MODULE_53__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
+            __WEBPACK_IMPORTED_MODULE_55__components_section_section__["a" /* SectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_66__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_67__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_68__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */], {
                 backButtonText: '',
                 activator: 'ripple',
@@ -11923,10 +12068,10 @@ AppModule = __decorate([
                     { loadChildren: '../pages/iscritti/iscritti.module#IscrittiPageModule', name: 'IscrittiPage', segment: 'iscritti', priority: 'low', defaultHistory: [] }
                 ]
             }),
-            __WEBPACK_IMPORTED_MODULE_62__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_72_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_83_ng_elastic__["ElasticModule"],
-            __WEBPACK_IMPORTED_MODULE_84__angular_forms__["FormsModule"]
+            __WEBPACK_IMPORTED_MODULE_63__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_73_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_84_ng_elastic__["ElasticModule"],
+            __WEBPACK_IMPORTED_MODULE_85__angular_forms__["FormsModule"]
             //Facebook
             //IonicAudioModule.forRoot(defaultAudioProviderFactory)
         ],
@@ -11939,7 +12084,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__["a" /* ChatlistPage */],
             __WEBPACK_IMPORTED_MODULE_10__pages_chatfoto_chatfoto__["a" /* ChatfotoPage */],
             __WEBPACK_IMPORTED_MODULE_8__pages_chatpopover_chatpopover__["a" /* ChatpopoverPage */],
-            __WEBPACK_IMPORTED_MODULE_47__pages_addmatches_addmatches__["a" /* AddmatchesPage */],
+            __WEBPACK_IMPORTED_MODULE_48__pages_addmatches_addmatches__["a" /* AddmatchesPage */],
             __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_13__pages_partnerworld_partnerworld__["a" /* PartnerworldPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_linkedin_linkedin__["a" /* LinkedinPage */],
@@ -11951,66 +12096,67 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_12__pages_twitter_twitter__["a" /* TwitterPage */],
             __WEBPACK_IMPORTED_MODULE_17__pages_browser_browser__["a" /* BrowserPage */],
             __WEBPACK_IMPORTED_MODULE_22__pages_bp_bp__["a" /* BpPage */],
-            __WEBPACK_IMPORTED_MODULE_52__pages_fblive_fblive__["a" /* FblivePage */],
+            __WEBPACK_IMPORTED_MODULE_53__pages_fblive_fblive__["a" /* FblivePage */],
             __WEBPACK_IMPORTED_MODULE_23__pages_gare_gare__["a" /* GarePage */],
             __WEBPACK_IMPORTED_MODULE_26__pages_atleti_atleti__["a" /* AtletiPage */],
             __WEBPACK_IMPORTED_MODULE_27__pages_atleta_atleta__["a" /* AtletaPage */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_eventi_eventi__["a" /* EventiPage */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_eventi_eventi__["a" /* EventiPage */],
             __WEBPACK_IMPORTED_MODULE_24__pages_gara_gara__["a" /* GaraPage */],
             __WEBPACK_IMPORTED_MODULE_25__pages_editgara_editgara__["a" /* EditgaraPage */],
-            __WEBPACK_IMPORTED_MODULE_30__pages_societa_societa__["a" /* SocietaPage */],
-            __WEBPACK_IMPORTED_MODULE_31__pages_stats_stats__["a" /* StatsPage */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_filters_filters__["a" /* FiltersPage */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_matchesforatleta_matchesforatleta__["a" /* MatchesforatletaPage */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_societa_societa__["a" /* SocietaPage */],
+            __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__["a" /* StatsPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__["a" /* FiltersPage */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_matchesforatleta_matchesforatleta__["a" /* MatchesforatletaPage */],
             __WEBPACK_IMPORTED_MODULE_28__pages_matchconsole_matchconsole__["a" /* MatchconsolePage */],
-            __WEBPACK_IMPORTED_MODULE_36__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
-            __WEBPACK_IMPORTED_MODULE_37__pages_register_register__["a" /* RegisterPage */],
-            __WEBPACK_IMPORTED_MODULE_38__pages_users_users__["a" /* UsersPage */],
-            __WEBPACK_IMPORTED_MODULE_39__pages_connections_connections__["a" /* ConnectionsPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_matchconsolerr_matchconsolerr__["a" /* MatchconsolerrPage */],
+            __WEBPACK_IMPORTED_MODULE_37__pages_map_map__["a" /* MapPage */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
+            __WEBPACK_IMPORTED_MODULE_38__pages_register_register__["a" /* RegisterPage */],
+            __WEBPACK_IMPORTED_MODULE_39__pages_users_users__["a" /* UsersPage */],
+            __WEBPACK_IMPORTED_MODULE_40__pages_connections_connections__["a" /* ConnectionsPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_popover_popover__["a" /* PopoverPage */],
-            __WEBPACK_IMPORTED_MODULE_40__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */],
-            __WEBPACK_IMPORTED_MODULE_41__pages_products_products__["a" /* ProductsPage */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_cart_cart__["a" /* CartPage */],
-            __WEBPACK_IMPORTED_MODULE_43__pages_rtc_rtc__["a" /* RtcPage */],
-            __WEBPACK_IMPORTED_MODULE_44__pages_editproduct_editproduct__["a" /* EditproductPage */],
-            __WEBPACK_IMPORTED_MODULE_46__pages_orders_orders__["a" /* OrdersPage */],
-            __WEBPACK_IMPORTED_MODULE_45__pages_editatleta_editatleta__["a" /* EditatletaPage */],
-            __WEBPACK_IMPORTED_MODULE_32__pages_iospaid_iospaid__["a" /* IospaidPage */],
-            __WEBPACK_IMPORTED_MODULE_48__pages_useredit_useredit__["a" /* UsereditPage */],
-            __WEBPACK_IMPORTED_MODULE_49__pages_broadcast_broadcast__["a" /* BroadcastPage */],
-            __WEBPACK_IMPORTED_MODULE_50__pages_broadcastview_broadcastview__["a" /* BroadcastviewPage */],
-            __WEBPACK_IMPORTED_MODULE_51__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
+            __WEBPACK_IMPORTED_MODULE_41__pages_servizisocieta_servizisocieta__["a" /* ServizisocietaPage */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_products_products__["a" /* ProductsPage */],
+            __WEBPACK_IMPORTED_MODULE_43__pages_cart_cart__["a" /* CartPage */],
+            __WEBPACK_IMPORTED_MODULE_44__pages_rtc_rtc__["a" /* RtcPage */],
+            __WEBPACK_IMPORTED_MODULE_45__pages_editproduct_editproduct__["a" /* EditproductPage */],
+            __WEBPACK_IMPORTED_MODULE_47__pages_orders_orders__["a" /* OrdersPage */],
+            __WEBPACK_IMPORTED_MODULE_46__pages_editatleta_editatleta__["a" /* EditatletaPage */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_iospaid_iospaid__["a" /* IospaidPage */],
+            __WEBPACK_IMPORTED_MODULE_49__pages_useredit_useredit__["a" /* UsereditPage */],
+            __WEBPACK_IMPORTED_MODULE_50__pages_broadcast_broadcast__["a" /* BroadcastPage */],
+            __WEBPACK_IMPORTED_MODULE_51__pages_broadcastview_broadcastview__["a" /* BroadcastviewPage */],
+            __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__["a" /* SendpushPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_tournament_tournament__["a" /* TournamentPage */],
-            __WEBPACK_IMPORTED_MODULE_53__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
+            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
         ],
         providers: [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_55__providers_socket_service_socket_service__["a" /* SocketService */],
-            __WEBPACK_IMPORTED_MODULE_56__providers_backend_backend__["a" /* BackendProvider */],
-            __WEBPACK_IMPORTED_MODULE_60__providers_utils_utils__["a" /* UtilsProvider */],
-            __WEBPACK_IMPORTED_MODULE_57__providers_google_google__["a" /* GoogleDriveProvider */],
+            __WEBPACK_IMPORTED_MODULE_56__providers_socket_service_socket_service__["a" /* SocketService */],
+            __WEBPACK_IMPORTED_MODULE_57__providers_backend_backend__["a" /* BackendProvider */],
+            __WEBPACK_IMPORTED_MODULE_61__providers_utils_utils__["a" /* UtilsProvider */],
+            __WEBPACK_IMPORTED_MODULE_58__providers_google_google__["a" /* GoogleDriveProvider */],
             /* Storage,*/
-            __WEBPACK_IMPORTED_MODULE_64__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_63__ionic_native_app_availability__["a" /* AppAvailability */],
-            __WEBPACK_IMPORTED_MODULE_65__ionic_native_device_feedback__["a" /* DeviceFeedback */],
-            __WEBPACK_IMPORTED_MODULE_68__ionic_native_file__["a" /* File */],
-            __WEBPACK_IMPORTED_MODULE_69__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_70__ionic_native_transfer__["a" /* Transfer */],
-            __WEBPACK_IMPORTED_MODULE_71__ionic_native_social_sharing__["a" /* SocialSharing */],
-            __WEBPACK_IMPORTED_MODULE_73__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_75__ionic_native_background_mode__["a" /* BackgroundMode */],
-            __WEBPACK_IMPORTED_MODULE_74__ionic_native_text_to_speech__["a" /* TextToSpeech */],
-            __WEBPACK_IMPORTED_MODULE_77__ionic_native_media__["a" /* MediaPlugin */],
-            __WEBPACK_IMPORTED_MODULE_79__ionic_native_streaming_media__["a" /* StreamingMedia */],
-            __WEBPACK_IMPORTED_MODULE_78__ionic_native_file_transfer__["a" /* FileTransfer */],
-            __WEBPACK_IMPORTED_MODULE_61__ionic_native_badge__["a" /* Badge */],
-            __WEBPACK_IMPORTED_MODULE_85__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
-            __WEBPACK_IMPORTED_MODULE_80__ionic_native_android_permissions__["a" /* AndroidPermissions */],
-            __WEBPACK_IMPORTED_MODULE_81__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-            __WEBPACK_IMPORTED_MODULE_82__ionic_native_facebook__["a" /* Facebook */],
-            __WEBPACK_IMPORTED_MODULE_86__ionic_native_fcm__["a" /* FCM */],
-            __WEBPACK_IMPORTED_MODULE_76__providers_facebook_facebook__["a" /* FacebookProvider */]]
+            __WEBPACK_IMPORTED_MODULE_65__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_64__ionic_native_app_availability__["a" /* AppAvailability */],
+            __WEBPACK_IMPORTED_MODULE_66__ionic_native_device_feedback__["a" /* DeviceFeedback */],
+            __WEBPACK_IMPORTED_MODULE_69__ionic_native_file__["a" /* File */],
+            __WEBPACK_IMPORTED_MODULE_70__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_71__ionic_native_transfer__["a" /* Transfer */],
+            __WEBPACK_IMPORTED_MODULE_72__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_74__ionic_native_local_notifications__["a" /* LocalNotifications */],
+            __WEBPACK_IMPORTED_MODULE_76__ionic_native_background_mode__["a" /* BackgroundMode */],
+            __WEBPACK_IMPORTED_MODULE_75__ionic_native_text_to_speech__["a" /* TextToSpeech */],
+            __WEBPACK_IMPORTED_MODULE_78__ionic_native_media__["a" /* MediaPlugin */],
+            __WEBPACK_IMPORTED_MODULE_80__ionic_native_streaming_media__["a" /* StreamingMedia */],
+            __WEBPACK_IMPORTED_MODULE_79__ionic_native_file_transfer__["a" /* FileTransfer */],
+            __WEBPACK_IMPORTED_MODULE_62__ionic_native_badge__["a" /* Badge */],
+            __WEBPACK_IMPORTED_MODULE_86__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
+            __WEBPACK_IMPORTED_MODULE_81__ionic_native_android_permissions__["a" /* AndroidPermissions */],
+            __WEBPACK_IMPORTED_MODULE_82__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_83__ionic_native_facebook__["a" /* Facebook */],
+            __WEBPACK_IMPORTED_MODULE_87__ionic_native_fcm__["a" /* FCM */],
+            __WEBPACK_IMPORTED_MODULE_77__providers_facebook_facebook__["a" /* FacebookProvider */]]
     })
 ], AppModule);
 
@@ -12104,8 +12250,8 @@ var BackendProvider = (function () {
         this.isProduction = true;
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.1.6",
-            releasedate: "10/12/2018"
+            version: "2.1.7",
+            releasedate: "13/04/2019"
         };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
@@ -14528,7 +14674,7 @@ webpackContext.id = 625;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_settings_settings__ = __webpack_require__(569);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_account_account__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_about_about__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__ = __webpack_require__(112);
@@ -14590,7 +14736,6 @@ var MyApp = (function () {
             "md-information-circle",
             "ios-people",
             "md-wifi",
-            "md-videocam",
             "md-git-network",
             "md-exit",
             "md-close-circle"
@@ -15006,8 +15151,8 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -15560,7 +15705,7 @@ TwitterPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartnerworldPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15640,7 +15785,7 @@ PartnerworldPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkedinPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15716,9 +15861,9 @@ LinkedinPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_chat_chat__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -16148,6 +16293,536 @@ BpPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatchconsolerrPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the MatchconsolePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var MatchconsolerrPage = (function () {
+    function MatchconsolerrPage(loadingCtrl, socket, events, toastCtrl, alertCtrl, backend, navCtrl, navParams) {
+        this.loadingCtrl = loadingCtrl;
+        this.socket = socket;
+        this.events = events;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.backend = backend;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.consoles = [];
+        this.selectedMatchId = "";
+        this.selectedMatch = {};
+        this.selectedConsole = {};
+        this.selectedAvversari = {};
+        this.selConsoleIndex = -1;
+        this.disabledcontrols = false;
+        var questo = this;
+    }
+    MatchconsolerrPage.prototype.ionViewDidLoad = function () {
+        this.backend.setBackButtonAction(this.navBar, this.navCtrl);
+        this.backend.setupNavbarBack(this.navBar, this.navCtrl);
+    };
+    MatchconsolerrPage.prototype.ionViewWillLoad = function () {
+        var questo = this;
+        /*questo.events.subscribe("updategara",function(msg,time){
+          console.log("refreshgara in matchconsole.ts !!");
+          //questo.disabledcontrols=false;
+          //questo.refresh(function(){
+            //questo.backend.syncConsoles(questo.gara.matchesbyprog);
+            //questo.events.publish("updatematchesforatleta",questo.gara.matchesbyprog);
+          //});
+        })*/
+        var match = this.navParams.get("match");
+        var avversari = this.navParams.get("avversari");
+        var id = match.id;
+        this.selectedMatchId = id;
+        this.selectedMatch = match;
+        //this.selectedMatch.avversari = avversari;
+        this.backend.removeConsolesIfNotRealtime();
+        this.backend.addConsoleIfNotExists(this.selectedMatch);
+        this.consoles = this.backend.matchconsoles;
+        this.consoles.forEach(function (item, idx) {
+            if (item.match.id == questo.selectedMatchId) {
+                questo.selectedConsole = item;
+                if (avversari.length > 0)
+                    questo.selectedConsole.avversari = avversari;
+                questo.selConsoleIndex = idx;
+            }
+        });
+        //this.selectedMatchId=this.selectedMatch.id;
+        if (this.selectedMatch.hasOwnProperty("avversario")) {
+            if (this.selectedMatch.avversario.trim() != "")
+                this.selectedConsole.avversario = this.selectedMatch.avversario;
+        }
+        console.log('ionViewDidLoad MatchconsolePage, selectedconsole', questo.selectedConsole);
+    };
+    MatchconsolerrPage.prototype.tapSegment = function (c, i) {
+        this.selectedMatchId = c.match.id;
+        this.selectedMatch = c.match;
+        this.selectedConsole = c;
+        this.selConsoleIndex = i;
+        console.log("tapSegment", c);
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.ionViewWillLeave = function () {
+        console.log("Looks like I'm about to leave :(");
+        //this.events.unsubscribe("updategara");
+        this.events.unsubscribe("hwbackbutton");
+    };
+    MatchconsolerrPage.prototype.ionViewWillEnter = function () {
+        var questo = this;
+        this.events.subscribe("hwbackbutton", function (data) {
+            console.log("hwbackbutton in gare.ts");
+            questo.navCtrl.pop();
+        });
+    };
+    MatchconsolerrPage.prototype.isRealTime = function (c) {
+        var isrt = false;
+        if (c.hasOwnProperty("realtime")) {
+            if (String(c.realtime) == "true") {
+                isrt = true;
+            }
+        }
+        return isrt;
+    };
+    MatchconsolerrPage.prototype.toggleTempoReale = function () {
+        var questo = this;
+        console.log("toggletemporeale", this.selectedConsole);
+        if (true)
+            return;
+        questo.backend.playFeedback();
+        //alert(this.selectedConsole.match.matchord);
+        var active = true;
+        var url = this.backend.rooturl + "/matches/updaterr/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
+        var newvalue = "true";
+        var newtesto = "attivato";
+        if (String(this.selectedConsole.match.realtime) == "true") {
+            newvalue = "false";
+            newtesto = "disattivato";
+            active = false;
+        }
+        var matchord = "";
+        if (questo.selectedConsole.match.hasOwnProperty("matchord")) {
+            if (questo.selectedConsole.match.matchord.trim() != "") {
+                matchord = questo.selectedConsole.match.matchord;
+            }
+        }
+        console.log("MATCHORD", matchord);
+        var action = "realtime_off";
+        if (active)
+            action = "realtime_on";
+        console.log("sending admin_action", action);
+        //alert(action);
+        var testo = "disattivato";
+        if (active)
+            testo = "attivato";
+        var doc = {
+            realtime: active,
+            admin_action: action
+        };
+        if (active) {
+            if (matchord.trim() != "") {
+                doc.matchord = matchord;
+            }
+            console.log("selectedconsole", questo.selectedConsole);
+            if (questo.selectedConsole.hasOwnProperty("avversario")) {
+                //if (questo.selectedConsole.avversario.trim() != "") doc.avversario = questo.selectedConsole.avversario;
+                doc.avversario = questo.selectedConsole.avversario;
+            }
+        }
+        //sendRealtime(true);
+        questo.disabledcontrols = true;
+        console.log("posting doc", doc);
+        questo.backend.postData(url, doc, function (data) {
+            console.log("data", data);
+            var toast = questo.toastCtrl.create({
+                message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
+                duration: 3000,
+                position: 'top'
+            });
+            toast.onDidDismiss(function () {
+                console.log('Dismissed toast');
+                questo.disabledcontrols = false;
+            });
+            toast.present();
+        });
+        if (true)
+            return;
+    };
+    MatchconsolerrPage.prototype.tapPlus = function (t) {
+        var questo = this;
+        var result = this.selectedConsole.result;
+        var p1 = parseInt(result.split("-")[0]);
+        var p2 = parseInt(result.split("-")[1]);
+        var arr = t.split("_");
+        var oper = arr[0];
+        var side = arr[1];
+        if (oper == 'plus') {
+            if (side == '1') {
+                p1++;
+            }
+            if (side == '2') {
+                p2++;
+            }
+        }
+        if (oper == 'minus') {
+            if (side == '1') {
+                p1--;
+                if (p1 < 0)
+                    p1 = 0;
+            }
+            if (side == '2') {
+                p2--;
+                if (p2 < 0)
+                    p2 = 0;
+            }
+        }
+        result = p1 + "-" + p2;
+        this.selectedConsole.result = result;
+        questo.sendRealtime();
+        questo.backend.playFeedback();
+        //prepare text
+    };
+    MatchconsolerrPage.prototype.sendRealtime = function () {
+        var questo = this;
+        var text = "TEMPO REALE !<br> ";
+        var color = "black";
+        var mtext = "in pausa";
+        if (questo.selectedConsole.running) {
+            mtext = "IN CORSO";
+            color = "blue";
+        }
+        if (questo.selectedConsole.fineround) {
+            mtext = "FINE ROUND " + questo.selectedConsole.round;
+            color = "black";
+        }
+        var rtext = "<font color='" + color + "'>Round " + questo.selectedConsole.round;
+        if (questo.selectedConsole.round == "GP")
+            rtext = "<font color='" + color + "'>GoldenPoint";
+        text += " " + rtext;
+        text += ", " + mtext;
+        text += ", " + questo.selectedConsole.result + "</font>";
+        /*
+
+        if (rta) {
+            if (rta.foto) {
+
+                text += "<br><img style='float: left' src='" + rta.foto + "' width='60px' height='60px' />";
+
+            }
+    }
+    */
+        //addMatchToRealtime(selectedid);
+        color = "black";
+        if (questo.selectedConsole.active)
+            color = "blue";
+        var htext = "<span style='color: " + color + "'>" + text + "</span>";
+        //
+        var rdata = {
+            type: "realtime",
+            to: "all",
+            garaid: questo.selectedConsole.match.garaid,
+            //matchid: selectedid,
+            matchid: questo.selectedConsole.match.id,
+            //matchnumber: selectedmatchid,
+            matchnumber: questo.selectedConsole.match.matchid,
+            result: questo.selectedConsole.result,
+            round: questo.selectedConsole.round,
+            fineround: questo.selectedConsole.fineround,
+            running: questo.selectedConsole.running,
+            paused: questo.selectedConsole.paused,
+            ammoniz1: 0,
+            ammoniz2: 0,
+            event: "realtime",
+            text: text,
+            //match: getMatchById(selectedid),
+            match: questo.selectedConsole.match,
+            active: true //questo.selectedConsole.active
+        };
+        if (questo.selectedConsole.hasOwnProperty("avversario")) {
+            if (questo.selectedConsole.avversario.trim() != "")
+                rdata.avversario = questo.selectedConsole.avversario;
+        }
+        if (questo.selectedConsole.match.realtime) {
+            console.log("è in realtime !!");
+            if (String(questo.selectedConsole.match.realtime) == "true")
+                questo.socket.sendMessage(rdata);
+        }
+    };
+    MatchconsolerrPage.prototype.tapRound = function (n) {
+        this.selectedConsole.round = n;
+        this.selectedConsole.paused = false;
+        this.selectedConsole.running = true;
+        this.selectedConsole.fineround = false;
+        this.selectedConsole.goldenpoint = false;
+        if (this.selectedConsole.round == "GP")
+            this.selectedConsole.goldenpoint = true;
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.tapFineround = function () {
+        this.selectedConsole.fineround = true;
+        this.selectedConsole.paused = true;
+        this.selectedConsole.running = false;
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.getPauseText = function () {
+        var text = "IN CORSO";
+        if (this.selectedConsole.paused) {
+            text = "IN PAUSA";
+        }
+        return text;
+    };
+    MatchconsolerrPage.prototype.tapPause = function () {
+        if (!this.selectedConsole.fineround) {
+            this.selectedConsole.paused = !this.selectedConsole.paused;
+            this.selectedConsole.running = !this.selectedConsole.running;
+        }
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.getTemporealeText = function () {
+        var text = "TEMPO REALE: NON ATTIVO";
+        if (this.selectedConsole.match.realtime) {
+            if (String(this.selectedConsole.match.realtime) == "true") {
+                text = "TEMPO REALE: ATTIVO !";
+            }
+        }
+        return text;
+    };
+    MatchconsolerrPage.prototype.setResult = function () {
+        this.backend.playFeedback();
+        console.log("setResult");
+        var questo = this;
+        var ris = questo.selectedConsole.result;
+        var risarr = ris.split("-");
+        if (ris.trim() != "0-0") {
+            if (risarr[0] == risarr[1]) {
+                var alrtx = questo.alertCtrl.create({
+                    title: 'ATTENZIONE',
+                    subTitle: 'Il risultato indicato indica un pareggio, incrementa uno dei due punteggi per indicare una vittoria o una sconfitta',
+                    buttons: ['Chiudi']
+                });
+                alrtx.present();
+                return;
+            }
+        }
+        var msg = "Vuoi davvero convalidare il risultato di questo incontro (" + ris + ") ?";
+        var gsmsg = "";
+        if (questo.selectedConsole.goldenpoint)
+            gsmsg = "(risultato conseguito dopo GoldenPoint)";
+        if (questo.selectedConsole.squalifica)
+            gsmsg = "(verrà registrata la sconfitta per squalifica)";
+        msg += gsmsg;
+        var title = "Conferma risultato " + ris;
+        if ((ris.trim() == "0-0") || (ris.trim() == "")) {
+            msg = "ATTENZIONE ! Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
+            title = "Conferma reset match";
+        }
+        var alrt = questo.alertCtrl.create({
+            title: title,
+            message: msg,
+            buttons: [
+                {
+                    text: 'Annulla',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                        questo.backend.playFeedback();
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: function () {
+                        questo.backend.playFeedback();
+                        var match = questo.selectedConsole.match;
+                        var goldenpoint = false;
+                        if (questo.selectedConsole.round.toLowerCase() == "gp")
+                            goldenpoint = true;
+                        if (questo.selectedConsole.goldenpoint)
+                            goldenpoint = true;
+                        match.goldenpoint = goldenpoint;
+                        match.risultato = questo.selectedConsole.result;
+                        if (match.hasOwnProperty("avversari")) {
+                            delete match.avversari;
+                        }
+                        //alert(questo.selectedConsole.squalifica);
+                        match.squalifica = questo.selectedConsole.squalifica;
+                        var atl = questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
+                        var mfa = questo.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id });
+                        questo.backend.setResult(match, atl, mfa, function (data) {
+                            console.log("setted result !!", data);
+                            setTimeout(function () {
+                                questo.navCtrl.pop();
+                            }, 2000);
+                        });
+                        console.log('Buy clicked');
+                    }
+                }
+            ]
+        });
+        alrt.present();
+    };
+    MatchconsolerrPage.prototype.gotoChat = function () {
+        this.backend.playFeedback();
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__["a" /* ChatPage */]);
+    };
+    MatchconsolerrPage.prototype.showMatchOrd = function (m) {
+        var retvalue = false;
+        if (m.hasOwnProperty("matchord")) {
+            if (m.matchord.trim() != "") {
+                retvalue = true;
+            }
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.hasAvversari = function () {
+        var questo = this;
+        var retvalue = false;
+        if (questo.selectedConsole.hasOwnProperty("avversari")) {
+            if (questo.selectedConsole.avversari.length > 0)
+                retvalue = true;
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.hasAvversario = function (m) {
+        var retvalue = false;
+        if (m.hasOwnProperty("avversario")) {
+            if (m.avversario.trim() != "")
+                retvalue = true;
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.getAvversario = function (m) {
+        var retvalue = {
+            nome: "",
+            societa: ""
+        };
+        if (m.hasOwnProperty("avversario")) {
+            retvalue.nome = m.avversario.split("|")[0];
+            retvalue.societa = m.avversario.split("|")[1];
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.selectAvversario = function (c) {
+        var _this = this;
+        var questo = this;
+        if (c.avversari.length == 0)
+            return;
+        var inputs = [];
+        var ndchecked = true;
+        var m = c.match;
+        if (m.hasOwnProperty("avversario")) {
+            if (m.avversario.trim() != "") {
+                ndchecked = false;
+            }
+        }
+        inputs.push({ type: 'radio', label: 'Non definito', value: '', checked: ndchecked });
+        c.avversari.forEach(function (item, idx) {
+            console.log("avversario", item);
+            var lblnome = item.nome;
+            var lblval = item.nome + "|" + item.societa;
+            var checked = false;
+            if (m.hasOwnProperty("avversario")) {
+                if (m.avversario.trim() != "") {
+                    var avv = m.avversario.split("|");
+                    //console.log("avv",avv,"item",item);
+                    if (avv[0].toLowerCase() == item.nome.toLowerCase())
+                        checked = true;
+                }
+            }
+            inputs.push({ type: 'radio', label: lblnome, value: lblval, checked: checked });
+        });
+        var alrt = questo.alertCtrl.create({
+            title: 'Seleziona avversario',
+            inputs: inputs,
+            buttons: [
+                {
+                    text: 'Annulla',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: function (data) {
+                        console.log("OK", data);
+                        if (data) {
+                            console.log("data cè");
+                            m.avversario = data;
+                            questo.selectedConsole.avversario = data;
+                            console.log("selectedConsole", questo.selectedConsole.avversario);
+                        }
+                        else {
+                            console.log("data non cè");
+                            m.avversario = "";
+                            questo.selectedConsole.avversario = "";
+                            //delete questo.selectedConsole.avversario;
+                        }
+                        if (questo.selectedConsole.active)
+                            questo.sendRealtime();
+                        var loading = _this.loadingCtrl.create({
+                            spinner: 'dots',
+                            content: 'Aggiornamento avversario...'
+                        });
+                        loading.onDidDismiss(function () {
+                            console.log('Dismissed loading');
+                        });
+                        loading.present();
+                        questo.backend.setAvversario(m.garaid, m.id, questo.selectedConsole.avversario, function (data) {
+                            console.log("setAvversario done", data);
+                            loading.dismiss();
+                        });
+                    }
+                }
+            ]
+        });
+        alrt.present();
+    };
+    return MatchconsolerrPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]) === "function" && _a || Object)
+], MatchconsolerrPage.prototype, "navBar", void 0);
+MatchconsolerrPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-matchconsolerr',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/'<!--\n  Generated template for the MatchconsolePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match console</ion-title>\n     <ion-buttons end>\n     \n<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>\n\n</button>-->\n</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="selectedMatchId" >\n      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? \'ssecondary\': \'sdark\'">\n        <span [ngClass]="(c.match.realtime==\'false\') || (c.match.realtime==false) ? \'tabnorealtime\': \'\'">{{c.match.matchid}} {{c.match.atletaname}}</span>\n      </ion-segment-button>\n      \n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> \n <div class="consoleinfo" style="font-size: 13px; font-style: italic; height: 25px;" *ngIf="showMatchOrd(selectedConsole.match)">{{selectedConsole.match.matchord}}</div>\n <div class="avvinfo"  *ngIf="selectedConsole.avversario">{{selectedConsole.avversario.split(\'|\')[0]}}<br>{{selectedConsole.avversario.split(\'|\')[1]}}</div>\n <ion-row>\n   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ? \'realtimebut\' : \'norealtimebut\'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>\n   </ion-col>\n </ion-row>\n  <br>\n  <div *ngIf="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ">\n  <ion-row>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? \'incorso\' : \'\'">{{getPauseText()}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? \'roundactive\' : \'\'">FINEROUND</button>\n    </ion-col>\n\n  </ion-row>\n  <ion-row>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'1\')" color="light" [ngClass]="(selectedConsole.round==\'1\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'1\' ? \'roundactive\' : \'\'">1</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'2\')" color="light" [ngClass]="(selectedConsole.round==\'2\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'2\' ? \'roundactive\' : \'\'">2</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'3\')" color="light" [ngClass]="(selectedConsole.round==\'3\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'3\' ? \'roundactive\' : \'\'">3</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'GP\')" color="light" [ngClass]="(selectedConsole.round==\'GP\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'GP\' ? \'roundactive\' : \'\'">GP</button></ion-col>\n  </ion-row>\n  </div>\n  <br>\n  <ion-row>\n    <ion-col col-4>{{selectedConsole.match.player1.cognome}} {{selectedConsole.match.player1.nome}} </ion-col>\n    <ion-col></ion-col>\n    <ion-col col-4>{{selectedConsole.match.player2.cognome}} {{selectedConsole.match.player2.nome}}</ion-col>\n  </ion-row>\n  <ion-row>\n    \n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_1\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_1\')">-</button></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><ion-input readonly [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_2\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_2\')">-</button></ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col col-12>\n      <div style="font-size: 12px; padding: 4px; text-align: center">\n      \n    </div>\n    </ion-col>\n  </ion-row>\n  <br>\n  <div class="checkboxes">\n  <ion-item>\n      <ion-label>GoldenPoint (il punteggio indica il vincitore)</ion-label>\n      <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n        <ion-label>Sconfitta per squalifica</ion-label>\n        <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>\n      </ion-item>\n    </div>\n\n\n  <br>\n  <div *ngIf="hasAvversari()"><!--*ngIf="selectedConsole.match.avversari.length>0"-->\n  <button ion-button color="light"  small block (tap)="selectAvversario(selectedConsole)">Seleziona avversario</button>\n  <br>\n</div>\n\n  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  \n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _j || Object])
+], MatchconsolerrPage);
+
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+//# sourceMappingURL=matchconsolerr.js.map
+
+/***/ }),
+
+/***/ 749:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IospaidPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -16209,7 +16884,7 @@ IospaidPage = __decorate([
 
 /***/ }),
 
-/***/ 749:
+/***/ 750:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16461,7 +17136,7 @@ RtcPage = __decorate([
 
 /***/ }),
 
-/***/ 750:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16521,7 +17196,7 @@ FblivePage = __decorate([
 
 /***/ }),
 
-/***/ 751:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16644,7 +17319,7 @@ SectionComponent = __decorate([
 
 /***/ }),
 
-/***/ 752:
+/***/ 753:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16836,7 +17511,7 @@ ScrollableTabs = __decorate([
 
 /***/ }),
 
-/***/ 753:
+/***/ 754:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -31835,6 +31835,77 @@ page-matchconsole .tabnorealtime {
   color: gray;
 }
 
+page-matchconsolerr .tab {
+  font-size: 10px;
+}
+
+page-matchconsolerr .segment-md .segment-button .secondary {
+  color: red;
+}
+
+page-matchconsolerr .segment-md .segment-button .dark {
+  color: blue;
+}
+
+page-matchconsolerr .checkboxes ion-label {
+  font-size: 12px;
+}
+
+page-matchconsolerr ion-item.item-checkbox .input-wrapper ion-label {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+page-matchconsolerr .realtimebut {
+  background: green;
+  color: white;
+}
+
+page-matchconsolerr .norealtimebut {
+  background: #f4f4f4;
+  color: black;
+}
+
+page-matchconsolerr .consoleinfo {
+  text-align: center;
+  font-size: 16px;
+  height: 40px;
+  width: 100%;
+}
+
+page-matchconsolerr .avvinfo {
+  text-align: center;
+  width: 100%;
+  color: #222;
+  padding: 2px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+page-matchconsolerr ion-input {
+  border: 1px solid gray;
+  text-align: center;
+}
+
+page-matchconsolerr .roundactive {
+  background: blue;
+  color: white;
+}
+
+page-matchconsolerr .incorso {
+  background: orange;
+  color: white;
+}
+
+page-matchconsolerr .fineround {
+  background: cyan;
+  color: black;
+}
+
+page-matchconsolerr .tabnorealtime {
+  color: gray;
+}
+
 page-matchesforatleta .history {
   font-weight: bold;
 }
@@ -32392,6 +32463,10 @@ page-tournament .input .text-input {
 
 page-tournament .punteggio {
   border: 1px solid silver;
+}
+
+page-tournament .baricon {
+  font-size: 22px;
 }
 
 page-users .useremail {
