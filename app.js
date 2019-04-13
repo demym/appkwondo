@@ -1509,6 +1509,17 @@ app.get("/fcm/send",function(req,res){
 })
 
 
+app.get("/triggerupdategara/:garaid",function(req,res){
+	var garaid=req.params.garaid;
+	if (io) {
+		io.emit("updategara", {
+			garaid: garaid
+		});
+		res.send({ok: true})
+	} else res.send({ok: false})
+
+})
+
 
 app.get("/gcm/test", function (req, res) {
 

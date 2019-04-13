@@ -1248,6 +1248,183 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 });
 
+router.post('/updaterr/:garaid/:matchid', function (req, res) {
+	var body = req.body;
+	var garaid = req.params.garaid;
+	var matchid = req.params.matchid;
+	var sresult = "false";
+	var savedmatch = false;
+	var action = "";
+	console.log("*****************************************************************************************");
+	console.log("Update match id=" + matchid + ": " + JSON.stringify(body));
+	console.log("*****************************************************************************************");
+	if (body.admin_action) {
+
+		action = body.admin_action;
+		delete body.admin_action;
+	}
+	if (body.savedmatch) {
+		if (String(body.savedmatch) == "true") savedmatch = true;
+	}
+	if (req.query.setresult) sresult = req.query.setresult;
+	var setresult = false;
+	if (sresult == "true") setresult = true;
+
+	var newrt = {};
+
+
+	var doc = {
+		doc: body
+	}
+
+	doc.doc.admin_action = "";
+	var io = global.io;
+
+
+
+			if ((action == "realtime_on") || (action == "realtime_off") || (action = "setresult")) {
+				if (io) {
+					io.emit("updategara", {
+						garaid: garaid
+					});
+
+				} else {
+					console.log("socket not connected")
+				}
+			}
+
+			if (action == "realtime_off") {
+				realtime.remove(garaid, matchid);
+				disputato = true;
+
+				var vmatch=data;
+
+				var obj={
+					title: "Fine TEMPO REALE",
+					body: vmatch.matchid+" - "+vmatch.atletaname,
+					disablebadge: true
+					
+				}
+				/*
+				fcm.fcmSend(obj,function(fcmdata){
+					console.log("fcm sent",fcmdata)
+				})*/
+				/*var sock = global.socket;
+				console.log("sending refreshrealtime");
+				sock.broadcast.emit("realtimematches", {
+					matches: realtime.getRealtimeMatches()
+				});*/
+
+
+
+			}
+		
+
+
+
+
+			if (action == "realtime_on") {
+				newrt = {
+					"type": "realtime",
+					"to": "all",
+					"garaid": garaid,
+					"matchid": matchid,
+					"result": "0-0",
+					"round": "1",
+					"fineround": false,
+					"running": true,
+					"paused": false,
+					"ammoniz1": 0,
+					"ammoniz2": 0,
+					"event": "realtime",
+					"text": "TEMPO REALE !",
+					"active": true
+				}
+
+				newrt.match = data;
+
+				/*if (newrt.match.hasOwnProperty("avversario")){
+					if (newrt.match.avversario.trim()!="") newrt.avversario=newrt.match.avversario;
+				}*/
+				console.log("newrt data", data);
+
+				realtime.syncRealtimeMatches(newrt);
+
+				
+
+				/*var obj={
+					text: chatobj.nickname+" ha postato un'immagine",
+					title: "ChatKwonDo",
+					icon: "ic_launcher",
+					color: "#000000",
+					tag: "appkwondov2",
+					badge: "1",
+					topic: "appkwondov2",
+					token: ""
+				
+				}
+				gcm2.sendToAll(obj,function(data){
+					console.log("gcmsendtoall done",data);
+				})*/
+				/*	console.log("sending realtimematches");
+					io.emit("realtimematches", {
+						matches: realtime.getRealtimeMatches()
+					});*/
+					var nottitle="TEMPO REALE !";
+
+					if (newrt.match.hasOwnProperty("matchord")){
+						if (newrt.match.matchord.trim()!=""){
+							nottitle+=" "+newrt.match.matchord;
+						}
+					}
+
+					var obj={
+						title: nottitle,
+						body: newrt.match.matchid+" - "+newrt.match.atletaname,
+						disablebadge: true
+						
+					}
+					fcm.fcmSend(obj,function(fcmdata){
+						console.log("fcm sent",fcmdata)
+					})
+					/*fcm.sendToAll(obj,function(data){
+						console.log("gcmsendtoall done",data);
+					})*/
+
+				
+
+
+
+			}
+
+			console.log("sending realtimematches");
+			io.emit("realtimematches", {
+				matches: realtime.getRealtimeMatches()
+			});
+
+
+
+
+
+
+
+
+			res.send(data);
+			//console.log("res sent");
+			return;
+
+
+
+
+
+
+
+
+
+
+});
+
+
 
 
 
