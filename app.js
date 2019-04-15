@@ -1070,6 +1070,20 @@ app.get("/realtime", function (req, res) {
 	res.send(rta);
 })
 
+app.get("/scoreboards", function (req, res) {
+	var rta = realtime.getScoreboards();
+	res.send(rta);
+})
+
+app.get("/scoreboards/remove/:clientid",function(req,res){
+	var clientid=req.params.clientid;
+	realtime.removeScoreboard(clientid);
+	if (io){
+		io.emit("scoreboard");
+	}
+	res.send(realtime.getScoreboards())
+})
+
 app.get("/realtime/reset", function (req, res) {
 	realtime.clearRealtime();
 	realtime.initRealtime(function () {
@@ -1079,12 +1093,37 @@ app.get("/realtime/reset", function (req, res) {
 
 })
 
+app.get("/scoreboards/reset", function (req, res) {
+	realtime.clearScoreboards();
+	
+		res.send(realtime.getScoreboards());
+
+	
+
+})
+
 app.get("/realtime/html", function (req, res) {
 
 	var data = realtime.getRealtimeMatches();
 
 	//console.log(data);
 	res.render('realtime.ejs', {
+		data: data
+	});
+	//res.send(html);
+
+
+
+
+
+})
+
+app.get("/scoreboards/html", function (req, res) {
+
+	var data = realtime.getScoreboards();
+
+	//console.log(data);
+	res.render('scoreboards.ejs', {
 		data: data
 	});
 	//res.send(html);
@@ -1820,6 +1859,24 @@ io.sockets.on('connection', function (socket) {
 		});
 	})
 
+	socket.on("getscoreboards", function () {
+		console.log("received getscoreboards")
+		io.to(socket.id).emit("scoreboards", {
+			scoreboards: realtime.getScoreboards()
+		});
+	})
+
+	socket.on('scoreboard', function (data) {
+		colog("socket scoreboard received");
+		console.log("socket scoreboard received",data);
+		console.log("syncing scoreboards", data);
+		realtime.syncScoreboards(data);
+		socket.broadcast.emit("scoreboard",data);
+	});
+
+
+
+
 
 	socket.on('typing', function (msg) {
 		//colog('received typing from user: ' + msg.nickname);
@@ -1847,7 +1904,10 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('disconnect', function () {
 		var txt = "Socket " + socket.id + " disconnected";
+		realtime.removeScoreboard(socket.id);
+		console.log(txt);
 		utils.colog(txt);
+		io.emit("scoreboard")
 		io.emit('auserhasdisconnected');
 
 		//WEBRTC PART

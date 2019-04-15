@@ -6,18 +6,18 @@ webpackJsonp([1],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_gare_gare__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_atleti_atleti__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(556);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_gare_gare__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_atleti_atleti__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_eventi_eventi__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_societa_societa__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_stats_stats__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_about_about__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_servizisocieta_servizisocieta__ = __webpack_require__(157);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -343,17 +343,17 @@ HomePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(520);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_map_map__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_broadcast_broadcast__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_filters_filters__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tkdtlive_tkdtlive__ = __webpack_require__(531);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_map_map__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_broadcast_broadcast__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_filters_filters__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tkdtlive_tkdtlive__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(533);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_lodash_cloneDeep__ = __webpack_require__(669);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_lodash_cloneDeep__ = __webpack_require__(671);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_lodash_cloneDeep___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_lodash_cloneDeep__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1336,20 +1336,19 @@ var GaraPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
 ], GaraPage.prototype, "navBar", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]) === "function" && _b || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
 ], GaraPage.prototype, "content", void 0);
 GaraPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-gara',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/'<!--\n  Generated template for the GaraPage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n        <button *ngIf="hasTkdt()" ion-button style="font-size: 18px" (tap)="showTkdtLive()">\n            <ion-icon name="pulse"></ion-icon>\n    \n          </button>\n        <button *ngIf="hasLinks()" ion-button style="font-size: 18px" (tap)="showLinks()">\n            <ion-icon name="ios-link"></ion-icon>\n    \n          </button>\n      <button *ngIf="hasMap()" ion-button style="font-size: 18px" (tap)="showMap()">\n        <ion-icon name="md-locate"></ion-icon>\n\n      </button>\n\n      <!--<button ion-button style="font-size: 18px" (tap)="gotoChat()">\n        <ion-icon name="md-chatbubbles">\n          <ion-badge *ngIf="backend.unread>0" color="danger">{{backend.unread}}</ion-badge>\n        </ion-icon>\n\n      </button>-->\n      <button ion-button style="font-size: 18px" (tap)="doRefreshStandAlone()">\n        <ion-icon name="md-refresh"></ion-icon>\n      </button>\n\n    </ion-buttons>\n  </ion-navbar>\n\n  <ion-toolbar class="stoolbar">\n    <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <ion-spinner name="dots" class="spinnerdots" *ngIf="loading"></ion-spinner>\n            <!--<img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />-->\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasMap()">\n            <ion-col>\n              <button ion-button small (tap)="showMap()">Visualizza mappa</button>\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="hasTabulatoUrl()">\n              <ion-col>\n                <button ion-button small (tap)="showTabulatoUrl()">Visualizza tabulato</button>\n              </ion-col>\n            </ion-row>\n          <ion-row>\n            <ion-col col-5>&nbsp;</ion-col>\n            <ion-col>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Iscritti</ion-col>\n            <ion-col class="infobold">{{getArrLen(jgara.iscritti)}} (F: {{getMaschiFemmine(iscritti,\'iscritti\').femmine}}, M: {{getMaschiFemmine(iscritti,\'iscritti\').maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match da disputare</ion-col>\n            <ion-col class="infobold">{{info.dadisputare.rows.length}} (F: {{getMaschiFemmine(info.dadisputare).femmine}}, M: {{getMaschiFemmine(info.dadisputare).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match disputati</ion-col>\n            <ion-col class="infobold">{{info.disputati.rows.length}} (F: {{getMaschiFemmine(info.disputati).femmine}}, M: {{getMaschiFemmine(info.disputati).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match vinti</ion-col>\n            <ion-col class="infobold">{{info.vinti.rows.length}} (F: {{getMaschiFemmine(info.vinti).femmine}}, M: {{getMaschiFemmine(info.vinti).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-5>Match persi</ion-col>\n            <ion-col class="infobold">{{info.persi.rows.length}} (F: {{getMaschiFemmine(info.persi).femmine}}, M: {{getMaschiFemmine(info.persi).maschi}})\n              </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{categoriecoperte.text}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>&nbsp;</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">Punteggio totale medaglie: {{totalepunti}}</ion-col>\n          </ion-row>\n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </ion-item>\n      <!--<ion-item style="background: #eee; height: 10px !important; margin: 0px !important; padding: 0px !important;">-->\n      <ion-row style="background: #333">\n        <ion-col col-3>\n          <button (tap)="setFilters()" [ngClass]="getFiltersClass()" ion-button dark small>{{getFiltersText()}}</button>\n        </ion-col>\n        <ion-col col-9 style="text-align: right;">\n          <button ion-button (tap)="getMedagliereGlobale()" small class="filt medals" style="height: 20px; font-size: 14px; margin-right: 7px; justify-content: center;">\n            <span class="ori">ORI: {{getMedals().ori}}</span>\n            <span class="argenti">ARG: {{getMedals().arg}}</span>\n            <span class="bronzi">BRO: {{getMedals().bro}}</span>\n          </button>\n        </ion-col>\n      </ion-row>\n      <!--</ion-item>-->\n      <!--<ion-item *ngIf="gara.gara.rows.length>0" >{{gara.gara.rows[0].doc.title}}</ion-item>-->\n      <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n        <ion-segment-button value="matchesbyprog">\n          <!-- <ion-icon name="camera"></ion-icon>-->Per match\n        </ion-segment-button>\n        <ion-segment-button value="matchesbyatleta">\n          Per atleta\n        </ion-segment-button>\n        <ion-segment-button value="cronaca">\n          Cronaca\n        </ion-segment-button>\n        <ion-segment-button value="iscritti">\n          Iscritti\n        </ion-segment-button>\n        <!-- <ion-segment-button value="infogara">\n            Gara\n          </ion-segment-button>-->\n      </ion-segment>\n    </div>\n  </ion-toolbar>\n\n</ion-header>\n<!--\n<ion-tabs>\n  <ion-tab [root]="tab1Root"></ion-tab>\n  <ion-tab [root]="tab2Root"></ion-tab>\n  <ion-tab [root]="tab3Root"></ion-tab>\n</ion-tabs>\n-->\n\n<ion-content padding>\n\n  <!--<ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="ios">\n    </ion-refresher-content>\n  </ion-refresher>-->\n\n  <ion-card *ngIf="showIscritti">\n    <ion-card-content style="text-align: center">\n      <span style="color: red">Nessun incontro definito</span><br>\n      <div style="height: 105px; text-align: center">\n      <img style="width: 100px; height: 100px; margin: auto; " src="assets/img/fight.png" />\n    </div>\n    </ion-card-content>\n\n  </ion-card>\n  <section id="iscritti" *ngIf="showIscritti || (view==\'iscritti\')">\n    <div style="background: lightblue; padding: 8px;">\n\n      {{iscritti.length}} iscritti a questa gara\n \n    </div>\n    <button *ngIf="(backend.userIsAdmin()) && (gara.gara.rows[0].doc.stato!=\'disputata\') " ion-button block (tap)="selectIscritti()">Seleziona iscritti</button>\n\n    <ion-list *ngFor="let atl of atletiiscritti" class="list-iscritti" >\n    <ion-item class="iscrittiitem" >\n      <button ion-item (tap)="showMatchesForAtleta(atl.id)" detail-none >\n\n      <ion-row>\n        <ion-col>\n            <div class="iscrittonome">{{atl.cognome}} {{atl.nome}}</div>\n            <div class="iscritti">{{atl.sesso}} - {{atl.categoria.toUpperCase()}} </div>\n            <div class="tkdtiscritti">{{atl.tkdtcat}}</div>\n\n        </ion-col>\n        <ion-col col-1>\n            <ion-badge>{{atl.nmatches}}</ion-badge>\n        </ion-col>\n      </ion-row>\n\n      \n  \n        <!--<div class="iscritti">{{atl.tkdtcategoria}}</div>-->\n\n\n      </button>\n\n    </ion-item>\n  </ion-list>\n\n    <!--<ion-item-divider color="light"></ion-item-divider>-->\n\n\n  </section>\n\n\n  <section id="matchesbyprog" [hidden]="view!=\'matchesbyprog\'" sngIf="view==\'matchesbyprog\'">\n\n    <ion-list>\n      <div *ngFor="let m of displayedgara.matchesbyprog.rows">\n        <ion-item *ngIf="m.doc.dadisputare==\'yes\'"  (press)="broadcastMatch(m.doc)" (tap)="showMatchesForAtleta(m.doc.atletaid)">\n          <ion-row>\n            <ion-col col-2>\n              <img width="32" height="32" src="{{getImg(m)}}" />\n            </ion-col>\n            <ion-col>\n              <div class="{{getClass(m.doc)}}">{{m.doc.matchid}}</div>\n              <div class="atleta">{{m.doc.atletaname}}</div>\n              <div class="categoria">{{getCategoria(m.doc.datanascita).toUpperCase()}}</div>\n              <!--<div class="tkdtiscritti">{{getTkdtAtleta(getAtletaIscritto(m.doc.atletaid))}}</div>-->\n              <!--<div class="iscritti">{{m.doc.tkdtcategoria}}</div>-->\n              <div class="{{getClass(m.doc)}}" style="font-weight: normal">{{getVintoText(m.doc)}}</div>\n              <div *ngIf="m.doc.derby && (m.doc.derby!=null)" class="derby">{{backend.getDerbyText(m.doc.derby)}}</div>\n              <div *ngIf="hasAvversario(m.doc)" class="avversario">contro {{m.doc.avversario.split(\'|\')[0]}}<br>{{m.doc.avversario.split(\'|\')[1]}}</div>\n            </ion-col>\n          </ion-row>\n        </ion-item>\n      </div>\n    </ion-list>\n\n\n\n\n  </section>\n  <section id="matchesbyatleta" [hidden]="view!=\'matchesbyatleta\'" sngIf="view==\'matchesbyatleta\'">\n    <ion-list>\n      <ion-item *ngFor="let m of displayedgara.matchesbyatleta.rows" (tap)="showMatchesForAtleta(m.id)">\n        <ion-row>\n          <ion-col col-2>\n            <img width="32" height="32" src="{{getImgPerAtleta(m)}}" />\n          </ion-col>\n          <ion-col>\n\n            <div class="atleta">{{m.nome}}</div>\n            <div class="categoria">{{getCategoria(m.datanascita).toUpperCase()}}</div>\n            <!--<div class="iscritti">{{m.tkdtcategoria}}</div>-->\n            <div class="matches">\n              <span *ngFor="let x of m.matchesarray" class="{{getClass(x)}}">\n                {{x.matchid}}\n              </span>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n\n\n  <section id="cronaca" [hidden]="view!=\'cronaca\'" sngIf="view==\'cronaca\'">\n    <ion-list>\n      <ion-item *ngFor="let m of gara.cronaca.rows">\n        <ion-row>\n\n          <ion-col>\n\n            <div class="time">{{getCronacaTime(m.time)}}</div>\n            <div class="text">{{m.text}}</div>\n          </ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-list>\n\n  </section>\n\n  <section id="infogara" [hidden]="view!=\'infogara\'" sngIf="view==\'infogara\'">\n    <ion-list style="font-size: 14px">\n\n      <div>Gara: {{jgara.title}}</div>\n      <div>Location: {{jgara.location}}</div>\n      <div>Data: {{jgara.data}}</div>\n      <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>\n      <br>\n      <div>{{categoriecoperte.text}}</div>\n\n    </ion-list>\n\n  </section>\n\n  <!--<ion-fab right bottom *ngIf="realtimecount>0">\n       <button ion-fab style="font-size: 11px">LIVE!</button>\n     </ion-fab>-->\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gara/gara.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _k || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */], __WEBPACK_IMPORTED_MODULE_10__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], GaraPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=gara.js.map
 
 /***/ }),
@@ -1362,9 +1361,10 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__matchconsolerr_matchconsolerr__ = __webpack_require__(748);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__matchconsolerr_matchconsolerr__ = __webpack_require__(552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scorekeeper_scorekeeper__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1374,6 +1374,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1453,6 +1454,7 @@ var TournamentPage = (function () {
         };
         this.activegirone = this.torneo.gironi[0];
         this.activegironeindex = 0;
+        this.viewInfobar = false;
         this.colors = ["green", "blue", "orange", "red", "pink", "brown", "purple", "lightblue"];
         console.log("torneo", this.torneo);
         var questo = this;
@@ -1540,8 +1542,8 @@ var TournamentPage = (function () {
                     }
                 }
                 result.sort(function (a, b) {
-                    var a1 = a.player1.cognome.toLowerCase();
-                    var b1 = b.player1.cognome.toLowerCase();
+                    var a1 = a.player1.cognome.toLowerCase() + a.player1.nome.toLowerCase();
+                    var b1 = b.player1.cognome.toLowerCase() + b.player1.nome.toLowerCase();
                     if (a1 > b1)
                         return 1;
                     if (a1 < b1)
@@ -1848,6 +1850,17 @@ var TournamentPage = (function () {
     };
     TournamentPage.prototype.isAdmin = function () {
         var retvalue = false;
+        if (this.backend.user.role == "tkdradmin")
+            retvalue = true;
+        return retvalue;
+    };
+    TournamentPage.prototype.toggleInfobar = function () {
+        this.viewInfobar = !this.viewInfobar;
+        this.backend.playFeedback();
+        //this.deviceFeedback.acoustic();
+    };
+    TournamentPage.prototype.isSuperAdmin = function () {
+        var retvalue = false;
         if (this.backend.user.role == "superadmin")
             retvalue = true;
         return retvalue;
@@ -1956,32 +1969,34 @@ var TournamentPage = (function () {
                 {
                     text: 'Save',
                     handler: function (data) {
-                        console.log("result", data, data.result);
-                        if (data.result.trim() == "") {
-                            inc.punteggio1 = "";
-                            inc.punteggio2 = "";
-                            questo.updateClassificaGirone(girone);
-                            return;
-                        }
-                        console.log('Saved clicked');
-                        var value = data.result;
-                        console.log("result changed", value);
-                        var arr = value.split("-");
-                        if (arr.length != 2)
-                            return;
-                        if (arr.length == 2) {
-                            var p1 = arr[0];
-                            var p2 = arr[1];
-                            if (!questo.isNumeric(p1))
+                        questo.refresh(function () {
+                            console.log("result", data, data.result);
+                            if (data.result.trim() == "") {
+                                inc.punteggio1 = "";
+                                inc.punteggio2 = "";
+                                questo.updateClassificaGirone(girone);
                                 return;
-                            if (!questo.isNumeric(p2))
+                            }
+                            console.log('Saved clicked');
+                            var value = data.result;
+                            console.log("result changed", value);
+                            var arr = value.split("-");
+                            if (arr.length != 2)
                                 return;
-                            inc.punteggio1 = p1;
-                            inc.punteggio2 = p2;
-                            questo.updateClassificaGirone(girone);
-                            questo.sendChatResult(inc, girone);
-                            questo.saveTorneo();
-                        }
+                            if (arr.length == 2) {
+                                var p1 = arr[0];
+                                var p2 = arr[1];
+                                if (!questo.isNumeric(p1))
+                                    return;
+                                if (!questo.isNumeric(p2))
+                                    return;
+                                inc.punteggio1 = p1;
+                                inc.punteggio2 = p2;
+                                questo.updateClassificaGirone(girone);
+                                questo.sendChatResult(inc, girone);
+                                questo.saveTorneo();
+                            }
+                        });
                     }
                 }
             ]
@@ -2107,21 +2122,287 @@ var TournamentPage = (function () {
             avversari: []
         });
     };
+    TournamentPage.prototype.gotoScoreKwondo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]);
+    };
     return TournamentPage;
 }());
 TournamentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{torneo.title}}</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon class="baricon"  name="refresh"></ion-icon></button>\n      <button *ngIf="isAdmin()" ion-button (tap)="saveTorneo()"><ion-icon  class="baricon" name="disc"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i">{{getUpperCaseGirone(g)}}</ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n    \n    </ion-segment>\n  \n</ion-header>\n\n<ion-content padding>\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>GF</ion-col>\n                <ion-col>GS</ion-col>\n                <ion-col>DR</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}</ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n         <button small ion-button (tap)="resetIncontriGirone(torneo.gironi[activegironeindex])">Reset incontri girone</button>\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    <button ion-button (tap)="resetTorneo()">Reset Torneo</button>\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
+        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon class="baricon"  name="refresh"></ion-icon></button>\n     \n    </ion-buttons>\n \n  </ion-navbar>\n  <ion-toolbar class="stoolbar">\n  <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <ion-spinner name="dots" class="spinnerdots" *ngIf="loading"></ion-spinner>\n            <!--<img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />-->\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <ion-item *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n       \n     \n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </ion-item>\n\n    </div>\n  </ion-toolbar>\n\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i"><b>{{getUpperCaseGirone(g)}}</b></ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isSuperAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n \n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n    \n    </ion-segment>\n\n  \n</ion-header>\n\n<ion-content spadding class="ioncontent" style="background: #eee">\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px; background:white" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isSuperAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>PF</ion-col>\n                <ion-col>PS</ion-col>\n                <ion-col>DP</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}</ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isSuperAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n         <button small *ngIf="isSuperAdmin()" ion-button (tap)="resetIncontriGirone(torneo.gironi[activegironeindex])">Reset incontri girone</button>\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    \n</ion-content>\n<ion-footer>\n    <button *ngIf="isAdmin() || isSuperAdmin()" ion-button  small (tap)="gotoScoreKwondo()">Scorekwondo</button>\n    <button *ngIf="isSuperAdmin()" small ion-button (tap)="resetTorneo()">Reset Torneo</button>\n    <button *ngIf="isAdmin() ||  isSuperAdmin()" small ion-button (tap)="saveTorneo()">Salva torneo</button>\n\n</ion-footer>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], TournamentPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=tournament.js.map
 
 /***/ }),
 
 /***/ 154:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScorekeeperPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(21);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the ScorekeeperPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ScorekeeperPage = (function () {
+    function ScorekeeperPage(events, socket, alertCtrl, backend, navCtrl, navParams) {
+        this.events = events;
+        this.socket = socket;
+        this.alertCtrl = alertCtrl;
+        this.backend = backend;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.punt1 = 0;
+        this.punt2 = 0;
+        this.timeLeft = 60;
+        this.maxTime = 60;
+        this.timertext = "AVVIO";
+        this.timerstarted = false;
+        this.timerpaused = false;
+        this.player1 = {
+            cognome: "Scevola",
+            nome: "Muzio",
+            id: "xxxx"
+        };
+        this.player2 = {
+            cognome: "Regolo",
+            nome: "Attilio",
+            id: "xxxx"
+        };
+    }
+    ScorekeeperPage.prototype.ionViewWillLeave = function () {
+        var questo = this;
+        clearInterval(questo.interval);
+        questo.events.unsubscribe("scoreboards");
+        questo.events.unsubscribe("scoreboard");
+        questo.backend.removeScoreboard(questo.socket.socket.id);
+    };
+    ScorekeeperPage.prototype.ionViewDidLoad = function () {
+        var questo = this;
+        console.log('ionViewDidLoad ScorekeeperPage');
+        //this.startTimer();
+        questo.timeLeft = questo.maxTime;
+        questo.getScoreboards();
+        questo.events.subscribe("scoreboards", function (data) {
+            console.log("reeived scoreboards in scorekeeper.ts", data);
+        });
+        questo.events.subscribe("scoreboard", function (data) {
+            console.log("reeived scoreboard in scorekeeper.ts", data);
+            questo.punt1 = data.punt1;
+            questo.punt2 = data.punt2;
+            questo.timeLeft = data.timeLeft;
+        });
+        questo.sendSocketScoreboard();
+    };
+    ScorekeeperPage.prototype.getScoreboards = function () {
+        this.socket.sendCustomMessage("getscoreboards", {});
+    };
+    ScorekeeperPage.prototype.increase = function (x) {
+        this[x]++;
+        this.sendSocketScoreboard();
+    };
+    ScorekeeperPage.prototype.decrease = function (x) {
+        this[x]--;
+        this.sendSocketScoreboard();
+    };
+    ScorekeeperPage.prototype.resetPunti = function () {
+        var questo = this;
+        questo.backend.showConfirm("Vuoi davvero resettare il punteggio ?", function (yes) {
+            questo.punt1 = 0;
+            questo.punt2 = 0;
+            this.sendSocketScoreboard();
+        });
+    };
+    ScorekeeperPage.prototype.tapTimer = function () {
+        if (!this.timerstarted) {
+            this.timertext = "PAUSA";
+            this.timerstarted = true;
+            this.timerpaused = false;
+            this.startTimer();
+            return;
+        }
+        if (this.timerstarted) {
+            this.timerpaused = !this.timerpaused;
+            if (this.timerpaused) {
+                this.timertext = "RIAVVIO";
+            }
+            else
+                this.timertext = "PAUSA";
+        }
+    };
+    ScorekeeperPage.prototype.startTimer = function () {
+        var _this = this;
+        var questo = this;
+        questo.interval = setInterval(function () {
+            if (questo.timeLeft > 0) {
+                if (!questo.timerpaused) {
+                    questo.backend.playSoundDespiteAppSettings("img/tick");
+                    questo.timeLeft--;
+                    questo.timerstarted = true;
+                    questo.timertext = "PAUSA";
+                    _this.sendSocketScoreboard();
+                    if (questo.timeLeft == 0) {
+                        questo.backend.playSoundDespiteAppSettings("img/endfight");
+                        questo.timerstarted = false;
+                        questo.timerpaused = false;
+                        questo.timertext = "AVVIO";
+                        clearInterval(questo.interval);
+                        _this.sendSocketScoreboard();
+                    }
+                }
+            }
+            else {
+                /* clearInterval(questo.timer);
+                 questo.backend.playSoundDespiteAppSettings("img/endfight")
+                 questo.timeLeft = 0;
+                 questo.timerstarted = false;
+                 questo.timerpaused = false;
+                 questo.timertext = "AVVIO";*/
+            }
+        }, 1000);
+    };
+    ScorekeeperPage.prototype.stopTimer = function () {
+        clearInterval(this.interval);
+        this.timeLeft = this.maxTime;
+        this.timertext = "AVVIA";
+        this.timerstarted = false;
+        this.timerpaused = true;
+        this.sendSocketScoreboard();
+    };
+    ScorekeeperPage.prototype.pauseTimer = function () {
+        this.timerpaused = true;
+        this.timertext = "RIAVVIA";
+        this.sendSocketScoreboard();
+    };
+    ScorekeeperPage.prototype.resetTimer = function () {
+        var questo = this;
+        questo.backend.showConfirm("Vuoi resettare il timer ?", function (yes) {
+            if (yes) {
+                questo.timerpaused = true;
+                questo.timerstarted = false;
+                clearInterval(questo.interval);
+                questo.timeLeft = questo.maxTime;
+                questo.timertext = "AVVIO";
+            }
+        });
+    };
+    ScorekeeperPage.prototype.setupTimer = function () {
+        var questo = this;
+        var alert = questo.alertCtrl.create({
+            title: 'Imposta il tempo in secondi',
+            inputs: [
+                {
+                    name: 'seconds',
+                    placeholder: 'Secondi',
+                    value: questo.maxTime
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Annulla',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'IMPOSTA',
+                    handler: function (data) {
+                        questo.maxTime = data.seconds;
+                        questo.timeLeft = questo.maxTime;
+                        questo.stopTimer();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    ScorekeeperPage.prototype.getTime = function (t) {
+        var sec_num = parseInt(t, 10); // don't forget the second param
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+        var shours = String(hours);
+        var sminutes = String(minutes);
+        var sseconds = String(seconds);
+        if (hours < 10) {
+            shours = "0" + shours;
+        }
+        if (minutes < 10) {
+            sminutes = "0" + sminutes;
+        }
+        if (seconds < 10) {
+            sseconds = "0" + sseconds;
+        }
+        return sminutes + ':' + sseconds;
+    };
+    ScorekeeperPage.prototype.getTimerClass = function () {
+        var retvalue = 'timer';
+        if (this.timerstarted) {
+            if (this.timerpaused)
+                retvalue += " colorgray blink";
+        }
+        return retvalue;
+    };
+    ScorekeeperPage.prototype.getTimerButtonClass = function () {
+        var retvalue = "";
+        if (this.timerstarted) {
+            if (this.timerpaused)
+                retvalue = "backgray";
+            if (!this.timerpaused)
+                retvalue = "backorange";
+        }
+        return retvalue;
+    };
+    ScorekeeperPage.prototype.sendSocketScoreboard = function () {
+        var questo = this;
+        var data = {
+            clientid: questo.socket.socket.id,
+            punt1: questo.punt1,
+            punt2: questo.punt2,
+            timeleft: questo.timeLeft,
+            player1: questo.player1,
+            player2: questo.player2
+        };
+        questo.socket.sendCustomMessage("scoreboard", data);
+    };
+    return ScorekeeperPage;
+}());
+ScorekeeperPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-scorekeeper',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/'<!--\n  Generated template for the ScorekeeperPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SCOREKWONDO</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content scroll="false" spadding>\n  <table border="1" height="100%" width="100%" cellpadding="2" cellpadding="2">\n    <tr height="10%">\n      <td> \n        <button ion-button (tap)="resetPunti()">Reset punti</button>\n        <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()" (tap)="tapTimer()">{{timertext}}</button>\n        <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n      <td>\n          <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut red">{{punt2}}</div>\n      </td>\n    </tr>\n    <tr height="25%"  class="buttr">\n      <td>\n          <div  (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')"  class="puntbut blue" >{{punt1}}</div>\n      </td>\n    </tr>\n    <tr>\n      <td>\n          <div [ngClass]="getTimerClass()">{{getTime(timeLeft)}}</div>\n          \n      </td>\n    </tr>\n  </table>\n\n\n<!--<ion-grid>\n\n  <ion-row>\n    <button ion-button (tap)="resetPunti()">Reset punti</button>\n    <button ion-button (press)="resetTimer()" (tap)="tapTimer()">{{timertext}}</button>\n    <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n   \n  </ion-row>\n\n  <ion-row>\n      <div class="timer">{{timeLeft}}</div>\n\n  </ion-row>\n\n<ion-row class="ionrow">\n    <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')"  ion-button full class="puntbut" color="danger">{{punt2}}</button></ion-col>\n  \n  <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n</ion-row>\n\n<ion-row class="ionrow">\n <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" ion-button full class="puntbut" color="primary">{{punt1}}</button></ion-col>\n \n <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n </ion-row>\n\n\n <ion-row>\n   <ion-col>\n   \n   </ion-col>\n </ion-row>\n\n </ion-grid>-->\n\n  <!--<section class="home-container">\n\n    <ion-row class="first-row">\n      <ion-col>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="second-row">\n      <ion-col class="redbutton">\n          {{punt2}}\n      </ion-col>\n\n    </ion-row>\n    <ion-row class="third-row">\n      <ion-col class="bluebutton">\n       {{punt1}}\n      </ion-col>\n    </ion-row>\n  </section>-->\n\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _f || Object])
+], ScorekeeperPage);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=scorekeeper.js.map
+
+/***/ }),
+
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2239,7 +2520,7 @@ AccountPage = __decorate([
 
 /***/ }),
 
-/***/ 155:
+/***/ 156:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2247,7 +2528,7 @@ AccountPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_facebook__ = __webpack_require__(560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
@@ -2364,15 +2645,15 @@ AboutPage = __decorate([
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServizisocietaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(559);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_products_products__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_orders_orders__ = __webpack_require__(564);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_backend_backend__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2445,7 +2726,7 @@ ServizisocietaPage = __decorate([
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -2458,16 +2739,16 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 166;
+webpackEmptyAsyncContext.id = 167;
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/iscritti/iscritti.module": [
-		767,
+		768,
 		0
 	]
 };
@@ -2482,12 +2763,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 208;
+webpackAsyncContext.id = 209;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 27:
+/***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2497,7 +2778,7 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(646);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(648);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__ = __webpack_require__(111);
@@ -2612,6 +2893,16 @@ var SocketService = (function () {
             console.log("socket realtime received !!", data);
             questo.renderVoice(data);
             questo.events.publish('realtime', data, Date.now());
+        });
+        this.socket.on("scoreboard", function (data) {
+            console.log("socket scoreboard received !!", data);
+            //questo.renderVoice(data);
+            questo.events.publish('scoreboard', data);
+        });
+        this.socket.on("scoreboards", function (data) {
+            console.log("socket scoreboards received !!", data);
+            //questo.renderVoice(data);
+            questo.events.publish('scoreboards', data);
         });
         this.socket.on("realtimematches", function (rtmatches) {
             console.log("socket realtimematches received !!", rtmatches);
@@ -2944,18 +3235,18 @@ SocketService = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatfoto_chatfoto__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__ = __webpack_require__(524);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chatfoto_chatfoto__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_social_sharing__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_media__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_streaming_media__ = __webpack_require__(113);
@@ -4466,7 +4757,7 @@ UtilsProvider = __decorate([
 
 /***/ }),
 
-/***/ 506:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4474,8 +4765,8 @@ UtilsProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_tabs_tabs__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_tabs_tabs__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(565);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(3);
@@ -4709,7 +5000,7 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 518:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4718,7 +5009,7 @@ LoginPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_gara_gara__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editgara_editgara__ = __webpack_require__(550);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editgara_editgara__ = __webpack_require__(551);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tournament_tournament__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5030,7 +5321,7 @@ GarePage = __decorate([
 
 /***/ }),
 
-/***/ 519:
+/***/ 520:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5038,9 +5329,9 @@ GarePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_matchconsole_matchconsole__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_addmatches_addmatches__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_addmatches_addmatches__ = __webpack_require__(528);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5680,7 +5971,7 @@ MatchesforatletaPage = __decorate([
 
 /***/ }),
 
-/***/ 520:
+/***/ 521:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5688,7 +5979,7 @@ MatchesforatletaPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6226,7 +6517,7 @@ MatchconsolePage = __decorate([
 
 /***/ }),
 
-/***/ 521:
+/***/ 522:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6341,7 +6632,7 @@ ChatfotoPage = __decorate([
 
 /***/ }),
 
-/***/ 522:
+/***/ 523:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6424,7 +6715,7 @@ ChatlistPage = __decorate([
 
 /***/ }),
 
-/***/ 523:
+/***/ 524:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6480,7 +6771,7 @@ PopoverPage = __decorate([
 
 /***/ }),
 
-/***/ 527:
+/***/ 528:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6549,14 +6840,14 @@ AddmatchesPage = __decorate([
 
 /***/ }),
 
-/***/ 528:
+/***/ 529:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6610,7 +6901,7 @@ MapPage = __decorate([
 
 /***/ }),
 
-/***/ 529:
+/***/ 530:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7218,7 +7509,7 @@ BroadcastPage = __decorate([
 
 /***/ }),
 
-/***/ 530:
+/***/ 531:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7318,7 +7609,7 @@ FiltersPage = __decorate([
 
 /***/ }),
 
-/***/ 531:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7480,7 +7771,7 @@ TkdtlivePage = __decorate([
 
 /***/ }),
 
-/***/ 532:
+/***/ 533:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7958,7 +8249,7 @@ MedagliereglobalePage = __decorate([
 
 /***/ }),
 
-/***/ 550:
+/***/ 551:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8444,7 +8735,536 @@ EditgaraPage = __decorate([
 
 /***/ }),
 
-/***/ 551:
+/***/ 552:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatchconsolerrPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the MatchconsolePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var MatchconsolerrPage = (function () {
+    function MatchconsolerrPage(loadingCtrl, socket, events, toastCtrl, alertCtrl, backend, navCtrl, navParams) {
+        this.loadingCtrl = loadingCtrl;
+        this.socket = socket;
+        this.events = events;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.backend = backend;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.consoles = [];
+        this.selectedMatchId = "";
+        this.selectedMatch = {};
+        this.selectedConsole = {};
+        this.selectedAvversari = {};
+        this.selConsoleIndex = -1;
+        this.disabledcontrols = false;
+        var questo = this;
+    }
+    MatchconsolerrPage.prototype.ionViewDidLoad = function () {
+        this.backend.setBackButtonAction(this.navBar, this.navCtrl);
+        this.backend.setupNavbarBack(this.navBar, this.navCtrl);
+    };
+    MatchconsolerrPage.prototype.ionViewWillLoad = function () {
+        var questo = this;
+        /*questo.events.subscribe("updategara",function(msg,time){
+          console.log("refreshgara in matchconsole.ts !!");
+          //questo.disabledcontrols=false;
+          //questo.refresh(function(){
+            //questo.backend.syncConsoles(questo.gara.matchesbyprog);
+            //questo.events.publish("updatematchesforatleta",questo.gara.matchesbyprog);
+          //});
+        })*/
+        var match = this.navParams.get("match");
+        var avversari = this.navParams.get("avversari");
+        var id = match.id;
+        this.selectedMatchId = id;
+        this.selectedMatch = match;
+        //this.selectedMatch.avversari = avversari;
+        this.backend.removeConsolesIfNotRealtime();
+        this.backend.addConsoleIfNotExists(this.selectedMatch);
+        this.consoles = this.backend.matchconsoles;
+        this.consoles.forEach(function (item, idx) {
+            if (item.match.id == questo.selectedMatchId) {
+                questo.selectedConsole = item;
+                if (avversari.length > 0)
+                    questo.selectedConsole.avversari = avversari;
+                questo.selConsoleIndex = idx;
+            }
+        });
+        //this.selectedMatchId=this.selectedMatch.id;
+        if (this.selectedMatch.hasOwnProperty("avversario")) {
+            if (this.selectedMatch.avversario.trim() != "")
+                this.selectedConsole.avversario = this.selectedMatch.avversario;
+        }
+        console.log('ionViewDidLoad MatchconsolePage, selectedconsole', questo.selectedConsole);
+    };
+    MatchconsolerrPage.prototype.tapSegment = function (c, i) {
+        this.selectedMatchId = c.match.id;
+        this.selectedMatch = c.match;
+        this.selectedConsole = c;
+        this.selConsoleIndex = i;
+        console.log("tapSegment", c);
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.ionViewWillLeave = function () {
+        console.log("Looks like I'm about to leave :(");
+        //this.events.unsubscribe("updategara");
+        this.events.unsubscribe("hwbackbutton");
+    };
+    MatchconsolerrPage.prototype.ionViewWillEnter = function () {
+        var questo = this;
+        this.events.subscribe("hwbackbutton", function (data) {
+            console.log("hwbackbutton in gare.ts");
+            questo.navCtrl.pop();
+        });
+    };
+    MatchconsolerrPage.prototype.isRealTime = function (c) {
+        var isrt = false;
+        if (c.hasOwnProperty("realtime")) {
+            if (String(c.realtime) == "true") {
+                isrt = true;
+            }
+        }
+        return isrt;
+    };
+    MatchconsolerrPage.prototype.toggleTempoReale = function () {
+        var questo = this;
+        console.log("toggletemporeale", this.selectedConsole);
+        if (true)
+            return;
+        questo.backend.playFeedback();
+        //alert(this.selectedConsole.match.matchord);
+        var active = true;
+        var url = this.backend.rooturl + "/matches/updaterr/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
+        var newvalue = "true";
+        var newtesto = "attivato";
+        if (String(this.selectedConsole.match.realtime) == "true") {
+            newvalue = "false";
+            newtesto = "disattivato";
+            active = false;
+        }
+        var matchord = "";
+        if (questo.selectedConsole.match.hasOwnProperty("matchord")) {
+            if (questo.selectedConsole.match.matchord.trim() != "") {
+                matchord = questo.selectedConsole.match.matchord;
+            }
+        }
+        console.log("MATCHORD", matchord);
+        var action = "realtime_off";
+        if (active)
+            action = "realtime_on";
+        console.log("sending admin_action", action);
+        //alert(action);
+        var testo = "disattivato";
+        if (active)
+            testo = "attivato";
+        var doc = {
+            realtime: active,
+            admin_action: action
+        };
+        if (active) {
+            if (matchord.trim() != "") {
+                doc.matchord = matchord;
+            }
+            console.log("selectedconsole", questo.selectedConsole);
+            if (questo.selectedConsole.hasOwnProperty("avversario")) {
+                //if (questo.selectedConsole.avversario.trim() != "") doc.avversario = questo.selectedConsole.avversario;
+                doc.avversario = questo.selectedConsole.avversario;
+            }
+        }
+        //sendRealtime(true);
+        questo.disabledcontrols = true;
+        console.log("posting doc", doc);
+        questo.backend.postData(url, doc, function (data) {
+            console.log("data", data);
+            var toast = questo.toastCtrl.create({
+                message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
+                duration: 3000,
+                position: 'top'
+            });
+            toast.onDidDismiss(function () {
+                console.log('Dismissed toast');
+                questo.disabledcontrols = false;
+            });
+            toast.present();
+        });
+        if (true)
+            return;
+    };
+    MatchconsolerrPage.prototype.tapPlus = function (t) {
+        var questo = this;
+        var result = this.selectedConsole.result;
+        var p1 = parseInt(result.split("-")[0]);
+        var p2 = parseInt(result.split("-")[1]);
+        var arr = t.split("_");
+        var oper = arr[0];
+        var side = arr[1];
+        if (oper == 'plus') {
+            if (side == '1') {
+                p1++;
+            }
+            if (side == '2') {
+                p2++;
+            }
+        }
+        if (oper == 'minus') {
+            if (side == '1') {
+                p1--;
+                if (p1 < 0)
+                    p1 = 0;
+            }
+            if (side == '2') {
+                p2--;
+                if (p2 < 0)
+                    p2 = 0;
+            }
+        }
+        result = p1 + "-" + p2;
+        this.selectedConsole.result = result;
+        questo.sendRealtime();
+        questo.backend.playFeedback();
+        //prepare text
+    };
+    MatchconsolerrPage.prototype.sendRealtime = function () {
+        var questo = this;
+        var text = "TEMPO REALE !<br> ";
+        var color = "black";
+        var mtext = "in pausa";
+        if (questo.selectedConsole.running) {
+            mtext = "IN CORSO";
+            color = "blue";
+        }
+        if (questo.selectedConsole.fineround) {
+            mtext = "FINE ROUND " + questo.selectedConsole.round;
+            color = "black";
+        }
+        var rtext = "<font color='" + color + "'>Round " + questo.selectedConsole.round;
+        if (questo.selectedConsole.round == "GP")
+            rtext = "<font color='" + color + "'>GoldenPoint";
+        text += " " + rtext;
+        text += ", " + mtext;
+        text += ", " + questo.selectedConsole.result + "</font>";
+        /*
+
+        if (rta) {
+            if (rta.foto) {
+
+                text += "<br><img style='float: left' src='" + rta.foto + "' width='60px' height='60px' />";
+
+            }
+    }
+    */
+        //addMatchToRealtime(selectedid);
+        color = "black";
+        if (questo.selectedConsole.active)
+            color = "blue";
+        var htext = "<span style='color: " + color + "'>" + text + "</span>";
+        //
+        var rdata = {
+            type: "realtime",
+            to: "all",
+            garaid: questo.selectedConsole.match.garaid,
+            //matchid: selectedid,
+            matchid: questo.selectedConsole.match.id,
+            //matchnumber: selectedmatchid,
+            matchnumber: questo.selectedConsole.match.matchid,
+            result: questo.selectedConsole.result,
+            round: questo.selectedConsole.round,
+            fineround: questo.selectedConsole.fineround,
+            running: questo.selectedConsole.running,
+            paused: questo.selectedConsole.paused,
+            ammoniz1: 0,
+            ammoniz2: 0,
+            event: "realtime",
+            text: text,
+            //match: getMatchById(selectedid),
+            match: questo.selectedConsole.match,
+            active: true //questo.selectedConsole.active
+        };
+        if (questo.selectedConsole.hasOwnProperty("avversario")) {
+            if (questo.selectedConsole.avversario.trim() != "")
+                rdata.avversario = questo.selectedConsole.avversario;
+        }
+        if (questo.selectedConsole.match.realtime) {
+            console.log("è in realtime !!");
+            if (String(questo.selectedConsole.match.realtime) == "true")
+                questo.socket.sendMessage(rdata);
+        }
+    };
+    MatchconsolerrPage.prototype.tapRound = function (n) {
+        this.selectedConsole.round = n;
+        this.selectedConsole.paused = false;
+        this.selectedConsole.running = true;
+        this.selectedConsole.fineround = false;
+        this.selectedConsole.goldenpoint = false;
+        if (this.selectedConsole.round == "GP")
+            this.selectedConsole.goldenpoint = true;
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.tapFineround = function () {
+        this.selectedConsole.fineround = true;
+        this.selectedConsole.paused = true;
+        this.selectedConsole.running = false;
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.getPauseText = function () {
+        var text = "IN CORSO";
+        if (this.selectedConsole.paused) {
+            text = "IN PAUSA";
+        }
+        return text;
+    };
+    MatchconsolerrPage.prototype.tapPause = function () {
+        if (!this.selectedConsole.fineround) {
+            this.selectedConsole.paused = !this.selectedConsole.paused;
+            this.selectedConsole.running = !this.selectedConsole.running;
+        }
+        this.sendRealtime();
+        this.backend.playFeedback();
+    };
+    MatchconsolerrPage.prototype.getTemporealeText = function () {
+        var text = "TEMPO REALE: NON ATTIVO";
+        if (this.selectedConsole.match.realtime) {
+            if (String(this.selectedConsole.match.realtime) == "true") {
+                text = "TEMPO REALE: ATTIVO !";
+            }
+        }
+        return text;
+    };
+    MatchconsolerrPage.prototype.setResult = function () {
+        this.backend.playFeedback();
+        console.log("setResult");
+        var questo = this;
+        var ris = questo.selectedConsole.result;
+        var risarr = ris.split("-");
+        if (ris.trim() != "0-0") {
+            if (risarr[0] == risarr[1]) {
+                var alrtx = questo.alertCtrl.create({
+                    title: 'ATTENZIONE',
+                    subTitle: 'Il risultato indicato indica un pareggio, incrementa uno dei due punteggi per indicare una vittoria o una sconfitta',
+                    buttons: ['Chiudi']
+                });
+                alrtx.present();
+                return;
+            }
+        }
+        var msg = "Vuoi davvero convalidare il risultato di questo incontro (" + ris + ") ?";
+        var gsmsg = "";
+        if (questo.selectedConsole.goldenpoint)
+            gsmsg = "(risultato conseguito dopo GoldenPoint)";
+        if (questo.selectedConsole.squalifica)
+            gsmsg = "(verrà registrata la sconfitta per squalifica)";
+        msg += gsmsg;
+        var title = "Conferma risultato " + ris;
+        if ((ris.trim() == "0-0") || (ris.trim() == "")) {
+            msg = "ATTENZIONE ! Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
+            title = "Conferma reset match";
+        }
+        var alrt = questo.alertCtrl.create({
+            title: title,
+            message: msg,
+            buttons: [
+                {
+                    text: 'Annulla',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                        questo.backend.playFeedback();
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: function () {
+                        questo.backend.playFeedback();
+                        var match = questo.selectedConsole.match;
+                        var goldenpoint = false;
+                        if (questo.selectedConsole.round.toLowerCase() == "gp")
+                            goldenpoint = true;
+                        if (questo.selectedConsole.goldenpoint)
+                            goldenpoint = true;
+                        match.goldenpoint = goldenpoint;
+                        match.risultato = questo.selectedConsole.result;
+                        if (match.hasOwnProperty("avversari")) {
+                            delete match.avversari;
+                        }
+                        //alert(questo.selectedConsole.squalifica);
+                        match.squalifica = questo.selectedConsole.squalifica;
+                        var atl = questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
+                        var mfa = questo.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id });
+                        questo.backend.setResult(match, atl, mfa, function (data) {
+                            console.log("setted result !!", data);
+                            setTimeout(function () {
+                                questo.navCtrl.pop();
+                            }, 2000);
+                        });
+                        console.log('Buy clicked');
+                    }
+                }
+            ]
+        });
+        alrt.present();
+    };
+    MatchconsolerrPage.prototype.gotoChat = function () {
+        this.backend.playFeedback();
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__["a" /* ChatPage */]);
+    };
+    MatchconsolerrPage.prototype.showMatchOrd = function (m) {
+        var retvalue = false;
+        if (m.hasOwnProperty("matchord")) {
+            if (m.matchord.trim() != "") {
+                retvalue = true;
+            }
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.hasAvversari = function () {
+        var questo = this;
+        var retvalue = false;
+        if (questo.selectedConsole.hasOwnProperty("avversari")) {
+            if (questo.selectedConsole.avversari.length > 0)
+                retvalue = true;
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.hasAvversario = function (m) {
+        var retvalue = false;
+        if (m.hasOwnProperty("avversario")) {
+            if (m.avversario.trim() != "")
+                retvalue = true;
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.getAvversario = function (m) {
+        var retvalue = {
+            nome: "",
+            societa: ""
+        };
+        if (m.hasOwnProperty("avversario")) {
+            retvalue.nome = m.avversario.split("|")[0];
+            retvalue.societa = m.avversario.split("|")[1];
+        }
+        return retvalue;
+    };
+    MatchconsolerrPage.prototype.selectAvversario = function (c) {
+        var _this = this;
+        var questo = this;
+        if (c.avversari.length == 0)
+            return;
+        var inputs = [];
+        var ndchecked = true;
+        var m = c.match;
+        if (m.hasOwnProperty("avversario")) {
+            if (m.avversario.trim() != "") {
+                ndchecked = false;
+            }
+        }
+        inputs.push({ type: 'radio', label: 'Non definito', value: '', checked: ndchecked });
+        c.avversari.forEach(function (item, idx) {
+            console.log("avversario", item);
+            var lblnome = item.nome;
+            var lblval = item.nome + "|" + item.societa;
+            var checked = false;
+            if (m.hasOwnProperty("avversario")) {
+                if (m.avversario.trim() != "") {
+                    var avv = m.avversario.split("|");
+                    //console.log("avv",avv,"item",item);
+                    if (avv[0].toLowerCase() == item.nome.toLowerCase())
+                        checked = true;
+                }
+            }
+            inputs.push({ type: 'radio', label: lblnome, value: lblval, checked: checked });
+        });
+        var alrt = questo.alertCtrl.create({
+            title: 'Seleziona avversario',
+            inputs: inputs,
+            buttons: [
+                {
+                    text: 'Annulla',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: function (data) {
+                        console.log("OK", data);
+                        if (data) {
+                            console.log("data cè");
+                            m.avversario = data;
+                            questo.selectedConsole.avversario = data;
+                            console.log("selectedConsole", questo.selectedConsole.avversario);
+                        }
+                        else {
+                            console.log("data non cè");
+                            m.avversario = "";
+                            questo.selectedConsole.avversario = "";
+                            //delete questo.selectedConsole.avversario;
+                        }
+                        if (questo.selectedConsole.active)
+                            questo.sendRealtime();
+                        var loading = _this.loadingCtrl.create({
+                            spinner: 'dots',
+                            content: 'Aggiornamento avversario...'
+                        });
+                        loading.onDidDismiss(function () {
+                            console.log('Dismissed loading');
+                        });
+                        loading.present();
+                        questo.backend.setAvversario(m.garaid, m.id, questo.selectedConsole.avversario, function (data) {
+                            console.log("setAvversario done", data);
+                            loading.dismiss();
+                        });
+                    }
+                }
+            ]
+        });
+        alrt.present();
+    };
+    return MatchconsolerrPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
+], MatchconsolerrPage.prototype, "navBar", void 0);
+MatchconsolerrPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-matchconsolerr',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/'<!--\n  Generated template for the MatchconsolePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match console</ion-title>\n     <ion-buttons end>\n     \n<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>\n\n</button>-->\n</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="selectedMatchId" >\n      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? \'ssecondary\': \'sdark\'">\n        <span [ngClass]="(c.match.realtime==\'false\') || (c.match.realtime==false) ? \'tabnorealtime\': \'\'">{{c.match.matchid}} {{c.match.atletaname}}</span>\n      </ion-segment-button>\n      \n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> \n <div class="consoleinfo" style="font-size: 13px; font-style: italic; height: 25px;" *ngIf="showMatchOrd(selectedConsole.match)">{{selectedConsole.match.matchord}}</div>\n <div class="avvinfo"  *ngIf="selectedConsole.avversario">{{selectedConsole.avversario.split(\'|\')[0]}}<br>{{selectedConsole.avversario.split(\'|\')[1]}}</div>\n <ion-row>\n   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ? \'realtimebut\' : \'norealtimebut\'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>\n   </ion-col>\n </ion-row>\n  <br>\n  <div *ngIf="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ">\n  <ion-row>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? \'incorso\' : \'\'">{{getPauseText()}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? \'roundactive\' : \'\'">FINEROUND</button>\n    </ion-col>\n\n  </ion-row>\n  <ion-row>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'1\')" color="light" [ngClass]="(selectedConsole.round==\'1\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'1\' ? \'roundactive\' : \'\'">1</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'2\')" color="light" [ngClass]="(selectedConsole.round==\'2\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'2\' ? \'roundactive\' : \'\'">2</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'3\')" color="light" [ngClass]="(selectedConsole.round==\'3\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'3\' ? \'roundactive\' : \'\'">3</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'GP\')" color="light" [ngClass]="(selectedConsole.round==\'GP\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'GP\' ? \'roundactive\' : \'\'">GP</button></ion-col>\n  </ion-row>\n  </div>\n  <br>\n  <ion-row>\n    <ion-col col-4>{{selectedConsole.match.player1.cognome}} {{selectedConsole.match.player1.nome}} </ion-col>\n    <ion-col></ion-col>\n    <ion-col col-4>{{selectedConsole.match.player2.cognome}} {{selectedConsole.match.player2.nome}}</ion-col>\n  </ion-row>\n  <ion-row>\n    \n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_1\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_1\')">-</button></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><ion-input readonly [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_2\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_2\')">-</button></ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col col-12>\n      <div style="font-size: 12px; padding: 4px; text-align: center">\n      \n    </div>\n    </ion-col>\n  </ion-row>\n  <br>\n  <div class="checkboxes">\n  <ion-item>\n      <ion-label>GoldenPoint (il punteggio indica il vincitore)</ion-label>\n      <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n        <ion-label>Sconfitta per squalifica</ion-label>\n        <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>\n      </ion-item>\n    </div>\n\n\n  <br>\n  <div *ngIf="hasAvversari()"><!--*ngIf="selectedConsole.match.avversari.length>0"-->\n  <button ion-button color="light"  small block (tap)="selectAvversario(selectedConsole)">Seleziona avversario</button>\n  <br>\n</div>\n\n  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  \n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+], MatchconsolerrPage);
+
+//# sourceMappingURL=matchconsolerr.js.map
+
+/***/ }),
+
+/***/ 553:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8452,8 +9272,8 @@ EditgaraPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__ = __webpack_require__(552);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_atleta_atleta__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_editatleta_editatleta__ = __webpack_require__(556);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8720,7 +9540,7 @@ AtletiPage = __decorate([
 
 /***/ }),
 
-/***/ 552:
+/***/ 554:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8728,7 +9548,7 @@ AtletiPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_google_google__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_google_google__ = __webpack_require__(555);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8794,13 +9614,13 @@ AtletaPage = __decorate([
 
 /***/ }),
 
-/***/ 553:
+/***/ 555:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleDriveProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8871,7 +9691,7 @@ GoogleDriveProvider = __decorate([
 
 /***/ }),
 
-/***/ 554:
+/***/ 556:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8971,7 +9791,7 @@ EditatletaPage = __decorate([
 
 /***/ }),
 
-/***/ 555:
+/***/ 557:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9103,7 +9923,7 @@ EventiPage = __decorate([
 
 /***/ }),
 
-/***/ 556:
+/***/ 558:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9182,7 +10002,7 @@ SocietaPage = __decorate([
 
 /***/ }),
 
-/***/ 557:
+/***/ 559:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9393,13 +10213,148 @@ StatsPage = __decorate([
 
 /***/ }),
 
-/***/ 558:
+/***/ 56:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*import { ContactPage } from '../contact/contact';
+import { ContactsPage } from '../contacts/contacts';
+import { TwitterPage } from '../twitter/twitter';
+import { BpPage } from '../bp/bp';
+import { PartnerworldPage } from '../partnerworld/partnerworld';
+import { LinkedinPage } from '../linkedin/linkedin';*/
+
+
+//import { ScrollableTabs } from '../../components/scrollable-tabs/scrollable-tabs';
+var TabsPage = (function () {
+    function TabsPage(menuCtrl, navCtrl, backend, socket, events, nav, platform) {
+        var _this = this;
+        this.menuCtrl = menuCtrl;
+        this.navCtrl = navCtrl;
+        this.backend = backend;
+        this.socket = socket;
+        this.events = events;
+        this.nav = nav;
+        this.platform = platform;
+        this.homepage = __WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */];
+        this.chatpage = __WEBPACK_IMPORTED_MODULE_3__chat_chat__["a" /* ChatPage */];
+        this.unread = this.socket.totalunreadcount;
+        this.activeTab = 0;
+        this.realtimeEvents = false;
+        this.showrtbutton = false;
+        var questo = this;
+        //this.socket.socketService.subscribe(event => {
+        events.subscribe("switchtocontacts", function (t) {
+            questo.activeTab = 2;
+        });
+        events.subscribe('updatetotalunreadcount', function (msg, time) {
+            console.log('message updatetotalunreadcount received from server in tab.ts... ');
+            console.log("habemus messaggio in tabs.ts");
+            var unr = _this.socket.getAllUnreadMessages().length;
+            _this.unread = _this.socket.totalunreadcount;
+            //this.unread = unr;
+            //this.unread
+        });
+        events.subscribe('realtimematches', function (rtmatches) {
+            console.log("realtimematches event", rtmatches);
+            if (rtmatches.matches.length > 0) {
+                questo.realtimeEvents = true;
+                questo.showrtbutton = true;
+            }
+            else {
+                questo.realtimeEvents = false;
+                questo.showrtbutton = false;
+            }
+            //this.isChatPage = false;
+        });
+        events.subscribe("updategara", function (msg, time) {
+            console.log("refreshgara in tabs.ts !!");
+            questo.backend.getRtMatches(function (data) {
+                if (data.length > 0) {
+                    questo.realtimeEvents = true;
+                    questo.showrtbutton = true;
+                }
+                else {
+                    questo.realtimeEvents = false;
+                    questo.showrtbutton = false;
+                }
+            });
+        });
+        questo.backend.getRtMatches(function (data) {
+            console.log("got rtmatches in tabs.ts", data);
+            if (data.length > 0) {
+                questo.realtimeEvents = true;
+            }
+            else {
+                questo.realtimeEvents = false;
+            }
+        });
+    }
+    TabsPage.prototype.setUnread = function (n) {
+        this.unread = n;
+    };
+    TabsPage.prototype.ionViewWillEnter = function () {
+        var questo = this;
+        console.log("entering tabs.ts");
+        this.menuCtrl.enable(true);
+        //questo.backend.setBackButtonAction(questo.navBar, questo.nav);
+    };
+    TabsPage.prototype.tappedTab = function () {
+        //console.log("tappedTab");
+        this.backend.playFeedback();
+    };
+    TabsPage.prototype.gotoChat = function () {
+        console.log("gotochat");
+        var questo = this;
+        questo.mytabs.select(1);
+    };
+    return TabsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
+], TabsPage.prototype, "navBar", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mytabs"),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* Tabs */])
+], TabsPage.prototype, "mytabs", void 0);
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tabs/tabs.html"*/'<ion-tabs #mytabs   (tap)="tappedTab()" [selectedIndex]="activeTab" tabsPlacement="bottom"   >\n  <ion-tab [root]="homepage" tabTitle="AppKwonDo" tabIcon="home"></ion-tab>\n  <!--<ion-tab [root]="partnerworld" tabTitle="PartnerWorld" tabIcon="md-globe" ></ion-tab>\n  <ion-tab [root]="linkedin" tabTitle="LinkedIn" tabIcon="logo-linkedin" ></ion-tab>-->\n  <!--<ion-tab tabBadge="{{backend.unread>0 ? backend.unread : \'\'}}" tabBadgeStyle="{{backend.unread>0 ? \'danger\' : \'\'}}"  [root]="chatvspage" tabTitle="ChatVSKwonDo" tabIcon="md-chatboxes" ></ion-tab>-->\n  <ion-tab tabBadge="{{backend.unread>0 ? backend.unread : \'\'}}" tabBadgeStyle="{{backend.unread>0 ? \'danger\' : \'\'}}"  [root]="chatpage" tabTitle="ChatKwonDo" tabIcon="md-chatboxes" ></ion-tab>\n<!-- <ion-tab [root]="bppage" tabTitle="BP" tabIcon="md-contacts"></ion-tab>\n\n  <ion-tab [root]="twitter" tabTitle="Twitter" tabIcon="logo-twitter" ></ion-tab>\n  <ion-tab [root]="contacts" tabTitle="Contacts" tabIcon="md-chatboxes" ></ion-tab>\n <!-- <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Logout" tabIcon="ios-exit-outline"></ion-tab>-->\n</ion-tabs>\n\n<!--\n<ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">\n    <button color="primary" ion-fab style="font-size: 11px; background: transparent;"><img src="assets/img/greenblink.gif"/></button>\n  </ion-fab>\n-->\n\n  <img *ngIf="realtimeEvents"  (tap)="gotoChat()" class="realtimeimg" src="assets/img/greenblink.gif"/>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tabs/tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]])
+], TabsPage);
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_backend_backend__ = __webpack_require__(6);
@@ -9447,7 +10402,7 @@ FacebookProvider = __decorate([
 
 /***/ }),
 
-/***/ 559:
+/***/ 561:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9456,8 +10411,8 @@ FacebookProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_utils__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(560);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cart_cart__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editproduct_editproduct__ = __webpack_require__(563);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9736,7 +10691,7 @@ ProductsPage = __decorate([
 
 /***/ }),
 
-/***/ 560:
+/***/ 562:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9916,7 +10871,7 @@ CartPage = __decorate([
 
 /***/ }),
 
-/***/ 561:
+/***/ 563:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10050,7 +11005,7 @@ EditproductPage = __decorate([
 
 /***/ }),
 
-/***/ 562:
+/***/ 564:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10244,7 +11199,7 @@ OrdersPage = __decorate([
 
 /***/ }),
 
-/***/ 563:
+/***/ 565:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10252,6 +11207,9 @@ OrdersPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs_tabs__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10261,6 +11219,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -10301,7 +11261,8 @@ var RegisterPage = (function () {
             if (!error) {
                 var text = "Grazie ! Registrazione completata ! Riceverai a breve una email all'indirizzo " + questo.registerCredentials.email + " con i dettagli per l'attivazione della tua userid su AppKwonDo";
                 alert(text);
-                questo.navCtrl.pop();
+                questo.login();
+                //questo.navCtrl.pop();
             }
             else {
                 alert(data.msg);
@@ -10324,6 +11285,96 @@ var RegisterPage = (function () {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     };
+    RegisterPage.prototype.login = function () {
+        var questo = this;
+        questo.backend.playFeedback();
+        //this.showLoading()
+        var logindata = this.registerCredentials;
+        if (this.backend.user.gcmtoken) {
+            if (this.backend.user.gcmtoken != "") {
+                logindata["gcmtoken"] = this.backend.user.gcmtoken;
+            }
+        }
+        this.backend.blueLogin(logindata, function (data) {
+            console.log("bluelogin result", data);
+            if (data.loggedin) {
+                if (String(data.loggedin) == "true") {
+                    console.log("navigating to homepage");
+                    questo.backend.getActiveChat(function (data) {
+                        console.log("chatmessages have been loaded");
+                        questo.backend.computeUnreadChats();
+                    });
+                    questo.backend.getGare(function (data) {
+                        console.log("gare caricate");
+                    });
+                    questo.backend.getAtleti(function (data) {
+                        console.log("atleti caricati");
+                    });
+                    questo.backend.getBroadcasts(function (data) {
+                        console.log("broadcastes caricati", data);
+                    });
+                    if (questo.backend.isCordovaIos()) {
+                        if (questo.hasPaidIos()) {
+                            console.log("L'utente " + questo.backend.user.email + " ha pagato per iOS, può continuare");
+                            questo.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__tabs_tabs__["a" /* TabsPage */]);
+                        }
+                        else {
+                            console.log("L'utente " + questo.backend.user.email + " NON ha pagato per iOS, bloccato");
+                            //questo.nav.push(IospaidPage);
+                            questo.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__tabs_tabs__["a" /* TabsPage */]);
+                        }
+                    }
+                    else
+                        questo.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__tabs_tabs__["a" /* TabsPage */]);
+                }
+                else {
+                    //alert("login error");
+                    console.log(data.error);
+                    questo.showError("Login error");
+                }
+            }
+            else {
+                alert("Login fallito, controlla i tuoi dati di accesso");
+            }
+        });
+    };
+    RegisterPage.prototype.hasPaidIos = function () {
+        var questo = this;
+        var retvalue = false;
+        var user = questo.backend.user;
+        if (user.hasOwnProperty("iospayment")) {
+            var iospayment = user.iospayment;
+            if (iospayment.hasOwnProperty("paid")) {
+                if (String(iospayment.paid) == "true") {
+                    if (iospayment.hasOwnProperty("expire")) {
+                        var expire = iospayment.expire;
+                        var date = __WEBPACK_IMPORTED_MODULE_3_moment__(expire, "YYYYMMDD");
+                        var now = __WEBPACK_IMPORTED_MODULE_3_moment__();
+                        if (now > date) {
+                            // date is past, SCADUTA !!!
+                        }
+                        else {
+                            // date is future, VALIDA
+                            retvalue = true;
+                        }
+                    }
+                    //retvalue = true;
+                }
+            }
+        }
+        return retvalue;
+    };
+    RegisterPage.prototype.showError = function (text) {
+        //this.loading.dismiss();
+        /*
+        let alrt = this.alertCtrl.create({
+          title: 'Login fallito',
+          subTitle: text,
+          buttons: ['OK']
+        });
+        alrt.present(prompt);
+        */
+    };
     return RegisterPage;
 }());
 RegisterPage = __decorate([
@@ -10337,7 +11388,7 @@ RegisterPage = __decorate([
 
 /***/ }),
 
-/***/ 564:
+/***/ 566:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10345,7 +11396,7 @@ RegisterPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_useredit_useredit__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_useredit_useredit__ = __webpack_require__(567);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10596,7 +11647,7 @@ UsersPage = __decorate([
 
 /***/ }),
 
-/***/ 565:
+/***/ 567:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10698,7 +11749,7 @@ UsereditPage = __decorate([
 
 /***/ }),
 
-/***/ 566:
+/***/ 568:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10706,7 +11757,7 @@ UsereditPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_sendpush_sendpush__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_sendpush_sendpush__ = __webpack_require__(569);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10802,7 +11853,7 @@ ConnectionsPage = __decorate([
 
 /***/ }),
 
-/***/ 567:
+/***/ 569:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10881,7 +11932,7 @@ SendpushPage = __decorate([
 
 /***/ }),
 
-/***/ 568:
+/***/ 570:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11492,7 +12543,7 @@ BroadcastviewPage = __decorate([
 
 /***/ }),
 
-/***/ 569:
+/***/ 571:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11567,14 +12618,15 @@ SettingsPage = __decorate([
 
 /***/ }),
 
-/***/ 570:
+/***/ 572:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScorekeeperPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoreboardsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11587,203 +12639,66 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the ScorekeeperPage page.
+ * Generated class for the ScoreboardsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ScorekeeperPage = (function () {
-    function ScorekeeperPage(alertCtrl, backend, navCtrl, navParams) {
-        this.alertCtrl = alertCtrl;
+var ScoreboardsPage = (function () {
+    function ScoreboardsPage(socket, events, backend, navCtrl, navParams) {
+        this.socket = socket;
+        this.events = events;
         this.backend = backend;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.punt1 = 0;
-        this.punt2 = 0;
-        this.timeLeft = 60;
-        this.maxTime = 60;
-        this.timertext = "AVVIO";
-        this.timerstarted = false;
-        this.timerpaused = false;
+        this.scoreboards = [];
     }
-    ScorekeeperPage.prototype.ionViewWillLeave = function () {
-        clearInterval(this.interval);
-    };
-    ScorekeeperPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ScorekeeperPage');
-        //this.startTimer();
-        this.timeLeft = this.maxTime;
-    };
-    ScorekeeperPage.prototype.increase = function (x) {
-        this[x]++;
-    };
-    ScorekeeperPage.prototype.decrease = function (x) {
-        this[x]--;
-    };
-    ScorekeeperPage.prototype.resetPunti = function () {
+    ScoreboardsPage.prototype.ionViewDidLoad = function () {
         var questo = this;
-        questo.backend.showConfirm("Vuoi davvero resettare il punteggio ?", function (yes) {
-            questo.punt1 = 0;
-            questo.punt2 = 0;
+        console.log('ionViewDidLoad ScoreboardsPage');
+        //questo.socket.sendCustomMessage("scoreboards",{});
+        /*questo.events.subscribe("scoreboards",function(data){
+          console.log("received scoreboards in scoreboards.ts")
+          questo.scoreboards=data.scoreboards
+        })*/
+        questo.events.subscribe("scoreboard", function (data) {
+            questo.refresh(function () { });
+        });
+        questo.refresh(function () { });
+    };
+    ScoreboardsPage.prototype.refresh = function (callback) {
+        var questo = this;
+        questo.backend.getScoreboards(function (data) {
+            questo.scoreboards = data;
+            callback();
         });
     };
-    ScorekeeperPage.prototype.tapTimer = function () {
-        if (!this.timerstarted) {
-            this.timertext = "PAUSA";
-            this.timerstarted = true;
-            this.timerpaused = false;
-            this.startTimer();
-            return;
-        }
-        if (this.timerstarted) {
-            this.timerpaused = !this.timerpaused;
-            if (this.timerpaused) {
-                this.timertext = "RIAVVIO";
-            }
-            else
-                this.timertext = "PAUSA";
-        }
+    ScoreboardsPage.prototype.ionViewDidLeave = function () {
+        this.events.unsubscribe("scoreboard");
     };
-    ScorekeeperPage.prototype.startTimer = function () {
-        var questo = this;
-        questo.interval = setInterval(function () {
-            if (questo.timeLeft > 0) {
-                if (!questo.timerpaused) {
-                    questo.backend.playSoundDespiteAppSettings("img/tick");
-                    questo.timeLeft--;
-                    questo.timerstarted = true;
-                    questo.timertext = "PAUSA";
-                    if (questo.timeLeft == 0) {
-                        questo.backend.playSoundDespiteAppSettings("img/endfight");
-                        questo.timerstarted = false;
-                        questo.timerpaused = false;
-                        questo.timertext = "AVVIO";
-                        clearInterval(questo.interval);
-                    }
-                }
-            }
-            else {
-                /* clearInterval(questo.timer);
-                 questo.backend.playSoundDespiteAppSettings("img/endfight")
-                 questo.timeLeft = 0;
-                 questo.timerstarted = false;
-                 questo.timerpaused = false;
-                 questo.timertext = "AVVIO";*/
-            }
-        }, 1000);
-    };
-    ScorekeeperPage.prototype.stopTimer = function () {
-        clearInterval(this.interval);
-        this.timeLeft = this.maxTime;
-        this.timertext = "AVVIA";
-        this.timerstarted = false;
-        this.timerpaused = true;
-    };
-    ScorekeeperPage.prototype.pauseTimer = function () {
-        this.timerpaused = true;
-        this.timertext = "RIAVVIA";
-    };
-    ScorekeeperPage.prototype.resetTimer = function () {
-        var questo = this;
-        questo.backend.showConfirm("Vuoi resettare il timer ?", function (yes) {
-            if (yes) {
-                questo.timerpaused = true;
-                questo.timerstarted = false;
-                clearInterval(questo.interval);
-                questo.timeLeft = questo.maxTime;
-                questo.timertext = "AVVIO";
-            }
-        });
-    };
-    ScorekeeperPage.prototype.setupTimer = function () {
-        var questo = this;
-        var alert = questo.alertCtrl.create({
-            title: 'Imposta il tempo in secondi',
-            inputs: [
-                {
-                    name: 'seconds',
-                    placeholder: 'Secondi',
-                    value: questo.maxTime
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Annulla',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'IMPOSTA',
-                    handler: function (data) {
-                        questo.maxTime = data.seconds;
-                        questo.timeLeft = questo.maxTime;
-                        questo.stopTimer();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    ScorekeeperPage.prototype.getTime = function (t) {
-        var sec_num = parseInt(t, 10); // don't forget the second param
-        var hours = Math.floor(sec_num / 3600);
-        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-        var seconds = sec_num - (hours * 3600) - (minutes * 60);
-        var shours = String(hours);
-        var sminutes = String(minutes);
-        var sseconds = String(seconds);
-        if (hours < 10) {
-            shours = "0" + shours;
-        }
-        if (minutes < 10) {
-            sminutes = "0" + sminutes;
-        }
-        if (seconds < 10) {
-            sseconds = "0" + sseconds;
-        }
-        return sminutes + ':' + sseconds;
-    };
-    ScorekeeperPage.prototype.getTimerClass = function () {
-        var retvalue = 'timer';
-        if (this.timerstarted) {
-            if (this.timerpaused)
-                retvalue += " colorgray blink";
-        }
-        return retvalue;
-    };
-    ScorekeeperPage.prototype.getTimerButtonClass = function () {
-        var retvalue = "";
-        if (this.timerstarted) {
-            if (this.timerpaused)
-                retvalue = "backgray";
-            if (!this.timerpaused)
-                retvalue = "backorange";
-        }
-        return retvalue;
-    };
-    return ScorekeeperPage;
+    return ScoreboardsPage;
 }());
-ScorekeeperPage = __decorate([
+ScoreboardsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-scorekeeper',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/'<!--\n  Generated template for the ScorekeeperPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SCOREKWONDO</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content scroll="false" spadding>\n  <table border="1" height="100%" width="100%" cellpadding="2" cellpadding="2">\n    <tr height="10%">\n      <td> \n        <button ion-button (tap)="resetPunti()">Reset punti</button>\n        <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()" (tap)="tapTimer()">{{timertext}}</button>\n        <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n      <td>\n          <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut red">{{punt2}}</div>\n      </td>\n    </tr>\n    <tr height="25%"  class="buttr">\n      <td>\n          <div  (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')"  class="puntbut blue" >{{punt1}}</div>\n      </td>\n    </tr>\n    <tr>\n      <td>\n          <div [ngClass]="getTimerClass()">{{getTime(timeLeft)}}</div>\n          \n      </td>\n    </tr>\n  </table>\n\n\n<!--<ion-grid>\n\n  <ion-row>\n    <button ion-button (tap)="resetPunti()">Reset punti</button>\n    <button ion-button (press)="resetTimer()" (tap)="tapTimer()">{{timertext}}</button>\n    <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n   \n  </ion-row>\n\n  <ion-row>\n      <div class="timer">{{timeLeft}}</div>\n\n  </ion-row>\n\n<ion-row class="ionrow">\n    <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')"  ion-button full class="puntbut" color="danger">{{punt2}}</button></ion-col>\n  \n  <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n</ion-row>\n\n<ion-row class="ionrow">\n <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" ion-button full class="puntbut" color="primary">{{punt1}}</button></ion-col>\n \n <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n </ion-row>\n\n\n <ion-row>\n   <ion-col>\n   \n   </ion-col>\n </ion-row>\n\n </ion-grid>-->\n\n  <!--<section class="home-container">\n\n    <ion-row class="first-row">\n      <ion-col>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="second-row">\n      <ion-col class="redbutton">\n          {{punt2}}\n      </ion-col>\n\n    </ion-row>\n    <ion-row class="third-row">\n      <ion-col class="bluebutton">\n       {{punt1}}\n      </ion-col>\n    </ion-row>\n  </section>-->\n\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/,
+        selector: 'page-scoreboards',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/'<!--\n  Generated template for the ScoreboardsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>scoreboards</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item *ngFor="let s of scoreboards">\n      <ion-row class="riga">\n        <ion-col col-6>{{s.player1.cognome+\' \'+s.player1.nome}} - {{s.player2.cognome+\' \'+s.player2.nome}}</ion-col>\n        <ion-col col-4>{{s.punt1}}-{{s.punt2}}</ion-col>\n        <ion-col col-2>{{s.timeleft}}</ion-col>\n      </ion-row>\n\n   \n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
-], ScorekeeperPage);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
+], ScoreboardsPage);
 
-//# sourceMappingURL=scorekeeper.js.map
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=scoreboards.js.map
 
 /***/ }),
 
-/***/ 573:
+/***/ 575:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(574);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(576);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(594);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 
 
@@ -11795,106 +12710,108 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 592:
+/***/ 594:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(643);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(645);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_about_about__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__ = __webpack_require__(742);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_chat__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__ = __webpack_require__(567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chatpopover_chatpopover__ = __webpack_require__(741);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_popover_popover__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_chatfoto_chatfoto__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_chatlist_chatlist__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chatpopover_chatpopover__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_popover_popover__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_chatfoto_chatfoto__ = __webpack_require__(522);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_twitter_twitter__ = __webpack_require__(742);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_partnerworld_partnerworld__ = __webpack_require__(743);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_linkedin_linkedin__ = __webpack_require__(744);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_contacts_contacts__ = __webpack_require__(745);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_browser_browser__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_twitter_twitter__ = __webpack_require__(744);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_partnerworld_partnerworld__ = __webpack_require__(745);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_linkedin_linkedin__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_contacts_contacts__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_browser_browser__ = __webpack_require__(748);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_tournament_tournament__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_settings_settings__ = __webpack_require__(569);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_account_account__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_bp_bp__ = __webpack_require__(747);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_gare_gare__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_settings_settings__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_account_account__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_bp_bp__ = __webpack_require__(749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_gare_gare__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_gara_gara__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_editgara_editgara__ = __webpack_require__(550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_atleti_atleti__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_atleta_atleta__ = __webpack_require__(552);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_matchconsole_matchconsole__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_matchconsolerr_matchconsolerr__ = __webpack_require__(748);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_eventi_eventi__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_societa_societa__ = __webpack_require__(556);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_iospaid_iospaid__ = __webpack_require__(749);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(532);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_map_map__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_register_register__ = __webpack_require__(563);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_users_users__ = __webpack_require__(564);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_connections_connections__ = __webpack_require__(566);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_products_products__ = __webpack_require__(559);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cart_cart__ = __webpack_require__(560);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_rtc_rtc__ = __webpack_require__(750);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_editproduct_editproduct__ = __webpack_require__(561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_editatleta_editatleta__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_orders_orders__ = __webpack_require__(562);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_addmatches_addmatches__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_useredit_useredit__ = __webpack_require__(565);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_broadcast_broadcast__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_broadcastview_broadcastview__ = __webpack_require__(568);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__ = __webpack_require__(531);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_fblive_fblive__ = __webpack_require__(751);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__ = __webpack_require__(570);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_section_section__ = __webpack_require__(752);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_socket_service_socket_service__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_google_google__ = __webpack_require__(553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(753);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_scrollable_segments_scrollable_segments__ = __webpack_require__(754);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__providers_utils_utils__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_badge__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_storage__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_app_availability__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_splash_screen__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_device_feedback__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__ionic_native_file__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__ionic_native_camera__ = __webpack_require__(524);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__ionic_native_transfer__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__ionic_native_social_sharing__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73_ionic_image_loader__ = __webpack_require__(755);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__ionic_native_local_notifications__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__ionic_native_text_to_speech__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__ionic_native_background_mode__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__providers_facebook_facebook__ = __webpack_require__(558);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__ionic_native_media__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__ionic_native_file_transfer__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__ionic_native_streaming_media__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_android_permissions__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__ionic_native_in_app_browser__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__ionic_native_facebook__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84_ng_elastic__ = __webpack_require__(758);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_84_ng_elastic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__ionic_native_unique_device_id__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__ionic_native_fcm__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_editgara_editgara__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_atleti_atleti__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_atleta_atleta__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_matchconsole_matchconsole__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_matchconsolerr_matchconsolerr__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_eventi_eventi__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_societa_societa__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_iospaid_iospaid__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_matchesforatleta_matchesforatleta__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_map_map__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_register_register__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_users_users__ = __webpack_require__(566);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_connections_connections__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_servizisocieta_servizisocieta__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_products_products__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cart_cart__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_rtc_rtc__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_editproduct_editproduct__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_editatleta_editatleta__ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_orders_orders__ = __webpack_require__(564);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_addmatches_addmatches__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_useredit_useredit__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_broadcast_broadcast__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_broadcastview_broadcastview__ = __webpack_require__(570);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_fblive_fblive__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_scoreboards_scoreboards__ = __webpack_require__(572);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_section_section__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_socket_service_socket_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_backend_backend__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__providers_google_google__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__components_scrollable_tabs_scrollable_tabs__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__components_scrollable_segments_scrollable_segments__ = __webpack_require__(755);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__providers_utils_utils__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_badge__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_storage__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__ionic_native_app_availability__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__ionic_native_splash_screen__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__ionic_native_device_feedback__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__angular_platform_browser__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__angular_http__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__ionic_native_file__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__ionic_native_camera__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__ionic_native_transfer__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__ionic_native_social_sharing__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74_ionic_image_loader__ = __webpack_require__(756);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__ionic_native_local_notifications__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__ionic_native_text_to_speech__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__ionic_native_background_mode__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__providers_facebook_facebook__ = __webpack_require__(560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__ionic_native_media__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__ionic_native_file_transfer__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_streaming_media__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__ionic_native_android_permissions__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__ionic_native_in_app_browser__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__ionic_native_facebook__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85_ng_elastic__ = __webpack_require__(759);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85_ng_elastic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_85_ng_elastic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__ionic_native_unique_device_id__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__ionic_native_fcm__ = __webpack_require__(344);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -12031,8 +12948,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_37__pages_map_map__["a" /* MapPage */],
             __WEBPACK_IMPORTED_MODULE_32__pages_stats_stats__["a" /* StatsPage */],
             __WEBPACK_IMPORTED_MODULE_34__pages_filters_filters__["a" /* FiltersPage */],
-            __WEBPACK_IMPORTED_MODULE_59__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
-            __WEBPACK_IMPORTED_MODULE_60__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
+            __WEBPACK_IMPORTED_MODULE_60__components_scrollable_tabs_scrollable_tabs__["a" /* ScrollableTabs */],
+            __WEBPACK_IMPORTED_MODULE_61__components_scrollable_segments_scrollable_segments__["a" /* ScrollableSegments */],
             __WEBPACK_IMPORTED_MODULE_36__pages_medagliereglobale_medagliereglobale__["a" /* MedagliereglobalePage */],
             __WEBPACK_IMPORTED_MODULE_38__pages_register_register__["a" /* RegisterPage */],
             __WEBPACK_IMPORTED_MODULE_39__pages_users_users__["a" /* UsersPage */],
@@ -12052,12 +12969,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__["a" /* SendpushPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_tournament_tournament__["a" /* TournamentPage */],
-            __WEBPACK_IMPORTED_MODULE_55__components_section_section__["a" /* SectionComponent */],
-            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
+            __WEBPACK_IMPORTED_MODULE_56__components_section_section__["a" /* SectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */],
+            __WEBPACK_IMPORTED_MODULE_55__pages_scoreboards_scoreboards__["a" /* ScoreboardsPage */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_68__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_68__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_69__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */], {
                 backButtonText: '',
                 activator: 'ripple',
@@ -12068,10 +12986,10 @@ AppModule = __decorate([
                     { loadChildren: '../pages/iscritti/iscritti.module#IscrittiPageModule', name: 'IscrittiPage', segment: 'iscritti', priority: 'low', defaultHistory: [] }
                 ]
             }),
-            __WEBPACK_IMPORTED_MODULE_63__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_73_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_84_ng_elastic__["ElasticModule"],
-            __WEBPACK_IMPORTED_MODULE_85__angular_forms__["FormsModule"]
+            __WEBPACK_IMPORTED_MODULE_64__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_74_ionic_image_loader__["a" /* IonicImageLoader */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_85_ng_elastic__["ElasticModule"],
+            __WEBPACK_IMPORTED_MODULE_86__angular_forms__["FormsModule"]
             //Facebook
             //IonicAudioModule.forRoot(defaultAudioProviderFactory)
         ],
@@ -12129,34 +13047,35 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_52__pages_tkdtlive_tkdtlive__["a" /* TkdtlivePage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_sendpush_sendpush__["a" /* SendpushPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_tournament_tournament__["a" /* TournamentPage */],
-            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */]
+            __WEBPACK_IMPORTED_MODULE_54__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */],
+            __WEBPACK_IMPORTED_MODULE_55__pages_scoreboards_scoreboards__["a" /* ScoreboardsPage */]
         ],
         providers: [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_56__providers_socket_service_socket_service__["a" /* SocketService */],
-            __WEBPACK_IMPORTED_MODULE_57__providers_backend_backend__["a" /* BackendProvider */],
-            __WEBPACK_IMPORTED_MODULE_61__providers_utils_utils__["a" /* UtilsProvider */],
-            __WEBPACK_IMPORTED_MODULE_58__providers_google_google__["a" /* GoogleDriveProvider */],
+            __WEBPACK_IMPORTED_MODULE_57__providers_socket_service_socket_service__["a" /* SocketService */],
+            __WEBPACK_IMPORTED_MODULE_58__providers_backend_backend__["a" /* BackendProvider */],
+            __WEBPACK_IMPORTED_MODULE_62__providers_utils_utils__["a" /* UtilsProvider */],
+            __WEBPACK_IMPORTED_MODULE_59__providers_google_google__["a" /* GoogleDriveProvider */],
             /* Storage,*/
-            __WEBPACK_IMPORTED_MODULE_65__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_64__ionic_native_app_availability__["a" /* AppAvailability */],
-            __WEBPACK_IMPORTED_MODULE_66__ionic_native_device_feedback__["a" /* DeviceFeedback */],
-            __WEBPACK_IMPORTED_MODULE_69__ionic_native_file__["a" /* File */],
-            __WEBPACK_IMPORTED_MODULE_70__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_71__ionic_native_transfer__["a" /* Transfer */],
-            __WEBPACK_IMPORTED_MODULE_72__ionic_native_social_sharing__["a" /* SocialSharing */],
-            __WEBPACK_IMPORTED_MODULE_74__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_76__ionic_native_background_mode__["a" /* BackgroundMode */],
-            __WEBPACK_IMPORTED_MODULE_75__ionic_native_text_to_speech__["a" /* TextToSpeech */],
-            __WEBPACK_IMPORTED_MODULE_78__ionic_native_media__["a" /* MediaPlugin */],
-            __WEBPACK_IMPORTED_MODULE_80__ionic_native_streaming_media__["a" /* StreamingMedia */],
-            __WEBPACK_IMPORTED_MODULE_79__ionic_native_file_transfer__["a" /* FileTransfer */],
-            __WEBPACK_IMPORTED_MODULE_62__ionic_native_badge__["a" /* Badge */],
-            __WEBPACK_IMPORTED_MODULE_86__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
-            __WEBPACK_IMPORTED_MODULE_81__ionic_native_android_permissions__["a" /* AndroidPermissions */],
-            __WEBPACK_IMPORTED_MODULE_82__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-            __WEBPACK_IMPORTED_MODULE_83__ionic_native_facebook__["a" /* Facebook */],
-            __WEBPACK_IMPORTED_MODULE_87__ionic_native_fcm__["a" /* FCM */],
-            __WEBPACK_IMPORTED_MODULE_77__providers_facebook_facebook__["a" /* FacebookProvider */]]
+            __WEBPACK_IMPORTED_MODULE_66__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_65__ionic_native_app_availability__["a" /* AppAvailability */],
+            __WEBPACK_IMPORTED_MODULE_67__ionic_native_device_feedback__["a" /* DeviceFeedback */],
+            __WEBPACK_IMPORTED_MODULE_70__ionic_native_file__["a" /* File */],
+            __WEBPACK_IMPORTED_MODULE_71__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_72__ionic_native_transfer__["a" /* Transfer */],
+            __WEBPACK_IMPORTED_MODULE_73__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_75__ionic_native_local_notifications__["a" /* LocalNotifications */],
+            __WEBPACK_IMPORTED_MODULE_77__ionic_native_background_mode__["a" /* BackgroundMode */],
+            __WEBPACK_IMPORTED_MODULE_76__ionic_native_text_to_speech__["a" /* TextToSpeech */],
+            __WEBPACK_IMPORTED_MODULE_79__ionic_native_media__["a" /* MediaPlugin */],
+            __WEBPACK_IMPORTED_MODULE_81__ionic_native_streaming_media__["a" /* StreamingMedia */],
+            __WEBPACK_IMPORTED_MODULE_80__ionic_native_file_transfer__["a" /* FileTransfer */],
+            __WEBPACK_IMPORTED_MODULE_63__ionic_native_badge__["a" /* Badge */],
+            __WEBPACK_IMPORTED_MODULE_87__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
+            __WEBPACK_IMPORTED_MODULE_82__ionic_native_android_permissions__["a" /* AndroidPermissions */],
+            __WEBPACK_IMPORTED_MODULE_83__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_84__ionic_native_facebook__["a" /* Facebook */],
+            __WEBPACK_IMPORTED_MODULE_88__ionic_native_fcm__["a" /* FCM */],
+            __WEBPACK_IMPORTED_MODULE_78__providers_facebook_facebook__["a" /* FacebookProvider */]]
     })
 ], AppModule);
 
@@ -12170,7 +13089,7 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BackendProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils__ = __webpack_require__(44);
@@ -12180,13 +13099,13 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_badge__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_local_notifications__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_local_notifications__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_background_mode__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_text_to_speech__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_unique_device_id__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_facebook__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_fcm__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_text_to_speech__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_unique_device_id__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_facebook__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_fcm__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_streaming_media__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_media__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12250,8 +13169,8 @@ var BackendProvider = (function () {
         this.isProduction = true;
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.1.7",
-            releasedate: "13/04/2019"
+            version: "2.1.8",
+            releasedate: "15/04/2019"
         };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
@@ -12341,6 +13260,7 @@ var BackendProvider = (function () {
         this.alertAnimationOptions = {
             animate: false
         };
+        this.clientuuid = "";
         this.getMaschiFemmine = function ($mr, su_cosa) {
             //colog("getmaschifemmine");
             //colog(jcurrentgara.iscritti)
@@ -12428,7 +13348,8 @@ var BackendProvider = (function () {
             var target = string;
             return target.split(search).join(replacement);
         };
-        console.log('Hello BackendProvider Provider');
+        this.clientuuid = this.createGuid();
+        console.log('Hello BackendProvider Provider, clientuuid', this.clientuuid);
         var a = window.localStorage.getItem("ion2kwondo_settings");
         if (a) {
             var ja = JSON.parse(a);
@@ -12441,6 +13362,12 @@ var BackendProvider = (function () {
     
         });*/
     }
+    BackendProvider.prototype.createGuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
     BackendProvider.prototype.getFbLoginStatus = function (callback) {
         var questo = this;
         questo.fb.getLoginStatus()
@@ -14363,6 +15290,20 @@ var BackendProvider = (function () {
             callback(data);
         });
     };
+    BackendProvider.prototype.getScoreboards = function (callback) {
+        var questo = this;
+        var url = questo.rooturl + "/scoreboards";
+        questo.fetchData(url, function (data) {
+            callback(data);
+        });
+    };
+    BackendProvider.prototype.removeScoreboard = function (sockid) {
+        var questo = this;
+        var url = questo.rooturl + "/scoreboards/remove/" + sockid;
+        questo.fetchData(url, function (data) {
+            console.log("scoreboards", data);
+        });
+    };
     return BackendProvider;
 }());
 __decorate([
@@ -14379,264 +15320,264 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, 
 
 /***/ }),
 
-/***/ 625:
+/***/ 627:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 211,
-	"./af.js": 211,
-	"./ar": 212,
-	"./ar-dz": 213,
-	"./ar-dz.js": 213,
-	"./ar-kw": 214,
-	"./ar-kw.js": 214,
-	"./ar-ly": 215,
-	"./ar-ly.js": 215,
-	"./ar-ma": 216,
-	"./ar-ma.js": 216,
-	"./ar-sa": 217,
-	"./ar-sa.js": 217,
-	"./ar-tn": 218,
-	"./ar-tn.js": 218,
-	"./ar.js": 212,
-	"./az": 219,
-	"./az.js": 219,
-	"./be": 220,
-	"./be.js": 220,
-	"./bg": 221,
-	"./bg.js": 221,
-	"./bm": 222,
-	"./bm.js": 222,
-	"./bn": 223,
-	"./bn.js": 223,
-	"./bo": 224,
-	"./bo.js": 224,
-	"./br": 225,
-	"./br.js": 225,
-	"./bs": 226,
-	"./bs.js": 226,
-	"./ca": 227,
-	"./ca.js": 227,
-	"./cs": 228,
-	"./cs.js": 228,
-	"./cv": 229,
-	"./cv.js": 229,
-	"./cy": 230,
-	"./cy.js": 230,
-	"./da": 231,
-	"./da.js": 231,
-	"./de": 232,
-	"./de-at": 233,
-	"./de-at.js": 233,
-	"./de-ch": 234,
-	"./de-ch.js": 234,
-	"./de.js": 232,
-	"./dv": 235,
-	"./dv.js": 235,
-	"./el": 236,
-	"./el.js": 236,
-	"./en-SG": 237,
-	"./en-SG.js": 237,
-	"./en-au": 238,
-	"./en-au.js": 238,
-	"./en-ca": 239,
-	"./en-ca.js": 239,
-	"./en-gb": 240,
-	"./en-gb.js": 240,
-	"./en-ie": 241,
-	"./en-ie.js": 241,
-	"./en-il": 242,
-	"./en-il.js": 242,
-	"./en-nz": 243,
-	"./en-nz.js": 243,
-	"./eo": 244,
-	"./eo.js": 244,
-	"./es": 245,
-	"./es-do": 246,
-	"./es-do.js": 246,
-	"./es-us": 247,
-	"./es-us.js": 247,
-	"./es.js": 245,
-	"./et": 248,
-	"./et.js": 248,
-	"./eu": 249,
-	"./eu.js": 249,
-	"./fa": 250,
-	"./fa.js": 250,
-	"./fi": 251,
-	"./fi.js": 251,
-	"./fo": 252,
-	"./fo.js": 252,
-	"./fr": 253,
-	"./fr-ca": 254,
-	"./fr-ca.js": 254,
-	"./fr-ch": 255,
-	"./fr-ch.js": 255,
-	"./fr.js": 253,
-	"./fy": 256,
-	"./fy.js": 256,
-	"./ga": 257,
-	"./ga.js": 257,
-	"./gd": 258,
-	"./gd.js": 258,
-	"./gl": 259,
-	"./gl.js": 259,
-	"./gom-latn": 260,
-	"./gom-latn.js": 260,
-	"./gu": 261,
-	"./gu.js": 261,
-	"./he": 262,
-	"./he.js": 262,
-	"./hi": 263,
-	"./hi.js": 263,
-	"./hr": 264,
-	"./hr.js": 264,
-	"./hu": 265,
-	"./hu.js": 265,
-	"./hy-am": 266,
-	"./hy-am.js": 266,
-	"./id": 267,
-	"./id.js": 267,
-	"./is": 268,
-	"./is.js": 268,
-	"./it": 269,
-	"./it-ch": 270,
-	"./it-ch.js": 270,
-	"./it.js": 269,
-	"./ja": 271,
-	"./ja.js": 271,
-	"./jv": 272,
-	"./jv.js": 272,
-	"./ka": 273,
-	"./ka.js": 273,
-	"./kk": 274,
-	"./kk.js": 274,
-	"./km": 275,
-	"./km.js": 275,
-	"./kn": 276,
-	"./kn.js": 276,
-	"./ko": 277,
-	"./ko.js": 277,
-	"./ku": 278,
-	"./ku.js": 278,
-	"./ky": 279,
-	"./ky.js": 279,
-	"./lb": 280,
-	"./lb.js": 280,
-	"./lo": 281,
-	"./lo.js": 281,
-	"./lt": 282,
-	"./lt.js": 282,
-	"./lv": 283,
-	"./lv.js": 283,
-	"./me": 284,
-	"./me.js": 284,
-	"./mi": 285,
-	"./mi.js": 285,
-	"./mk": 286,
-	"./mk.js": 286,
-	"./ml": 287,
-	"./ml.js": 287,
-	"./mn": 288,
-	"./mn.js": 288,
-	"./mr": 289,
-	"./mr.js": 289,
-	"./ms": 290,
-	"./ms-my": 291,
-	"./ms-my.js": 291,
-	"./ms.js": 290,
-	"./mt": 292,
-	"./mt.js": 292,
-	"./my": 293,
-	"./my.js": 293,
-	"./nb": 294,
-	"./nb.js": 294,
-	"./ne": 295,
-	"./ne.js": 295,
-	"./nl": 296,
-	"./nl-be": 297,
-	"./nl-be.js": 297,
-	"./nl.js": 296,
-	"./nn": 298,
-	"./nn.js": 298,
-	"./pa-in": 299,
-	"./pa-in.js": 299,
-	"./pl": 300,
-	"./pl.js": 300,
-	"./pt": 301,
-	"./pt-br": 302,
-	"./pt-br.js": 302,
-	"./pt.js": 301,
-	"./ro": 303,
-	"./ro.js": 303,
-	"./ru": 304,
-	"./ru.js": 304,
-	"./sd": 305,
-	"./sd.js": 305,
-	"./se": 306,
-	"./se.js": 306,
-	"./si": 307,
-	"./si.js": 307,
-	"./sk": 308,
-	"./sk.js": 308,
-	"./sl": 309,
-	"./sl.js": 309,
-	"./sq": 310,
-	"./sq.js": 310,
-	"./sr": 311,
-	"./sr-cyrl": 312,
-	"./sr-cyrl.js": 312,
-	"./sr.js": 311,
-	"./ss": 313,
-	"./ss.js": 313,
-	"./sv": 314,
-	"./sv.js": 314,
-	"./sw": 315,
-	"./sw.js": 315,
-	"./ta": 316,
-	"./ta.js": 316,
-	"./te": 317,
-	"./te.js": 317,
-	"./tet": 318,
-	"./tet.js": 318,
-	"./tg": 319,
-	"./tg.js": 319,
-	"./th": 320,
-	"./th.js": 320,
-	"./tl-ph": 321,
-	"./tl-ph.js": 321,
-	"./tlh": 322,
-	"./tlh.js": 322,
-	"./tr": 323,
-	"./tr.js": 323,
-	"./tzl": 324,
-	"./tzl.js": 324,
-	"./tzm": 325,
-	"./tzm-latn": 326,
-	"./tzm-latn.js": 326,
-	"./tzm.js": 325,
-	"./ug-cn": 327,
-	"./ug-cn.js": 327,
-	"./uk": 328,
-	"./uk.js": 328,
-	"./ur": 329,
-	"./ur.js": 329,
-	"./uz": 330,
-	"./uz-latn": 331,
-	"./uz-latn.js": 331,
-	"./uz.js": 330,
-	"./vi": 332,
-	"./vi.js": 332,
-	"./x-pseudo": 333,
-	"./x-pseudo.js": 333,
-	"./yo": 334,
-	"./yo.js": 334,
-	"./zh-cn": 335,
-	"./zh-cn.js": 335,
-	"./zh-hk": 336,
-	"./zh-hk.js": 336,
-	"./zh-tw": 337,
-	"./zh-tw.js": 337
+	"./af": 212,
+	"./af.js": 212,
+	"./ar": 213,
+	"./ar-dz": 214,
+	"./ar-dz.js": 214,
+	"./ar-kw": 215,
+	"./ar-kw.js": 215,
+	"./ar-ly": 216,
+	"./ar-ly.js": 216,
+	"./ar-ma": 217,
+	"./ar-ma.js": 217,
+	"./ar-sa": 218,
+	"./ar-sa.js": 218,
+	"./ar-tn": 219,
+	"./ar-tn.js": 219,
+	"./ar.js": 213,
+	"./az": 220,
+	"./az.js": 220,
+	"./be": 221,
+	"./be.js": 221,
+	"./bg": 222,
+	"./bg.js": 222,
+	"./bm": 223,
+	"./bm.js": 223,
+	"./bn": 224,
+	"./bn.js": 224,
+	"./bo": 225,
+	"./bo.js": 225,
+	"./br": 226,
+	"./br.js": 226,
+	"./bs": 227,
+	"./bs.js": 227,
+	"./ca": 228,
+	"./ca.js": 228,
+	"./cs": 229,
+	"./cs.js": 229,
+	"./cv": 230,
+	"./cv.js": 230,
+	"./cy": 231,
+	"./cy.js": 231,
+	"./da": 232,
+	"./da.js": 232,
+	"./de": 233,
+	"./de-at": 234,
+	"./de-at.js": 234,
+	"./de-ch": 235,
+	"./de-ch.js": 235,
+	"./de.js": 233,
+	"./dv": 236,
+	"./dv.js": 236,
+	"./el": 237,
+	"./el.js": 237,
+	"./en-SG": 238,
+	"./en-SG.js": 238,
+	"./en-au": 239,
+	"./en-au.js": 239,
+	"./en-ca": 240,
+	"./en-ca.js": 240,
+	"./en-gb": 241,
+	"./en-gb.js": 241,
+	"./en-ie": 242,
+	"./en-ie.js": 242,
+	"./en-il": 243,
+	"./en-il.js": 243,
+	"./en-nz": 244,
+	"./en-nz.js": 244,
+	"./eo": 245,
+	"./eo.js": 245,
+	"./es": 246,
+	"./es-do": 247,
+	"./es-do.js": 247,
+	"./es-us": 248,
+	"./es-us.js": 248,
+	"./es.js": 246,
+	"./et": 249,
+	"./et.js": 249,
+	"./eu": 250,
+	"./eu.js": 250,
+	"./fa": 251,
+	"./fa.js": 251,
+	"./fi": 252,
+	"./fi.js": 252,
+	"./fo": 253,
+	"./fo.js": 253,
+	"./fr": 254,
+	"./fr-ca": 255,
+	"./fr-ca.js": 255,
+	"./fr-ch": 256,
+	"./fr-ch.js": 256,
+	"./fr.js": 254,
+	"./fy": 257,
+	"./fy.js": 257,
+	"./ga": 258,
+	"./ga.js": 258,
+	"./gd": 259,
+	"./gd.js": 259,
+	"./gl": 260,
+	"./gl.js": 260,
+	"./gom-latn": 261,
+	"./gom-latn.js": 261,
+	"./gu": 262,
+	"./gu.js": 262,
+	"./he": 263,
+	"./he.js": 263,
+	"./hi": 264,
+	"./hi.js": 264,
+	"./hr": 265,
+	"./hr.js": 265,
+	"./hu": 266,
+	"./hu.js": 266,
+	"./hy-am": 267,
+	"./hy-am.js": 267,
+	"./id": 268,
+	"./id.js": 268,
+	"./is": 269,
+	"./is.js": 269,
+	"./it": 270,
+	"./it-ch": 271,
+	"./it-ch.js": 271,
+	"./it.js": 270,
+	"./ja": 272,
+	"./ja.js": 272,
+	"./jv": 273,
+	"./jv.js": 273,
+	"./ka": 274,
+	"./ka.js": 274,
+	"./kk": 275,
+	"./kk.js": 275,
+	"./km": 276,
+	"./km.js": 276,
+	"./kn": 277,
+	"./kn.js": 277,
+	"./ko": 278,
+	"./ko.js": 278,
+	"./ku": 279,
+	"./ku.js": 279,
+	"./ky": 280,
+	"./ky.js": 280,
+	"./lb": 281,
+	"./lb.js": 281,
+	"./lo": 282,
+	"./lo.js": 282,
+	"./lt": 283,
+	"./lt.js": 283,
+	"./lv": 284,
+	"./lv.js": 284,
+	"./me": 285,
+	"./me.js": 285,
+	"./mi": 286,
+	"./mi.js": 286,
+	"./mk": 287,
+	"./mk.js": 287,
+	"./ml": 288,
+	"./ml.js": 288,
+	"./mn": 289,
+	"./mn.js": 289,
+	"./mr": 290,
+	"./mr.js": 290,
+	"./ms": 291,
+	"./ms-my": 292,
+	"./ms-my.js": 292,
+	"./ms.js": 291,
+	"./mt": 293,
+	"./mt.js": 293,
+	"./my": 294,
+	"./my.js": 294,
+	"./nb": 295,
+	"./nb.js": 295,
+	"./ne": 296,
+	"./ne.js": 296,
+	"./nl": 297,
+	"./nl-be": 298,
+	"./nl-be.js": 298,
+	"./nl.js": 297,
+	"./nn": 299,
+	"./nn.js": 299,
+	"./pa-in": 300,
+	"./pa-in.js": 300,
+	"./pl": 301,
+	"./pl.js": 301,
+	"./pt": 302,
+	"./pt-br": 303,
+	"./pt-br.js": 303,
+	"./pt.js": 302,
+	"./ro": 304,
+	"./ro.js": 304,
+	"./ru": 305,
+	"./ru.js": 305,
+	"./sd": 306,
+	"./sd.js": 306,
+	"./se": 307,
+	"./se.js": 307,
+	"./si": 308,
+	"./si.js": 308,
+	"./sk": 309,
+	"./sk.js": 309,
+	"./sl": 310,
+	"./sl.js": 310,
+	"./sq": 311,
+	"./sq.js": 311,
+	"./sr": 312,
+	"./sr-cyrl": 313,
+	"./sr-cyrl.js": 313,
+	"./sr.js": 312,
+	"./ss": 314,
+	"./ss.js": 314,
+	"./sv": 315,
+	"./sv.js": 315,
+	"./sw": 316,
+	"./sw.js": 316,
+	"./ta": 317,
+	"./ta.js": 317,
+	"./te": 318,
+	"./te.js": 318,
+	"./tet": 319,
+	"./tet.js": 319,
+	"./tg": 320,
+	"./tg.js": 320,
+	"./th": 321,
+	"./th.js": 321,
+	"./tl-ph": 322,
+	"./tl-ph.js": 322,
+	"./tlh": 323,
+	"./tlh.js": 323,
+	"./tr": 324,
+	"./tr.js": 324,
+	"./tzl": 325,
+	"./tzl.js": 325,
+	"./tzm": 326,
+	"./tzm-latn": 327,
+	"./tzm-latn.js": 327,
+	"./tzm.js": 326,
+	"./ug-cn": 328,
+	"./ug-cn.js": 328,
+	"./uk": 329,
+	"./uk.js": 329,
+	"./ur": 330,
+	"./ur.js": 330,
+	"./uz": 331,
+	"./uz-latn": 332,
+	"./uz-latn.js": 332,
+	"./uz.js": 331,
+	"./vi": 333,
+	"./vi.js": 333,
+	"./x-pseudo": 334,
+	"./x-pseudo.js": 334,
+	"./yo": 335,
+	"./yo.js": 335,
+	"./zh-cn": 336,
+	"./zh-cn.js": 336,
+	"./zh-hk": 337,
+	"./zh-hk.js": 337,
+	"./zh-tw": 338,
+	"./zh-tw.js": 338
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -14652,33 +15593,34 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 625;
+webpackContext.id = 627;
 
 /***/ }),
 
-/***/ 643:
+/***/ 645:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(564);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(566);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_broadcastview_broadcastview__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_users_users__ = __webpack_require__(566);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_broadcastview_broadcastview__ = __webpack_require__(570);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_android_permissions__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_settings_settings__ = __webpack_require__(569);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_account_account__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_about_about__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_settings_settings__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_account_account__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_about_about__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_servizisocieta_servizisocieta__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_scorekeeper_scorekeeper__ = __webpack_require__(570);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_scorekeeper_scorekeeper__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_scoreboards_scoreboards__ = __webpack_require__(572);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -14705,6 +15647,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 //import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 
 
 
@@ -14765,6 +15708,7 @@ var MyApp = (function () {
             { title: 'Impostazioni', component: __WEBPACK_IMPORTED_MODULE_10__pages_settings_settings__["a" /* SettingsPage */] },
             { title: 'Account', component: __WEBPACK_IMPORTED_MODULE_11__pages_account_account__["a" /* AccountPage */] },
             { title: 'ScoreKwondo', component: __WEBPACK_IMPORTED_MODULE_17__pages_scorekeeper_scorekeeper__["a" /* ScorekeeperPage */] },
+            { title: 'Scoreboards', component: __WEBPACK_IMPORTED_MODULE_18__pages_scoreboards_scoreboards__["a" /* ScoreboardsPage */] },
             { title: 'Informazioni', component: __WEBPACK_IMPORTED_MODULE_12__pages_about_about__["a" /* AboutPage */] },
             { title: 'Users', component: __WEBPACK_IMPORTED_MODULE_5__pages_users_users__["a" /* UsersPage */] },
             { title: 'Connessioni', component: __WEBPACK_IMPORTED_MODULE_6__pages_connections_connections__["a" /* ConnectionsPage */] },
@@ -14936,7 +15880,7 @@ var MyApp = (function () {
                 alert_2.present();
             }
             else {
-                var pushpages = ["Impostazioni", "ScoreKwondo", "TkdtLive", "Users", "Connessioni", "Informazioni", "Account", "RTC", "Servizi soci"];
+                var pushpages = ["Scoreboards", "Impostazioni", "ScoreKwondo", "TkdtLive", "Users", "Connessioni", "Informazioni", "Account", "RTC", "Servizi soci"];
                 if (pushpages.indexOf(page.title) > -1) {
                     this.nav.push(page.component);
                 }
@@ -14978,6 +15922,9 @@ var MyApp = (function () {
             setTimeout(function () {
                 questo._SplashScreen.hide();
             }, 0);
+            if (questo.platform.is("android")) {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_native__["b" /* StatusBar */].styleLightContent();
+            }
             //Splashscreen.hide();
             if (questo.platform.is('cordova')) {
                 if (questo.backend.isCordovaAndroid()) {
@@ -15136,149 +16083,14 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 666:
+/***/ 668:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 69:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*import { ContactPage } from '../contact/contact';
-import { ContactsPage } from '../contacts/contacts';
-import { TwitterPage } from '../twitter/twitter';
-import { BpPage } from '../bp/bp';
-import { PartnerworldPage } from '../partnerworld/partnerworld';
-import { LinkedinPage } from '../linkedin/linkedin';*/
-
-
-//import { ScrollableTabs } from '../../components/scrollable-tabs/scrollable-tabs';
-var TabsPage = (function () {
-    function TabsPage(menuCtrl, navCtrl, backend, socket, events, nav, platform) {
-        var _this = this;
-        this.menuCtrl = menuCtrl;
-        this.navCtrl = navCtrl;
-        this.backend = backend;
-        this.socket = socket;
-        this.events = events;
-        this.nav = nav;
-        this.platform = platform;
-        this.homepage = __WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */];
-        this.chatpage = __WEBPACK_IMPORTED_MODULE_3__chat_chat__["a" /* ChatPage */];
-        this.unread = this.socket.totalunreadcount;
-        this.activeTab = 0;
-        this.realtimeEvents = false;
-        this.showrtbutton = false;
-        var questo = this;
-        //this.socket.socketService.subscribe(event => {
-        events.subscribe("switchtocontacts", function (t) {
-            questo.activeTab = 2;
-        });
-        events.subscribe('updatetotalunreadcount', function (msg, time) {
-            console.log('message updatetotalunreadcount received from server in tab.ts... ');
-            console.log("habemus messaggio in tabs.ts");
-            var unr = _this.socket.getAllUnreadMessages().length;
-            _this.unread = _this.socket.totalunreadcount;
-            //this.unread = unr;
-            //this.unread
-        });
-        events.subscribe('realtimematches', function (rtmatches) {
-            console.log("realtimematches event", rtmatches);
-            if (rtmatches.matches.length > 0) {
-                questo.realtimeEvents = true;
-                questo.showrtbutton = true;
-            }
-            else {
-                questo.realtimeEvents = false;
-                questo.showrtbutton = false;
-            }
-            //this.isChatPage = false;
-        });
-        events.subscribe("updategara", function (msg, time) {
-            console.log("refreshgara in tabs.ts !!");
-            questo.backend.getRtMatches(function (data) {
-                if (data.length > 0) {
-                    questo.realtimeEvents = true;
-                    questo.showrtbutton = true;
-                }
-                else {
-                    questo.realtimeEvents = false;
-                    questo.showrtbutton = false;
-                }
-            });
-        });
-        questo.backend.getRtMatches(function (data) {
-            console.log("got rtmatches in tabs.ts", data);
-            if (data.length > 0) {
-                questo.realtimeEvents = true;
-            }
-            else {
-                questo.realtimeEvents = false;
-            }
-        });
-    }
-    TabsPage.prototype.setUnread = function (n) {
-        this.unread = n;
-    };
-    TabsPage.prototype.ionViewWillEnter = function () {
-        var questo = this;
-        console.log("entering tabs.ts");
-        this.menuCtrl.enable(true);
-        //questo.backend.setBackButtonAction(questo.navBar, questo.nav);
-    };
-    TabsPage.prototype.tappedTab = function () {
-        //console.log("tappedTab");
-        this.backend.playFeedback();
-    };
-    TabsPage.prototype.gotoChat = function () {
-        console.log("gotochat");
-        var questo = this;
-        questo.mytabs.select(1);
-    };
-    return TabsPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */])
-], TabsPage.prototype, "navBar", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mytabs"),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* Tabs */])
-], TabsPage.prototype, "mytabs", void 0);
-TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tabs/tabs.html"*/'<ion-tabs #mytabs   (tap)="tappedTab()" [selectedIndex]="activeTab" tabsPlacement="bottom"   >\n  <ion-tab [root]="homepage" tabTitle="AppKwonDo" tabIcon="home"></ion-tab>\n  <!--<ion-tab [root]="partnerworld" tabTitle="PartnerWorld" tabIcon="md-globe" ></ion-tab>\n  <ion-tab [root]="linkedin" tabTitle="LinkedIn" tabIcon="logo-linkedin" ></ion-tab>-->\n  <!--<ion-tab tabBadge="{{backend.unread>0 ? backend.unread : \'\'}}" tabBadgeStyle="{{backend.unread>0 ? \'danger\' : \'\'}}"  [root]="chatvspage" tabTitle="ChatVSKwonDo" tabIcon="md-chatboxes" ></ion-tab>-->\n  <ion-tab tabBadge="{{backend.unread>0 ? backend.unread : \'\'}}" tabBadgeStyle="{{backend.unread>0 ? \'danger\' : \'\'}}"  [root]="chatpage" tabTitle="ChatKwonDo" tabIcon="md-chatboxes" ></ion-tab>\n<!-- <ion-tab [root]="bppage" tabTitle="BP" tabIcon="md-contacts"></ion-tab>\n\n  <ion-tab [root]="twitter" tabTitle="Twitter" tabIcon="logo-twitter" ></ion-tab>\n  <ion-tab [root]="contacts" tabTitle="Contacts" tabIcon="md-chatboxes" ></ion-tab>\n <!-- <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Logout" tabIcon="ios-exit-outline"></ion-tab>-->\n</ion-tabs>\n\n<!--\n<ion-fab right bottom *ngIf="realtimeEvents" (tap)="gotoChat()">\n    <button color="primary" ion-fab style="font-size: 11px; background: transparent;"><img src="assets/img/greenblink.gif"/></button>\n  </ion-fab>\n-->\n\n  <img *ngIf="realtimeEvents"  (tap)="gotoChat()" class="realtimeimg" src="assets/img/greenblink.gif"/>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tabs/tabs.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]])
-], TabsPage);
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
-/***/ 740:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15313,7 +16125,7 @@ ContactPage = __decorate([
 
 /***/ }),
 
-/***/ 741:
+/***/ 743:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15368,7 +16180,7 @@ ChatpopoverPage = __decorate([
 
 /***/ }),
 
-/***/ 742:
+/***/ 744:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15376,7 +16188,7 @@ ChatpopoverPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_native__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_native__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
@@ -15699,13 +16511,13 @@ TwitterPage = __decorate([
 
 /***/ }),
 
-/***/ 743:
+/***/ 745:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartnerworldPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15779,13 +16591,13 @@ PartnerworldPage = __decorate([
 
 /***/ }),
 
-/***/ 744:
+/***/ 746:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkedinPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15855,13 +16667,13 @@ LinkedinPage = __decorate([
 
 /***/ }),
 
-/***/ 745:
+/***/ 747:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_chat_chat__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
@@ -16037,7 +16849,7 @@ ContactsPage = __decorate([
 
 /***/ }),
 
-/***/ 746:
+/***/ 748:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16082,7 +16894,7 @@ BrowserPage = __decorate([
 
 /***/ }),
 
-/***/ 747:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16289,544 +17101,14 @@ BpPage = __decorate([
 
 /***/ }),
 
-/***/ 748:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatchconsolerrPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the MatchconsolePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var MatchconsolerrPage = (function () {
-    function MatchconsolerrPage(loadingCtrl, socket, events, toastCtrl, alertCtrl, backend, navCtrl, navParams) {
-        this.loadingCtrl = loadingCtrl;
-        this.socket = socket;
-        this.events = events;
-        this.toastCtrl = toastCtrl;
-        this.alertCtrl = alertCtrl;
-        this.backend = backend;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.consoles = [];
-        this.selectedMatchId = "";
-        this.selectedMatch = {};
-        this.selectedConsole = {};
-        this.selectedAvversari = {};
-        this.selConsoleIndex = -1;
-        this.disabledcontrols = false;
-        var questo = this;
-    }
-    MatchconsolerrPage.prototype.ionViewDidLoad = function () {
-        this.backend.setBackButtonAction(this.navBar, this.navCtrl);
-        this.backend.setupNavbarBack(this.navBar, this.navCtrl);
-    };
-    MatchconsolerrPage.prototype.ionViewWillLoad = function () {
-        var questo = this;
-        /*questo.events.subscribe("updategara",function(msg,time){
-          console.log("refreshgara in matchconsole.ts !!");
-          //questo.disabledcontrols=false;
-          //questo.refresh(function(){
-            //questo.backend.syncConsoles(questo.gara.matchesbyprog);
-            //questo.events.publish("updatematchesforatleta",questo.gara.matchesbyprog);
-          //});
-        })*/
-        var match = this.navParams.get("match");
-        var avversari = this.navParams.get("avversari");
-        var id = match.id;
-        this.selectedMatchId = id;
-        this.selectedMatch = match;
-        //this.selectedMatch.avversari = avversari;
-        this.backend.removeConsolesIfNotRealtime();
-        this.backend.addConsoleIfNotExists(this.selectedMatch);
-        this.consoles = this.backend.matchconsoles;
-        this.consoles.forEach(function (item, idx) {
-            if (item.match.id == questo.selectedMatchId) {
-                questo.selectedConsole = item;
-                if (avversari.length > 0)
-                    questo.selectedConsole.avversari = avversari;
-                questo.selConsoleIndex = idx;
-            }
-        });
-        //this.selectedMatchId=this.selectedMatch.id;
-        if (this.selectedMatch.hasOwnProperty("avversario")) {
-            if (this.selectedMatch.avversario.trim() != "")
-                this.selectedConsole.avversario = this.selectedMatch.avversario;
-        }
-        console.log('ionViewDidLoad MatchconsolePage, selectedconsole', questo.selectedConsole);
-    };
-    MatchconsolerrPage.prototype.tapSegment = function (c, i) {
-        this.selectedMatchId = c.match.id;
-        this.selectedMatch = c.match;
-        this.selectedConsole = c;
-        this.selConsoleIndex = i;
-        console.log("tapSegment", c);
-        this.backend.playFeedback();
-    };
-    MatchconsolerrPage.prototype.ionViewWillLeave = function () {
-        console.log("Looks like I'm about to leave :(");
-        //this.events.unsubscribe("updategara");
-        this.events.unsubscribe("hwbackbutton");
-    };
-    MatchconsolerrPage.prototype.ionViewWillEnter = function () {
-        var questo = this;
-        this.events.subscribe("hwbackbutton", function (data) {
-            console.log("hwbackbutton in gare.ts");
-            questo.navCtrl.pop();
-        });
-    };
-    MatchconsolerrPage.prototype.isRealTime = function (c) {
-        var isrt = false;
-        if (c.hasOwnProperty("realtime")) {
-            if (String(c.realtime) == "true") {
-                isrt = true;
-            }
-        }
-        return isrt;
-    };
-    MatchconsolerrPage.prototype.toggleTempoReale = function () {
-        var questo = this;
-        console.log("toggletemporeale", this.selectedConsole);
-        if (true)
-            return;
-        questo.backend.playFeedback();
-        //alert(this.selectedConsole.match.matchord);
-        var active = true;
-        var url = this.backend.rooturl + "/matches/updaterr/" + this.selectedConsole.match.garaid + "/" + this.selectedConsole.match.id;
-        var newvalue = "true";
-        var newtesto = "attivato";
-        if (String(this.selectedConsole.match.realtime) == "true") {
-            newvalue = "false";
-            newtesto = "disattivato";
-            active = false;
-        }
-        var matchord = "";
-        if (questo.selectedConsole.match.hasOwnProperty("matchord")) {
-            if (questo.selectedConsole.match.matchord.trim() != "") {
-                matchord = questo.selectedConsole.match.matchord;
-            }
-        }
-        console.log("MATCHORD", matchord);
-        var action = "realtime_off";
-        if (active)
-            action = "realtime_on";
-        console.log("sending admin_action", action);
-        //alert(action);
-        var testo = "disattivato";
-        if (active)
-            testo = "attivato";
-        var doc = {
-            realtime: active,
-            admin_action: action
-        };
-        if (active) {
-            if (matchord.trim() != "") {
-                doc.matchord = matchord;
-            }
-            console.log("selectedconsole", questo.selectedConsole);
-            if (questo.selectedConsole.hasOwnProperty("avversario")) {
-                //if (questo.selectedConsole.avversario.trim() != "") doc.avversario = questo.selectedConsole.avversario;
-                doc.avversario = questo.selectedConsole.avversario;
-            }
-        }
-        //sendRealtime(true);
-        questo.disabledcontrols = true;
-        console.log("posting doc", doc);
-        questo.backend.postData(url, doc, function (data) {
-            console.log("data", data);
-            var toast = questo.toastCtrl.create({
-                message: 'Tempo reale ' + newtesto + " per il match " + questo.selectedConsole.match.matchid,
-                duration: 3000,
-                position: 'top'
-            });
-            toast.onDidDismiss(function () {
-                console.log('Dismissed toast');
-                questo.disabledcontrols = false;
-            });
-            toast.present();
-        });
-        if (true)
-            return;
-    };
-    MatchconsolerrPage.prototype.tapPlus = function (t) {
-        var questo = this;
-        var result = this.selectedConsole.result;
-        var p1 = parseInt(result.split("-")[0]);
-        var p2 = parseInt(result.split("-")[1]);
-        var arr = t.split("_");
-        var oper = arr[0];
-        var side = arr[1];
-        if (oper == 'plus') {
-            if (side == '1') {
-                p1++;
-            }
-            if (side == '2') {
-                p2++;
-            }
-        }
-        if (oper == 'minus') {
-            if (side == '1') {
-                p1--;
-                if (p1 < 0)
-                    p1 = 0;
-            }
-            if (side == '2') {
-                p2--;
-                if (p2 < 0)
-                    p2 = 0;
-            }
-        }
-        result = p1 + "-" + p2;
-        this.selectedConsole.result = result;
-        questo.sendRealtime();
-        questo.backend.playFeedback();
-        //prepare text
-    };
-    MatchconsolerrPage.prototype.sendRealtime = function () {
-        var questo = this;
-        var text = "TEMPO REALE !<br> ";
-        var color = "black";
-        var mtext = "in pausa";
-        if (questo.selectedConsole.running) {
-            mtext = "IN CORSO";
-            color = "blue";
-        }
-        if (questo.selectedConsole.fineround) {
-            mtext = "FINE ROUND " + questo.selectedConsole.round;
-            color = "black";
-        }
-        var rtext = "<font color='" + color + "'>Round " + questo.selectedConsole.round;
-        if (questo.selectedConsole.round == "GP")
-            rtext = "<font color='" + color + "'>GoldenPoint";
-        text += " " + rtext;
-        text += ", " + mtext;
-        text += ", " + questo.selectedConsole.result + "</font>";
-        /*
-
-        if (rta) {
-            if (rta.foto) {
-
-                text += "<br><img style='float: left' src='" + rta.foto + "' width='60px' height='60px' />";
-
-            }
-    }
-    */
-        //addMatchToRealtime(selectedid);
-        color = "black";
-        if (questo.selectedConsole.active)
-            color = "blue";
-        var htext = "<span style='color: " + color + "'>" + text + "</span>";
-        //
-        var rdata = {
-            type: "realtime",
-            to: "all",
-            garaid: questo.selectedConsole.match.garaid,
-            //matchid: selectedid,
-            matchid: questo.selectedConsole.match.id,
-            //matchnumber: selectedmatchid,
-            matchnumber: questo.selectedConsole.match.matchid,
-            result: questo.selectedConsole.result,
-            round: questo.selectedConsole.round,
-            fineround: questo.selectedConsole.fineround,
-            running: questo.selectedConsole.running,
-            paused: questo.selectedConsole.paused,
-            ammoniz1: 0,
-            ammoniz2: 0,
-            event: "realtime",
-            text: text,
-            //match: getMatchById(selectedid),
-            match: questo.selectedConsole.match,
-            active: true //questo.selectedConsole.active
-        };
-        if (questo.selectedConsole.hasOwnProperty("avversario")) {
-            if (questo.selectedConsole.avversario.trim() != "")
-                rdata.avversario = questo.selectedConsole.avversario;
-        }
-        if (questo.selectedConsole.match.realtime) {
-            console.log("è in realtime !!");
-            if (String(questo.selectedConsole.match.realtime) == "true")
-                questo.socket.sendMessage(rdata);
-        }
-    };
-    MatchconsolerrPage.prototype.tapRound = function (n) {
-        this.selectedConsole.round = n;
-        this.selectedConsole.paused = false;
-        this.selectedConsole.running = true;
-        this.selectedConsole.fineround = false;
-        this.selectedConsole.goldenpoint = false;
-        if (this.selectedConsole.round == "GP")
-            this.selectedConsole.goldenpoint = true;
-        this.sendRealtime();
-        this.backend.playFeedback();
-    };
-    MatchconsolerrPage.prototype.tapFineround = function () {
-        this.selectedConsole.fineround = true;
-        this.selectedConsole.paused = true;
-        this.selectedConsole.running = false;
-        this.sendRealtime();
-        this.backend.playFeedback();
-    };
-    MatchconsolerrPage.prototype.getPauseText = function () {
-        var text = "IN CORSO";
-        if (this.selectedConsole.paused) {
-            text = "IN PAUSA";
-        }
-        return text;
-    };
-    MatchconsolerrPage.prototype.tapPause = function () {
-        if (!this.selectedConsole.fineround) {
-            this.selectedConsole.paused = !this.selectedConsole.paused;
-            this.selectedConsole.running = !this.selectedConsole.running;
-        }
-        this.sendRealtime();
-        this.backend.playFeedback();
-    };
-    MatchconsolerrPage.prototype.getTemporealeText = function () {
-        var text = "TEMPO REALE: NON ATTIVO";
-        if (this.selectedConsole.match.realtime) {
-            if (String(this.selectedConsole.match.realtime) == "true") {
-                text = "TEMPO REALE: ATTIVO !";
-            }
-        }
-        return text;
-    };
-    MatchconsolerrPage.prototype.setResult = function () {
-        this.backend.playFeedback();
-        console.log("setResult");
-        var questo = this;
-        var ris = questo.selectedConsole.result;
-        var risarr = ris.split("-");
-        if (ris.trim() != "0-0") {
-            if (risarr[0] == risarr[1]) {
-                var alrtx = questo.alertCtrl.create({
-                    title: 'ATTENZIONE',
-                    subTitle: 'Il risultato indicato indica un pareggio, incrementa uno dei due punteggi per indicare una vittoria o una sconfitta',
-                    buttons: ['Chiudi']
-                });
-                alrtx.present();
-                return;
-            }
-        }
-        var msg = "Vuoi davvero convalidare il risultato di questo incontro (" + ris + ") ?";
-        var gsmsg = "";
-        if (questo.selectedConsole.goldenpoint)
-            gsmsg = "(risultato conseguito dopo GoldenPoint)";
-        if (questo.selectedConsole.squalifica)
-            gsmsg = "(verrà registrata la sconfitta per squalifica)";
-        msg += gsmsg;
-        var title = "Conferma risultato " + ris;
-        if ((ris.trim() == "0-0") || (ris.trim() == "")) {
-            msg = "ATTENZIONE ! Il risultato impostato eseguirà il reset del match. Vuoi davvero resettare il match ?";
-            title = "Conferma reset match";
-        }
-        var alrt = questo.alertCtrl.create({
-            title: title,
-            message: msg,
-            buttons: [
-                {
-                    text: 'Annulla',
-                    role: 'cancel',
-                    handler: function () {
-                        console.log('Cancel clicked');
-                        questo.backend.playFeedback();
-                    }
-                },
-                {
-                    text: 'OK',
-                    handler: function () {
-                        questo.backend.playFeedback();
-                        var match = questo.selectedConsole.match;
-                        var goldenpoint = false;
-                        if (questo.selectedConsole.round.toLowerCase() == "gp")
-                            goldenpoint = true;
-                        if (questo.selectedConsole.goldenpoint)
-                            goldenpoint = true;
-                        match.goldenpoint = goldenpoint;
-                        match.risultato = questo.selectedConsole.result;
-                        if (match.hasOwnProperty("avversari")) {
-                            delete match.avversari;
-                        }
-                        //alert(questo.selectedConsole.squalifica);
-                        match.squalifica = questo.selectedConsole.squalifica;
-                        var atl = questo.backend.getAtletaById(questo.selectedConsole.match.atletaid);
-                        var mfa = questo.backend.filterRows(questo.backend.activegara.matchesbyprog, { atletaid: atl.id });
-                        questo.backend.setResult(match, atl, mfa, function (data) {
-                            console.log("setted result !!", data);
-                            setTimeout(function () {
-                                questo.navCtrl.pop();
-                            }, 2000);
-                        });
-                        console.log('Buy clicked');
-                    }
-                }
-            ]
-        });
-        alrt.present();
-    };
-    MatchconsolerrPage.prototype.gotoChat = function () {
-        this.backend.playFeedback();
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_chat_chat__["a" /* ChatPage */]);
-    };
-    MatchconsolerrPage.prototype.showMatchOrd = function (m) {
-        var retvalue = false;
-        if (m.hasOwnProperty("matchord")) {
-            if (m.matchord.trim() != "") {
-                retvalue = true;
-            }
-        }
-        return retvalue;
-    };
-    MatchconsolerrPage.prototype.hasAvversari = function () {
-        var questo = this;
-        var retvalue = false;
-        if (questo.selectedConsole.hasOwnProperty("avversari")) {
-            if (questo.selectedConsole.avversari.length > 0)
-                retvalue = true;
-        }
-        return retvalue;
-    };
-    MatchconsolerrPage.prototype.hasAvversario = function (m) {
-        var retvalue = false;
-        if (m.hasOwnProperty("avversario")) {
-            if (m.avversario.trim() != "")
-                retvalue = true;
-        }
-        return retvalue;
-    };
-    MatchconsolerrPage.prototype.getAvversario = function (m) {
-        var retvalue = {
-            nome: "",
-            societa: ""
-        };
-        if (m.hasOwnProperty("avversario")) {
-            retvalue.nome = m.avversario.split("|")[0];
-            retvalue.societa = m.avversario.split("|")[1];
-        }
-        return retvalue;
-    };
-    MatchconsolerrPage.prototype.selectAvversario = function (c) {
-        var _this = this;
-        var questo = this;
-        if (c.avversari.length == 0)
-            return;
-        var inputs = [];
-        var ndchecked = true;
-        var m = c.match;
-        if (m.hasOwnProperty("avversario")) {
-            if (m.avversario.trim() != "") {
-                ndchecked = false;
-            }
-        }
-        inputs.push({ type: 'radio', label: 'Non definito', value: '', checked: ndchecked });
-        c.avversari.forEach(function (item, idx) {
-            console.log("avversario", item);
-            var lblnome = item.nome;
-            var lblval = item.nome + "|" + item.societa;
-            var checked = false;
-            if (m.hasOwnProperty("avversario")) {
-                if (m.avversario.trim() != "") {
-                    var avv = m.avversario.split("|");
-                    //console.log("avv",avv,"item",item);
-                    if (avv[0].toLowerCase() == item.nome.toLowerCase())
-                        checked = true;
-                }
-            }
-            inputs.push({ type: 'radio', label: lblnome, value: lblval, checked: checked });
-        });
-        var alrt = questo.alertCtrl.create({
-            title: 'Seleziona avversario',
-            inputs: inputs,
-            buttons: [
-                {
-                    text: 'Annulla',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'OK',
-                    handler: function (data) {
-                        console.log("OK", data);
-                        if (data) {
-                            console.log("data cè");
-                            m.avversario = data;
-                            questo.selectedConsole.avversario = data;
-                            console.log("selectedConsole", questo.selectedConsole.avversario);
-                        }
-                        else {
-                            console.log("data non cè");
-                            m.avversario = "";
-                            questo.selectedConsole.avversario = "";
-                            //delete questo.selectedConsole.avversario;
-                        }
-                        if (questo.selectedConsole.active)
-                            questo.sendRealtime();
-                        var loading = _this.loadingCtrl.create({
-                            spinner: 'dots',
-                            content: 'Aggiornamento avversario...'
-                        });
-                        loading.onDidDismiss(function () {
-                            console.log('Dismissed loading');
-                        });
-                        loading.present();
-                        questo.backend.setAvversario(m.garaid, m.id, questo.selectedConsole.avversario, function (data) {
-                            console.log("setAvversario done", data);
-                            loading.dismiss();
-                        });
-                    }
-                }
-            ]
-        });
-        alrt.present();
-    };
-    return MatchconsolerrPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Navbar */]) === "function" && _a || Object)
-], MatchconsolerrPage.prototype, "navBar", void 0);
-MatchconsolerrPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-matchconsolerr',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/'<!--\n  Generated template for the MatchconsolePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Match console</ion-title>\n     <ion-buttons end>\n     \n<!--<button ion-button style="font-size: 18px" (click)="gotoChat()"><ion-icon name="md-chatbubbles"></ion-icon>\n\n</button>-->\n</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-segment [(ngModel)]="selectedMatchId" >\n      <ion-segment-button *ngFor="let c of backend.matchconsoles; let i=index;" [value]="c.match.id" (tap)="tapSegment(c,i)" [ngClass]="c.realtime ? \'ssecondary\': \'sdark\'">\n        <span [ngClass]="(c.match.realtime==\'false\') || (c.match.realtime==false) ? \'tabnorealtime\': \'\'">{{c.match.matchid}} {{c.match.atletaname}}</span>\n      </ion-segment-button>\n      \n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <div class="consoleinfo">{{selectedConsole.match.matchid}} {{selectedConsole.match.atletaname}}</div> \n <div class="consoleinfo" style="font-size: 13px; font-style: italic; height: 25px;" *ngIf="showMatchOrd(selectedConsole.match)">{{selectedConsole.match.matchord}}</div>\n <div class="avvinfo"  *ngIf="selectedConsole.avversario">{{selectedConsole.avversario.split(\'|\')[0]}}<br>{{selectedConsole.avversario.split(\'|\')[1]}}</div>\n <ion-row>\n   <ion-col col-12><button ion-button full [ngClass]="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ? \'realtimebut\' : \'norealtimebut\'" (tap)="toggleTempoReale()">{{getTemporealeText()}}</button>\n   </ion-col>\n </ion-row>\n  <br>\n  <div *ngIf="(selectedConsole.match.realtime==\'true\') || (selectedConsole.match.realtime==true) ">\n  <ion-row>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPause()" [ngClass]="!selectedConsole.paused ? \'incorso\' : \'\'">{{getPauseText()}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapFineround()" [ngClass]="selectedConsole.fineround ? \'roundactive\' : \'\'">FINEROUND</button>\n    </ion-col>\n\n  </ion-row>\n  <ion-row>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'1\')" color="light" [ngClass]="(selectedConsole.round==\'1\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'1\' ? \'roundactive\' : \'\'">1</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'2\')" color="light" [ngClass]="(selectedConsole.round==\'2\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'2\' ? \'roundactive\' : \'\'">2</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'3\')" color="light" [ngClass]="(selectedConsole.round==\'3\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'3\' ? \'roundactive\' : \'\'">3</button></ion-col>\n    <ion-col col-3><button [disabled]="disabledcontrols" ion-button full (tap)="tapRound(\'GP\')" color="light" [ngClass]="(selectedConsole.round==\'GP\') && (selectedConsole.fineround) ? \'roundactive fineround\' : selectedConsole.round==\'GP\' ? \'roundactive\' : \'\'">GP</button></ion-col>\n  </ion-row>\n  </div>\n  <br>\n  <ion-row>\n    <ion-col col-4>{{selectedConsole.match.player1.cognome}} {{selectedConsole.match.player1.nome}} </ion-col>\n    <ion-col></ion-col>\n    <ion-col col-4>{{selectedConsole.match.player2.cognome}} {{selectedConsole.match.player2.nome}}</ion-col>\n  </ion-row>\n  <ion-row>\n    \n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_1\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_1\')">-</button></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><ion-input readonly [disabled]="disabledcontrols" [(ngModel)]="selectedConsole.result" ></ion-input></ion-col>\n    <ion-col col-1></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'plus_2\')">+</button></ion-col>\n    <ion-col col-2><button [disabled]="disabledcontrols" ion-button full color="light" (tap)="tapPlus(\'minus_2\')">-</button></ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col col-12>\n      <div style="font-size: 12px; padding: 4px; text-align: center">\n      \n    </div>\n    </ion-col>\n  </ion-row>\n  <br>\n  <div class="checkboxes">\n  <ion-item>\n      <ion-label>GoldenPoint (il punteggio indica il vincitore)</ion-label>\n      <ion-checkbox [(ngModel)]="selectedConsole.goldenpoint"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n        <ion-label>Sconfitta per squalifica</ion-label>\n        <ion-checkbox [(ngModel)]="selectedConsole.squalifica"></ion-checkbox>\n      </ion-item>\n    </div>\n\n\n  <br>\n  <div *ngIf="hasAvversari()"><!--*ngIf="selectedConsole.match.avversari.length>0"-->\n  <button ion-button color="light"  small block (tap)="selectAvversario(selectedConsole)">Seleziona avversario</button>\n  <br>\n</div>\n\n  <button [disabled]="disabledcontrols" ion-button full (tap)="setResult()">Convalida risultato</button>  \n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/matchconsolerr/matchconsolerr.html"*/,
-    }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _j || Object])
-], MatchconsolerrPage);
-
-var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-//# sourceMappingURL=matchconsolerr.js.map
-
-/***/ }),
-
-/***/ 749:
+/***/ 750:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IospaidPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_tabs_tabs__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_tabs_tabs__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16884,7 +17166,7 @@ IospaidPage = __decorate([
 
 /***/ }),
 
-/***/ 750:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17136,14 +17418,14 @@ RtcPage = __decorate([
 
 /***/ }),
 
-/***/ 751:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FblivePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -17196,7 +17478,7 @@ FblivePage = __decorate([
 
 /***/ }),
 
-/***/ 752:
+/***/ 753:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17319,7 +17601,7 @@ SectionComponent = __decorate([
 
 /***/ }),
 
-/***/ 753:
+/***/ 754:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17511,7 +17793,7 @@ ScrollableTabs = __decorate([
 
 /***/ }),
 
-/***/ 754:
+/***/ 755:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17709,5 +17991,5 @@ ScrollableSegments = __decorate([
 
 /***/ })
 
-},[573]);
+},[575]);
 //# sourceMappingURL=main.js.map

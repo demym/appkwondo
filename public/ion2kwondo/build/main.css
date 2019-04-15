@@ -32193,6 +32193,11 @@ page-rtc .blink {
   -webkit-animation: fade 3000ms infinite;
 }
 
+page-scoreboards .riga {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 page-scorekeeper {
   /*ion-col {
         display: flex;
@@ -32429,7 +32434,7 @@ page-tournament ibmsection {
 }
 
 page-tournament .incontro {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 page-tournament .uc {
@@ -32441,7 +32446,7 @@ page-tournament .pad5 {
 }
 
 page-tournament .classificaatleta {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 page-tournament .classificarow {
@@ -32453,8 +32458,17 @@ page-tournament .incontrirow {
   margin: 4px;
 }
 
+page-tournament .incaston {
+  padding: 4px;
+  width: 100%;
+  background: #222;
+  color: #eee;
+  font-size: 14px;
+  height: 35px;
+}
+
 page-tournament .small {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 page-tournament .input .text-input {
