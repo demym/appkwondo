@@ -2174,6 +2174,7 @@ var ScorekeeperPage = (function () {
         this.backend = backend;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.mode = "master";
         this.punt1 = 0;
         this.punt2 = 0;
         this.timeLeft = 60;
@@ -2183,56 +2184,101 @@ var ScorekeeperPage = (function () {
         this.timerpaused = false;
         this.player1 = {
             cognome: "Scevola",
+            societa: "Scuola Taekwondo Pinerolo",
             nome: "Muzio",
             id: "xxxx"
         };
         this.player2 = {
             cognome: "Regolo",
+            societa: "ASD Taekwondo Milazzo",
             nome: "Attilio",
             id: "xxxx"
         };
-    }
-    ScorekeeperPage.prototype.ionViewWillLeave = function () {
+        this.socketTimerInterval = 5;
+        this.socketTimerCount = 0;
+        this.scoreboard = {
+            clientid: "master",
+            punt1: 0,
+            punt2: 0,
+            player1: {
+                cognome: "Scevola",
+                societa: "Scuola Taekwondo Pinerolo",
+                nome: "Muzio",
+                id: "xxxx"
+            },
+            player2: {
+                cognome: "Regolo",
+                societa: "ASD Taekwondo Milazzo",
+                nome: "Attilio",
+                id: "xxxx"
+            },
+            timeLeft: 60
+        };
         var questo = this;
-        clearInterval(questo.interval);
+        questo.events.subscribe("scoreboardslave", function (data) {
+            console.log("reeived scoreboardslave in scorekeeper.ts", data);
+            if (questo.mode == "slave") {
+                if (data) {
+                    if (data.punt1)
+                        questo.scoreboard.punt1 = data.punt1;
+                    //questo.punt1=data.punt1;
+                    if (data.punt2)
+                        questo.scoreboard.punt2 = data.punt2;
+                    if (data.timeLeft)
+                        questo.scoreboard.timeLeft = data.timeLeft;
+                }
+            }
+        });
+    }
+    ScorekeeperPage.prototype.ionViewDidLeave = function () {
+        var questo = this;
+        if (questo.mode == "master")
+            clearInterval(questo.interval);
         questo.events.unsubscribe("scoreboards");
-        questo.events.unsubscribe("scoreboard");
-        questo.backend.removeScoreboard(questo.socket.socket.id);
+        if (questo.mode == "slave")
+            questo.events.unsubscribe("scoreboard");
+        if (questo.mode == "master")
+            questo.backend.removeScoreboard(questo.socket.socket.id);
     };
     ScorekeeperPage.prototype.ionViewDidLoad = function () {
         var questo = this;
         console.log('ionViewDidLoad ScorekeeperPage');
+        if (questo.navParams.get("mode"))
+            questo.mode = questo.navParams.get("mode");
+        if (questo.navParams.get("scoreboard"))
+            questo.scoreboard = questo.navParams.get("scoreboard");
         //this.startTimer();
-        questo.timeLeft = questo.maxTime;
+        console.log("questo.mode", questo.mode);
+        if (questo.mode == "master")
+            questo.timeLeft = questo.maxTime;
         questo.getScoreboards();
-        questo.events.subscribe("scoreboards", function (data) {
-            console.log("reeived scoreboards in scorekeeper.ts", data);
-        });
-        questo.events.subscribe("scoreboard", function (data) {
-            console.log("reeived scoreboard in scorekeeper.ts", data);
-            questo.punt1 = data.punt1;
-            questo.punt2 = data.punt2;
-            questo.timeLeft = data.timeLeft;
-        });
-        questo.sendSocketScoreboard();
+        /*questo.events.subscribe("scoreboards", function (data) {
+          console.log("reeived scoreboards in scorekeeper.ts", data);
+        })*/
+        if (questo.mode == "master")
+            questo.sendSocketScoreboard();
     };
     ScorekeeperPage.prototype.getScoreboards = function () {
         this.socket.sendCustomMessage("getscoreboards", {});
     };
     ScorekeeperPage.prototype.increase = function (x) {
-        this[x]++;
+        if (this.mode != "master")
+            return;
+        this.scoreboard[x]++;
         this.sendSocketScoreboard();
     };
     ScorekeeperPage.prototype.decrease = function (x) {
-        this[x]--;
+        if (this.mode != "master")
+            return;
+        this.scoreboard[x]--;
         this.sendSocketScoreboard();
     };
     ScorekeeperPage.prototype.resetPunti = function () {
         var questo = this;
         questo.backend.showConfirm("Vuoi davvero resettare il punteggio ?", function (yes) {
-            questo.punt1 = 0;
-            questo.punt2 = 0;
-            this.sendSocketScoreboard();
+            questo.scoreboard.punt1 = 0;
+            questo.scoreboard.punt2 = 0;
+            questo.sendSocketScoreboard();
         });
     };
     ScorekeeperPage.prototype.tapTimer = function () {
@@ -2256,20 +2302,25 @@ var ScorekeeperPage = (function () {
         var _this = this;
         var questo = this;
         questo.interval = setInterval(function () {
-            if (questo.timeLeft > 0) {
+            if (questo.scoreboard.timeLeft > 0) {
                 if (!questo.timerpaused) {
                     questo.backend.playSoundDespiteAppSettings("img/tick");
-                    questo.timeLeft--;
+                    questo.scoreboard.timeLeft--;
                     questo.timerstarted = true;
                     questo.timertext = "PAUSA";
-                    _this.sendSocketScoreboard();
-                    if (questo.timeLeft == 0) {
+                    questo.socketTimerCount++;
+                    if (questo.socketTimerCount == questo.socketTimerInterval) {
+                        _this.sendSocketScoreboard();
+                        questo.socketTimerCount = 0;
+                    }
+                    if (questo.scoreboard.timeLeft == 0) {
                         questo.backend.playSoundDespiteAppSettings("img/endfight");
                         questo.timerstarted = false;
                         questo.timerpaused = false;
                         questo.timertext = "AVVIO";
                         clearInterval(questo.interval);
                         _this.sendSocketScoreboard();
+                        questo.socketTimerCount = 0;
                     }
                 }
             }
@@ -2285,11 +2336,12 @@ var ScorekeeperPage = (function () {
     };
     ScorekeeperPage.prototype.stopTimer = function () {
         clearInterval(this.interval);
-        this.timeLeft = this.maxTime;
+        this.scoreboard.timeLeft = this.maxTime;
         this.timertext = "AVVIA";
         this.timerstarted = false;
         this.timerpaused = true;
         this.sendSocketScoreboard();
+        this.socketTimerCount = 0;
     };
     ScorekeeperPage.prototype.pauseTimer = function () {
         this.timerpaused = true;
@@ -2303,8 +2355,9 @@ var ScorekeeperPage = (function () {
                 questo.timerpaused = true;
                 questo.timerstarted = false;
                 clearInterval(questo.interval);
-                questo.timeLeft = questo.maxTime;
+                questo.scoreboard.timeLeft = questo.maxTime;
                 questo.timertext = "AVVIO";
+                questo.socketTimerCount = 0;
             }
         });
     };
@@ -2331,7 +2384,7 @@ var ScorekeeperPage = (function () {
                     text: 'IMPOSTA',
                     handler: function (data) {
                         questo.maxTime = data.seconds;
-                        questo.timeLeft = questo.maxTime;
+                        questo.scoreboard.timeLeft = questo.maxTime;
                         questo.stopTimer();
                     }
                 }
@@ -2378,21 +2431,22 @@ var ScorekeeperPage = (function () {
     };
     ScorekeeperPage.prototype.sendSocketScoreboard = function () {
         var questo = this;
-        var data = {
-            clientid: questo.socket.socket.id,
-            punt1: questo.punt1,
-            punt2: questo.punt2,
-            timeleft: questo.timeLeft,
-            player1: questo.player1,
-            player2: questo.player2
-        };
-        questo.socket.sendCustomMessage("scoreboard", data);
+        /*var data = {
+          clientid: questo.socket.socket.id,
+          punt1: questo.punt1,
+          punt2: questo.punt2,
+          timeleft: questo.timeLeft,
+          player1: questo.player1,
+          player2: questo.player2
+    
+        }*/
+        questo.socket.sendCustomMessage("scoreboard", questo.scoreboard);
     };
     return ScorekeeperPage;
 }());
 ScorekeeperPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-scorekeeper',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/'<!--\n  Generated template for the ScorekeeperPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SCOREKWONDO</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content scroll="false" spadding>\n  <table border="1" height="100%" width="100%" cellpadding="2" cellpadding="2">\n    <tr height="10%">\n      <td> \n        <button ion-button (tap)="resetPunti()">Reset punti</button>\n        <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()" (tap)="tapTimer()">{{timertext}}</button>\n        <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n      <td>\n          <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut red">{{punt2}}</div>\n      </td>\n    </tr>\n    <tr height="25%"  class="buttr">\n      <td>\n          <div  (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')"  class="puntbut blue" >{{punt1}}</div>\n      </td>\n    </tr>\n    <tr>\n      <td>\n          <div [ngClass]="getTimerClass()">{{getTime(timeLeft)}}</div>\n          \n      </td>\n    </tr>\n  </table>\n\n\n<!--<ion-grid>\n\n  <ion-row>\n    <button ion-button (tap)="resetPunti()">Reset punti</button>\n    <button ion-button (press)="resetTimer()" (tap)="tapTimer()">{{timertext}}</button>\n    <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n   \n  </ion-row>\n\n  <ion-row>\n      <div class="timer">{{timeLeft}}</div>\n\n  </ion-row>\n\n<ion-row class="ionrow">\n    <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')"  ion-button full class="puntbut" color="danger">{{punt2}}</button></ion-col>\n  \n  <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n</ion-row>\n\n<ion-row class="ionrow">\n <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" ion-button full class="puntbut" color="primary">{{punt1}}</button></ion-col>\n \n <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n </ion-row>\n\n\n <ion-row>\n   <ion-col>\n   \n   </ion-col>\n </ion-row>\n\n </ion-grid>-->\n\n  <!--<section class="home-container">\n\n    <ion-row class="first-row">\n      <ion-col>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="second-row">\n      <ion-col class="redbutton">\n          {{punt2}}\n      </ion-col>\n\n    </ion-row>\n    <ion-row class="third-row">\n      <ion-col class="bluebutton">\n       {{punt1}}\n      </ion-col>\n    </ion-row>\n  </section>-->\n\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/,
+        selector: 'page-scorekeeper',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/'<!--\n  Generated template for the ScorekeeperPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SCOREKWONDO</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content scroll="false" spadding>\n  <table border="1" height="100%" width="100%" cellpadding="2" cellpadding="2">\n    <tr height="10%" *ngIf="mode==\'master\'">\n      <td>\n        <button ion-button (tap)="resetPunti()">Reset punti</button>\n        <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()"\n          (tap)="tapTimer()">{{timertext}}</button>\n        <button ion-button (tap)="setupTimer()">\n          <ion-icon name="settings"></ion-icon>\n        </button>\n      </td>\n    </tr>\n    <tr class="buttr  red" *ngIf="player1.cognome!=\'\'">\n      <td>\n        <div class="atleta">{{scoreboard.player1.cognome+\' \'+scoreboard.player1.nome}}</div>\n        <div class="societa">{{scoreboard.player1.societa}}</div>\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n\n      <td>\n        <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut red">{{scoreboard.punt2}}</div>\n      </td>\n    </tr>\n    <tr class="buttr  blue" *ngIf="player2.cognome!=\'\'">\n      <td>\n        <div class="atleta">{{scoreboard.player2.cognome+\' \'+scoreboard.player2.nome}}</div>\n        <div class="societa">{{scoreboard.player2.societa}}</div>\n\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n\n      <td>\n        <div (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" class="puntbut blue">{{scoreboard.punt1}}</div>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        <div [ngClass]="getTimerClass()">{{getTime(scoreboard.timeLeft)}}</div>\n\n      </td>\n    </tr>\n  </table>\n\n\n  <!--<ion-grid>\n\n  <ion-row>\n    <button ion-button (tap)="resetPunti()">Reset punti</button>\n    <button ion-button (press)="resetTimer()" (tap)="tapTimer()">{{timertext}}</button>\n    <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n   \n  </ion-row>\n\n  <ion-row>\n      <div class="timer">{{timeLeft}}</div>\n\n  </ion-row>\n\n<ion-row class="ionrow">\n    <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')"  ion-button full class="puntbut" color="danger">{{punt2}}</button></ion-col>\n  \n  <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n</ion-row>\n\n<ion-row class="ionrow">\n <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" ion-button full class="puntbut" color="primary">{{punt1}}</button></ion-col>\n \n <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n </ion-row>\n\n\n <ion-row>\n   <ion-col>\n   \n   </ion-col>\n </ion-row>\n\n </ion-grid>-->\n\n  <!--<section class="home-container">\n\n    <ion-row class="first-row">\n      <ion-col>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="second-row">\n      <ion-col class="redbutton">\n          {{punt2}}\n      </ion-col>\n\n    </ion-row>\n    <ion-row class="third-row">\n      <ion-col class="bluebutton">\n       {{punt1}}\n      </ion-col>\n    </ion-row>\n  </section>-->\n\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _f || Object])
 ], ScorekeeperPage);
@@ -2898,6 +2952,7 @@ var SocketService = (function () {
             console.log("socket scoreboard received !!", data);
             //questo.renderVoice(data);
             questo.events.publish('scoreboard', data);
+            questo.events.publish('scoreboardslave', data);
         });
         this.socket.on("scoreboards", function (data) {
             console.log("socket scoreboards received !!", data);
@@ -3221,9 +3276,10 @@ var SocketService = (function () {
 }());
 SocketService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_4__backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__["a" /* Badge */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["p" /* Platform */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* Events */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__backend_backend__["a" /* BackendProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__["a" /* Badge */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_badge__["a" /* Badge */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["p" /* Platform */]) === "function" && _d || Object])
 ], SocketService);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=socket-service.js.map
 
 /***/ }),
@@ -12627,6 +12683,7 @@ SettingsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scorekeeper_scorekeeper__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12636,6 +12693,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -12678,11 +12736,17 @@ var ScoreboardsPage = (function () {
     ScoreboardsPage.prototype.ionViewDidLeave = function () {
         this.events.unsubscribe("scoreboard");
     };
+    ScoreboardsPage.prototype.gotoScorekeeper = function (s) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__scorekeeper_scorekeeper__["a" /* ScorekeeperPage */], {
+            mode: "slave",
+            scoreboard: s
+        });
+    };
     return ScoreboardsPage;
 }());
 ScoreboardsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-scoreboards',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/'<!--\n  Generated template for the ScoreboardsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>scoreboards</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item *ngFor="let s of scoreboards">\n      <ion-row class="riga">\n        <ion-col col-6>{{s.player1.cognome+\' \'+s.player1.nome}} - {{s.player2.cognome+\' \'+s.player2.nome}}</ion-col>\n        <ion-col col-4>{{s.punt1}}-{{s.punt2}}</ion-col>\n        <ion-col col-2>{{s.timeleft}}</ion-col>\n      </ion-row>\n\n   \n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/,
+        selector: 'page-scoreboards',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/'<!--\n  Generated template for the ScoreboardsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>scoreboards</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item style="display:none" *ngFor="let s of scoreboards">\n      <ion-row class="riga">\n        <ion-col col-5 class="atleta">{{s.player1.cognome+\' \'+s.player1.nome}}<br><span\n            class="societa">{{s.player1.societa}}</span> - </ion-col>\n\n        <ion-col col-5 class="atleta">{{s.player2.cognome+\' \'+s.player2.nome}}<br><span\n            class="societa">{{s.player2.societa}}</span></ion-col>\n        <ion-col col-1 class="punteggio">{{s.punt1}}-{{s.punt2}}</ion-col>\n        <ion-col col-1 class="timeleft">{{s.timeleft}}</ion-col>\n      </ion-row>\n\n\n    </ion-item>\n\n    <div *ngFor="let s of scoreboards" class="scoreitem" tappable (tap)="gotoScorekeeper(s)">\n      <table width="100%">\n        <tr>\n          <td width="10%" rowspan="2" class="timeleft">{{s.timeLeft}}</td>\n          <td width="80%" class="left">\n            <div class="atleta">{{s.player1.cognome+\' \'+s.player1.nome}}</div>\n            <div class="societa">{{s.player1.societa}}</div>\n          </td>\n          <td class="punt1" width="10%">\n            {{s.punt1}}\n          </td>\n        </tr>\n        <tr>\n          <td width="80%" class="left">\n            <div class="atleta">{{s.player2.cognome+\' \'+s.player2.nome}}</div>\n            <div class="societa">{{s.player2.societa}}</div>\n          </td>\n          <td class="punt2" width="10%">\n            {{s.punt2}}\n          </td>\n\n        </tr>\n      </table>\n\n    </div>\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
 ], ScoreboardsPage);

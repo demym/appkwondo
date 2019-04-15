@@ -32198,6 +32198,54 @@ page-scoreboards .riga {
   white-space: normal;
 }
 
+page-scoreboards .atleta {
+  font-size: 13px;
+  vertical-align: top;
+}
+
+page-scoreboards .punt1 {
+  background: red;
+  color: yellow;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  padding: 2px;
+}
+
+page-scoreboards .scoreitem {
+  border-bottom: 1px solid silver;
+}
+
+page-scoreboards .left {
+  padding: 2px;
+  text-align: center;
+}
+
+page-scoreboards .punt2 {
+  background: blue;
+  color: yellow;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  padding: 2px;
+}
+
+page-scoreboards .punteggio {
+  font-size: 14px;
+}
+
+page-scoreboards .timeleft {
+  color: gray;
+  font-size: 13px;
+  text-align: center;
+}
+
+page-scoreboards .societa {
+  color: gray;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
 page-scorekeeper {
   /*ion-col {
         display: flex;
@@ -32327,6 +32375,17 @@ page-scorekeeper .backgray {
 
 page-scorekeeper .backorange {
   background-color: orange;
+}
+
+page-scorekeeper .atleta {
+  color: yellow;
+  font-size: 13px;
+}
+
+page-scorekeeper .societa {
+  color: #eee;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
 page-scorekeeper .blink {
