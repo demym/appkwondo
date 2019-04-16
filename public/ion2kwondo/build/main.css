@@ -32341,10 +32341,32 @@ page-scorekeeper .puntbut {
   height: 100%;
   width: 100%;
   color: white;
-  font-size: 98px;
+  font-size: 10rem;
   line-height: 200%;
   font-weight: normal;
   text-align: center;
+}
+
+page-scorekeeper .puntbut2 {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 30rem;
+  line-height: 200%;
+  font-weight: normal;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 page-scorekeeper .blue {
@@ -32379,13 +32401,40 @@ page-scorekeeper .backorange {
 
 page-scorekeeper .atleta {
   color: yellow;
-  font-size: 13px;
+  font-size: 14px;
+}
+
+page-scorekeeper .tdatleta {
+  height: 10px;
+  padding: 2px;
+  background: black;
 }
 
 page-scorekeeper .societa {
   color: #eee;
   font-size: 11px;
   text-transform: uppercase;
+}
+
+page-scorekeeper .horsocieta {
+  color: #eee;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+page-scorekeeper .atletacontainer {
+  background: black;
+  color: yellow;
+  height: 40px;
+  position: fixed;
+  width: 50%;
+  top: 0%;
+  text-align: center;
+  padding: 2px;
+}
+
+page-scorekeeper .tdtimer {
+  height: 30px;
 }
 
 page-scorekeeper .blink {
