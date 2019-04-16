@@ -1078,9 +1078,11 @@ app.get("/scoreboards", function (req, res) {
 app.get("/scoreboards/remove/:clientid",function(req,res){
 	var clientid=req.params.clientid;
 	realtime.removeScoreboard(clientid);
-	io.to(socket.id).emit("scoreboards", {
+	if (io){
+	io.emit("scoreboards", {
 		scoreboards: realtime.getScoreboards()
 	});
+}
 	res.send(realtime.getScoreboards())
 })
 
