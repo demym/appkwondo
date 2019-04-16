@@ -1910,6 +1910,7 @@ io.sockets.on('connection', function (socket) {
 		console.log(txt);
 		utils.colog(txt);
 		io.emit("scoreboard")
+		io.emit("scoreboards")
 		io.emit('auserhasdisconnected');
 
 		//WEBRTC PART
