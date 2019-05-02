@@ -304,6 +304,12 @@ var HomePage = (function () {
                 retvalue = false;
             //if (this.backend.user.role.toLowerCase()!="tkdradmin") retvalue=false;
         }
+        if (questo.backend.user.role == "guest") {
+            if (m.name == "Eventi")
+                retvalue = false;
+            if (m.name == "Statistiche")
+                retvalue = false;
+        }
         return retvalue;
     };
     HomePage.prototype.myAccount = function () {
@@ -322,15 +328,16 @@ __decorate([
 ], HomePage.prototype, "chat", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* Content */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* Content */]) === "function" && _a || Object)
 ], HomePage.prototype, "content", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle="left" start>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>AppKwonDoV2</ion-title>\n    <!--<button ion-button menuToggle="right" end>\n        <ion-icon name="menu"></ion-icon>\n      </button>-->\n    <ion-buttons end>\n\n      <button (tap)="showAbout()" ion-button icon-only>\n        <ion-icon name="ios-information-circle"></ion-icon>\n      </button>\n\n\n<button (tap)="broadcast()" ion-button icon-only>\n  <ion-icon *ngIf="isIbmAdmin" name="ios-radio-outline"></ion-icon>\n</button>\n\n\n</ion-buttons>\n  </ion-navbar>\n  \n    \n</ion-header>\n\n<ion-content spadding class="ion-content">\n\n   \n  <ion-card>\n    <ion-card-content style="padding: 7px;">\n      <ion-row>\n        <ion-col col-9>\n            <div class="benvenuto">Benvenuto <b>{{user.nickname}}</b></div>\n            </ion-col>\n            <ion-col col-3 style="text-align: right">\n                <button style="height: 18px;" clear ion-button (tap)="myAccount()"><ion-icon class="baricon" name="md-settings"></ion-icon></button>\n            </ion-col>\n      </ion-row>\n            <div class="server">{{user.email}}</div>\n            <div class="server">Server: {{backend.rooturl}}</div>\n            <div class="admin" *ngIf="user.role==\'tkdradmin\'">Accesso amministratore eseguito</div>\n\n      \n\n    </ion-card-content>\n    </ion-card>\n  \n<ion-list >\n  <ion-item  *ngFor="let m of displayedmenu" (tap)="gotoPage(m.page)">\n    <ion-row style="font-size: 16px" >\n      <ion-col col-2 class="fixedicon">\n    <ion-icon style="font-size: 22px !important" name="{{m.icon}}"></ion-icon>\n      </ion-col>\n      <ion-col style="font-size: 20px" >{{m.name}}</ion-col>\n      <ion-col col-1>\n        <ion-badge *ngIf="(backend.unread>0) && (m.name==\'ChatKwonDo\')" color="danger">{{backend.unread}}</ion-badge>\n        <ion-badge *ngIf="(backend.nextevents.length>0) && (m.name==\'Eventi\')" >{{backend.nextevents.length}}</ion-badge>\n      </ion-col>\n      </ion-row>\n  </ion-item>\n  </ion-list>\n  <!--<ion-card>\n    <ion-card-content>\n        <img *ngIf="backend.activesocieta==\'ASD TAEKWONDO ROZZANO\'" src="assets/img/logotkdrozzano_icon.png" style="height: 32px" />\n    </ion-card-content>\n  </ion-card>-->\n  <!--<div class="servizi">\n  <ion-card (tap)="gotoServiziSocieta()">\n    <ion-card-content>\n      <ion-row>\n          <ion-col col-3>\n              <img [src]="backend.settings.logourl" class="societalogosmall" />\n            </ion-col>\n        <ion-col>\n            Servizi {{backend.settings.mysocietaname}}\n        </ion-col>\n        \n      </ion-row>\n     \n    </ion-card-content>\n  </ion-card>\n</div>-->\n \n</ion-content>\n\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__["a" /* AppAvailability */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["p" /* Platform */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["t" /* ToastController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__["a" /* AppAvailability */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_availability__["a" /* AppAvailability */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["p" /* Platform */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _j || Object])
 ], HomePage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -1420,7 +1427,8 @@ var TournamentPage = (function () {
             formula: "roundrobin_ar",
             regionalita: "interregionale",
             tkdt_id: "",
-            gironi: []
+            gironi: [],
+            atletiiscritti: []
             /*
             gironi: [{
               title: "Girone1",
@@ -1729,6 +1737,8 @@ var TournamentPage = (function () {
             questo.torneo = data.gara.rows[0].doc;
             if (!questo.torneo.hasOwnProperty("gironi"))
                 questo.torneo.gironi = [];
+            if (!questo.torneo.hasOwnProperty("atletiiscritti"))
+                questo.torneo.atletiiscritti = [];
             console.log("e poi qui");
             var rtcount = 0;
             //if (questo.gara.matchesbyprog.rows.length == 0) questo.showIscritti = true;
@@ -1883,6 +1893,8 @@ var TournamentPage = (function () {
         var retvalue = false;
         if (this.backend.user.role == "tkdradmin")
             retvalue = true;
+        if (this.backend.user.role == "superadmin")
+            retvalue = true;
         return retvalue;
     };
     TournamentPage.prototype.toggleInfobar = function () {
@@ -1940,6 +1952,9 @@ var TournamentPage = (function () {
     };
     TournamentPage.prototype.inputAtleta = function (girone) {
         var questo = this;
+        questo.selectIscritto(girone);
+        if (true)
+            return;
         var prompt = questo.alertCtrl.create({
             title: 'Atleta',
             message: "Inserisci un nuovo atleta",
@@ -1978,6 +1993,88 @@ var TournamentPage = (function () {
             ]
         });
         prompt.present();
+    };
+    TournamentPage.prototype.inputAtletaIscritto = function (girone) {
+        var questo = this;
+        var prompt = questo.alertCtrl.create({
+            title: 'Atleta',
+            message: "Inserisci un nuovo atleta iscritto",
+            inputs: [
+                {
+                    name: 'cognome',
+                    placeholder: 'Cognome'
+                }, {
+                    name: 'nome',
+                    placeholder: 'Nome'
+                }, {
+                    name: 'societa',
+                    placeholder: 'Societa',
+                    value: 'ASD TAEKWONDO ROZZANO'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        console.log("atleta", data.cognome, data.nome);
+                        console.log('Saved clicked');
+                        var newatleta = {
+                            cognome: data.cognome,
+                            nome: data.nome,
+                            societa: data.societa
+                        };
+                        questo.torneo.atletiiscritti.push(newatleta);
+                        questo.torneo.atletiiscritti.sort(function (a, b) {
+                            var a1 = a.cognome.toLowerCase() + a.nome.toLowerCase();
+                            var b1 = b.cognome.toLowerCase() + b.nome.toLowerCase();
+                            if (a1 > b1)
+                                return 1;
+                            if (a1 < b1)
+                                return -1;
+                            return 0;
+                        });
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    TournamentPage.prototype.deleteAtletaIscritto = function (i) {
+        var questo = this;
+        questo.backend.showConfirm("Sei sicuro di voler cancellare questo atleta dagli iscritti al torneo ?", function (yes) {
+            if (yes) {
+                var newarr = [];
+                questo.torneo.atletiiscritti.forEach(function (item) {
+                    if ((item.cognome == i.cognome) && (item.nome == i.nome)) {
+                    }
+                    else {
+                        newarr.push(item);
+                    }
+                });
+                questo.torneo.atletiiscritti = newarr;
+                //elimina dai gironi se c'è
+                questo.torneo.gironi.forEach(function (item) {
+                    var players = item.players;
+                    var newplayers = [];
+                    players.forEach(function (pitem) {
+                        var chiave1 = pitem.cognome.toLowerCase() + pitem.nome.toLowerCase();
+                        var chiave2 = i.cognome.toLowerCase() + i.nome.toLowerCase();
+                        if (chiave1 == chiave2) {
+                        }
+                        else
+                            newplayers.push(pitem);
+                    });
+                    item.players = newplayers;
+                });
+                questo.backend.showToast("Atleta " + i.cognome + " " + i.nome + " eliminato dagli iscritti");
+            }
+        });
     };
     TournamentPage.prototype.scoreKeeper = function (inc, girone) {
         if (!this.isAdmin() && !this.isSuperAdmin()) {
@@ -2206,11 +2303,94 @@ var TournamentPage = (function () {
         }
         return retvalue;
     };
+    TournamentPage.prototype.selectIscritto = function (girone) {
+        var questo = this;
+        console.log("questo.girone", girone);
+        var alert = this.alertCtrl.create();
+        alert.setTitle('Seleziona iscritto');
+        var checked = false;
+        var rimanenti = [];
+        questo.torneo.atletiiscritti.forEach(function (item) {
+            var found = false;
+            questo.torneo.gironi.forEach(function (gitem) {
+                var players = gitem.players;
+                console.log("players", players);
+                players.forEach(function (pitem) {
+                    if ((pitem.cognome.toLowerCase() == item.cognome.toLowerCase()) && (pitem.nome.toLowerCase() == item.nome.toLowerCase())) {
+                        console.log("questo atleta è in un girone", pitem);
+                        found = true;
+                    }
+                });
+            });
+            if (!found) {
+                rimanenti.push(item);
+            }
+        });
+        if (rimanenti.length == 0) {
+            questo.backend.showAlert("Tutti gli atleti iscritti sono stati impiegati nei gironi");
+            return;
+        }
+        rimanenti.forEach(function (item) {
+            alert.addInput({
+                type: 'checkbox',
+                label: item.cognome + ' ' + item.nome,
+                value: item,
+                checked: false
+            });
+        });
+        alert.addButton('Annulla');
+        alert.addButton({
+            text: 'Aggiungi selezionati',
+            handler: function (data) {
+                console.log('Checkbox data:', data);
+                data.forEach(function (item) {
+                    questo.addPlayerToGirone(girone, {
+                        cognome: item.cognome,
+                        nome: item.nome,
+                        societa: item.societa
+                    });
+                });
+            }
+        });
+        alert.present();
+    };
+    TournamentPage.prototype.isInGironi = function (item) {
+        var questo = this;
+        var found = false;
+        questo.torneo.gironi.forEach(function (gitem) {
+            var players = gitem.players;
+            console.log("players", players);
+            players.forEach(function (pitem) {
+                if ((pitem.cognome.toLowerCase() == item.cognome.toLowerCase()) && (pitem.nome.toLowerCase() == item.nome.toLowerCase())) {
+                    console.log("questo atleta è in un girone", pitem);
+                    found = true;
+                }
+            });
+        });
+        return found;
+    };
+    TournamentPage.prototype.getGironeAtleta = function (item) {
+        var questo = this;
+        var found = false;
+        var girone = "";
+        questo.torneo.gironi.forEach(function (gitem) {
+            var players = gitem.players;
+            console.log("players", players);
+            players.forEach(function (pitem) {
+                if ((pitem.cognome.toLowerCase() == item.cognome.toLowerCase()) && (pitem.nome.toLowerCase() == item.nome.toLowerCase())) {
+                    console.log("questo atleta è in un girone", pitem);
+                    girone = gitem.title;
+                    found = true;
+                }
+            });
+        });
+        return girone;
+    };
     return TournamentPage;
 }());
 TournamentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon class="baricon"  name="refresh"></ion-icon></button>\n     \n    </ion-buttons>\n \n  </ion-navbar>\n  <ion-toolbar class="stoolbar">\n  <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <ion-spinner name="dots" class="spinnerdots" *ngIf="loading"></ion-spinner>\n            <!--<img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />-->\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <div *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n       \n     \n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </div>\n\n    </div>\n  </ion-toolbar>\n\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i"><b>{{getUpperCaseGirone(g)}}</b></ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isSuperAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n \n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n      <ion-segment-button value="realtime">\n        Tempo reale&nbsp;<ion-badge *ngIf="scoreboards.length>0" color="danger">{{scoreboards.length}}</ion-badge>\n      </ion-segment-button>\n    \n    </ion-segment>\n\n  \n</ion-header>\n\n<ion-content spadding class="ioncontent" style="background: #eee">\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px; background:white" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isSuperAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>PF</ion-col>\n                <ion-col>PS</ion-col>\n                <ion-col>DP</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}<br><span class="societa">{{getSocieta(p)}}</span></ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isSuperAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="scoreKeeper(inc,torneo.gironi[activegironeindex])" (press)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}<br>\n                    <span class="societa">{{getSocieta(inc.player1)}}</span>\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}<br>\n                    <span class="societa">{{getSocieta(inc.player2)}}</span>\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n         <button small *ngIf="isSuperAdmin()" ion-button (tap)="resetIncontriGirone(torneo.gironi[activegironeindex])">Reset incontri girone</button>\n          </section>\n          <section *ngIf="view==\'realtime\'">\n            <p *ngIf="scoreboards.length==0" style="text-align:center">\n              <i>Nessun incontro in tempo reale</i>\n            </p>\n            <ion-row>\n              <ion-col *ngFor="let s of scoreboards" col-12 col-md-6 col-lg-6 class="scoreitem"  >\n                <div class="girone" *ngIf="hasGirone(s)">{{s.girone.title}}</div>\n                <table width="100%">\n                  <tr>\n                    <td width="20%" rowspan="2" class="timeleftbig">&nbsp;{{backend.getTimeMMSS(s.timeLeft)}}</td>\n                    <td width="70%" class="left">\n                      <div class="atletabig">{{s.player1.cognome+\' \'+s.player1.nome}}</div>\n                      <div class="societabig">{{s.player1.societa}}</div>\n                    </td>\n                    <td class="punt1big" width="10%">\n                      {{s.punt1}}\n                    </td>\n                  </tr>\n                  <tr>\n                    <td width="70%" class="left">\n                      <div class="atletabig">{{s.player2.cognome+\' \'+s.player2.nome}}</div>\n                      <div class="societabig">{{s.player2.societa}}</div>\n                    </td>\n                    <td class="punt2big" width="10%">\n                      {{s.punt2}}\n                    </td>\n          \n                  </tr>\n                </table>\n              </ion-col>\n            </ion-row>\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    \n</ion-content>\n<ion-footer>\n    <button *ngIf="isAdmin() || isSuperAdmin()" ion-button  small (tap)="gotoScoreKwondo()">Scorekwondo</button>\n    <button *ngIf="isSuperAdmin()" small ion-button (tap)="resetTorneo()">Reset Torneo</button>\n    <button *ngIf="isAdmin() ||  isSuperAdmin()" small ion-button (tap)="saveTorneo()">Salva torneo</button>\n\n</ion-footer>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
+        selector: 'page-tournament',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/'<!--\n  Generated template for the TournamentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Gara</ion-title>\n    <ion-buttons end>\n        <button  ion-button (tap)="doRefresh()"><ion-icon class="baricon"  name="refresh"></ion-icon></button>\n     \n    </ion-buttons>\n \n  </ion-navbar>\n  <ion-toolbar class="stoolbar">\n  <div sstyle="background: #ddd; padding: 0px;">\n      <button class="incaston" full color="dark" sstyle="swidth:100%; sfont-size: 14px; stext-align: left; sbackground: #333; scolor: #eee; "\n        (tap)="toggleInfobar()">\n        <ion-row>\n          <ion-col col-1 fixed style="color: gray; ">\n            <ion-icon *ngIf="!viewInfobar" class="gray" name="md-arrow-dropright"></ion-icon>\n            <ion-icon *ngIf="viewInfobar" class="gray" name="md-arrow-dropdown"></ion-icon>\n          </ion-col>\n          <ion-col col-10 style="font-size: 13px;">\n            <b>{{jgara.title}}</b>\n            <!--<i>{{jgara.data}} - {{jgara.location}}</i>-->\n          </ion-col>\n          <ion-col col-1 style="text-align: right">\n            <ion-spinner name="dots" class="spinnerdots" *ngIf="loading"></ion-spinner>\n            <!--<img *ngIf="loading" width="18" height="18" src="assets/img/ajax-loader.gif" />-->\n          </ion-col>\n\n        </ion-row>\n      </button>\n\n      <div *ngIf="viewInfobar" style="padding: 7px !important; background: #eee; font-size: 14px; ">\n\n        <div>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.title}}</ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.location}} &nbsp;&nbsp;\n              <!--<a (tap)="showMap()" *ngIf="hasMap()">Visualizza mappa</a>-->\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col class="infobold">{{jgara.data}}</ion-col>\n          </ion-row>\n       \n     \n          <!--<div>Gara: {{jgara.title}}</div>\n          <div>Location: {{jgara.location}}</div>\n          <div>Data: {{jgara.data}}</div>\n          <div>Iscritti: {{getArrLen(jgara.iscritti)}}</div>-->\n        </div>\n\n      </div>\n\n    </div>\n  </ion-toolbar>\n\n  <ion-row>\n    <ion-col col-8>\n        <ion-select  style="width:100%" [(ngModel)]="activegironeindex" *ngIf="torneo.gironi.length>0">\n            <ion-option  *ngFor="let g of torneo.gironi; let i=index" [value]="i"><b>{{getUpperCaseGirone(g)}}</b></ion-option>\n        </ion-select>\n    </ion-col>\n    <ion-col col-1 style="text-align: right">\n      <button ion-button style="font-size: 10px" small *ngIf="isSuperAdmin()" (tap)="addGirone()"><ion-icon name="add"></ion-icon></button>\n      <div style="height: 40px; width: 100%" *ngIf="!isAdmin()"></div>\n    </ion-col>\n  </ion-row>\n \n  <ion-segment class="segment" (tap)="tapSegment()" [(ngModel)]="view">\n      <ion-segment-button value="classifica">\n        <!-- <ion-icon name="camera"></ion-icon>-->Classifica\n      </ion-segment-button>\n      <ion-segment-button value="incontri">\n        Incontri\n      </ion-segment-button>\n      <ion-segment-button *ngIf="isAdmin()" value="iscritti">\n        Iscritti\n      </ion-segment-button>\n      <ion-segment-button value="realtime">\n        Tempo reale&nbsp;<ion-badge *ngIf="scoreboards.length>0" color="danger">{{scoreboards.length}}</ion-badge>\n      </ion-segment-button>\n    \n    </ion-segment>\n\n  \n</ion-header>\n\n<ion-content spadding class="ioncontent" style="background: #eee">\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n  <br>\n \n    <!--<ibmsection *ngFor="let g of torneo.gironi" [title]="g.title">-->\n      \n      <div style="padding: 3px; background:white" *ngIf="torneo.gironi.length>0">\n          <section *ngIf="view==\'classifica\'">\n       <!-- <ibmsection title="Classifica {{torneo.gironi[activegironeindex].title}}" style="background-color: \'{{colors[activegironeindex]}}\'" [visible]="true">-->\n            <button *ngIf="isSuperAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtleta(torneo.gironi[activegironeindex])">Aggiungi atleta</button>\n            <div class="pad5" style="background-color: cyan;" *ngIf="torneo.gironi[activegironeindex].players.length>0"><ion-row>\n                <ion-col col-8>ATLETA</ion-col>\n                <ion-col>P</ion-col>\n                <ion-col>G</ion-col>\n                <ion-col>PF</ion-col>\n                <ion-col>PS</ion-col>\n                <ion-col>DP</ion-col>\n              </ion-row></div>\n            <div class="pad5" *ngFor="let p of getSortedPlayers(torneo.gironi[activegironeindex].players)">\n              \n              <ion-row class="classificarow" (press)="deleteAtletaFromGirone(torneo.gironi[activegironeindex],p.id)">\n                <ion-col col-8 class="uc classificaatleta">{{getAtleta(p)}}<br><span class="societa">{{getSocieta(p)}}</span></ion-col>\n               \n                <ion-col class="classificaatleta"><b>{{p.punti}}</b></ion-col>\n                <ion-col class="classificaatleta">{{getIncontriGiocatiNelGirone(p.id,torneo.gironi[activegironeindex])}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gf}}</ion-col>\n                <ion-col class="classificaatleta">{{p.gs}}</ion-col>\n                <ion-col class="classificaatleta">{{getDF(p)}}</ion-col>\n              \n              </ion-row>\n                \n            </div>\n        <!--</ibmsection>   -->\n          </section>\n          <section *ngIf="view==\'incontri\'">\n        \n         <!-- <ibmsection title="Incontri">-->\n            <button *ngIf="isSuperAdmin()" small style="font-size: 11px" ion-button (tap)="createIncontri(torneo.gironi[activegironeindex],true)">Genera incontri</button>\n            <div class="incontro" *ngFor="let inc of torneo.gironi[activegironeindex].incontri">\n              <ion-row class="incontrirow" (tap)="scoreKeeper(inc,torneo.gironi[activegironeindex])" (press)="inputResult(inc,torneo.gironi[activegironeindex])">\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player1)}}<br>{{getNomeAtleta(inc.player1)}}<br>\n                    <span class="societa">{{getSocieta(inc.player1)}}</span>\n                </ion-col>\n                <ion-col col-1 style="text-align: center">-</ion-col>\n                <ion-col col-3 class="uc small" style="text-align: center">\n                    {{getCognomeAtleta(inc.player2)}}<br>{{getNomeAtleta(inc.player2)}}<br>\n                    <span class="societa">{{getSocieta(inc.player2)}}</span>\n                </ion-col>\n                <ion-col></ion-col>\n                <!--<ion-col col-2><ion-input type="number" class="punteggio" (ionChange)="resultChanged($event,inc,torneo.gironi[activegironeindex])" [(ngModel)]="inc.risultato"></ion-input></ion-col>-->\n                <!--<ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio1"></ion-input></ion-col>\n                <ion-col col-2><ion-input size="2" [readonly]="true" (ionChange)="updateClassificaGirone(torneo.gironi[activegironeindex])" class="punteggio" type="number" [(ngModel)]="inc.punteggio2"></ion-input></ion-col>-->\n                <ion-col col-2><b>{{inc.punteggio1}}-{{inc.punteggio2}}</b></ion-col>\n              </ion-row>\n             \n            </div>\n         <!-- </ibmsection>-->\n         <button small *ngIf="isSuperAdmin()" ion-button (tap)="resetIncontriGirone(torneo.gironi[activegironeindex])">Reset incontri girone</button>\n          </section>\n          <section *ngIf="view==\'iscritti\'">\n            <ion-row>\n              <ion-col col-6>\n                Iscritti: {{torneo.atletiiscritti.length}}\n              </ion-col>\n              <ion-col col-6>\n                  <button *ngIf="isSuperAdmin()" style="font-size: 11px"  small ion-button (tap)="inputAtletaIscritto()">Aggiungi atleta iscritto</button>\n              </ion-col>\n            </ion-row>\n             \n            <ion-list>\n              <ion-item row-no-padding class="iscrittoitem"  *ngFor="let i of torneo.atletiiscritti" (press)="deleteAtletaIscritto(i)">\n                <div class="atleta">{{i.cognome+\' \'+i.nome}}</div>\n                <div class="societa">{{i.societa}}</div>\n                <div class="isingirone" *ngIf="isInGironi(i)">{{getGironeAtleta(i)}}</div>\n              </ion-item>\n            </ion-list>\n          </section>\n          <section *ngIf="view==\'realtime\'">\n            <p *ngIf="scoreboards.length==0" style="text-align:center">\n              <i>Nessun incontro in tempo reale</i>\n            </p>\n            <ion-row>\n              <ion-col *ngFor="let s of scoreboards" col-12 col-md-6 col-lg-6 class="scoreitem"  >\n                <div class="girone" *ngIf="hasGirone(s)">{{s.girone.title}}</div>\n                <table width="100%">\n                  <tr>\n                    <td width="20%" rowspan="2" class="timeleftbig">&nbsp;{{backend.getTimeMMSS(s.timeLeft)}}</td>\n                    <td width="70%" class="left">\n                      <div class="atletabig">{{s.player1.cognome+\' \'+s.player1.nome}}</div>\n                      <div class="societabig">{{s.player1.societa}}</div>\n                    </td>\n                    <td class="punt1big" width="10%">\n                      {{s.punt1}}\n                    </td>\n                  </tr>\n                  <tr>\n                    <td width="70%" class="left">\n                      <div class="atletabig">{{s.player2.cognome+\' \'+s.player2.nome}}</div>\n                      <div class="societabig">{{s.player2.societa}}</div>\n                    </td>\n                    <td class="punt2big" width="10%">\n                      {{s.punt2}}\n                    </td>\n          \n                  </tr>\n                </table>\n              </ion-col>\n            </ion-row>\n          </section>\n        </div>\n     \n    <!--</ibmsection>-->\n\n\n\n    \n</ion-content>\n<ion-footer>\n    <button *ngIf="isAdmin() || isSuperAdmin()" ion-button  small (tap)="gotoScoreKwondo()">Scorekwondo</button>\n    <button *ngIf="isSuperAdmin()" small ion-button (tap)="resetTorneo()">Reset Torneo</button>\n    <button *ngIf="isAdmin() ||  isSuperAdmin()" small ion-button (tap)="saveTorneo()">Salva torneo</button>\n\n</ion-footer>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/tournament/tournament.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], TournamentPage);
@@ -8549,7 +8729,7 @@ var EditgaraPage = (function () {
 }());
 EditgaraPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-editgara',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/editgara/editgara.html"*/'<!--\n  Generated template for the AtletaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title style="font-size: 11px">{{gara.title}}</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="cancelGara()">Annulla</button>\n        <button ion-button clear color="danger" (tap)="saveGara()">SALVA</button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-item>\n        <ion-label >ID: {{gara.id}}</ion-label>\n  \n  \n    </ion-item>\n    <ion-item>\n        <ion-label floating>TKDT_ID: </ion-label>\n        <ion-input [(ngModel)]="gara.tkdt_id"></ion-input>\n  \n    </ion-item>\n  <ion-item>\n      <ion-label floating>Title</ion-label>\n      <ion-input [(ngModel)]="gara.title"></ion-input>\n\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Location</ion-label>\n      <ion-input [(ngModel)]="gara.location"></ion-input>\n\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Data</ion-label>\n      <ion-input [(ngModel)]="gara.data"></ion-input>\n      <!--<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="gara.datafull"></ion-datetime>-->\n\n  </ion-item>\n  <ion-item>\n    <ion-label>Giorni di gara</ion-label>\n    <ion-select [(ngModel)]="gara.ngiorni">\n      <ion-option value="1">1</ion-option>\n      <ion-option value="2">2</ion-option>\n      <ion-option value="3">3</ion-option>\n      <ion-option value="4">4</ion-option>\n      <ion-option value="5">5</ion-option>\n\n    </ion-select>\n  </ion-item>\n  <ion-item>\n      <ion-label >Stato</ion-label>\n      \n      <ion-select [(ngModel)]="gara.stato">\n          <ion-option value="disputata">DISPUTATA</ion-option>\n          <ion-option value="nondisputata">NONDISPUTATA</ion-option>\n          <ion-option value="incorso">INCORSO</ion-option>\n      </ion-select>\n         \n       \n\n  </ion-item>\n  <ion-item>\n      <ion-label >Tipo</ion-label>\n      <ion-select [(ngModel)]="gara.tipo">\n          <ion-option value="combattimento">Combattimento</ion-option>\n          <ion-option value="forme">Forme</ion-option>\n        </ion-select>\n\n  </ion-item>\n  <ion-item>\n      <ion-label >Formula gara</ion-label>\n      <ion-select [(ngModel)]="gara.formula">\n          <ion-option value="eliminazione">Eliminazione</ion-option>\n          <ion-option value="roundrobin_ar">Round robin A/R</ion-option>\n        </ion-select>\n\n  </ion-item>\n  <ion-item>\n    <ion-label>Regionalità gara</ion-label>\n    <ion-select [(ngModel)]="gara.regionalita">\n      <ion-option value="regionale">Regionale</ion-option>\n      <ion-option value="interregionale">Interregionale</ion-option>\n      <ion-option value="nazionale">Nazionale</ion-option>\n      <ion-option value="internazionale">Internazionale</ion-option>\n      \n\n    </ion-select>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Map location</ion-label>\n      <ion-input [(ngModel)]="gara.maplocation"></ion-input>\n\n  </ion-item>\n  <ion-item>\n        <ion-label floating>URL Tabulato</ion-label>\n        <ion-input [(ngModel)]="gara.tabulatourl"></ion-input>\n  \n    </ion-item>\n    \n  <!--<ion-item>\n    <ion-label >Iscritti</ion-label>\n    <ion-select multiple [(ngModel)]="iscrittiarr">\n        <ion-option *ngFor="let i of iscrittiarr" value="i">{{i.doc.cognome+\' \'+i.doc.nome}}</ion-option>\n        \n      </ion-select>\n\n</ion-item>-->\n<button ion-button block (tap)="selectIscritti()">Seleziona iscritti ({{getIscrittiLen()}})</button>\n  <ion-item>\n      <ion-label floating>Iscritti </ion-label>\n      <ion-textarea readonly [(ngModel)]="gara.iscritti"></ion-textarea>\n     \n\n  </ion-item> \n \n  <ion-item>\n      <ion-label floating>MyIscritti</ion-label>\n      <ion-input [(ngModel)]="gara.myiscritti"></ion-input>\n\n  </ion-item>\n\n  <!--<ion-item *ngFor="let m of backend.getObjectArray(gara)">\n  \n  <ion-label floating>{{m.name}}</ion-label>\n <input type="text" [value]="m.value"/>\n  \n    </ion-item>-->\n \n\n    <ion-card *ngIf="tkdtgara">\n      <ion-card-header>\n        <ion-row>\n          <ion-col>\n              Dati Tkdt\n            </ion-col>\n          <ion-col col-2><button *ngIf="!loadingtkdt" ion-button clear (tap)="retrieveTkdtGara(false)"><ion-icon name="md-refresh"></ion-icon></button><ion-spinner *ngIf="loadingtkdt" name="ios"></ion-spinner></ion-col></ion-row>\n      </ion-card-header>\n      <ion-card-content>\n        \n          <ion-row>\n              <ion-col col-6 class="label">Atleti iscritti</ion-col>\n              <ion-col >{{tkdtgara.atleti_iscritti.length}}</ion-col>\n          </ion-row>\n        \n\n          <ion-row>\n              <ion-col col-6 class="label">Atleti effettivi</ion-col>\n              <ion-col >{{tkdtgara.atleti.length}}</ion-col>\n          </ion-row>\n        \n\n          <ion-row>\n              <ion-col col-6 class="label">Tabulati</ion-col>\n              <ion-col >{{tkdtgara.tabulati.length}}</ion-col>\n          </ion-row>\n         \n\n          <ion-row>\n              <ion-col col-6 class="label">Giorni</ion-col>\n              <ion-col >{{tkdtgara.giorni.length}}</ion-col>\n          </ion-row>\n        \n\n          <button ion-button block (tap)="toggleTkdtJson()">Visualizza JSON</button>\n\n          <div *ngIf="tkdtjsonview" class="tkdt">{{getTkdtGara()}}</div>\n          <button ion-button block (tap)="matchTkdtIscritti()">Integra iscritti TKDT</button>\n          <ion-item>\n            <ion-label>Salva TKDT</ion-label>\n            <ion-checkbox [(ngModel)]="tkdtSave"></ion-checkbox>\n          </ion-item>\n      </ion-card-content>\n    </ion-card>\n\n\n    <ion-card>\n        <ion-card-header>\n            <ion-row>\n                    <ion-col col-2>\n                            <button ion-button mini clear (tap)="addLink()"><ion-icon name="ios-add-circle-outline"></ion-icon></button>\n                    </ion-col>\n                <ion-col>\n                        Links ({{getLinksCount()}})\n                </ion-col>\n                \n            </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n            <div style="background: #eee; margin-bottom: 4px" *ngFor="let l of gara.links; let i=index">\n                <ion-grid>\n                    <ion-row>\n                        <ion-col col-2><button ion-button mini clear (tap)="deleteLink(i)"><ion-icon name="ios-trash-outline"></ion-icon></button></ion-col>\n                        <ion-col>\n                                <ion-row>\n                                        <ion-col>\n                                                <ion-input placeholder="Titolo" [(ngModel)]="l.title"></ion-input>\n                                        </ion-col>\n                                    </ion-row>\n                                   \n                                    <ion-row>\n                                            <ion-col>\n                                                    <ion-input placeholder="url" [(ngModel)]="l.url"></ion-input>\n                                            </ion-col>\n                                        </ion-row>\n\n                        </ion-col>\n                    </ion-row>\n               \n                </ion-grid>\n              \n            </div>\n        </ion-card-content>\n    </ion-card>\n   \n     \n      \n\n\n</ion-content>\n <!-- <ion-footer>\n    <ion-row class="footerrow">\n      <ion-col col-6><button color="secondary" ion-button full (tap)="saveGara()" >Salva</button></ion-col>\n      <ion-col col-6><button ion-button full (tap)="cancelGara()">Annulla</button></ion-col>\n    </ion-row>\n  </ion-footer>-->\n\n  <ion-fab right bottom>\n   <button ion-fab><ion-icon name="md-create"></ion-icon></button>\n    <ion-fab-list side="left">\n    <button ion-fab><ion-icon name="md-create"></ion-icon></button>\n    <button ion-fab><ion-icon name="md-add"></ion-icon></button>\n    \n  </ion-fab-list>\n </ion-fab>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/editgara/editgara.html"*/,
+        selector: 'page-editgara',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/editgara/editgara.html"*/'<!--\n  Generated template for the AtletaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title style="font-size: 11px">{{gara.title}}</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="cancelGara()">Annulla</button>\n        <button ion-button clear color="danger" (tap)="saveGara()">SALVA</button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-item>\n        <ion-label >ID: {{gara.id}}</ion-label>\n  \n  \n    </ion-item>\n    <ion-item>\n        <ion-label floating>TKDT_ID: </ion-label>\n        <ion-input [(ngModel)]="gara.tkdt_id"></ion-input>\n  \n    </ion-item>\n  <ion-item>\n      <ion-label floating>Title</ion-label>\n      <ion-input [(ngModel)]="gara.title"></ion-input>\n\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Location</ion-label>\n      <ion-input [(ngModel)]="gara.location"></ion-input>\n\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Data</ion-label>\n      <ion-input [(ngModel)]="gara.data"></ion-input>\n      <!--<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="gara.datafull"></ion-datetime>-->\n\n  </ion-item>\n  <ion-item>\n    <ion-label>Giorni di gara</ion-label>\n    <ion-select [(ngModel)]="gara.ngiorni">\n      <ion-option value="1">1</ion-option>\n      <ion-option value="2">2</ion-option>\n      <ion-option value="3">3</ion-option>\n      <ion-option value="4">4</ion-option>\n      <ion-option value="5">5</ion-option>\n\n    </ion-select>\n  </ion-item>\n  <ion-item>\n      <ion-label >Stato</ion-label>\n      \n      <ion-select [(ngModel)]="gara.stato">\n          <ion-option value="disputata">DISPUTATA</ion-option>\n          <ion-option value="nondisputata">NONDISPUTATA</ion-option>\n          <ion-option value="incorso">INCORSO</ion-option>\n      </ion-select>\n         \n       \n\n  </ion-item>\n  <ion-item>\n      <ion-label >Tipo</ion-label>\n      <ion-select [(ngModel)]="gara.tipo">\n          <ion-option value="combattimento">Combattimento</ion-option>\n          <ion-option value="forme">Forme</ion-option>\n        </ion-select>\n\n  </ion-item>\n  <ion-item>\n      <ion-label >Formula gara</ion-label>\n      <ion-select [(ngModel)]="gara.formula">\n          <ion-option value="eliminazione">Eliminazione</ion-option>\n          <ion-option value="roundrobin_ar">Round robin A/R</ion-option>\n        </ion-select>\n\n  </ion-item>\n  <ion-item>\n    <ion-label>Regionalità gara</ion-label>\n    <ion-select [(ngModel)]="gara.regionalita">\n      <ion-option value="regionale">Regionale</ion-option>\n      <ion-option value="interregionale">Interregionale</ion-option>\n      <ion-option value="nazionale">Nazionale</ion-option>\n      <ion-option value="internazionale">Internazionale</ion-option>\n      \n\n    </ion-select>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Map location</ion-label>\n      <ion-input [(ngModel)]="gara.maplocation"></ion-input>\n\n  </ion-item>\n  <ion-item>\n        <ion-label floating>URL Tabulato</ion-label>\n        <ion-input [(ngModel)]="gara.tabulatourl"></ion-input>\n  \n    </ion-item>\n    <ion-item>\n        <ion-label>Visibile ai guest</ion-label>\n        <ion-checkbox [(ngModel)]="gara.forguest" color="dark" checked="false"></ion-checkbox>\n      </ion-item>\n    \n  <!--<ion-item>\n    <ion-label >Iscritti</ion-label>\n    <ion-select multiple [(ngModel)]="iscrittiarr">\n        <ion-option *ngFor="let i of iscrittiarr" value="i">{{i.doc.cognome+\' \'+i.doc.nome}}</ion-option>\n        \n      </ion-select>\n\n</ion-item>-->\n<button ion-button block (tap)="selectIscritti()">Seleziona iscritti ({{getIscrittiLen()}})</button>\n  <ion-item>\n      <ion-label floating>Iscritti </ion-label>\n      <ion-textarea readonly [(ngModel)]="gara.iscritti"></ion-textarea>\n     \n\n  </ion-item> \n \n  <ion-item>\n      <ion-label floating>MyIscritti</ion-label>\n      <ion-input [(ngModel)]="gara.myiscritti"></ion-input>\n\n  </ion-item>\n\n  <!--<ion-item *ngFor="let m of backend.getObjectArray(gara)">\n  \n  <ion-label floating>{{m.name}}</ion-label>\n <input type="text" [value]="m.value"/>\n  \n    </ion-item>-->\n \n\n    <ion-card *ngIf="tkdtgara">\n      <ion-card-header>\n        <ion-row>\n          <ion-col>\n              Dati Tkdt\n            </ion-col>\n          <ion-col col-2><button *ngIf="!loadingtkdt" ion-button clear (tap)="retrieveTkdtGara(false)"><ion-icon name="md-refresh"></ion-icon></button><ion-spinner *ngIf="loadingtkdt" name="ios"></ion-spinner></ion-col></ion-row>\n      </ion-card-header>\n      <ion-card-content>\n        \n          <ion-row>\n              <ion-col col-6 class="label">Atleti iscritti</ion-col>\n              <ion-col >{{tkdtgara.atleti_iscritti.length}}</ion-col>\n          </ion-row>\n        \n\n          <ion-row>\n              <ion-col col-6 class="label">Atleti effettivi</ion-col>\n              <ion-col >{{tkdtgara.atleti.length}}</ion-col>\n          </ion-row>\n        \n\n          <ion-row>\n              <ion-col col-6 class="label">Tabulati</ion-col>\n              <ion-col >{{tkdtgara.tabulati.length}}</ion-col>\n          </ion-row>\n         \n\n          <ion-row>\n              <ion-col col-6 class="label">Giorni</ion-col>\n              <ion-col >{{tkdtgara.giorni.length}}</ion-col>\n          </ion-row>\n        \n\n          <button ion-button block (tap)="toggleTkdtJson()">Visualizza JSON</button>\n\n          <div *ngIf="tkdtjsonview" class="tkdt">{{getTkdtGara()}}</div>\n          <button ion-button block (tap)="matchTkdtIscritti()">Integra iscritti TKDT</button>\n          <ion-item>\n            <ion-label>Salva TKDT</ion-label>\n            <ion-checkbox [(ngModel)]="tkdtSave"></ion-checkbox>\n          </ion-item>\n      </ion-card-content>\n    </ion-card>\n\n\n    <ion-card>\n        <ion-card-header>\n            <ion-row>\n                    <ion-col col-2>\n                            <button ion-button mini clear (tap)="addLink()"><ion-icon name="ios-add-circle-outline"></ion-icon></button>\n                    </ion-col>\n                <ion-col>\n                        Links ({{getLinksCount()}})\n                </ion-col>\n                \n            </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n            <div style="background: #eee; margin-bottom: 4px" *ngFor="let l of gara.links; let i=index">\n                <ion-grid>\n                    <ion-row>\n                        <ion-col col-2><button ion-button mini clear (tap)="deleteLink(i)"><ion-icon name="ios-trash-outline"></ion-icon></button></ion-col>\n                        <ion-col>\n                                <ion-row>\n                                        <ion-col>\n                                                <ion-input placeholder="Titolo" [(ngModel)]="l.title"></ion-input>\n                                        </ion-col>\n                                    </ion-row>\n                                   \n                                    <ion-row>\n                                            <ion-col>\n                                                    <ion-input placeholder="url" [(ngModel)]="l.url"></ion-input>\n                                            </ion-col>\n                                        </ion-row>\n\n                        </ion-col>\n                    </ion-row>\n               \n                </ion-grid>\n              \n            </div>\n        </ion-card-content>\n    </ion-card>\n   \n     \n      \n\n\n</ion-content>\n <!-- <ion-footer>\n    <ion-row class="footerrow">\n      <ion-col col-6><button color="secondary" ion-button full (tap)="saveGara()" >Salva</button></ion-col>\n      <ion-col col-6><button ion-button full (tap)="cancelGara()">Annulla</button></ion-col>\n    </ion-row>\n  </ion-footer>-->\n\n  <ion-fab right bottom>\n   <button ion-fab><ion-icon name="md-create"></ion-icon></button>\n    <ion-fab-list side="left">\n    <button ion-fab><ion-icon name="md-create"></ion-icon></button>\n    <button ion-fab><ion-icon name="md-add"></ion-icon></button>\n    \n  </ion-fab-list>\n </ion-fab>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/editgara/editgara.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], EditgaraPage);
@@ -11222,6 +11402,8 @@ RegisterPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_useredit_useredit__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11231,6 +11413,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -11253,6 +11436,8 @@ var UsersPage = (function () {
         this.sortfield = "email";
         this.filter = "";
         this.potentialiosusers = [];
+        this.displayedusers = [];
+        this.searchfilter = "";
     }
     UsersPage.prototype.ionViewDidLoad = function () {
         var questo = this;
@@ -11273,18 +11458,36 @@ var UsersPage = (function () {
             var url = questo.backend.rooturl + "/users/list";
             questo.backend.fetchData(url, function (data) {
                 console.log("users", data);
+                var arr = [];
                 data.rows.forEach(function (item, idx) {
                     item.doc.potentialios = false;
                     if (arrios.indexOf(item.doc.email) > -1)
                         item.doc.potentialios = true;
                 });
+                if (questo.searchfilter.trim() != "") {
+                    data.rows.forEach(function (sitem) {
+                        var doc = sitem.doc;
+                        var found = false;
+                        for (var k in doc) {
+                            if (typeof doc[k] === 'string' || doc[k] instanceof String) {
+                                if (doc[k].toLowerCase().indexOf(questo.searchfilter.toLowerCase()) > -1) {
+                                    found = true;
+                                }
+                            }
+                        }
+                        if (found)
+                            arr.push(sitem);
+                    });
+                }
+                else
+                    arr = data.rows;
                 console.log("DATA", data);
                 var users = [];
                 if (questo.filter.trim() == "") {
-                    users = data.rows;
+                    users = arr;
                 }
                 else {
-                    data.rows.forEach(function (item, idx) {
+                    arr.forEach(function (item, idx) {
                         var addIt = false;
                         if (questo.filter == "approvati") {
                             if (item.doc.hasOwnProperty("active")) {
@@ -11453,21 +11656,51 @@ var UsersPage = (function () {
         profileModal.present();
         //alert(u.doc.password);
     };
+    UsersPage.prototype.addUser = function () {
+        var questo = this;
+        var d = new Date();
+        var m = __WEBPACK_IMPORTED_MODULE_4_moment__(d).format("YYYYMMDDHHmmss");
+        var u = {
+            doc: {
+                "email": "",
+                "nickname": "",
+                "password": "",
+                "role": "tkdruser",
+                "active": true,
+                "id": m
+            }
+        };
+        var profileModal = questo.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__pages_useredit_useredit__["a" /* UsereditPage */], { user: u, mode: "add" });
+        profileModal.onDidDismiss(function (data) {
+            console.log(data);
+            if (data == "saved")
+                questo.doRefresh();
+        });
+        profileModal.present();
+        //alert(u.doc.password);
+    };
     UsersPage.prototype.changeFilter = function (ev) {
         var questo = this;
         console.log("changeFilter", ev);
         questo.filter = ev;
         questo.doRefresh();
     };
+    UsersPage.prototype.onInput = function (ev) {
+        console.log("oninput", this.searchfilter);
+        this.doRefresh();
+    };
+    UsersPage.prototype.onCancel = function (ev) {
+    };
     return UsersPage;
 }());
 UsersPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-users',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/users/users.html"*/'<!--\n  Generated template for the UsersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>Utenti</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="sortUsers()"><ion-icon name="md-funnel"></ion-icon></button>\n        <button ion-button clear (tap)="doRefresh()"><ion-icon name="refresh"></ion-icon></button>\n      </ion-buttons>\n  </ion-navbar>\n  <ion-item>\n        <ion-label>{{users.length}} utenti</ion-label>\n        <ion-select [(ngModel)]="filter" multiple="false" (ionChange)=\'changeFilter($event)\' >\n          <ion-option selected value="">Tutti</ion-option>\n          <ion-option value="nonapprovati">Non approvati</ion-option>\n          <ion-option value="approvati">Approvati</ion-option>\n          <ion-option value="potentialios">Potenziali iOS</ion-option>\n          \n        </ion-select>\n      </ion-item>\n  <!--<ion-item>{{users.length}} utenti definiti</ion-item>-->\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n \n  <br>\n\n    <ion-item *ngFor="let u of users" >\n     \n\n          <div class="usernick" (tap)="showUser(u)">{{u.doc.nickname}}</div>\n          <div class="useremail">{{u.doc.email}}</div>\n          \n          <div>\n          \n        \n          <button ion-button small (tap)="deleteUser(u)">Elimina</button>\n          <button *ngIf="needsApprove(u)" ion-button small (tap)="approveUser(u)">Approva</button>\n        </div>\n       \n    </ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/users/users.html"*/,
+        selector: 'page-users',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/users/users.html"*/'<!--\n  Generated template for the UsersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n<ion-header>\n  \n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>Utenti</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="addUser()"><ion-icon name="md-add"></ion-icon></button>\n        <button ion-button clear (tap)="sortUsers()"><ion-icon name="md-funnel"></ion-icon></button>\n        <button ion-button clear (tap)="doRefresh()"><ion-icon name="refresh"></ion-icon></button>\n      </ion-buttons>\n  </ion-navbar>\n  <ion-item>\n        <ion-label>{{users.length}} utenti</ion-label>\n        <ion-select [(ngModel)]="filter" multiple="false" (ionChange)=\'changeFilter($event)\' >\n          <ion-option selected value="">Tutti</ion-option>\n          <ion-option value="nonapprovati">Non approvati</ion-option>\n          <ion-option value="approvati">Approvati</ion-option>\n          <ion-option value="potentialios">Potenziali iOS</ion-option>\n          \n        </ion-select>\n      </ion-item>\n  <!--<ion-item>{{users.length}} utenti definiti</ion-item>-->\n  <ion-searchbar #searchbar sstyle="width:90%;" placeholder="Chiave di ricerca" debounce="800"\n[(ngModel)]="searchfilter" [showCancelButton]="true" (ionInput)="onInput($event)" (ionClear)="onCancel($event)">\n</ion-searchbar>\n</ion-header>\n\n\n<ion-content spadding class="ion-content">\n    <div *ngIf="loading" style="width: 100%; text-align: center">\n        <ion-spinner name="dots"></ion-spinner>\n      </div>\n\n \n  <br>\n\n    <ion-item *ngFor="let u of users" >\n     \n\n          <div class="usernick" (tap)="showUser(u)">{{u.doc.nickname}}</div>\n          <div class="useremail">{{u.doc.email}}</div>\n          \n          <div>\n          \n        \n          <button ion-button small (tap)="deleteUser(u)">Elimina</button>\n          <button *ngIf="needsApprove(u)" ion-button small (tap)="approveUser(u)">Approva</button>\n        </div>\n       \n    </ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/users/users.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
 ], UsersPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=users.js.map
 
 /***/ }),
@@ -11526,7 +11759,10 @@ var UsereditPage = (function () {
                 expire: ""
             }
         };
+        this.mode = "edit";
         var user = this.navParams.get("user");
+        if (navParams.get("mode"))
+            this.mode = navParams.get("mode");
         this.user = user.doc;
         if (!this.user.hasOwnProperty("iospayment")) {
             var now = __WEBPACK_IMPORTED_MODULE_3_moment__();
@@ -11549,6 +11785,8 @@ var UsereditPage = (function () {
         var questo = this;
         var url = questo.backend.rooturl + "/users/update";
         var doc = questo.user;
+        if (questo.mode == "add")
+            url = questo.backend.rooturl + "/users/add";
         console.log("preparing to save user", doc);
         var loading = questo.loadingCtrl.create({
             spinner: 'dots',
@@ -11565,11 +11803,12 @@ var UsereditPage = (function () {
 }());
 UsereditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-useredit',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/useredit/useredit.html"*/'<!--\n  Generated template for the UsereditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Modifica user</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="cancel()">Annulla</button>\n        <button ion-button clear color="danger" (tap)="save()">SALVA</button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-item>\n        <ion-label floating>Userid</ion-label>\n        <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input [(ngModel)]="user.password" name="password"></ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label>Ruolo</ion-label>\n          <ion-select [(ngModel)]="user.role">\n            <ion-option value="tkdruser">tkdruser</ion-option>\n            <ion-option value="tkdradmin">tkdradmin</ion-option>\n            <ion-option value="superadmin">superadmin</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n            <ion-label>Attivo</ion-label>\n            <ion-checkbox [(ngModel)]="user.active"></ion-checkbox>\n          </ion-item>\n      <ion-item>\n          <ion-label>Abbonato iOS</ion-label>\n          <ion-checkbox [(ngModel)]="user.iospayment.paid"></ion-checkbox>\n        </ion-item>\n        <ion-item>\n            <ion-label floating>Scadenza iOS</ion-label>\n            <ion-input [(ngModel)]="user.iospayment.expire" name="iosexpire"></ion-input>\n          </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/useredit/useredit.html"*/,
+        selector: 'page-useredit',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/useredit/useredit.html"*/'<!--\n  Generated template for the UsereditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Modifica user</ion-title>\n    <ion-buttons end>\n        <button ion-button clear (tap)="cancel()">Annulla</button>\n        <button ion-button clear color="danger" (tap)="save()">SALVA</button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-item>\n        <ion-label floating>Userid</ion-label>\n        <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input [(ngModel)]="user.password" name="password"></ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label floating>Nickname</ion-label>\n          <ion-input type="text" [(ngModel)]="user.nickname" name="nickname"></ion-input>\n        </ion-item>\n      \n      <ion-item>\n          <ion-label>Ruolo</ion-label>\n          <ion-select [(ngModel)]="user.role">\n            <ion-option value="tkdruser">tkdruser</ion-option>\n            <ion-option value="tkdradmin">tkdradmin</ion-option>\n            <ion-option value="superadmin">superadmin</ion-option>\n            <ion-option value="guest">guest</ion-option>\n            <ion-option value="score">score</ion-option>\n\n           \n          </ion-select>\n        </ion-item>\n        <ion-item>\n            <ion-label>Attivo</ion-label>\n            <ion-checkbox [(ngModel)]="user.active"></ion-checkbox>\n          </ion-item>\n      <ion-item>\n          <ion-label>Abbonato iOS</ion-label>\n          <ion-checkbox [(ngModel)]="user.iospayment.paid"></ion-checkbox>\n        </ion-item>\n        <ion-item>\n            <ion-label floating>Scadenza iOS</ion-label>\n            <ion-input [(ngModel)]="user.iospayment.expire" name="iosexpire"></ion-input>\n          </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/useredit/useredit.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _e || Object])
 ], UsereditPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=useredit.js.map
 
 /***/ }),
@@ -12533,10 +12772,9 @@ ScoreboardsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-scoreboards',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/'<!--\n  Generated template for the ScoreboardsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Scoreboards</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item style="display:none" *ngFor="let s of scoreboards">\n      <ion-row class="riga">\n        <ion-col col-5 class="atleta">{{s.player1.cognome+\' \'+s.player1.nome}}<br><span\n            class="societa">{{s.player1.societa}}</span> - </ion-col>\n\n        <ion-col col-5 class="atleta">{{s.player2.cognome+\' \'+s.player2.nome}}<br><span\n            class="societa">{{s.player2.societa}}</span></ion-col>\n        <ion-col col-1 class="punteggio">{{s.punt1}}-{{s.punt2}}</ion-col>\n        <ion-col col-1 class="timeleft">{{backend.getTimeMMSS(s.timeleft)}}</ion-col>\n      </ion-row>\n\n\n    </ion-item>\n   \n      <ion-row>\n        <ion-col *ngFor="let s of scoreboards" col-12 col-md-6 col-lg-6 class="scoreitem" tappable (tap)="gotoScorekeeper(s)">\n            <div class="girone" *ngIf="hasGirone(s)">{{s.girone.title}}</div>\n          <table width="100%">\n            <tr>\n              <td width="10%" rowspan="2" class="timeleftbig">&nbsp;{{backend.getTimeMMSS(s.timeLeft)}}</td>\n              <td width="80%" class="left">\n                <div class="atletabig">{{s.player1.cognome+\' \'+s.player1.nome}}</div>\n                <div class="societabig">{{s.player1.societa}}</div>\n              </td>\n              <td class="punt1big" width="10%">\n                {{s.punt1}}\n              </td>\n            </tr>\n            <tr>\n              <td width="80%" class="left">\n                <div class="atletabig">{{s.player2.cognome+\' \'+s.player2.nome}}</div>\n                <div class="societabig">{{s.player2.societa}}</div>\n              </td>\n              <td class="punt2big" width="10%">\n                {{s.punt2}}\n              </td>\n    \n            </tr>\n          </table>\n        </ion-col>\n      </ion-row>\n   \n\n    <!--<div *ngFor="let s of scoreboards" class="scoreitem" tappable (tap)="gotoScorekeeper(s)">\n      <table width="100%">\n        <tr>\n          <td width="10%" rowspan="2" class="timeleft">{{backend.getTimeMMSS(s.timeLeft)}}</td>\n          <td width="80%" class="left">\n            <div class="atleta">{{s.player1.cognome+\' \'+s.player1.nome}}</div>\n            <div class="societa">{{s.player1.societa}}</div>\n          </td>\n          <td class="punt1" width="10%">\n            {{s.punt1}}\n          </td>\n        </tr>\n        <tr>\n          <td width="80%" class="left">\n            <div class="atleta">{{s.player2.cognome+\' \'+s.player2.nome}}</div>\n            <div class="societa">{{s.player2.societa}}</div>\n          </td>\n          <td class="punt2" width="10%">\n            {{s.punt2}}\n          </td>\n\n        </tr>\n      </table>\n\n    </div>-->\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scoreboards/scoreboards.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], ScoreboardsPage);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=scoreboards.js.map
 
 /***/ }),
@@ -13018,8 +13256,8 @@ var BackendProvider = (function () {
         this.isProduction = true;
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.1.8",
-            releasedate: "24/04/2019"
+            version: "2.1.9",
+            releasedate: "28/04/2019"
         };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
@@ -13551,8 +13789,21 @@ var BackendProvider = (function () {
     BackendProvider.prototype.getGare = function (callback) {
         var questo = this;
         var url = this.rooturl + "/gare/findall?societa=20160217220400";
-        this.fetchData(url, function (data) {
-            questo.gare = data.rows;
+        questo.fetchData(url, function (data) {
+            console.log("getgare", data);
+            if (questo.user.role == "guest") {
+                var arr = [];
+                data.rows.forEach(function (item) {
+                    if (item.doc.hasOwnProperty("forguest")) {
+                        if (String(item.doc.forguest) == "true") {
+                            arr.push(item);
+                        }
+                    }
+                });
+                questo.gare = arr;
+            }
+            else
+                questo.gare = data.rows;
             if (callback)
                 callback(data);
         });
@@ -15703,7 +15954,7 @@ var MyApp = (function () {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         if (page.title == "Logout") {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Confirm',
                 subTitle: 'Do you really want to logout',
                 buttons: [
@@ -15723,11 +15974,11 @@ var MyApp = (function () {
                     }
                 ]
             });
-            alert_1.present();
+            alert.present();
         }
         else {
             if (page.title == "Chiudi Appkwondo") {
-                var alert_2 = questo.alertCtrl.create({
+                var alert = questo.alertCtrl.create({
                     title: 'Chiudi Appkwondo',
                     message: 'Vuoi veramente chiudere Appkwondo V2 ?',
                     buttons: [
@@ -15747,7 +15998,7 @@ var MyApp = (function () {
                         }
                     ]
                 });
-                alert_2.present();
+                alert.present();
             }
             else {
                 var pushpages = ["Scoreboards", "Impostazioni", "ScoreKwondo", "TkdtLive", "Users", "Connessioni", "Informazioni", "Account", "RTC", "Servizi soci"];
@@ -15920,6 +16171,11 @@ var MyApp = (function () {
             if (questo.backend.user.role != 'superadmin')
                 retvalue = false;
         }
+        if (questo.backend.user.role == "guest") {
+            var guestpages = ["scoreboards", "informazioni", "logout", "chiudi appkwondo"];
+            if (guestpages.indexOf(t) == -1)
+                retvalue = false;
+        }
         // console.log("isVisibleMenu",text,retvalue);
         return retvalue;
     };
@@ -15937,18 +16193,19 @@ var MyApp = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Nav */]) === "function" && _a || Object)
 ], MyApp.prototype, "nav", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mytabs"),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* Tabs */])
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* Tabs */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* Tabs */]) === "function" && _b || Object)
 ], MyApp.prototype, "mytabs", void 0);
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/'<ion-menu [content]="content" side="left">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n    <ion-grid style="sbackground: #049a55; background: blue; color: white; padding: 4px !important;">\n    <ion-row>\n      <ion-col col-3 style="padding: 5px !important;">\n       \n        <img src="{{getUserImage()}}" class="roundimg"/>\n        \n      </ion-col>\n      \n      <ion-col style="padding: 8px !important;">\n        <span class="username">{{backend.user.nickname}}</span><br>\n        <span class="email">{{backend.user.email}}</span><br>\n      <!--<span class="useremail">{{user.email}}</span><br>-->\n      <span class="userrole">{{backend.user.role}}</span>\n    \n      </ion-col>\n    </ion-row>  \n    </ion-grid>    \n    <ion-list>\n      \n          \n      \n     <section *ngFor="let p of pages; let i=index;">\n      <button menuClose ion-item  (click)="openPage(p)" icon-left *ngIf="isVisibleMenu(p.title)">\n        <ion-icon name="{{icons[i]}}"></ion-icon>{{p.title}}\n      </button>\n      </section>\n      \n       \n    </ion-list>\n\n\n  </ion-content>\n\n</ion-menu>\n\n\n<!--\n<ion-menu [content]="content" side="right">\n  <ion-header >\n    <ion-toolbar>\n      <ion-title>Menuright</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="menu" style="overflow-y: hidden">\n  </ion-content>\n</ion-menu>\n-->\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n\n\n  <ion-fab style="bottom: 30px" left bottom *ngIf="backend.fbLives.length>0" (tap)="showFbLives()" >\n   <button color="primary" ion-fab style="font-size: 11px"><ion-icon name="ios-videocam"></ion-icon></button>\n </ion-fab>\n\n\n<div id="sound"></div>\n\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__["a" /* BackgroundMode */], __WEBPACK_IMPORTED_MODULE_9__ionic_native_android_permissions__["a" /* AndroidPermissions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */], __WEBPACK_IMPORTED_MODULE_14__providers_backend_backend__["a" /* BackendProvider */]])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__["a" /* BackgroundMode */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__ionic_native_background_mode__["a" /* BackgroundMode */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_native_android_permissions__["a" /* AndroidPermissions */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_native_android_permissions__["a" /* AndroidPermissions */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_14__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _m || Object])
 ], MyApp);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -18194,10 +18451,9 @@ ScorekeeperPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-scorekeeper',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/'<!--\n  Generated template for the ScorekeeperPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!--<ion-header *ngIf="!platform.is(\'cordova\')">\n  <ion-navbar>\n    <ion-title>SCOREKWONDO</ion-title>\n  </ion-navbar>\n</ion-header>-->\n\n<ion-content scroll="false" spadding>\n  <button  *ngIf="mode!=\'master\'" ion-button style="position:absolute; z-index: 9000;" (tap)="back()"><ion-icon name="arrow-round-back"></ion-icon></button>\n  <table *ngIf="!isWeb()" border="0" height="100%" width="100%" cellpadding="2" cellpadding="2">\n    <tr height="10%" *ngIf="mode==\'master\'">\n      <td>\n          <button  ion-button  (tap)="back()"><ion-icon name="arrow-round-back"></ion-icon></button>\n        <button ion-button (tap)="resetPunti()">Reset punti</button>\n        <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()"\n          (tap)="tapTimer()">{{timertext}}</button>\n        <button ion-button (tap)="setupTimer()">\n          <ion-icon name="settings"></ion-icon>\n        </button>\n      </td>\n    </tr>\n    \n    <tr class="buttr  red" *ngIf="player1.cognome!=\'\'">\n      <td class="tdatleta">\n        <div class="atleta">{{scoreboard.player1.cognome+\' \'+scoreboard.player1.nome}}</div>\n        <div class="societa">{{scoreboard.player1.societa}}</div>\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n\n      <td>\n        <div (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" class="puntbut red">{{scoreboard.punt1}}</div>\n      </td>\n    </tr>\n    <tr class="buttr  blue" *ngIf="player2.cognome!=\'\'">\n      <td class="tdatleta">\n        <div class="atleta">{{scoreboard.player2.cognome+\' \'+scoreboard.player2.nome}}</div>\n        <div class="societa">{{scoreboard.player2.societa}}</div>\n\n      </td>\n    </tr>\n    <tr height="25%" class="buttr">\n\n      <td>\n        <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut blue">{{scoreboard.punt2}}</div>\n      </td>\n    </tr>\n    <!--<tr  class="tdtimer">\n      <td>\n        <div [ngClass]="getTimerClass()">{{getTime(scoreboard.timeLeft)}}</div>\n\n      </td>\n    </tr>-->\n  </table>\n\n  <table *ngIf="isWeb()" border="1" height="100%" width="100%">\n      <tr height="10%" *ngIf="mode==\'master\'">\n          <td>\n            <button ion-button (tap)="resetPunti()">Reset punti</button>\n            <button ion-button (press)="resetTimer()" [ngClass]="getTimerButtonClass()"\n              (tap)="tapTimer()">{{timertext}}</button>\n            <button ion-button (tap)="setupTimer()">\n              <ion-icon name="settings"></ion-icon>\n            </button>\n          </td>\n        </tr>\n    <tr>\n      <td width="50%">\n        <div class="atletacontainer">\n        <div >{{scoreboard.player1.cognome+\' \'+scoreboard.player1.nome}}</div>\n        <div class="societa">{{scoreboard.player1.societa}}</div>\n      </div>\n        <div (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" class="puntbut2 red">{{scoreboard.punt1}}</div>\n      </td>\n      <td width="50%">\n          <div class="atletacontainer">\n          <div >{{scoreboard.player2.cognome+\' \'+scoreboard.player2.nome}}</div>\n          <div class="societa">{{scoreboard.player2.societa}}</div>\n        </div>\n          <div (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')" class="puntbut2 blue">{{scoreboard.punt2}}</div>\n          \n        </td>\n    </tr>\n  </table>\n\n\n  <!--<ion-grid>\n\n  <ion-row>\n    <button ion-button (tap)="resetPunti()">Reset punti</button>\n    <button ion-button (press)="resetTimer()" (tap)="tapTimer()">{{timertext}}</button>\n    <button ion-button (tap)="setupTimer()"><ion-icon name="settings"></ion-icon></button>\n   \n  </ion-row>\n\n  <ion-row>\n      <div class="timer">{{timeLeft}}</div>\n\n  </ion-row>\n\n<ion-row class="ionrow">\n    <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt2\')" (press)="decrease(\'punt2\')"  ion-button full class="puntbut" color="danger">{{punt2}}</button></ion-col>\n  \n  <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n</ion-row>\n\n<ion-row class="ionrow">\n <ion-col align-self-stretch width-67 ><button (tap)="increase(\'punt1\')" (press)="decrease(\'punt1\')" ion-button full class="puntbut" color="primary">{{punt1}}</button></ion-col>\n \n <ion-col width-33><ion-item text-wrap full>Un-aspirated p that sounds like a cross between a b and a p.  Make the <i>bp</i> sound by copying a p sound but not letting any air come out of your mouth.</ion-item></ion-col>\n </ion-row>\n\n\n <ion-row>\n   <ion-col>\n   \n   </ion-col>\n </ion-row>\n\n </ion-grid>-->\n\n  <!--<section class="home-container">\n\n    <ion-row class="first-row">\n      <ion-col>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="second-row">\n      <ion-col class="redbutton">\n          {{punt2}}\n      </ion-col>\n\n    </ion-row>\n    <ion-row class="third-row">\n      <ion-col class="bluebutton">\n       {{punt1}}\n      </ion-col>\n    </ion-row>\n  </section>-->\n\n\n</ion-content>\n<ion-footer>\n    <div [ngClass]="getTimerClass()">{{backend.getTimeMMSS(scoreboard.timeLeft)}}</div>\n</ion-footer>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/scorekeeper/scorekeeper.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_3__providers_socket_service_socket_service__["a" /* SocketService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], ScorekeeperPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=scorekeeper.js.map
 
 /***/ })

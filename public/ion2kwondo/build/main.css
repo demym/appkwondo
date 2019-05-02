@@ -32689,6 +32689,18 @@ page-tournament .girone {
   padding: 2px;
 }
 
+page-tournament .isingirone {
+  font-size: 12px;
+  color: blue;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 2px;
+}
+
+page-tournament .iscrittoitem {
+  --padding-start: 0;
+}
+
 page-users .useremail {
   font-size: 14px;
   font-style: italic;
