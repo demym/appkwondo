@@ -63,6 +63,57 @@ router.get("/add", function (req, res) {
 
 })
 
+router.post("/add", function (req, res) {
+    var doc = {
+        doc: {
+
+            email: "tkdruser@yahoo.it",
+            nickname: "TkdrUser",
+            password: "stevevai",
+            role: "tkdruser",
+            active: "true"
+
+
+
+        }
+
+    }
+
+    console.log("req.body",req.body);
+
+    doc={
+        doc: req.body
+    }
+
+    var mom = moment().format("YYYYMMDDHHmmSS");
+    doc.doc.id = mom;
+
+    console.log("trying to add",doc);
+
+    mongo.getfile("users.json", function (data) {
+        var found = false;
+        data.rows.forEach(function (item, idx) {
+            if (item.doc.email.toLowerCase() == doc.doc.email.toLowerCase()) found = true;
+        })
+
+        if (!found) {
+            mongo.addRecord("users.json", "", doc, function (ddata) {
+
+                res.send(ddata);
+            })
+
+        } else {
+            var retvalue = {
+                error: true,
+                msg: "User " + doc.doc.email + " already existing"
+            }
+            res.send(retvalue);
+        }
+    })
+
+
+})
+
 
 router.get("/delete", function (req, res) {
     var email = "demym@yahoo.it";
