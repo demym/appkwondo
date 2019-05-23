@@ -188,9 +188,9 @@ function readGare(callback) {
 }
 
 if (alterbridge) {
-	readGare(function () {});
+	readGare(function () { });
 } else {
-	readGareJson(function () {});
+	readGareJson(function () { });
 }
 
 
@@ -411,6 +411,7 @@ for (var i=0; i<gare.length; i++) {
 
 
 
+
 router.get('/findall', function (req, res) {
 	var societa = "";
 	if (req.query) {
@@ -515,7 +516,10 @@ router.get('/findall', function (req, res) {
 
 
 			}
-			res.send(obj);
+			utils.paginateRows(req, obj, function (pdata) {
+				res.send(pdata)
+			})
+			//res.send(obj);
 		});
 
 
@@ -551,6 +555,139 @@ router.get('/findByName/:nome', function (req, res) {
 
 
 });
+
+/*
+router.get("/setresultrr", function (req, res) {
+	var garaid = "20190305114915";
+	var girone = "girone1"
+	var incontro_order = 0;
+	var result = "5-0";
+
+	if (req.query.order) incontro_order=parseInt(req.query.order,10);
+	if (req.query.result) result=req.query.result;
+	if (result=="null") result="";
+	var retvalue={};
+	mongo.getfile("gare.json", function (data) {
+		data.rows.forEach(function (item) {
+			var gara=item;
+			if (item.doc.id == garaid) {
+				var gironi = item.doc.gironi;
+				gironi.forEach(function (gitem) {
+					if (gitem.title.toLowerCase() == girone.toLowerCase()) {
+						var incontri = gitem.incontri;
+						incontri.forEach(function (iitem) {
+							if (iitem.order == incontro_order) {
+								var arr = result.split("-");
+								if (arr.length != 2) return;
+								if (arr.length == 2) {
+									var p1 = arr[0];
+									var p2 = arr[1];
+									console.log("p1", p1, "p2", p2)
+
+									iitem.punteggio1 = p1;
+									iitem.punteggio2 = p2;
+									iitem.player1.punt
+									iitem.risultato=result;
+
+									console.log("inc.punteggio1", iitem.punteggio1)
+									console.log("inc.punteggio2", iitem.punteggio2)
+									console.log("inc", iitem);
+									updateClassificaGirone(gitem);
+									//retvalue = gitem;
+									mongo.updateRecord("gare.json", garaid, gara, function (udata) {
+										console.log("updated");
+										//ressent=true;
+										
+										res.send(udata);
+							
+									})
+								}
+
+							}
+						})
+					}
+
+
+					
+				})
+			}
+		})
+		//res.send(retvalue);
+	})
+
+})
+
+function updateClassificaGirone(g) {
+	resetPunteggiGirone(g);
+	g.incontri.forEach(function (item, idx) {
+		var inc = item;
+		//if (String(inc.punteggio1.trim()) == "") inc.player1.punti = 0;
+		//if (String(inc.punteggio2.trim()) == "") inc.player1.punti = 0;
+
+		console.log("incontro", inc)
+
+		if ((String(inc.punteggio1.trim()) != "") && (String(inc.punteggio2.trim()) != "")) {
+			console.log("punteggio non vuoto")
+			var p1 = parseInt(inc.punteggio1, 10);
+			var p2 = parseInt(inc.punteggio2, 10);
+			console.log("p1", p1, "p2", p2);
+			console.log("inc.player1.id", inc.player1.id);
+			console.log("inc.player2.id", inc.player2.id);
+			var player1=getGironePlayerById(g, inc.player1.id);
+			var player2=getGironePlayerById(g, inc.player2.id);
+
+			console.log("player1", player1);
+			console.log("player2", player2);
+			if (p1 > p2) {
+				console.log("")
+				player1.punti += 3;
+			}
+			if (p1 < p2) player2.punti += 3;
+			if (p1 == p2) {
+				player1.punti += 1;
+
+				player2.punti += 1;
+
+			}
+			player1.gf += p1;
+			player1.gs += p2;
+			player2.gf += p2;
+			player2.gs += p1;
+		}
+	})
+	console.log("updateclassifica girone", g)
+}
+
+function getGironePlayerById(g, id) {
+    var retvalue = {}
+    g.players.forEach(function (item, idx) {
+      var gid = item.id;
+      if (id == gid) retvalue = item;
+    })
+    return retvalue;
+  }
+
+function   resetPunteggiGirone(g) {
+    g.players.forEach(function (item, idx) {
+      var inc = item;
+      inc.punti = 0;
+      inc.gf = 0;
+      inc.gs = 0;
+
+
+    })
+    g.incontri.forEach(function (item, idx) {
+      var inc = item;
+      inc.player1.punti = 0;
+      inc.player1.gf = 0;
+      inc.player1.gs = 0;
+      inc.player2.punti = 0;
+      inc.player2.gf = 0;
+      inc.player2.gs = 0;
+    })
+
+  }
+*/
 
 
 router.get("/fullgarabyid/:id", function (req, res) {
@@ -681,7 +818,7 @@ router.get("/fullgarabyid/:id", function (req, res) {
 					}
 					var arr = ret.gara.rows[0].doc.iscritti.split(",");
 					arr.forEach(function (item, idx) {
-						var atl = getAtletaById(item,atleti);
+						var atl = getAtletaById(item, atleti);
 						var fpa = {
 							atleta: atl,
 							esecuzioni: [],
@@ -770,10 +907,10 @@ router.get("/fullgarabyid/:id", function (req, res) {
 
 						if (hastkdt) {
 							mongo.getfile("tkdt_" + tkdt_id + ".json", function (tkdata) {
-								utils.colog("tkdata",tkdata);
+								utils.colog("tkdata", tkdata);
 								ret.gara.rows[0].doc.tkdt = tkdata.rows[0];
-								utils.colog("tkdata0",tkdata.rows[0])
-								utils.colog("ret",ret.giorni);
+								utils.colog("tkdata0", tkdata.rows[0])
+								utils.colog("ret", ret.giorni);
 								res.send(ret);
 
 							})
@@ -974,7 +1111,7 @@ router.get("/updategarafromfile", function (req, res) {
 router.post('/update', function (req, res) {
 	var body = req.body;
 
-	console.log("body",body);
+	console.log("body", body);
 
 	if (!req.body.id) body = JSON.parse(req.body); //check if JSON or stringified JSON
 
@@ -1327,7 +1464,7 @@ function saveToAltervista(finto, filename) {
 				'fdata': JSON.stringify(dat)
 			}
 		}
-	    utils.colog(options.url)
+		utils.colog(options.url)
 		// Start the request
 		request(options, function (error, response, body) {
 			if (!error && response.statusCode == 200) {
@@ -1433,9 +1570,7 @@ function findAllMatchesByAtleta(garaid, callback) {
 
 
 			if (aid != curratleta) {
-				if (count == 1)
-
-				{
+				if (count == 1) {
 
 					curratleta = aid;
 					currmatches = matchid;

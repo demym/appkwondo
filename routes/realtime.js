@@ -76,6 +76,7 @@ function clearRealtime(){
 
 function clearScoreboards(){
     scoreboards=[];
+    return scoreboards;
 }
 
 function getScoreboards(){

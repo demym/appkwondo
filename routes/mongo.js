@@ -235,6 +235,23 @@ function getallfiles(callback) {
 
 }
 
+function getfullfiles(callback) {
+	colog("getting all files combo from mongo")
+	connect(function (err, db) {
+
+		var collection = db.collection('tkdr');
+		//collection.find({ filename: { $not: /chat*/   }}).toArray(function(err, items) {
+	collection.find({ $and: [{ filename: { $not: /gare*/ } }, { filename: { $not: /atleti*/ } },{ filename: { $not: /matches*/ } }] }).toArray(function (err, items) {
+			//console.log(items);
+			callback(items);
+
+		});
+	});
+
+
+}
+
+
 function getfile(fname, callback) {
 	colog("getting file " + fname + " from mongodb");
 	var retvalue = {
@@ -1015,6 +1032,7 @@ exports.deletefile = deletefile;
 exports.archivefile = archivefile;
 exports.getfile = getfile;
 exports.getallfiles = getallfiles;
+exports.getfullfiles = getfullfiles;
 exports.resetfile = resetfile;
 exports.checkCreateFile = checkCreateFile;
 exports.createRecordFromFile = createRecordFromFile;

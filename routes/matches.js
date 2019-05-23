@@ -6,7 +6,7 @@ var mongo = require('../routes/mongo');
 var base64 = require('node-base64-image');
 var utils = require("../routes/utils");
 var realtime = require("../routes/realtime");
-var fcm=require("../routes/gcm");
+var fcm = require("../routes/gcm");
 
 var path = require('path');
 var util = require("util");
@@ -975,31 +975,31 @@ router.post('setrealtime/:realtime/:garaid/:matchid', function (req, res) {
 });
 
 
-router.get("/updateavversario/:garaid/:matchid/:avversario",function(req,res){
+router.get("/updateavversario/:garaid/:matchid/:avversario", function (req, res) {
 	var garaid = req.params.garaid;
 	var matchid = req.params.matchid;
-	var avversario=req.params.avversario;
+	var avversario = req.params.avversario;
 	//var societa=req.params.societaavversario;
-	var matchesfname="matches_"+garaid+".json";
-	mongo.getfile(matchesfname,function(data){
-		data.rows.forEach(function(item,idx){
-			var doc=item.doc;
-			if (doc.id==matchid){
-				doc.avversario=avversario;
-				
-				console.log("updateavversario, found match ",doc.id,doc.avversario);
-				if (avversario=="0|0") {
+	var matchesfname = "matches_" + garaid + ".json";
+	mongo.getfile(matchesfname, function (data) {
+		data.rows.forEach(function (item, idx) {
+			var doc = item.doc;
+			if (doc.id == matchid) {
+				doc.avversario = avversario;
+
+				console.log("updateavversario, found match ", doc.id, doc.avversario);
+				if (avversario == "0|0") {
 					console.log("avversario null, deleting");
 					delete doc.avversario;
 				}
-				mongo.updatefile(matchesfname,data.rows,function(udata){
-					console.log("updated "+matchesfname,udata);
-					var io=global.io;
+				mongo.updatefile(matchesfname, data.rows, function (udata) {
+					console.log("updated " + matchesfname, udata);
+					var io = global.io;
 					if (io) {
 						io.emit("updategara", {
 							garaid: garaid
 						});
-	
+
 					} else {
 						console.log("socket not connected")
 					}
@@ -1074,13 +1074,13 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 				realtime.remove(garaid, matchid);
 				disputato = true;
 
-				var vmatch=data;
+				var vmatch = data;
 
-				var obj={
+				var obj = {
 					title: "Fine TEMPO REALE",
-					body: vmatch.matchid+" - "+vmatch.atletaname,
+					body: vmatch.matchid + " - " + vmatch.atletaname,
 					disablebadge: true
-					
+
 				}
 				/*
 				fcm.fcmSend(obj,function(fcmdata){
@@ -1139,7 +1139,7 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 				realtime.syncRealtimeMatches(newrt);
 
-				
+
 
 				/*var obj={
 					text: chatobj.nickname+" ha postato un'immagine",
@@ -1159,28 +1159,28 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 					io.emit("realtimematches", {
 						matches: realtime.getRealtimeMatches()
 					});*/
-					var nottitle="TEMPO REALE !";
+				var nottitle = "TEMPO REALE !";
 
-					if (newrt.match.hasOwnProperty("matchord")){
-						if (newrt.match.matchord.trim()!=""){
-							nottitle+=" "+newrt.match.matchord;
-						}
+				if (newrt.match.hasOwnProperty("matchord")) {
+					if (newrt.match.matchord.trim() != "") {
+						nottitle += " " + newrt.match.matchord;
 					}
+				}
 
-					var obj={
-						title: nottitle,
-						body: newrt.match.matchid+" - "+newrt.match.atletaname,
-						disablebadge: true
-						
-					}
-					fcm.fcmSend(obj,function(fcmdata){
-						console.log("fcm sent",fcmdata)
-					})
-					/*fcm.sendToAll(obj,function(data){
-						console.log("gcmsendtoall done",data);
-					})*/
+				var obj = {
+					title: nottitle,
+					body: newrt.match.matchid + " - " + newrt.match.atletaname,
+					disablebadge: true
 
-				
+				}
+				fcm.fcmSend(obj, function (fcmdata) {
+					console.log("fcm sent", fcmdata)
+				})
+				/*fcm.sendToAll(obj,function(data){
+					console.log("gcmsendtoall done",data);
+				})*/
+
+
 
 
 
@@ -1248,177 +1248,22 @@ router.post('/update/:garaid/:matchid', function (req, res) {
 
 });
 
-router.post('/updaterr/:garaid/:matchid', function (req, res) {
+router.post('/updaterr/:garaid', function (req, res) {
 	var body = req.body;
+	console.log(body);
 	var garaid = req.params.garaid;
-	var matchid = req.params.matchid;
-	var sresult = "false";
-	var savedmatch = false;
-	var action = "";
-	console.log("*****************************************************************************************");
-	console.log("Update match id=" + matchid + ": " + JSON.stringify(body));
-	console.log("*****************************************************************************************");
-	if (body.admin_action) {
-
-		action = body.admin_action;
-		delete body.admin_action;
-	}
-	if (body.savedmatch) {
-		if (String(body.savedmatch) == "true") savedmatch = true;
-	}
-	if (req.query.setresult) sresult = req.query.setresult;
-	var setresult = false;
-	if (sresult == "true") setresult = true;
-
-	var newrt = {};
 
 
-	var doc = {
+	var rows=[{
 		doc: body
-	}
+	}]
 
-	doc.doc.admin_action = "";
-	var io = global.io;
+	
 
-
-
-			if ((action == "realtime_on") || (action == "realtime_off") || (action = "setresult")) {
-				if (io) {
-					io.emit("updategara", {
-						garaid: garaid
-					});
-
-				} else {
-					console.log("socket not connected")
-				}
-			}
-
-			if (action == "realtime_off") {
-				realtime.remove(garaid, matchid);
-				disputato = true;
-
-				var vmatch=data;
-
-				var obj={
-					title: "Fine TEMPO REALE",
-					body: vmatch.matchid+" - "+vmatch.atletaname,
-					disablebadge: true
-					
-				}
-				/*
-				fcm.fcmSend(obj,function(fcmdata){
-					console.log("fcm sent",fcmdata)
-				})*/
-				/*var sock = global.socket;
-				console.log("sending refreshrealtime");
-				sock.broadcast.emit("realtimematches", {
-					matches: realtime.getRealtimeMatches()
-				});*/
-
-
-
-			}
+	mongo.updatefile("matches_"+garaid+".json",rows,function(data){
 		
-
-
-
-
-			if (action == "realtime_on") {
-				newrt = {
-					"type": "realtime",
-					"to": "all",
-					"garaid": garaid,
-					"matchid": matchid,
-					"result": "0-0",
-					"round": "1",
-					"fineround": false,
-					"running": true,
-					"paused": false,
-					"ammoniz1": 0,
-					"ammoniz2": 0,
-					"event": "realtime",
-					"text": "TEMPO REALE !",
-					"active": true
-				}
-
-				newrt.match = data;
-
-				/*if (newrt.match.hasOwnProperty("avversario")){
-					if (newrt.match.avversario.trim()!="") newrt.avversario=newrt.match.avversario;
-				}*/
-				console.log("newrt data", data);
-
-				realtime.syncRealtimeMatches(newrt);
-
-				
-
-				/*var obj={
-					text: chatobj.nickname+" ha postato un'immagine",
-					title: "ChatKwonDo",
-					icon: "ic_launcher",
-					color: "#000000",
-					tag: "appkwondov2",
-					badge: "1",
-					topic: "appkwondov2",
-					token: ""
-				
-				}
-				gcm2.sendToAll(obj,function(data){
-					console.log("gcmsendtoall done",data);
-				})*/
-				/*	console.log("sending realtimematches");
-					io.emit("realtimematches", {
-						matches: realtime.getRealtimeMatches()
-					});*/
-					var nottitle="TEMPO REALE !";
-
-					if (newrt.match.hasOwnProperty("matchord")){
-						if (newrt.match.matchord.trim()!=""){
-							nottitle+=" "+newrt.match.matchord;
-						}
-					}
-
-					var obj={
-						title: nottitle,
-						body: newrt.match.matchid+" - "+newrt.match.atletaname,
-						disablebadge: true
-						
-					}
-					fcm.fcmSend(obj,function(fcmdata){
-						console.log("fcm sent",fcmdata)
-					})
-					/*fcm.sendToAll(obj,function(data){
-						console.log("gcmsendtoall done",data);
-					})*/
-
-				
-
-
-
-			}
-
-			console.log("sending realtimematches");
-			io.emit("realtimematches", {
-				matches: realtime.getRealtimeMatches()
-			});
-
-
-
-
-
-
-
-
-			res.send(data);
-			//console.log("res sent");
-			return;
-
-
-
-
-
-
-
+		res.send(data);
+	})
 
 
 
@@ -3700,19 +3545,19 @@ function setResultOk(match, atl, mfa, callback) {
 							var fcmobj = {
 								title: "Risultato match",
 								body: chat.text
-		
+
 							}
-		
+
 							var doPush = false;
 							if (chat.nickname.toLowerCase() == "system") doPush = true;
-		
+
 							if (doPush) {
 								fcm.fcmSend(fcmobj, function (fcmdata) {
 									console.log("fcm sent", fcmdata)
 								})
 							}
-		
-		
+
+
 							if (io) {
 								io.emit("updategara", {
 									garaid: match.garaid
@@ -4519,6 +4364,162 @@ function delMatch(matchid, garaid, atletaid, callback) {
 
 }
 
+
+//ROUNDROBIN KIND PART
+
+
+router.get("/setresultrr/:garaid", function (req, res) {
+	//var garaid = "20190305114915";
+	var garaid = req.params.garaid;
+	var girone = "girone1"
+	var incontro_order = 0;
+	var result = "5-0";
+
+	if (req.query.order) incontro_order = parseInt(req.query.order, 10);
+	if (req.query.result) result = req.query.result;
+	if (result == "null") result = "";
+	var retvalue = {};
+	mongo.getfile("matches_" + garaid + ".json", function (data) {
+		data.rows.forEach(function (item) {
+			var gara = item;
+			if (item.doc.id == garaid) {
+				var gironi = item.doc.gironi;
+				gironi.forEach(function (gitem) {
+					if (gitem.title.toLowerCase() == girone.toLowerCase()) {
+						var incontri = gitem.incontri;
+						incontri.forEach(function (iitem) {
+							if (iitem.order == incontro_order) {
+								var arr = result.split("-");
+								console.log("arr.lenght", arr.length);
+								if (arr.length != 2) return;
+								if (arr.length == 2) {
+									var p1 = arr[0];
+									var p2 = arr[1];
+									console.log("p1", p1, "p2", p2)
+
+									/*if (result == "x-x") {
+										delete iitem.punteggio1;
+										delete iitem.punteggio2;
+										delete iitem.risultato;
+									} else {
+										iitem.punteggio1 = p1;
+										iitem.punteggio2 = p2;
+
+										iitem.risultato = result;
+
+									}*/
+
+									iitem.punteggio1 = p1;
+									iitem.punteggio2 = p2;
+
+									iitem.risultato = result;
+
+
+
+									console.log("inc.punteggio1", iitem.punteggio1)
+									console.log("inc.punteggio2", iitem.punteggio2)
+									console.log("inc", iitem);
+									updateClassificaGirone(gitem);
+									//retvalue = gitem;
+									mongo.updateRecord("matches_" + garaid + ".json", garaid, gara, function (udata) {
+										console.log("updated");
+										var io = global.io;
+										if (io) {
+											io.emit("updategara", {
+												garaid: garaid
+											});
+										}
+										//ressent=true;
+
+										res.send(udata);
+
+									})
+								}
+
+							}
+						})
+					}
+
+
+
+				})
+			}
+		})
+		//res.send(retvalue);
+	})
+
+})
+
+function updateClassificaGirone(g) {
+	resetPunteggiGirone(g);
+	g.incontri.forEach(function (item, idx) {
+		var inc = item;
+		//if (String(inc.punteggio1.trim()) == "") inc.player1.punti = 0;
+		//if (String(inc.punteggio2.trim()) == "") inc.player1.punti = 0;
+
+		console.log("incontro", inc)
+
+		if ((String(inc.punteggio1.trim()) != "") && (String(inc.punteggio2.trim()) != "")) {
+			console.log("punteggio non vuoto")
+			var p1 = parseInt(inc.punteggio1, 10);
+			var p2 = parseInt(inc.punteggio2, 10);
+			console.log("p1", p1, "p2", p2);
+			console.log("inc.player1.id", inc.player1.id);
+			console.log("inc.player2.id", inc.player2.id);
+			var player1 = getGironePlayerById(g, inc.player1.id);
+			var player2 = getGironePlayerById(g, inc.player2.id);
+
+			console.log("player1", player1);
+			console.log("player2", player2);
+			if (p1 > p2) {
+				console.log("")
+				player1.punti += 3;
+			}
+			if (p1 < p2) player2.punti += 3;
+			if (p1 == p2) {
+				player1.punti += 1;
+
+				player2.punti += 1;
+
+			}
+			player1.gf += p1;
+			player1.gs += p2;
+			player2.gf += p2;
+			player2.gs += p1;
+		}
+	})
+	console.log("updateclassifica girone", g)
+}
+
+function getGironePlayerById(g, id) {
+	var retvalue = {}
+	g.players.forEach(function (item, idx) {
+		var gid = item.id;
+		if (id == gid) retvalue = item;
+	})
+	return retvalue;
+}
+
+function resetPunteggiGirone(g) {
+	g.players.forEach(function (item, idx) {
+		var inc = item;
+		inc.punti = 0;
+		inc.gf = 0;
+		inc.gs = 0;
+
+
+	})
+	g.incontri.forEach(function (item, idx) {
+		var inc = item;
+		inc.player1.punti = 0;
+		inc.player1.gf = 0;
+		inc.player1.gs = 0;
+		inc.player2.punti = 0;
+		inc.player2.gf = 0;
+		inc.player2.gs = 0;
+	})
+
+}
 
 
 

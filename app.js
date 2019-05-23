@@ -17,6 +17,7 @@ var uuid = require('node-uuid');
 var fs = require('fs');
 var gcm = require('./routes/gcm');
 var fcm = require('./routes/fcm');
+var dbscl = require('./routes/dbscl');
 //var mongo = require('mongodb');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
@@ -51,6 +52,7 @@ var atleti = require('./routes/atleti'),
 	filemanager = require('./routes/filemanager'),
 	mongo = require('./routes/mongo'),
 	gare = require('./routes/gare'),
+	garecloudant = require('./routes/garecloudant'),
 	sync = require('./routes/sync'),
 	chat = require('./routes/chat'),
 	tkdt = require('./routes/tkdt'),
@@ -400,6 +402,7 @@ app.use("/convert", convert);
 app.use("/files", filemanager)
 app.use("/atleti", atleti)
 app.use("/gare", gare)
+app.use("/garecloudant", garecloudant)
 app.use("/societa", societa)
 app.use("/matches", matches)
 app.use("/chat", chat)
@@ -894,8 +897,8 @@ app.get("/fblive", function (req, res) {
 })
 
 
-app.get("/fcm/test",function(req,res){
-	gcm.fcmSendToTopic({},function(data){
+app.get("/fcm/test", function (req, res) {
+	gcm.fcmSendToTopic({}, function (data) {
 		res.send(data);
 
 	})
@@ -1075,14 +1078,19 @@ app.get("/scoreboards", function (req, res) {
 	res.send(rta);
 })
 
-app.get("/scoreboards/remove/:clientid",function(req,res){
-	var clientid=req.params.clientid;
+app.get("/scoreboards/reset", function (req, res) {
+	var rta = realtime.clearScoreboards();
+	res.send(rta);
+})
+
+app.get("/scoreboards/remove/:clientid", function (req, res) {
+	var clientid = req.params.clientid;
 	realtime.removeScoreboard(clientid);
-	if (io){
-	io.emit("scoreboards", {
-		scoreboards: realtime.getScoreboards()
-	});
-}
+	if (io) {
+		io.emit("scoreboards", {
+			scoreboards: realtime.getScoreboards()
+		});
+	}
 	res.send(realtime.getScoreboards())
 })
 
@@ -1097,10 +1105,10 @@ app.get("/realtime/reset", function (req, res) {
 
 app.get("/scoreboards/reset", function (req, res) {
 	realtime.clearScoreboards();
-	
-		res.send(realtime.getScoreboards());
 
-	
+	res.send(realtime.getScoreboards());
+
+
 
 })
 
@@ -1265,7 +1273,7 @@ var headers;
 
 app.post("/stocaz", function (req, res) {
 	var body = req.body;
-	header=req.headers;
+	header = req.headers;
 	console.log(req);
 })
 
@@ -1288,15 +1296,15 @@ app.get("/tpss2", function (req, res) {
 			'content-type': 'application/x-www-form-urlencoded',
 			'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
 			'content-length': '11',
-		
-			 'referer': 'https://tpss.eu',
+
+			'referer': 'https://tpss.eu',
 			'accept-encoding': 'gzip, deflate, br',
 			'accept-language': 'it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7',
 			'cookie': 'connect.sid=s%3A74O9Q6oAJxS3kd6KLNfqXtFckOzfIJyD.HK1PU0KMlnAao69wAHYhE%2BmC0dSBwGCnDaHe3uJI1TI',
 			'cache-control': 'max-age=0',
 			'origin': 'https://tpss.eu',
-			
-	},
+
+		},
 		form: form
 
 	}, function (error, response, body) {
@@ -1528,36 +1536,36 @@ app.get("/gcm/send", function (req, res) {
 })
 
 
-app.get("/fcm/send",function(req,res){
+app.get("/fcm/send", function (req, res) {
 
-	var title="Notifica di prova";
-	var text="Testo notifica di prova";
+	var title = "Notifica di prova";
+	var text = "Testo notifica di prova";
 
-	if (req.query.title) title=req.query.title;
-	if (req.query.text) text=req.query.text;
+	if (req.query.title) title = req.query.title;
+	if (req.query.text) text = req.query.text;
 
-	var obj={
+	var obj = {
 		title: title,
 		body: text,
 		disablebadge: true
-		
+
 	}
-	
-	gcm.fcmSendToTopic(obj,function(fcmdata){
-		console.log("fcm sent",fcmdata)
+
+	gcm.fcmSendToTopic(obj, function (fcmdata) {
+		console.log("fcm sent", fcmdata)
 		res.send(fcmdata);
 	})
 })
 
 
-app.get("/triggerupdategara/:garaid",function(req,res){
-	var garaid=req.params.garaid;
+app.get("/triggerupdategara/:garaid", function (req, res) {
+	var garaid = req.params.garaid;
 	if (io) {
 		io.emit("updategara", {
 			garaid: garaid
 		});
-		res.send({ok: true})
-	} else res.send({ok: false})
+		res.send({ ok: true })
+	} else res.send({ ok: false })
 
 })
 
@@ -1583,8 +1591,230 @@ app.get("/gcm/test", function (req, res) {
 	})
 })
 
+app.get("/writeallgare", function (req, res) {
+	writeAllGare(function (data) {
+		res.send(data)
+	})
+})
 
 
+app.get("/historyavversario", function (req, res) {
+	var atletaid = req.query.atletaid;
+	atletaid = "000000000000062";
+	var avvers = "fisch";
+	var matches_atleta = [];
+
+	fs.readFile('./data/allgare.json', 'utf8', (err, jsonString) => {
+		if (err) {
+			console.log("File read failed:", err)
+			return
+		}
+		var gare = JSON.parse(jsonString)
+		gare.rows.forEach(function (item, idx) {
+			var gara = item.doc;
+			var matches = Object.assign({}, gara.matches);
+			delete item.doc.matches;
+			matches.rows.forEach(function (mitem, midx) {
+				var match = mitem.doc;
+				match.gara = item.doc;
+				var atlid = match.atletaid;
+
+				if (atlid == atletaid) {
+
+					if (match.hasOwnProperty("avversario")) {
+						var avv = match.avversario;
+						console.log(avv)
+						if (avv.toLowerCase().indexOf(avvers.toLowerCase()) > -1) {
+							matches_atleta.push(match)
+						}
+
+
+					}
+				}
+			})
+		})
+		res.send(matches_atleta);
+	})
+})
+
+app.get("/historyatleta", function (req, res) {
+
+	atletaid = "000000000000062";
+	if (req.query.atletaid) atletaid = req.query.atletaid;
+
+	console.log("atletaid", atletaid)
+	var matches_atleta = [];
+	fs.readFile('./data/allgare.json', 'utf8', (err, jsonString) => {
+		if (err) {
+			console.log("File read failed:", err)
+			return
+		}
+		var gare = JSON.parse(jsonString)
+
+
+		//var gare = require('./data/allgare.json');
+		gare.rows.forEach(function (item, idx) {
+			var gara = item.doc;
+			var matches = Object.assign({}, gara.matches);
+			delete item.doc.matches;
+			if (matches.hasOwnProperty("rows")) {
+				matches.rows.forEach(function (mitem, midx) {
+					var match = mitem.doc;
+					match.gara = item.doc;
+					if (match.hasOwnProperty("atletaid")) {
+
+						var atlid = match.atletaid;
+						//	console.log(atlid)
+						if (atlid.trim() == atletaid.trim()) {
+							//console.log(match.risultato)
+							matches_atleta.push(match)
+
+						}
+					}
+				})
+			}
+		})
+		res.send(matches_atleta);
+	})
+})
+
+
+app.get("/queryatletabyname", function (req, res) {
+	var name = req.query.name;
+	queryAtletaByName(name, function (data) {
+		res.send(data)
+	})
+})
+
+
+
+
+
+app.get("/bulk", function (req, res) {
+	//var json=require("./data/json/a.json");
+	var rawdata = fs.readFileSync('./data/json/atleti.json', 'utf8');
+	console.log("rawdata", rawdata)
+	var json = JSON.parse(rawdata)
+	var arr = []
+	json.forEach(function (item) {
+		arr.push(item.doc)
+	})
+	dbscl.insert_bulk("atleti", arr, function (data) {
+		res.send(data)
+	});
+
+})
+
+
+app.get("/bulk2", function (req, res) {
+	var garaid = "20151019175533";
+	var query = {
+		"selector": {
+			"_id": {
+				"$gt": ""
+			}
+		}
+	}
+	dbscl.find2("gare", query, function (data) {
+		//console.log
+		var arrids = [];
+
+		data.rows.forEach(function (item) {
+			var id = item.id;
+			arrids.push(id);
+
+
+		})
+		//console.log("arrids", arrids)
+		mongo.getfullfiles(function (combo) {
+
+			var matchesarr = [];
+			var bulkarr = [];
+
+			/*
+			arrids.forEach(function (item) {
+				var gid = item;
+				var matches = getfilecombo("cronaca_" + gid, combo);
+				if (matches) {
+					if (matches.hasOwnProperty("rows")) {
+						console.log("cronaca_" + gid, matches.rows.length);
+						
+						//matchesarr=matchesarr.concat(matches.rows);
+						var m=[];
+						matches.rows.forEach(function(mitem){
+							m.push(mitem);
+						})
+						var newbulkel={
+							garaid: gid,
+							rows: m
+						}
+						bulkarr.push(newbulkel);
+					} else {
+						console.log("WARNING matches_" + gid + " does not have rows !!")
+					}
+				} else {
+					console.log("WARNING !! matches_" + gid + " is null")
+				}
+
+
+			})*/
+
+			combo.forEach(function (item) {
+
+				var fname = item.filename;
+				if (fname.indexOf("tkdt") > -1) {
+
+					var newitem = {
+						id: fname,
+						rows: item.filecontent.rows
+					}
+
+
+					var ss = JSON.stringify(newitem);
+					console.log(fname, ss.length);
+					if (ss.length > 800000) {
+						console.log("SIZE WARNING ON " + fname + " !!!")
+					} else bulkarr.push(newitem);
+					/*newitem.rows.forEach(function(nitem){
+						delete nitem.audio;
+						delete nitem.photo;
+						delete nitem.foto;
+					})*/
+					//bulkarr=bulkarr.concat(item.filecontent.rows)
+
+				}
+			})
+
+			//res.send(bulkarr)
+			dbscl.insert_bulk("tkdt", bulkarr, function (bdata) {
+				res.send(bdata)
+			})
+			//res.send(bulkarr);
+
+
+		})
+		/*mongo.getall("matches_"+id+".json",function(mdata){
+			console.log(mdata);
+		})*/
+
+	})
+})
+
+function getfilecombo(filename, arr) {
+	for (var i = 0; i < arr.length; i++) {
+
+		var fname = filename + ".json";
+		if (arr[i].filename == fname) {
+
+			return arr[i].filecontent
+		}
+
+
+	}
+
+
+
+}
 /**
  * Error handlers
  */
@@ -1870,10 +2100,10 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('scoreboard', function (data) {
 		colog("socket scoreboard received");
-		console.log("socket scoreboard received",data);
+		console.log("socket scoreboard received", data);
 		console.log("syncing scoreboards", data);
 		realtime.syncScoreboards(data);
-		socket.broadcast.emit("scoreboard",data);
+		socket.broadcast.emit("scoreboard", data);
 	});
 
 
@@ -1916,16 +2146,16 @@ io.sockets.on('connection', function (socket) {
 		//WEBRTC PART
 		if (addedUser) {
 			for (let i = 0; i < userList.length; i++) {
-					if (socket.username === userList[i].username) {
-							userList.splice(i, 1);
-					}
+				if (socket.username === userList[i].username) {
+					userList.splice(i, 1);
+				}
 			}
 			socket.broadcast.emit('user left', {
-					username: socket.username
+				username: socket.username
 			});
 
 			socket.emit('getUsers', userList);
-	}
+		}
 		//socket.broadcast.emit("refreshsockets", {text: txt});
 		//socket.emit("refreshsockets",{text: txt});
 	});
@@ -1953,59 +2183,59 @@ io.sockets.on('connection', function (socket) {
 		socket.username = data.username;
 		console.log('Username: ', data.username);
 		userList.push({
-				username: data.username
+			username: data.username
 		});
 
 		socket.emit('login', {
-				userList: userList
+			userList: userList
 		});
 
 		socket.broadcast.emit('user joined', {
-				username: data.username
+			username: data.username
 		});
 
 		socket.join(data.username);
-});
+	});
 
-socket.on('call', function (data) {
+	socket.on('call', function (data) {
 		console.log('call from', data.from);
 		console.log('call to', data.to);
 		io.sockets.in(data.to).emit('call:incoming', data);
-});
+	});
 
 
-socket.on('iceCandidate', function (data) {
+	socket.on('iceCandidate', function (data) {
 		io.sockets.in(data.to).emit('call:iceCandidate', data);
-});
+	});
 
-socket.on('answer', function (data) {
+	socket.on('answer', function (data) {
 		console.log('answer from', data.from);
 		console.log('answer to', data.to);
 		io.sockets.in(data.to).emit('call:answer', data);
-});
+	});
 
-socket.on('answered', function (data) {
+	socket.on('answered', function (data) {
 		console.log('answer from', data.from);
 		console.log('answer to', data.to);
 		io.sockets.in(data.to).emit('call:answered', data);
-})
+	})
 
-socket.on('new message', function (data, cb) {
+	socket.on('new message', function (data, cb) {
 		cb(true);
 		console.log(data);
 		messageList.push(data);
 		socket.broadcast.emit('new message', data);
-})
+	})
 
-socket.on('getUsers', function () {
+	socket.on('getUsers', function () {
 		socket.emit('getUsers', userList);
-})
-socket.on('user count', function () {
+	})
+	socket.on('user count', function () {
 		socket.emit('user count', userList.length)
-})
-socket.on('getMessages', function () {
+	})
+	socket.on('getMessages', function () {
 		socket.emit('getMessages', messageList)
-})
+	})
 
 });
 
@@ -2013,7 +2243,7 @@ socket.on('getMessages', function () {
 nspDefault.on('connect', (socket) => {
 	console.log('Joined Namespace: /')
 	socket.on('disconnect', () => {
-			console.log('Left Namespace: /')
+		console.log('Left Namespace: /')
 	})
 })
 
@@ -2021,7 +2251,7 @@ nspChat.on('connect', (socket) => {
 	console.log('Joined Namespace: /chat')
 
 	socket.on('disconnect', () => {
-			console.log('Left Namespace: /chat')
+		console.log('Left Namespace: /chat')
 	})
 })
 
@@ -2157,3 +2387,116 @@ var peerserverport = 9000;
 //var peerserver = new PeerServer({port: peerserverport, allow_discovery: true});
 
 //app.use('/peerjs', peerserver(server, {debug: true, allow_discovery: true}));
+
+
+function writeAllGare(callback) {
+
+	var allfiles;
+	mongo.getallfiles(function (alldata) {
+		allfiles = alldata;
+
+
+
+
+
+
+
+		var atleti_json;
+		var gare_json;
+		//var anno=$("#page_ranking #selanno").val();
+
+		var annotext = "";
+
+		//if (anno.trim()!="") annotext=" per l'anno "+anno;
+
+
+
+		var txt = "Calcolo ranking TKDR " + annotext + " in corso....";
+		//$("#page_ranking #ranking").html(txt);
+		//progressStart(txt);
+
+		atleti_json = getLocalMongo(allfiles, "atleti.json");
+		gare_json = getLocalMongo(allfiles, "gare.json");
+
+		console.log("atleti:" + atleti_json.rows.length)
+		console.log("gare:" + gare_json.rows.length)
+
+		for (var y = 0; y < gare_json.rows.length; y++) {
+			//$(gare_json.rows).each(function(y){	
+
+			var gara = gare_json.rows[y].doc;
+			var gid = gara.id;
+			var regionegara = "regionale";
+			if (gara.hasOwnProperty("regionalita")) regionegara = gara.regionalita;
+			var fname = "matches_" + gid + ".json";
+			//console.log("extrating matches from gara "+gid)
+			var mdata = getLocalMongo(allfiles, fname);
+
+			if (!mdata.rows) mdata.rows = [];
+			console.log("matches for gara " + gid + ": " + mdata.rows.length);
+
+			gare_json.rows[y].doc.matches = mdata;
+		}
+
+
+		gare_json.rows.sort(function (a, b) {
+			var a1 = a.doc.data;
+			var b1 = b.doc.data;
+			var m1 = moment(a1, "DD/MM/YYYY").format("YYYYMMDD");
+			var m2 = moment(b1, "DD/MM/YYYY").format("YYYYMMDD");
+			if (m1 > m2) return -1;
+			if (m1 < m2) return 1;
+			return 0;
+		})
+
+
+		fs.writeFile('data/allgare.json', JSON.stringify(gare_json), 'utf8', function () {
+			callback(gare_json)
+		});
+
+
+
+
+
+
+
+
+
+
+	});
+
+
+}
+
+function getLocalMongo(struct, fname) {
+
+	var retvalue = {};
+	for (var i = 0; i < struct.length; i++) {
+
+		var s = struct[i];
+		var fn = s.filename;
+		if (fn.toLowerCase() == fname.toLowerCase()) {
+			retvalue = s.filecontent;
+			return retvalue;
+		}
+
+	}
+
+	return retvalue;
+}
+
+
+
+function queryAtletaByName(name, callback) {
+	var atls = [];
+	mongo.getfile("atleti.json", function (data) {
+		data.rows.forEach(function (item, idx) {
+			var atl = item.doc;
+			var atlname = atl.cognome.toLowerCase() + " " + atl.nome.toLowerCase();
+			if (atlname.toLowerCase().indexOf(name.toLowerCase()) > -1) {
+				atls.push(atl)
+			}
+		})
+		callback(atls);
+	})
+}

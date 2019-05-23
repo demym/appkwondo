@@ -380,9 +380,216 @@ exports.filterRows = function ($m, filt, exact) {
 
 
 
+
+function paginateRows(req, dataarr, callback) {
+
+	var rows = dataarr;
+	if (dataarr.hasOwnProperty("rows")) rows = dataarr.rows;
+	var page = 0;
+	var start = 0;
+	var count = -1;
+	var sortfield = "jdate";
+	var usedoc = true;
+	if (req.query.usedoc) usedoc = Bool(req.query.usedoc);
+	if (req.query.page) page = parseInt(req.query.page, 10);
+	if (req.query.start) start = parseInt(req.query.start, 10);
+	if (req.query.count) count = parseInt(req.query.count, 10);
+	if (req.query.sortfield) sortfield = req.query.sortfield;
+
+	/*var pdata = {
+			data: data,
+			page: page,
+			start: start,
+			count: count,
+			t1: new Date(),
+			doxls: false
+	}*/
+
+
+	//var rows = obj.data.rows;
+	//var data = obj.data;
+	var freetextsearch = "";
+	//var page = 0;
+	//var start = 0;
+	//var count = 200;
+	var t1 = new Date();
+	var doxls = false;
+	if (req.query.freetextsearch) freetextsearch = req.query.freetextsearch;
+	//if (obj.hasOwnProperty("page")) page = obj.page;
+	//if (obj.hasOwnProperty("count")) count = obj.count;
+	//if (obj.hasOwnProperty("t1")) t1 = obj.t1;
+	//if (obj.hasOwnProperty("doxls")) doxls = obj.doxls;
+
+	if (count == -1) count = rows.length;
+
+	var arr = rows;
+
+	var l = JSON.stringify(rows).length;
+
+
+	if (freetextsearch.trim() != "") {
+		var sarr = [];
+
+		arr.forEach(function (item, idx) {
+			var doc = item;
+			if (item.hasOwnProperty("doc")) doc = item.doc;
+			var alreadydone = false;
+			for (var k in doc) {
+				var campovalue = doc[k];
+
+				if (typeof campovalue === 'string' || campovalue instanceof String) {
+					if (campovalue.toLowerCase().trim().indexOf(freetextsearch.toLowerCase().trim()) > -1) {
+
+						if (!alreadydone) sarr.push(item);
+						alreadydone = true;
+					}
+				}
+			}
+		})
+		arr = sarr;
+	}
+
+	var totreccount = arr.length;
+
+
+	/*arr.sort(function (a, b) {
+		var a1 = a[sortfield];
+		var b1 = b[sortfield];
+		if (a.hasOwnProperty("doc")) a1 = a.doc[sortfield];
+		if (b.hasOwnProperty("doc")) b1 = b.doc[sortfield];
+		if (a1 > b1) return -1;
+		if (a1 < b1) return 1;
+		return 0;
+
+	});*/
+
+
+	/*if (usedoc){
+			var newarr=[]
+			arr.forEach(function(item,idx){
+					var newitem={
+							doc: item
+					}
+					newarr.push(newitem)
+			})
+			arr=newarr;
+	}*/
+
+
+	var pages = 0;
+
+	if (page > 0) {
+		start = count * page;
+	}
+
+
+	if (count > 0) {
+		//console.log("start", start, "end", start + count)
+		arr = arr.slice(start, start + count);
+
+	}
+
+
+
+	if (count > 0) {
+		var totalPages_pre = Math.floor(totreccount / count)
+		pages = (totreccount % count) == 0 ? totalPages_pre : totalPages_pre + 1;
+		page = Math.ceil(start / count);
+		if (page > (pages - 1)) {
+			start = 0;
+			page = 0;
+		}
+
+
+	}
+
+
+
+
+
+	var t2 = new Date();
+	var tdiff = t2.getTime() - t1.getTime();
+
+	var endrec = start + count - 1;
+	if (endrec > totreccount - 1) endrec = totreccount - 1
+
+	const used = process.memoryUsage();
+	var memusage = {}
+	for (var key in used) {
+		memusage[key] = Math.round(used[key] / 1024 / 1024 * 100) / 100 + " MB";
+		//console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+	}
+
+
+
+
+	//var tottime = data.time_ms_cloudantlist + tdiff;
+	var tottime = t1 + tdiff;
+
+	if (totreccount == arr.length) endrec = totreccount - 1;
+
+	var firstpage = false;
+	if (page == 0) firstpage = true;
+	var lastpage = false;
+	if (page == (pages - 1)) lastpage = true;
+
+
+	var time_cloudant;
+	var operation = "LIST";
+
+
+
+	/*if (dataarr.hasOwnProperty("time_ms_cloudantlist")) {
+		time_cloudant = data.time_ms_cloudantlist;
+		console.log("CLOUDANT LIST !!");
+	}
+	if (data.hasOwnProperty("time_ms_cloudantfind")) {
+		console.log("CLOUDANT FIND !!!")
+		time_cloudant = data.time_ms_cloudantfind;
+		tottime = data.time_ms_cloudantfind + tdiff;
+		operation = "FIND";
+	}*/
+
+	var retvalue = {
+		//time_ms_cloudant: time_cloudant,
+		//time_ms_list: tdiff,
+		//time_ms: tottime,
+		//cloudant_operation: operation,
+		rows: arr,
+		length: l,
+		pagecount: count,
+		pages: pages,
+		page: page,
+		firstpage: firstpage,
+		lastpage: lastpage,
+		chunkcount: arr.length,
+		startrec: start,
+		endrec: endrec,
+		totalcount: totreccount,
+		memusage: memusage,
+		//cloudantdata: data
+	}
+
+
+
+	console.log(retvalue.rows.length + " records found")
+	if (doxls) {
+		utils.array2xls(arr, function (xls) {
+			//res.send(xls);
+			callback(xls)
+		});
+	} else {
+		//res.send(retvalue);
+		callback(retvalue)
+	}
+}
+
+
 exports.sendChatMediaToAltervista = sendChatMediaToAltervista;
 exports.sendMediaFileToAltervista = sendMediaFileToAltervista;
 exports.colog = colog;
 exports.consolog = consolog;
 exports.clearlog = clearlog;
 exports.json2xml = json2xml;
+exports.paginateRows=paginateRows;
+

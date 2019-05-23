@@ -1,0 +1,3631 @@
+[
+            {
+                "doc": {
+                    "atletaid": "20150211120920",
+                    "cognome": "Agrillo",
+                    "nome": "Simone",
+                    "datanascita": "01.01.2005",
+                    "squadra": "Serie B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Verde",
+                    "punticlass": "0",
+                    "id": "20150211120920",
+                    "sesso": "M",
+                    "societaid": "20160217220400",
+                    "dismissed": "true",
+                    "bonusmalus": -3
+                }
+            },
+            {
+                "doc": {
+                    "atletaid": "20150520090010",
+                    "cognome": "Agrillo",
+                    "nome": "Michael",
+                    "datanascita": "16.02.2008",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id": "20150520090010",
+                    "sesso": "M",
+                    "societaid": "20160217220400",
+                    "dismissed": "true"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Alessi Ammendolia",
+                    "nome": "Serena",
+                    "datanascita": "24.11.1994",
+                    "sesso": "F",
+                    "cintura": "Giallo/Verde",
+                    "punticlass": "00",
+                    "categoria": "Senior A",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "3",
+                    "peso": "50",
+                    "id": "000000000000003",
+                    "atletaid": "000000000000003",
+                    "action": "added",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "155240",
+                    "cognome": "Areniello",
+                    "nome": "Luigi",
+                    "datanascita": "27.03.2009",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "97",
+                    "id": "00000000000097",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Audia",
+                    "nome": "David",
+                    "datanascita": "14.10.2004",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "98",
+                    "id": "00000000000098",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Baldeschi",
+                    "nome": "Thomas",
+                    "datanascita": "29.03.2003",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "100",
+                    "id": "00000000000100",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Belmajdoub",
+                    "nome": "Younes",
+                    "datanascita": "23.01.2005",
+                    "sesso": "M",
+                    "cintura": "Blu",
+                    "punticlass": "08",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "29",
+                    "peso": "50",
+                    "id": "000000000000029",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Belmajdoub",
+                    "nome": "Mohamed",
+                    "datanascita": "06.03.1973",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "00",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "30",
+                    "peso": "50",
+                    "id": "000000000000030",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bertini",
+                    "nome": "Valeria",
+                    "datanascita": "02.03.2008",
+                    "sesso": "F",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "id2": "104",
+                    "id": "00000000000104",
+                    "societaid": "20160217220400",
+                    "atletaid": "00000000000104",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": ""
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bertini",
+                    "nome": "Nicolò",
+                    "datanascita": "22.12.2004",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "id2": "105",
+                    "id": "00000000000105",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Binda Pienti",
+                    "nome": "Gabriele",
+                    "datanascita": "13.11.2005",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "id2": "102",
+                    "id": "00000000000102",
+                    "squadra": "Serie B",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Boggi",
+                    "nome": "Leslie",
+                    "datanascita": "06.02.1999",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "id2": "107",
+                    "id": "00000000000107",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bonfrisco",
+                    "nome": "Denis",
+                    "datanascita": "13.09.2003",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "106",
+                    "id": "00000000000106",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bonvini",
+                    "nome": "Leonardo",
+                    "datanascita": "29.08.2006",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "13",
+                    "peso": "50",
+                    "id": "000000000000013",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20141206004326",
+                    "cognome": "Borruto",
+                    "nome": "Daniele",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "atletaid": "20141206004326",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bouhouch",
+                    "nome": "Omar",
+                    "datanascita": "15.02.2007",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "99",
+                    "id": "00000000000099",
+                    "atletaid": "00000000000099",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Brancaccio",
+                    "nome": "Monica",
+                    "datanascita": "08.02.2004",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "12",
+                    "peso": "50",
+                    "id": "000000000000012",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Bronconi",
+                    "nome": "Andrea",
+                    "datanascita": "27.03.1969",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "id2": "103",
+                    "id": "00000000000103",
+                    "squadra": "Amatoriali",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20141201184826",
+                    "cognome": "Bronconi",
+                    "nome": "Mattia",
+                    "datanascita": "28.03.2001",
+                    "squadra": "Serie A",
+                    "categoria": "Juniores A",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "27",
+                    "atletaid": "20141201184826",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Brusa",
+                    "nome": "Roberto",
+                    "datanascita": "31.12.2003",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "101",
+                    "id": "00000000000101",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Cacciero",
+                    "nome": "Lucia",
+                    "datanascita": "15.05.2008",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "id2": "110",
+                    "id": "00000000000110",
+                    "squadra": "Serie C",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Cacciero",
+                    "nome": "Roberto",
+                    "datanascita": "12.02.1974",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "id2": "112",
+                    "id": "00000000000112",
+                    "squadra": "Amatoriali",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Calabrese",
+                    "nome": "Dario",
+                    "datanascita": "09.08.2010",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "4",
+                    "peso": "50",
+                    "id": "000000000000004",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Calabrese",
+                    "nome": "Diego",
+                    "datanascita": "06.02.2008",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "5",
+                    "peso": "50",
+                    "id": "000000000000005",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Calvi",
+                    "nome": "Eric",
+                    "datanascita": "12.11.2000",
+                    "sesso": "M",
+                    "cintura": "Blu",
+                    "punticlass": "07",
+                    "categoria": "Juniores A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "57",
+                    "peso": "50",
+                    "id": "000000000000057",
+                    "societaid": "20160217220400",
+                    "atletaid": "000000000000057"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Calvi",
+                    "nome": "Nicolas",
+                    "datanascita": "27.07.1998",
+                    "sesso": "M",
+                    "cintura": "Verde/Blu",
+                    "punticlass": "03",
+                    "categoria": "Senior A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "58",
+                    "peso": "50",
+                    "id": "000000000000058",
+                    "societaid": "20160217220400",
+                    "atletaid": "000000000000058"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Caporaso",
+                    "nome": "Riccardo",
+                    "datanascita": "13.01.2005",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "117",
+                    "id": "00000000000117",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Caredda",
+                    "nome": "Sofia",
+                    "datanascita": "04.02.2008",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "23",
+                    "peso": "50",
+                    "id": "000000000000023",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Casale",
+                    "nome": "Lorenzo",
+                    "datanascita": "21.11.2007",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "116",
+                    "id": "00000000000116",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Catalano",
+                    "nome": "Aurora",
+                    "datanascita": "02.07.2002",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "06",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "64",
+                    "peso": "50",
+                    "id": "000000000000064",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Catalano",
+                    "nome": "Gabriele",
+                    "datanascita": "09.10.2004",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "id2": "115",
+                    "id": "00000000000115",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Cesaretti",
+                    "nome": "Riccardo",
+                    "datanascita": "12.02.2008",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "id2": "108",
+                    "id": "00000000000108",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Chen Long",
+                    "nome": "Alessio",
+                    "datanascita": "22.12.2000",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "id2": "109",
+                    "id": "00000000000109",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Cini",
+                    "nome": "Aurora",
+                    "datanascita": "21.01.2007",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "113",
+                    "id": "00000000000113",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Colautti",
+                    "nome": "Edoardo",
+                    "datanascita": "26.02.2004",
+                    "sesso": "M",
+                    "cintura": "ROSSA",
+                    "punticlass": "0",
+                    "id2": "114",
+                    "id": "00000000000114",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Curci",
+                    "nome": "Simone",
+                    "datanascita": "19.07.2001",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "03",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "51",
+                    "peso": "50",
+                    "id": "000000000000051",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Curci",
+                    "nome": "Diego",
+                    "datanascita": "25.04.2003",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "03",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "50",
+                    "peso": "50",
+                    "id": "000000000000050",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Curci",
+                    "nome": "Sara",
+                    "datanascita": "14.07.2007",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "118",
+                    "id": "00000000000118",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Cuviello",
+                    "nome": "Mattia",
+                    "datanascita": "01.11.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "31",
+                    "peso": "50",
+                    "id": "000000000000031",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "D'Acciò",
+                    "nome": "Lorenzo",
+                    "datanascita": "17.05.2005",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "id2": "119",
+                    "id": "00000000000119",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Dal Piaz",
+                    "nome": "Ettore",
+                    "datanascita": "10.06.2005",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "9",
+                    "peso": "50",
+                    "id": "000000000000009",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Dambra",
+                    "nome": "Antonio",
+                    "datanascita": "10.11.2000",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "13",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "55",
+                    "peso": "50",
+                    "id": "000000000000055",
+                    "societaid": "20160217220400",
+                    "dismissed": "true",
+                    "atletaid": "000000000000055"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Danesi",
+                    "nome": "Simone",
+                    "datanascita": "12.02.2002",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "72",
+                    "peso": "50",
+                    "id": "000000000000072",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Dascenzi",
+                    "nome": "Steven",
+                    "datanascita": "28.09.2006",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "20150520090008",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Dascenzi",
+                    "nome": "Jason",
+                    "datanascita": "30.11.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "20150520090006",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "De Donato",
+                    "nome": "Mirco",
+                    "datanascita": "16.03.2005",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "12",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "61",
+                    "peso": "50",
+                    "id": "000000000000061",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "De Donato",
+                    "nome": "Alice",
+                    "datanascita": "04.10.2002",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "29",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "60",
+                    "peso": "50",
+                    "id": "000000000000060",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "De Gregorio",
+                    "nome": "Federica",
+                    "datanascita": "09.07.2004",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "21",
+                    "peso": "50",
+                    "id": "000000000000021",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Del Vaglio",
+                    "nome": "Elena",
+                    "datanascita": "16.09.2005",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "00000000000120",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Di Bartolomeo",
+                    "nome": "Irene",
+                    "datanascita": "26.07.2001",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "14",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "65",
+                    "peso": "50",
+                    "id": "000000000000065",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Di Bartolomeo",
+                    "nome": "Lara",
+                    "datanascita": "19.09.2003",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "15",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "66",
+                    "peso": "50",
+                    "id": "000000000000066",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Di Tommaso",
+                    "nome": "Aurora",
+                    "datanascita": "25.06.2004",
+                    "sesso": "F",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "70",
+                    "peso": "50",
+                    "id": "000000000000070",
+                    "societaid": "20160217220400",
+                    "dismissed": "true",
+                    "atletaid": "000000000000070"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Donelli",
+                    "nome": "Alessandra",
+                    "datanascita": "07.01.1977",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "71",
+                    "peso": "50",
+                    "id": "000000000000071",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Eliseo",
+                    "nome": "Martina",
+                    "datanascita": "06.12.2000",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "6",
+                    "peso": "50",
+                    "id": "000000000000006",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "atletaid": "20151002215123",
+                    "cognome": "Fadel",
+                    "nome": "Osama",
+                    "datanascita": "01.01.1983",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151002215123",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Famularo",
+                    "nome": "Alessio",
+                    "datanascita": "06.11.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "20150520090002",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Ferralasco",
+                    "nome": "Lorenzo",
+                    "datanascita": "26.03.2005",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "75",
+                    "peso": "50",
+                    "id": "000000000000075",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Ferrario",
+                    "nome": "Elena",
+                    "datanascita": "07.04.2004",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "74",
+                    "peso": "50",
+                    "id": "000000000000074",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Ferrario",
+                    "nome": "Paolo",
+                    "datanascita": "12.01.2001",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "73",
+                    "peso": "50",
+                    "id": "000000000000073",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Filiberti",
+                    "nome": "Giulia",
+                    "datanascita": "04.11.2006",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "32",
+                    "peso": "50",
+                    "id": "000000000000032",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Gabriele",
+                    "nome": "Chiara",
+                    "datanascita": "26.12.2007",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "14",
+                    "peso": "50",
+                    "id": "000000000000014",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Gambi",
+                    "nome": "Vittoria",
+                    "datanascita": "26.04.2006",
+                    "sesso": "F",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "34",
+                    "peso": "50",
+                    "id": "000000000000034",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Gambi",
+                    "nome": "Giulia",
+                    "datanascita": "30.01.2004",
+                    "sesso": "F",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "33",
+                    "peso": "50",
+                    "id": "000000000000033",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Grazioli",
+                    "nome": "Alessia",
+                    "datanascita": "19.11.2004",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "35",
+                    "peso": "50",
+                    "id": "000000000000035",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Icaza",
+                    "nome": "Hungria Adriano Gianlucas",
+                    "datanascita": "04.04.2004",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "20150520090000",
+                    "societaid": "20160217220400",
+                    "atletaid": "20150520090000",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": ""
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "La Peruta",
+                    "nome": "Agostino Yong Fei",
+                    "datanascita": "06.11.2007",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "36",
+                    "peso": "50",
+                    "id": "000000000000036",
+                    "societaid": "20160217220400",
+                    "atletaid": "000000000000036"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "La Pietra",
+                    "nome": "Emanuele",
+                    "datanascita": "06.02.1998",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "04",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "53",
+                    "peso": "50",
+                    "id": "000000000000053",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Lazzara",
+                    "nome": "Sofia",
+                    "datanascita": "24.04.2007",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "18",
+                    "peso": "50",
+                    "id": "000000000000018",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20150523233500",
+                    "cognome": "Lazzara",
+                    "nome": "Carola",
+                    "datanascita": "24.04.2007",
+                    "squadra": "Serie A",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "atletaid": "20150523233500",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Lazzara",
+                    "nome": "Cristian",
+                    "datanascita": "24.04.2007",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "17",
+                    "peso": "50",
+                    "id": "000000000000017",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Lecce",
+                    "nome": "Christian",
+                    "datanascita": "05.11.2006",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "77",
+                    "peso": "50",
+                    "id": "000000000000077",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Lecce",
+                    "nome": "Valentina",
+                    "datanascita": "25.05.2005",
+                    "sesso": "F",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "78",
+                    "peso": "50",
+                    "id": "000000000000078",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Longo",
+                    "nome": "Herve",
+                    "datanascita": "06.11.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "id2": "120",
+                    "id": "20150520090004",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Longo",
+                    "nome": "Hervè Joseph",
+                    "datanascita": "12.02.2007",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "22",
+                    "peso": "50",
+                    "id": "000000000000022",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Luzzara",
+                    "nome": "Giacomo",
+                    "datanascita": "31.07.2009",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "76",
+                    "peso": "50",
+                    "id": "000000000000076",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Maccarone",
+                    "nome": "Greta",
+                    "datanascita": "29.03.2002",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "2",
+                    "peso": "50",
+                    "id": "000000000000002",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Magnaghi",
+                    "nome": "Irene",
+                    "datanascita": "21.02.2003",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "28",
+                    "peso": "50",
+                    "id": "000000000000028",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Marigliano",
+                    "nome": "Anna",
+                    "datanascita": "16.09.2004",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "11",
+                    "peso": "50",
+                    "id": "000000000000011",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Mariotto",
+                    "nome": "Matteo",
+                    "datanascita": "16.02.2004",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "86",
+                    "peso": "50",
+                    "id": "000000000000086",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Martin",
+                    "nome": "Gabriele",
+                    "datanascita": "01.06.2005",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "37",
+                    "peso": "50",
+                    "id": "000000000000037",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Mastromatteo",
+                    "nome": "Samuele",
+                    "datanascita": "21.12.2009",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "8",
+                    "peso": "50",
+                    "id": "000000000000008",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20150211121000",
+                    "cognome": "Meli",
+                    "nome": "Valentina",
+                    "datanascita": "01.01.2006",
+                    "squadra": "Serie A",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "atletaid": "20150211121000",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Miduri",
+                    "nome": "Riccardo",
+                    "datanascita": "31.08.2007",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "79",
+                    "peso": "50",
+                    "id": "000000000000079",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Milani",
+                    "nome": "Jacopo",
+                    "datanascita": "18.12.2006",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "83",
+                    "peso": "50",
+                    "id": "000000000000083",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Minnone",
+                    "nome": "Luigi",
+                    "datanascita": "16.09.2010",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "7",
+                    "peso": "50",
+                    "id": "000000000000007",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Minnone",
+                    "nome": "Emanuele",
+                    "datanascita": "14.04.2007",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "84",
+                    "peso": "50",
+                    "id": "000000000000084",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Minopoli",
+                    "nome": "Martina",
+                    "datanascita": "27.09.2004",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "85",
+                    "peso": "50",
+                    "id": "000000000000085",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Molè",
+                    "nome": "Lorenzo Giuseppe",
+                    "datanascita": "21.03.2009",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "81",
+                    "peso": "50",
+                    "id": "000000000000081",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Moretti",
+                    "nome": "Dorotea",
+                    "datanascita": "12.06.2005",
+                    "sesso": "F",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "82",
+                    "peso": "50",
+                    "id": "000000000000082",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Mortelliti",
+                    "nome": "Serena",
+                    "datanascita": "21.06.2005",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "63",
+                    "peso": "50",
+                    "id": "000000000000063",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Mortelliti",
+                    "nome": "Demetrio",
+                    "datanascita": "28.06.1967",
+                    "sesso": "M",
+                    "cintura": "Gialla",
+                    "punticlass": "00",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-69",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "38",
+                    "peso": "50",
+                    "id": "000000000000038",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Mortelliti",
+                    "nome": "Gloria",
+                    "datanascita": "12.12.2002",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "23",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "62",
+                    "peso": "50",
+                    "id": "000000000000062",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20150523234500",
+                    "cognome": "Mossini",
+                    "nome": "Francesca",
+                    "datanascita": "01.01.2004",
+                    "squadra": "Serie A",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "atletaid": "20150523234500",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Muginov",
+                    "nome": "Daniele",
+                    "datanascita": "22.07.2001",
+                    "sesso": "F",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "25",
+                    "peso": "50",
+                    "id": "000000000000025",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Nidasi",
+                    "nome": "Emma",
+                    "datanascita": "24.05.2003",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "02",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "27",
+                    "peso": "50",
+                    "id": "000000000000027",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Pagani",
+                    "nome": "Federico",
+                    "datanascita": "15.06.2008",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "91",
+                    "peso": "50",
+                    "id": "000000000000091",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Pagani",
+                    "nome": "Laura Alessia",
+                    "datanascita": "24.02.1975",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "id2": "111",
+                    "id": "00000000000111",
+                    "squadra": "Amatoriali",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Panessa",
+                    "nome": "Emanuele",
+                    "datanascita": "25.11.2006",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "88",
+                    "peso": "50",
+                    "id": "000000000000088",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Passè Proietto",
+                    "nome": "Davide",
+                    "datanascita": "11.05.2003",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "17",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "56",
+                    "peso": "50",
+                    "id": "000000000000056",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Passè Proietto",
+                    "nome": "Luca",
+                    "datanascita": "22.07.2006",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "87",
+                    "peso": "50",
+                    "id": "000000000000087",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Perrone",
+                    "nome": "Andrea",
+                    "datanascita": "20.09.2003",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "19",
+                    "peso": "50",
+                    "id": "000000000000019",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "155240",
+                    "cognome": "Pinto",
+                    "nome": "Giovanni",
+                    "datanascita": "26.12.2007",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "05",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "1",
+                    "peso": "50",
+                    "id": "000000000000001",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Piombino",
+                    "nome": "Riccardo",
+                    "datanascita": "21.12.2006",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "90",
+                    "peso": "50",
+                    "id": "000000000000090",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Pogliani",
+                    "nome": "Giulia",
+                    "datanascita": "27.04.2005",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "89",
+                    "peso": "50",
+                    "id": "000000000000089",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Pozzoli",
+                    "nome": "Matteo",
+                    "datanascita": "05.05.2006",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "15",
+                    "peso": "50",
+                    "id": "000000000000015",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Procacciante",
+                    "nome": "Leonardo",
+                    "datanascita": "03.10.2006",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "92",
+                    "peso": "50",
+                    "id": "000000000000092",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Radice",
+                    "nome": "Brando",
+                    "datanascita": "17.04.2007",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "95",
+                    "peso": "50",
+                    "id": "000000000000095",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Ranieri",
+                    "nome": "Nina",
+                    "datanascita": "21.11.2003",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "13",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "69",
+                    "peso": "50",
+                    "id": "000000000000069",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Ripani",
+                    "nome": "Angelo",
+                    "datanascita": "27.03.2007",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "93",
+                    "peso": "50",
+                    "id": "000000000000093",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Rocco",
+                    "nome": "Riccardo",
+                    "datanascita": "17.12.2009",
+                    "sesso": "M",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "24",
+                    "peso": "50",
+                    "id": "000000000000024",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Rossi",
+                    "nome": "Andrea",
+                    "datanascita": "01.12.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "94",
+                    "peso": "50",
+                    "id": "000000000000094",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Rossi",
+                    "nome": "Lorenzo",
+                    "datanascita": "09.12.2004",
+                    "sesso": "M",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "39",
+                    "peso": "50",
+                    "id": "000000000000039",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sala",
+                    "nome": "Marianna",
+                    "datanascita": "09.09.2009",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "80",
+                    "peso": "50",
+                    "id": "000000000000080",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sammarco",
+                    "nome": "Aurelio",
+                    "datanascita": "02.01.1971",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "48",
+                    "peso": "50",
+                    "id": "000000000000048",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sammarco",
+                    "nome": "Giulia",
+                    "datanascita": "15.07.2004",
+                    "sesso": "F",
+                    "cintura": "BLU",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "68",
+                    "peso": "50",
+                    "id": "000000000000068",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sammatrice",
+                    "nome": "Yvonne",
+                    "datanascita": "27.08.2000",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "44",
+                    "peso": "50",
+                    "id": "000000000000044",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20141201184544",
+                    "cognome": "Saponara",
+                    "nome": "Cristian",
+                    "datanascita": "17.03.1999",
+                    "squadra": "Serie A",
+                    "categoria": "Juniores A",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "00",
+                    "atletaid": "20141201184544",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Saponara",
+                    "nome": "Franco",
+                    "datanascita": "13.01.1966",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "00",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "16",
+                    "peso": "50",
+                    "id": "000000000000016",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Saracino",
+                    "nome": "Paolo",
+                    "datanascita": "14.11.1997",
+                    "sesso": "M",
+                    "cintura": "Rossa",
+                    "punticlass": "04",
+                    "categoria": "Juniores B",
+                    "categoriapeso": "-73",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "52",
+                    "peso": "50",
+                    "id": "000000000000052",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sideris",
+                    "nome": "Tommaso",
+                    "datanascita": "01.06.2006",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "45",
+                    "peso": "50",
+                    "id": "000000000000045",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Simone",
+                    "nome": "Beatrice",
+                    "datanascita": "10.01.2008",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "40",
+                    "peso": "50",
+                    "id": "000000000000040",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Simone",
+                    "nome": "Beatrice",
+                    "datanascita": "10.01.2008",
+                    "sesso": "F",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "10",
+                    "peso": "50",
+                    "id": "000000000000010",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Sozzi",
+                    "nome": "Davide",
+                    "datanascita": "24.07.2001",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "07",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "59",
+                    "peso": "50",
+                    "id": "000000000000059",
+                    "societaid": "20160217220400",
+                    "dismissed": "true",
+                    "atletaid": "000000000000059"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Spagnoletti",
+                    "nome": "Sophia",
+                    "datanascita": "01.12.2004",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "18",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "67",
+                    "peso": "50",
+                    "id": "000000000000067",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Spagnoletti",
+                    "nome": "Clarissa",
+                    "datanascita": "13.07.2006",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie B",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "96",
+                    "peso": "50",
+                    "id": "000000000000096",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Spina",
+                    "nome": "Lidia",
+                    "datanascita": "03.02.2004",
+                    "sesso": "F",
+                    "cintura": "Nera",
+                    "punticlass": "06",
+                    "categoria": "Cadetto B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "26",
+                    "peso": "50",
+                    "id": "000000000000026",
+                    "societaid": "20160217220400",
+                    "dismissed": "true",
+                    "atletaid": "000000000000026"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Spina",
+                    "nome": "Davide",
+                    "datanascita": "22.07.2001",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "04",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "54",
+                    "peso": "50",
+                    "id": "000000000000054",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Spina",
+                    "nome": "Francesco",
+                    "datanascita": "19.04.1968",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "00",
+                    "categoria": "Senior B",
+                    "categoriapeso": "-79",
+                    "squadra": "Amatoriali",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "41",
+                    "peso": "50",
+                    "id": "000000000000041",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Stagnari",
+                    "nome": "Alessio",
+                    "datanascita": "15.12.2006",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "43",
+                    "peso": "50",
+                    "id": "000000000000043",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Stifani",
+                    "nome": "Gianmaria",
+                    "datanascita": "14.04.2004",
+                    "sesso": "M",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "46",
+                    "peso": "50",
+                    "id": "000000000000046",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Surace",
+                    "nome": "Luca",
+                    "datanascita": "09.05.2008",
+                    "sesso": "M",
+                    "cintura": "GIALLA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "47",
+                    "peso": "50",
+                    "id": "000000000000047",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Terzi",
+                    "nome": "Alessia",
+                    "datanascita": "11.07.2002",
+                    "sesso": "F",
+                    "cintura": "BIANCA",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "20",
+                    "peso": "50",
+                    "id": "000000000000020",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Testa",
+                    "nome": "Matteo Maria",
+                    "datanascita": "09.10.2001",
+                    "sesso": "M",
+                    "cintura": "Nera",
+                    "punticlass": "01",
+                    "categoria": "Cadetto A",
+                    "categoriapeso": "-79",
+                    "squadra": "Serie A",
+                    "palestra": "via Cervi - Rozzano",
+                    "id2": "42",
+                    "peso": "50",
+                    "id": "000000000000042",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "id": "20150520121000",
+                    "cognome": "Ventura",
+                    "nome": "Elisa",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "categoria": "Esordiente B",
+                    "categoriapeso": "-79",
+                    "palestra": "via Cervi - Rozzano",
+                    "cintura": "Nera",
+                    "punticlass": "0",
+                    "atletaid": "20150520121000",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "ntesserafita": "154841",
+                    "cognome": "Zanai",
+                    "nome": "Beatrice",
+                    "datanascita": "02.03.2005",
+                    "sesso": "F",
+                    "cintura": "VERDE",
+                    "punticlass": "0",
+                    "categoria": "categoria",
+                    "categoriapeso": "categoriapeso",
+                    "squadra": "squadra",
+                    "palestra": "palestra",
+                    "id2": "49",
+                    "peso": "50",
+                    "id": "000000000000049",
+                    "action": "added",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Passaro",
+                    "nome": "Valentina",
+                    "datanascita": "01.01.2002",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151018220358",
+                    "atletaid": "20151018220358",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Luongo",
+                    "nome": "Alice",
+                    "datanascita": "13.12.2005",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151117195615",
+                    "atletaid": "20151117195615",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Colangelo",
+                    "nome": "Desirè",
+                    "datanascita": "26.07.2007",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151127185611",
+                    "atletaid": "20151127185611",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Colangelo",
+                    "nome": "Dalila",
+                    "datanascita": "19.02.2003",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151127185612",
+                    "atletaid": "20151127185612",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Calvi",
+                    "nome": "Austin Leo",
+                    "datanascita": "01.01.2006",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151204170538",
+                    "atletaid": "20151204170538",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Di Stasi",
+                    "nome": "Sonia",
+                    "datanascita": "01.01.2004",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151204170630",
+                    "atletaid": "20151204170630",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Ventura",
+                    "nome": "Iris",
+                    "datanascita": "01.01.2005",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151204170705",
+                    "atletaid": "20151204170705",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Albano",
+                    "nome": "Giada",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151204170744",
+                    "atletaid": "20151204170744",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Criscuolo",
+                    "nome": "Martina",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20151204170818",
+                    "atletaid": "20151204170818",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Visconti",
+                    "nome": "Marco Gabriel",
+                    "datanascita": "31.01.2009",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160126150819",
+                    "atletaid": "20160126150819",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Falahi",
+                    "nome": "Mohamed Amine",
+                    "datanascita": "26.07.2009",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160126150854",
+                    "atletaid": "20160126150854",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Ricciardelli",
+                    "nome": "Anthony",
+                    "datanascita": "29.11.2007",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160126150925",
+                    "atletaid": "20160126150925",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Panessa",
+                    "nome": "Eva",
+                    "datanascita": "27.06.2010",
+                    "squadra": "F",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160126150948",
+                    "atletaid": "20160126150948",
+                    "sesso": "F",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Ascani",
+                    "nome": "Lorenzo",
+                    "datanascita": "01.01.2000",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160126191106",
+                    "atletaid": "20160126191106",
+                    "sesso": "M",
+                    "societaid": "20160217220400"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Libutti",
+                    "nome": "Sergio",
+                    "datanascita": "01.01.2006",
+                    "squadra": "Serie A",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160130005314",
+                    "atletaid": "20160130005314",
+                    "sesso": "M",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Atleta",
+                    "nome": "Tarantino",
+                    "datanascita": "12.12.2002",
+                    "squadra": "Serie A",
+                    "societaid": "20160219000056",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160219120908",
+                    "atletaid": "20160219120908",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Atletino",
+                    "nome": "DeTaranto",
+                    "datanascita": "01.01.2011",
+                    "squadra": "Serie A",
+                    "societaid": "20160219000056",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160219121908",
+                    "atletaid": "20160219121908",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Marco",
+                    "nome": "Tricolori",
+                    "datanascita": "10.10.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217221001",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160219161440",
+                    "atletaid": "20160219161440",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Deperis",
+                    "nome": "Cristina",
+                    "datanascita": "01.01.1970",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160222212627",
+                    "atletaid": "20160222212627",
+                    "sesso": "F"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Oliva",
+                    "nome": "Riccardo",
+                    "datanascita": "01.01.1999",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20160325104257",
+                    "atletaid": "20160325104257",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Aresi",
+                    "nome": "Andrea",
+                    "datanascita": "26.09.1997",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161018194017",
+                    "atletaid": "20161018194017",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Siciliano",
+                    "nome": "Alessandro",
+                    "datanascita": "15.10.2006",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161022154550",
+                    "atletaid": "20161022154550",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Lombardo",
+                    "nome": "Achille",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110100623",
+                    "atletaid": "20161110100623",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Roncen",
+                    "nome": "Edoardo",
+                    "datanascita": "01.01.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110100757",
+                    "atletaid": "20161110100757",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Capè",
+                    "nome": "Nicolò",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110100836",
+                    "atletaid": "20161110100836",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Berra",
+                    "nome": "Alessandro",
+                    "datanascita": "01.01.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110100908",
+                    "atletaid": "20161110100908",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Arena",
+                    "nome": "Simone",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110100946",
+                    "atletaid": "20161110100946",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Chieregatti",
+                    "nome": "Lorenzo",
+                    "datanascita": "01.01.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101018",
+                    "atletaid": "20161110101018",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Milanesi",
+                    "nome": "Matteo",
+                    "datanascita": "01.01.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101055",
+                    "atletaid": "20161110101055",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Milanesi",
+                    "nome": "Aurora",
+                    "datanascita": "01.01.2010",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101116",
+                    "atletaid": "20161110101116",
+                    "sesso": "F"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Berra",
+                    "nome": "Leonardo",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101156",
+                    "atletaid": "20161110101156",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Menna",
+                    "nome": "Tommaso Carlo",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101229",
+                    "atletaid": "20161110101229",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Pezzulla",
+                    "nome": "Edoardo",
+                    "datanascita": "01.01.2006",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101307",
+                    "atletaid": "20161110101307",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Germano",
+                    "nome": "Matteo",
+                    "datanascita": "01.01.2008",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101340",
+                    "atletaid": "20161110101340",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Sentino",
+                    "nome": "Riccardo",
+                    "datanascita": "01.01.2008",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101410",
+                    "atletaid": "20161110101410",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Incandela",
+                    "nome": "Martina",
+                    "datanascita": "01.01.2009",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101439",
+                    "atletaid": "20161110101439",
+                    "sesso": "F"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Di Brigida",
+                    "nome": "Sara",
+                    "datanascita": "01.01.2008",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101512",
+                    "atletaid": "20161110101512",
+                    "sesso": "F"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Ciccardini",
+                    "nome": "Alessandro",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101542",
+                    "atletaid": "20161110101542",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Filippini",
+                    "nome": "Gabriele",
+                    "datanascita": "01.01.2007",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20161110101615",
+                    "atletaid": "20161110101615",
+                    "sesso": "M"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Napolitano",
+                    "nome": "Tommaso",
+                    "datanascita": "24.07.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20170210210228"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Russo",
+                    "nome": "Riccardo",
+                    "datanascita": "01.01.2003",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "0",
+                    "id": "20170213145330"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Russo",
+                    "nome": "Gabriel",
+                    "datanascita": "01.01.2004",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "0",
+                    "id": "20170213145443"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Massimino",
+                    "nome": "Noemi",
+                    "datanascita": "01.01.2006",
+                    "sesso": "F",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "0",
+                    "id": "20170213145851"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Colonna",
+                    "nome": "Giacomo",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "0",
+                    "id": "20170213145929"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Colonna",
+                    "nome": "David",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "0",
+                    "id": "20170213145953"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Grimaldi",
+                    "nome": "Bianca",
+                    "datanascita": "18.05.2006",
+                    "sesso": "F",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20170218185509"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Piazza",
+                    "nome": "Daniel Giuseppe",
+                    "datanascita": "01.01.2008",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052145"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Bonsignore",
+                    "nome": "Roberto",
+                    "datanascita": "01.01.2008",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052345"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Nucera",
+                    "nome": "Sara Diamante",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052511",
+                    "atletaid": "20171029052511"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Boi",
+                    "nome": "Emanuele",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052625"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Spampinato",
+                    "nome": "Tommaso",
+                    "datanascita": "01.01.2008",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052726"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Sanguine",
+                    "nome": "Marco",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171029052913"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Muginov",
+                    "nome": "Daniel",
+                    "datanascita": "01.01.2006",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171113185927"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Nucera",
+                    "nome": "Alessandro Massimo",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171116062413"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Pircher",
+                    "nome": "Gregor",
+                    "datanascita": "01.01.2004",
+                    "sesso": "M",
+                    "squadra": "Serie A",
+                    "societaid": "20160217220400",
+                    "categoriapeso": "-49",
+                    "palestra": "Tempio",
+                    "cintura": "blue",
+                    "punticlass": "10",
+                    "id": "20171201083435"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Falahi",
+                    "nome": "Iyad",
+                    "datanascita": "01.01.2011",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180119223059",
+                    "atletaid": "20180119223059"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Areniello",
+                    "nome": "Mattia Ciro",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180212063113"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Siciliano",
+                    "nome": "Sara",
+                    "datanascita": "01.01.2009",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "gialla",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180219125151"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Albano",
+                    "nome": "Gabriele",
+                    "datanascita": "01.01.2012",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180313184008"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Speria",
+                    "nome": "Kevin",
+                    "datanascita": "01.01.2005",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180412064909"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Roselli",
+                    "nome": "Irene",
+                    "datanascita": "01.01.2005",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180412065001"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "D'Amico",
+                    "nome": "Alessia",
+                    "datanascita": "01.01.2008",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20180512091912"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Cancro",
+                    "nome": "Rebecca",
+                    "datanascita": "01.01.2008",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "id": "20181009152545",
+                    "atletaid": "20181009152545"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Lombardo",
+                    "nome": "Giulia ",
+                    "datanascita": "01.01.2007",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025174911",
+                    "atletaid": "20181025174911"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Menna",
+                    "nome": "Leonardo",
+                    "datanascita": "01.01.2012",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025175010"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Bava",
+                    "nome": "Giulia",
+                    "datanascita": "01.01.2010",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025175048"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Erami",
+                    "nome": "Paolo",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025175124"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Carlucci",
+                    "nome": "Emma",
+                    "datanascita": "01.01.2012",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025175206",
+                    "atletaid": "20181025175206"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Pulcini",
+                    "nome": "Nicolò ",
+                    "datanascita": "01.01.2011",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181025175346"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Di Blasi",
+                    "nome": "Daniel",
+                    "datanascita": "01.01.2011",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20181115101428"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Gallina",
+                    "nome": "Marco",
+                    "datanascita": "01.01.2006",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20190206185809"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Marino",
+                    "nome": "Giulia",
+                    "datanascita": "01.01.2012",
+                    "sesso": "F",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20190213080707"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Cassani",
+                    "nome": "Andrea",
+                    "datanascita": "01.01.2013",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20190213080834"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Vinci",
+                    "nome": "Davide",
+                    "datanascita": "01.01.2009",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20190213080924"
+                }
+            },
+            {
+                "doc": {
+                    "cognome": "Cassani",
+                    "nome": "Mattia",
+                    "datanascita": "01.01.2010",
+                    "sesso": "M",
+                    "squadra": "",
+                    "categoriapeso": "",
+                    "palestra": "",
+                    "cintura": "",
+                    "punticlass": "",
+                    "societaid": "20160217220400",
+                    "bonusmalus": 0,
+                    "id": "20190213081028"
+                }
+            }
+        ]
+   
