@@ -30752,6 +30752,10 @@ page-about .logodiv {
   justify-content: center;
 }
 
+page-addatleta .baricon {
+  font-size: 28px;
+}
+
 page-atleta .label {
   font-size: 12px;
   color: gray;
