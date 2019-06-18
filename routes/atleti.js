@@ -507,14 +507,14 @@ router.get("/rankingnew/:stagione", function (req, res) {
 	var format = "";
 	if (req.query.format) format = req.query.format;
 	var retarr = [];
-	var pos=0;
+	var pos = 0;
 	getRankingNew(stagione, function (data) {
 		data.rows.forEach(function (item, idx) {
 			var doc = item.doc;
 			var rs = doc.ranking[stagione];
-			
+
 			var newr = {
-				pos: idx+1,
+				pos: idx + 1,
 				atleta: doc.cognome + " " + doc.nome,
 				atletaid: doc.id,
 				cognome: doc.cognome,
@@ -540,7 +540,7 @@ router.get("/rankingnew/:stagione", function (req, res) {
 			var nextstagione = String(parseInt(stagione, 10) + 1);
 			var html = "<div style='font-style: bold'>RANKING STAGIONE " + stagione + "/" + nextstagione + "</div><table style='font-size: 13px;' border=1 width=100%><tr><th>&nbsp;</th><th>Atleta</th><th>Punti</th><th>ORO</th><th>ARG</th><th>BRO</th><th>M.disputati</th><th>M.vinti</th><th>Regionali</th><th>Interregionali</th><th>Nazionali</th><th>Internazionali</th><th>Gare</th></tr>"
 			retarr.forEach(function (item, idx) {
-				html += "<tr><td>"+item.pos+"</td><td>" + item.atleta + "</td><td>" + item.pt + "</td><td>" + item.oro + "</td><td>" + item.arg + "</td><td>" + item.bro + "</td><td>" + item.disputati + "</td><td>" + item.vinti + "</td><td>"+item.gare_regionali+"</td><td>"+item.gare_interregionali+"</td><td>"+item.gare_nazionali+"</td><td>"+item.gare_internazionali+"</td><td style='font-size:11px'>"+item.gare.join(", ")+"</td></tr>"
+				html += "<tr><td>" + item.pos + "</td><td>" + item.atleta + "</td><td>" + item.pt + "</td><td>" + item.oro + "</td><td>" + item.arg + "</td><td>" + item.bro + "</td><td>" + item.disputati + "</td><td>" + item.vinti + "</td><td>" + item.gare_regionali + "</td><td>" + item.gare_interregionali + "</td><td>" + item.gare_nazionali + "</td><td>" + item.gare_internazionali + "</td><td style='font-size:11px'>" + item.gare.join(", ") + "</td></tr>"
 			})
 			html += "</table>"
 			res.send(html);
@@ -1430,8 +1430,8 @@ function getRankingNew(stagione, callback) {
 				atleti_json.rows[i].doc.matchdisputati = 0;
 				atleti_json.rows[i].doc.matchvinti = 0;
 				atleti_json.rows[i].doc.ranking = {};
-				var bonusmalus=0;
-				if (atleti_json.rows[i].doc.hasOwnProperty("bonusmalus")) bonusmalus=atleti_json.rows[i].doc.bonusmalus;
+				var bonusmalus = 0;
+				if (atleti_json.rows[i].doc.hasOwnProperty("bonusmalus")) bonusmalus = atleti_json.rows[i].doc.bonusmalus;
 				atleti_json.rows[i].doc.ranking[stagione] = {
 					pt: 0,
 					oro: 0,
@@ -1444,7 +1444,7 @@ function getRankingNew(stagione, callback) {
 					gare_nazionali: 0,
 					gare_internazionali: 0,
 					gare: [],
-					bonusmalus:  bonusmalus,
+					bonusmalus: bonusmalus,
 					ptb: 0
 
 				};
@@ -1491,65 +1491,68 @@ function getRankingNew(stagione, callback) {
 								if (matches_json.rows[x]) {
 									var match = matches_json.rows[x].doc;
 									var garaid = match.garaid;
-									var refdate = garaid.substring(0, 6);
+									//console.log("garaid", garaid)
+									if (garaid) {
+										var refdate = garaid.substring(0, 6);
 
-									var stagioneend = String(parseInt(stagione, 10) + 1);
-									if ((refdate >= (stagione + "09")) && (refdate <= (stagioneend + "08"))) {
-										var aid = match.atletaid;
+										var stagioneend = String(parseInt(stagione, 10) + 1);
+										if ((refdate >= (stagione + "09")) && (refdate <= (stagioneend + "08"))) {
+											var aid = match.atletaid;
 
 
 
-										if (aid == atleta.id) {
+											if (aid == atleta.id) {
 
-											if (match.disputato) {
-												if (match.disputato == "yes") {
+												if (match.disputato) {
+													if (match.disputato == "yes") {
 
-													isInGara = true;
-													atleti_json.rows[i].doc.ranking[stagione].disputati++;
-													//atleti_json.rows[i].doc.ranking[stagione].pt += 1;
-													if (match.vinto) {
-														if (match.vinto == "yes") {
-															atleti_json.rows[i].doc.ranking[stagione].pt += 1;
-															atleti_json.rows[i].doc.ranking[stagione].vinti++;
+														isInGara = true;
+														atleti_json.rows[i].doc.ranking[stagione].disputati++;
+														//atleti_json.rows[i].doc.ranking[stagione].pt += 1;
+														if (match.vinto) {
+															if (match.vinto == "yes") {
+																atleti_json.rows[i].doc.ranking[stagione].pt += 1;
+																atleti_json.rows[i].doc.ranking[stagione].vinti++;
+															}
 														}
 													}
 												}
+
+
+												found = true;
+												if (match.medagliamatch) {
+													var medaglia = match.medagliamatch.toLowerCase();
+
+
+													if (medaglia == "oro") {
+														if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 5;
+														if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 10;
+														if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 15;
+														if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 20;
+														atleti_json.rows[i].doc.ranking[stagione].oro++;
+
+													}
+
+													if (medaglia == "argento") {
+														if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 3;
+														if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 6;
+														if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 12;
+														if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 15;
+														atleti_json.rows[i].doc.ranking[stagione].arg++;
+
+													}
+
+													if (medaglia == "bronzo") {
+														if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 1;
+														if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 2;
+														if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 6;
+														if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 8;
+														atleti_json.rows[i].doc.ranking[stagione].bro++;
+
+													}
+												}
+
 											}
-
-
-											found = true;
-											if (match.medagliamatch) {
-												var medaglia = match.medagliamatch.toLowerCase();
-
-
-												if (medaglia == "oro") {
-													if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 5;
-													if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 10;
-													if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 15;
-													if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 20;
-													atleti_json.rows[i].doc.ranking[stagione].oro++;
-
-												}
-
-												if (medaglia == "argento") {
-													if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 3;
-													if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 6;
-													if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 12;
-													if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 15;
-													atleti_json.rows[i].doc.ranking[stagione].arg++;
-
-												}
-
-												if (medaglia == "bronzo") {
-													if (regionegara == "regionale") atleti_json.rows[i].doc.ranking[stagione].pt += 1;
-													if (regionegara == "interregionale") atleti_json.rows[i].doc.ranking[stagione].pt += 2;
-													if (regionegara == "nazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 6;
-													if (regionegara == "internazionale") atleti_json.rows[i].doc.ranking[stagione].pt += 8;
-													atleti_json.rows[i].doc.ranking[stagione].bro++;
-
-												}
-											}
-
 										}
 									}
 
@@ -1564,7 +1567,7 @@ function getRankingNew(stagione, callback) {
 
 							if (found == true) {
 								atleti_json.rows[i].doc.garedisputate++;
-								atleti_json.rows[i].doc.ranking[stagione].ptb=atleti_json.rows[i].doc.ranking[stagione].pt+atleti_json.rows[i].doc.ranking[stagione].bonusmalus
+								atleti_json.rows[i].doc.ranking[stagione].ptb = atleti_json.rows[i].doc.ranking[stagione].pt + atleti_json.rows[i].doc.ranking[stagione].bonusmalus
 								var rgara = "regionale";
 								if (gare_json.rows[j].doc.regionalita) {
 									if (gare_json.rows[j].doc.regionalita == "regionale") atleti_json.rows[i].doc.ranking[stagione].gare_regionali++
@@ -1572,7 +1575,7 @@ function getRankingNew(stagione, callback) {
 									if (gare_json.rows[j].doc.regionalita == "nazionale") atleti_json.rows[i].doc.ranking[stagione].gare_nazionali++
 									if (gare_json.rows[j].doc.regionalita == "internazionale") atleti_json.rows[i].doc.ranking[stagione].gare_internazionali++
 								}
-								atleti_json.rows[i].doc.ranking[stagione].gare.push(gare_json.rows[j].doc.title+ " "+gare_json.rows[j].doc.data+" "+gare_json.rows[j].doc.regionalita)
+								atleti_json.rows[i].doc.ranking[stagione].gare.push(gare_json.rows[j].doc.title + " " + gare_json.rows[j].doc.data + " " + gare_json.rows[j].doc.regionalita)
 							}
 						}
 
