@@ -5594,16 +5594,15 @@ var GarePage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Navbar */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Navbar */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Navbar */])
 ], GarePage.prototype, "navBar", void 0);
 GarePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-gare',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gare/gare.html"*/'<!--\n  Generated template for the GarePage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gare</ion-title>\n    <ion-buttons end>\n      \n            <button *ngIf="backend.userIsAdmin()" (tap)="addGara()" ion-button icon-only>\n              <ion-icon name="ios-add-circle-outline"></ion-icon>\n            </button>\n            <button  (tap)="doRefresh2()" ion-button icon-only>\n              <ion-icon name="ios-refresh"></ion-icon>\n            </button>\n            </ion-buttons>\n\n  </ion-navbar>\n  <ion-item>\n    <span class="headpoints">Gare: <b>{{gare.length}}</b> - ORI: <b>{{totali.ori}}</b> - ARG: <b>{{totali.argenti}}</b> - BRO: <b>{{totali.bronzi}}</b> (P:<b>{{totali.punti}})</b></span>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content spadding style="background: #eee;">\n  <div *ngIf="backend.gare.length==0" style="text-align: center; width: 100%"><ion-spinner center name="dots" ></ion-spinner></div>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="dots">\n        </ion-refresher-content>\n  </ion-refresher>  \n  <div *ngIf="loading" style="width: 100%; text-align: center">\n    <ion-spinner name="dots"></ion-spinner>\n  </div>\n\n<ion-list *ngIf="usevirtualscroll" [virtualScroll]="backend.gare" [approxItemHeight]="\'80px\'" > <!--*ngIf="backend.gare.length>0"-->\n  \n <ion-item-sliding *virtualItem="let g">\n  <ion-item   (press)="pressGara(g)" (tap)="gotoGara(g)" [ngClass]="g.doc.stato.toLowerCase()"> <!--*ngFor="let g of backend.gare" -->\n\n    \n    <span class="gara"><b>{{g.doc.title}}</b></span><br>\n    <span class="location">{{g.doc.location}} - {{g.doc.data}}</span><br>\n    <span class="medals">ORI: <b>{{g.doc.ori}}</b> - ARG: <b>{{g.doc.argenti}}</b> BRO: <b>{{g.doc.bronzi}}</b></span><br>\n    <span class="iscritti">ISCRITTI: {{getLen(g.doc.iscritti)}}</span><br>\n    \n    <span [ngClass]="\'span\'+g.doc.stato.toLowerCase()" style="font-size: 12px; font-weight: bold;">{{g.doc.stato.toUpperCase()}}</span> \n    <!--<span  *ngIf="g.doc.stato.toUpperCase()==\'INCORSO\'" style="margin-left: 5px"><img style="height: 16px; width: 16px;" src="assets/img/greenblink.gif" /></span>-->  \n\n    </ion-item>\n    <ion-item-options>\n        <button ion-button color="primary" (click)="removeItem(g)"><ion-icon name="create"></ion-icon> Update</button>\n      <button ion-button color="danger" (click)="removeItem(g)"><ion-icon name="trash"></ion-icon> Delete</button>\n    </ion-item-options>\n  </ion-item-sliding>\n</ion-list>\n\n\n\n<ion-list *ngIf="!usevirtualscroll" > <!--*ngIf="backend.gare.length>0"-->\n  \n\n  <ion-item  *ngFor="let g of backend.gare" (press)="pressGara(g)" (tap)="gotoGara(g)" [ngClass]="g.doc.stato.toLowerCase()"> <!--*ngFor="let g of backend.gare" -->\n\n    \n    <span class="gara"><b>{{g.doc.title}}</b></span><br>\n    <span class="location">{{g.doc.location}} - {{g.doc.data}}</span><br>\n    <span class="medals">ORI: <b>{{g.doc.ori}}</b> - ARG: <b>{{g.doc.argenti}}</b> BRO: <b>{{g.doc.bronzi}}</b></span><br>\n    <span class="iscritti">ISCRITTI: {{getLen(g.doc.iscritti)}}</span><br>\n    \n    <span [ngClass]="\'span\'+g.doc.stato.toLowerCase()" style="font-size: 12px; font-weight: bold;">{{g.doc.stato.toUpperCase()}}</span> \n    <!--<span  *ngIf="g.doc.stato.toUpperCase()==\'INCORSO\'" style="margin-left: 5px"><img style="height: 16px; width: 16px;" src="assets/img/greenblink.gif" /></span>-->  \n\n    </ion-item>\n   \n\n</ion-list>\n<ion-infinite-scroll *ngIf="!islastpage && !usevirtualscroll" (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content loadingSpinner="dots" loadingText="Caricamento gare...">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/gare/gare.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _k || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_device_feedback__["a" /* DeviceFeedback */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
 ], GarePage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=gare.js.map
 
 /***/ }),
@@ -9654,7 +9653,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   Ionic pages and navigation.
 */
 var AtletiPage = (function () {
-    function AtletiPage(alertCtrl, toastCtrl, modalCtrl, events, backend, navCtrl, navParams) {
+    function AtletiPage(actionSheetCtrl, alertCtrl, toastCtrl, modalCtrl, events, backend, navCtrl, navParams) {
+        this.actionSheetCtrl = actionSheetCtrl;
         this.alertCtrl = alertCtrl;
         this.toastCtrl = toastCtrl;
         this.modalCtrl = modalCtrl;
@@ -9820,6 +9820,58 @@ var AtletiPage = (function () {
         var questo = this;
         if (!questo.backend.userIsAdmin())
             return;
+        var actionSheet = this.actionSheetCtrl.create({
+            title: 'Seleziona una scelta',
+            buttons: [
+                {
+                    text: 'ANNULLA',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Modifica atleta',
+                    handler: function () {
+                        questo.editAtleta(a);
+                    }
+                },
+                {
+                    text: 'Elimina atleta',
+                    handler: function () {
+                        console.log('Buy clicked');
+                        var alert2 = questo.alertCtrl.create({
+                            title: 'Elimina atleta',
+                            message: 'Vuoi realmente eliminare ' + a.doc.cognome + ' ' + a.doc.nome + ' ?',
+                            buttons: [
+                                {
+                                    text: 'ANNULLA',
+                                    role: 'cancel',
+                                    handler: function () {
+                                        console.log('Cancel clicked');
+                                    }
+                                },
+                                {
+                                    text: 'SI, ELIMINA ' + a.doc.cognome + ' ' + a.doc.nome,
+                                    handler: function () {
+                                        questo.deleteAtleta(a);
+                                        console.log('eliminaatleta confirmed clicked');
+                                        //delete code
+                                    }
+                                }
+                            ]
+                        });
+                        alert2.present();
+                    }
+                }
+            ]
+        });
+        actionSheet.present();
+    };
+    AtletiPage.prototype.pressAtletaOld = function (a) {
+        var questo = this;
+        if (!questo.backend.userIsAdmin())
+            return;
         //if (questo.backend.user.role != "tkdradmin") return;
         var alrt = questo.alertCtrl.create({
             title: 'Seleziona una scelta',
@@ -9892,7 +9944,7 @@ AtletiPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-atleti',template:/*ion-inline-start:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/atleti/atleti.html"*/'<!--\n  Generated template for the GarePage page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Atleti</ion-title>\n    <ion-buttons end>\n      <button *ngIf="backend.userIsAdmin()" ion-button class="menubutton"  (tap)="addAtleta()"><ion-icon name="ios-add-circle-outline"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-searchbar placeholder="Filtra atleti"\n  [(ngModel)]="filter"\n  [showCancelButton]="true"\n  (ionInput)="onInput($event)"\n  (ionCancel)="onCancel($event)">\n</ion-searchbar>\n<div class="reccount">{{displayedatleti.length}} atleti</div>\n\n</ion-header>\n\n\n<ion-content spadding style="background: #eee;">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="dots">\n        </ion-refresher-content>\n  </ion-refresher>  \n  <div *ngIf="loading" style="width: 100%; text-align: center">\n    <ion-spinner name="dots"></ion-spinner>\n  </div>\n\n  <ion-list [virtualScroll]="displayedatleti" approxItemHeight="40px">\n  <ion-item *virtualItem="let a"  (press)="pressAtleta(a)" (tap)="gotoAtleta(a)">  <!-- *ngFor="let a of atleti"  -->\n    \n    <span class="atleta">{{a.doc.cognome}} {{a.doc.nome}}</span><br>\n    <span class="categoria">{{getCategoria(a).toUpperCase()}}</span>\n   \n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/demetriomortelliti/Desktop/demy/PROJECTS/appkwondo/clients/ion2kwondo/src/pages/atleti/atleti.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */], __WEBPACK_IMPORTED_MODULE_2__providers_backend_backend__["a" /* BackendProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
 ], AtletiPage);
 
 //# sourceMappingURL=atleti.js.map
@@ -13678,8 +13730,8 @@ var BackendProvider = (function () {
         this.isProduction = true;
         this.appVersion = {
             name: "appkwondov2",
-            version: "2.1.9",
-            releasedate: "23/05/2019"
+            version: "2.2.0",
+            releasedate: "22/09/2019"
         };
         //@ViewChild(Navbar) navBar: Navbar;
         this.rooturl = "http://tkdr.herokuapp.com";
@@ -18638,6 +18690,9 @@ var ScorekeeperPage = (function () {
             clientid: "master",
             punt1: 0,
             punt2: 0,
+            girone: {
+                title: "girone1"
+            },
             player1: {
                 cognome: "Atleta",
                 societa: "Squadra A",
@@ -18915,10 +18970,11 @@ var ScorekeeperPage = (function () {
     ScorekeeperPage.prototype.setResult = function () {
         var questo = this;
         console.log(questo.scoreboard);
+        var girone = questo.scoreboard.girone.title;
         var result = questo.scoreboard.punt1 + "-" + questo.scoreboard.punt2;
         questo.backend.showConfirm("Sicuro di voler impostare il risultato sul " + result + " per questo incontro ?", function (yes) {
             if (yes) {
-                var url = questo.backend.rooturl + "/matches/setresultrr/" + questo.scoreboard.garaid + "?result=" + result + "&order=" + questo.scoreboard.order;
+                var url = questo.backend.rooturl + "/matches/setresultrr/" + questo.scoreboard.garaid + "?result=" + result + "&order=" + questo.scoreboard.order + "&girone=" + girone;
                 questo.backend.fetchData(url, function (data) {
                     console.log("punteggio impostato", data);
                     questo.backend.showToast("punteggio impostato su " + result);

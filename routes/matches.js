@@ -4377,6 +4377,7 @@ router.get("/setresultrr/:garaid", function (req, res) {
 
 	if (req.query.order) incontro_order = parseInt(req.query.order, 10);
 	if (req.query.result) result = req.query.result;
+	if (req.query.girone) girone=req.query.girone;
 	if (result == "null") result = "";
 	var retvalue = {};
 	mongo.getfile("matches_" + garaid + ".json", function (data) {
