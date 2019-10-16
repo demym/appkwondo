@@ -20,11 +20,17 @@ var fs = require('fs');
 var gcm = require('./routes/gcm');
 var fcm = require('./routes/fcm');
 var dbscl = require('./routes/dbscl');
+
 //var mongo = require('mongodb');
 var EasyZip = require('easy-zip').EasyZip;
 var syncrequest = require('sync-request');
 var cors = require('cors');
 var moment = require("moment");
+
+var UI_BASE_URL = rooturl + "/ion2kwondo/index.html";
+var app_url = "http://localhost:8100"
+
+
 var syncavfiles = true;
 var broadcastes = [];
 
@@ -110,7 +116,22 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'www')));
-app.use(cors());
+app.options('*', cors())
+
+
+app.use(cors({
+	credentials: true,
+	origin: UI_BASE_URL
+}));
+/*app.use(cors({
+	  credentials: false,
+	  origin: UI_BASE_URL
+  }));*/
+app.use(cors({
+	credentials: true,
+	origin: app_url
+}));
+
 
 var allowCrossDomain = function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
