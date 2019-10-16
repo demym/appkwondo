@@ -13799,8 +13799,8 @@ var BackendProvider = (function () {
             releasedate: "15/10/2019"
         };
         //@ViewChild(Navbar) navBar: Navbar;
-        this.rooturl = "http://tkdr.herokuapp.com";
-        //public rooturl = "http://localhost:3000";  
+        this.rooturl = "https://tkdr.herokuapp.com";
+        //public rooturl = "https://localhost:3000";  
         //public rooturl="http://appkwondo.mybluemix.net"; 
         //9.71.212.38
         //public rooturl="http://10.113.32.153:3000"
