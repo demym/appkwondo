@@ -21,6 +21,7 @@ var fs = require('fs');
 var gcm = require('./routes/gcm');
 var fcm = require('./routes/fcm');
 var dbscl = require('./routes/dbscl');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 //var mongo = require('mongodb');
 var EasyZip = require('easy-zip').EasyZip;
