@@ -121,19 +121,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.options('*', cors())
 
 
-app.use(cors({
+/*app.use(cors({
 	credentials: true,
 	origin: UI_BASE_URL
-}));
+}));*/
 /*app.use(cors({
 	  credentials: false,
 	  origin: UI_BASE_URL
   }));*/
-app.use(cors({
+/*app.use(cors({
 	credentials: true,
 	origin: app_url
-}));
+}));*/
 
+app.use(cors());
 
 var allowCrossDomain = function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
