@@ -2,6 +2,7 @@
  * Public Module dependencies.
  */
 require('dotenv').load();
+var rooturl="https://tkdr.herokuapp.com";
 var usehttps=true;
 var express = require('express');
 var path = require('path');
