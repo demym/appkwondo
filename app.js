@@ -3,8 +3,9 @@
  */
 require('dotenv').load();
 var rooturl="https://tkdr.herokuapp.com";
-var usehttps=true;
+var usehttps=false;
 var express = require('express');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -102,6 +103,7 @@ var passport = require('passport'),
  * Create and setup Express app
  */
 var app = express();
+
 app.use(bodyParser.json({
 	limit: "30mb"
 }));
@@ -119,7 +121,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'www')));
 
-
+/*
 const allowedOrigins = [
 	'capacitor://localhost',
 	'ionic://localhost',
@@ -141,7 +143,7 @@ const allowedOrigins = [
   
   // Enable preflight requests for all routes
   app.options('*', cors(corsOptions));
-
+*/
 
 /*app.use(cors({
 	credentials: true,
@@ -436,7 +438,7 @@ app.post('/login', passport.authenticate('local-signin', {
 //app.use("/installations",installations)
 //app.use("/schede",schede)
 
-app.get('/', cors(corsOptions), function (req, res) {
+app.get('/', function (req, res) {
 
 
 	res.sendfile('index.html', {
