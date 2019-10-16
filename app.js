@@ -2,6 +2,7 @@
  * Public Module dependencies.
  */
 require('dotenv').load();
+var usehttps=true;
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,6 +11,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('rpozzi-node:server');
 var http = require('http');
+var https=require("https");
 var session = require('express-session')
 var request = require('request');
 var jwt = require('jsonwebtoken');
@@ -1854,7 +1856,34 @@ var ExpressPeerServer = require('peer').ExpressPeerServer;
 //var peerserver = require('peer').ExpressPeerServer;
 
 
-var server = app.listen(port);
+
+var appserver;
+
+
+if (!usehttps) {
+	
+	console.log("started with http !! ")
+
+	appserver = 	http.createServer(app);
+
+} else {
+
+	console.log("started with https !!")
+
+
+	var srv = https.createServer({
+		key: fs.readFileSync('key.pem'),
+		cert: fs.readFileSync('cert.pem')
+	}, app);
+
+	appserver = srv;
+
+}
+
+
+
+
+var server = appserver.listen(port);
 var io = require('socket.io').listen(server);
 var nspChat = io.of('/chat')
 var nspDefault = io.nsps['/']
