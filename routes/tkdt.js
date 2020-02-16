@@ -222,6 +222,14 @@ router.get("/getold/:garaid", function (req, res) {
 
 })
 
+
+router.get("/garadays/:garaid",function(req,res){
+    var tkdt_garaid = req.params.garaid;
+    getGaraDays(tkdt_garaid, function (ddata) {
+        res.send(ddata)
+    });
+})
+
 router.get("/retrieve/:garaid", function (req, res) {
 
     var tkdt_garaid = req.params.garaid;
@@ -512,10 +520,11 @@ function getDaysForGara(tkdt_garaid, callback) {
 
 function getGaraDays(tkdt_garaid, callback) {
     var tabulatigiorni_url = tkdt_rooturl + "tabulati_giorni?id=" + tkdt_garaid;
+    console.log("calling url",tabulatigiorni_url)
     cloudscraper.get(tabulatigiorni_url, function (error, response, html) {
         if (!error) {
 
-
+            console.log("no error")
             var $ = cheerio.load(html);
             var banner = $("#banner");
             var bscomponent = banner.find(".bs-component");
@@ -583,7 +592,10 @@ function getGaraDays(tkdt_garaid, callback) {
 
 
 
-        } else callback(error);
+        } else {
+            console.log("error",error)
+            callback(error);
+        }
 
     });
 
@@ -1446,6 +1458,7 @@ function getQsFromUrl(url, name) {
 
 function getIscritti(h) {
     //utils.colog("getiscritti");
+    console.log("getiscritti",h)
     var iscritti = [];
 
     h = h.replAll("<br>", "");
