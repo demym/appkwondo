@@ -44,7 +44,7 @@
     "moment": "^2.19.1",
     "mongo-sync": "^2.0.1",
     "mongodb": "^2.0.46",
-    "morgan": "~1.5.1",
+    "morgan": "~1.9.1",
     "nano": "^6.1.2",
     "node-base64-image": "^0.1.2",
     "node-gcm": "^0.14.6",
