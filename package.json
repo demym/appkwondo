@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "Base64": "^0.3.0",
-    "async": "^2.5.0",
+    "async": "^3.2.2",
     "body-parser": "~1.10.1",
     "cheerio": "^0.22.0",
     "circular-json": "^0.5.4",
