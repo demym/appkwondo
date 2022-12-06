@@ -25,7 +25,7 @@
     "easy-zip": "0.0.4",
     "easyimage": "^2.1.0",
     "ejs": "*",
-    "express": "~4.10.6",
+    "express": "~4.17.3",
     "express-session": "latest",
     "fcm-node": "^1.2.1",
     "fibers": "^3.0.0",
