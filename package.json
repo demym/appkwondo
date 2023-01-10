@@ -20,7 +20,7 @@
     "cookie-session": "^1.1.0",
     "cookie-signature": "^1.0.6",
     "cors": "^2.8.1",
-    "debug": "~2.1.1",
+    "debug": "~3.1.0",
     "dotenv": "^5.0.1",
     "easy-zip": "0.0.4",
     "easyimage": "^2.1.0",
